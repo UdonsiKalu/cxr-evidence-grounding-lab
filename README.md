@@ -73,7 +73,8 @@ The demo only **replays frozen results**. It does not run models on anyone’s c
 - On held-out notes, **representation loss (D)** still showed up across local models — including a larger one that looked clean on the discovery set.  
 - This is a **small synthetic lab**, not a clinical product and not a claim of production accuracy.
 
-**Guides:** [simple illustrated PDF](./notes/progress-notes-simple.pdf) · [full progress notes](./notes/progress-notes.pdf) · [EVALUATION-JOURNEY.md](./EVALUATION-JOURNEY.md)
+**Guides:** [simple illustrated PDF](./notes/progress-notes-simple.pdf) · [full progress notes](./notes/progress-notes.pdf) · [EVALUATION-JOURNEY.md](./EVALUATION-JOURNEY.md)  
+**Direction (verify → REVIEW):** [docs/ARCHITECTURE-DIRECTION.md](./docs/ARCHITECTURE-DIRECTION.md) · [docs/PHASE5-PROTOCOL.md](./docs/PHASE5-PROTOCOL.md)
 
 ---
 
@@ -95,5 +96,9 @@ python3 server.py
 | Browse frozen / mock path | `python3 run_experiment.py --mode mock` | No |
 | Live extract + baseline | `python3 run_experiment.py --mode live` | Yes |
 | Replay Pages demo locally | `cd docs && python3 -m http.server 8765` | No |
+| Phase-5 verify selftest | `python3 run_phase5.py --selftest` | No |
+| Phase-5 live (verify→REVIEW) | `python3 run_phase5.py` | Yes |
 
 Default live model: `llama3:8b-instruct-q4_0` (override with `N2S_OLLAMA_MODEL`).
+
+Phase-5 adds **L2 verification + L3 REVIEW** (never force UNCERTAIN on verify-fail). See [docs/PHASE5-PROTOCOL.md](./docs/PHASE5-PROTOCOL.md). Does not overwrite Phase-1–4 artifacts.

@@ -76,6 +76,72 @@ def extract_live(evidence: str, *, model: str = DEFAULT_MODEL) -> Extraction:
     return extraction
 
 
+REPAIR_EXTRACT_SUFFIX = """
+VERIFICATION FAILED on the previous JSON. The free-text analysis (or note) indicates a
+semantic distinction that your JSON dropped. Repair the extraction so contradiction /
+uncertainty fields faithfully reflect that distinction. Do not invent a policy verdict.
+Do not set uncertainty.present=true merely because verification failed — only if the
+source text itself is uncertain. Return corrected JSON only matching the schema.
+"""
+
+
+def extract_live_repair(
+    evidence: str,
+    *,
+    model: str = DEFAULT_MODEL,
+    prior: Extraction,
+    verify_reasons: list[str],
+) -> Extraction:
+    """Phase-5: one-shot repair after verify fail (Condition C path)."""
+    reasons = "; ".join(verify_reasons) or "structure/analysis mismatch"
+    data = chat_json(
+        f"Schema:\n{EXTRACT_SCHEMA}\n\nNote:\n{evidence}\n\n"
+        f"Previous JSON:\n{prior.to_dict()}\n\nVerify reasons: {reasons}\n"
+        f"{REPAIR_EXTRACT_SUFFIX}",
+        system=EXTRACT_SYSTEM,
+        model=model,
+        num_predict=600,
+    )
+    extraction = Extraction.from_dict(data)
+    extraction.backend = f"ollama:{model}:repair"
+    return extraction
+
+
+def extract_from_analysis(analysis: str, *, model: str = DEFAULT_MODEL) -> Extraction:
+    """Condition D step 2: structured extraction from analysis text (not from the note)."""
+    data = chat_json(
+        f"Schema:\n{EXTRACT_SCHEMA}\n\nSemantic analysis to convert:\n{analysis}",
+        system=ANALYSIS_TO_EXTRACT_SYSTEM,
+        model=model,
+        num_predict=600,
+    )
+    extraction = Extraction.from_dict(data)
+    extraction.backend = f"ollama:{model}:from-analysis"
+    return extraction
+
+
+def extract_from_analysis_repair(
+    analysis: str,
+    *,
+    model: str = DEFAULT_MODEL,
+    prior: Extraction,
+    verify_reasons: list[str],
+) -> Extraction:
+    """Phase-5: one-shot repair after verify fail (Condition D path)."""
+    reasons = "; ".join(verify_reasons) or "structure/analysis mismatch"
+    data = chat_json(
+        f"Schema:\n{EXTRACT_SCHEMA}\n\nSemantic analysis to convert:\n{analysis}\n\n"
+        f"Previous JSON:\n{prior.to_dict()}\n\nVerify reasons: {reasons}\n"
+        f"{REPAIR_EXTRACT_SUFFIX}",
+        system=ANALYSIS_TO_EXTRACT_SYSTEM,
+        model=model,
+        num_predict=600,
+    )
+    extraction = Extraction.from_dict(data)
+    extraction.backend = f"ollama:{model}:from-analysis-repair"
+    return extraction
+
+
 def baseline_live(evidence: str, *, model: str = DEFAULT_MODEL) -> BaselineResult:
     data = chat_json(
         f"Note:\n{evidence}",
@@ -177,19 +243,6 @@ def verdict_from_analysis(
         raw=str(data),
         backend=f"ollama:{model}:{tag}",
     )
-
-
-def extract_from_analysis(analysis: str, *, model: str = DEFAULT_MODEL) -> Extraction:
-    """Condition D step 2: structured extraction from analysis text (not from the note)."""
-    data = chat_json(
-        f"Schema:\n{EXTRACT_SCHEMA}\n\nSemantic analysis to convert:\n{analysis}",
-        system=ANALYSIS_TO_EXTRACT_SYSTEM,
-        model=model,
-        num_predict=600,
-    )
-    extraction = Extraction.from_dict(data)
-    extraction.backend = f"ollama:{model}:from-analysis"
-    return extraction
 
 
 def extract_mock(evidence: str) -> Extraction:

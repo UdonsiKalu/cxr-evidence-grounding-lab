@@ -10,6 +10,9 @@ class Verdict(str, Enum):
     NOT_SATISFIED = "NOT_SATISFIED"
     UNCERTAIN = "UNCERTAIN"
     CONTRADICTION = "CONTRADICTION"
+    # Not emitted by the symbolic rule. Set only when verification fails after repair.
+    # REVIEW = representation/trust failure. Do not conflate with UNCERTAIN (clinical uncertainty).
+    REVIEW = "REVIEW"
 
 
 class Atom(str, Enum):
