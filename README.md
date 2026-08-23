@@ -73,7 +73,7 @@ The demo only **replays frozen results**. It does not run models on anyone’s c
 - On held-out notes, **representation loss (D)** still showed up across local models — including a larger one that looked clean on the discovery set.  
 - This is a **small synthetic lab**, not a clinical product and not a claim of production accuracy.
 
-Full write-up: [notes/progress-notes.pdf](./notes/progress-notes.pdf) · narrative: [EVALUATION-JOURNEY.md](./EVALUATION-JOURNEY.md)
+**Guides:** [simple illustrated PDF](./notes/progress-notes-simple.pdf) · [full progress notes](./notes/progress-notes.pdf) · [EVALUATION-JOURNEY.md](./EVALUATION-JOURNEY.md)
 
 ---
 
@@ -114,10 +114,11 @@ Default live model: `llama3:8b-instruct-q4_0` (override with `N2S_OLLAMA_MODEL`)
 
 | Doc | What’s inside |
 |-----|----------------|
+| [notes/progress-notes-simple.pdf](./notes/progress-notes-simple.pdf) | **Start here** — plain language, pictures, how to use the demo |
+| [notes/progress-notes.pdf](./notes/progress-notes.pdf) | Full frozen lab notebook (all counts & protocols) |
 | [EVALUATION-JOURNEY.md](./EVALUATION-JOURNEY.md) | Story of milestones M1–M3 and Phases 1–4 |
 | [docs/PHASE1-DIAGNOSTIC.md](./docs/PHASE1-DIAGNOSTIC.md) | Conditions A–D and CLI runners |
 | [docs/PHASE4-PROTOCOL.md](./docs/PHASE4-PROTOCOL.md) | Held-out protocol that was frozen |
 | [docs/README.md](./docs/README.md) | How the GitHub Pages demo is built |
-| [notes/progress-notes.pdf](./notes/progress-notes.pdf) | Full frozen record |
 
 Phase CLI runners (`run_phase1_diagnostic.py`, `run_phase2_panel.py`, …) re-run experiments locally; they are optional once you have the frozen artifacts.

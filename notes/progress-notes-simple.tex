@@ -1,0 +1,221 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=0.95in]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
+\usepackage{caption}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  urlcolor=blue!50!black,
+  pdftitle={N2S Evidence Grounding --- Simple Guide},
+  pdfauthor={CXR evidence-grounding lab}
+}
+
+\definecolor{muted}{HTML}{57534E}
+\definecolor{paper}{HTML}{FFFDF8}
+\definecolor{teal}{HTML}{0F766E}
+\definecolor{ink}{HTML}{1C1917}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small N2S lab --- simple guide}
+\fancyhead[R]{\small Companion to progress notes}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+
+\setlist[itemize]{leftmargin=1.3em,itemsep=0.2em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=1.3em,itemsep=0.2em,topsep=0.35em}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries How neural meets symbolic}\\[0.35em]
+{\large A simple guide to this lab (and the online demo)}\\[0.7em]
+{\color{muted} Short companion to the full progress notes --- for readers new to neuro-symbolic AI.}\\[0.45em]
+{\small Demo: \url{https://udonsikalu.github.io/cxr-evidence-grounding-lab/}}\\[0.2em]
+{\small Full record: \texttt{notes/progress-notes.pdf}}
+\end{center}
+
+\vspace{0.5em}
+\begin{tcolorbox}[colback=paper,colframe=black!18,boxrule=0.4pt,arc=2pt,left=8pt,right=8pt,top=6pt,bottom=6pt]
+\textbf{Read this if} you want the idea in plain language, then open the demo.\\
+\textbf{Read the full notes if} you want every protocol number, held-out table, and freeze date.
+\end{tcolorbox}
+
+\section{The idea in one picture}
+
+\begin{center}
+\includegraphics[width=0.92\textwidth]{figures/nesy-boundary-simple.png}
+\captionof{figure}{A language model reads the note. Structured facts cross a boundary into a fixed rule. The rule --- not the model --- issues the final label.}
+\end{center}
+
+\textbf{Neuro-symbolic} means: neural (the model) + symbolic (clear rules).
+The interesting failure is not ``the model is dumb.''
+It is: \emph{the model seemed to understand, but the formal structure dropped the point.}
+
+\section{Our toy question}
+
+One made-up clinical question (synthetic notes, not real patients):
+
+\begin{quote}
+Did \textbf{first-line therapy fail}?
+\end{quote}
+
+A fixed rule needs four facts (and a contradiction flag):
+
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Atom} & \textbf{Plain meaning} \\
+\midrule
+A & A first-line therapy is named \\
+B & It was actually given / tried \\
+C & Something counts as failure \\
+D & That failure is of \emph{that} first-line regimen \\
+X & The note contradicts itself about the above \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{0.4em}
+Same atoms in $\rightarrow$ same verdict out: Satisfied, Not satisfied, Uncertain, or Contradiction.
+
+\section{Two ways to answer the same note}
+
+\begin{center}
+\begin{tikzpicture}[
+  font=\small,
+  box/.style={draw=black!35, fill=paper, align=center, inner sep=5pt, rounded corners=2pt, text width=4.4cm},
+  arr/.style={-{Latex}, thick, black!50}
+]
+\node[box] (n) {Short oncology note};
+\node[box, right=1.2cm of n] (a) {\textbf{Path 1}\\Ask the LLM directly\\for a verdict};
+\node[box, below=0.9cm of n] (b1) {\textbf{Path 2}\\Extract descriptive JSON};
+\node[box, below=0.9cm of a] (b2) {Ground into atoms A--D + X};
+\node[box, below=0.9cm of b2] (b3) {Apply the \textbf{fixed} rule};
+\draw[arr] (n) -- (a);
+\draw[arr] (n) -- (b1);
+\draw[arr] (b1) -- (b2);
+\draw[arr] (b2) -- (b3);
+\end{tikzpicture}
+\captionof{figure}{We always compare both paths on the same note. Gold labels are never shown to the model.}
+\end{center}
+
+If Path~1 and Path~2 disagree, something was lost at the boundary.
+
+\section{What the online demo shows}
+
+The public page is \textbf{replay only}: it loads frozen experiment files.
+It does \textbf{not} run a model on anyone's computer.
+
+\begin{center}
+\includegraphics[width=\textwidth]{figures/demo-pages.png}
+\captionof{figure}{GitHub Pages demo --- pick an artifact and a model, then click cases in the left list. Live URL: \url{https://udonsikalu.github.io/cxr-evidence-grounding-lab/}}
+\end{center}
+
+\subsection How to walk the demo (2 minutes)
+
+\begin{enumerate}
+  \item Open the link above (or open \texttt{docs/} locally).
+  \item Keep the default \textbf{Phase-4} artifact, or try Phase-2 / Phase-3.
+  \item Click the model buttons (Llama / Mistral / Qwen) --- same notes, different models.
+  \item Click a case on the left. Read the note, then the A--D table.
+\end{enumerate}
+
+\subsection What A--D mean in the demo
+
+These are \textbf{not} four medical rules.
+They are four places meaning can disappear:
+
+\begin{center}
+\begin{tabular}{@{}p{1.2cm}p{11.2cm}@{}}
+\toprule
+\textbf{Col.} & \textbf{Plain meaning} \\
+\midrule
+\textbf{A} & Direct LLM verdict (no structure). \\
+\textbf{B} & Model writes an analysis, then a final answer --- does the answer keep what the analysis said? \\
+\textbf{C} & Full pipeline: extract $\rightarrow$ atoms $\rightarrow$ fixed rule. \\
+\textbf{D} & Analysis had the distinction, but the \textbf{structured form} dropped it
+           (``representation loss''). \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{0.35em}
+\textbf{Loss stage} under each column tells you \emph{where} it broke, not just that it missed gold.
+
+\begin{center}
+\begin{tikzpicture}[
+  font=\footnotesize,
+  box/.style={draw=black!30, fill=paper, align=center, inner sep=4pt, rounded corners=1pt, text width=2.35cm},
+  loss/.style={draw=teal!60, fill=teal!6, align=center, inner sep=3pt, rounded corners=1pt, text width=2.35cm}
+]
+\node[box] (a) {\textbf{A}\\direct verdict};
+\node[box, right=0.35cm of a] (b) {\textbf{B}\\analysis$\rightarrow$answer};
+\node[box, right=0.35cm of b] (c) {\textbf{C}\\pipeline + rule};
+\node[box, right=0.35cm of c] (d) {\textbf{D}\\analysis$\rightarrow$structure};
+\node[loss, below=0.55cm of a] (la) {never noticed};
+\node[loss, below=0.55cm of b] (lb) {noticed, then\\final answer drops it};
+\node[loss, below=0.55cm of c] (lc) {structure / rule\\path};
+\node[loss, below=0.55cm of d] (ld) {noticed, then\\JSON drops it};
+\draw[-{Latex}, teal!70] (a) -- (la);
+\draw[-{Latex}, teal!70] (b) -- (lb);
+\draw[-{Latex}, teal!70] (c) -- (lc);
+\draw[-{Latex}, teal!70] (d) -- (ld);
+\end{tikzpicture}
+\captionof{figure}{Conditions A--D map to different failure stories. That is why the demo shows all four.}
+\end{center}
+
+\section{The story in three beats}
+
+\begin{enumerate}
+  \item \textbf{Make the boundary visible.} Same notes, direct LLM vs structured pipeline (Milestone~1 UI on port 8253 if you run locally).
+  \item \textbf{Keep hard states on purpose.} Mark contradiction and uncertainty in the structured form so the rule can fire --- states the raw LLM often narrates and then throws away.
+  \item \textbf{Ask where meaning died.} Conditions A--D on discovery notes, then held-out notes, across three local models. Representation loss (D) still appeared on unseen wording.
+\end{enumerate}
+
+That is the arc. The long PDF lists every count and protocol freeze.
+
+\section{What we are (and are not) claiming}
+
+\begin{itemize}
+  \item \textbf{Are:} a small synthetic lab that makes the neural$\rightarrow$symbolic handoff \emph{inspectable}.
+  \item \textbf{Are not:} a clinical product, a medical device, or the full CXR stack (no Qdrant / Archetypes here).
+  \item \textbf{Public demo:} frozen files only --- safe to share; no inference on the author's servers.
+\end{itemize}
+
+\section{Where to go next}
+
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Want\ldots} & \textbf{Open\ldots} \\
+\midrule
+Click around & \url{https://udonsikalu.github.io/cxr-evidence-grounding-lab/} \\
+Every number \& freeze & \texttt{notes/progress-notes.pdf} \\
+Written journey & \texttt{EVALUATION-JOURNEY.md} \\
+Run the local UI & \texttt{python3 server.py} $\rightarrow$ \texttt{http://127.0.0.1:8253/} \\
+Repo README (NeSy intro) & GitHub project homepage \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{1em}
+\begin{center}
+\color{muted}\small
+Rebuild: \texttt{pdflatex progress-notes-simple.tex} from the \texttt{notes/} directory.
+\end{center}
+
+\end{document}
