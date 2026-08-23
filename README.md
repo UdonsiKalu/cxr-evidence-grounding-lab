@@ -97,28 +97,3 @@ python3 server.py
 | Replay Pages demo locally | `cd docs && python3 -m http.server 8765` | No |
 
 Default live model: `llama3:8b-instruct-q4_0` (override with `N2S_OLLAMA_MODEL`).
-
----
-
-## What this repo is / is not
-
-| Is | Is not |
-|----|--------|
-| A teaching + research **toy** for the neural→symbolic boundary | A medical device or clinical decision system |
-| One predicate, synthetic snippets, frozen experiments | The full CXR product (Claim Studio, Qdrant, Archetypes, …) |
-| Safe to open on the web as **replay-only** | A hosted LLM API on the author’s servers |
-
----
-
-## Go deeper
-
-| Doc | What’s inside |
-|-----|----------------|
-| [notes/progress-notes-simple.pdf](./notes/progress-notes-simple.pdf) | **Start here** — plain language, pictures, how to use the demo |
-| [notes/progress-notes.pdf](./notes/progress-notes.pdf) | Full frozen lab notebook (all counts & protocols) |
-| [EVALUATION-JOURNEY.md](./EVALUATION-JOURNEY.md) | Story of milestones M1–M3 and Phases 1–4 |
-| [docs/PHASE1-DIAGNOSTIC.md](./docs/PHASE1-DIAGNOSTIC.md) | Conditions A–D and CLI runners |
-| [docs/PHASE4-PROTOCOL.md](./docs/PHASE4-PROTOCOL.md) | Held-out protocol that was frozen |
-| [docs/README.md](./docs/README.md) | How the GitHub Pages demo is built |
-
-Phase CLI runners (`run_phase1_diagnostic.py`, `run_phase2_panel.py`, …) re-run experiments locally; they are optional once you have the frozen artifacts.
