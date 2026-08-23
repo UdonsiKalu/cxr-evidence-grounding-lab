@@ -1,0 +1,268 @@
+{
+  "experiment": "phase2_model_panel",
+  "optional": true,
+  "prompts_frozen": true,
+  "case_ids": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "U1",
+    "U2",
+    "U3",
+    "U4"
+  ],
+  "models": [
+    {
+      "model": "llama3:8b-instruct-q4_0",
+      "reused_phase1_artifact": true,
+      "artifact": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/phase1-transition-c-u.json",
+      "summary": {
+        "n": 8,
+        "match_gold": {
+          "A": 1,
+          "B": 3,
+          "C": 7,
+          "D": 4
+        },
+        "loss_stage_counts_all_rows": {
+          "A": {
+            "none": 1,
+            "model_interpretation_failure": 0,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 7
+          },
+          "B": {
+            "none": 3,
+            "model_interpretation_failure": 2,
+            "analysis_output_misalignment": 3,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          },
+          "C": {
+            "none": 7,
+            "model_interpretation_failure": 1,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          },
+          "D": {
+            "none": 3,
+            "model_interpretation_failure": 2,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 3,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          }
+        },
+        "error_stage_counts_when_verdict_misses_gold": {
+          "A": {
+            "direct_verdict_miss": 7
+          },
+          "B": {
+            "analysis_output_misalignment": 3,
+            "model_interpretation_failure": 2
+          },
+          "C": {
+            "model_interpretation_failure": 1
+          },
+          "D": {
+            "representation_loss": 3,
+            "model_interpretation_failure": 1
+          }
+        },
+        "note": "Headline research numbers are error_stage_counts_when_verdict_misses_gold. C4 left unresolved by design; do not treat its miss as a bug to fix here."
+      },
+      "match_gold": {
+        "A": 1,
+        "B": 3,
+        "C": 7,
+        "D": 4
+      },
+      "error_stage_counts_when_verdict_misses_gold": {
+        "A": {
+          "direct_verdict_miss": 7
+        },
+        "B": {
+          "analysis_output_misalignment": 3,
+          "model_interpretation_failure": 2
+        },
+        "C": {
+          "model_interpretation_failure": 1
+        },
+        "D": {
+          "representation_loss": 3,
+          "model_interpretation_failure": 1
+        }
+      }
+    },
+    {
+      "model": "mistral:instruct",
+      "reused_phase1_artifact": false,
+      "artifact": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/phase2-mistral_instruct.json",
+      "summary": {
+        "n": 8,
+        "match_gold": {
+          "A": 7,
+          "B": 3,
+          "C": 7,
+          "D": 5
+        },
+        "loss_stage_counts_all_rows": {
+          "A": {
+            "none": 7,
+            "model_interpretation_failure": 0,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 1
+          },
+          "B": {
+            "none": 3,
+            "model_interpretation_failure": 1,
+            "analysis_output_misalignment": 4,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          },
+          "C": {
+            "none": 7,
+            "model_interpretation_failure": 1,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          },
+          "D": {
+            "none": 5,
+            "model_interpretation_failure": 1,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 2,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          }
+        },
+        "error_stage_counts_when_verdict_misses_gold": {
+          "A": {
+            "direct_verdict_miss": 1
+          },
+          "B": {
+            "analysis_output_misalignment": 4,
+            "model_interpretation_failure": 1
+          },
+          "C": {
+            "model_interpretation_failure": 1
+          },
+          "D": {
+            "representation_loss": 2,
+            "model_interpretation_failure": 1
+          }
+        },
+        "note": "Headline research numbers are error_stage_counts_when_verdict_misses_gold. C4 left unresolved by design; do not treat its miss as a bug to fix here."
+      },
+      "match_gold": {
+        "A": 7,
+        "B": 3,
+        "C": 7,
+        "D": 5
+      },
+      "error_stage_counts_when_verdict_misses_gold": {
+        "A": {
+          "direct_verdict_miss": 1
+        },
+        "B": {
+          "analysis_output_misalignment": 4,
+          "model_interpretation_failure": 1
+        },
+        "C": {
+          "model_interpretation_failure": 1
+        },
+        "D": {
+          "representation_loss": 2,
+          "model_interpretation_failure": 1
+        }
+      }
+    },
+    {
+      "model": "qwen2.5-coder:32b",
+      "reused_phase1_artifact": false,
+      "artifact": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/phase2-qwen2.5-coder_32b.json",
+      "summary": {
+        "n": 8,
+        "match_gold": {
+          "A": 4,
+          "B": 7,
+          "C": 8,
+          "D": 8
+        },
+        "loss_stage_counts_all_rows": {
+          "A": {
+            "none": 4,
+            "model_interpretation_failure": 0,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 4
+          },
+          "B": {
+            "none": 7,
+            "model_interpretation_failure": 0,
+            "analysis_output_misalignment": 1,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          },
+          "C": {
+            "none": 8,
+            "model_interpretation_failure": 0,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          },
+          "D": {
+            "none": 8,
+            "model_interpretation_failure": 0,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          }
+        },
+        "error_stage_counts_when_verdict_misses_gold": {
+          "A": {
+            "direct_verdict_miss": 4
+          },
+          "B": {
+            "analysis_output_misalignment": 1
+          },
+          "C": {},
+          "D": {}
+        },
+        "note": "Headline research numbers are error_stage_counts_when_verdict_misses_gold. C4 left unresolved by design; do not treat its miss as a bug to fix here."
+      },
+      "match_gold": {
+        "A": 4,
+        "B": 7,
+        "C": 8,
+        "D": 8
+      },
+      "error_stage_counts_when_verdict_misses_gold": {
+        "A": {
+          "direct_verdict_miss": 4
+        },
+        "B": {
+          "analysis_output_misalignment": 1
+        },
+        "C": {},
+        "D": {}
+      }
+    }
+  ],
+  "generated_at": "2026-08-17T17:53:45.324836+00:00",
+  "note": "Same A\u2013D conditions and gold as Phase-1. No per-model prompt tuning. No external/API model in this local panel. Unseen cases come after this freeze."
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>N2S Evidence Grounding — artifact replay</title>
+  <link rel="stylesheet" href="demo.css" />
+</head>
+<body>
+  <header>
+    <h1>N2S evidence grounding — findings demo</h1>
+    <p>
+      <strong>Artifact replay only</strong> — frozen Phase 1–4 results.
+      No live models, no calls to anyone’s GPU.
+      Clone the repo to run Ollama locally on <code>:8253</code> / <code>:8254</code>.
+    </p>
+  </header>
+
+  <div class="toolbar">
+    <label>Artifact
+      <select id="artifact"></select>
+    </label>
+    <label>Model
+      <select id="model"></select>
+    </label>
+    <button class="primary" id="load-btn" type="button">Load</button>
+    <span class="status" id="status">loading…</span>
+  </div>
+
+  <div class="summary-bar" id="summary-bar"></div>
+  <div class="panel-models" id="panel-models" hidden></div>
+
+  <div class="layout">
+    <div class="sidebar" id="sidebar"></div>
+    <div class="main" id="main">
+      <div class="card"><p>Select an artifact and press Load.</p></div>
+    </div>
+  </div>
+
+  <footer>
+    Neural-to-symbolic lab · one predicate · synthetic notes · not clinical advice · not CXR production
+  </footer>
+
+  <script src="demo.js"></script>
+</body>
+</html>

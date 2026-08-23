@@ -1,0 +1,649 @@
+{
+  "predicate_id": "FIRST_LINE_THERAPY_FAILED",
+  "predicate_text": "FIRST_LINE_THERAPY_FAILED holds iff all of the following are true:\n\n  A  first_line_identified     \u2014 a first-line (front-line / 1L) systemic\n                                 therapy is identified, explicitly or by\n                                 conventional implication\n  B  first_line_administered   \u2014 that therapy was given or attempted\n                                 (not merely planned)\n  C  failure_event             \u2014 progression, non-response, clinician\n                                 statement of failure/refractory disease,\n                                 or discontinuation for intolerance\n                                 without a plan to resume\n  D  failure_of_first_line     \u2014 the failure event is of that first-line\n                                 regimen (not only a later line; not\n                                 completed adjuvant therapy with NED)\n\nX  contradiction \u2014 mutually incompatible claims about A\u2013D\n\nNot sufficient: planned therapy; ongoing first-line with response or\nstable disease; temporary hold with plan to resume; adjuvant completion\nwithout metastatic first-line failure.\n",
+  "predicate_formula": "CONTRADICTION if X; else NOT_SATISFIED if any of A,B,C,D is false; else UNCERTAIN if any of A,B,C,D is unknown; else SATISFIED if A \u2227 B \u2227 C \u2227 D",
+  "mode": "mock",
+  "model": null,
+  "generated_at": "2026-08-17T14:19:45.272921+00:00",
+  "case_ids": [
+    "U1",
+    "U2",
+    "U3",
+    "U4",
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+  ],
+  "summary": {
+    "n": 8,
+    "pipeline_match": 8,
+    "pipeline_accuracy": 1.0,
+    "baseline_match": null,
+    "baseline_accuracy": null,
+    "disagreements": [],
+    "by_category": {
+      "uncertain": {
+        "n": 4,
+        "pipeline_ok": 4,
+        "baseline_ok": 0
+      },
+      "conflicting": {
+        "n": 4,
+        "pipeline_ok": 4,
+        "baseline_ok": 0
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "U1",
+      "category": "uncertain",
+      "evidence": "Possible progression on first-line osimertinib; awaiting confirmatory scan next week before changing therapy.",
+      "why": "Possible progression pending confirmatory imaging.",
+      "expected": "UNCERTAIN",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "first",
+          "regimen_names": [
+            "osimertinib"
+          ],
+          "administration_status": "given",
+          "outcome_statements": [],
+          "implicit_cues": [],
+          "uncertainty_cues": [
+            "awaiting_scan",
+            "possible"
+          ],
+          "uncertainty_present": true,
+          "uncertainty_cue": "Possible progression",
+          "uncertainty_why": "pending",
+          "contradiction_cues": [],
+          "contradiction_present": false,
+          "quotes": [
+            "Possible progression on first-line osimertinib; awaiting confirmatory scan next week before changing therapy."
+          ],
+          "notes": "heuristic mock extractor",
+          "backend": "mock-heuristic",
+          "contradiction": {
+            "present": false,
+            "span_a": null,
+            "span_b": null
+          },
+          "uncertainty": {
+            "present": true,
+            "cue": "Possible progression",
+            "why": "pending"
+          }
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "true",
+          "failure_event": "unknown",
+          "failure_of_first_line": "unknown",
+          "contradiction": false,
+          "uncertainty": true,
+          "trace": [
+            "X=false (extractor contradiction.present=false / none)",
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=true (administered/given)",
+            "C=unknown (mixed response or uncertainty cues)",
+            "D=unknown",
+            "U=true (extractor uncertainty.present, why='pending'; keep CD unknown)"
+          ]
+        },
+        "rule": {
+          "verdict": "UNCERTAIN",
+          "fired_rule": "any(A,B,C,D)=unknown \u2192 UNCERTAIN",
+          "trace": [
+            "Unknown atoms: C failure_event, D failure_of_first_line"
+          ]
+        },
+        "pipeline_verdict": "UNCERTAIN"
+      },
+      "baseline": null,
+      "pipeline_match": true,
+      "baseline_match": null,
+      "pipeline_vs_baseline": null,
+      "disagree": false
+    },
+    {
+      "id": "U2",
+      "category": "uncertain",
+      "evidence": "Outside records suggest the patient may have received platinum-based therapy at another facility. Outcome of that treatment is unknown. No source documents available.",
+      "why": "Unclear whether platinum was given and what the outcome was.",
+      "expected": "UNCERTAIN",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "unspecified",
+          "regimen_names": [],
+          "administration_status": "unknown",
+          "outcome_statements": [],
+          "implicit_cues": [],
+          "uncertainty_cues": [
+            "may_have",
+            "unknown_outcome"
+          ],
+          "uncertainty_present": true,
+          "uncertainty_cue": "may have received platinum-based therapy",
+          "uncertainty_why": "may_have",
+          "contradiction_cues": [],
+          "contradiction_present": false,
+          "quotes": [
+            "Outside records suggest the patient may have received platinum-based therapy at another facility. Outcome of that treatment is unknown. No source documents avai"
+          ],
+          "notes": "heuristic mock extractor",
+          "backend": "mock-heuristic",
+          "contradiction": {
+            "present": false,
+            "span_a": null,
+            "span_b": null
+          },
+          "uncertainty": {
+            "present": true,
+            "cue": "may have received platinum-based therapy",
+            "why": "may_have"
+          }
+        },
+        "grounding": {
+          "first_line_identified": "unknown",
+          "first_line_administered": "unknown",
+          "failure_event": "unknown",
+          "failure_of_first_line": "unknown",
+          "contradiction": false,
+          "uncertainty": true,
+          "trace": [
+            "X=false (extractor contradiction.present=false / none)",
+            "A=false (no first-line identified)",
+            "B=false (no first-line to administer)",
+            "C=unknown (mixed response or uncertainty cues)",
+            "D=false (identified line is not first-line)",
+            "U=true (extractor uncertainty.present, why='may_have'; keep BCD unknown)",
+            "A=unknown (uncertainty.present; was false)",
+            "B=unknown (uncertainty.present; was false)",
+            "D=unknown (uncertainty.present; was false)"
+          ]
+        },
+        "rule": {
+          "verdict": "UNCERTAIN",
+          "fired_rule": "any(A,B,C,D)=unknown \u2192 UNCERTAIN",
+          "trace": [
+            "Unknown atoms: A first_line_identified, B first_line_administered, C failure_event, D failure_of_first_line"
+          ]
+        },
+        "pipeline_verdict": "UNCERTAIN"
+      },
+      "baseline": null,
+      "pipeline_match": true,
+      "baseline_match": null,
+      "pipeline_vs_baseline": null,
+      "disagree": false
+    },
+    {
+      "id": "U3",
+      "category": "uncertain",
+      "evidence": "On first-line FOLFIRINOX. Mixed response: liver lesions smaller, new questionable peritoneal nodularity. Oncology to discuss next steps after tumor board.",
+      "why": "Mixed response is not a clear failure or non-failure.",
+      "expected": "UNCERTAIN",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "first",
+          "regimen_names": [
+            "folfirinox"
+          ],
+          "administration_status": "given",
+          "outcome_statements": [
+            {
+              "text": "mixed response",
+              "polarity": "mixed"
+            }
+          ],
+          "implicit_cues": [],
+          "uncertainty_cues": [
+            "mixed"
+          ],
+          "uncertainty_present": true,
+          "uncertainty_cue": "Mixed response",
+          "uncertainty_why": "mixed",
+          "contradiction_cues": [],
+          "contradiction_present": false,
+          "quotes": [
+            "On first-line FOLFIRINOX. Mixed response: liver lesions smaller, new questionable peritoneal nodularity. Oncology to discuss next steps after tumor board."
+          ],
+          "notes": "heuristic mock extractor",
+          "backend": "mock-heuristic",
+          "contradiction": {
+            "present": false,
+            "span_a": null,
+            "span_b": null
+          },
+          "uncertainty": {
+            "present": true,
+            "cue": "Mixed response",
+            "why": "mixed"
+          }
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "true",
+          "failure_event": "unknown",
+          "failure_of_first_line": "unknown",
+          "contradiction": false,
+          "uncertainty": true,
+          "trace": [
+            "X=false (extractor contradiction.present=false / none)",
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=true (administered/given)",
+            "C=unknown (mixed response or uncertainty cues)",
+            "D=unknown",
+            "U=true (extractor uncertainty.present, why='mixed'; keep CD unknown)"
+          ]
+        },
+        "rule": {
+          "verdict": "UNCERTAIN",
+          "fired_rule": "any(A,B,C,D)=unknown \u2192 UNCERTAIN",
+          "trace": [
+            "Unknown atoms: C failure_event, D failure_of_first_line"
+          ]
+        },
+        "pipeline_verdict": "UNCERTAIN"
+      },
+      "baseline": null,
+      "pipeline_match": true,
+      "baseline_match": null,
+      "pipeline_vs_baseline": null,
+      "disagree": false
+    },
+    {
+      "id": "U4",
+      "category": "uncertain",
+      "evidence": "Questionable whether carboplatin was given as first-line metastatic therapy or in the adjuvant setting. No clear progression documented in the available notes.",
+      "why": "Line of therapy itself is unclear; no clear progression.",
+      "expected": "UNCERTAIN",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "adjuvant",
+          "regimen_names": [],
+          "administration_status": "unknown",
+          "outcome_statements": [],
+          "implicit_cues": [
+            "adjuvant_completed"
+          ],
+          "uncertainty_cues": [
+            "questionable"
+          ],
+          "uncertainty_present": true,
+          "uncertainty_cue": "Questionable whether carboplatin was given as first-line metastatic therapy or in the adjuvant setting",
+          "uncertainty_why": "unresolved_line",
+          "contradiction_cues": [],
+          "contradiction_present": false,
+          "quotes": [
+            "Questionable whether carboplatin was given as first-line metastatic therapy or in the adjuvant setting. No clear progression documented in the available notes."
+          ],
+          "notes": "heuristic mock extractor",
+          "backend": "mock-heuristic",
+          "contradiction": {
+            "present": false,
+            "span_a": null,
+            "span_b": null
+          },
+          "uncertainty": {
+            "present": true,
+            "cue": "Questionable whether carboplatin was given as first-line metastatic therapy or in the adjuvant setting",
+            "why": "unresolved_line"
+          }
+        },
+        "grounding": {
+          "first_line_identified": "unknown",
+          "first_line_administered": "unknown",
+          "failure_event": "unknown",
+          "failure_of_first_line": "unknown",
+          "contradiction": false,
+          "uncertainty": true,
+          "trace": [
+            "X=false (extractor contradiction.present=false / none)",
+            "A=false (adjuvant / not metastatic first-line)",
+            "B=false (no first-line to administer)",
+            "C=unknown (mixed response or uncertainty cues)",
+            "D=false (identified line is not first-line)",
+            "U=true (extractor uncertainty.present, why='unresolved_line'; keep ABCD unknown)",
+            "A=unknown (uncertainty.present; was false)",
+            "B=unknown (uncertainty.present; was false)",
+            "D=unknown (uncertainty.present; was false)"
+          ]
+        },
+        "rule": {
+          "verdict": "UNCERTAIN",
+          "fired_rule": "any(A,B,C,D)=unknown \u2192 UNCERTAIN",
+          "trace": [
+            "Unknown atoms: A first_line_identified, B first_line_administered, C failure_event, D failure_of_first_line"
+          ]
+        },
+        "pipeline_verdict": "UNCERTAIN"
+      },
+      "baseline": null,
+      "pipeline_match": true,
+      "baseline_match": null,
+      "pipeline_vs_baseline": null,
+      "disagree": false
+    },
+    {
+      "id": "C1",
+      "category": "conflicting",
+      "evidence": "Assessment: first-line therapy failed, proceed to second-line. Addendum later the same day: patient continues first-line carboplatin with stable disease; do not change therapy.",
+      "why": "Assessment says first-line failed; addendum says ongoing first-line with SD.",
+      "expected": "CONTRADICTION",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "first",
+          "regimen_names": [],
+          "administration_status": "unknown",
+          "outcome_statements": [
+            {
+              "text": "failure language",
+              "polarity": "failure"
+            },
+            {
+              "text": "response/ongoing language",
+              "polarity": "ongoing"
+            }
+          ],
+          "implicit_cues": [
+            "switching_to_second_line"
+          ],
+          "uncertainty_cues": [],
+          "uncertainty_present": false,
+          "uncertainty_cue": "",
+          "uncertainty_why": "",
+          "contradiction_cues": [
+            {
+              "a": "Assessment: first-line therapy failed, proceed to second-line.",
+              "b": "patient continues first-line carboplatin with stable disease; do not change therapy."
+            }
+          ],
+          "contradiction_present": true,
+          "quotes": [
+            "Assessment: first-line therapy failed, proceed to second-line. Addendum later the same day: patient continues first-line carboplatin with stable disease; do not"
+          ],
+          "notes": "heuristic mock extractor",
+          "backend": "mock-heuristic",
+          "contradiction": {
+            "present": true,
+            "span_a": "Assessment: first-line therapy failed, proceed to second-line.",
+            "span_b": "patient continues first-line carboplatin with stable disease; do not change therapy."
+          },
+          "uncertainty": {
+            "present": false,
+            "cue": null,
+            "why": null
+          }
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "true",
+          "failure_event": "true",
+          "failure_of_first_line": "true",
+          "contradiction": true,
+          "uncertainty": false,
+          "trace": [
+            "X=true (extractor contradiction.present=true with spans)",
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=true (inferred: failure of an identified first line implies it was given)",
+            "C=true (failure polarity)",
+            "D=true (failure attributed to identified first-line)",
+            "U=false (extractor uncertainty.present=false / none)"
+          ]
+        },
+        "rule": {
+          "verdict": "CONTRADICTION",
+          "fired_rule": "X \u2192 CONTRADICTION",
+          "trace": [
+            "X is true \u2192 CONTRADICTION (short-circuit)"
+          ]
+        },
+        "pipeline_verdict": "CONTRADICTION"
+      },
+      "baseline": null,
+      "pipeline_match": true,
+      "baseline_match": null,
+      "pipeline_vs_baseline": null,
+      "disagree": false
+    },
+    {
+      "id": "C2",
+      "category": "conflicting",
+      "evidence": "Intake note: never received systemic therapy. Later oncology note: progressed after six cycles of first-line carboplatin/paclitaxel.",
+      "why": "One span denies systemic therapy; another describes six cycles of first-line then progression.",
+      "expected": "CONTRADICTION",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "first",
+          "regimen_names": [
+            "carboplatin/paclitaxel"
+          ],
+          "administration_status": "not_given",
+          "outcome_statements": [
+            {
+              "text": "failure language",
+              "polarity": "failure"
+            }
+          ],
+          "implicit_cues": [],
+          "uncertainty_cues": [],
+          "uncertainty_present": false,
+          "uncertainty_cue": "",
+          "uncertainty_why": "",
+          "contradiction_cues": [
+            {
+              "a": "Intake note: never received systemic therapy.",
+              "b": "progressed after six cycles of first-line carboplatin/paclitaxel."
+            }
+          ],
+          "contradiction_present": true,
+          "quotes": [
+            "Intake note: never received systemic therapy. Later oncology note: progressed after six cycles of first-line carboplatin/paclitaxel."
+          ],
+          "notes": "heuristic mock extractor",
+          "backend": "mock-heuristic",
+          "contradiction": {
+            "present": true,
+            "span_a": "Intake note: never received systemic therapy.",
+            "span_b": "progressed after six cycles of first-line carboplatin/paclitaxel."
+          },
+          "uncertainty": {
+            "present": false,
+            "cue": null,
+            "why": null
+          }
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "false",
+          "failure_event": "true",
+          "failure_of_first_line": "true",
+          "contradiction": true,
+          "uncertainty": false,
+          "trace": [
+            "X=true (extractor contradiction.present=true with spans)",
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=false (administration_status=not_given)",
+            "C=true (failure polarity)",
+            "D=true (failure attributed to identified first-line)",
+            "U=false (extractor uncertainty.present=false / none)"
+          ]
+        },
+        "rule": {
+          "verdict": "CONTRADICTION",
+          "fired_rule": "X \u2192 CONTRADICTION",
+          "trace": [
+            "X is true \u2192 CONTRADICTION (short-circuit)"
+          ]
+        },
+        "pipeline_verdict": "CONTRADICTION"
+      },
+      "baseline": null,
+      "pipeline_match": true,
+      "baseline_match": null,
+      "pipeline_vs_baseline": null,
+      "disagree": false
+    },
+    {
+      "id": "C3",
+      "category": "conflicting",
+      "evidence": "Failed first-line per referring oncologist. Our chart review: first-line systemic therapy was never started; patient received palliative radiotherapy only.",
+      "why": "Referring statement of failure vs local review that first-line never started.",
+      "expected": "CONTRADICTION",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "first",
+          "regimen_names": [],
+          "administration_status": "not_given",
+          "outcome_statements": [
+            {
+              "text": "failure language",
+              "polarity": "failure"
+            }
+          ],
+          "implicit_cues": [],
+          "uncertainty_cues": [],
+          "uncertainty_present": false,
+          "uncertainty_cue": "",
+          "uncertainty_why": "",
+          "contradiction_cues": [
+            {
+              "a": "Failed first-line per referring oncologist.",
+              "b": "first-line systemic therapy was never started; patient received palliative radiotherapy only."
+            }
+          ],
+          "contradiction_present": true,
+          "quotes": [
+            "Failed first-line per referring oncologist. Our chart review: first-line systemic therapy was never started; patient received palliative radiotherapy only."
+          ],
+          "notes": "heuristic mock extractor",
+          "backend": "mock-heuristic",
+          "contradiction": {
+            "present": true,
+            "span_a": "Failed first-line per referring oncologist.",
+            "span_b": "first-line systemic therapy was never started; patient received palliative radiotherapy only."
+          },
+          "uncertainty": {
+            "present": false,
+            "cue": null,
+            "why": null
+          }
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "false",
+          "failure_event": "true",
+          "failure_of_first_line": "true",
+          "contradiction": true,
+          "uncertainty": false,
+          "trace": [
+            "X=true (extractor contradiction.present=true with spans)",
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=false (administration_status=not_given)",
+            "C=true (failure polarity)",
+            "D=true (failure attributed to identified first-line)",
+            "U=false (extractor uncertainty.present=false / none)"
+          ]
+        },
+        "rule": {
+          "verdict": "CONTRADICTION",
+          "fired_rule": "X \u2192 CONTRADICTION",
+          "trace": [
+            "X is true \u2192 CONTRADICTION (short-circuit)"
+          ]
+        },
+        "pipeline_verdict": "CONTRADICTION"
+      },
+      "baseline": null,
+      "pipeline_match": true,
+      "baseline_match": null,
+      "pipeline_vs_baseline": null,
+      "disagree": false
+    },
+    {
+      "id": "C4",
+      "category": "conflicting",
+      "evidence": "Progressed on carboplatin/paclitaxel (first-line). Later note: excellent ongoing response to first-line carboplatin/paclitaxel; continue current treatment.",
+      "why": "Same first-line regimen described as progressed and as excellent ongoing response.",
+      "expected": "CONTRADICTION",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "first",
+          "regimen_names": [
+            "carboplatin/paclitaxel"
+          ],
+          "administration_status": "given",
+          "outcome_statements": [
+            {
+              "text": "failure language",
+              "polarity": "failure"
+            },
+            {
+              "text": "response/ongoing language",
+              "polarity": "ongoing"
+            }
+          ],
+          "implicit_cues": [],
+          "uncertainty_cues": [],
+          "uncertainty_present": false,
+          "uncertainty_cue": "",
+          "uncertainty_why": "",
+          "contradiction_cues": [
+            {
+              "a": "Progressed on carboplatin/paclitaxel (first-line).",
+              "b": "excellent ongoing response to first-line carboplatin/paclitaxel; continue current treatment."
+            }
+          ],
+          "contradiction_present": true,
+          "quotes": [
+            "Progressed on carboplatin/paclitaxel (first-line). Later note: excellent ongoing response to first-line carboplatin/paclitaxel; continue current treatment."
+          ],
+          "notes": "heuristic mock extractor",
+          "backend": "mock-heuristic",
+          "contradiction": {
+            "present": true,
+            "span_a": "Progressed on carboplatin/paclitaxel (first-line).",
+            "span_b": "excellent ongoing response to first-line carboplatin/paclitaxel; continue current treatment."
+          },
+          "uncertainty": {
+            "present": false,
+            "cue": null,
+            "why": null
+          }
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "true",
+          "failure_event": "true",
+          "failure_of_first_line": "true",
+          "contradiction": true,
+          "uncertainty": false,
+          "trace": [
+            "X=true (extractor contradiction.present=true with spans)",
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=true (administered/given)",
+            "C=true (failure polarity)",
+            "D=true (failure attributed to identified first-line)",
+            "U=false (extractor uncertainty.present=false / none)"
+          ]
+        },
+        "rule": {
+          "verdict": "CONTRADICTION",
+          "fired_rule": "X \u2192 CONTRADICTION",
+          "trace": [
+            "X is true \u2192 CONTRADICTION (short-circuit)"
+          ]
+        },
+        "pipeline_verdict": "CONTRADICTION"
+      },
+      "baseline": null,
+      "pipeline_match": true,
+      "baseline_match": null,
+      "pipeline_vs_baseline": null,
+      "disagree": false
+    }
+  ]
+}

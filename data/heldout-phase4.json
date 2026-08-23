@@ -1,0 +1,67 @@
+{
+  "predicate_id": "FIRST_LINE_THERAPY_FAILED",
+  "gold_is_not_fed_to_models": true,
+  "held_out": true,
+  "phase": 4,
+  "prompts_were_not_designed_on_these": true,
+  "wording_status": "accepted",
+  "note": "Phase-4 held-out. Analogs of C1–C3 and U1–U4 only. No C4/C8 identity/time analog. Not merged into data/cases.json. Wording accepted 2026-08-17.",
+  "cases": [
+    {
+      "id": "C9",
+      "category": "conflicting",
+      "expected": "CONTRADICTION",
+      "analog_of": "C1",
+      "why": "Same-day reverse: morning note says first-line failed and switch; evening note says continue first-line with stability.",
+      "evidence": "07:40 tumor-board list: first-line ipilimumab/nivolumab has failed; schedule second-line BRAF-directed therapy. 19:10 same-day clinic addendum: restaging today is stable disease on first-line ipilimumab/nivolumab; keep current immunotherapy, do not switch."
+    },
+    {
+      "id": "C10",
+      "category": "conflicting",
+      "expected": "CONTRADICTION",
+      "analog_of": "C2",
+      "why": "One source denies any chemo; a later note describes completed first-line cycles then progression.",
+      "evidence": "Pre-op H&P: no prior cytotoxic chemotherapy. Lymphoma clinic later: finished four cycles of first-line ABVD, then PET showed progressive nodal disease."
+    },
+    {
+      "id": "C11",
+      "category": "conflicting",
+      "expected": "CONTRADICTION",
+      "analog_of": "C3",
+      "why": "Referral asserts first-line failure; local review says systemic first-line was never given.",
+      "evidence": "Referring packet: failed first-line systemic therapy, sent for next-line trial screening. Pharmacy and MAR review here: no first-line systemic anticancer drug was ever dispensed; care to date is hospice and pain control only."
+    },
+    {
+      "id": "U9",
+      "category": "uncertain",
+      "expected": "UNCERTAIN",
+      "analog_of": "U1",
+      "why": "Possible progression on first-line; confirmatory imaging not yet back.",
+      "evidence": "Possible radiographic progression on first-line enzalutamide. Bone scan results are not back; no regimen change until they return."
+    },
+    {
+      "id": "U10",
+      "category": "uncertain",
+      "expected": "UNCERTAIN",
+      "analog_of": "U2",
+      "why": "Possible prior therapy at another site; administration and outcome unknown.",
+      "evidence": "Patient mentions maybe receiving docetaxel at a VA facility. Those records have not arrived. We do not know if that therapy was given or what happened."
+    },
+    {
+      "id": "U11",
+      "category": "uncertain",
+      "expected": "UNCERTAIN",
+      "analog_of": "U3",
+      "why": "Mixed findings; decision deferred.",
+      "evidence": "On first-line pazopanib. Mixed picture: target lesions smaller, new questionable peritoneal nodules. No change until sarcoma board next week."
+    },
+    {
+      "id": "U12",
+      "category": "uncertain",
+      "expected": "UNCERTAIN",
+      "analog_of": "U4",
+      "why": "Unresolved whether the named drug was metastatic first-line or adjuvant; no definite progression.",
+      "evidence": "Cannot tell from the scanned summaries whether doxorubicin was given as first-line therapy for metastatic breast cancer or as adjuvant treatment after mastectomy. No definite progression is recorded."
+    }
+  ]
+}

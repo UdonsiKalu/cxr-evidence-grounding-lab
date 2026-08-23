@@ -1,0 +1,1522 @@
+{
+  "experiment": "phase3_heldout_diagnostic",
+  "optional": true,
+  "prompts_frozen": true,
+  "bprime_not_default": true,
+  "undo": "Delete this artifact, n2s_lab/phase1_diagnostic.py, and run_phase1_diagnostic.py; M1\u2013M3 unchanged.",
+  "predicate_id": "FIRST_LINE_THERAPY_FAILED",
+  "predicate_text": "FIRST_LINE_THERAPY_FAILED holds iff all of the following are true:\n\n  A  first_line_identified     \u2014 a first-line (front-line / 1L) systemic\n                                 therapy is identified, explicitly or by\n                                 conventional implication\n  B  first_line_administered   \u2014 that therapy was given or attempted\n                                 (not merely planned)\n  C  failure_event             \u2014 progression, non-response, clinician\n                                 statement of failure/refractory disease,\n                                 or discontinuation for intolerance\n                                 without a plan to resume\n  D  failure_of_first_line     \u2014 the failure event is of that first-line\n                                 regimen (not only a later line; not\n                                 completed adjuvant therapy with NED)\n\nX  contradiction \u2014 mutually incompatible claims about A\u2013D\n\nNot sufficient: planned therapy; ongoing first-line with response or\nstable disease; temporary hold with plan to resume; adjuvant completion\nwithout metastatic first-line failure.\n",
+  "predicate_formula": "CONTRADICTION if X; else NOT_SATISFIED if any of A,B,C,D is false; else UNCERTAIN if any of A,B,C,D is unknown; else SATISFIED if A \u2227 B \u2227 C \u2227 D",
+  "model": "qwen2.5-coder:32b",
+  "ollama_output_mechanism": "Current Ollama path uses POST /api/chat with format=json (when structured), a schema described only in the prompt, temperature=0, then parse_json_object. This is NOT field-level constrained decoding / JSON Schema / grammar enforcement. Condition B free-text analysis uses chat_text with no format=json.",
+  "case_ids": [
+    "C5",
+    "C6",
+    "C7",
+    "C8",
+    "U5",
+    "U6",
+    "U7",
+    "U8"
+  ],
+  "generated_at": "2026-08-17T18:49:35.683938+00:00",
+  "summary": {
+    "n": 8,
+    "match_gold": {
+      "A": 3,
+      "B": 6,
+      "C": 8,
+      "D": 6
+    },
+    "loss_stage_counts_all_rows": {
+      "A": {
+        "none": 3,
+        "model_interpretation_failure": 0,
+        "analysis_output_misalignment": 0,
+        "representation_loss": 0,
+        "symbolic_failure": 0,
+        "direct_verdict_miss": 5
+      },
+      "B": {
+        "none": 6,
+        "model_interpretation_failure": 0,
+        "analysis_output_misalignment": 2,
+        "representation_loss": 0,
+        "symbolic_failure": 0,
+        "direct_verdict_miss": 0
+      },
+      "C": {
+        "none": 8,
+        "model_interpretation_failure": 0,
+        "analysis_output_misalignment": 0,
+        "representation_loss": 0,
+        "symbolic_failure": 0,
+        "direct_verdict_miss": 0
+      },
+      "D": {
+        "none": 6,
+        "model_interpretation_failure": 0,
+        "analysis_output_misalignment": 0,
+        "representation_loss": 1,
+        "symbolic_failure": 1,
+        "direct_verdict_miss": 0
+      }
+    },
+    "error_stage_counts_when_verdict_misses_gold": {
+      "A": {
+        "direct_verdict_miss": 5
+      },
+      "B": {
+        "analysis_output_misalignment": 2
+      },
+      "C": {},
+      "D": {
+        "representation_loss": 1,
+        "symbolic_failure": 1
+      }
+    },
+    "note": "Headline research numbers are error_stage_counts_when_verdict_misses_gold. C4 left unresolved by design; do not treat its miss as a bug to fix here."
+  },
+  "rows": [
+    {
+      "id": "C5",
+      "category": "conflicting",
+      "evidence": "AM oncology: first-line FOLFOX has failed; start second-line FOLFIRI this week. PM addendum the same calendar day: CT today shows stable disease on first-line FOLFOX; continue current regimen, no switch.",
+      "why": "Morning plan says first-line failed and switch; same-day late note says continue first-line with stability.",
+      "gold": "CONTRADICTION",
+      "expected_distinction": "contradiction",
+      "model": "qwen2.5-coder:32b",
+      "conditions": {
+        "A_direct_verdict": {
+          "verdict": "CONTRADICTION",
+          "rationale": "The note contains mutually incompatible claims about the failure of first-line therapy and the decision to continue or switch regimens.",
+          "backend": "ollama:qwen2.5-coder:32b"
+        },
+        "B_analysis_then_verdict": {
+          "analysis": "The clinical note indicates some uncertainty and conflicting information regarding the formal condition FIRST_LINE_THERAPY_FAILED.\n\n- **First-line therapy identified**: The note mentions \"first-line FOLFOX\" twice, so a first-line therapy is clearly identified.\n  \n- **First-line therapy administered**: There is no explicit statement that the therapy was not given. However, the context suggests it has been ongoing since there are references to progression and stable disease on this regimen.\n\n- **Failure event occurred**: The note contains conflicting statements about whether a failure event occurred:\n  - \"first-line FOLFOX has failed\" implies a failure event.\n  - \"CT today shows stable disease on first-line FOLFOX; continue current regimen, no switch\" suggests that the therapy is still effective and there is no failure.\n\n- **Failure of first-line**: The initial statement indicates that the failure is related to the first-line therapy (FOLFOX), but this conflicts with the later statement about stable disease.\n\n- **Claims conflict**: There are clear contradictions in the note. The AM oncology entry states that FOLFOX has failed, while the PM addendum on the same day contradicts this by stating there is stable disease and no need to switch regimens.\n\n- **Evidence uncertain, incomplete, or mixed**: Given the conflicting statements about the effectiveness of the first-line therapy (FOLFOX), the evidence is mixed. The note does not provide a clear resolution to whether the failure event actually occurred or if the therapy should continue.",
+          "analysis_flags": {
+            "mentions_contradiction": true,
+            "mentions_uncertainty": true
+          },
+          "verdict": "CONTRADICTION",
+          "rationale": "The clinical note contains conflicting statements about whether first-line FOLFOX has failed, with one part indicating failure and another suggesting stable disease.",
+          "backend": "ollama:qwen2.5-coder:32b:from-analysis"
+        },
+        "C_structured_pipeline": {
+          "extraction": {
+            "stated_line": "first",
+            "regimen_names": [
+              "FOLFOX",
+              "FOLFIRI"
+            ],
+            "administration_status": "given",
+            "outcome_statements": [
+              {
+                "text": "first-line FOLFOX has failed",
+                "polarity": "failure"
+              },
+              {
+                "text": "CT today shows stable disease on first-line FOLFOX",
+                "polarity": "ongoing"
+              }
+            ],
+            "implicit_cues": [
+              "switching_to_second_line"
+            ],
+            "uncertainty_cues": [],
+            "uncertainty_present": false,
+            "uncertainty_cue": "",
+            "uncertainty_why": "",
+            "contradiction_cues": [
+              {
+                "a": "first-line FOLFOX has failed",
+                "b": "CT today shows stable disease on first-line FOLFOX"
+              }
+            ],
+            "contradiction_present": true,
+            "quotes": [
+              "AM oncology: first-line FOLFOX has failed; start second-line FOLFIRI this week.",
+              "PM addendum the same calendar day: CT today shows stable disease on first-line FOLFOX; continue current regimen, no switch."
+            ],
+            "notes": "Contradictory statements about the response to first-line FOLFOX treatment.",
+            "backend": "ollama:qwen2.5-coder:32b",
+            "contradiction": {
+              "present": true,
+              "span_a": "first-line FOLFOX has failed",
+              "span_b": "CT today shows stable disease on first-line FOLFOX"
+            },
+            "uncertainty": {
+              "present": false,
+              "cue": null,
+              "why": null
+            }
+          },
+          "grounding": {
+            "first_line_identified": "true",
+            "first_line_administered": "true",
+            "failure_event": "true",
+            "failure_of_first_line": "true",
+            "contradiction": true,
+            "uncertainty": false,
+            "trace": [
+              "X=true (extractor contradiction.present=true with spans)",
+              "A=true (stated first-line or implicit 1L cue)",
+              "B=true (administered/given)",
+              "C=true (failure polarity)",
+              "D=true (failure attributed to identified first-line)",
+              "U=false (extractor uncertainty.present=false / none)"
+            ]
+          },
+          "rule": {
+            "verdict": "CONTRADICTION",
+            "fired_rule": "X \u2192 CONTRADICTION",
+            "trace": [
+              "X is true \u2192 CONTRADICTION (short-circuit)"
+            ]
+          },
+          "verdict": "CONTRADICTION"
+        },
+        "D_analysis_then_structure": {
+          "analysis": "The clinical note indicates some uncertainty and conflicting information regarding the formal condition FIRST_LINE_THERAPY_FAILED.\n\n- **First-line therapy identified**: The note mentions \"first-line FOLFOX\" twice, so a first-line therapy is clearly identified.\n  \n- **First-line therapy administered**: There is no explicit statement that the therapy was not given. However, the context suggests it has been ongoing since there are references to progression and stable disease on this regimen.\n\n- **Failure event occurred**: The note contains conflicting statements about whether a failure event occurred:\n  - \"first-line FOLFOX has failed\" implies a failure event.\n  - \"CT today shows stable disease on first-line FOLFOX; continue current regimen, no switch\" suggests that the therapy is still effective and there is no failure.\n\n- **Failure of first-line**: The initial statement indicates that the failure is related to the first-line therapy (FOLFOX), but this conflicts with the later statement about stable disease.\n\n- **Claims conflict**: There are clear contradictions in the note. The AM oncology entry states that FOLFOX has failed, while the PM addendum on the same day contradicts this by stating there is stable disease and no need to switch regimens.\n\n- **Evidence uncertain, incomplete, or mixed**: Given the conflicting statements about the effectiveness of the first-line therapy (FOLFOX), the evidence is mixed. The note does not provide a clear resolution to whether the failure event actually occurred or if the therapy should continue.",
+          "analysis_flags": {
+            "mentions_contradiction": true,
+            "mentions_uncertainty": true
+          },
+          "extraction": {
+            "stated_line": "first",
+            "regimen_names": [
+              "FOLFOX"
+            ],
+            "administration_status": "unknown",
+            "outcome_statements": [
+              {
+                "text": "first-line FOLFOX has failed",
+                "polarity": "failure"
+              },
+              {
+                "text": "CT today shows stable disease on first-line FOLFOX; continue current regimen, no switch",
+                "polarity": "ongoing"
+              }
+            ],
+            "implicit_cues": [],
+            "uncertainty_cues": [
+              "mixed"
+            ],
+            "uncertainty_present": true,
+            "uncertainty_cue": "mixed",
+            "uncertainty_why": "mixed",
+            "contradiction_cues": [
+              {
+                "a": "first-line FOLFOX has failed",
+                "b": "CT today shows stable disease on first-line FOLFOX; continue current regimen, no switch"
+              }
+            ],
+            "contradiction_present": true,
+            "quotes": [
+              "first-line FOLFOX has failed",
+              "CT today shows stable disease on first-line FOLFOX; continue current regimen, no switch"
+            ],
+            "notes": "Conflicting statements about the effectiveness of first-line therapy (FOLFOX) with mixed evidence.",
+            "backend": "ollama:qwen2.5-coder:32b:from-analysis",
+            "contradiction": {
+              "present": true,
+              "span_a": "first-line FOLFOX has failed",
+              "span_b": "CT today shows stable disease on first-line FOLFOX; continue current regimen, no switch"
+            },
+            "uncertainty": {
+              "present": true,
+              "cue": "mixed",
+              "why": "mixed"
+            }
+          },
+          "grounding": {
+            "first_line_identified": "true",
+            "first_line_administered": "true",
+            "failure_event": "true",
+            "failure_of_first_line": "true",
+            "contradiction": true,
+            "uncertainty": false,
+            "trace": [
+              "X=true (extractor contradiction.present=true with spans)",
+              "A=true (stated first-line or implicit 1L cue)",
+              "B=true (inferred: failure of an identified first line implies it was given)",
+              "C=true (failure polarity)",
+              "D=true (failure attributed to identified first-line)"
+            ]
+          },
+          "rule": {
+            "verdict": "CONTRADICTION",
+            "fired_rule": "X \u2192 CONTRADICTION",
+            "trace": [
+              "X is true \u2192 CONTRADICTION (short-circuit)"
+            ]
+          },
+          "verdict": "CONTRADICTION"
+        }
+      },
+      "match_gold": {
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "loss_stage": {
+        "A": "none",
+        "B": "none",
+        "C": "none",
+        "D": "none"
+      }
+    },
+    {
+      "id": "C6",
+      "category": "conflicting",
+      "evidence": "ED triage: patient reports never having chemotherapy. Medical oncology follow-up: completed six cycles of first-line gemcitabine/nab-paclitaxel, then radiographic progression in the liver.",
+      "why": "One note denies any chemo; a later note describes completed first-line cycles then progression.",
+      "gold": "CONTRADICTION",
+      "expected_distinction": "contradiction",
+      "model": "qwen2.5-coder:32b",
+      "conditions": {
+        "A_direct_verdict": {
+          "verdict": "SATISFIED",
+          "rationale": "The note identifies and confirms the administration of first-line therapy (gemcitabine/nab-paclitaxel) and reports a failure event (radiographic progression in the liver), which is attributed to that regimen.",
+          "backend": "ollama:qwen2.5-coder:32b"
+        },
+        "B_analysis_then_verdict": {
+          "analysis": "The clinical note provides information that supports several aspects of the formal condition FIRST_LINE_THERAPY_FAILED:\n\n- **First-line therapy identified**: The note mentions \"first-line gemcitabine/nab-paclitaxel,\" which clearly identifies a first-line systemic therapy.\n  \n- **Therapy was given (not merely planned)**: The patient is reported to have \"completed six cycles of first-line gemcitabine/nab-paclitaxel,\" indicating that the therapy was administered, not just planned.\n\n- **Failure event occurred**: There is mention of a \"radiographic progression in the liver,\" which can be interpreted as a failure event, specifically progression of disease.\n\n- **Failure of the first-line regimen**: The progression noted (\"radiographic progression in the liver\") happened after completion of the first-line therapy (gemcitabine/nab-paclitaxel), suggesting that the failure is associated with this first-line regimen.\n\nThere are no apparent contradictions or conflicting claims within the note. The evidence provided is clear and consistent, supporting all necessary conditions for FIRST_LINE_THERAPY_FAILED without any uncertainty or mixed signals.",
+          "analysis_flags": {
+            "mentions_contradiction": true,
+            "mentions_uncertainty": true
+          },
+          "verdict": "SATISFIED",
+          "rationale": "The clinical note clearly identifies first-line gemcitabine/nab-paclitaxel therapy that was administered and resulted in radiographic progression in the liver, indicating failure of the regimen.",
+          "backend": "ollama:qwen2.5-coder:32b:from-analysis"
+        },
+        "C_structured_pipeline": {
+          "extraction": {
+            "stated_line": "first",
+            "regimen_names": [
+              "gemcitabine/nab-paclitaxel"
+            ],
+            "administration_status": "given",
+            "outcome_statements": [
+              {
+                "text": "radiographic progression in the liver",
+                "polarity": "failure"
+              }
+            ],
+            "implicit_cues": [],
+            "uncertainty_cues": [],
+            "uncertainty_present": false,
+            "uncertainty_cue": "",
+            "uncertainty_why": "",
+            "contradiction_cues": [
+              {
+                "a": "patient reports never having chemotherapy",
+                "b": "completed six cycles of first-line gemcitabine/nab-paclitaxel"
+              }
+            ],
+            "contradiction_present": true,
+            "quotes": [
+              "patient reports never having chemotherapy",
+              "completed six cycles of first-line gemcitabine/nab-paclitaxel"
+            ],
+            "notes": "Contradiction between patient's report and documented treatment.",
+            "backend": "ollama:qwen2.5-coder:32b",
+            "contradiction": {
+              "present": true,
+              "span_a": "patient reports never having chemotherapy",
+              "span_b": "completed six cycles of first-line gemcitabine/nab-paclitaxel"
+            },
+            "uncertainty": {
+              "present": false,
+              "cue": null,
+              "why": null
+            }
+          },
+          "grounding": {
+            "first_line_identified": "true",
+            "first_line_administered": "true",
+            "failure_event": "true",
+            "failure_of_first_line": "true",
+            "contradiction": true,
+            "uncertainty": false,
+            "trace": [
+              "X=true (extractor contradiction.present=true with spans)",
+              "A=true (stated first-line or implicit 1L cue)",
+              "B=true (administered/given)",
+              "C=true (failure polarity)",
+              "D=true (failure attributed to identified first-line)",
+              "U=false (extractor uncertainty.present=false / none)"
+            ]
+          },
+          "rule": {
+            "verdict": "CONTRADICTION",
+            "fired_rule": "X \u2192 CONTRADICTION",
+            "trace": [
+              "X is true \u2192 CONTRADICTION (short-circuit)"
+            ]
+          },
+          "verdict": "CONTRADICTION"
+        },
+        "D_analysis_then_structure": {
+          "analysis": "The clinical note provides information that supports several aspects of the formal condition FIRST_LINE_THERAPY_FAILED:\n\n- **First-line therapy identified**: The note mentions \"first-line gemcitabine/nab-paclitaxel,\" which clearly identifies a first-line systemic therapy.\n  \n- **Therapy was given (not merely planned)**: The patient is reported to have \"completed six cycles of first-line gemcitabine/nab-paclitaxel,\" indicating that the therapy was administered, not just planned.\n\n- **Failure event occurred**: There is mention of a \"radiographic progression in the liver,\" which can be interpreted as a failure event, specifically progression of disease.\n\n- **Failure of the first-line regimen**: The progression noted (\"radiographic progression in the liver\") happened after completion of the first-line therapy (gemcitabine/nab-paclitaxel), suggesting that the failure is associated with this first-line regimen.\n\nThere are no apparent contradictions or conflicting claims within the note. The evidence provided is clear and consistent, supporting all necessary conditions for FIRST_LINE_THERAPY_FAILED without any uncertainty or mixed signals.",
+          "analysis_flags": {
+            "mentions_contradiction": true,
+            "mentions_uncertainty": true
+          },
+          "extraction": {
+            "stated_line": "first",
+            "regimen_names": [
+              "gemcitabine/nab-paclitaxel"
+            ],
+            "administration_status": "given",
+            "outcome_statements": [
+              {
+                "text": "radiographic progression in the liver",
+                "polarity": "failure"
+              }
+            ],
+            "implicit_cues": [],
+            "uncertainty_cues": [],
+            "uncertainty_present": false,
+            "uncertainty_cue": "",
+            "uncertainty_why": "",
+            "contradiction_cues": [],
+            "contradiction_present": false,
+            "quotes": [
+              "first-line gemcitabine/nab-paclitaxel",
+              "completed six cycles of first-line gemcitabine/nab-paclitaxel",
+              "radiographic progression in the liver"
+            ],
+            "notes": "The note clearly identifies and confirms failure of first-line therapy with gemcitabine/nab-paclitaxel.",
+            "backend": "ollama:qwen2.5-coder:32b:from-analysis",
+            "contradiction": {
+              "present": false,
+              "span_a": null,
+              "span_b": null
+            },
+            "uncertainty": {
+              "present": false,
+              "cue": null,
+              "why": null
+            }
+          },
+          "grounding": {
+            "first_line_identified": "true",
+            "first_line_administered": "true",
+            "failure_event": "true",
+            "failure_of_first_line": "true",
+            "contradiction": false,
+            "uncertainty": false,
+            "trace": [
+              "X=false (extractor contradiction.present=false / none)",
+              "A=true (stated first-line or implicit 1L cue)",
+              "B=true (administered/given)",
+              "C=true (failure polarity)",
+              "D=true (failure attributed to identified first-line)",
+              "U=false (extractor uncertainty.present=false / none)"
+            ]
+          },
+          "rule": {
+            "verdict": "SATISFIED",
+            "fired_rule": "A \u2227 B \u2227 C \u2227 D \u2192 SATISFIED",
+            "trace": [
+              "A \u2227 B \u2227 C \u2227 D all true"
+            ]
+          },
+          "verdict": "SATISFIED"
+        }
+      },
+      "match_gold": {
+        "A": false,
+        "B": false,
+        "C": true,
+        "D": false
+      },
+      "loss_stage": {
+        "A": "direct_verdict_miss",
+        "B": "analysis_output_misalignment",
+        "C": "none",
+        "D": "representation_loss"
+      }
+    },
+    {
+      "id": "C7",
+      "category": "conflicting",
+      "evidence": "Outside consultation letter: failed first-line systemic therapy, referred for next-line options. Internal chart review: no first-line systemic therapy was administered here or elsewhere; treatment to date is best supportive care only.",
+      "why": "Outside letter asserts first-line failure; local review says systemic first-line was never given.",
+      "gold": "CONTRADICTION",
+      "expected_distinction": "contradiction",
+      "model": "qwen2.5-coder:32b",
+      "conditions": {
+        "A_direct_verdict": {
+          "verdict": "CONTRADICTION",
+          "rationale": "The note contains mutually incompatible claims regarding whether a first-line systemic therapy was administered.",
+          "backend": "ollama:qwen2.5-coder:32b"
+        },
+        "B_analysis_then_verdict": {
+          "analysis": "The clinical note contains conflicting information regarding the administration of a first-line therapy and its failure.\n\n- **First-line therapy identified**: The external consultation letter suggests that a first-line systemic therapy was identified, as it mentions \"failed first-line systemic therapy.\" However, the internal chart review explicitly states that no first-line systemic therapy was administered either at their facility or elsewhere.\n  \n- **First-line therapy given**: The external consultation letter implies that the first-line therapy was not only identified but also administered, since it refers to a failure of this therapy. In contrast, the internal chart review clearly indicates that no such therapy was administered.\n\n- **Failure event occurred**: The external consultation letter mentions a \"failed first-line systemic therapy,\" indicating that a failure event did occur according to their assessment. However, the internal chart review does not mention any failure event since it states that no first-line therapy was given.\n\n- **Failure of first-line therapy**: Given the conflicting information, it is unclear whether the failure event referred to in the external consultation letter pertains to a first-line therapy or if there even was one administered. The internal chart review does not support this claim at all.\n\n- **Claims conflict**: There are clear contradictions between the external consultation letter and the internal chart review regarding both the administration of a first-line therapy and whether a failure event occurred.\n\n- **Evidence is uncertain, incomplete, or mixed**: Due to the conflicting claims, the evidence provided in the note is mixed and does not provide a clear picture of whether a first-line therapy was administered and if it failed.",
+          "analysis_flags": {
+            "mentions_contradiction": true,
+            "mentions_uncertainty": true
+          },
+          "verdict": "CONTRADICTION",
+          "rationale": "The clinical note contains conflicting information regarding both the administration of a first-line therapy and its failure, with the external consultation letter indicating a failure while the internal chart review states no therapy was administered.",
+          "backend": "ollama:qwen2.5-coder:32b:from-analysis"
+        },
+        "C_structured_pipeline": {
+          "extraction": {
+            "stated_line": "first",
+            "regimen_names": [],
+            "administration_status": "not_given",
+            "outcome_statements": [
+              {
+                "text": "failed first-line systemic therapy",
+                "polarity": "failure"
+              }
+            ],
+            "implicit_cues": [
+              "platinum_refractory"
+            ],
+            "uncertainty_cues": [],
+            "uncertainty_present": false,
+            "uncertainty_cue": "",
+            "uncertainty_why": "",
+            "contradiction_cues": [
+              {
+                "a": "failed first-line systemic therapy",
+                "b": "no first-line systemic therapy was administered here or elsewhere"
+              }
+            ],
+            "contradiction_present": true,
+            "quotes": [
+              "failed first-line systemic therapy",
+              "no first-line systemic therapy was administered here or elsewhere"
+            ],
+            "notes": "Contradiction between failed first-line therapy and no administration of first-line therapy.",
+            "backend": "ollama:qwen2.5-coder:32b",
+            "contradiction": {
+              "present": true,
+              "span_a": "failed first-line systemic therapy",
+              "span_b": "no first-line systemic therapy was administered here or elsewhere"
+            },
+            "uncertainty": {
+              "present": false,
+              "cue": null,
+              "why": null
+            }
+          },
+          "grounding": {
+            "first_line_identified": "true",
+            "first_line_administered": "false",
+            "failure_event": "true",
+            "failure_of_first_line": "true",
+            "contradiction": true,
+            "uncertainty": false,
+            "trace": [
+              "X=true (extractor contradiction.present=true with spans)",
+              "A=true (stated first-line or implicit 1L cue)",
+              "B=false (administration_status=not_given)",
+              "C=true (failure polarity)",
+              "D=true (failure attributed to identified first-line)",
+              "U=false (extractor uncertainty.present=false / none)"
+            ]
+          },
+          "rule": {
+            "verdict": "CONTRADICTION",
+            "fired_rule": "X \u2192 CONTRADICTION",
+            "trace": [
+              "X is true \u2192 CONTRADICTION (short-circuit)"
+            ]
+          },
+          "verdict": "CONTRADICTION"
+        },
+        "D_analysis_then_structure": {
+          "analysis": "The clinical note contains conflicting information regarding the administration of a first-line therapy and its failure.\n\n- **First-line therapy identified**: The external consultation letter suggests that a first-line systemic therapy was identified, as it mentions \"failed first-line systemic therapy.\" However, the internal chart review explicitly states that no first-line systemic therapy was administered either at their facility or elsewhere.\n  \n- **First-line therapy given**: The external consultation letter implies that the first-line therapy was not only identified but also administered, since it refers to a failure of this therapy. In contrast, the internal chart review clearly indicates that no such therapy was administered.\n\n- **Failure event occurred**: The external consultation letter mentions a \"failed first-line systemic therapy,\" indicating that a failure event did occur according to their assessment. However, the internal chart review does not mention any failure event since it states that no first-line therapy was given.\n\n- **Failure of first-line therapy**: Given the conflicting information, it is unclear whether the failure event referred to in the external consultation letter pertains to a first-line therapy or if there even was one administered. The internal chart review does not support this claim at all.\n\n- **Claims conflict**: There are clear contradictions between the external consultation letter and the internal chart review regarding both the administration of a first-line therapy and whether a failure event occurred.\n\n- **Evidence is uncertain, incomplete, or mixed**: Due to the conflicting claims, the evidence provided in the note is mixed and does not provide a clear picture of whether a first-line therapy was administered and if it failed.",
+          "analysis_flags": {
+            "mentions_contradiction": true,
+            "mentions_uncertainty": true
+          },
+          "extraction": {
+            "stated_line": "first",
+            "regimen_names": [],
+            "administration_status": "unknown",
+            "outcome_statements": [
+              {
+                "text": "failed first-line systemic therapy",
+                "polarity": "failure"
+              }
+            ],
+            "implicit_cues": [],
+            "uncertainty_cues": [
+              "mixed"
+            ],
+            "uncertainty_present": true,
+            "uncertainty_cue": "mixed",
+            "uncertainty_why": "mixed",
+            "contradiction_cues": [
+              {
+                "a": "failed first-line systemic therapy",
+                "b": "no first-line systemic therapy was administered either at their facility or elsewhere"
+              }
+            ],
+            "contradiction_present": true,
+            "quotes": [
+              "failed first-line systemic therapy",
+              "no first-line systemic therapy was administered either at their facility or elsewhere"
+            ],
+            "notes": "Conflicting information regarding the administration and failure of a first-line therapy.",
+            "backend": "ollama:qwen2.5-coder:32b:from-analysis",
+            "contradiction": {
+              "present": true,
+              "span_a": "failed first-line systemic therapy",
+              "span_b": "no first-line systemic therapy was administered either at their facility or elsewhere"
+            },
+            "uncertainty": {
+              "present": true,
+              "cue": "mixed",
+              "why": "mixed"
+            }
+          },
+          "grounding": {
+            "first_line_identified": "true",
+            "first_line_administered": "true",
+            "failure_event": "unknown",
+            "failure_of_first_line": "unknown",
+            "contradiction": false,
+            "uncertainty": true,
+            "trace": [
+              "X=true (extractor contradiction.present=true with spans)",
+              "X=false (uncertainty: unresolved alternative, not same-event conflict)",
+              "A=true (stated first-line or implicit 1L cue)",
+              "B=true (inferred: failure of an identified first line implies it was given)",
+              "C=true (failure polarity)",
+              "D=true (failure attributed to identified first-line)",
+              "U=true (extractor uncertainty.present, why='mixed'; keep CD unknown)",
+              "C=unknown (uncertainty.present; was true)",
+              "D=unknown (uncertainty.present; was true)"
+            ]
+          },
+          "rule": {
+            "verdict": "UNCERTAIN",
+            "fired_rule": "any(A,B,C,D)=unknown \u2192 UNCERTAIN",
+            "trace": [
+              "Unknown atoms: C failure_event, D failure_of_first_line"
+            ]
+          },
+          "verdict": "UNCERTAIN"
+        }
+      },
+      "match_gold": {
+        "A": true,
+        "B": true,
+        "C": true,
+        "D": false
+      },
+      "loss_stage": {
+        "A": "none",
+        "B": "none",
+        "C": "none",
+        "D": "symbolic_failure"
+      }
+    },
+    {
+      "id": "C8",
+      "category": "conflicting",
+      "evidence": "Interval note: progression on first-line palbociclib plus letrozole. Subsequent clinic note: excellent ongoing response to first-line palbociclib plus letrozole; continue current treatment.",
+      "why": "Same named first-line regimen described as progressed and as excellent ongoing response. Gold stays CONTRADICTION (identity/time class); do not retune after seeing models.",
+      "gold": "CONTRADICTION",
+      "expected_distinction": "contradiction",
+      "model": "qwen2.5-coder:32b",
+      "conditions": {
+        "A_direct_verdict": {
+          "verdict": "CONTRADICTION",
+          "rationale": "The note contains mutually incompatible claims regarding the progression and ongoing response to the first-line therapy.",
+          "backend": "ollama:qwen2.5-coder:32b"
+        },
+        "B_analysis_then_verdict": {
+          "analysis": "The clinical note provides mixed evidence regarding the formal condition FIRST_LINE_THERAPY_FAILED.\n\n- **First-line therapy identified**: The note mentions \"first-line palbociclib plus letrozole,\" indicating that a first-line therapy is indeed identified.\n  \n- **First-line therapy administered**: There is no explicit statement about whether the therapy was merely planned or actually given. However, the mention of progression and response suggests that the treatment was administered.\n\n- **Failure event**: The interval note states \"progression on first-line palbociclib plus letrozole,\" indicating a failure event. Conversely, the subsequent clinic note mentions an \"excellent ongoing response to first-line palbocliclib plus letrozole; continue current treatment,\" suggesting no failure event.\n\n- **Failure of first-line therapy**: The interval note implies that the progression is related to the first-line therapy, supporting this criterion. However, the subsequent note contradicts this by indicating an ongoing response.\n\n- **Claims conflict**: There are conflicting claims regarding whether there was a failure event. The interval note indicates progression (failure), while the subsequent clinic note indicates an excellent ongoing response (no failure).\n\n- **Evidence is uncertain, incomplete, or mixed**: Given the conflicting statements about the patient's response to the therapy, the evidence is mixed and uncertain.",
+          "analysis_flags": {
+            "mentions_contradiction": true,
+            "mentions_uncertainty": true
+          },
+          "verdict": "UNCERTAIN",
+          "rationale": "The clinical note provides conflicting information regarding whether there was a failure event with the first-line therapy.",
+          "backend": "ollama:qwen2.5-coder:32b:from-analysis"
+        },
+        "C_structured_pipeline": {
+          "extraction": {
+            "stated_line": "first",
+            "regimen_names": [
+              "palbociclib",
+              "letrozole"
+            ],
+            "administration_status": "given",
+            "outcome_statements": [
+              {
+                "text": "progression on first-line palbociclib plus letrozole",
+                "polarity": "failure"
+              },
+              {
+                "text": "excellent ongoing response to first-line palbociclib plus letrozole",
+                "polarity": "ongoing"
+              }
+            ],
+            "implicit_cues": [
+              "response_then_progression"
+            ],
+            "uncertainty_cues": [],
+            "uncertainty_present": false,
+            "uncertainty_cue": "",
+            "uncertainty_why": "",
+            "contradiction_cues": [
+              {
+                "a": "progression on first-line palbociclib plus letrozole",
+                "b": "excellent ongoing response to first-line palbociclib plus letrozole"
+              }
+            ],
+            "contradiction_present": true,
+            "quotes": [
+              "progression on first-line palbociclib plus letrozole",
+              "excellent ongoing response to first-line palbociclib plus letrozole; continue current treatment"
+            ],
+            "notes": "Contradictory outcomes reported for the same regimen.",
+            "backend": "ollama:qwen2.5-coder:32b",
+            "contradiction": {
+              "present": true,
+              "span_a": "progression on first-line palbociclib plus letrozole",
+              "span_b": "excellent ongoing response to first-line palbociclib plus letrozole"
+            },
+            "uncertainty": {
+              "present": false,
+              "cue": null,
+              "why": null
+            }
+          },
+          "grounding": {
+            "first_line_identified": "true",
+            "first_line_administered": "true",
+            "failure_event": "true",
+            "failure_of_first_line": "true",
+            "contradiction": true,
+            "uncertainty": false,
+            "trace": [
+              "X=true (extractor contradiction.present=true with spans)",
+              "A=true (stated first-line or implicit 1L cue)",
+              "B=true (administered/given)",
+              "C=true (failure polarity)",
+              "D=true (failure attributed to identified first-line)",
+              "U=false (extractor uncertainty.present=false / none)"
+            ]
+          },
+          "rule": {
+            "verdict": "CONTRADICTION",
+            "fired_rule": "X \u2192 CONTRADICTION",
+            "trace": [
+              "X is true \u2192 CONTRADICTION (short-circuit)"
+            ]
+          },
+          "verdict": "CONTRADICTION"
+        },
+        "D_analysis_then_structure": {
+          "analysis": "The clinical note provides mixed evidence regarding the formal condition FIRST_LINE_THERAPY_FAILED.\n\n- **First-line therapy identified**: The note mentions \"first-line palbociclib plus letrozole,\" indicating that a first-line therapy is indeed identified.\n  \n- **First-line therapy administered**: There is no explicit statement about whether the therapy was merely planned or actually given. However, the mention of progression and response suggests that the treatment was administered.\n\n- **Failure event**: The interval note states \"progression on first-line palbociclib plus letrozole,\" indicating a failure event. Conversely, the subsequent clinic note mentions an \"excellent ongoing response to first-line palbocliclib plus letrozole; continue current treatment,\" suggesting no failure event.\n\n- **Failure of first-line therapy**: The interval note implies that the progression is related to the first-line therapy, supporting this criterion. However, the subsequent note contradicts this by indicating an ongoing response.\n\n- **Claims conflict**: There are conflicting claims regarding whether there was a failure event. The interval note indicates progression (failure), while the subsequent clinic note indicates an excellent ongoing response (no failure).\n\n- **Evidence is uncertain, incomplete, or mixed**: Given the conflicting statements about the patient's response to the therapy, the evidence is mixed and uncertain.",
+          "analysis_flags": {
+            "mentions_contradiction": true,
+            "mentions_uncertainty": true
+          },
+          "extraction": {
+            "stated_line": "first",
+            "regimen_names": [
+              "palbociclib plus letrozole"
+            ],
+            "administration_status": "unknown",
+            "outcome_statements": [
+              {
+                "text": "progression on first-line palbociclib plus letrozole",
+                "polarity": "failure"
+              },
+              {
+                "text": "excellent ongoing response to first-line palbocliclib plus letrozole; continue current treatment",
+                "polarity": "response"
+              }
+            ],
+            "implicit_cues": [],
+            "uncertainty_cues": [
+              "mixed"
+            ],
+            "uncertainty_present": true,
+            "uncertainty_cue": "mixed",
+            "uncertainty_why": "mixed",
+            "contradiction_cues": [
+              {
+                "a": "progression on first-line palbociclib plus letrozole",
+                "b": "excellent ongoing response to first-line palbocliclib plus letrozole; continue current treatment"
+              }
+            ],
+            "contradiction_present": true,
+            "quotes": [
+              "first-line palbociclib plus letrozole",
+              "progression on first-line palbociclib plus letrozole",
+              "excellent ongoing response to first-line palbociclib plus letrozole; continue current treatment"
+            ],
+            "notes": "Conflicting statements about the patient's response to first-line therapy.",
+            "backend": "ollama:qwen2.5-coder:32b:from-analysis",
+            "contradiction": {
+              "present": true,
+              "span_a": "progression on first-line palbociclib plus letrozole",
+              "span_b": "excellent ongoing response to first-line palbocliclib plus letrozole; continue current treatment"
+            },
+            "uncertainty": {
+              "present": true,
+              "cue": "mixed",
+              "why": "mixed"
+            }
+          },
+          "grounding": {
+            "first_line_identified": "true",
+            "first_line_administered": "true",
+            "failure_event": "true",
+            "failure_of_first_line": "true",
+            "contradiction": true,
+            "uncertainty": false,
+            "trace": [
+              "X=true (extractor contradiction.present=true with spans)",
+              "A=true (stated first-line or implicit 1L cue)",
+              "B=true (inferred: failure of an identified first line implies it was given)",
+              "C=true (failure polarity)",
+              "D=true (failure attributed to identified first-line)"
+            ]
+          },
+          "rule": {
+            "verdict": "CONTRADICTION",
+            "fired_rule": "X \u2192 CONTRADICTION",
+            "trace": [
+              "X is true \u2192 CONTRADICTION (short-circuit)"
+            ]
+          },
+          "verdict": "CONTRADICTION"
+        }
+      },
+      "match_gold": {
+        "A": true,
+        "B": false,
+        "C": true,
+        "D": true
+      },
+      "loss_stage": {
+        "A": "none",
+        "B": "analysis_output_misalignment",
+        "C": "none",
+        "D": "none"
+      }
+    },
+    {
+      "id": "U5",
+      "category": "uncertain",
+      "evidence": "Possible progression on first-line sunitinib; MRI pending next Thursday before any regimen change.",
+      "why": "Possible progression on first-line; confirmatory imaging not yet done.",
+      "gold": "UNCERTAIN",
+      "expected_distinction": "uncertainty",
+      "model": "qwen2.5-coder:32b",
+      "conditions": {
+        "A_direct_verdict": {
+          "verdict": "NOT_SATISFIED",
+          "rationale": "The note mentions possible progression but does not confirm it, and no failure event is explicitly stated or implied.",
+          "backend": "ollama:qwen2.5-coder:32b"
+        },
+        "B_analysis_then_verdict": {
+          "analysis": "The clinical note suggests that a first-line therapy, specifically sunitinib, is identified (point A). However, the note does not confirm whether this therapy was actually administered or merely planned (point B). The phrase \"Possible progression on first-line sunitinib\" indicates a potential failure event (point C), but it is speculative and not definitive. There is no clear statement about whether any regimen change has occurred or if the MRI will confirm the progression, making the evidence uncertain (point D). Therefore, while there are hints of a first-line therapy and a possible failure, the note does not provide conclusive information on all required points.",
+          "analysis_flags": {
+            "mentions_contradiction": false,
+            "mentions_uncertainty": true
+          },
+          "verdict": "UNCERTAIN",
+          "rationale": "The clinical note suggests a potential progression on sunitinib but lacks definitive confirmation that it was administered or if this indicates a failed first-line therapy.",
+          "backend": "ollama:qwen2.5-coder:32b:from-analysis"
+        },
+        "C_structured_pipeline": {
+          "extraction": {
+            "stated_line": "first",
+            "regimen_names": [
+              "sunitinib"
+            ],
+            "administration_status": "given",
+            "outcome_statements": [
+              {
+                "text": "possible progression",
+                "polarity": "unknown"
+              }
+            ],
+            "implicit_cues": [],
+            "uncertainty_cues": [
+              "possible",
+              "awaiting_scan",
+              "pending",
+              "Possible progression on first-line sunitinib"
+            ],
+            "uncertainty_present": true,
+            "uncertainty_cue": "Possible progression on first-line sunitinib",
+            "uncertainty_why": "pending",
+            "contradiction_cues": [],
+            "contradiction_present": false,
+            "quotes": [
+              "Possible progression on first-line sunitinib",
+              "MRI pending next Thursday before any regimen change"
+            ],
+            "notes": "Uncertainty about the outcome of first-line sunitinib treatment due to pending MRI.",
+            "backend": "ollama:qwen2.5-coder:32b",
+            "contradiction": {
+              "present": false,
+              "span_a": null,
+              "span_b": null
+            },
+            "uncertainty": {
+              "present": true,
+              "cue": "Possible progression on first-line sunitinib",
+              "why": "pending"
+            }
+          },
+          "grounding": {
+            "first_line_identified": "true",
+            "first_line_administered": "true",
+            "failure_event": "unknown",
+            "failure_of_first_line": "unknown",
+            "contradiction": false,
+            "uncertainty": true,
+            "trace": [
+              "X=false (extractor contradiction.present=false / none)",
+              "A=true (stated first-line or implicit 1L cue)",
+              "B=true (administered/given)",
+              "C=unknown (mixed response or uncertainty cues)",
+              "D=unknown",
+              "U=true (extractor uncertainty.present, why='pending'; keep CD unknown)"
+            ]
+          },
+          "rule": {
+            "verdict": "UNCERTAIN",
+            "fired_rule": "any(A,B,C,D)=unknown \u2192 UNCERTAIN",
+            "trace": [
+              "Unknown atoms: C failure_event, D failure_of_first_line"
+            ]
+          },
+          "verdict": "UNCERTAIN"
+        },
+        "D_analysis_then_structure": {
+          "analysis": "The clinical note suggests that a first-line therapy, specifically sunitinib, is identified (point A). However, the note does not confirm whether this therapy was actually administered or merely planned (point B). The phrase \"Possible progression on first-line sunitinib\" indicates a potential failure event (point C), but it is speculative and not definitive. There is no clear statement about whether any regimen change has occurred or if the MRI will confirm the progression, making the evidence uncertain (point D). Therefore, while there are hints of a first-line therapy and a possible failure, the note does not provide conclusive information on all required points.",
+          "analysis_flags": {
+            "mentions_contradiction": false,
+            "mentions_uncertainty": true
+          },
+          "extraction": {
+            "stated_line": "first",
+            "regimen_names": [
+              "sunitinib"
+            ],
+            "administration_status": "unknown",
+            "outcome_statements": [
+              {
+                "text": "Possible progression on first-line sunitinib",
+                "polarity": "failure"
+              }
+            ],
+            "implicit_cues": [],
+            "uncertainty_cues": [
+              "possible progression",
+              "not definitive",
+              "no clear statement about regimen change",
+              "MRI will confirm the progression",
+              "unknown_outcome",
+              "Possible progression on first-line sunitinib"
+            ],
+            "uncertainty_present": true,
+            "uncertainty_cue": "Possible progression on first-line sunitinib",
+            "uncertainty_why": "unknown_outcome",
+            "contradiction_cues": [],
+            "contradiction_present": false,
+            "quotes": [
+              "Possible progression on first-line sunitinib"
+            ],
+            "notes": "Hints of first-line therapy and possible failure, but inconclusive information.",
+            "backend": "ollama:qwen2.5-coder:32b:from-analysis",
+            "contradiction": {
+              "present": false,
+              "span_a": null,
+              "span_b": null
+            },
+            "uncertainty": {
+              "present": true,
+              "cue": "Possible progression on first-line sunitinib",
+              "why": "unknown_outcome"
+            }
+          },
+          "grounding": {
+            "first_line_identified": "true",
+            "first_line_administered": "true",
+            "failure_event": "unknown",
+            "failure_of_first_line": "unknown",
+            "contradiction": false,
+            "uncertainty": true,
+            "trace": [
+              "X=false (extractor contradiction.present=false / none)",
+              "A=true (stated first-line or implicit 1L cue)",
+              "B=true (inferred: failure of an identified first line implies it was given)",
+              "C=true (failure polarity)",
+              "D=true (failure attributed to identified first-line)",
+              "U=true (extractor uncertainty.present, why='unknown_outcome'; keep CD unknown)",
+              "C=unknown (uncertainty.present; was true)",
+              "D=unknown (uncertainty.present; was true)"
+            ]
+          },
+          "rule": {
+            "verdict": "UNCERTAIN",
+            "fired_rule": "any(A,B,C,D)=unknown \u2192 UNCERTAIN",
+            "trace": [
+              "Unknown atoms: C failure_event, D failure_of_first_line"
+            ]
+          },
+          "verdict": "UNCERTAIN"
+        }
+      },
+      "match_gold": {
+        "A": false,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "loss_stage": {
+        "A": "direct_verdict_miss",
+        "B": "none",
+        "C": "none",
+        "D": "none"
+      }
+    },
+    {
+      "id": "U6",
+      "category": "uncertain",
+      "evidence": "Family states the patient may have received immunotherapy at an outside clinic last year. No records transferred. Whether that treatment was given, and how it went, is unknown.",
+      "why": "Possible prior therapy at another site; administration and outcome unknown.",
+      "gold": "UNCERTAIN",
+      "expected_distinction": "uncertainty",
+      "model": "qwen2.5-coder:32b",
+      "conditions": {
+        "A_direct_verdict": {
+          "verdict": "NOT_SATISFIED",
+          "rationale": "The note does not provide information about whether the first-line therapy was administered or its outcome.",
+          "backend": "ollama:qwen2.5-coder:32b"
+        },
+        "B_analysis_then_verdict": {
+          "analysis": "The clinical note does not provide concrete information about whether a first-line therapy was identified or administered. The only mention of potential treatment is that \"the patient may have received immunotherapy at an outside clinic last year,\" but this statement is uncertain as no records were transferred and the details of the treatment, including whether it was actually given, are unknown.\n\nThere is no specific information about a failure event related to any therapy in the note. The uncertainty around the administration of the immunotherapy means there is also no clear indication of whether any failure event occurred or if it pertains to a first-line therapy.\n\nGiven the lack of concrete details and the uncertainty surrounding the treatment, there are no claims that conflict, but the evidence provided is incomplete and mixed at best.",
+          "analysis_flags": {
+            "mentions_contradiction": true,
+            "mentions_uncertainty": true
+          },
+          "verdict": "UNCERTAIN",
+          "rationale": "The clinical note does not provide concrete information about whether a first-line therapy was identified or administered, and there is uncertainty around the administration of any potential immunotherapy.",
+          "backend": "ollama:qwen2.5-coder:32b:from-analysis"
+        },
+        "C_structured_pipeline": {
+          "extraction": {
+            "stated_line": "unknown",
+            "regimen_names": [
+              "immunotherapy"
+            ],
+            "administration_status": "unknown",
+            "outcome_statements": [
+              {
+                "text": "unknown",
+                "polarity": "unknown"
+              }
+            ],
+            "implicit_cues": [],
+            "uncertainty_cues": [
+              "may_have",
+              "unknown_outcome",
+              "Whether that treatment was given, and how it went, is unknown."
+            ],
+            "uncertainty_present": true,
+            "uncertainty_cue": "Whether that treatment was given, and how it went, is unknown.",
+            "uncertainty_why": "unknown_outcome",
+            "contradiction_cues": [],
+            "contradiction_present": false,
+            "quotes": [
+              "Family states the patient may have received immunotherapy at an outside clinic last year. No records transferred."
+            ],
+            "notes": "The note expresses uncertainty about whether immunotherapy was administered and its outcome due to lack of transferred records.",
+            "backend": "ollama:qwen2.5-coder:32b",
+            "contradiction": {
+              "present": false,
+              "span_a": null,
+              "span_b": null
+            },
+            "uncertainty": {
+              "present": true,
+              "cue": "Whether that treatment was given, and how it went, is unknown.",
+              "why": "unknown_outcome"
+            }
+          },
+          "grounding": {
+            "first_line_identified": "unknown",
+            "first_line_administered": "unknown",
+            "failure_event": "unknown",
+            "failure_of_first_line": "unknown",
+            "contradiction": false,
+            "uncertainty": true,
+            "trace": [
+              "X=false (extractor contradiction.present=false / none)",
+              "A=unknown (regimen named, line unspecified)",
+              "B=unknown",
+              "C=unknown (mixed response or uncertainty cues)",
+              "D=unknown",
+              "U=true (extractor uncertainty.present, why='unknown_outcome'; keep BCD unknown)"
+            ]
+          },
+          "rule": {
+            "verdict": "UNCERTAIN",
+            "fired_rule": "any(A,B,C,D)=unknown \u2192 UNCERTAIN",
+            "trace": [
+              "Unknown atoms: A first_line_identified, B first_line_administered, C failure_event, D failure_of_first_line"
+            ]
+          },
+          "verdict": "UNCERTAIN"
+        },
+        "D_analysis_then_structure": {
+          "analysis": "The clinical note does not provide concrete information about whether a first-line therapy was identified or administered. The only mention of potential treatment is that \"the patient may have received immunotherapy at an outside clinic last year,\" but this statement is uncertain as no records were transferred and the details of the treatment, including whether it was actually given, are unknown.\n\nThere is no specific information about a failure event related to any therapy in the note. The uncertainty around the administration of the immunotherapy means there is also no clear indication of whether any failure event occurred or if it pertains to a first-line therapy.\n\nGiven the lack of concrete details and the uncertainty surrounding the treatment, there are no claims that conflict, but the evidence provided is incomplete and mixed at best.",
+          "analysis_flags": {
+            "mentions_contradiction": true,
+            "mentions_uncertainty": true
+          },
+          "extraction": {
+            "stated_line": "unknown",
+            "regimen_names": [
+              "immunotherapy"
+            ],
+            "administration_status": "unknown",
+            "outcome_statements": [],
+            "implicit_cues": [],
+            "uncertainty_cues": [
+              "may have received",
+              "no records were transferred",
+              "details of the treatment, including whether it was actually given, are unknown",
+              "possible",
+              "the patient may have received immunotherapy at an outside clinic last year"
+            ],
+            "uncertainty_present": true,
+            "uncertainty_cue": "the patient may have received immunotherapy at an outside clinic last year",
+            "uncertainty_why": "possible",
+            "contradiction_cues": [],
+            "contradiction_present": false,
+            "quotes": [
+              "the patient may have received immunotherapy at an outside clinic last year"
+            ],
+            "notes": "No concrete information about first-line therapy or treatment administration; uncertainty around potential immunotherapy.",
+            "backend": "ollama:qwen2.5-coder:32b:from-analysis",
+            "contradiction": {
+              "present": false,
+              "span_a": null,
+              "span_b": null
+            },
+            "uncertainty": {
+              "present": true,
+              "cue": "the patient may have received immunotherapy at an outside clinic last year",
+              "why": "possible"
+            }
+          },
+          "grounding": {
+            "first_line_identified": "unknown",
+            "first_line_administered": "unknown",
+            "failure_event": "unknown",
+            "failure_of_first_line": "unknown",
+            "contradiction": false,
+            "uncertainty": true,
+            "trace": [
+              "X=false (extractor contradiction.present=false / none)",
+              "A=unknown (regimen named, line unspecified)",
+              "B=unknown",
+              "C=unknown (mixed response or uncertainty cues)",
+              "D=unknown",
+              "U=true (extractor uncertainty.present, why='possible'; keep BCD unknown)"
+            ]
+          },
+          "rule": {
+            "verdict": "UNCERTAIN",
+            "fired_rule": "any(A,B,C,D)=unknown \u2192 UNCERTAIN",
+            "trace": [
+              "Unknown atoms: A first_line_identified, B first_line_administered, C failure_event, D failure_of_first_line"
+            ]
+          },
+          "verdict": "UNCERTAIN"
+        }
+      },
+      "match_gold": {
+        "A": false,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "loss_stage": {
+        "A": "direct_verdict_miss",
+        "B": "none",
+        "C": "none",
+        "D": "none"
+      }
+    },
+    {
+      "id": "U7",
+      "category": "uncertain",
+      "evidence": "On first-line R-CHOP. Mixed response: mediastinal nodes smaller, new questionable splenic lesions. Plan deferred until lymphoma conference.",
+      "why": "Mixed radiographic findings; no clear fail/continue decision yet.",
+      "gold": "UNCERTAIN",
+      "expected_distinction": "uncertainty",
+      "model": "qwen2.5-coder:32b",
+      "conditions": {
+        "A_direct_verdict": {
+          "verdict": "NOT_SATISFIED",
+          "rationale": "The note indicates a mixed response to the first-line therapy but does not mention progression, non-response, or discontinuation for intolerance without a plan to resume.",
+          "backend": "ollama:qwen2.5-coder:32b"
+        },
+        "B_analysis_then_verdict": {
+          "analysis": "The clinical note supports the identification of a first-line therapy as \"R-CHOP\" (A is satisfied). However, it does not clearly indicate that this therapy was administered; instead, it mentions a \"mixed response,\" which suggests some administration but also implies uncertainty or partial effectiveness (B is uncertain).\n\nThe note describes a mixed response with mediastinal nodes smaller and new questionable splenic lesions, indicating some level of progression or non-response. However, the plan to defer further action until a lymphoma conference does not clearly establish a failure event as defined in C. The statement about deferring the plan suggests that the therapy might be reconsidered rather than definitively failing (C is uncertain).\n\nThere are no clear contradictions between the statements regarding A through D. The evidence provided is mixed, with some indication of response and progression, but without a definitive statement of failure or continuation plans (evidence is mixed).",
+          "analysis_flags": {
+            "mentions_contradiction": false,
+            "mentions_uncertainty": true
+          },
+          "verdict": "UNCERTAIN",
+          "rationale": "The clinical note indicates a mixed response to R-CHOP therapy, suggesting both effectiveness and progression, without a clear indication of failure.",
+          "backend": "ollama:qwen2.5-coder:32b:from-analysis"
+        },
+        "C_structured_pipeline": {
+          "extraction": {
+            "stated_line": "first",
+            "regimen_names": [
+              "R-CHOP"
+            ],
+            "administration_status": "given",
+            "outcome_statements": [
+              {
+                "text": "Mixed response: mediastinal nodes smaller, new questionable splenic lesions",
+                "polarity": "mixed"
+              }
+            ],
+            "implicit_cues": [],
+            "uncertainty_cues": [
+              "questionable",
+              "pending",
+              "new questionable splenic lesions"
+            ],
+            "uncertainty_present": true,
+            "uncertainty_cue": "new questionable splenic lesions",
+            "uncertainty_why": "pending",
+            "contradiction_cues": [],
+            "contradiction_present": false,
+            "quotes": [
+              "Mixed response: mediastinal nodes smaller, new questionable splenic lesions"
+            ],
+            "notes": "First-line R-CHOP with mixed response and uncertain new lesions; plan deferred.",
+            "backend": "ollama:qwen2.5-coder:32b",
+            "contradiction": {
+              "present": false,
+              "span_a": null,
+              "span_b": null
+            },
+            "uncertainty": {
+              "present": true,
+              "cue": "new questionable splenic lesions",
+              "why": "pending"
+            }
+          },
+          "grounding": {
+            "first_line_identified": "unknown",
+            "first_line_administered": "unknown",
+            "failure_event": "unknown",
+            "failure_of_first_line": "unknown",
+            "contradiction": false,
+            "uncertainty": true,
+            "trace": [
+              "X=false (extractor contradiction.present=false / none)",
+              "A=true (stated first-line or implicit 1L cue)",
+              "B=true (administered/given)",
+              "C=unknown (mixed response or uncertainty cues)",
+              "D=unknown",
+              "U=true (extractor uncertainty.present, why='pending'; keep ABCD unknown)",
+              "A=unknown (uncertainty.present; was true)",
+              "B=unknown (uncertainty.present; was true)"
+            ]
+          },
+          "rule": {
+            "verdict": "UNCERTAIN",
+            "fired_rule": "any(A,B,C,D)=unknown \u2192 UNCERTAIN",
+            "trace": [
+              "Unknown atoms: A first_line_identified, B first_line_administered, C failure_event, D failure_of_first_line"
+            ]
+          },
+          "verdict": "UNCERTAIN"
+        },
+        "D_analysis_then_structure": {
+          "analysis": "The clinical note supports the identification of a first-line therapy as \"R-CHOP\" (A is satisfied). However, it does not clearly indicate that this therapy was administered; instead, it mentions a \"mixed response,\" which suggests some administration but also implies uncertainty or partial effectiveness (B is uncertain).\n\nThe note describes a mixed response with mediastinal nodes smaller and new questionable splenic lesions, indicating some level of progression or non-response. However, the plan to defer further action until a lymphoma conference does not clearly establish a failure event as defined in C. The statement about deferring the plan suggests that the therapy might be reconsidered rather than definitively failing (C is uncertain).\n\nThere are no clear contradictions between the statements regarding A through D. The evidence provided is mixed, with some indication of response and progression, but without a definitive statement of failure or continuation plans (evidence is mixed).",
+          "analysis_flags": {
+            "mentions_contradiction": false,
+            "mentions_uncertainty": true
+          },
+          "extraction": {
+            "stated_line": "first",
+            "regimen_names": [
+              "R-CHOP"
+            ],
+            "administration_status": "unknown",
+            "outcome_statements": [
+              {
+                "text": "mixed response, mediastinal nodes smaller and new questionable splenic lesions",
+                "polarity": "mixed"
+              }
+            ],
+            "implicit_cues": [],
+            "uncertainty_cues": [
+              "mixed",
+              "questionable",
+              "mixed response, mediastinal nodes smaller and new questionable splenic lesions"
+            ],
+            "uncertainty_present": true,
+            "uncertainty_cue": "mixed response, mediastinal nodes smaller and new questionable splenic lesions",
+            "uncertainty_why": "mixed",
+            "contradiction_cues": [],
+            "contradiction_present": false,
+            "quotes": [
+              "mixed response",
+              "mediastinal nodes smaller",
+              "new questionable splenic lesions"
+            ],
+            "notes": "Mixed response with some progression, uncertain administration status.",
+            "backend": "ollama:qwen2.5-coder:32b:from-analysis",
+            "contradiction": {
+              "present": false,
+              "span_a": null,
+              "span_b": null
+            },
+            "uncertainty": {
+              "present": true,
+              "cue": "mixed response, mediastinal nodes smaller and new questionable splenic lesions",
+              "why": "mixed"
+            }
+          },
+          "grounding": {
+            "first_line_identified": "unknown",
+            "first_line_administered": "unknown",
+            "failure_event": "unknown",
+            "failure_of_first_line": "unknown",
+            "contradiction": false,
+            "uncertainty": true,
+            "trace": [
+              "X=false (extractor contradiction.present=false / none)",
+              "A=true (stated first-line or implicit 1L cue)",
+              "B=unknown",
+              "C=unknown (mixed response or uncertainty cues)",
+              "D=unknown",
+              "U=true (extractor uncertainty.present, why='mixed'; keep ABCD unknown)",
+              "A=unknown (uncertainty.present; was true)"
+            ]
+          },
+          "rule": {
+            "verdict": "UNCERTAIN",
+            "fired_rule": "any(A,B,C,D)=unknown \u2192 UNCERTAIN",
+            "trace": [
+              "Unknown atoms: A first_line_identified, B first_line_administered, C failure_event, D failure_of_first_line"
+            ]
+          },
+          "verdict": "UNCERTAIN"
+        }
+      },
+      "match_gold": {
+        "A": false,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "loss_stage": {
+        "A": "direct_verdict_miss",
+        "B": "none",
+        "C": "none",
+        "D": "none"
+      }
+    },
+    {
+      "id": "U8",
+      "category": "uncertain",
+      "evidence": "Unclear from the scanned notes whether oxaliplatin was given as first-line therapy for metastatic disease or as adjuvant treatment after resection. No definite progression is documented.",
+      "why": "Unresolved whether the named drug was metastatic first-line or adjuvant; no clear progression.",
+      "gold": "UNCERTAIN",
+      "expected_distinction": "uncertainty",
+      "model": "qwen2.5-coder:32b",
+      "conditions": {
+        "A_direct_verdict": {
+          "verdict": "NOT_SATISFIED",
+          "rationale": "The note does not clearly identify oxaliplatin as the first-line therapy, and there is no documentation of a failure event.",
+          "backend": "ollama:qwen2.5-coder:32b"
+        },
+        "B_analysis_then_verdict": {
+          "analysis": "The clinical note does not provide clear evidence to support that a first-line therapy is identified (A). The mention of oxaliplatin being used is ambiguous, as it is unclear whether it was given as first-line therapy for metastatic disease or as adjuvant treatment after resection.\n\nThere is no explicit statement indicating that the therapy was administered (B); rather, there is uncertainty about whether it was even given as a first-line regimen. \n\nThe note does not document any definite progression or failure event (C). The only relevant information is that there is \"no definite progression,\" which suggests that there is no clear evidence of non-response or failure.\n\nGiven the ambiguity and lack of definitive statements, it is uncertain whether any identified therapy was indeed a first-line regimen and if so, whether it failed (D).\n\nOverall, the evidence provided in the note is incomplete and mixed, with significant uncertainty about the administration of oxaliplatin as a first-line therapy and its outcome. There are no clear contradictions, but there is also insufficient information to confirm any of the conditions for FIRST_LINE_THERAPY_FAILED.",
+          "analysis_flags": {
+            "mentions_contradiction": false,
+            "mentions_uncertainty": true
+          },
+          "verdict": "UNCERTAIN",
+          "rationale": "The clinical note does not provide clear evidence to support that a first-line therapy was identified or whether it failed.",
+          "backend": "ollama:qwen2.5-coder:32b:from-analysis"
+        },
+        "C_structured_pipeline": {
+          "extraction": {
+            "stated_line": "unknown",
+            "regimen_names": [
+              "oxaliplatin"
+            ],
+            "administration_status": "unknown",
+            "outcome_statements": [
+              {
+                "text": "No definite progression is documented",
+                "polarity": "ongoing"
+              }
+            ],
+            "implicit_cues": [],
+            "uncertainty_cues": [
+              "questionable",
+              "unresolved_line",
+              "Unclear from the scanned notes whether oxaliplatin was given as first-line therapy for metastatic disease or as adjuvant treatment after resection"
+            ],
+            "uncertainty_present": true,
+            "uncertainty_cue": "Unclear from the scanned notes whether oxaliplatin was given as first-line therapy for metastatic disease or as adjuvant treatment after resection",
+            "uncertainty_why": "unresolved_line",
+            "contradiction_cues": [],
+            "contradiction_present": false,
+            "quotes": [
+              "Unclear from the scanned notes whether oxaliplatin was given as first-line therapy for metastatic disease or as adjuvant treatment after resection",
+              "No definite progression is documented"
+            ],
+            "notes": "The line of therapy and administration status for oxaliplatin are uncertain, with no clear documentation of progression.",
+            "backend": "ollama:qwen2.5-coder:32b",
+            "contradiction": {
+              "present": false,
+              "span_a": null,
+              "span_b": null
+            },
+            "uncertainty": {
+              "present": true,
+              "cue": "Unclear from the scanned notes whether oxaliplatin was given as first-line therapy for metastatic disease or as adjuvant treatment after resection",
+              "why": "unresolved_line"
+            }
+          },
+          "grounding": {
+            "first_line_identified": "unknown",
+            "first_line_administered": "unknown",
+            "failure_event": "unknown",
+            "failure_of_first_line": "unknown",
+            "contradiction": false,
+            "uncertainty": true,
+            "trace": [
+              "X=false (extractor contradiction.present=false / none)",
+              "A=unknown (regimen named, line unspecified)",
+              "B=unknown",
+              "C=unknown (mixed response or uncertainty cues)",
+              "D=unknown",
+              "U=true (extractor uncertainty.present, why='unresolved_line'; keep ABCD unknown)"
+            ]
+          },
+          "rule": {
+            "verdict": "UNCERTAIN",
+            "fired_rule": "any(A,B,C,D)=unknown \u2192 UNCERTAIN",
+            "trace": [
+              "Unknown atoms: A first_line_identified, B first_line_administered, C failure_event, D failure_of_first_line"
+            ]
+          },
+          "verdict": "UNCERTAIN"
+        },
+        "D_analysis_then_structure": {
+          "analysis": "The clinical note does not provide clear evidence to support that a first-line therapy is identified (A). The mention of oxaliplatin being used is ambiguous, as it is unclear whether it was given as first-line therapy for metastatic disease or as adjuvant treatment after resection.\n\nThere is no explicit statement indicating that the therapy was administered (B); rather, there is uncertainty about whether it was even given as a first-line regimen. \n\nThe note does not document any definite progression or failure event (C). The only relevant information is that there is \"no definite progression,\" which suggests that there is no clear evidence of non-response or failure.\n\nGiven the ambiguity and lack of definitive statements, it is uncertain whether any identified therapy was indeed a first-line regimen and if so, whether it failed (D).\n\nOverall, the evidence provided in the note is incomplete and mixed, with significant uncertainty about the administration of oxaliplatin as a first-line therapy and its outcome. There are no clear contradictions, but there is also insufficient information to confirm any of the conditions for FIRST_LINE_THERAPY_FAILED.",
+          "analysis_flags": {
+            "mentions_contradiction": false,
+            "mentions_uncertainty": true
+          },
+          "extraction": {
+            "stated_line": "first",
+            "regimen_names": [
+              "oxaliplatin"
+            ],
+            "administration_status": "unknown",
+            "outcome_statements": [
+              {
+                "text": "no definite progression",
+                "polarity": "ongoing"
+              }
+            ],
+            "implicit_cues": [],
+            "uncertainty_cues": [
+              "ambiguous",
+              "uncertainty about whether it was even given as a first-line regimen",
+              "incomplete and mixed",
+              "unresolved_line",
+              "ambiguity and lack of definitive statements"
+            ],
+            "uncertainty_present": true,
+            "uncertainty_cue": "ambiguity and lack of definitive statements",
+            "uncertainty_why": "unresolved_line",
+            "contradiction_cues": [],
+            "contradiction_present": false,
+            "quotes": [
+              "The clinical note does not provide clear evidence to support that a first-line therapy is identified.",
+              "The mention of oxaliplatin being used is ambiguous, as it is unclear whether it was given as first-line therapy for metastatic disease or as adjuvant treatment after resection.",
+              "There is no explicit statement indicating that the therapy was administered; rather, there is uncertainty about whether it was even given as a first-line regimen.",
+              "The note does not document any definite progression or failure event. The only relevant information is that there is 'no definite progression,' which suggests that there is no clear evidence of non-response or failure."
+            ],
+            "notes": "Incomplete and mixed evidence with significant uncertainty about oxaliplatin administration as a first-line therapy and its outcome.",
+            "backend": "ollama:qwen2.5-coder:32b:from-analysis",
+            "contradiction": {
+              "present": false,
+              "span_a": null,
+              "span_b": null
+            },
+            "uncertainty": {
+              "present": true,
+              "cue": "ambiguity and lack of definitive statements",
+              "why": "unresolved_line"
+            }
+          },
+          "grounding": {
+            "first_line_identified": "unknown",
+            "first_line_administered": "unknown",
+            "failure_event": "unknown",
+            "failure_of_first_line": "unknown",
+            "contradiction": false,
+            "uncertainty": true,
+            "trace": [
+              "X=false (extractor contradiction.present=false / none)",
+              "A=true (stated first-line or implicit 1L cue)",
+              "B=unknown",
+              "C=unknown (mixed response or uncertainty cues)",
+              "D=unknown",
+              "U=true (extractor uncertainty.present, why='unresolved_line'; keep ABCD unknown)",
+              "A=unknown (uncertainty.present; was true)"
+            ]
+          },
+          "rule": {
+            "verdict": "UNCERTAIN",
+            "fired_rule": "any(A,B,C,D)=unknown \u2192 UNCERTAIN",
+            "trace": [
+              "Unknown atoms: A first_line_identified, B first_line_administered, C failure_event, D failure_of_first_line"
+            ]
+          },
+          "verdict": "UNCERTAIN"
+        }
+      },
+      "match_gold": {
+        "A": false,
+        "B": true,
+        "C": true,
+        "D": true
+      },
+      "loss_stage": {
+        "A": "direct_verdict_miss",
+        "B": "none",
+        "C": "none",
+        "D": "none"
+      }
+    }
+  ]
+}

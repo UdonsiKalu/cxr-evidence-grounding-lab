@@ -1,0 +1,28 @@
+{
+  "mode": "artifact_replay_only",
+  "title": "N2S Evidence Grounding \u2014 frozen findings demo",
+  "note": "No live inference. Load Phase 1\u20134 JSON only. Clone the repo to run Ollama locally.",
+  "default_artifact": "phase4-heldout-panel.json",
+  "artifacts": [
+    {
+      "name": "phase4-heldout-panel.json",
+      "label": "Phase-4 held-out (C9\u2013U12)",
+      "kind": "panel"
+    },
+    {
+      "name": "phase3-heldout-panel.json",
+      "label": "Phase-3 held-out (C5\u2013U8)",
+      "kind": "panel"
+    },
+    {
+      "name": "phase2-model-panel.json",
+      "label": "Phase-2 model panel (C1\u2013U4)",
+      "kind": "panel"
+    },
+    {
+      "name": "phase1-transition-c-u.json",
+      "label": "Phase-1 control (Llama C/U)",
+      "kind": "report"
+    }
+  ]
+}

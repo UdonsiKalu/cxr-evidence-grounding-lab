@@ -1,0 +1,73 @@
+{
+  "predicate_id": "FIRST_LINE_THERAPY_FAILED",
+  "gold_is_not_fed_to_models": true,
+  "held_out": true,
+  "prompts_were_not_designed_on_these": true,
+  "note": "Phase-3 frozen. Analogous gold types to C1–C4/U1–U4 with new surface wording. Not merged into data/cases.json. Frozen A–D; B′ not default.",
+  "cases": [
+    {
+      "id": "C5",
+      "category": "conflicting",
+      "expected": "CONTRADICTION",
+      "analog_of": "C1",
+      "why": "Morning plan says first-line failed and switch; same-day late note says continue first-line with stability.",
+      "evidence": "AM oncology: first-line FOLFOX has failed; start second-line FOLFIRI this week. PM addendum the same calendar day: CT today shows stable disease on first-line FOLFOX; continue current regimen, no switch."
+    },
+    {
+      "id": "C6",
+      "category": "conflicting",
+      "expected": "CONTRADICTION",
+      "analog_of": "C2",
+      "why": "One note denies any chemo; a later note describes completed first-line cycles then progression.",
+      "evidence": "ED triage: patient reports never having chemotherapy. Medical oncology follow-up: completed six cycles of first-line gemcitabine/nab-paclitaxel, then radiographic progression in the liver."
+    },
+    {
+      "id": "C7",
+      "category": "conflicting",
+      "expected": "CONTRADICTION",
+      "analog_of": "C3",
+      "why": "Outside letter asserts first-line failure; local review says systemic first-line was never given.",
+      "evidence": "Outside consultation letter: failed first-line systemic therapy, referred for next-line options. Internal chart review: no first-line systemic therapy was administered here or elsewhere; treatment to date is best supportive care only."
+    },
+    {
+      "id": "C8",
+      "category": "conflicting",
+      "expected": "CONTRADICTION",
+      "analog_of": "C4",
+      "why": "Same named first-line regimen described as progressed and as excellent ongoing response. Gold stays CONTRADICTION (identity/time class); do not retune after seeing models.",
+      "evidence": "Interval note: progression on first-line palbociclib plus letrozole. Subsequent clinic note: excellent ongoing response to first-line palbociclib plus letrozole; continue current treatment."
+    },
+    {
+      "id": "U5",
+      "category": "uncertain",
+      "expected": "UNCERTAIN",
+      "analog_of": "U1",
+      "why": "Possible progression on first-line; confirmatory imaging not yet done.",
+      "evidence": "Possible progression on first-line sunitinib; MRI pending next Thursday before any regimen change."
+    },
+    {
+      "id": "U6",
+      "category": "uncertain",
+      "expected": "UNCERTAIN",
+      "analog_of": "U2",
+      "why": "Possible prior therapy at another site; administration and outcome unknown.",
+      "evidence": "Family states the patient may have received immunotherapy at an outside clinic last year. No records transferred. Whether that treatment was given, and how it went, is unknown."
+    },
+    {
+      "id": "U7",
+      "category": "uncertain",
+      "expected": "UNCERTAIN",
+      "analog_of": "U3",
+      "why": "Mixed radiographic findings; no clear fail/continue decision yet.",
+      "evidence": "On first-line R-CHOP. Mixed response: mediastinal nodes smaller, new questionable splenic lesions. Plan deferred until lymphoma conference."
+    },
+    {
+      "id": "U8",
+      "category": "uncertain",
+      "expected": "UNCERTAIN",
+      "analog_of": "U4",
+      "why": "Unresolved whether the named drug was metastatic first-line or adjuvant; no clear progression.",
+      "evidence": "Unclear from the scanned notes whether oxaliplatin was given as first-line therapy for metastatic disease or as adjuvant treatment after resection. No definite progression is documented."
+    }
+  ]
+}

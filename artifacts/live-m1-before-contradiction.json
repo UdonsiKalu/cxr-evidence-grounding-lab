@@ -1,0 +1,1278 @@
+{
+  "predicate_id": "FIRST_LINE_THERAPY_FAILED",
+  "predicate_text": "FIRST_LINE_THERAPY_FAILED holds iff all of the following are true:\n\n  A  first_line_identified     \u2014 a first-line (front-line / 1L) systemic\n                                 therapy is identified, explicitly or by\n                                 conventional implication\n  B  first_line_administered   \u2014 that therapy was given or attempted\n                                 (not merely planned)\n  C  failure_event             \u2014 progression, non-response, clinician\n                                 statement of failure/refractory disease,\n                                 or discontinuation for intolerance\n                                 without a plan to resume\n  D  failure_of_first_line     \u2014 the failure event is of that first-line\n                                 regimen (not only a later line; not\n                                 completed adjuvant therapy with NED)\n\nX  contradiction \u2014 mutually incompatible claims about A\u2013D\n\nNot sufficient: planned therapy; ongoing first-line with response or\nstable disease; temporary hold with plan to resume; adjuvant completion\nwithout metastatic first-line failure.\n",
+  "predicate_formula": "CONTRADICTION if X; else NOT_SATISFIED if any of A,B,C,D is false; else UNCERTAIN if any of A,B,C,D is unknown; else SATISFIED if A \u2227 B \u2227 C \u2227 D",
+  "mode": "live",
+  "model": "llama3:8b-instruct-q4_0",
+  "generated_at": "2026-08-17T12:14:21.091348+00:00",
+  "summary": {
+    "n": 20,
+    "pipeline_match": 13,
+    "pipeline_accuracy": 0.65,
+    "baseline_match": 12,
+    "baseline_accuracy": 0.6,
+    "disagreements": [
+      "I2",
+      "T2",
+      "U1",
+      "U3",
+      "U4"
+    ],
+    "by_category": {
+      "explicit": {
+        "n": 4,
+        "pipeline_ok": 4,
+        "baseline_ok": 4
+      },
+      "implicit": {
+        "n": 4,
+        "pipeline_ok": 3,
+        "baseline_ok": 4
+      },
+      "temporal": {
+        "n": 4,
+        "pipeline_ok": 4,
+        "baseline_ok": 3
+      },
+      "uncertain": {
+        "n": 4,
+        "pipeline_ok": 2,
+        "baseline_ok": 1
+      },
+      "conflicting": {
+        "n": 4,
+        "pipeline_ok": 0,
+        "baseline_ok": 0
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "E1",
+      "category": "explicit",
+      "evidence": "Metastatic NSCLC. Patient progressed on first-line carboplatin and paclitaxel after four cycles. Plan to start second-line immunotherapy.",
+      "why": "Explicit first-line regimen plus explicit progression.",
+      "expected": "SATISFIED",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "second",
+          "regimen_names": [
+            "carboplatin",
+            "paclitaxel"
+          ],
+          "administration_status": "given",
+          "outcome_statements": [
+            {
+              "text": "progressed",
+              "polarity": "failure"
+            }
+          ],
+          "implicit_cues": [
+            "platinum_refractory"
+          ],
+          "uncertainty_cues": [],
+          "contradiction_cues": [],
+          "quotes": [],
+          "notes": "describing progression on first-line treatment",
+          "backend": "ollama:llama3:8b-instruct-q4_0"
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "true",
+          "failure_event": "true",
+          "failure_of_first_line": "true",
+          "contradiction": false,
+          "trace": [
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=true (administered/given)",
+            "C=true (failure polarity)",
+            "D=true (failure attributed to identified first-line)"
+          ]
+        },
+        "rule": {
+          "verdict": "SATISFIED",
+          "fired_rule": "A \u2227 B \u2227 C \u2227 D \u2192 SATISFIED",
+          "trace": [
+            "A \u2227 B \u2227 C \u2227 D all true"
+          ]
+        },
+        "pipeline_verdict": "SATISFIED"
+      },
+      "baseline": {
+        "verdict": "SATISFIED",
+        "rationale": "The note explicitly states that the patient progressed on first-line therapy, meeting condition C (failure event), and also mentions starting a new regimen, indicating failure of the first line (condition D).",
+        "raw": "{'verdict': 'SATISFIED', 'rationale': 'The note explicitly states that the patient progressed on first-line therapy, meeting condition C (failure event), and also mentions starting a new regimen, indicating failure of the first line (condition D).'}",
+        "backend": "ollama:llama3:8b-instruct-q4_0"
+      },
+      "pipeline_match": true,
+      "baseline_match": true,
+      "pipeline_vs_baseline": true,
+      "disagree": false
+    },
+    {
+      "id": "E2",
+      "category": "explicit",
+      "evidence": "First-line cisplatin/gemcitabine was stopped after two cycles due to grade 3 neuropathy. Therapy discontinued for intolerance; switching regimens.",
+      "why": "First-line stopped for intolerance; that counts as failure of the line.",
+      "expected": "SATISFIED",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "first",
+          "regimen_names": [
+            "cisplatin/gemcitabine"
+          ],
+          "administration_status": "given",
+          "outcome_statements": [
+            {
+              "text": "grade 3 neuropathy",
+              "polarity": "failure"
+            }
+          ],
+          "implicit_cues": [
+            "switching_to_second_line"
+          ],
+          "uncertainty_cues": [],
+          "contradiction_cues": [],
+          "quotes": [],
+          "notes": "therapy discontinued for intolerance",
+          "backend": "ollama:llama3:8b-instruct-q4_0"
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "true",
+          "failure_event": "true",
+          "failure_of_first_line": "true",
+          "contradiction": false,
+          "trace": [
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=true (administered/given)",
+            "C=true (failure polarity)",
+            "D=true (failure attributed to identified first-line)"
+          ]
+        },
+        "rule": {
+          "verdict": "SATISFIED",
+          "fired_rule": "A \u2227 B \u2227 C \u2227 D \u2192 SATISFIED",
+          "trace": [
+            "A \u2227 B \u2227 C \u2227 D all true"
+          ]
+        },
+        "pipeline_verdict": "SATISFIED"
+      },
+      "baseline": {
+        "verdict": "SATISFIED",
+        "rationale": "The note explicitly states that the first-line therapy (cisplatin/gemcitabine) was administered and then discontinued due to intolerance, meeting conditions B and C. The failure event is also attributed to the first-line regimen, satisfying condition D.",
+        "raw": "{'verdict': 'SATISFIED', 'rationale': 'The note explicitly states that the first-line therapy (cisplatin/gemcitabine) was administered and then discontinued due to intolerance, meeting conditions B and C. The failure event is also attributed to the first-line regimen, satisfying condition D.'}",
+        "backend": "ollama:llama3:8b-instruct-q4_0"
+      },
+      "pipeline_match": true,
+      "baseline_match": true,
+      "pipeline_vs_baseline": true,
+      "disagree": false
+    },
+    {
+      "id": "E3",
+      "category": "explicit",
+      "evidence": "Currently receiving first-line pembrolizumab plus pemetrexed. Restaging CT shows ongoing partial response. Continue current therapy.",
+      "why": "First-line is ongoing with response; no failure event.",
+      "expected": "NOT_SATISFIED",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "first",
+          "regimen_names": [
+            "pembrolizumab",
+            "pemetrexed"
+          ],
+          "administration_status": "given",
+          "outcome_statements": [
+            {
+              "text": "ongoing partial response",
+              "polarity": "response"
+            }
+          ],
+          "implicit_cues": [],
+          "uncertainty_cues": [],
+          "contradiction_cues": [],
+          "quotes": [],
+          "notes": "Patient is currently receiving first-line therapy and showing ongoing partial response.",
+          "backend": "ollama:llama3:8b-instruct-q4_0"
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "true",
+          "failure_event": "false",
+          "failure_of_first_line": "false",
+          "contradiction": false,
+          "trace": [
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=true (administered/given)",
+            "C=false (response/ongoing/planned, no failure)",
+            "D=false (no failure event)"
+          ]
+        },
+        "rule": {
+          "verdict": "NOT_SATISFIED",
+          "fired_rule": "any(A,B,C,D)=false \u2192 NOT_SATISFIED",
+          "trace": [
+            "False atoms: C failure_event, D failure_of_first_line"
+          ]
+        },
+        "pipeline_verdict": "NOT_SATISFIED"
+      },
+      "baseline": {
+        "verdict": "NOT_SATISFIED",
+        "rationale": "The note does not mention the first-line therapy failing, as the patient is still responding to it.",
+        "raw": "{'verdict': 'NOT_SATISFIED', 'rationale': 'The note does not mention the first-line therapy failing, as the patient is still responding to it.'}",
+        "backend": "ollama:llama3:8b-instruct-q4_0"
+      },
+      "pipeline_match": true,
+      "baseline_match": true,
+      "pipeline_vs_baseline": true,
+      "disagree": false
+    },
+    {
+      "id": "E4",
+      "category": "explicit",
+      "evidence": "New diagnosis of metastatic pancreatic adenocarcinoma. No prior systemic therapy. Starting first-line FOLFIRINOX next week.",
+      "why": "No prior systemic therapy; first-line only planned.",
+      "expected": "NOT_SATISFIED",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "first",
+          "regimen_names": [
+            "FOLFIRINOX"
+          ],
+          "administration_status": "planned",
+          "outcome_statements": [],
+          "implicit_cues": [
+            "starting_first_line"
+          ],
+          "uncertainty_cues": [],
+          "contradiction_cues": [],
+          "quotes": [],
+          "notes": "New diagnosis of metastatic pancreatic adenocarcinoma.",
+          "backend": "ollama:llama3:8b-instruct-q4_0"
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "false",
+          "failure_event": "unknown",
+          "failure_of_first_line": "unknown",
+          "contradiction": false,
+          "trace": [
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=false (administration_status=planned)",
+            "C=unknown (no outcome statements)",
+            "D=unknown"
+          ]
+        },
+        "rule": {
+          "verdict": "NOT_SATISFIED",
+          "fired_rule": "any(A,B,C,D)=false \u2192 NOT_SATISFIED",
+          "trace": [
+            "False atoms: B first_line_administered"
+          ]
+        },
+        "pipeline_verdict": "NOT_SATISFIED"
+      },
+      "baseline": {
+        "verdict": "NOT_SATISFIED",
+        "rationale": "The note does not meet condition B (first_line_administered) as the patient has not yet received the first-line therapy, only scheduled to start it.",
+        "raw": "{'verdict': 'NOT_SATISFIED', 'rationale': 'The note does not meet condition B (first_line_administered) as the patient has not yet received the first-line therapy, only scheduled to start it.'}",
+        "backend": "ollama:llama3:8b-instruct-q4_0"
+      },
+      "pipeline_match": true,
+      "baseline_match": true,
+      "pipeline_vs_baseline": true,
+      "disagree": false
+    },
+    {
+      "id": "I1",
+      "category": "implicit",
+      "evidence": "After carboplatin/paclitaxel, imaging showed new liver lesions. We are switching to second-line nivolumab.",
+      "why": "Switch to second-line after new lesions implies first-line failure without saying 'failed'.",
+      "expected": "SATISFIED",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "second",
+          "regimen_names": [
+            "carboplatin/paclitaxel",
+            "nivolumab"
+          ],
+          "administration_status": "given",
+          "outcome_statements": [
+            {
+              "text": "new liver lesions",
+              "polarity": "failure"
+            }
+          ],
+          "implicit_cues": [
+            "switching_to_second_line"
+          ],
+          "uncertainty_cues": [],
+          "contradiction_cues": [],
+          "quotes": [],
+          "notes": "Patient progressed after initial treatment and is now switching to second-line therapy.",
+          "backend": "ollama:llama3:8b-instruct-q4_0"
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "true",
+          "failure_event": "true",
+          "failure_of_first_line": "true",
+          "contradiction": false,
+          "trace": [
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=true (administered/given)",
+            "C=true (failure polarity)",
+            "D=true (failure attributed to identified first-line)"
+          ]
+        },
+        "rule": {
+          "verdict": "SATISFIED",
+          "fired_rule": "A \u2227 B \u2227 C \u2227 D \u2192 SATISFIED",
+          "trace": [
+            "A \u2227 B \u2227 C \u2227 D all true"
+          ]
+        },
+        "pipeline_verdict": "SATISFIED"
+      },
+      "baseline": {
+        "verdict": "SATISFIED",
+        "rationale": "The note explicitly states that a first-line therapy (carboplatin/paclitaxel) was administered and failed (new liver lesions), meeting conditions A, B, C, and D.",
+        "raw": "{'verdict': 'SATISFIED', 'rationale': 'The note explicitly states that a first-line therapy (carboplatin/paclitaxel) was administered and failed (new liver lesions), meeting conditions A, B, C, and D.'}",
+        "backend": "ollama:llama3:8b-instruct-q4_0"
+      },
+      "pipeline_match": true,
+      "baseline_match": true,
+      "pipeline_vs_baseline": true,
+      "disagree": false
+    },
+    {
+      "id": "I2",
+      "category": "implicit",
+      "evidence": "Platinum-refractory high-grade serous ovarian cancer. Now considering pegylated liposomal doxorubicin.",
+      "why": "Platinum-refractory is conventional language for failure of platinum (typically first-line).",
+      "expected": "SATISFIED",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "second",
+          "regimen_names": [
+            "pegylated liposomal doxorubicin"
+          ],
+          "administration_status": "planned",
+          "outcome_statements": [],
+          "implicit_cues": [
+            "now_second_line"
+          ],
+          "uncertainty_cues": [],
+          "contradiction_cues": [],
+          "quotes": [],
+          "notes": "considering treatment options for platinum-refractory ovarian cancer",
+          "backend": "ollama:llama3:8b-instruct-q4_0"
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "false",
+          "failure_event": "unknown",
+          "failure_of_first_line": "unknown",
+          "contradiction": false,
+          "trace": [
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=false (administration_status=planned)",
+            "C=unknown (no outcome statements)",
+            "D=unknown"
+          ]
+        },
+        "rule": {
+          "verdict": "NOT_SATISFIED",
+          "fired_rule": "any(A,B,C,D)=false \u2192 NOT_SATISFIED",
+          "trace": [
+            "False atoms: B first_line_administered"
+          ]
+        },
+        "pipeline_verdict": "NOT_SATISFIED"
+      },
+      "baseline": {
+        "verdict": "SATISFIED",
+        "rationale": "The note mentions a platinum-refractory disease, which implies that the first-line therapy has failed (C). Additionally, it explicitly states consideration of a new regimen (pegylated liposomal doxorubicin), indicating that the first-line therapy was administered and failed (B).",
+        "raw": "{'verdict': 'SATISFIED', 'rationale': 'The note mentions a platinum-refractory disease, which implies that the first-line therapy has failed (C). Additionally, it explicitly states consideration of a new regimen (pegylated liposomal doxorubicin), indicating that the first-line therapy was administered and failed (B).'}",
+        "backend": "ollama:llama3:8b-instruct-q4_0"
+      },
+      "pipeline_match": false,
+      "baseline_match": true,
+      "pipeline_vs_baseline": false,
+      "disagree": true
+    },
+    {
+      "id": "I3",
+      "category": "implicit",
+      "evidence": "Medical oncology visit: plan to start carboplatin and paclitaxel next week after port placement. ECOG 1. Staging complete.",
+      "why": "Regimen mentioned only as a future plan.",
+      "expected": "NOT_SATISFIED",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "first",
+          "regimen_names": [
+            "carboplatin",
+            "paclitaxel"
+          ],
+          "administration_status": "planned",
+          "outcome_statements": [
+            {
+              "text": "staging complete",
+              "polarity": "response"
+            }
+          ],
+          "implicit_cues": [],
+          "uncertainty_cues": [],
+          "contradiction_cues": [],
+          "quotes": [],
+          "notes": "Medical oncology visit: plan to start carboplatin and paclitaxel next week after port placement. ECOG 1.",
+          "backend": "ollama:llama3:8b-instruct-q4_0"
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "false",
+          "failure_event": "false",
+          "failure_of_first_line": "false",
+          "contradiction": false,
+          "trace": [
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=false (administration_status=planned)",
+            "C=false (response/ongoing/planned, no failure)",
+            "D=false (no failure event)"
+          ]
+        },
+        "rule": {
+          "verdict": "NOT_SATISFIED",
+          "fired_rule": "any(A,B,C,D)=false \u2192 NOT_SATISFIED",
+          "trace": [
+            "False atoms: B first_line_administered, C failure_event, D failure_of_first_line"
+          ]
+        },
+        "pipeline_verdict": "NOT_SATISFIED"
+      },
+      "baseline": {
+        "verdict": "NOT_SATISFIED",
+        "rationale": "No evidence of first-line therapy being administered or attempted, as the patient is about to start a new regimen.",
+        "raw": "{'verdict': 'NOT_SATISFIED', 'rationale': 'No evidence of first-line therapy being administered or attempted, as the patient is about to start a new regimen.'}",
+        "backend": "ollama:llama3:8b-instruct-q4_0"
+      },
+      "pipeline_match": true,
+      "baseline_match": true,
+      "pipeline_vs_baseline": true,
+      "disagree": false
+    },
+    {
+      "id": "I4",
+      "category": "implicit",
+      "evidence": "History of stage II colon cancer. Patient completed adjuvant FOLFOX two years ago and remains with no evidence of disease on surveillance.",
+      "why": "Completed adjuvant therapy with NED is not failure of first-line therapy for metastatic disease.",
+      "expected": "NOT_SATISFIED",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "adjuvant",
+          "regimen_names": [
+            "FOLFOX"
+          ],
+          "administration_status": "given",
+          "outcome_statements": [
+            {
+              "text": "remains with no evidence of disease",
+              "polarity": "response"
+            }
+          ],
+          "implicit_cues": [],
+          "uncertainty_cues": [],
+          "contradiction_cues": [],
+          "quotes": [],
+          "notes": "Patient remains in remission after adjuvant chemotherapy.",
+          "backend": "ollama:llama3:8b-instruct-q4_0"
+        },
+        "grounding": {
+          "first_line_identified": "false",
+          "first_line_administered": "true",
+          "failure_event": "false",
+          "failure_of_first_line": "false",
+          "contradiction": false,
+          "trace": [
+            "A=false (adjuvant / not metastatic first-line)",
+            "B=true (administered/given)",
+            "C=false (response/ongoing/planned, no failure)",
+            "D=false (no failure event)"
+          ]
+        },
+        "rule": {
+          "verdict": "NOT_SATISFIED",
+          "fired_rule": "any(A,B,C,D)=false \u2192 NOT_SATISFIED",
+          "trace": [
+            "False atoms: A first_line_identified, C failure_event, D failure_of_first_line"
+          ]
+        },
+        "pipeline_verdict": "NOT_SATISFIED"
+      },
+      "baseline": {
+        "verdict": "NOT_SATISFIED",
+        "rationale": "The patient has already completed adjuvant therapy, which does not meet the condition that a first-line therapy was attempted or given.",
+        "raw": "{'verdict': 'NOT_SATISFIED', 'rationale': 'The patient has already completed adjuvant therapy, which does not meet the condition that a first-line therapy was attempted or given.'}",
+        "backend": "ollama:llama3:8b-instruct-q4_0"
+      },
+      "pipeline_match": true,
+      "baseline_match": true,
+      "pipeline_vs_baseline": true,
+      "disagree": false
+    },
+    {
+      "id": "T1",
+      "category": "temporal",
+      "evidence": "Started first-line carboplatin/pemetrexed in January 2025 with initial radiographic response. CT in August 2025 showed progression in the mediastinum.",
+      "why": "Initial response then later progression on first-line is still first-line failure.",
+      "expected": "SATISFIED",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "first",
+          "regimen_names": [
+            "carboplatin/pemetrexed"
+          ],
+          "administration_status": "given",
+          "outcome_statements": [
+            {
+              "text": "initial radiographic response",
+              "polarity": "response"
+            },
+            {
+              "text": "progression in the mediastinum",
+              "polarity": "failure"
+            }
+          ],
+          "implicit_cues": [
+            "response_then_progression"
+          ],
+          "uncertainty_cues": [],
+          "contradiction_cues": [],
+          "quotes": [],
+          "notes": "Patient showed initial response, but then progressed on CT scan.",
+          "backend": "ollama:llama3:8b-instruct-q4_0"
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "true",
+          "failure_event": "true",
+          "failure_of_first_line": "true",
+          "contradiction": false,
+          "trace": [
+            "response_then_progression cue: treat as sequenced, not X",
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=true (administered/given)",
+            "C=true (failure polarity)",
+            "D=true (failure attributed to identified first-line)"
+          ]
+        },
+        "rule": {
+          "verdict": "SATISFIED",
+          "fired_rule": "A \u2227 B \u2227 C \u2227 D \u2192 SATISFIED",
+          "trace": [
+            "A \u2227 B \u2227 C \u2227 D all true"
+          ]
+        },
+        "pipeline_verdict": "SATISFIED"
+      },
+      "baseline": {
+        "verdict": "SATISFIED",
+        "rationale": "The note explicitly mentions starting a first-line therapy (carboplatin/pemetrexed) and then shows progression, satisfying conditions A, B, C, and D for FIRST_LINE_THERAPY_FAILED.",
+        "raw": "{'verdict': 'SATISFIED', 'rationale': 'The note explicitly mentions starting a first-line therapy (carboplatin/pemetrexed) and then shows progression, satisfying conditions A, B, C, and D for FIRST_LINE_THERAPY_FAILED.'}",
+        "backend": "ollama:llama3:8b-instruct-q4_0"
+      },
+      "pipeline_match": true,
+      "baseline_match": true,
+      "pipeline_vs_baseline": true,
+      "disagree": false
+    },
+    {
+      "id": "T2",
+      "category": "temporal",
+      "evidence": "First-line FOLFOX was initiated yesterday. No restaging yet. Patient tolerating cycle 1 day 2.",
+      "why": "First-line just started; no failure event yet.",
+      "expected": "NOT_SATISFIED",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "first",
+          "regimen_names": [
+            "FOLFOX"
+          ],
+          "administration_status": "given",
+          "outcome_statements": [
+            {
+              "text": "Patient tolerating cycle 1 day 2.",
+              "polarity": "response"
+            }
+          ],
+          "implicit_cues": [],
+          "uncertainty_cues": [],
+          "contradiction_cues": [],
+          "quotes": [],
+          "notes": "Patient is currently tolerating the first-line chemotherapy.",
+          "backend": "ollama:llama3:8b-instruct-q4_0"
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "true",
+          "failure_event": "false",
+          "failure_of_first_line": "false",
+          "contradiction": false,
+          "trace": [
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=true (administered/given)",
+            "C=false (response/ongoing/planned, no failure)",
+            "D=false (no failure event)"
+          ]
+        },
+        "rule": {
+          "verdict": "NOT_SATISFIED",
+          "fired_rule": "any(A,B,C,D)=false \u2192 NOT_SATISFIED",
+          "trace": [
+            "False atoms: C failure_event, D failure_of_first_line"
+          ]
+        },
+        "pipeline_verdict": "NOT_SATISFIED"
+      },
+      "baseline": {
+        "verdict": "SATISFIED",
+        "rationale": "The note explicitly mentions the initiation of a first-line therapy (FOLFOX) and its administration, which satisfies conditions A and B. Additionally, it mentions that the patient is tolerating the treatment, which implies some level of response or stability, satisfying condition D.",
+        "raw": "{'verdict': 'SATISFIED', 'rationale': 'The note explicitly mentions the initiation of a first-line therapy (FOLFOX) and its administration, which satisfies conditions A and B. Additionally, it mentions that the patient is tolerating the treatment, which implies some level of response or stability, satisfying condition D.'}",
+        "backend": "ollama:llama3:8b-instruct-q4_0"
+      },
+      "pipeline_match": true,
+      "baseline_match": false,
+      "pipeline_vs_baseline": false,
+      "disagree": true
+    },
+    {
+      "id": "T3",
+      "category": "temporal",
+      "evidence": "Responded to first-line carboplatin/etoposide for eight months, then progressed. Currently on second-line topotecan.",
+      "why": "Response then progression, now on second-line \u2014 first-line has failed.",
+      "expected": "SATISFIED",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "first",
+          "regimen_names": [
+            "carboplatin/etoposide",
+            "topotecan"
+          ],
+          "administration_status": "given",
+          "outcome_statements": [
+            {
+              "text": "progressed",
+              "polarity": "failure"
+            }
+          ],
+          "implicit_cues": [
+            "switching_to_second_line",
+            "response_then_progression"
+          ],
+          "uncertainty_cues": [],
+          "contradiction_cues": [],
+          "quotes": [],
+          "notes": "Patient progressed after first-line treatment and is currently on second-line therapy.",
+          "backend": "ollama:llama3:8b-instruct-q4_0"
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "true",
+          "failure_event": "true",
+          "failure_of_first_line": "true",
+          "contradiction": false,
+          "trace": [
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=true (administered/given)",
+            "C=true (failure polarity)",
+            "D=true (failure attributed to identified first-line)"
+          ]
+        },
+        "rule": {
+          "verdict": "SATISFIED",
+          "fired_rule": "A \u2227 B \u2227 C \u2227 D \u2192 SATISFIED",
+          "trace": [
+            "A \u2227 B \u2227 C \u2227 D all true"
+          ]
+        },
+        "pipeline_verdict": "SATISFIED"
+      },
+      "baseline": {
+        "verdict": "SATISFIED",
+        "rationale": "The note explicitly mentions a first-line therapy (carboplatin/etoposide) and its administration, as well as the failure event (progression), which satisfies conditions A, B, and C of FIRST_LINE_THERAPY_FAILED.",
+        "raw": "{'verdict': 'SATISFIED', 'rationale': 'The note explicitly mentions a first-line therapy (carboplatin/etoposide) and its administration, as well as the failure event (progression), which satisfies conditions A, B, and C of FIRST_LINE_THERAPY_FAILED.'}",
+        "backend": "ollama:llama3:8b-instruct-q4_0"
+      },
+      "pipeline_match": true,
+      "baseline_match": true,
+      "pipeline_vs_baseline": true,
+      "disagree": false
+    },
+    {
+      "id": "T4",
+      "category": "temporal",
+      "evidence": "Cycle 3 of first-line carboplatin/paclitaxel held last week for neutropenia. Plan to resume at reduced dose. No evidence of progression.",
+      "why": "Temporary hold with plan to resume is not discontinuation-for-failure.",
+      "expected": "NOT_SATISFIED",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "first",
+          "regimen_names": [
+            "carboplatin/paclitaxel"
+          ],
+          "administration_status": "not_given",
+          "outcome_statements": [
+            {
+              "text": "No evidence of progression",
+              "polarity": "response"
+            }
+          ],
+          "implicit_cues": [
+            "temporary_hold",
+            "planned_resume"
+          ],
+          "uncertainty_cues": [],
+          "contradiction_cues": [],
+          "quotes": [],
+          "notes": "Patient held due to neutropenia, planned resume at reduced dose.",
+          "backend": "ollama:llama3:8b-instruct-q4_0"
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "false",
+          "failure_event": "false",
+          "failure_of_first_line": "false",
+          "contradiction": false,
+          "trace": [
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=false (administration_status=not_given)",
+            "C=false (temporary hold, plan to resume, no progression)",
+            "D=false (no failure event)"
+          ]
+        },
+        "rule": {
+          "verdict": "NOT_SATISFIED",
+          "fired_rule": "any(A,B,C,D)=false \u2192 NOT_SATISFIED",
+          "trace": [
+            "False atoms: B first_line_administered, C failure_event, D failure_of_first_line"
+          ]
+        },
+        "pipeline_verdict": "NOT_SATISFIED"
+      },
+      "baseline": {
+        "verdict": "NOT_SATISFIED",
+        "rationale": "The note mentions that the cycle was held due to neutropenia, but it's planned to resume at a reduced dose, which does not meet condition C (failure event) and D (failure of first-line therapy).",
+        "raw": "{'verdict': 'NOT_SATISFIED', 'rationale': \"The note mentions that the cycle was held due to neutropenia, but it's planned to resume at a reduced dose, which does not meet condition C (failure event) and D (failure of first-line therapy).\"}",
+        "backend": "ollama:llama3:8b-instruct-q4_0"
+      },
+      "pipeline_match": true,
+      "baseline_match": true,
+      "pipeline_vs_baseline": true,
+      "disagree": false
+    },
+    {
+      "id": "U1",
+      "category": "uncertain",
+      "evidence": "Possible progression on first-line osimertinib; awaiting confirmatory scan next week before changing therapy.",
+      "why": "Possible progression pending confirmatory imaging.",
+      "expected": "UNCERTAIN",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "first",
+          "regimen_names": [
+            "osimertinib"
+          ],
+          "administration_status": "given",
+          "outcome_statements": [
+            {
+              "text": "Possible progression",
+              "polarity": "progression"
+            }
+          ],
+          "implicit_cues": [
+            "awaiting_confirmatory_scan",
+            "possible_progression"
+          ],
+          "uncertainty_cues": [
+            "possible",
+            "awaiting"
+          ],
+          "contradiction_cues": [],
+          "quotes": [],
+          "notes": "Awaiting confirmatory scan before changing therapy.",
+          "backend": "ollama:llama3:8b-instruct-q4_0"
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "true",
+          "failure_event": "unknown",
+          "failure_of_first_line": "unknown",
+          "contradiction": false,
+          "trace": [
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=true (administered/given)",
+            "C=unknown (mixed response or uncertainty cues)",
+            "D=unknown"
+          ]
+        },
+        "rule": {
+          "verdict": "UNCERTAIN",
+          "fired_rule": "any(A,B,C,D)=unknown \u2192 UNCERTAIN",
+          "trace": [
+            "Unknown atoms: C failure_event, D failure_of_first_line"
+          ]
+        },
+        "pipeline_verdict": "UNCERTAIN"
+      },
+      "baseline": {
+        "verdict": "SATISFIED",
+        "rationale": "The note mentions a possible progression on first-line osimertinib, which implies that the first-line therapy was identified and administered (A and B). Additionally, it mentions awaiting confirmatory scan next week before changing therapy, which suggests that the failure event is related to the first-line regimen (C and D).",
+        "raw": "{'verdict': 'SATISFIED', 'rationale': 'The note mentions a possible progression on first-line osimertinib, which implies that the first-line therapy was identified and administered (A and B). Additionally, it mentions awaiting confirmatory scan next week before changing therapy, which suggests that the failure event is related to the first-line regimen (C and D).'}",
+        "backend": "ollama:llama3:8b-instruct-q4_0"
+      },
+      "pipeline_match": true,
+      "baseline_match": false,
+      "pipeline_vs_baseline": false,
+      "disagree": true
+    },
+    {
+      "id": "U2",
+      "category": "uncertain",
+      "evidence": "Outside records suggest the patient may have received platinum-based therapy at another facility. Outcome of that treatment is unknown. No source documents available.",
+      "why": "Unclear whether platinum was given and what the outcome was.",
+      "expected": "UNCERTAIN",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "unspecified",
+          "regimen_names": [
+            "platinum-based"
+          ],
+          "administration_status": "not_given",
+          "outcome_statements": [
+            {
+              "text": "Outcome of that treatment is unknown.",
+              "polarity": "unknown"
+            }
+          ],
+          "implicit_cues": [
+            "platinum_refractory"
+          ],
+          "uncertainty_cues": [
+            "unknown_outcome",
+            "no_source_documents_available"
+          ],
+          "contradiction_cues": [],
+          "quotes": [],
+          "notes": "No source documents available.",
+          "backend": "ollama:llama3:8b-instruct-q4_0"
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "false",
+          "failure_event": "unknown",
+          "failure_of_first_line": "unknown",
+          "contradiction": false,
+          "trace": [
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=false (administration_status=not_given)",
+            "C=unknown (mixed response or uncertainty cues)",
+            "D=unknown"
+          ]
+        },
+        "rule": {
+          "verdict": "NOT_SATISFIED",
+          "fired_rule": "any(A,B,C,D)=false \u2192 NOT_SATISFIED",
+          "trace": [
+            "False atoms: B first_line_administered"
+          ]
+        },
+        "pipeline_verdict": "NOT_SATISFIED"
+      },
+      "baseline": {
+        "verdict": "NOT_SATISFIED",
+        "rationale": "The note does not explicitly identify a first-line therapy, nor does it provide evidence of its administration or failure.",
+        "raw": "{'verdict': 'NOT_SATISFIED', 'rationale': 'The note does not explicitly identify a first-line therapy, nor does it provide evidence of its administration or failure.'}",
+        "backend": "ollama:llama3:8b-instruct-q4_0"
+      },
+      "pipeline_match": false,
+      "baseline_match": false,
+      "pipeline_vs_baseline": true,
+      "disagree": false
+    },
+    {
+      "id": "U3",
+      "category": "uncertain",
+      "evidence": "On first-line FOLFIRINOX. Mixed response: liver lesions smaller, new questionable peritoneal nodularity. Oncology to discuss next steps after tumor board.",
+      "why": "Mixed response is not a clear failure or non-failure.",
+      "expected": "UNCERTAIN",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "first",
+          "regimen_names": [
+            "FOLFIRINOX"
+          ],
+          "administration_status": "given",
+          "outcome_statements": [
+            {
+              "text": "Mixed response: liver lesions smaller, new questionable peritoneal nodularity.",
+              "polarity": "mixed"
+            }
+          ],
+          "implicit_cues": [],
+          "uncertainty_cues": [
+            "questionable"
+          ],
+          "contradiction_cues": [],
+          "quotes": [],
+          "notes": "Oncology to discuss next steps after tumor board.",
+          "backend": "ollama:llama3:8b-instruct-q4_0"
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "true",
+          "failure_event": "unknown",
+          "failure_of_first_line": "unknown",
+          "contradiction": false,
+          "trace": [
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=true (administered/given)",
+            "C=unknown (mixed response or uncertainty cues)",
+            "D=unknown"
+          ]
+        },
+        "rule": {
+          "verdict": "UNCERTAIN",
+          "fired_rule": "any(A,B,C,D)=unknown \u2192 UNCERTAIN",
+          "trace": [
+            "Unknown atoms: C failure_event, D failure_of_first_line"
+          ]
+        },
+        "pipeline_verdict": "UNCERTAIN"
+      },
+      "baseline": {
+        "verdict": "NOT_SATISFIED",
+        "rationale": "The note mentions a mixed response, which does not meet the condition of 'failure event' (C) as there is no clear indication of progression or non-response.",
+        "raw": "{'verdict': 'NOT_SATISFIED', 'rationale': \"The note mentions a mixed response, which does not meet the condition of 'failure event' (C) as there is no clear indication of progression or non-response.\"}",
+        "backend": "ollama:llama3:8b-instruct-q4_0"
+      },
+      "pipeline_match": true,
+      "baseline_match": false,
+      "pipeline_vs_baseline": false,
+      "disagree": true
+    },
+    {
+      "id": "U4",
+      "category": "uncertain",
+      "evidence": "Questionable whether carboplatin was given as first-line metastatic therapy or in the adjuvant setting. No clear progression documented in the available notes.",
+      "why": "Line of therapy itself is unclear; no clear progression.",
+      "expected": "UNCERTAIN",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "unspecified",
+          "regimen_names": [
+            "carboplatin"
+          ],
+          "administration_status": "planned",
+          "outcome_statements": [
+            {
+              "text": "No clear progression documented in the available notes.",
+              "polarity": "ongoing"
+            }
+          ],
+          "implicit_cues": [
+            "unspecified"
+          ],
+          "uncertainty_cues": [
+            "questionable"
+          ],
+          "contradiction_cues": [],
+          "quotes": [],
+          "notes": "Questionable whether carboplatin was given as first-line metastatic therapy or in the adjuvant setting.",
+          "backend": "ollama:llama3:8b-instruct-q4_0"
+        },
+        "grounding": {
+          "first_line_identified": "unknown",
+          "first_line_administered": "false",
+          "failure_event": "unknown",
+          "failure_of_first_line": "unknown",
+          "contradiction": false,
+          "trace": [
+            "A=unknown (regimen named, line unspecified)",
+            "B=false (administration_status=planned)",
+            "C=unknown (mixed response or uncertainty cues)",
+            "D=unknown"
+          ]
+        },
+        "rule": {
+          "verdict": "NOT_SATISFIED",
+          "fired_rule": "any(A,B,C,D)=false \u2192 NOT_SATISFIED",
+          "trace": [
+            "False atoms: B first_line_administered"
+          ]
+        },
+        "pipeline_verdict": "NOT_SATISFIED"
+      },
+      "baseline": {
+        "verdict": "UNCERTAIN",
+        "rationale": "The note raises questions about whether carboplatin was used as first-line metastatic therapy, and there is no clear evidence of progression.",
+        "raw": "{'verdict': 'UNCERTAIN', 'rationale': 'The note raises questions about whether carboplatin was used as first-line metastatic therapy, and there is no clear evidence of progression.'}",
+        "backend": "ollama:llama3:8b-instruct-q4_0"
+      },
+      "pipeline_match": false,
+      "baseline_match": true,
+      "pipeline_vs_baseline": false,
+      "disagree": true
+    },
+    {
+      "id": "C1",
+      "category": "conflicting",
+      "evidence": "Assessment: first-line therapy failed, proceed to second-line. Addendum later the same day: patient continues first-line carboplatin with stable disease; do not change therapy.",
+      "why": "Assessment says first-line failed; addendum says ongoing first-line with SD.",
+      "expected": "CONTRADICTION",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "first",
+          "regimen_names": [
+            "carboplatin"
+          ],
+          "administration_status": "given",
+          "outcome_statements": [
+            {
+              "text": "patient continues first-line carboplatin with stable disease",
+              "polarity": "ongoing"
+            }
+          ],
+          "implicit_cues": [
+            "switching_to_second_line",
+            "response_then_progression"
+          ],
+          "uncertainty_cues": [],
+          "contradiction_cues": [],
+          "quotes": [
+            "patient continues first-line carboplatin with stable disease",
+            "do not change therapy"
+          ],
+          "notes": "addendum later the same day: patient's disease remains stable",
+          "backend": "ollama:llama3:8b-instruct-q4_0"
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "true",
+          "failure_event": "false",
+          "failure_of_first_line": "false",
+          "contradiction": false,
+          "trace": [
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=true (administered/given)",
+            "C=false (response/ongoing/planned, no failure)",
+            "D=false (no failure event)"
+          ]
+        },
+        "rule": {
+          "verdict": "NOT_SATISFIED",
+          "fired_rule": "any(A,B,C,D)=false \u2192 NOT_SATISFIED",
+          "trace": [
+            "False atoms: C failure_event, D failure_of_first_line"
+          ]
+        },
+        "pipeline_verdict": "NOT_SATISFIED"
+      },
+      "baseline": {
+        "verdict": "NOT_SATISFIED",
+        "rationale": "The note initially states that first-line therapy failed and proceeds to second-line, but an addendum later in the day contradicts this by stating that the patient continues first-line carboplatin with stable disease.",
+        "raw": "{'verdict': 'NOT_SATISFIED', 'rationale': 'The note initially states that first-line therapy failed and proceeds to second-line, but an addendum later in the day contradicts this by stating that the patient continues first-line carboplatin with stable disease.'}",
+        "backend": "ollama:llama3:8b-instruct-q4_0"
+      },
+      "pipeline_match": false,
+      "baseline_match": false,
+      "pipeline_vs_baseline": true,
+      "disagree": false
+    },
+    {
+      "id": "C2",
+      "category": "conflicting",
+      "evidence": "Intake note: never received systemic therapy. Later oncology note: progressed after six cycles of first-line carboplatin/paclitaxel.",
+      "why": "One span denies systemic therapy; another describes six cycles of first-line then progression.",
+      "expected": "CONTRADICTION",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "first",
+          "regimen_names": [
+            "carboplatin/paclitaxel"
+          ],
+          "administration_status": "given",
+          "outcome_statements": [
+            {
+              "text": "progressed",
+              "polarity": "failure"
+            }
+          ],
+          "implicit_cues": [
+            "progression_after_first_line"
+          ],
+          "uncertainty_cues": [],
+          "contradiction_cues": [],
+          "quotes": [],
+          "notes": "patient progressed after six cycles of first-line therapy",
+          "backend": "ollama:llama3:8b-instruct-q4_0"
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "true",
+          "failure_event": "true",
+          "failure_of_first_line": "true",
+          "contradiction": false,
+          "trace": [
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=true (administered/given)",
+            "C=true (failure polarity)",
+            "D=true (failure attributed to identified first-line)"
+          ]
+        },
+        "rule": {
+          "verdict": "SATISFIED",
+          "fired_rule": "A \u2227 B \u2227 C \u2227 D \u2192 SATISFIED",
+          "trace": [
+            "A \u2227 B \u2227 C \u2227 D all true"
+          ]
+        },
+        "pipeline_verdict": "SATISFIED"
+      },
+      "baseline": {
+        "verdict": "SATISFIED",
+        "rationale": "The note explicitly states that the patient did not receive systemic therapy, and later notes that they progressed after six cycles of first-line therapy, meeting conditions A (no first-line identified), B (therapy given), C (failure event), and D (failure of first-line).",
+        "raw": "{'verdict': 'SATISFIED', 'rationale': 'The note explicitly states that the patient did not receive systemic therapy, and later notes that they progressed after six cycles of first-line therapy, meeting conditions A (no first-line identified), B (therapy given), C (failure event), and D (failure of first-line).'}",
+        "backend": "ollama:llama3:8b-instruct-q4_0"
+      },
+      "pipeline_match": false,
+      "baseline_match": false,
+      "pipeline_vs_baseline": true,
+      "disagree": false
+    },
+    {
+      "id": "C3",
+      "category": "conflicting",
+      "evidence": "Failed first-line per referring oncologist. Our chart review: first-line systemic therapy was never started; patient received palliative radiotherapy only.",
+      "why": "Referring statement of failure vs local review that first-line never started.",
+      "expected": "CONTRADICTION",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "first",
+          "regimen_names": [
+            "systemic therapy"
+          ],
+          "administration_status": "not_given",
+          "outcome_statements": [
+            {
+              "text": "Failed first-line per referring oncologist.",
+              "polarity": "failure"
+            }
+          ],
+          "implicit_cues": [
+            "platinum_refractory"
+          ],
+          "uncertainty_cues": [],
+          "contradiction_cues": [],
+          "quotes": [],
+          "notes": "Patient received palliative radiotherapy only.",
+          "backend": "ollama:llama3:8b-instruct-q4_0"
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "false",
+          "failure_event": "true",
+          "failure_of_first_line": "true",
+          "contradiction": false,
+          "trace": [
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=false (administration_status=not_given)",
+            "C=true (failure polarity)",
+            "D=true (failure attributed to identified first-line)"
+          ]
+        },
+        "rule": {
+          "verdict": "NOT_SATISFIED",
+          "fired_rule": "any(A,B,C,D)=false \u2192 NOT_SATISFIED",
+          "trace": [
+            "False atoms: B first_line_administered"
+          ]
+        },
+        "pipeline_verdict": "NOT_SATISFIED"
+      },
+      "baseline": {
+        "verdict": "NOT_SATISFIED",
+        "rationale": "The note states that the patient did not receive any first-line systemic therapy, which contradicts the condition C 'failure event' requiring progression, non-response, or discontinuation of the first-line regimen.",
+        "raw": "{'verdict': 'NOT_SATISFIED', 'rationale': \"The note states that the patient did not receive any first-line systemic therapy, which contradicts the condition C 'failure event' requiring progression, non-response, or discontinuation of the first-line regimen.\"}",
+        "backend": "ollama:llama3:8b-instruct-q4_0"
+      },
+      "pipeline_match": false,
+      "baseline_match": false,
+      "pipeline_vs_baseline": true,
+      "disagree": false
+    },
+    {
+      "id": "C4",
+      "category": "conflicting",
+      "evidence": "Progressed on carboplatin/paclitaxel (first-line). Later note: excellent ongoing response to first-line carboplatin/paclitaxel; continue current treatment.",
+      "why": "Same first-line regimen described as progressed and as excellent ongoing response.",
+      "expected": "CONTRADICTION",
+      "pipeline": {
+        "extraction": {
+          "stated_line": "first",
+          "regimen_names": [
+            "carboplatin/paclitaxel"
+          ],
+          "administration_status": "given",
+          "outcome_statements": [
+            {
+              "text": "excellent ongoing response",
+              "polarity": "response"
+            }
+          ],
+          "implicit_cues": [],
+          "uncertainty_cues": [],
+          "contradiction_cues": [],
+          "quotes": [
+            "excellent ongoing response"
+          ],
+          "notes": "patient's current treatment is being continued",
+          "backend": "ollama:llama3:8b-instruct-q4_0"
+        },
+        "grounding": {
+          "first_line_identified": "true",
+          "first_line_administered": "true",
+          "failure_event": "false",
+          "failure_of_first_line": "false",
+          "contradiction": false,
+          "trace": [
+            "A=true (stated first-line or implicit 1L cue)",
+            "B=true (administered/given)",
+            "C=false (response/ongoing/planned, no failure)",
+            "D=false (no failure event)"
+          ]
+        },
+        "rule": {
+          "verdict": "NOT_SATISFIED",
+          "fired_rule": "any(A,B,C,D)=false \u2192 NOT_SATISFIED",
+          "trace": [
+            "False atoms: C failure_event, D failure_of_first_line"
+          ]
+        },
+        "pipeline_verdict": "NOT_SATISFIED"
+      },
+      "baseline": {
+        "verdict": "NOT_SATISFIED",
+        "rationale": "The note indicates that the patient is having an excellent ongoing response to their first-line therapy, which contradicts the condition of failure.",
+        "raw": "{'verdict': 'NOT_SATISFIED', 'rationale': 'The note indicates that the patient is having an excellent ongoing response to their first-line therapy, which contradicts the condition of failure.'}",
+        "backend": "ollama:llama3:8b-instruct-q4_0"
+      },
+      "pipeline_match": false,
+      "baseline_match": false,
+      "pipeline_vs_baseline": true,
+      "disagree": false
+    }
+  ]
+}

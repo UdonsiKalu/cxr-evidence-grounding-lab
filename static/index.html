@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>N2S Evidence Grounding Lab</title>
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --paper: #fffdf8;
+      --ink: #1c1917;
+      --muted: #57534e;
+      --line: #e7e5e4;
+      --accent: #1d4ed8;
+      --ok: #166534;
+      --ok-bg: #dcfce7;
+      --bad: #9f1239;
+      --bad-bg: #ffe4e6;
+      --warn: #92400e;
+      --warn-bg: #fef3c7;
+      --neutral: #44403c;
+      --neutral-bg: #e7e5e4;
+      --contra: #7c2d12;
+      --contra-bg: #ffedd5;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 ui-sans-serif, system-ui, sans-serif; }
+    header {
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid var(--line);
+      background: var(--paper);
+    }
+    header h1 { margin: 0 0 4px; font-size: 20px; font-weight: 650; }
+    header p { margin: 0; color: var(--muted); max-width: 72ch; }
+    .flow {
+      display: grid;
+      grid-template-columns: 1fr 16px 1fr 16px 1fr 16px 1fr;
+      gap: 8px;
+      align-items: stretch;
+      margin: 16px 24px 0;
+    }
+    .flow .box {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      min-height: 72px;
+    }
+    .flow .box strong { display: block; font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .arrow { display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 18px; }
+    .toolbar {
+      display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+      margin: 16px 24px;
+    }
+    button, select {
+      font: inherit; border: 1px solid var(--line); background: var(--paper);
+      padding: 6px 10px; cursor: pointer;
+    }
+    button.primary { background: var(--ink); color: #fff; border-color: var(--ink); }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .status { color: var(--muted); }
+    .layout { display: grid; grid-template-columns: 280px 1fr; gap: 16px; padding: 0 24px 32px; }
+    .list { background: var(--paper); border: 1px solid var(--line); }
+    .list button.case {
+      display: grid; grid-template-columns: 36px 1fr auto; gap: 8px;
+      width: 100%; text-align: left; border: 0; border-bottom: 1px solid var(--line);
+      padding: 8px 10px; background: transparent;
+    }
+    .list button.case.active { background: #eff6ff; }
+    .summary {
+      display: flex; gap: 16px; flex-wrap: wrap;
+      margin: 0 24px 12px; color: var(--muted);
+    }
+    .summary b { color: var(--ink); }
+    .detail { display: grid; gap: 12px; }
+    .card { background: var(--paper); border: 1px solid var(--line); padding: 12px 14px; }
+    .card h2 { margin: 0 0 8px; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); font-weight: 650; }
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    pre { margin: 0; white-space: pre-wrap; font: 12px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .verdict {
+      display: inline-block; padding: 1px 8px; font-size: 12px; font-weight: 650;
+      background: var(--neutral-bg); color: var(--neutral);
+    }
+    .v-SATISFIED { background: var(--ok-bg); color: var(--ok); }
+    .v-NOT_SATISFIED { background: var(--neutral-bg); color: var(--neutral); }
+    .v-UNCERTAIN { background: var(--warn-bg); color: var(--warn); }
+    .v-CONTRADICTION { background: var(--contra-bg); color: var(--contra); }
+    .match { font-size: 12px; }
+    .match.ok { color: var(--ok); }
+    .match.no { color: var(--bad); }
+    .atoms { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .atom { border: 1px solid var(--line); padding: 6px 8px; }
+    .atom span { display: block; font-size: 11px; color: var(--muted); }
+    .formula { font: 12px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--muted); }
+    .evidence { font-size: 15px; }
+    .err { color: var(--bad); white-space: pre-wrap; }
+    @media (max-width: 960px) {
+      .flow, .layout, .compare { grid-template-columns: 1fr; }
+      .arrow { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Neural-to-symbolic evidence grounding</h1>
+    <p>
+      Milestone 1: one predicate, twenty notes, and a direct-LLM baseline.
+      The pipeline may not look impressive unless it disagrees with (or is more inspectable than) asking the model for the verdict directly.
+    </p>
+  </header>
+
+  <div class="flow">
+    <div class="box"><strong>Same formal requirement</strong><div id="flow-pred">FIRST_LINE_THERAPY_FAILED</div></div>
+    <div class="arrow">↑</div>
+    <div class="box"><strong>Different natural language</strong><div>explicit / implicit / temporal / uncertain / conflicting</div></div>
+    <div class="arrow">→</div>
+    <div class="box"><strong>Neural interpretation</strong><div>descriptive extraction, not a verdict</div></div>
+    <div class="arrow">↓</div>
+    <div class="box"><strong>Controlled symbolic form</strong><div>atoms A–D + X, then a deterministic rule</div></div>
+  </div>
+
+  <div class="toolbar">
+    <label>Mode
+      <select id="mode">
+        <option value="mock">mock (heuristic extract, no baseline)</option>
+        <option value="live">live (Ollama extract + Ollama baseline)</option>
+      </select>
+    </label>
+    <button class="primary" id="run-all">Run all 20</button>
+    <button id="run-one">Run selected</button>
+    <button id="load-cache">Load last artifact</button>
+    <span class="status" id="status">loading…</span>
+  </div>
+  <div class="summary" id="summary"></div>
+
+  <div class="layout">
+    <div class="list" id="list"></div>
+    <div class="detail" id="detail"></div>
+  </div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+let meta = null;
+let rowsById = {};
+let selected = "E1";
+
+function verdictSpan(v) {
+  if (!v) return '<span class="verdict">—</span>';
+  return `<span class="verdict v-${v}">${v}</span>`;
+}
+
+function matchLabel(ok) {
+  if (ok === null || ok === undefined) return "";
+  return ok
+    ? '<span class="match ok">matches gold</span>'
+    : '<span class="match no">differs from gold</span>';
+}
+
+async function getJson(url) {
+  const res = await fetch(url);
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || res.statusText);
+  return data;
+}
+
+async function postJson(url, body) {
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || res.statusText);
+  return data;
+}
+
+function renderList(cases) {
+  $("list").innerHTML = cases.map((c) => {
+    const row = rowsById[c.id];
+    const mark = row
+      ? (row.pipeline_match ? "P+" : "P−") + (row.baseline_match == null ? "" : (row.baseline_match ? " B+" : " B−"))
+      : "";
+    return `<button class="case ${c.id === selected ? "active" : ""}" data-id="${c.id}">
+      <b>${c.id}</b><span>${c.category}</span><span>${mark}</span>
+    </button>`;
+  }).join("");
+  $("list").querySelectorAll("button.case").forEach((btn) => {
+    btn.onclick = () => { selected = btn.dataset.id; render(); };
+  });
+}
+
+function atomCell(name, value) {
+  return `<div class="atom"><span>${name}</span><b>${value}</b></div>`;
+}
+
+function uncertaintyBlock(ex) {
+  const u = ex.uncertainty || {};
+  if (u.present === true) {
+    return `<p><b>present:</b> true</p>
+      <p><b>cue:</b> ${u.cue || "—"}</p>
+      <p><b>why:</b> ${u.why || "—"}</p>
+      <p class="status">Grounding should keep implicated atoms unknown; the unchanged rule then fires UNCERTAIN (unless X is true).</p>`;
+  }
+  if (u.present === false) {
+    return `<p><b>present:</b> false (explicit none)</p>
+      <p class="status">Extractor asserted no unresolved evidence about A–D.</p>`;
+  }
+  return `<p class="status">present omitted. Fallback may still use uncertainty_cues.</p>`;
+}
+
+function contradictionBlock(ex) {
+  const c = ex.contradiction || {};
+  if (c.present === true) {
+    return `<p><b>present:</b> true</p>
+      <p><b>span A:</b> ${c.span_a || "—"}</p>
+      <p><b>span B:</b> ${c.span_b || "—"}</p>
+      <p class="status">Grounding should set X=true; the rule then fires CONTRADICTION.</p>`;
+  }
+  if (c.present === false) {
+    return `<p><b>present:</b> false (explicit none)</p>
+      <p class="status">Extractor asserted no incompatible pair.</p>`;
+  }
+  return `<p class="status">present omitted. Fallback grounding may still infer X from cues or mixed polarities.</p>`;
+}
+
+function renderDetail(cases) {
+  const c = cases.find((x) => x.id === selected);
+  if (!c) { $("detail").innerHTML = ""; return; }
+  const row = rowsById[c.id];
+  const g = row?.pipeline?.grounding;
+  const r = row?.pipeline?.rule;
+  const ex = row?.pipeline?.extraction;
+  const b = row?.baseline;
+  $("detail").innerHTML = `
+    <div class="card">
+      <h2>Original evidence · gold ${verdictSpan(c.expected)}</h2>
+      <div class="evidence">${c.evidence}</div>
+      <p class="status" style="margin:8px 0 0">${c.why}</p>
+    </div>
+    <div class="compare">
+      <div class="card">
+        <h2>Direct LLM baseline</h2>
+        ${b ? `${verdictSpan(b.verdict)} ${matchLabel(row.baseline_match)}
+          <p>${b.rationale || ""}</p>
+          <div class="status">${b.backend}</div>`
+          : '<p class="status">Run in live mode to fill this. Mock mode skips the baseline so the comparison is not faked.</p>'}
+      </div>
+      <div class="card">
+        <h2>Pipeline rule result</h2>
+        ${r ? `${verdictSpan(r.verdict)} ${matchLabel(row.pipeline_match)}
+          <p class="formula">${r.fired_rule}</p>
+          <pre>${(r.trace || []).join("\n")}</pre>`
+          : '<p class="status">Not run yet.</p>'}
+        ${row?.disagree ? '<p class="match no">Pipeline and baseline disagree</p>' : ""}
+      </div>
+    </div>
+    <div class="card">
+      <h2>Neural extraction</h2>
+      ${ex ? `<pre>${JSON.stringify(ex, null, 2)}</pre>` : '<p class="status">Not run yet.</p>'}
+    </div>
+    <div class="card">
+      <h2>Contradiction field (X) — first-class extract, not a verdict</h2>
+      ${ex ? contradictionBlock(ex) : '<p class="status">Not run yet.</p>'}
+    </div>
+    <div class="card">
+      <h2>Uncertainty field — first-class extract, not a verdict</h2>
+      ${ex ? uncertaintyBlock(ex) : '<p class="status">Not run yet.</p>'}
+    </div>
+    <div class="card">
+      <h2>Grounding result (atoms)</h2>
+      ${g ? `<div class="atoms">
+        ${atomCell("A first_line_identified", g.first_line_identified)}
+        ${atomCell("B first_line_administered", g.first_line_administered)}
+        ${atomCell("C failure_event", g.failure_event)}
+        ${atomCell("D failure_of_first_line", g.failure_of_first_line)}
+        ${atomCell("X contradiction", String(g.contradiction))}
+        ${atomCell("U uncertainty (not a rule atom)", String(g.uncertainty ?? false))}
+      </div>
+      <pre style="margin-top:8px">${(g.trace || []).join("\n")}</pre>` : '<p class="status">Not run yet.</p>'}
+    </div>
+    <div class="card">
+      <h2>Symbolic predicate (same for every case)</h2>
+      <pre>${meta.predicate_text}</pre>
+      <p class="formula">${meta.predicate_formula}</p>
+    </div>
+  `;
+}
+
+function renderSummary(summary) {
+  if (!summary) { $("summary").innerHTML = ""; return; }
+  const b = summary.baseline_match == null ? "baseline not run" : `baseline ${summary.baseline_match}/${summary.n} match gold`;
+  const d = (summary.disagreements || []).length
+    ? `disagree on ${summary.disagreements.join(", ")}`
+    : "no pipeline vs baseline disagreements (or baseline not run)";
+  $("summary").innerHTML = `<span><b>pipeline ${summary.pipeline_match}/${summary.n}</b> match gold</span><span>${b}</span><span>${d}</span>`;
+}
+
+function ingestReport(report) {
+  rowsById = {};
+  for (const row of report.rows || []) rowsById[row.id] = row;
+  renderSummary(report.summary);
+}
+
+function render() {
+  if (!meta) return;
+  renderList(meta.cases);
+  renderDetail(meta.cases);
+}
+
+async function init() {
+  meta = await getJson("/api/meta");
+  $("flow-pred").textContent = meta.predicate_id;
+  $("status").textContent = meta.ollama ? `Ollama up · ${meta.model}` : "Ollama down · live mode will fail";
+  if (meta.artifacts.live) $("mode").value = "live";
+  render();
+  try {
+    const preferred = meta.artifacts.live ? "live" : (meta.artifacts.mock ? "mock" : null);
+    if (preferred) {
+      ingestReport(await getJson(`/api/results/${preferred}`));
+      $("mode").value = preferred;
+      render();
+    }
+  } catch (err) {
+    $("status").textContent = String(err.message || err);
+  }
+}
+
+$("run-all").onclick = async () => {
+  const mode = $("mode").value;
+  $("status").textContent = mode === "live" ? "running live (two Ollama calls per case)…" : "running mock…";
+  $("run-all").disabled = true;
+  try {
+    const report = await postJson("/api/run", { mode });
+    ingestReport(report);
+    render();
+    $("status").textContent = `done · ${mode}`;
+  } catch (err) {
+    $("status").innerHTML = `<span class="err">${err.message}</span>`;
+  } finally {
+    $("run-all").disabled = false;
+  }
+};
+
+$("run-one").onclick = async () => {
+  const mode = $("mode").value;
+  $("status").textContent = `running ${selected} (${mode})…`;
+  try {
+    const row = await postJson("/api/run-one", { mode, case_id: selected });
+    rowsById[row.id] = row;
+    render();
+    $("status").textContent = `done · ${selected}`;
+  } catch (err) {
+    $("status").innerHTML = `<span class="err">${err.message}</span>`;
+  }
+};
+
+$("load-cache").onclick = async () => {
+  const mode = $("mode").value;
+  try {
+    ingestReport(await getJson(`/api/results/${mode}`));
+    render();
+    $("status").textContent = `loaded ${mode} artifact`;
+  } catch (err) {
+    $("status").innerHTML = `<span class="err">${err.message}</span>`;
+  }
+};
+
+init();
+</script>
+</body>
+</html>

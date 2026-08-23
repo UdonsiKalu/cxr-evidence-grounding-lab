@@ -1,0 +1,146 @@
+{
+  "predicate_id": "FIRST_LINE_THERAPY_FAILED",
+  "gold_is_not_fed_to_models": true,
+  "cases": [
+    {
+      "id": "E1",
+      "category": "explicit",
+      "expected": "SATISFIED",
+      "why": "Explicit first-line regimen plus explicit progression.",
+      "evidence": "Metastatic NSCLC. Patient progressed on first-line carboplatin and paclitaxel after four cycles. Plan to start second-line immunotherapy."
+    },
+    {
+      "id": "E2",
+      "category": "explicit",
+      "expected": "SATISFIED",
+      "why": "First-line stopped for intolerance; that counts as failure of the line.",
+      "evidence": "First-line cisplatin/gemcitabine was stopped after two cycles due to grade 3 neuropathy. Therapy discontinued for intolerance; switching regimens."
+    },
+    {
+      "id": "E3",
+      "category": "explicit",
+      "expected": "NOT_SATISFIED",
+      "why": "First-line is ongoing with response; no failure event.",
+      "evidence": "Currently receiving first-line pembrolizumab plus pemetrexed. Restaging CT shows ongoing partial response. Continue current therapy."
+    },
+    {
+      "id": "E4",
+      "category": "explicit",
+      "expected": "NOT_SATISFIED",
+      "why": "No prior systemic therapy; first-line only planned.",
+      "evidence": "New diagnosis of metastatic pancreatic adenocarcinoma. No prior systemic therapy. Starting first-line FOLFIRINOX next week."
+    },
+    {
+      "id": "I1",
+      "category": "implicit",
+      "expected": "SATISFIED",
+      "why": "Switch to second-line after new lesions implies first-line failure without saying 'failed'.",
+      "evidence": "After carboplatin/paclitaxel, imaging showed new liver lesions. We are switching to second-line nivolumab."
+    },
+    {
+      "id": "I2",
+      "category": "implicit",
+      "expected": "SATISFIED",
+      "why": "Platinum-refractory is conventional language for failure of platinum (typically first-line).",
+      "evidence": "Platinum-refractory high-grade serous ovarian cancer. Now considering pegylated liposomal doxorubicin."
+    },
+    {
+      "id": "I3",
+      "category": "implicit",
+      "expected": "NOT_SATISFIED",
+      "why": "Regimen mentioned only as a future plan.",
+      "evidence": "Medical oncology visit: plan to start carboplatin and paclitaxel next week after port placement. ECOG 1. Staging complete."
+    },
+    {
+      "id": "I4",
+      "category": "implicit",
+      "expected": "NOT_SATISFIED",
+      "why": "Completed adjuvant therapy with NED is not failure of first-line therapy for metastatic disease.",
+      "evidence": "History of stage II colon cancer. Patient completed adjuvant FOLFOX two years ago and remains with no evidence of disease on surveillance."
+    },
+    {
+      "id": "T1",
+      "category": "temporal",
+      "expected": "SATISFIED",
+      "why": "Initial response then later progression on first-line is still first-line failure.",
+      "evidence": "Started first-line carboplatin/pemetrexed in January 2025 with initial radiographic response. CT in August 2025 showed progression in the mediastinum."
+    },
+    {
+      "id": "T2",
+      "category": "temporal",
+      "expected": "NOT_SATISFIED",
+      "why": "First-line just started; no failure event yet.",
+      "evidence": "First-line FOLFOX was initiated yesterday. No restaging yet. Patient tolerating cycle 1 day 2."
+    },
+    {
+      "id": "T3",
+      "category": "temporal",
+      "expected": "SATISFIED",
+      "why": "Response then progression, now on second-line — first-line has failed.",
+      "evidence": "Responded to first-line carboplatin/etoposide for eight months, then progressed. Currently on second-line topotecan."
+    },
+    {
+      "id": "T4",
+      "category": "temporal",
+      "expected": "NOT_SATISFIED",
+      "why": "Temporary hold with plan to resume is not discontinuation-for-failure.",
+      "evidence": "Cycle 3 of first-line carboplatin/paclitaxel held last week for neutropenia. Plan to resume at reduced dose. No evidence of progression."
+    },
+    {
+      "id": "U1",
+      "category": "uncertain",
+      "expected": "UNCERTAIN",
+      "why": "Possible progression pending confirmatory imaging.",
+      "evidence": "Possible progression on first-line osimertinib; awaiting confirmatory scan next week before changing therapy."
+    },
+    {
+      "id": "U2",
+      "category": "uncertain",
+      "expected": "UNCERTAIN",
+      "why": "Unclear whether platinum was given and what the outcome was.",
+      "evidence": "Outside records suggest the patient may have received platinum-based therapy at another facility. Outcome of that treatment is unknown. No source documents available."
+    },
+    {
+      "id": "U3",
+      "category": "uncertain",
+      "expected": "UNCERTAIN",
+      "why": "Mixed response is not a clear failure or non-failure.",
+      "evidence": "On first-line FOLFIRINOX. Mixed response: liver lesions smaller, new questionable peritoneal nodularity. Oncology to discuss next steps after tumor board."
+    },
+    {
+      "id": "U4",
+      "category": "uncertain",
+      "expected": "UNCERTAIN",
+      "why": "Line of therapy itself is unclear; no clear progression.",
+      "evidence": "Questionable whether carboplatin was given as first-line metastatic therapy or in the adjuvant setting. No clear progression documented in the available notes."
+    },
+    {
+      "id": "C1",
+      "category": "conflicting",
+      "expected": "CONTRADICTION",
+      "why": "Assessment says first-line failed; addendum says ongoing first-line with SD.",
+      "evidence": "Assessment: first-line therapy failed, proceed to second-line. Addendum later the same day: patient continues first-line carboplatin with stable disease; do not change therapy."
+    },
+    {
+      "id": "C2",
+      "category": "conflicting",
+      "expected": "CONTRADICTION",
+      "why": "One span denies systemic therapy; another describes six cycles of first-line then progression.",
+      "evidence": "Intake note: never received systemic therapy. Later oncology note: progressed after six cycles of first-line carboplatin/paclitaxel."
+    },
+    {
+      "id": "C3",
+      "category": "conflicting",
+      "expected": "CONTRADICTION",
+      "why": "Referring statement of failure vs local review that first-line never started.",
+      "evidence": "Failed first-line per referring oncologist. Our chart review: first-line systemic therapy was never started; patient received palliative radiotherapy only."
+    },
+    {
+      "id": "C4",
+      "category": "conflicting",
+      "expected": "CONTRADICTION",
+      "why": "Same first-line regimen described as progressed and as excellent ongoing response.",
+      "evidence": "Progressed on carboplatin/paclitaxel (first-line). Later note: excellent ongoing response to first-line carboplatin/paclitaxel; continue current treatment."
+    }
+  ]
+}

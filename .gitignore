@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+# Ephemeral local re-runs only — keep frozen Phase / milestone snapshots
+artifacts/live-latest.json
+artifacts/mock-latest.json
+notes/*.aux
+notes/*.log
+notes/*.out
+notes/*.toc
+notes/*.fls
+notes/*.fdb_latexmk
+notes/*.synctex.gz

@@ -1,0 +1,220 @@
+{
+  "experiment": "bprime_ablation",
+  "optional": true,
+  "prompts_frozen_control": true,
+  "reused_analyses_from": "phase1-transition-c-u.json",
+  "model": "llama3:8b-instruct-q4_0",
+  "case_ids": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "U1",
+    "U2",
+    "U3",
+    "U4"
+  ],
+  "generated_at": "2026-08-17T18:13:46.197973+00:00",
+  "note": "Same analyses as Phase-2 Condition B. Only the verdict-mapping prompt changed. B\u2032 does not touch A/C/D or overwrite Phase-1/2 artifacts.",
+  "summary": {
+    "n": 8,
+    "B_frozen_match_gold": 3,
+    "B_prime_match_gold": 3,
+    "B_frozen_analysis_output_misalignment": 3,
+    "B_prime_analysis_output_misalignment": 3,
+    "B_frozen_error_stages": {
+      "analysis_output_misalignment": 3,
+      "model_interpretation_failure": 2
+    },
+    "B_prime_error_stages": {
+      "analysis_output_misalignment": 3,
+      "model_interpretation_failure": 2
+    }
+  },
+  "rows": [
+    {
+      "id": "C1",
+      "gold": "CONTRADICTION",
+      "expected_distinction": "contradiction",
+      "analysis": "The note suggests that a first-line therapy is identified (A), as it mentions \"first-line therapy\" explicitly. Additionally, the note implies that this therapy was given or attempted (B) since it discusses the outcome of the treatment.\n\nRegarding the failure event (C), the note states that the first-line therapy failed, which indicates that there was a progression, non-response, or clinician's statement of failure/refractory disease.\n\nThe note also clarifies that the failure is indeed of the first-line regimen (D) since it explicitly mentions \"first-line therapy failed\".\n\nThere are no contradictory claims in the note. The addendum later in the day does not contradict the initial assessment but rather provides an update on the patient's condition, stating that they continue to receive the same first-line carboplatin with stable disease.\n\nOverall, the evidence is concrete and consistent, providing a clear indication of the failure of the first-line therapy.",
+      "analysis_flags": {
+        "mentions_contradiction": true,
+        "mentions_uncertainty": false
+      },
+      "B_frozen": {
+        "verdict": "NOT_SATISFIED",
+        "rationale": "The note explicitly states that the first-line therapy failed, indicating a progression or non-response, which contradicts the expectation of satisfaction.",
+        "match_gold": false,
+        "loss_stage": "analysis_output_misalignment"
+      },
+      "B_prime": {
+        "verdict": "NOT_SATISFIED",
+        "rationale": "The note explicitly states that the 'first-line therapy failed', indicating a progression or non-response to treatment.",
+        "backend": "ollama:llama3:8b-instruct-q4_0:from-analysis-bprime",
+        "match_gold": false,
+        "loss_stage": "analysis_output_misalignment"
+      }
+    },
+    {
+      "id": "C2",
+      "gold": "CONTRADICTION",
+      "expected_distinction": "contradiction",
+      "analysis": "The clinical note provides insight into the patient's treatment history and outcome. According to the note, a first-line therapy is identified as \"carboplatin/paclitaxel\" (six cycles). This satisfies condition A.\n\nRegarding condition B, it is stated that the patient progressed after completing six cycles of this regimen, implying that the therapy was given or attempted, rather than merely planned. Therefore, condition B is also met.\n\nThe note explicitly mentions a failure event, stating that the patient \"progressed\" after completing first-line treatment. This satisfies condition C.\n\nAs for condition D, it is clear that the failure event refers to the first-line regimen (carboplatin/paclitaxel), as there is no mention of subsequent therapies or lines of treatment. Therefore, condition D is also met.\n\nThere are no contradictory claims in this note, and all conditions appear to be satisfied. However, it's worth noting that the evidence presented is not uncertain, incomplete, or mixed; rather, it provides a clear narrative of the patient's treatment history and outcome.",
+      "analysis_flags": {
+        "mentions_contradiction": false,
+        "mentions_uncertainty": true
+      },
+      "B_frozen": {
+        "verdict": "SATISFIED",
+        "rationale": "The note explicitly mentions a failure event, stating that the patient 'progressed' after completing first-line treatment, satisfying condition C.",
+        "match_gold": false,
+        "loss_stage": "model_interpretation_failure"
+      },
+      "B_prime": {
+        "verdict": "NOT_SATISFIED",
+        "rationale": "The note explicitly mentions a failure event, stating that the patient 'progressed' after completing first-line treatment.",
+        "backend": "ollama:llama3:8b-instruct-q4_0:from-analysis-bprime",
+        "match_gold": false,
+        "loss_stage": "model_interpretation_failure"
+      }
+    },
+    {
+      "id": "C3",
+      "gold": "CONTRADICTION",
+      "expected_distinction": "contradiction",
+      "analysis": "The note suggests that a first-line therapy is not identified, as it states \"first-line systemic therapy was never started\". This implies that no attempt was made to administer the first-line therapy, which contradicts condition B.\n\nThere is no evidence of a failure event (condition C) or a failure of the first-line regimen (condition D), as the patient only received palliative radiotherapy and did not receive any systemic therapy. The note does not contain any contradictory claims about conditions A-D.\n\nThe uncertainty in this case lies in the fact that the referring oncologist stated that the first-line therapy failed, but the chart review reveals that no attempt was made to administer it. This discrepancy may be due to incomplete or inaccurate information.",
+      "analysis_flags": {
+        "mentions_contradiction": false,
+        "mentions_uncertainty": true
+      },
+      "B_frozen": {
+        "verdict": "UNCERTAIN",
+        "rationale": "The uncertainty lies in the discrepancy between the referring oncologist's statement and the chart review, which may be due to incomplete or inaccurate information.",
+        "match_gold": false,
+        "loss_stage": "model_interpretation_failure"
+      },
+      "B_prime": {
+        "verdict": "UNCERTAIN",
+        "rationale": "The uncertainty lies in the discrepancy between the referring oncologist's statement and the chart review, which may be due to incomplete or inaccurate information.",
+        "backend": "ollama:llama3:8b-instruct-q4_0:from-analysis-bprime",
+        "match_gold": false,
+        "loss_stage": "model_interpretation_failure"
+      }
+    },
+    {
+      "id": "C4",
+      "gold": "CONTRADICTION",
+      "expected_distinction": "contradiction",
+      "analysis": "The clinical note provides some information that supports the existence of a first-line therapy, but it does not explicitly state whether the therapy was identified as \"front-line\" or systemic. However, it mentions \"carboplatin/paclitaxel (first-line)\", which implies that the therapy is considered first-line.\n\nRegarding point B, the note states that the patient \"progressed on carboplatin/paclitaxel\", which suggests that the therapy was given and not merely planned. The fact that the patient's response to treatment is described as \"excellent\" also supports the idea that the therapy was administered and had a positive effect.\n\nPoint C, failure event, is not explicitly mentioned in the note. However, the phrase \"progressed on\" implies that the patient did not respond well to the first-line therapy, which could be considered a failure event.\n\nThe note does not provide direct evidence for point D, failure of the first-line regimen. However, it does mention that the patient is having an \"excellent ongoing response\" to the current treatment, which suggests that the first-line therapy was effective and did not fail.\n\nThere are no mutually incompatible claims in this note, so there is no contradiction (X). Overall, while the note provides some information about a first-line therapy, it does not provide conclusive evidence for all of the conditions outlined in the formal condition.",
+      "analysis_flags": {
+        "mentions_contradiction": true,
+        "mentions_uncertainty": false
+      },
+      "B_frozen": {
+        "verdict": "NOT_SATISFIED",
+        "rationale": "The note implies that the patient did not respond well to the first-line therapy, but it does not explicitly state failure of the regimen.",
+        "match_gold": false,
+        "loss_stage": "analysis_output_misalignment"
+      },
+      "B_prime": {
+        "verdict": "NOT_SATISFIED",
+        "rationale": "The note implies that the patient did not respond well to the first-line therapy, which could be considered a failure event, but it does not explicitly state the failure of the first-line regimen.",
+        "backend": "ollama:llama3:8b-instruct-q4_0:from-analysis-bprime",
+        "match_gold": false,
+        "loss_stage": "analysis_output_misalignment"
+      }
+    },
+    {
+      "id": "U1",
+      "gold": "UNCERTAIN",
+      "expected_distinction": "uncertainty",
+      "analysis": "The note suggests that a first-line therapy is identified, as it mentions \"first-line osimertinib\". This supports condition A.\n\nIt appears that the first-line therapy was given or attempted, as the patient's possible progression on this regimen implies administration of the treatment. This supports condition B.\n\nA failure event is also hinted at, as the note mentions \"possible progression\" and the need for a confirmatory scan before changing therapy. This supports condition C.\n\nHowever, it is unclear whether the failure event is specifically attributed to the first-line osimertinib regimen or if it could be related to other factors. Therefore, condition D remains uncertain.\n\nThere do not appear to be any contradictory claims in the note, so X (contradiction) is not supported.\n\nOverall, the note provides some evidence for conditions A and B, but leaves conditions C and D unclear.",
+      "analysis_flags": {
+        "mentions_contradiction": true,
+        "mentions_uncertainty": true
+      },
+      "B_frozen": {
+        "verdict": "UNCERTAIN",
+        "rationale": "The note suggests a possible progression on first-line osimertinib, but it's unclear whether this failure event is specifically attributed to the regimen or related to other factors.",
+        "match_gold": true,
+        "loss_stage": "none"
+      },
+      "B_prime": {
+        "verdict": "UNCERTAIN",
+        "rationale": "The analysis highlights uncertainty regarding condition D, as it's unclear whether the failure event is specifically attributed to the first-line osimertinib regimen or if it could be related to other factors.",
+        "backend": "ollama:llama3:8b-instruct-q4_0:from-analysis-bprime",
+        "match_gold": true,
+        "loss_stage": "none"
+      }
+    },
+    {
+      "id": "U2",
+      "gold": "UNCERTAIN",
+      "expected_distinction": "uncertainty",
+      "analysis": "The note does not explicitly identify a first-line therapy, but it mentions that outside records suggest the patient may have received platinum-based therapy at another facility. This implies that a first-line therapy might be identified, but the information is uncertain and incomplete.\n\nIt is unclear whether the platinum-based therapy was given or attempted, as the outcome of that treatment is unknown and no source documents are available. Therefore, it cannot be determined if the therapy was administered or merely planned.\n\nThe note does not explicitly state a failure event, but it mentions the patient's disease may have progressed or been refractory to treatment. This implies that a failure event might have occurred, but the information is uncertain and incomplete.\n\nIt is unclear whether the failure event is of the first-line regimen, as the outcome of the platinum-based therapy is unknown. Therefore, it cannot be determined if the failure is of the first-line therapy or not.\n\nThere are no mutually incompatible claims in the note that would suggest a contradiction. However, the uncertainty and incompleteness of the information make it difficult to draw definitive conclusions about whether the FIRST_LINE_THERAPY_FAILED condition holds.",
+      "analysis_flags": {
+        "mentions_contradiction": true,
+        "mentions_uncertainty": true
+      },
+      "B_frozen": {
+        "verdict": "UNCERTAIN",
+        "rationale": "The analysis suggests that the information is uncertain and incomplete, making it difficult to determine if the first-line therapy failed or not.",
+        "match_gold": true,
+        "loss_stage": "none"
+      },
+      "B_prime": {
+        "verdict": "UNCERTAIN",
+        "rationale": "The analysis describes uncertainty and incompleteness in identifying both first-line therapy and potential failure event, making it impossible to determine if the FIRST_LINE_THERAPY_FAILED condition holds.",
+        "backend": "ollama:llama3:8b-instruct-q4_0:from-analysis-bprime",
+        "match_gold": true,
+        "loss_stage": "none"
+      }
+    },
+    {
+      "id": "U3",
+      "gold": "UNCERTAIN",
+      "expected_distinction": "uncertainty",
+      "analysis": "The note suggests that a first-line therapy is identified (A), specifically FOLFIRINOX. It also implies that this therapy was given or attempted (B) since it's being discussed in the context of a mixed response.\n\nThere is evidence of a failure event (C) as the patient has experienced progression, with new peritoneal nodularity despite some improvement in liver lesions. The note mentions that oncology will discuss next steps after tumor board, implying that the current treatment plan may not be effective.\n\nThe note does not explicitly state whether the failure event is specifically of the first-line therapy (D), but it can be inferred that this is the case since there is no mention of switching to a different line of therapy or exploring other options.",
+      "analysis_flags": {
+        "mentions_contradiction": false,
+        "mentions_uncertainty": true
+      },
+      "B_frozen": {
+        "verdict": "NOT_SATISFIED",
+        "rationale": "The note implies failure of the first-line therapy FOLFIRINOX, as evidenced by patient progression and lack of explicit discussion about switching to a different treatment plan.",
+        "match_gold": false,
+        "loss_stage": "analysis_output_misalignment"
+      },
+      "B_prime": {
+        "verdict": "NOT_SATISFIED",
+        "rationale": "The note implies that the patient experienced progression despite first-line therapy, specifically FOLFIRINOX, and oncology will discuss next steps after tumor board, suggesting that the current treatment plan may not be effective.",
+        "backend": "ollama:llama3:8b-instruct-q4_0:from-analysis-bprime",
+        "match_gold": false,
+        "loss_stage": "analysis_output_misalignment"
+      }
+    },
+    {
+      "id": "U4",
+      "gold": "UNCERTAIN",
+      "expected_distinction": "uncertainty",
+      "analysis": "The note suggests that a first-line therapy is identified, but it's unclear if it was given as metastatic therapy or in the adjuvant setting (carboplatin). This implies that the condition A \"a first-line (front-line / 1L) systemic therapy is identified\" is partially met.\n\nThere is no explicit statement indicating that the therapy was given or attempted, so condition B \"that therapy was given or attempted (not merely planned)\" remains uncertain. The note does not provide clear evidence of administration or attempt to administer the first-line therapy.\n\nThe note mentions no clear progression documented, which means that condition C \"progression, non-response, clinician statement of failure/refractory disease, or discontinuation for intolerance without a plan to resume\" is also uncertain.\n\nIt's unclear if the failure event (if it occurred) is related to the first-line therapy, as there is no explicit statement linking the two. Therefore, condition D \"the failure event is of that first-line regimen\" remains uncertain.\n\nThere are no mutually incompatible claims in the note, so X \"contradiction \u2014 mutually incompatible claims about A\u2013D\" is not applicable.\n\nIn summary, the note provides limited information to support or refute the conditions for FIRST_LINE_THERAPY_FAILED. The uncertainty surrounding administration and progression of the first-line therapy, as well as the unclear relationship between any potential failure event and the first-line regimen, leaves the condition's status uncertain.",
+      "analysis_flags": {
+        "mentions_contradiction": true,
+        "mentions_uncertainty": true
+      },
+      "B_frozen": {
+        "verdict": "UNCERTAIN",
+        "rationale": "The note provides limited information to support or refute the conditions for FIRST_LINE_THERAPY_FAILED, with uncertainty surrounding administration and progression of the first-line therapy, as well as the unclear relationship between any potential failure event and the first-line regimen.",
+        "match_gold": true,
+        "loss_stage": "none"
+      },
+      "B_prime": {
+        "verdict": "UNCERTAIN",
+        "rationale": "The analysis describes uncertainty surrounding administration and progression of the first-line therapy, as well as the unclear relationship between any potential failure event and the first-line regimen.",
+        "backend": "ollama:llama3:8b-instruct-q4_0:from-analysis-bprime",
+        "match_gold": true,
+        "loss_stage": "none"
+      }
+    }
+  ]
+}

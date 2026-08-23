@@ -1,0 +1,62 @@
+{
+  "experiment": "bprime_ablation_panel",
+  "optional": true,
+  "control_default_model": "llama3:8b-instruct-q4_0",
+  "models": [
+    {
+      "model": "llama3:8b-instruct-q4_0",
+      "artifact": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/bprime-llama3_8b-instruct-q4_0.json",
+      "summary": {
+        "n": 8,
+        "B_frozen_match_gold": 3,
+        "B_prime_match_gold": 3,
+        "B_frozen_analysis_output_misalignment": 3,
+        "B_prime_analysis_output_misalignment": 3,
+        "B_frozen_error_stages": {
+          "analysis_output_misalignment": 3,
+          "model_interpretation_failure": 2
+        },
+        "B_prime_error_stages": {
+          "analysis_output_misalignment": 3,
+          "model_interpretation_failure": 2
+        }
+      }
+    },
+    {
+      "model": "mistral:instruct",
+      "artifact": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/bprime-mistral_instruct.json",
+      "summary": {
+        "n": 8,
+        "B_frozen_match_gold": 3,
+        "B_prime_match_gold": 4,
+        "B_frozen_analysis_output_misalignment": 4,
+        "B_prime_analysis_output_misalignment": 3,
+        "B_frozen_error_stages": {
+          "analysis_output_misalignment": 4,
+          "model_interpretation_failure": 1
+        },
+        "B_prime_error_stages": {
+          "analysis_output_misalignment": 3,
+          "model_interpretation_failure": 1
+        }
+      }
+    },
+    {
+      "model": "qwen2.5-coder:32b",
+      "artifact": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/bprime-qwen2.5-coder_32b.json",
+      "summary": {
+        "n": 8,
+        "B_frozen_match_gold": 7,
+        "B_prime_match_gold": 8,
+        "B_frozen_analysis_output_misalignment": 1,
+        "B_prime_analysis_output_misalignment": 0,
+        "B_frozen_error_stages": {
+          "analysis_output_misalignment": 1
+        },
+        "B_prime_error_stages": {}
+      }
+    }
+  ],
+  "generated_at": "2026-08-17T18:15:37.087572+00:00",
+  "note": "Frozen B prompt unchanged. Unseen cases not in this runner. Do not treat a B\u2032 win on n=8 as Phase-3."
+}

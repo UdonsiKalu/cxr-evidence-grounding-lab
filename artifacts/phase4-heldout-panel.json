@@ -1,0 +1,369 @@
+{
+  "experiment": "phase4_heldout_panel",
+  "optional": true,
+  "prompts_frozen": true,
+  "bprime_not_default": true,
+  "case_ids": [
+    "C9",
+    "C10",
+    "C11",
+    "U9",
+    "U10",
+    "U11",
+    "U12"
+  ],
+  "models": [
+    {
+      "model": "llama3:8b-instruct-q4_0",
+      "reused_phase1_artifact": false,
+      "artifact": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/phase4-llama3_8b-instruct-q4_0.json",
+      "summary": {
+        "n": 7,
+        "match_gold": {
+          "A": 2,
+          "B": 4,
+          "C": 6,
+          "D": 5
+        },
+        "loss_stage_counts_all_rows": {
+          "A": {
+            "none": 2,
+            "model_interpretation_failure": 0,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 5
+          },
+          "B": {
+            "none": 4,
+            "model_interpretation_failure": 1,
+            "analysis_output_misalignment": 2,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          },
+          "C": {
+            "none": 6,
+            "model_interpretation_failure": 1,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          },
+          "D": {
+            "none": 5,
+            "model_interpretation_failure": 1,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 1,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          }
+        },
+        "error_stage_counts_when_verdict_misses_gold": {
+          "A": {
+            "direct_verdict_miss": 5
+          },
+          "B": {
+            "analysis_output_misalignment": 2,
+            "model_interpretation_failure": 1
+          },
+          "C": {
+            "model_interpretation_failure": 1
+          },
+          "D": {
+            "model_interpretation_failure": 1,
+            "representation_loss": 1
+          }
+        },
+        "note": "Headline research numbers are error_stage_counts_when_verdict_misses_gold. C4 left unresolved by design; do not treat its miss as a bug to fix here."
+      },
+      "match_gold": {
+        "A": 2,
+        "B": 4,
+        "C": 6,
+        "D": 5
+      },
+      "error_stage_counts_when_verdict_misses_gold": {
+        "A": {
+          "direct_verdict_miss": 5
+        },
+        "B": {
+          "analysis_output_misalignment": 2,
+          "model_interpretation_failure": 1
+        },
+        "C": {
+          "model_interpretation_failure": 1
+        },
+        "D": {
+          "model_interpretation_failure": 1,
+          "representation_loss": 1
+        }
+      },
+      "phase4_regex_screen": {
+        "note": "Regex analysis_has_distinction screen only. Protocol headline uses human-confirmed analyses (A_human).",
+        "B": {
+          "n_screen": 6,
+          "loss": 2,
+          "ids_with_cue": [
+            "C9",
+            "C11",
+            "U9",
+            "U10",
+            "U11",
+            "U12"
+          ],
+          "ids_loss": [
+            "C9",
+            "C11"
+          ]
+        },
+        "D": {
+          "n_screen": 6,
+          "representation_loss": 1,
+          "ids_with_cue": [
+            "C9",
+            "C11",
+            "U9",
+            "U10",
+            "U11",
+            "U12"
+          ],
+          "ids_representation_loss": [
+            "C11"
+          ]
+        }
+      }
+    },
+    {
+      "model": "mistral:instruct",
+      "reused_phase1_artifact": false,
+      "artifact": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/phase4-mistral_instruct.json",
+      "summary": {
+        "n": 7,
+        "match_gold": {
+          "A": 7,
+          "B": 4,
+          "C": 7,
+          "D": 4
+        },
+        "loss_stage_counts_all_rows": {
+          "A": {
+            "none": 7,
+            "model_interpretation_failure": 0,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          },
+          "B": {
+            "none": 4,
+            "model_interpretation_failure": 2,
+            "analysis_output_misalignment": 1,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          },
+          "C": {
+            "none": 7,
+            "model_interpretation_failure": 0,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          },
+          "D": {
+            "none": 4,
+            "model_interpretation_failure": 2,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 1,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          }
+        },
+        "error_stage_counts_when_verdict_misses_gold": {
+          "A": {},
+          "B": {
+            "model_interpretation_failure": 2,
+            "analysis_output_misalignment": 1
+          },
+          "C": {},
+          "D": {
+            "model_interpretation_failure": 2,
+            "representation_loss": 1
+          }
+        },
+        "note": "Headline research numbers are error_stage_counts_when_verdict_misses_gold. C4 left unresolved by design; do not treat its miss as a bug to fix here."
+      },
+      "match_gold": {
+        "A": 7,
+        "B": 4,
+        "C": 7,
+        "D": 4
+      },
+      "error_stage_counts_when_verdict_misses_gold": {
+        "A": {},
+        "B": {
+          "model_interpretation_failure": 2,
+          "analysis_output_misalignment": 1
+        },
+        "C": {},
+        "D": {
+          "model_interpretation_failure": 2,
+          "representation_loss": 1
+        }
+      },
+      "phase4_regex_screen": {
+        "note": "Regex analysis_has_distinction screen only. Protocol headline uses human-confirmed analyses (A_human).",
+        "B": {
+          "n_screen": 5,
+          "loss": 1,
+          "ids_with_cue": [
+            "C11",
+            "U9",
+            "U10",
+            "U11",
+            "U12"
+          ],
+          "ids_loss": [
+            "C11"
+          ]
+        },
+        "D": {
+          "n_screen": 5,
+          "representation_loss": 1,
+          "ids_with_cue": [
+            "C11",
+            "U9",
+            "U10",
+            "U11",
+            "U12"
+          ],
+          "ids_representation_loss": [
+            "C11"
+          ]
+        }
+      }
+    },
+    {
+      "model": "qwen2.5-coder:32b",
+      "reused_phase1_artifact": false,
+      "artifact": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/phase4-qwen2.5-coder_32b.json",
+      "summary": {
+        "n": 7,
+        "match_gold": {
+          "A": 2,
+          "B": 5,
+          "C": 6,
+          "D": 6
+        },
+        "loss_stage_counts_all_rows": {
+          "A": {
+            "none": 2,
+            "model_interpretation_failure": 0,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 5
+          },
+          "B": {
+            "none": 5,
+            "model_interpretation_failure": 0,
+            "analysis_output_misalignment": 2,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          },
+          "C": {
+            "none": 6,
+            "model_interpretation_failure": 1,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          },
+          "D": {
+            "none": 6,
+            "model_interpretation_failure": 0,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 1,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          }
+        },
+        "error_stage_counts_when_verdict_misses_gold": {
+          "A": {
+            "direct_verdict_miss": 5
+          },
+          "B": {
+            "analysis_output_misalignment": 2
+          },
+          "C": {
+            "model_interpretation_failure": 1
+          },
+          "D": {
+            "representation_loss": 1
+          }
+        },
+        "note": "Headline research numbers are error_stage_counts_when_verdict_misses_gold. C4 left unresolved by design; do not treat its miss as a bug to fix here."
+      },
+      "match_gold": {
+        "A": 2,
+        "B": 5,
+        "C": 6,
+        "D": 6
+      },
+      "error_stage_counts_when_verdict_misses_gold": {
+        "A": {
+          "direct_verdict_miss": 5
+        },
+        "B": {
+          "analysis_output_misalignment": 2
+        },
+        "C": {
+          "model_interpretation_failure": 1
+        },
+        "D": {
+          "representation_loss": 1
+        }
+      },
+      "phase4_regex_screen": {
+        "note": "Regex analysis_has_distinction screen only. Protocol headline uses human-confirmed analyses (A_human).",
+        "B": {
+          "n_screen": 7,
+          "loss": 2,
+          "ids_with_cue": [
+            "C9",
+            "C10",
+            "C11",
+            "U9",
+            "U10",
+            "U11",
+            "U12"
+          ],
+          "ids_loss": [
+            "C9",
+            "C10"
+          ]
+        },
+        "D": {
+          "n_screen": 7,
+          "representation_loss": 1,
+          "ids_with_cue": [
+            "C9",
+            "C10",
+            "C11",
+            "U9",
+            "U10",
+            "U11",
+            "U12"
+          ],
+          "ids_representation_loss": [
+            "C10"
+          ]
+        }
+      }
+    }
+  ],
+  "generated_at": "2026-08-17T19:39:05.058500+00:00",
+  "note": "Held-out C9\u2013C11/U9\u2013U12. Frozen A\u2013D. B\u2032 not used. No C4/C8 analog. Does not overwrite phase1 / phase2 / phase3 artifacts. Headline B/D loss rates need human confirmation of analyses; phase4_regex_screen is a cue filter only."
+}
