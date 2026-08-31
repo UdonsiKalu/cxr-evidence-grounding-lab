@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-08-28T06:12:39.115917+00:00",
+  "determinism": {
+    "seed": 0,
+    "cublas_workspace": ":4096:8",
+    "cudnn_deterministic": true,
+    "tf32": false,
+    "deterministic_algorithms": "warn_only",
+    "do_sample": false
+  },
+  "run_1": {
+    "baseline_margin": 1.75,
+    "baseline_x": true,
+    "baseline_verdict": "CONTRADICTION",
+    "steered_margin": 0.125,
+    "steered_x": true,
+    "steered_verdict": "CONTRADICTION",
+    "commit_step_b": 136,
+    "commit_step_s": 136
+  },
+  "run_2": {
+    "baseline_margin": 1.75,
+    "baseline_x": true,
+    "baseline_verdict": "CONTRADICTION",
+    "steered_margin": 0.125,
+    "steered_x": true,
+    "steered_verdict": "CONTRADICTION",
+    "commit_step_b": 136,
+    "commit_step_s": 136
+  },
+  "match": true,
+  "mismatches": []
+}
