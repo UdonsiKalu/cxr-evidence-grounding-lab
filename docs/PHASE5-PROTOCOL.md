@@ -1,7 +1,7 @@
 # Phase-5 protocol — verify once, then REVIEW (not UNCERTAIN)
 
-**Status:** protocol frozen 2026-08-23; implementation started; **no live Ollama claim until run completes**.  
-**Direction:** [ARCHITECTURE-DIRECTION.md](./ARCHITECTURE-DIRECTION.md)  
+**Status:** protocol frozen 2026-08-23; **live panel complete** (`artifacts/phase5-verify-panel.json`); PDF frozen in `notes/progress-notes.pdf`.  
+**Direction:** [ARCHITECTURE-DIRECTION.md](./ARCHITECTURE-DIRECTION.md) · next stub: [PHASE6-PROTOCOL.md](./PHASE6-PROTOCOL.md)  
 **Does not replace** M1–M3 or Phase-1–4 records. Does not overwrite prior artifacts.
 
 ## Soft claim (required wording)
