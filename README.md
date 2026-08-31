@@ -74,7 +74,7 @@ The demo only **replays frozen results**. It does not run models on anyone’s c
 - This is a **small synthetic lab**, not a clinical product and not a claim of production accuracy.
 
 **Guides:** [simple illustrated PDF](./notes/progress-notes-simple.pdf) · [full progress notes](./notes/progress-notes.pdf) · [EVALUATION-JOURNEY.md](./EVALUATION-JOURNEY.md)  
-**Direction (verify → REVIEW):** [docs/ARCHITECTURE-DIRECTION.md](./docs/ARCHITECTURE-DIRECTION.md) · [docs/PHASE5-PROTOCOL.md](./docs/PHASE5-PROTOCOL.md)
+**Direction (safe protocol / verify → REVIEW):** [docs/ARCHITECTURE-DIRECTION.md](./docs/ARCHITECTURE-DIRECTION.md) · [docs/PHASE5-PROTOCOL.md](./docs/PHASE5-PROTOCOL.md) · [docs/PHASE6-PROTOCOL.md](./docs/PHASE6-PROTOCOL.md)
 
 ---
 
@@ -91,6 +91,15 @@ python3 server.py
 # → http://127.0.0.1:8253/
 ```
 
+Sibling UIs (separate folders; share this lab’s `artifacts/` + `n2s_lab/`):
+
+| Port | Folder | Role |
+|------|--------|------|
+| **8253** | this repo | M1 demo |
+| **8254** | `../cxr-evidence-grounding-lab-panel/` | Conditions A–D (Phase 1–4) |
+| **8255** | `../cxr-evidence-grounding-lab-safety/` | Phase 5–7 safety stack (verify / Dual / evidence) |
+| **8256** | `../cxr-evidence-grounding-lab-repeng/` | Phase 9–11 rep-eng explorer (replay) |
+
 | Mode | Command | Needs Ollama? |
 |------|---------|----------------|
 | Browse frozen / mock path | `python3 run_experiment.py --mode mock` | No |
@@ -98,7 +107,29 @@ python3 server.py
 | Replay Pages demo locally | `cd docs && python3 -m http.server 8765` | No |
 | Phase-5 verify selftest | `python3 run_phase5.py --selftest` | No |
 | Phase-5 live (verify→REVIEW) | `python3 run_phase5.py` | Yes |
+| Phase-6 faithfulness selftest | `python3 run_phase6.py --selftest` | No |
+| Phase-6 live (round-trip + dual-path) | `python3 run_phase6.py` | Yes |
+| Phase-7 evidence + BMT/CAR-T selftest | `python3 run_phase7.py --selftest` | No |
+| Phase-7 live (BMT/CAR-T held-out) | `python3 run_phase7.py --set bmtcart` | Yes |
+| Phase-7 oncology replay + evidence | `python3 run_phase7.py --set phase4` | Yes |
+| Phase-8 ladder selftest | `python3 run_phase8.py --selftest` | No |
+| Phase-8 ladder (14B + non-coder 32B) | `python3 run_phase8.py --set both` | Yes |
+| Phase-9A selftest | `python3 run_phase9a.py --selftest` | No |
+| Phase-9A BC_E1 HF reproduce | `.venv-phase9/bin/python run_phase9a.py` | HF download |
+| Phase-9B BC_E1 localization | `.venv-phase9/bin/python run_phase9b.py` | HF; requires 9A YES |
+| Phase-9C BC_E1 intervention | `.venv-phase9/bin/python run_phase9c.py` | HF; requires 9B YES |
+| Phase-10 activation steer | `.venv-phase9/bin/python run_phase10.py` | HF; requires 9B YES |
+| Phase-11 generalization | `.venv-phase9/bin/python run_phase11.py` | HF; requires Ph10 YES |
+| Rep-eng explorer UI | `cd ../cxr-evidence-grounding-lab-repeng && python3 server.py` | No (replay JSON) |
 
 Default live model: `llama3:8b-instruct-q4_0` (override with `N2S_OLLAMA_MODEL`).
 
 Phase-5 adds **L2 verification + L3 REVIEW** (never force UNCERTAIN on verify-fail). See [docs/PHASE5-PROTOCOL.md](./docs/PHASE5-PROTOCOL.md). Does not overwrite Phase-1–4 artifacts.
+
+Phase-6 adds **L2b round-trip** and **L2c dual-path agreement** on top of Phase-5 (experiments toward general faithfulness checks — not a proof). See [docs/PHASE6-PROTOCOL.md](./docs/PHASE6-PROTOCOL.md). Does not overwrite Phase-1–5 artifacts.
+
+Phase-7 adds **L2d evidence-preservation object** (claim + source span + verify) and a **BMT/CAR-T cross-domain** held-out slice (`data/heldout-bmtcart-phase7.json`). See [docs/PHASE7-PROTOCOL.md](./docs/PHASE7-PROTOCOL.md). Does not overwrite Phase-1–6 artifacts.
+
+Phase-8 adds a **model ladder** (`qwen2.5:14b` + non-coder `qwen2.5:32b`) on the same Phase-7 stack / frozen slices. See [docs/PHASE8-PROTOCOL.md](./docs/PHASE8-PROTOCOL.md). Does not overwrite Phase-1–7 citation panels.
+
+Phase-9 is a **representation-engineering pilot** on BC_E1 false `contradiction.present` (HF activations; not Dual fix). **Frozen completed pilot** — see [docs/PHASE9-NOTES-SIMPLE.md](./docs/PHASE9-NOTES-SIMPLE.md) and [docs/PHASE9-PROTOCOL.md](./docs/PHASE9-PROTOCOL.md). **Phase-10 frozen:** activation steer gate YES — [docs/PHASE10-PROTOCOL.md](./docs/PHASE10-PROTOCOL.md). **Phase-11 frozen:** fixed-vector generalization gate NO (partial) — [docs/PHASE11-PROTOCOL.md](./docs/PHASE11-PROTOCOL.md). **Rep-eng explorer:** `../cxr-evidence-grounding-lab-repeng/` on **:8256**.

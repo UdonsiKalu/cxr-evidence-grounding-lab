@@ -184,9 +184,108 @@ They are four places meaning can disappear:
   \item \textbf{Make the boundary visible.} Same notes, direct LLM vs structured pipeline (Milestone~1 UI on port 8253 if you run locally).
   \item \textbf{Keep hard states on purpose.} Mark contradiction and uncertainty in the structured form so the rule can fire --- states the raw LLM often narrates and then throws away.
   \item \textbf{Ask where meaning died.} Conditions A--D on discovery notes, then held-out notes, across three local models. Representation loss (D) still appeared on unseen wording.
+  \item \textbf{Verify, then abstain safely (Phase~5).} If structured form may not match what the analysis said, regenerate once; if still unverifiable, emit \textbf{Review} --- not a guessed verdict, and not the same as clinical Uncertain.
+  \item \textbf{Stack more checks (Phase~6--7).} Round-trip + dual-path, then an evidence span gate; try the same idea on BMT/CAR-T wording. Safer auto-labels often mean more Reviews.
+  \item \textbf{Rep-eng pilot (Phase~9--10).} On one BMT false-contradiction case: localize the repair commit, then show hidden activation steering (not logit bias) can flip the model's contradiction choice while controls hold.
 \end{enumerate}
 
 That is the arc. The long PDF lists every count and protocol freeze.
+
+\section{Phase~5 in one sentence}
+
+When the model's JSON might have dropped what its own analysis noticed, the system checks, tries once to repair, then either applies the fixed rule or says \textbf{Review}.
+On the Phase~4 held-out slice, every measured D ``representation loss'' was either fixed or sent to Review --- not left as a silent wrong label.
+
+\section{Phase~6--7 in one sentence}
+
+Phase~6: if two paths disagree or a paraphrase of the structure does not match the note, Review.
+Phase~7: every formal claim must carry a source span; same stack on six BMT/CAR-T notes --- Llama/Mistral Dual\_full safety 1.0 (lower coverage); Qwen coder 0.75; evidence gate barely moved the needle. Soft claim only.
+
+\section{Phase~8 in one sentence}
+
+A mid Qwen 2.5 14B and a non-coder Qwen 2.5 32B were run on the same safety stack.
+On BMT/CAR-T, non-coder 32B Dual safety reached 1.0 (vs frozen coder 0.75); 14B still missed once. Size helps some; protocol still required. Soft claim only.
+
+\section{Phase~9 in plain language (rep-eng pilot, frozen Aug 2026)}
+
+\textbf{Problem case BC\_E1:} a note describes response then progression (normal course). Gold = Satisfied. Some models still mark \textbf{contradiction.present = true} after repair and can AUTO-label Contradiction --- wrong.
+
+\textbf{What we did (Observe $\rightarrow$ Localize $\rightarrow$ Intervene):}
+\begin{itemize}
+  \item \textbf{9A:} Same note + schema on HuggingFace Qwen 7B vs 14B. 7B repair sets X=true; 14B stays false.
+  \item \textbf{9B:} At the repair step where the model writes \texttt{present: true/false}, 7B logit margin favored true (+1.6); 14B favored false ($-$4.0).
+  \item \textbf{9C:} We added +4 logit bias toward \texttt{false} \emph{only at that commit}. BC\_E1 flipped to X=false and verdict Satisfied. Two control cases unchanged.
+\end{itemize}
+
+\textbf{What that proves:} the error is causally tied to the \textbf{repair boolean commit}, not immovable.
+
+\textbf{What Phase~9 alone did \emph{not} prove:} hidden-representation steering (9C used logit bias). \textbf{Phase~10} (below) addressed that.
+
+\section{Phase~10 (frozen Aug 2026 --- genuine pilot rep-eng)}
+
+\textbf{Stricter question answered:} yes --- on BC\_E1, patching hidden layers at the repair commit (no logit bias) made 7B \emph{naturally} commit \texttt{false}.
+
+\textbf{Method:} fixed direction = BC\_E2 false-commit hidden minus BC\_E1 true-commit hidden, layers 0.75 + 1.00; patch only at \texttt{contradiction.present} commit.
+
+\textbf{Result @ $\alpha$=4:} logit margin +1.6 $\rightarrow$ $-$0.1; X true$\rightarrow$false; verdict Contradiction$\rightarrow$Satisfied. Controls BC\_C1 / BC\_E2 unchanged.
+
+\textbf{Claim (pilot):} contrast-derived hidden patch \textbf{causally changed} classification on BC\_E1 while preserving two controls.
+
+\textbf{Do not overclaim:} we found a \emph{steerable direction}, not ``the contradiction representation.'' One case; $\alpha$ tuned on target.
+
+Next: Phase~11 --- does the \textbf{same frozen vector} generalize?
+
+\section{Phase~11 (frozen Aug 2026 --- partial generalization)}
+
+\textbf{Question:} same Ph10 vector + $\alpha$=4 on \textbf{unseen} held-out notes?
+
+\textbf{Result:} gate \textbf{NO} but informative --- controls 3/3 held; BC11\_E2 fixed; BC11\_E3 still wrong (margin dropped only).
+
+\textbf{Reading:} direction generalizes to at least one unseen course case; not universal. Freeze as soft partial result.
+
+Artifact: \texttt{artifacts/phase11-generalization-panel.json}. Explorer: \url{http://127.0.0.1:8256/} (\texttt{cxr-evidence-grounding-lab-repeng/}).
+
+\section{Phase~12A (frozen Aug 2026 --- margin / strength regime)}
+
+\textbf{Question:} Ph11's miss on E3 --- wrong direction, or same direction but not strong enough?
+
+\textbf{Method:} same frozen Ph10 vector; $\alpha\in\{2,4,6,8\}$ on BC11\_E2 and BC11\_E3; controls stay at $\alpha$=4.
+
+\textbf{Result:} mechanism gate \textbf{YES}. Margins move monotonically toward \texttt{false}. E2 flips at $\alpha$=4 (baseline margin $+1.13$). E3 flips at $\alpha$=8 (baseline $+2.38$).
+
+\textbf{Reading:} Ph11 and Ph12 are complementary. Fixed $\alpha$=4 was too weak for E3; the direction still works. Soft claim on these two cases only --- not ``all failures are margin-regime.'' Freeze before adaptive-$\alpha$ experiments.
+
+Artifact: \texttt{artifacts/phase12-margin-regime-panel.json}. Protocol: \texttt{docs/PHASE12-PROTOCOL.md}.
+
+\section{Phase~12B (frozen Aug 2026 --- second held-out; gate NO)}
+
+\textbf{Question:} does Ph12A's LOW/HIGH $\alpha$ rule transfer to \textbf{new} notes?
+
+\textbf{Result:} gate \textbf{NO}. All three targets HIGH; margins moved toward false but none flipped by $\alpha$=8. Contradiction control BC12\_C1 broken at $\alpha$=4 (true$\rightarrow$false). N1 held.
+
+\textbf{Reading:} direction still has leverage; ``HIGH $\Rightarrow$ flip @8'' did not transfer; more strength is not free. Soft negative --- freeze before adaptive-$\alpha$.
+
+Artifact: \texttt{artifacts/phase12b-heldout-panel.json}. Protocol: \texttt{docs/PHASE12B-PROTOCOL.md}.
+
+\section{Phase~13 (frozen Aug 2026 --- representation geometry; gate YES)}
+
+\textbf{Question:} at the repair commit (no steer), do course false-X notes and true-contradiction notes sit in separable regions along the Ph10 direction?
+
+\textbf{Result:} gate \textbf{YES} (soft). 5/5 course + 4/4 contradiction usable. cos@1.00 ranges do not overlap (gap $\approx 0.021$). Leave-one-out probe accuracy $0.889$.
+
+\textbf{Reading:} classes look softly separable --- useful for designing safer conditional interventions later. Does \textbf{not} by itself authorize adaptive-$\alpha$. Soft pilot only.
+
+Artifact: \texttt{artifacts/phase13-geometry-panel.json}. Protocol: \texttt{docs/PHASE13-PROTOCOL.md}.
+
+\section{Phase~14 (frozen Aug 2026 --- gated steer; gate NO)}
+
+\textbf{Question:} can a frozen cosine gate ($\tau{=}{-}0.690$ from Ph13) decide when to apply Ph10 steer at $\alpha$=4 on \textbf{new} notes?
+
+\textbf{Result:} gate \textbf{NO}. Contradiction controls and N1 stayed STEER OFF. Only 1/3 course crossed $\tau$; that case moved margin but did not flip X. Utility flips = 0.
+
+\textbf{Reading:} soft negative --- this $\tau{+}\alpha$=4 recipe is not a sufficient conclusion of the Ph9--13 arc. Freeze; do not retune on this held-out or jump to adaptive-$\alpha$.
+
+Artifact: \texttt{artifacts/phase14-gated-panel.json}. Protocol: \texttt{docs/PHASE14-PROTOCOL.md}.
 
 \section{What we are (and are not) claiming}
 
@@ -205,6 +304,15 @@ That is the arc. The long PDF lists every count and protocol freeze.
 \midrule
 Click around & \url{https://udonsikalu.github.io/cxr-evidence-grounding-lab/} \\
 Every number \& freeze & \texttt{notes/progress-notes.pdf} \\
+Phase~9 simple notes & \texttt{docs/PHASE9-NOTES-SIMPLE.md} \\
+Phase~10 (activation steer) & \texttt{docs/PHASE10-PROTOCOL.md} \\
+Rep-eng explorer & \url{http://127.0.0.1:8256/} (\texttt{cxr-evidence-grounding-lab-repeng/}) \\
+Phase~11 generalization & \texttt{docs/PHASE11-PROTOCOL.md} \\
+Phase~12A margin / $\alpha$ panel & \texttt{docs/PHASE12-PROTOCOL.md} \\
+Phase~12B second held-out & \texttt{docs/PHASE12B-PROTOCOL.md} \\
+Phase~13 geometry & \texttt{docs/PHASE13-PROTOCOL.md} \\
+Phase~14 gated steer & \texttt{docs/PHASE14-PROTOCOL.md} \\
+Architecture direction & \texttt{docs/ARCHITECTURE-DIRECTION.md} \\
 Written journey & \texttt{EVALUATION-JOURNEY.md} \\
 Run the local UI & \texttt{python3 server.py} $\rightarrow$ \texttt{http://127.0.0.1:8253/} \\
 Repo README (NeSy intro) & GitHub project homepage \\
