@@ -5,6 +5,82 @@ A small, hands-on lab for people new to **neuro-symbolic (NeSy)** AI.
 **Try the findings demo (no install, no GPU):**  
 https://udonsikalu.github.io/cxr-evidence-grounding-lab/
 
+**Companion (Phase 9–11 steering):** [cxr-repeng-workbench](https://github.com/UdonsiKalu/cxr-repeng-workbench) · [public demo](https://udonsikalu.github.io/cxr-repeng-workbench/)
+
+---
+
+## Modus operandi (first time here)
+
+Read this once, then pick a path. **Start with the public demo** unless you already know you need live models.
+
+### What this repo is
+
+| Piece | Role |
+|-------|------|
+| **This lab** | Phases **1–8** — where meaning dies at the **neural → symbolic** boundary (conditions A–D on synthetic notes) |
+| **[RepEng Workbench](https://github.com/UdonsiKalu/cxr-repeng-workbench)** | Phases **9–11** — observe, localize, and **steer** a specific failure (BC_E1 false contradiction) |
+
+Same research arc, two repos: **grounding first**, then **mechanistic intervention**.
+
+### Path A — Watch only (recommended first visit)
+
+**No install. No GPU. No models run.**
+
+1. Open **https://udonsikalu.github.io/cxr-evidence-grounding-lab/**
+2. Leave artifact on **Phase-4 held-out (C9–U12)** and click **Load**
+3. Pick a case in the sidebar (e.g. **C9** or **U10**)
+4. Compare columns **A / B / C / D** — verdict, gold match, loss stage
+5. Read the note and the extract/ground JSON under each condition
+
+**You are done** when you see that loss is not one thing: direct verdict (A), analysis→verdict (B), and analysis→structure (D) fail differently.
+
+Then continue to the workbench demo: **https://udonsikalu.github.io/cxr-repeng-workbench/** → tab **1 · Story** → case **BC_E1**.
+
+### Path B — Local replay (still no models)
+
+```bash
+git clone https://github.com/UdonsiKalu/cxr-evidence-grounding-lab.git
+cd cxr-evidence-grounding-lab
+python3 scripts/prepare-github-pages.py   # optional; docs/ already in repo
+cd docs && python3 -m http.server 8765
+# → http://127.0.0.1:8765/
+```
+
+Or replay frozen JSON from the CLI:
+
+```bash
+python3 run_experiment.py --mode mock
+python3 run_phase5.py --selftest    # Phase 5 verify stack
+python3 run_phase6.py --selftest    # faithfulness checks
+```
+
+### Path C — Live runs (your machine, optional)
+
+**Requirements:** Python 3, [Ollama](https://ollama.com) on `127.0.0.1:11434`, default model `llama3:8b-instruct-q4_0`
+
+```bash
+git clone https://github.com/UdonsiKalu/cxr-evidence-grounding-lab.git
+cd cxr-evidence-grounding-lab
+python3 server.py
+# → http://127.0.0.1:8253/
+```
+
+| Goal | Command |
+|------|---------|
+| Live extract + baseline vs pipeline | `python3 run_experiment.py --mode live` |
+| Phase 5 verify → REVIEW | `python3 run_phase5.py` |
+| Phase 6 round-trip / dual-path | `python3 run_phase6.py` |
+| Phase 7 BMT/CAR-T held-out | `python3 run_phase7.py --set bmtcart` |
+| Phase 8 model ladder | `python3 run_phase8.py --set both` |
+
+Phases **9–14** (HF + GPU) run from this repo’s scripts; the **Workbench UI** is in the sibling [cxr-repeng-workbench](https://github.com/UdonsiKalu/cxr-repeng-workbench) repo.
+
+### What not to expect
+
+- Not real patient data, not CXR production, not a clinical accuracy claim  
+- Public demos **replay frozen JSON only** — they never call your GPU or Ollama  
+- Do not expose a public tunnel to your local Ollama for these demos  
+
 ---
 
 ## What is this about?
