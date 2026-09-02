@@ -98,7 +98,7 @@ Sibling UIs (separate folders; share this lab’s `artifacts/` + `n2s_lab/`):
 | **8253** | this repo | M1 demo |
 | **8254** | `../cxr-evidence-grounding-lab-panel/` | Conditions A–D (Phase 1–4) |
 | **8255** | `../cxr-evidence-grounding-lab-safety/` | Phase 5–7 safety stack (verify / Dual / evidence) |
-| **8256** | `../cxr-evidence-grounding-lab-repeng/` | Phase 9–11 rep-eng explorer (replay) |
+| **8256** | `../cxr-evidence-grounding-lab-repeng/` | Phase 9–11 rep-eng explorer (replay) · [public demo](https://udonsikalu.github.io/cxr-repeng-workbench/) |
 
 | Mode | Command | Needs Ollama? |
 |------|---------|----------------|
