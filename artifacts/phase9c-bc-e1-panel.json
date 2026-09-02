@@ -1,0 +1,70 @@
+{
+  "phase": "9C",
+  "protocol": "docs/PHASE9-PROTOCOL.md",
+  "timestamp": "2026-08-24T21:07:55.918387+00:00",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "BC_E1": {
+    "baseline": {
+      "case_id": "BC_E1",
+      "gold": "SATISFIED",
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "logit_bias": null,
+      "raw_x": false,
+      "verify_ok": false,
+      "repair_final_x": true,
+      "parse_ok": true,
+      "commit_step": 136,
+      "commit_value": "true",
+      "intervened_steps": [],
+      "verdict": "CONTRADICTION",
+      "disposition": "AUTO"
+    },
+    "intervened": {
+      "case_id": "BC_E1",
+      "gold": "SATISFIED",
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "logit_bias_false",
+      "logit_bias": 4.0,
+      "raw_x": false,
+      "verify_ok": false,
+      "repair_final_x": false,
+      "parse_ok": true,
+      "commit_step": 136,
+      "commit_value": "false",
+      "intervened_steps": [
+        136
+      ],
+      "verdict": "SATISFIED",
+      "disposition": "AUTO"
+    },
+    "x_flipped": true,
+    "verdict_baseline": "CONTRADICTION",
+    "verdict_intervened": "SATISFIED"
+  },
+  "controls": {
+    "BC_C1": {
+      "baseline_x": true,
+      "intervened_x": true,
+      "baseline_verdict": "CONTRADICTION",
+      "intervened_verdict": "CONTRADICTION",
+      "x_unchanged_or_correct": true
+    },
+    "BC_E2": {
+      "baseline_x": false,
+      "intervened_x": false,
+      "baseline_verdict": "NOT_SATISFIED",
+      "intervened_verdict": "NOT_SATISFIED",
+      "x_unchanged_or_correct": true
+    }
+  },
+  "gate_causal_intervention": {
+    "pass": true,
+    "x_flipped_on_BC_E1": true,
+    "verdict_fixed": true,
+    "control_BC_C1_ok": true,
+    "control_BC_E2_ok": true,
+    "note": "9C YES \u2014 soft causal claim on BC_E1 repair commit"
+  },
+  "note": "Logit intervention at repair contradiction.present commit; soft claim n=1."
+}

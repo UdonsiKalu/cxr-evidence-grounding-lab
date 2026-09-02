@@ -7,7 +7,13 @@ from typing import Any
 from .ground import ground, selftest_ground
 from .neural import baseline_live, extract_live, extract_mock
 from .ollama_client import DEFAULT_MODEL, ollama_reachable
-from .paths import ARTIFACTS_DIR, DATA_PATH, HELDOUT_PATH, HELDOUT_PHASE4_PATH
+from .paths import (
+    ARTIFACTS_DIR,
+    DATA_PATH,
+    HELDOUT_BMTCART_PHASE7_PATH,
+    HELDOUT_PATH,
+    HELDOUT_PHASE4_PATH,
+)
 from .predicate import PREDICATE_FORMULA, PREDICATE_ID, PREDICATE_TEXT, evaluate_rule, selftest
 from .types import BaselineResult, Verdict
 
@@ -23,6 +29,10 @@ def load_heldout_cases() -> list[dict[str, Any]]:
 
 def load_heldout_phase4_cases() -> list[dict[str, Any]]:
     return load_cases(HELDOUT_PHASE4_PATH)
+
+
+def load_heldout_bmtcart_cases() -> list[dict[str, Any]]:
+    return load_cases(HELDOUT_BMTCART_PHASE7_PATH)
 
 
 def run_pipeline(evidence: str, *, mode: str) -> dict[str, Any]:

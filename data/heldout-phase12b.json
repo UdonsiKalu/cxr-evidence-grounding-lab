@@ -1,0 +1,57 @@
+{
+  "predicate_id": "FIRST_LINE_THERAPY_FAILED",
+  "gold_is_not_fed_to_models": true,
+  "held_out": true,
+  "phase": "12B",
+  "domain": "bmt_cart_hematology",
+  "prompts_were_not_designed_on_these": true,
+  "wording_status": "accepted",
+  "note": "Phase-12B second held-out. NOT in Ph9/10 vector or Ph11/12A panels. Course response→progression (gold SATISFIED) + one contradiction + one no-failure. Tests pre-declared LOW/HIGH margin bands from Ph12A. Wording accepted 2026-08-25.",
+  "cases": [
+    {
+      "id": "BC12_E1",
+      "role": "generalization_target",
+      "category": "explicit",
+      "domain_tag": "hodgkin",
+      "expected": "SATISFIED",
+      "why": "ABVD response then progression; switch to salvage.",
+      "evidence": "Classical Hodgkin lymphoma: first-line ABVD for four cycles with metabolic response on interim PET, then progressive disease with new FDG-avid nodes before cycle 6. Discontinued ABVD for progression; referred for salvage ICE."
+    },
+    {
+      "id": "BC12_E2",
+      "role": "generalization_target",
+      "category": "explicit",
+      "domain_tag": "follicular",
+      "expected": "SATISFIED",
+      "why": "R-CHOP response then POD; second-line start.",
+      "evidence": "Follicular lymphoma grade 2: first-line R-CHOP achieved partial response after three cycles, then clear progression of disease with rising LDH and enlarging nodes at restaging. Stopped R-CHOP for POD; started second-line bendamustine-rituximab."
+    },
+    {
+      "id": "BC12_E3",
+      "role": "generalization_target",
+      "category": "explicit",
+      "domain_tag": "aml",
+      "expected": "SATISFIED",
+      "why": "7+3 induction response then morphologic relapse; reinduction planned.",
+      "evidence": "AML: completed induction 7+3 with day-14 marrow showing clearing blasts and clinical response, then morphologic relapse with 25% blasts before consolidation. Held planned consolidation for relapse; planned reinduction with MEC."
+    },
+    {
+      "id": "BC12_C1",
+      "role": "control_contradiction",
+      "category": "conflicting",
+      "domain_tag": "car_t",
+      "expected": "CONTRADICTION",
+      "why": "Note denies prior lines vs pharmacy documents completed induction.",
+      "evidence": "CART eligibility note: patient is treatment-naive for large B-cell lymphoma. Same-day pharmacy summary: completed six cycles first-line R-CHOP with CR documented on PET; proceed to lymphodepletion for axi-cel."
+    },
+    {
+      "id": "BC12_N1",
+      "role": "control_no_failure",
+      "category": "explicit",
+      "domain_tag": "myeloma",
+      "expected": "NOT_SATISFIED",
+      "why": "Ongoing first-line with response; no failure.",
+      "evidence": "Multiple myeloma: cycle 3 of first-line Dara-RVd with ongoing partial response and falling free light chains. Continue current regimen; no progression or intolerance documented."
+    }
+  ]
+}

@@ -1,0 +1,362 @@
+{
+  "workbench": "v2.2",
+  "timestamp": "2026-08-25T00:08:24.225825+00:00",
+  "job_id": "7c3a0eb8710040929cc107ad86178448",
+  "request": {
+    "kind": "batch",
+    "model_id": "Qwen/Qwen2.5-7B-Instruct",
+    "alpha": 4.0,
+    "break_freeze": false,
+    "unload_after": true,
+    "include_pilot": false,
+    "case_ids": [],
+    "layer_fractions": [
+      0.75,
+      1.0
+    ],
+    "vector": "BC_E2 false-commit \u2212 BC_E1 true-commit",
+    "estimated_vram_gb": 15.2
+  },
+  "result": {
+    "kind": "batch",
+    "model_id": "Qwen/Qwen2.5-7B-Instruct",
+    "alpha": 4.0,
+    "vector": "BC_E2 false-commit \u2212 BC_E1 true-commit",
+    "layer_fractions": [
+      0.75,
+      1.0
+    ],
+    "break_freeze": false,
+    "n_cases": 6,
+    "rows": [
+      {
+        "case_id": "BC11_E1",
+        "role": "generalization_target",
+        "gold": "SATISFIED",
+        "baseline": {
+          "case_id": "BC11_E1",
+          "gold": "SATISFIED",
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "intervention": "none",
+          "alpha": null,
+          "raw_x": false,
+          "verify_ok": false,
+          "repair_final_x": false,
+          "parse_ok": true,
+          "commit_step": 132,
+          "commit_value": "false",
+          "logit_margin_true_minus_false": -2.125,
+          "intervened_steps": [],
+          "verdict": "SATISFIED"
+        },
+        "steered": {
+          "case_id": "BC11_E1",
+          "gold": "SATISFIED",
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "intervention": "activation_steer",
+          "alpha": 4.0,
+          "raw_x": false,
+          "verify_ok": false,
+          "repair_final_x": false,
+          "parse_ok": true,
+          "commit_step": 132,
+          "commit_value": "false",
+          "logit_margin_true_minus_false": -3.75,
+          "intervened_steps": [
+            132
+          ],
+          "verdict": "SATISFIED"
+        },
+        "baseline_x": false,
+        "steered_x": false,
+        "baseline_margin": -2.125,
+        "steered_margin": -3.75,
+        "baseline_verdict": "SATISFIED",
+        "steered_verdict": "SATISFIED"
+      },
+      {
+        "case_id": "BC11_E2",
+        "role": "generalization_target",
+        "gold": "SATISFIED",
+        "baseline": {
+          "case_id": "BC11_E2",
+          "gold": "SATISFIED",
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "intervention": "none",
+          "alpha": null,
+          "raw_x": false,
+          "verify_ok": false,
+          "repair_final_x": true,
+          "parse_ok": true,
+          "commit_step": 142,
+          "commit_value": "true",
+          "logit_margin_true_minus_false": 1.125,
+          "intervened_steps": [],
+          "verdict": "CONTRADICTION"
+        },
+        "steered": {
+          "case_id": "BC11_E2",
+          "gold": "SATISFIED",
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "intervention": "activation_steer",
+          "alpha": 4.0,
+          "raw_x": false,
+          "verify_ok": false,
+          "repair_final_x": false,
+          "parse_ok": true,
+          "commit_step": 142,
+          "commit_value": "false",
+          "logit_margin_true_minus_false": -0.5,
+          "intervened_steps": [
+            142
+          ],
+          "verdict": "SATISFIED"
+        },
+        "baseline_x": true,
+        "steered_x": false,
+        "baseline_margin": 1.125,
+        "steered_margin": -0.5,
+        "baseline_verdict": "CONTRADICTION",
+        "steered_verdict": "SATISFIED"
+      },
+      {
+        "case_id": "BC11_E3",
+        "role": "generalization_target",
+        "gold": "SATISFIED",
+        "baseline": {
+          "case_id": "BC11_E3",
+          "gold": "SATISFIED",
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "intervention": "none",
+          "alpha": null,
+          "raw_x": false,
+          "verify_ok": false,
+          "repair_final_x": true,
+          "parse_ok": true,
+          "commit_step": 136,
+          "commit_value": "true",
+          "logit_margin_true_minus_false": 2.375,
+          "intervened_steps": [],
+          "verdict": "CONTRADICTION"
+        },
+        "steered": {
+          "case_id": "BC11_E3",
+          "gold": "SATISFIED",
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "intervention": "activation_steer",
+          "alpha": 4.0,
+          "raw_x": false,
+          "verify_ok": false,
+          "repair_final_x": true,
+          "parse_ok": true,
+          "commit_step": 136,
+          "commit_value": "true",
+          "logit_margin_true_minus_false": 0.875,
+          "intervened_steps": [
+            136
+          ],
+          "verdict": "CONTRADICTION"
+        },
+        "baseline_x": true,
+        "steered_x": true,
+        "baseline_margin": 2.375,
+        "steered_margin": 0.875,
+        "baseline_verdict": "CONTRADICTION",
+        "steered_verdict": "CONTRADICTION"
+      },
+      {
+        "case_id": "BC11_C1",
+        "role": "control_contradiction",
+        "gold": "CONTRADICTION",
+        "baseline": {
+          "case_id": "BC11_C1",
+          "gold": "CONTRADICTION",
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "intervention": "none",
+          "alpha": null,
+          "raw_x": false,
+          "verify_ok": false,
+          "repair_final_x": true,
+          "parse_ok": true,
+          "commit_step": 103,
+          "commit_value": "true",
+          "logit_margin_true_minus_false": 9.625,
+          "intervened_steps": [],
+          "verdict": "CONTRADICTION"
+        },
+        "steered": {
+          "case_id": "BC11_C1",
+          "gold": "CONTRADICTION",
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "intervention": "activation_steer",
+          "alpha": 4.0,
+          "raw_x": false,
+          "verify_ok": false,
+          "repair_final_x": true,
+          "parse_ok": true,
+          "commit_step": 103,
+          "commit_value": "true",
+          "logit_margin_true_minus_false": 8.625,
+          "intervened_steps": [
+            103
+          ],
+          "verdict": "CONTRADICTION"
+        },
+        "baseline_x": true,
+        "steered_x": true,
+        "baseline_margin": 9.625,
+        "steered_margin": 8.625,
+        "baseline_verdict": "CONTRADICTION",
+        "steered_verdict": "CONTRADICTION"
+      },
+      {
+        "case_id": "BC11_C2",
+        "role": "control_contradiction",
+        "gold": "CONTRADICTION",
+        "baseline": {
+          "case_id": "BC11_C2",
+          "gold": "CONTRADICTION",
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "intervention": "none",
+          "alpha": null,
+          "raw_x": true,
+          "verify_ok": true,
+          "repair_final_x": true,
+          "parse_ok": true,
+          "commit_step": 129,
+          "commit_value": "true",
+          "logit_margin_true_minus_false": 8.75,
+          "intervened_steps": [],
+          "verdict": "CONTRADICTION"
+        },
+        "steered": {
+          "case_id": "BC11_C2",
+          "gold": "CONTRADICTION",
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "intervention": "activation_steer",
+          "alpha": 4.0,
+          "raw_x": true,
+          "verify_ok": true,
+          "repair_final_x": true,
+          "parse_ok": true,
+          "commit_step": 129,
+          "commit_value": "true",
+          "logit_margin_true_minus_false": 7.75,
+          "intervened_steps": [
+            129
+          ],
+          "verdict": "CONTRADICTION"
+        },
+        "baseline_x": true,
+        "steered_x": true,
+        "baseline_margin": 8.75,
+        "steered_margin": 7.75,
+        "baseline_verdict": "CONTRADICTION",
+        "steered_verdict": "CONTRADICTION"
+      },
+      {
+        "case_id": "BC11_N1",
+        "role": "control_no_failure",
+        "gold": "NOT_SATISFIED",
+        "baseline": {
+          "case_id": "BC11_N1",
+          "gold": "NOT_SATISFIED",
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "intervention": "none",
+          "alpha": null,
+          "raw_x": false,
+          "verify_ok": false,
+          "repair_final_x": false,
+          "parse_ok": true,
+          "commit_step": 103,
+          "commit_value": "false",
+          "logit_margin_true_minus_false": -13.875,
+          "intervened_steps": [],
+          "verdict": "NOT_SATISFIED"
+        },
+        "steered": {
+          "case_id": "BC11_N1",
+          "gold": "NOT_SATISFIED",
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "intervention": "activation_steer",
+          "alpha": 4.0,
+          "raw_x": false,
+          "verify_ok": false,
+          "repair_final_x": false,
+          "parse_ok": true,
+          "commit_step": 103,
+          "commit_value": "false",
+          "logit_margin_true_minus_false": -14.75,
+          "intervened_steps": [
+            103
+          ],
+          "verdict": "NOT_SATISFIED"
+        },
+        "baseline_x": false,
+        "steered_x": false,
+        "baseline_margin": -13.875,
+        "steered_margin": -14.75,
+        "baseline_verdict": "NOT_SATISFIED",
+        "steered_verdict": "NOT_SATISFIED"
+      }
+    ],
+    "gate": {
+      "pass": false,
+      "control_contradiction_ok": true,
+      "control_no_failure_ok": true,
+      "targets_n": 3,
+      "targets_baseline_false_x_count": 2,
+      "targets_fixed_count": 1,
+      "generalization_ok": false,
+      "note": "11C NO \u2014 generalization or controls failed"
+    },
+    "gpu_before": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 3090",
+      "util_pct": 27.0,
+      "vram_used_mb": 1202.0,
+      "vram_total_mb": 24576.0,
+      "temp_c": 69.0,
+      "power_w": 53.81,
+      "warning": null
+    },
+    "protocol": "frozen Ph10 vector @ \u03b1=4 on held-out set",
+    "gpu_after": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 3090",
+      "util_pct": 6.0,
+      "vram_used_mb": 1544.0,
+      "vram_total_mb": 24576.0,
+      "temp_c": 85.0,
+      "power_w": 253.89,
+      "warning": "GPU temp 85.0\u00b0C \u2014 thermal caution"
+    },
+    "steering_meta": {
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "source_cases": {
+        "true_commit": "BC_E1",
+        "false_commit": "BC_E2"
+      },
+      "layer_fractions": [
+        0.75,
+        1.0
+      ],
+      "vectors_by_layer_idx": [
+        20,
+        27
+      ],
+      "per_layer": {
+        "0.75": {
+          "layer_idx": 20,
+          "norm_delta_raw": 44.247676849365234,
+          "direction": "BC_E2_false_commit_minus_BC_E1_true_commit"
+        },
+        "1.00": {
+          "layer_idx": 27,
+          "norm_delta_raw": 284.6798400878906,
+          "direction": "BC_E2_false_commit_minus_BC_E1_true_commit"
+        }
+      }
+    }
+  }
+}

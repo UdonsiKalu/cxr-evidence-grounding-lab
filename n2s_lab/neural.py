@@ -217,6 +217,31 @@ def analyze_free_text(evidence: str, *, model: str = DEFAULT_MODEL) -> str:
     )
 
 
+PARAPHRASE_FROM_EXTRACT_SYSTEM = """You reconstruct a short clinical note paraphrase from structured
+extraction JSON alone. Use only facts present in the JSON (spans, cues, regimen names,
+administration, outcomes, contradiction pair, uncertainty cue). Do not invent facts.
+Do not output SATISFIED, NOT_SATISFIED, UNCERTAIN, CONTRADICTION, or REVIEW as labels.
+If contradiction.present is true, state that the record contains incompatible claims and
+include both spans. If uncertainty.present is true, state the uncertainty clearly.
+Write 2–4 plain sentences. No JSON."""
+
+
+def paraphrase_from_extraction(
+    extraction: Extraction,
+    *,
+    model: str = DEFAULT_MODEL,
+) -> str:
+    """Phase-6 L2b: structure → prose paraphrase (no verdict labels)."""
+    import json as _json
+
+    return chat_text(
+        f"Extraction JSON:\n{_json.dumps(extraction.to_dict(), indent=2)}",
+        system=PARAPHRASE_FROM_EXTRACT_SYSTEM,
+        model=model,
+        num_predict=350,
+    )
+
+
 def verdict_from_analysis(
     analysis: str,
     *,

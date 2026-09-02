@@ -1,0 +1,60 @@
+{
+  "predicate_id": "FIRST_LINE_THERAPY_FAILED",
+  "gold_is_not_fed_to_models": true,
+  "held_out": true,
+  "phase": 7,
+  "domain": "bmt_cart_hematology",
+  "prompts_were_not_designed_on_these": true,
+  "wording_status": "accepted",
+  "note": "Phase-7 cross-domain held-out. BMT/CAR-T hematology surface wording; same predicate and frozen A–D prompts as Phases 1–6. Six cases: 2 conflicting, 2 uncertain, 2 explicit. Wording accepted 2026-08-24. Source style: cxr_bmt_cart synthetic generators.",
+  "cases": [
+    {
+      "id": "BC_C1",
+      "category": "conflicting",
+      "domain_tag": "car_t",
+      "expected": "CONTRADICTION",
+      "why": "CAR-T consult denies prior chemo; later lymphoma note documents completed first-line R-CHOP then progression.",
+      "evidence": "CAR-T referral intake (14 Jan 2024): patient reports never receiving systemic chemotherapy for DLBCL. Lymphoma clinic note (22 Mar 2024): completed six cycles of first-line R-CHOP, then PET showed progressive nodal disease; relapsed/refractory DLBCL."
+    },
+    {
+      "id": "BC_C2",
+      "category": "conflicting",
+      "domain_tag": "bmt",
+      "expected": "CONTRADICTION",
+      "why": "Transplant packet says induction never started; induction summary documents 7+3 completed with subsequent relapse.",
+      "evidence": "Allogeneic BMT packet: no induction chemotherapy was administered for AML. Induction summary (August 2023): completed 7+3 cytarabine/daunorubicin induction with initial CR, then marrow relapse four months later."
+    },
+    {
+      "id": "BC_U1",
+      "category": "uncertain",
+      "domain_tag": "car_t",
+      "expected": "UNCERTAIN",
+      "why": "Possible progression on first-line R-CHOP; confirmatory PET not back.",
+      "evidence": "DLBCL follow-up: possible progression on first-line R-CHOP after cycle 4. PET scan scheduled next week; defer second-line change until PET returns."
+    },
+    {
+      "id": "BC_U2",
+      "category": "uncertain",
+      "domain_tag": "bmt",
+      "expected": "UNCERTAIN",
+      "why": "Family reports prior therapy at outside hospital; records and outcome unknown.",
+      "evidence": "AML consult: family states patient may have received azacitidine/venetoclax at an outside hospital last year. Those records have not been obtained. Whether induction was given and the outcome are unknown."
+    },
+    {
+      "id": "BC_E1",
+      "category": "explicit",
+      "domain_tag": "car_t",
+      "expected": "SATISFIED",
+      "why": "Clear first-line R-CHOP failure then switch to second line.",
+      "evidence": "DLBCL: first-line R-CHOP for four cycles with initial response, then radiographic progression in cycle 5. Discontinued R-CHOP for progression; started R-ICE as second-line therapy."
+    },
+    {
+      "id": "BC_E2",
+      "category": "explicit",
+      "domain_tag": "bmt",
+      "expected": "NOT_SATISFIED",
+      "why": "First-line induction ongoing with response; no failure event.",
+      "evidence": "AML: currently receiving first-line 7+3 induction, day 14 marrow shows ongoing response. Plan to complete consolidation; no progression documented."
+    }
+  ]
+}

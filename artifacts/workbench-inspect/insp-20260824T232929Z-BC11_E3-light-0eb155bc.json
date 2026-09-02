@@ -1,0 +1,67 @@
+{
+  "workbench": "v2.1",
+  "timestamp": "2026-08-24T23:29:29.801646+00:00",
+  "job_id": "0eb155bc1f6645a4994f84f446e0dc16",
+  "request": {
+    "case_id": "BC11_E3",
+    "trace_mode": "light",
+    "model_id": "Qwen/Qwen2.5-7B-Instruct",
+    "break_freeze": false,
+    "unload_after": true,
+    "layer_fractions": [
+      0.75,
+      1.0
+    ],
+    "estimated_vram_gb": 15.2,
+    "kind": "inspect",
+    "note": "light = steer sites 0.75/1.00 commit-only summary; full = also 0.25/0.50 depths (still commit token focus)"
+  },
+  "result": {
+    "kind": "inspect",
+    "case_id": "BC11_E3",
+    "gold": "SATISFIED",
+    "schema_hash": "fb7ac8cdb9f2e4e8",
+    "trace_mode": "light",
+    "model_id": "Qwen/Qwen2.5-7B-Instruct",
+    "layer_fractions": [
+      0.75,
+      1.0
+    ],
+    "raw_x": false,
+    "verify_ok": false,
+    "commit_step": 136,
+    "commit_value": "true",
+    "logit_margin_true_minus_false": 2.375,
+    "layer_norm_at_commit": {
+      "0.75": 104.89050078516082,
+      "1.00": 486.8713663348938
+    },
+    "layer_idx_by_fraction": {
+      "0.75": 20,
+      "1.00": 27
+    },
+    "n_steps": 249,
+    "prompt_token_count": 1099,
+    "gpu_before": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 3090",
+      "util_pct": 31.0,
+      "vram_used_mb": 1630.0,
+      "vram_total_mb": 24576.0,
+      "temp_c": 56.0,
+      "power_w": 45.8,
+      "warning": null
+    },
+    "gpu_after": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 3090",
+      "util_pct": 8.0,
+      "vram_used_mb": 16060.0,
+      "vram_total_mb": 24576.0,
+      "temp_c": 86.0,
+      "power_w": 277.21,
+      "warning": "GPU temp 86.0\u00b0C \u2014 thermal caution"
+    },
+    "note": "light = steer sites 0.75/1.00 commit-only summary; full = also 0.25/0.50 depths (still commit token focus)"
+  }
+}

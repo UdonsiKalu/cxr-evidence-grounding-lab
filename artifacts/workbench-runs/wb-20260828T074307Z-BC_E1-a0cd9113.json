@@ -1,0 +1,286 @@
+{
+  "workbench": "v2.0",
+  "timestamp": "2026-08-28T07:43:07.348153+00:00",
+  "job_id": "a0cd9113738d45cd926c213131fd55d6",
+  "request": {
+    "case_id": "BC_E1",
+    "mode": "both",
+    "model_id": "Qwen/Qwen2.5-7B-Instruct",
+    "alpha": 4.0,
+    "break_freeze": false,
+    "unload_after": true,
+    "layer_fractions": [
+      0.75,
+      1.0
+    ],
+    "vector": "BC_E2 false-commit \u2212 BC_E1 true-commit",
+    "precision": "bf16 (7B default via hf_client)",
+    "estimated_vram_gb": 15.2,
+    "kind": "run"
+  },
+  "result": {
+    "kind": "run",
+    "case_id": "BC_E1",
+    "gold": "SATISFIED",
+    "role": null,
+    "schema_hash": "0497a8a535a769a8",
+    "protocol": {
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "alpha": 4.0,
+      "layer_fractions": [
+        0.75,
+        1.0
+      ],
+      "vector": "BC_E2 false-commit \u2212 BC_E1 true-commit",
+      "precision": "bf16 (7B default via hf_client)",
+      "break_freeze": false,
+      "frozen_default": true,
+      "determinism": {
+        "seed": 0,
+        "cublas_workspace": ":4096:8",
+        "cudnn_deterministic": true,
+        "tf32": false,
+        "deterministic_algorithms": "warn_only",
+        "do_sample": false
+      }
+    },
+    "mode": "both",
+    "baseline": {
+      "case_id": "BC_E1",
+      "gold": "SATISFIED",
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "alpha": null,
+      "raw_x": false,
+      "verify_ok": false,
+      "repair_final_x": true,
+      "parse_ok": true,
+      "commit_step": 136,
+      "commit_value": "true",
+      "logit_margin_true_minus_false": 1.75,
+      "intervened_steps": [],
+      "verdict": "CONTRADICTION"
+    },
+    "steered": {
+      "case_id": "BC_E1",
+      "gold": "SATISFIED",
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "activation_steer",
+      "alpha": 4.0,
+      "raw_x": false,
+      "verify_ok": false,
+      "repair_final_x": true,
+      "parse_ok": true,
+      "commit_step": 136,
+      "commit_value": "true",
+      "logit_margin_true_minus_false": 0.125,
+      "intervened_steps": [
+        136
+      ],
+      "verdict": "CONTRADICTION"
+    },
+    "comparison": {
+      "x": [
+        true,
+        true
+      ],
+      "margin": [
+        1.75,
+        0.125
+      ],
+      "verdict": [
+        "CONTRADICTION",
+        "CONTRADICTION"
+      ],
+      "commit_step": [
+        136,
+        136
+      ]
+    },
+    "steering_meta": {
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "source_cases": {
+        "true_commit": "BC_E1",
+        "false_commit": "BC_E2"
+      },
+      "layer_fractions": [
+        0.75,
+        1.0
+      ],
+      "vectors_by_layer_idx": [
+        20,
+        27
+      ],
+      "per_layer": {
+        "0.75": {
+          "layer_idx": 20,
+          "norm_delta_raw": 44.247676849365234,
+          "direction": "BC_E2_false_commit_minus_BC_E1_true_commit"
+        },
+        "1.00": {
+          "layer_idx": 27,
+          "norm_delta_raw": 284.6798400878906,
+          "direction": "BC_E2_false_commit_minus_BC_E1_true_commit"
+        }
+      }
+    },
+    "gpu_before": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 3090",
+      "util_pct": 19.0,
+      "vram_used_mb": 1112.0,
+      "vram_total_mb": 24576.0,
+      "temp_c": 46.0,
+      "power_w": 34.13,
+      "power_limit_w": 240.0,
+      "fan_pct": 35.0,
+      "limits": {
+        "temp_target_c": 83.0,
+        "temp_slowdown_c": 95.0,
+        "temp_max_c": 93.0,
+        "temp_shutdown_c": 98.0
+      },
+      "thermal_policy": {
+        "enabled": true,
+        "pause_threshold_c": 80.0,
+        "resume_below_c": 72.0,
+        "min_pause_between_loads_sec": 12.0,
+        "poll_interval_sec": 2.0,
+        "max_wait_sec": 600.0,
+        "power_profile": "off",
+        "power_limit_w": null,
+        "limits": {
+          "temp_target_c": 83.0,
+          "temp_slowdown_c": 95.0,
+          "temp_max_c": 93.0,
+          "temp_shutdown_c": 98.0
+        },
+        "power_profiles": {
+          "off": null,
+          "max_performance": 370.0,
+          "research": 240.0,
+          "quiet": 200.0
+        },
+        "note": "Power limit is an explicit operational setting. It does not change \u03b1, vector, layers, or model. Requires permission to run nvidia-smi -pl (often sudo)."
+      },
+      "thermal_state": "ok",
+      "warning": null,
+      "error": null
+    },
+    "gpu_after": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 3090",
+      "util_pct": 18.0,
+      "vram_used_mb": 1474.0,
+      "vram_total_mb": 24576.0,
+      "temp_c": 77.0,
+      "power_w": 233.75,
+      "power_limit_w": 240.0,
+      "fan_pct": 58.0,
+      "limits": {
+        "temp_target_c": 83.0,
+        "temp_slowdown_c": 95.0,
+        "temp_max_c": 93.0,
+        "temp_shutdown_c": 98.0
+      },
+      "thermal_policy": {
+        "enabled": true,
+        "pause_threshold_c": 80.0,
+        "resume_below_c": 72.0,
+        "min_pause_between_loads_sec": 12.0,
+        "poll_interval_sec": 2.0,
+        "max_wait_sec": 600.0,
+        "power_profile": "off",
+        "power_limit_w": null,
+        "limits": {
+          "temp_target_c": 83.0,
+          "temp_slowdown_c": 95.0,
+          "temp_max_c": 93.0,
+          "temp_shutdown_c": 98.0
+        },
+        "power_profiles": {
+          "off": null,
+          "max_performance": 370.0,
+          "research": 240.0,
+          "quiet": 200.0
+        },
+        "note": "Power limit is an explicit operational setting. It does not change \u03b1, vector, layers, or model. Requires permission to run nvidia-smi -pl (often sudo)."
+      },
+      "thermal_state": "ok",
+      "warning": null,
+      "error": null
+    },
+    "thermal": {
+      "pauses": 0,
+      "wait_sec": 0.0,
+      "cooldown_sec": 12.0,
+      "max_temp_c": 68.0,
+      "last_pause_reason": null,
+      "samples": [
+        {
+          "ts": "2026-08-28T07:41:31.083467+00:00",
+          "temp_c": 53.0,
+          "power_w": 121.71,
+          "util_pct": 24.0,
+          "fan_pct": 36.0
+        },
+        {
+          "ts": "2026-08-28T07:42:15.511721+00:00",
+          "temp_c": 68.0,
+          "power_w": 157.84,
+          "util_pct": 0.0,
+          "fan_pct": 45.0
+        },
+        {
+          "ts": "2026-08-28T07:42:17.568756+00:00",
+          "temp_c": 67.0,
+          "power_w": 131.5,
+          "util_pct": 2.0,
+          "fan_pct": 45.0
+        },
+        {
+          "ts": "2026-08-28T07:42:19.622116+00:00",
+          "temp_c": 67.0,
+          "power_w": 131.8,
+          "util_pct": 0.0,
+          "fan_pct": 46.0
+        },
+        {
+          "ts": "2026-08-28T07:42:21.674335+00:00",
+          "temp_c": 67.0,
+          "power_w": 131.58,
+          "util_pct": 0.0,
+          "fan_pct": 46.0
+        },
+        {
+          "ts": "2026-08-28T07:42:23.725941+00:00",
+          "temp_c": 67.0,
+          "power_w": 131.48,
+          "util_pct": 0.0,
+          "fan_pct": 46.0
+        },
+        {
+          "ts": "2026-08-28T07:42:25.515805+00:00",
+          "temp_c": 67.0,
+          "power_w": 131.68,
+          "util_pct": 0.0,
+          "fan_pct": 46.0
+        },
+        {
+          "ts": "2026-08-28T07:42:25.556041+00:00",
+          "temp_c": 67.0,
+          "power_w": 131.68,
+          "util_pct": 0.0,
+          "fan_pct": 46.0
+        },
+        {
+          "ts": "2026-08-28T07:42:25.601460+00:00",
+          "temp_c": 67.0,
+          "power_w": 131.68,
+          "util_pct": 0.0,
+          "fan_pct": 46.0
+        }
+      ]
+    }
+  }
+}

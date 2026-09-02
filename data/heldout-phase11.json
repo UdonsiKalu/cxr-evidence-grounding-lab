@@ -1,0 +1,66 @@
+{
+  "predicate_id": "FIRST_LINE_THERAPY_FAILED",
+  "gold_is_not_fed_to_models": true,
+  "held_out": true,
+  "phase": 11,
+  "domain": "bmt_cart_hematology",
+  "prompts_were_not_designed_on_these": true,
+  "wording_status": "accepted",
+  "note": "Phase-11 generalization held-out. NOT in Phase-9/10 vector tuning (BC_E1/BC_E2). Response→progression course cases (gold SATISFIED) + true contradictions + one no-failure control. Same predicate/schema as main lab.",
+  "cases": [
+    {
+      "id": "BC11_E1",
+      "role": "generalization_target",
+      "category": "explicit",
+      "domain_tag": "myeloma",
+      "expected": "SATISFIED",
+      "why": "RVd partial response then progression at cycle 4; switch to second line.",
+      "evidence": "Multiple myeloma: first-line RVd for three cycles with partial response, then biochemical progression at cycle 4. Held lenalidomide for progression; started second-line daratumumab-based regimen."
+    },
+    {
+      "id": "BC11_E2",
+      "role": "generalization_target",
+      "category": "explicit",
+      "domain_tag": "all",
+      "expected": "SATISFIED",
+      "why": "Hyper-CVAD response then CNS relapse; salvage switch.",
+      "evidence": "ALL: induction with hyper-CVAD achieved MRD-negative remission after cycle 2, then isolated CNS relapse in cycle 5. Stopped hyper-CVAD for CNS progression; planned salvage with blinatumomab."
+    },
+    {
+      "id": "BC11_E3",
+      "role": "generalization_target",
+      "category": "explicit",
+      "domain_tag": "cll",
+      "expected": "SATISFIED",
+      "why": "Ibrutinib response then Richter progression; regimen switch.",
+      "evidence": "CLL: first-line ibrutinib with initial nodal response, then Richter transformation with bulky adenopathy at month 9. Discontinued ibrutinib for progression; switched to R-CHOP."
+    },
+    {
+      "id": "BC11_C1",
+      "role": "control_contradiction",
+      "category": "conflicting",
+      "domain_tag": "car_t",
+      "expected": "CONTRADICTION",
+      "why": "Same-day deny chemo vs documented R-CHOP completion.",
+      "evidence": "CAR-T workup (12 Jun 2024): no prior systemic therapy for DLBCL. Same-day addendum: patient completed six cycles first-line R-CHOP with complete response; proceed with apheresis for axi-cel anyway."
+    },
+    {
+      "id": "BC11_C2",
+      "role": "control_contradiction",
+      "category": "conflicting",
+      "domain_tag": "bmt",
+      "expected": "CONTRADICTION",
+      "why": "Consult denies induction; marrow documents completed induction then relapse.",
+      "evidence": "BMT consult states patient never received 7+3 induction for AML. Marrow report: completed two cycles 7+3 with CR, then relapsed with 40% blasts."
+    },
+    {
+      "id": "BC11_N1",
+      "role": "control_no_failure",
+      "category": "explicit",
+      "domain_tag": "bmt",
+      "expected": "NOT_SATISFIED",
+      "why": "Ongoing induction with response; no failure.",
+      "evidence": "AML: cycle 2 of 7+3 induction; day 14 marrow shows continued response. Continue planned consolidation; no progression documented."
+    }
+  ]
+}

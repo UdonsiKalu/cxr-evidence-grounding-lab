@@ -1,0 +1,240 @@
+{
+  "phase": "13",
+  "protocol": "docs/PHASE13-PROTOCOL.md",
+  "timestamp": "2026-08-25T12:34:15.507550+00:00",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "frozen": {
+    "layers": [
+      0.75,
+      1.0
+    ],
+    "vector": "Ph10 BC_E2\u2212BC_E1 unit direction (cosine only; no steer)",
+    "intervention": "none"
+  },
+  "steering_meta": {
+    "model_id": "Qwen/Qwen2.5-7B-Instruct",
+    "source_cases": {
+      "true_commit": "BC_E1",
+      "false_commit": "BC_E2"
+    },
+    "layer_fractions": [
+      0.75,
+      1.0
+    ],
+    "vectors_by_layer_idx": [
+      20,
+      27
+    ],
+    "per_layer": {
+      "0.75": {
+        "layer_idx": 20,
+        "norm_delta_raw": 44.247676849365234,
+        "direction": "BC_E2_false_commit_minus_BC_E1_true_commit"
+      },
+      "1.00": {
+        "layer_idx": 27,
+        "norm_delta_raw": 284.6798400878906,
+        "direction": "BC_E2_false_commit_minus_BC_E1_true_commit"
+      }
+    }
+  },
+  "rows": [
+    {
+      "case_id": "BC11_E2",
+      "class": "course_false_x",
+      "gold": "SATISFIED",
+      "raw_x": false,
+      "verify_ok": false,
+      "commit_step": 142,
+      "commit_value": "true",
+      "usable": true,
+      "logit_margin_true_minus_false": 1.625,
+      "layer_norm": {
+        "0.75": 104.22892673708098,
+        "1.00": 479.49716697950845
+      },
+      "cosine_by_frac": {
+        "0.75": -0.08545408133723745,
+        "1.00": -0.7003586394232238
+      }
+    },
+    {
+      "case_id": "BC11_E3",
+      "class": "course_false_x",
+      "gold": "SATISFIED",
+      "raw_x": false,
+      "verify_ok": false,
+      "commit_step": 136,
+      "commit_value": "true",
+      "usable": true,
+      "logit_margin_true_minus_false": 2.75,
+      "layer_norm": {
+        "0.75": 104.98640003929384,
+        "1.00": 484.4565709178995
+      },
+      "cosine_by_frac": {
+        "0.75": -0.10589577845479105,
+        "1.00": -0.712647758977037
+      }
+    },
+    {
+      "case_id": "BC12_E1",
+      "class": "course_false_x",
+      "gold": "SATISFIED",
+      "raw_x": false,
+      "verify_ok": false,
+      "commit_step": 142,
+      "commit_value": "true",
+      "usable": true,
+      "logit_margin_true_minus_false": 4.25,
+      "layer_norm": {
+        "0.75": 105.68283810702296,
+        "1.00": 472.2489969958902
+      },
+      "cosine_by_frac": {
+        "0.75": -0.1303864694059201,
+        "1.00": -0.7123152939196763
+      }
+    },
+    {
+      "case_id": "BC12_E2",
+      "class": "course_false_x",
+      "gold": "SATISFIED",
+      "raw_x": false,
+      "verify_ok": false,
+      "commit_step": 133,
+      "commit_value": "true",
+      "usable": true,
+      "logit_margin_true_minus_false": 3.75,
+      "layer_norm": {
+        "0.75": 103.8171648049544,
+        "1.00": 464.7029106794045
+      },
+      "cosine_by_frac": {
+        "0.75": -0.13616325457835904,
+        "1.00": -0.7046623059687422
+      }
+    },
+    {
+      "case_id": "BC12_E3",
+      "class": "course_false_x",
+      "gold": "SATISFIED",
+      "raw_x": false,
+      "verify_ok": false,
+      "commit_step": 167,
+      "commit_value": "true",
+      "usable": true,
+      "logit_margin_true_minus_false": 2.75,
+      "layer_norm": {
+        "0.75": 105.13678644560085,
+        "1.00": 513.6218640329083
+      },
+      "cosine_by_frac": {
+        "0.75": -0.07946034612327821,
+        "1.00": -0.7239377795766436
+      }
+    },
+    {
+      "case_id": "BC11_C1",
+      "class": "true_contradiction",
+      "gold": "CONTRADICTION",
+      "raw_x": false,
+      "verify_ok": false,
+      "commit_step": 103,
+      "commit_value": "true",
+      "usable": true,
+      "logit_margin_true_minus_false": 9.5,
+      "layer_norm": {
+        "0.75": 104.09238415735018,
+        "1.00": 388.2458718345068
+      },
+      "cosine_by_frac": {
+        "0.75": -0.13419188425688502,
+        "1.00": -0.6110411493883526
+      }
+    },
+    {
+      "case_id": "BC11_C2",
+      "class": "true_contradiction",
+      "gold": "CONTRADICTION",
+      "raw_x": true,
+      "verify_ok": true,
+      "commit_step": 129,
+      "commit_value": "true",
+      "usable": true,
+      "logit_margin_true_minus_false": 9.125,
+      "layer_norm": {
+        "0.75": 104.43772306117384,
+        "1.00": 393.681838104957
+      },
+      "cosine_by_frac": {
+        "0.75": -0.13765523491039725,
+        "1.00": -0.6322297552898569
+      }
+    },
+    {
+      "case_id": "BC12_C1",
+      "class": "true_contradiction",
+      "gold": "CONTRADICTION",
+      "raw_x": false,
+      "verify_ok": false,
+      "commit_step": 105,
+      "commit_value": "true",
+      "usable": true,
+      "logit_margin_true_minus_false": 0.0,
+      "layer_norm": {
+        "0.75": 104.17458682452053,
+        "1.00": 483.7276678384136
+      },
+      "cosine_by_frac": {
+        "0.75": -0.005247944967101955,
+        "1.00": -0.6794465408709803
+      }
+    },
+    {
+      "case_id": "BC_C1",
+      "class": "true_contradiction",
+      "gold": "CONTRADICTION",
+      "raw_x": true,
+      "verify_ok": true,
+      "commit_step": 106,
+      "commit_value": "true",
+      "usable": true,
+      "logit_margin_true_minus_false": 13.375,
+      "layer_norm": {
+        "0.75": 104.68897160318221,
+        "1.00": 352.84408819195744
+      },
+      "cosine_by_frac": {
+        "0.75": -0.16532104345409038,
+        "1.00": -0.5544009198414944
+      }
+    }
+  ],
+  "gate_geometry": {
+    "pass": true,
+    "n_course_usable": 5,
+    "n_contradiction_usable": 4,
+    "n_ok": true,
+    "cosine_1_00_course": [
+      -0.7003586394232238,
+      -0.712647758977037,
+      -0.7123152939196763,
+      -0.7046623059687422,
+      -0.7239377795766436
+    ],
+    "cosine_1_00_contradiction": [
+      -0.6110411493883526,
+      -0.6322297552898569,
+      -0.6794465408709803,
+      -0.5544009198414944
+    ],
+    "cosine_1_00_ranges_overlap": false,
+    "cosine_1_00_gap": 0.02091209855224352,
+    "loo_probe_acc": 0.8888888888888888,
+    "separability_heuristic": true,
+    "note": "13 YES \u2014 enough commits; soft separability on cosine@1.00 or LOO probe",
+    "claim_scope": "Observational geometry pilot \u2014 not adaptive \u03b1; not 'found contradiction rep'"
+  },
+  "note": "Ph13 geometry \u2014 cosine to Ph10 direction @ commit; no steer; soft claim."
+}

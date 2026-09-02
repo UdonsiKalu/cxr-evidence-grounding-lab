@@ -1,0 +1,159 @@
+{
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "case_id": "BC_E1",
+  "gold": "SATISFIED",
+  "raw_extract": {
+    "contradiction_present": false,
+    "spans": [],
+    "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+    "extraction": {
+      "stated_line": "first",
+      "regimen_names": [
+        "R-CHOP",
+        "R-ICE"
+      ],
+      "administration_status": "given",
+      "outcome_statements": [
+        {
+          "text": "initial response",
+          "polarity": "response"
+        },
+        {
+          "text": "radiographic progression in cycle 5",
+          "polarity": "failure"
+        }
+      ],
+      "implicit_cues": [
+        "response_then_progression"
+      ],
+      "uncertainty_cues": [],
+      "uncertainty_present": false,
+      "uncertainty_cue": "",
+      "uncertainty_why": "",
+      "contradiction_cues": [],
+      "contradiction_present": false,
+      "quotes": [
+        "first-line R-CHOP for four cycles with initial response, then radiographic progression in cycle 5.",
+        "Discontinued R-CHOP for progression; started R-ICE as second-line therapy."
+      ],
+      "notes": "Describes the initial treatment response and subsequent progression leading to a switch to second-line therapy.",
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "contradiction": {
+        "present": false,
+        "span_a": null,
+        "span_b": null
+      },
+      "uncertainty": {
+        "present": false,
+        "cue": null,
+        "why": null
+      }
+    },
+    "verdict": "SATISFIED"
+  },
+  "analysis": "The clinical note identifies a first-line therapy, which is R-CHOP. The note indicates that R-CHOP was given for four cycles and resulted in an initial response. However, radiographic progression was noted in cycle 5, leading to the discontinuation of R-CHOP. Since R-CHOP was discontinued due to progression, this can be considered a failure of the first-line therapy. There is no conflicting information in the note, and the evidence is clear and consistent, indicating that the first-line therapy failed.",
+  "analysis_flags": {
+    "mentions_contradiction": true,
+    "mentions_uncertainty": false
+  },
+  "verify": {
+    "first": {
+      "ok": false,
+      "reasons": [
+        "analysis indicates contradiction but formalization does not preserve it"
+      ],
+      "analysis_flags": {
+        "mentions_contradiction": true,
+        "mentions_uncertainty": false
+      },
+      "distinction": "contradiction"
+    },
+    "second": {
+      "ok": true,
+      "reasons": [],
+      "analysis_flags": {
+        "mentions_contradiction": true,
+        "mentions_uncertainty": false
+      },
+      "distinction": "contradiction"
+    }
+  },
+  "repaired": {
+    "contradiction_present": true,
+    "spans": [
+      {
+        "a": "initial response",
+        "b": "radiographic progression in cycle 5"
+      }
+    ],
+    "backend": "hf:Qwen/Qwen2.5-7B-Instruct:repair",
+    "extraction": {
+      "stated_line": "first",
+      "regimen_names": [
+        "R-CHOP",
+        "R-ICE"
+      ],
+      "administration_status": "given",
+      "outcome_statements": [
+        {
+          "text": "initial response",
+          "polarity": "response"
+        },
+        {
+          "text": "radiographic progression in cycle 5",
+          "polarity": "failure"
+        }
+      ],
+      "implicit_cues": [
+        "response_then_progression"
+      ],
+      "uncertainty_cues": [],
+      "uncertainty_present": false,
+      "uncertainty_cue": "",
+      "uncertainty_why": "",
+      "contradiction_cues": [
+        {
+          "a": "initial response",
+          "b": "radiographic progression in cycle 5"
+        }
+      ],
+      "contradiction_present": true,
+      "quotes": [
+        "first-line R-CHOP for four cycles with initial response, then radiographic progression in cycle 5.",
+        "Discontinued R-CHOP for progression; started R-ICE as second-line therapy."
+      ],
+      "notes": "Describes the initial treatment response and subsequent progression leading to a switch to second-line therapy.",
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct:repair",
+      "contradiction": {
+        "present": true,
+        "span_a": "initial response",
+        "span_b": "radiographic progression in cycle 5"
+      },
+      "uncertainty": {
+        "present": false,
+        "cue": null,
+        "why": null
+      }
+    }
+  },
+  "final": {
+    "contradiction_present": true,
+    "spans": [
+      {
+        "a": "initial response",
+        "b": "radiographic progression in cycle 5"
+      }
+    ],
+    "backend": "hf:Qwen/Qwen2.5-7B-Instruct:repair",
+    "verdict": "CONTRADICTION",
+    "disposition": "AUTO",
+    "rule": {
+      "verdict": "CONTRADICTION",
+      "fired_rule": "X \u2192 CONTRADICTION",
+      "trace": [
+        "X is true \u2192 CONTRADICTION (short-circuit)"
+      ]
+    },
+    "stage_that_set_x": "repair"
+  }
+}

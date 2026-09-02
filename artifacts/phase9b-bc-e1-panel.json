@@ -1,0 +1,163 @@
+{
+  "phase": "9B",
+  "protocol": "docs/PHASE9-PROTOCOL.md",
+  "timestamp": "2026-08-24T20:52:14.579796+00:00",
+  "case_id": "BC_E1",
+  "models": [
+    "Qwen/Qwen2.5-7B-Instruct",
+    "Qwen/Qwen2.5-14B-Instruct"
+  ],
+  "rows": [
+    {
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "raw_x": false,
+      "verify_ok": false,
+      "verify_reasons": [
+        "analysis indicates contradiction but formalization does not preserve it"
+      ],
+      "repair_final_x": true,
+      "trace_summary": {
+        "label": "repair",
+        "generated_chars": 898,
+        "n_steps": 239,
+        "contradiction_steps": [
+          129,
+          130,
+          131,
+          132,
+          133
+        ],
+        "present_steps": [
+          107,
+          108,
+          109,
+          110,
+          111
+        ],
+        "span_related_steps": [
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55
+        ],
+        "commit_step": 136,
+        "commit_value": "true",
+        "logit_true_at_commit": 32.0,
+        "logit_false_at_commit": 30.375,
+        "logit_margin_true_minus_false": 1.625,
+        "layer_norm_at_commit": {
+          "0.25": 41.2248420715332,
+          "0.50": 60.886497497558594,
+          "0.75": 106.02408599853516,
+          "1.00": 492.861328125
+        }
+      }
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-14B-Instruct",
+      "raw_x": false,
+      "verify_ok": false,
+      "verify_reasons": [
+        "analysis indicates contradiction but formalization does not preserve it"
+      ],
+      "repair_final_x": false,
+      "trace_summary": {
+        "label": "repair",
+        "generated_chars": 917,
+        "n_steps": 266,
+        "contradiction_steps": [
+          149,
+          150,
+          151,
+          152,
+          153
+        ],
+        "present_steps": [
+          127,
+          128,
+          129,
+          130,
+          131
+        ],
+        "span_related_steps": [
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57
+        ],
+        "commit_step": 156,
+        "commit_value": "false",
+        "logit_true_at_commit": 36.46875,
+        "logit_false_at_commit": 40.4375,
+        "logit_margin_true_minus_false": -3.96875,
+        "layer_norm_at_commit": {
+          "0.25": 67.15812683105469,
+          "0.50": 82.68072509765625,
+          "0.75": 205.57522583007812,
+          "1.00": 883.2716674804688
+        }
+      }
+    }
+  ],
+  "cross_model": {
+    "commit_step_divergence": {
+      "step_a": 136,
+      "step_b": 156,
+      "per_layer": {
+        "0.25": {
+          "fail_norm": 41.2248420715332,
+          "safe_norm": 67.15812683105469,
+          "norm_delta": 25.933284759521484,
+          "fail_mean": -0.024246642366051674,
+          "safe_mean": 0.007100142538547516
+        },
+        "0.50": {
+          "fail_norm": 60.886497497558594,
+          "safe_norm": 82.68072509765625,
+          "norm_delta": 21.794227600097656,
+          "fail_mean": -0.008896606042981148,
+          "safe_mean": 0.006492495536804199
+        },
+        "0.75": {
+          "fail_norm": 106.02408599853516,
+          "safe_norm": 205.57522583007812,
+          "norm_delta": 99.55113983154297,
+          "fail_mean": 0.002405711682513356,
+          "safe_mean": 0.012969302944839
+        },
+        "1.00": {
+          "fail_norm": 492.861328125,
+          "safe_norm": 883.2716674804688,
+          "norm_delta": 390.41033935546875,
+          "fail_mean": -0.09580904990434647,
+          "safe_mean": 0.03932309150695801
+        }
+      },
+      "mean_norm_delta": 134.42224788665771,
+      "max_norm_delta": 390.41033935546875
+    }
+  },
+  "gate_probe_signal": {
+    "pass": true,
+    "behavior_signal": true,
+    "layer_signal": true,
+    "logit_signal": true,
+    "fail_model": "Qwen/Qwen2.5-7B-Instruct",
+    "safe_model": "Qwen/Qwen2.5-14B-Instruct",
+    "fail_repair_x": true,
+    "safe_repair_x": false,
+    "fail_logit_margin": 1.625,
+    "safe_logit_margin": -3.96875,
+    "max_norm_delta_at_commit": 390.41033935546875,
+    "note": "9B YES \u2014 proceed only if user asks for 9C"
+  },
+  "note": "Repair-path activation contrast; soft claim n=1 case \u00d7 2 models."
+}

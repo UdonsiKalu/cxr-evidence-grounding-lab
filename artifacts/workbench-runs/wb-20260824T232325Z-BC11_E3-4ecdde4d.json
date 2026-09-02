@@ -1,0 +1,140 @@
+{
+  "workbench": "v2.0",
+  "timestamp": "2026-08-24T23:23:25.479485+00:00",
+  "job_id": "4ecdde4d28e2456f997a9a6ccdacb48b",
+  "request": {
+    "case_id": "BC11_E3",
+    "mode": "both",
+    "model_id": "Qwen/Qwen2.5-7B-Instruct",
+    "alpha": 4.0,
+    "break_freeze": false,
+    "unload_after": true,
+    "layer_fractions": [
+      0.75,
+      1.0
+    ],
+    "vector": "BC_E2 false-commit \u2212 BC_E1 true-commit",
+    "precision": "bf16 (7B default via hf_client)",
+    "estimated_vram_gb": 15.2,
+    "kind": "run"
+  },
+  "result": {
+    "kind": "run",
+    "case_id": "BC11_E3",
+    "gold": "SATISFIED",
+    "role": "generalization_target",
+    "schema_hash": "fb7ac8cdb9f2e4e8",
+    "protocol": {
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "alpha": 4.0,
+      "layer_fractions": [
+        0.75,
+        1.0
+      ],
+      "vector": "BC_E2 false-commit \u2212 BC_E1 true-commit",
+      "precision": "bf16 (7B default via hf_client)",
+      "break_freeze": false,
+      "frozen_default": true
+    },
+    "mode": "both",
+    "baseline": {
+      "case_id": "BC11_E3",
+      "gold": "SATISFIED",
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "alpha": null,
+      "raw_x": false,
+      "verify_ok": false,
+      "repair_final_x": true,
+      "parse_ok": true,
+      "commit_step": 136,
+      "commit_value": "true",
+      "logit_margin_true_minus_false": 2.375,
+      "intervened_steps": [],
+      "verdict": "CONTRADICTION"
+    },
+    "steered": {
+      "case_id": "BC11_E3",
+      "gold": "SATISFIED",
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "activation_steer",
+      "alpha": 4.0,
+      "raw_x": false,
+      "verify_ok": false,
+      "repair_final_x": true,
+      "parse_ok": true,
+      "commit_step": 136,
+      "commit_value": "true",
+      "logit_margin_true_minus_false": 0.875,
+      "intervened_steps": [
+        136
+      ],
+      "verdict": "CONTRADICTION"
+    },
+    "comparison": {
+      "x": [
+        true,
+        true
+      ],
+      "margin": [
+        2.375,
+        0.875
+      ],
+      "verdict": [
+        "CONTRADICTION",
+        "CONTRADICTION"
+      ],
+      "commit_step": [
+        136,
+        136
+      ]
+    },
+    "steering_meta": {
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "source_cases": {
+        "true_commit": "BC_E1",
+        "false_commit": "BC_E2"
+      },
+      "layer_fractions": [
+        0.75,
+        1.0
+      ],
+      "vectors_by_layer_idx": [
+        20,
+        27
+      ],
+      "per_layer": {
+        "0.75": {
+          "layer_idx": 20,
+          "norm_delta_raw": 44.247676849365234,
+          "direction": "BC_E2_false_commit_minus_BC_E1_true_commit"
+        },
+        "1.00": {
+          "layer_idx": 27,
+          "norm_delta_raw": 284.6798400878906,
+          "direction": "BC_E2_false_commit_minus_BC_E1_true_commit"
+        }
+      }
+    },
+    "gpu_before": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 3090",
+      "util_pct": 36.0,
+      "vram_used_mb": 1267.0,
+      "vram_total_mb": 24576.0,
+      "temp_c": 54.0,
+      "power_w": 45.35,
+      "warning": null
+    },
+    "gpu_after": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 3090",
+      "util_pct": 100.0,
+      "vram_used_mb": 1582.0,
+      "vram_total_mb": 24576.0,
+      "temp_c": 88.0,
+      "power_w": 285.2,
+      "warning": "GPU temp 88.0\u00b0C \u2014 thermal caution"
+    }
+  }
+}

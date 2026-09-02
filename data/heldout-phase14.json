@@ -1,0 +1,67 @@
+{
+  "predicate_id": "FIRST_LINE_THERAPY_FAILED",
+  "gold_is_not_fed_to_models": true,
+  "held_out": true,
+  "phase": "14",
+  "domain": "bmt_cart_hematology",
+  "prompts_were_not_designed_on_these": true,
+  "wording_status": "accepted",
+  "note": "Phase-14 gated-steer held-out. NOT in Ph9–13 panels / Ph13 geometry set. Tests pre-declared cos@1.00 gate τ=-0.690 from Ph13 mid-gap + Ph10 vector @ α=4 when ON. Wording accepted 2026-08-25.",
+  "gate_tau_cos_1_00": -0.690,
+  "cases": [
+    {
+      "id": "BC14_E1",
+      "role": "generalization_target",
+      "category": "explicit",
+      "domain_tag": "dlbcl",
+      "expected": "SATISFIED",
+      "why": "R-CHOP response then POD; switched to salvage.",
+      "evidence": "Diffuse large B-cell lymphoma: first-line R-CHOP for three cycles with clinical response and shrinking adenopathy, then progressive disease with new PET-avid sites before cycle 5. Discontinued R-CHOP for progression; started salvage R-ICE."
+    },
+    {
+      "id": "BC14_E2",
+      "role": "generalization_target",
+      "category": "explicit",
+      "domain_tag": "mantle",
+      "expected": "SATISFIED",
+      "why": "BR response then progression; second-line planned.",
+      "evidence": "Mantle cell lymphoma: first-line bendamustine-rituximab with initial response after two cycles, then clear progression with rising LDH and marrow involvement at mid-treatment restaging. Stopped BR for POD; planned second-line VR-CAP."
+    },
+    {
+      "id": "BC14_E3",
+      "role": "generalization_target",
+      "category": "explicit",
+      "domain_tag": "all",
+      "expected": "SATISFIED",
+      "why": "Induction response then morphologic relapse; reinduction.",
+      "evidence": "B-ALL: completed induction per protocol with day-28 MRD-negative marrow and clinical response, then morphologic relapse with 18% blasts before consolidation start. Held consolidation for relapse; planned reinduction with high-dose cytarabine-based salvage."
+    },
+    {
+      "id": "BC14_C1",
+      "role": "control_contradiction",
+      "category": "conflicting",
+      "domain_tag": "transplant",
+      "expected": "CONTRADICTION",
+      "why": "Consult denies prior systemic therapy vs infusion record documents completed first-line.",
+      "evidence": "Allo-HCT consult: candidate is systemic-therapy naive for high-risk MDS. Same-encounter infusion record: completed four cycles first-line azacitidine with documented responses; proceed to conditioning."
+    },
+    {
+      "id": "BC14_C2",
+      "role": "control_contradiction",
+      "category": "conflicting",
+      "domain_tag": "car_t",
+      "expected": "CONTRADICTION",
+      "why": "Note claims no prior lines vs outside records show two completed regimens.",
+      "evidence": "CAR-T referral note: no prior lines of therapy for relapsed large B-cell lymphoma. Outside records attached: completed first-line R-CHOP with CR, then second-line polatuzumab-BR with subsequent relapse; referred after two lines."
+    },
+    {
+      "id": "BC14_N1",
+      "role": "control_no_failure",
+      "category": "explicit",
+      "domain_tag": "cll",
+      "expected": "NOT_SATISFIED",
+      "why": "Ongoing first-line response; no failure.",
+      "evidence": "CLL/SLL: cycle 4 of first-line venetoclax-obinutuzumab with ongoing response and falling ALC. Continue current regimen; no progression or dose-limiting toxicity documented."
+    }
+  ]
+}

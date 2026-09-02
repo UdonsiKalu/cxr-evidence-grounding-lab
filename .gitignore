@@ -11,3 +11,4 @@ notes/*.toc
 notes/*.fls
 notes/*.fdb_latexmk
 notes/*.synctex.gz
+.venv-phase9/
