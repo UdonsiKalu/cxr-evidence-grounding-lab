@@ -7,6 +7,8 @@ https://udonsikalu.github.io/cxr-evidence-grounding-lab/
 
 **Companion (Phase 9–11 steering):** [cxr-repeng-workbench](https://github.com/UdonsiKalu/cxr-repeng-workbench) · [public demo](https://udonsikalu.github.io/cxr-repeng-workbench/)
 
+**Research spine (Track A safety + Track B MI/RepEng):** [docs/RESEARCH-APPROACH.md](./docs/RESEARCH-APPROACH.md) — problem, frozen evidence, method map, next plan.
+
 ---
 
 ## Modus operandi (first time here)

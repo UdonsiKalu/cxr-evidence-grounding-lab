@@ -4,6 +4,8 @@
 **Pilot lab evidence only; not a product claim.**  
 **Lab:** `cxr-evidence-grounding-lab/` · **Phase-5 (done):** [PHASE5-PROTOCOL.md](./PHASE5-PROTOCOL.md) · **Phase-6 (frozen; live pending):** [PHASE6-PROTOCOL.md](./PHASE6-PROTOCOL.md)
 
+**Two-track research spine (2026-09-03):** [RESEARCH-APPROACH.md](./RESEARCH-APPROACH.md) — Track A (wrong AUTO / REVIEW gates) vs Track B (MI/RepEng causal ladder). Gates **contain** fidelity failures; they do not **explain** them.
+
 This note exists so a future session can resume without re-deriving the thread.
 
 ---

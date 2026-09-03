@@ -9,6 +9,8 @@
 **Model:** local Ollama `llama3:8b-instruct-q4_0`  
 **Constraint:** does not modify CXR production (`claim_analysis_tools`, Claim Studio, rehearsal UI).
 
+**Current research spine (Track A reliability + Track B MI/RepEng):** [docs/RESEARCH-APPROACH.md](./docs/RESEARCH-APPROACH.md) — what is frozen, method map, next resolution plan. This journey note remains the historical eval write-up for early milestones.
+
 ---
 
 ## 1. The question we are evaluating
