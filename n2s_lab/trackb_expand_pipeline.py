@@ -64,7 +64,6 @@ def _collect_one(
         store_commit_hidden=True,
         layer_indices=layer_indices,
     )
-    unload_model()
     hidden = row.get("commit_layer_hidden") or {}
     return {
         "case_id": cid,
@@ -150,7 +149,6 @@ def _fit_and_sweep(
                 alpha=alpha,
                 layer_indices=(layer_idx,),
             )
-            unload_model()
             base = rows[cid]
             results[cid] = {
                 "baseline_x": base["repair_final_x"],
@@ -171,7 +169,6 @@ def _fit_and_sweep(
                 alpha=alpha,
                 layer_indices=(layer_idx,),
             )
-            unload_model()
             controls[cid] = {
                 "baseline_x": rows[cid]["repair_final_x"],
                 "steered_x": row["repair_final_x"],
@@ -199,6 +196,7 @@ def _fit_and_sweep(
             "results": results,
             "controls": controls,
         }
+    unload_model()
     return {
         "layer_idx": layer_idx,
         "formula": "unit(mean(A)-mean(B))",
@@ -247,6 +245,7 @@ def run_expand_collect(
         rows[case["id"]] = _collect_one(
             case, model_id=model_id, layer_indices=layer_indices
         )
+    unload_model()
     classes = _classify(rows, payload)
     n_a, n_b = len(classes["class_a"]), len(classes["class_b"])
     enough = n_a >= ENOUGH_A and n_b >= ENOUGH_B
@@ -272,9 +271,9 @@ def run_expand_collect(
         "baselines": _strip_hidden(rows),
         "note": "Wording frozen before this collect. G3 untouched.",
     }
+    ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
     slug = model_id.replace("/", "_")
     out = ARTIFACTS_DIR / f"trackb-expand-collect-{slug}.json"
-    # keep hiddens in a sidecar for fit
     sidecar = ARTIFACTS_DIR / f"trackb-expand-hiddens-{slug}.json"
     sidecar.write_text(
         json.dumps(
@@ -284,7 +283,6 @@ def run_expand_collect(
         + "\n",
         encoding="utf-8",
     )
-    ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(panel, indent=2) + "\n", encoding="utf-8")
     panel["_rows"] = rows
     panel["_artifact"] = str(out)
@@ -353,7 +351,6 @@ def _patch_expand(
         patch_by_layer={layer_idx: donor_vec},
         layer_indices=(layer_idx,),
     )
-    unload_model()
     base_x = baseline["repair_final_x"]
     return {
         "recipient": recipient_id,
@@ -426,6 +423,7 @@ def run_expand_patch_depth(
         if earliest is None and n_flip >= 2:
             earliest = L
 
+    unload_model()
     panel = {
         "kind": "trackb_expand_patch_depth",
         "model_id": model_id,
@@ -456,7 +454,9 @@ def run_expand_sequence() -> dict[str, Any]:
     if p7["enough_to_fit"]:
         print("7B has enough Class A/B — fitting L20 family vector")
         fit = run_expand_fit_from_collect(p7, layer_idx=20)
-        return {"stage": "7b_fit", "collect_7b": _public(p7), "fit": _public(fit)}
+        summary = {"stage": "7b_fit", "collect_7b": _public(p7), "fit": _public(fit)}
+        _write_sequence_summary(summary)
+        return summary
 
     print(
         f"7B Class A n={p7['n_class_a']} (thin/empty) — do not fit on 7B; moving to 14B"
@@ -485,13 +485,15 @@ def run_expand_sequence() -> dict[str, Any]:
     if p14["enough_to_fit"] and both_correct_and_fail:
         print(f"14B enough Class A/B with fail split — fitting @ L{layer}")
         fit = run_expand_fit_from_collect(p14, layer_idx=layer)
-        return {
+        summary = {
             "stage": "14b_fit",
             "collect_7b": _public(p7),
             "collect_14b": _public(p14),
             "depth": _public(depth) if depth else None,
             "fit": _public(fit),
         }
+        _write_sequence_summary(summary)
+        return summary
 
     summary = {
         "stage": "14b_no_fit",
@@ -500,10 +502,15 @@ def run_expand_sequence() -> dict[str, Any]:
         "depth": _public(depth) if depth else None,
         "reason": "14B Class A still below threshold or no fail/correct split",
     }
+    _write_sequence_summary(summary)
+    return summary
+
+
+def _write_sequence_summary(summary: dict[str, Any]) -> None:
+    ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
     out = ARTIFACTS_DIR / "trackb-expand-sequence-summary.json"
     out.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
     print(f"\nwrote {out}")
-    return summary
 
 
 def _public(panel: dict[str, Any] | None) -> dict[str, Any] | None:
