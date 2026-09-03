@@ -27,6 +27,17 @@
 
 ## Log (newest first)
 
+### 2026-09-03 — 7B endpoint YES (α=8); 14B transfer: failure does not persist
+
+| | |
+|--|--|
+| **Track** | B |
+| **Activity** | Finished 7B LOO Class-A + steer specificity @ α=8/16 on expand L20 vector. Then one HF 14B behavioral collect on the **same** frozen expand DEV. Question = does the temporal N2S failure persist across models? **Not** “can 14B solve better?” No forced MI ladder. |
+| **Result** | **7B endpoint YES @ α=8** — mean LOO cos≈0.985, 4/4 LOO folds safe with 3/8 flips; full beats Gaussian (3 vs 0); reverse 0 flips. α=16 also safe but Gaussian gets 2/8 (weaker specificity). **14B:** Class A=21/24, fail_temporal=**1** (`TX_E14` only), Class B=4 intact → matched contrast **not useful**; **MI ladder not run**. |
+| **Artifacts** | `artifacts/trackb-expand-7b-endpoint.json` · `artifacts/trackb-expand-14b-transfer.json` · `artifacts/trackb-expand-finish7b-then-14b-summary.json` · [TRACKB-EXPAND-PANEL.md](./TRACKB-EXPAND-PANEL.md) |
+| **Decision** | Freeze limited 7B claim at **α=8** (partial editor). 14B mostly avoids false X on this panel — supports **Track A containment / scale-variant behavior**, not a 14B steer program. Test sealed; G3 untouched. |
+| **Commit** | `be6180e` (+ results docs) |
+
 ### 2026-09-03 — Expand panel: natural Class A on 7B; L20 family vector safe at α≤16
 
 | | |

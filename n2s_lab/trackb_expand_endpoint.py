@@ -9,7 +9,6 @@ from __future__ import annotations
 
 import json
 from datetime import datetime, timezone
-from pathlib import Path
 from typing import Any
 
 import torch
@@ -37,7 +36,9 @@ def _slug(model_id: str) -> str:
     return model_id.replace("/", "_")
 
 
-def _collect_paths(model_id: str) -> tuple[Path, Path]:
+def _collect_paths(model_id: str) -> tuple[Any, Any]:
+    from pathlib import Path
+
     s = _slug(model_id)
     return (
         ARTIFACTS_DIR / f"trackb-expand-collect-{s}.json",

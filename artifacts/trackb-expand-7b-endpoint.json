@@ -1,0 +1,1574 @@
+{
+  "kind": "trackb_expand_7b_endpoint",
+  "timestamp": "2026-09-03T22:09:19.862401+00:00",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "layer_idx": 20,
+  "alphas": [
+    8.0,
+    16.0
+  ],
+  "class_a": [
+    "TX_E08",
+    "TX_E13",
+    "TX_E21",
+    "TX_E23"
+  ],
+  "class_b": [
+    "TX_C01",
+    "TX_C02",
+    "TX_C03",
+    "TX_C04"
+  ],
+  "eval_fail_ids": [
+    "TX_E01",
+    "TX_E02",
+    "TX_E03",
+    "TX_E04",
+    "TX_E05",
+    "TX_E06",
+    "TX_E07",
+    "TX_E09"
+  ],
+  "loo": {
+    "TX_E08": {
+      "held_out": "TX_E08",
+      "fit_a": [
+        "TX_E13",
+        "TX_E21",
+        "TX_E23"
+      ],
+      "cosine_to_full": 0.9878823757171631,
+      "by_alpha": {
+        "8.0": {
+          "label": "loo_holdout_TX_E08",
+          "alpha": 8.0,
+          "n_target_flips": 3,
+          "n_eval": 8,
+          "contra_stay_true": true,
+          "nofail_stay_false": true,
+          "safe": true,
+          "results": {
+            "TX_E01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.5,
+              "steered_margin": 4.0,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.25,
+              "steered_margin": 3.0,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 9.0,
+              "steered_margin": 6.875,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E04": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 1.875,
+              "steered_margin": -0.125,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E05": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -1.75,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E06": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -2.0,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E07": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 6.875,
+              "steered_margin": 4.75,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E09": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.375,
+              "steered_margin": 3.25,
+              "x_flipped_true_to_false": false
+            }
+          },
+          "controls": {
+            "TX_C01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 10.375,
+              "steered_margin": 7.75
+            },
+            "TX_C02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 7.25,
+              "steered_margin": 4.625
+            },
+            "TX_C03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 15.0,
+              "steered_margin": 11.875
+            },
+            "TX_C04": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 11.625,
+              "steered_margin": 8.375
+            },
+            "TX_N01": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -13.625,
+              "steered_margin": -13.5
+            },
+            "TX_N02": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -12.5,
+              "steered_margin": -12.625
+            }
+          }
+        },
+        "16.0": {
+          "label": "loo_holdout_TX_E08",
+          "alpha": 16.0,
+          "n_target_flips": 3,
+          "n_eval": 8,
+          "contra_stay_true": true,
+          "nofail_stay_false": true,
+          "safe": true,
+          "results": {
+            "TX_E01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.5,
+              "steered_margin": 2.25,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.25,
+              "steered_margin": 0.625,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 9.0,
+              "steered_margin": 5.25,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E04": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 1.875,
+              "steered_margin": -1.75,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E05": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -3.0,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E06": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -3.5,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E07": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 6.875,
+              "steered_margin": 2.5,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E09": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.375,
+              "steered_margin": 1.0,
+              "x_flipped_true_to_false": false
+            }
+          },
+          "controls": {
+            "TX_C01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 10.375,
+              "steered_margin": 5.5
+            },
+            "TX_C02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 7.25,
+              "steered_margin": 2.25
+            },
+            "TX_C03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 15.0,
+              "steered_margin": 8.875
+            },
+            "TX_C04": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 11.625,
+              "steered_margin": 6.0
+            },
+            "TX_N01": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -13.625,
+              "steered_margin": -13.75
+            },
+            "TX_N02": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -12.5,
+              "steered_margin": -12.875
+            }
+          }
+        }
+      }
+    },
+    "TX_E13": {
+      "held_out": "TX_E13",
+      "fit_a": [
+        "TX_E08",
+        "TX_E21",
+        "TX_E23"
+      ],
+      "cosine_to_full": 0.9932501316070557,
+      "by_alpha": {
+        "8.0": {
+          "label": "loo_holdout_TX_E13",
+          "alpha": 8.0,
+          "n_target_flips": 3,
+          "n_eval": 8,
+          "contra_stay_true": true,
+          "nofail_stay_false": true,
+          "safe": true,
+          "results": {
+            "TX_E01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.5,
+              "steered_margin": 3.875,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.25,
+              "steered_margin": 2.75,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 9.0,
+              "steered_margin": 6.75,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E04": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 1.875,
+              "steered_margin": -0.375,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E05": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -1.75,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E06": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -2.25,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E07": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 6.875,
+              "steered_margin": 4.5,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E09": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.375,
+              "steered_margin": 3.25,
+              "x_flipped_true_to_false": false
+            }
+          },
+          "controls": {
+            "TX_C01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 10.375,
+              "steered_margin": 7.875
+            },
+            "TX_C02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 7.25,
+              "steered_margin": 4.5
+            },
+            "TX_C03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 15.0,
+              "steered_margin": 11.625
+            },
+            "TX_C04": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 11.625,
+              "steered_margin": 8.5
+            },
+            "TX_N01": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -13.625,
+              "steered_margin": -13.75
+            },
+            "TX_N02": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -12.5,
+              "steered_margin": -12.875
+            }
+          }
+        },
+        "16.0": {
+          "label": "loo_holdout_TX_E13",
+          "alpha": 16.0,
+          "n_target_flips": 3,
+          "n_eval": 8,
+          "contra_stay_true": true,
+          "nofail_stay_false": true,
+          "safe": true,
+          "results": {
+            "TX_E01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.5,
+              "steered_margin": 2.0,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.25,
+              "steered_margin": 0.375,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 9.0,
+              "steered_margin": 5.0,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E04": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 1.875,
+              "steered_margin": -2.0,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E05": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -3.0,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E06": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -3.625,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E07": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 6.875,
+              "steered_margin": 2.25,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E09": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.375,
+              "steered_margin": 0.75,
+              "x_flipped_true_to_false": false
+            }
+          },
+          "controls": {
+            "TX_C01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 10.375,
+              "steered_margin": 5.375
+            },
+            "TX_C02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 7.25,
+              "steered_margin": 2.0
+            },
+            "TX_C03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 15.0,
+              "steered_margin": 8.625
+            },
+            "TX_C04": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 11.625,
+              "steered_margin": 5.875
+            },
+            "TX_N01": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -13.625,
+              "steered_margin": -13.75
+            },
+            "TX_N02": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -12.5,
+              "steered_margin": -13.0
+            }
+          }
+        }
+      }
+    },
+    "TX_E21": {
+      "held_out": "TX_E21",
+      "fit_a": [
+        "TX_E08",
+        "TX_E13",
+        "TX_E23"
+      ],
+      "cosine_to_full": 0.9886501431465149,
+      "by_alpha": {
+        "8.0": {
+          "label": "loo_holdout_TX_E21",
+          "alpha": 8.0,
+          "n_target_flips": 3,
+          "n_eval": 8,
+          "contra_stay_true": true,
+          "nofail_stay_false": true,
+          "safe": true,
+          "results": {
+            "TX_E01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.5,
+              "steered_margin": 4.0,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.25,
+              "steered_margin": 3.125,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 9.0,
+              "steered_margin": 7.0,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E04": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 1.875,
+              "steered_margin": -0.125,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E05": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -1.625,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E06": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -2.125,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E07": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 6.875,
+              "steered_margin": 4.75,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E09": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.375,
+              "steered_margin": 3.5,
+              "x_flipped_true_to_false": false
+            }
+          },
+          "controls": {
+            "TX_C01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 10.375,
+              "steered_margin": 8.0
+            },
+            "TX_C02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 7.25,
+              "steered_margin": 4.625
+            },
+            "TX_C03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 15.0,
+              "steered_margin": 12.0
+            },
+            "TX_C04": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 11.625,
+              "steered_margin": 8.625
+            },
+            "TX_N01": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -13.625,
+              "steered_margin": -13.625
+            },
+            "TX_N02": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -12.5,
+              "steered_margin": -12.75
+            }
+          }
+        },
+        "16.0": {
+          "label": "loo_holdout_TX_E21",
+          "alpha": 16.0,
+          "n_target_flips": 3,
+          "n_eval": 8,
+          "contra_stay_true": true,
+          "nofail_stay_false": true,
+          "safe": true,
+          "results": {
+            "TX_E01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.5,
+              "steered_margin": 2.375,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.25,
+              "steered_margin": 0.625,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 9.0,
+              "steered_margin": 5.25,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E04": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 1.875,
+              "steered_margin": -1.875,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E05": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -3.125,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E06": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -3.5,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E07": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 6.875,
+              "steered_margin": 2.5,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E09": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.375,
+              "steered_margin": 1.0,
+              "x_flipped_true_to_false": false
+            }
+          },
+          "controls": {
+            "TX_C01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 10.375,
+              "steered_margin": 5.5
+            },
+            "TX_C02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 7.25,
+              "steered_margin": 2.25
+            },
+            "TX_C03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 15.0,
+              "steered_margin": 8.875
+            },
+            "TX_C04": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 11.625,
+              "steered_margin": 6.0
+            },
+            "TX_N01": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -13.625,
+              "steered_margin": -13.75
+            },
+            "TX_N02": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -12.5,
+              "steered_margin": -13.0
+            }
+          }
+        }
+      }
+    },
+    "TX_E23": {
+      "held_out": "TX_E23",
+      "fit_a": [
+        "TX_E08",
+        "TX_E13",
+        "TX_E21"
+      ],
+      "cosine_to_full": 0.9707030057907104,
+      "by_alpha": {
+        "8.0": {
+          "label": "loo_holdout_TX_E23",
+          "alpha": 8.0,
+          "n_target_flips": 3,
+          "n_eval": 8,
+          "contra_stay_true": true,
+          "nofail_stay_false": true,
+          "safe": true,
+          "results": {
+            "TX_E01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.5,
+              "steered_margin": 3.875,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.25,
+              "steered_margin": 2.625,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 9.0,
+              "steered_margin": 7.0,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E04": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 1.875,
+              "steered_margin": -0.375,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E05": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -1.875,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E06": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -2.25,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E07": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 6.875,
+              "steered_margin": 4.75,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E09": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.375,
+              "steered_margin": 3.125,
+              "x_flipped_true_to_false": false
+            }
+          },
+          "controls": {
+            "TX_C01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 10.375,
+              "steered_margin": 7.75
+            },
+            "TX_C02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 7.25,
+              "steered_margin": 4.5
+            },
+            "TX_C03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 15.0,
+              "steered_margin": 11.875
+            },
+            "TX_C04": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 11.625,
+              "steered_margin": 8.375
+            },
+            "TX_N01": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -13.625,
+              "steered_margin": -13.5
+            },
+            "TX_N02": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -12.5,
+              "steered_margin": -13.0
+            }
+          }
+        },
+        "16.0": {
+          "label": "loo_holdout_TX_E23",
+          "alpha": 16.0,
+          "n_target_flips": 3,
+          "n_eval": 8,
+          "contra_stay_true": true,
+          "nofail_stay_false": true,
+          "safe": true,
+          "results": {
+            "TX_E01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.5,
+              "steered_margin": 2.0,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.25,
+              "steered_margin": 0.125,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 9.0,
+              "steered_margin": 4.875,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E04": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 1.875,
+              "steered_margin": -2.125,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E05": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -3.125,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E06": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -3.75,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E07": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 6.875,
+              "steered_margin": 2.0,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E09": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.375,
+              "steered_margin": 0.5,
+              "x_flipped_true_to_false": false
+            }
+          },
+          "controls": {
+            "TX_C01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 10.375,
+              "steered_margin": 5.25
+            },
+            "TX_C02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 7.25,
+              "steered_margin": 2.0
+            },
+            "TX_C03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 15.0,
+              "steered_margin": 8.75
+            },
+            "TX_C04": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 11.625,
+              "steered_margin": 5.75
+            },
+            "TX_N01": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -13.625,
+              "steered_margin": -13.75
+            },
+            "TX_N02": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -12.5,
+              "steered_margin": -12.625
+            }
+          }
+        }
+      }
+    }
+  },
+  "specificity": {
+    "8.0": {
+      "full": {
+        "label": "full_vector",
+        "alpha": 8.0,
+        "n_target_flips": 3,
+        "n_eval": 8,
+        "contra_stay_true": true,
+        "nofail_stay_false": true,
+        "safe": true,
+        "results": {
+          "TX_E01": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 5.5,
+            "steered_margin": 3.875,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E02": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 5.25,
+            "steered_margin": 2.75,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E03": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 9.0,
+            "steered_margin": 6.75,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E04": {
+            "baseline_x": true,
+            "steered_x": false,
+            "baseline_margin": 1.875,
+            "steered_margin": -0.25,
+            "x_flipped_true_to_false": true
+          },
+          "TX_E05": {
+            "baseline_x": true,
+            "steered_x": false,
+            "baseline_margin": 0.0,
+            "steered_margin": -1.75,
+            "x_flipped_true_to_false": true
+          },
+          "TX_E06": {
+            "baseline_x": true,
+            "steered_x": false,
+            "baseline_margin": 0.0,
+            "steered_margin": -2.0,
+            "x_flipped_true_to_false": true
+          },
+          "TX_E07": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 6.875,
+            "steered_margin": 4.625,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E09": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 5.375,
+            "steered_margin": 3.375,
+            "x_flipped_true_to_false": false
+          }
+        },
+        "controls": {
+          "TX_C01": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 10.375,
+            "steered_margin": 7.875
+          },
+          "TX_C02": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 7.25,
+            "steered_margin": 4.5
+          },
+          "TX_C03": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 15.0,
+            "steered_margin": 11.625
+          },
+          "TX_C04": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 11.625,
+            "steered_margin": 8.5
+          },
+          "TX_N01": {
+            "baseline_x": false,
+            "steered_x": false,
+            "baseline_margin": -13.625,
+            "steered_margin": -13.75
+          },
+          "TX_N02": {
+            "baseline_x": false,
+            "steered_x": false,
+            "baseline_margin": -12.5,
+            "steered_margin": -12.75
+          }
+        }
+      },
+      "gaussian": {
+        "label": "gaussian_unit",
+        "alpha": 8.0,
+        "n_target_flips": 0,
+        "n_eval": 8,
+        "contra_stay_true": true,
+        "nofail_stay_false": true,
+        "safe": false,
+        "results": {
+          "TX_E01": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 5.5,
+            "steered_margin": 5.5,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E02": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 5.25,
+            "steered_margin": 5.0,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E03": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 9.0,
+            "steered_margin": 8.75,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E04": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 1.875,
+            "steered_margin": 1.875,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E05": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 0.0,
+            "steered_margin": 0.0,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E06": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 0.0,
+            "steered_margin": 0.125,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E07": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 6.875,
+            "steered_margin": 6.625,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E09": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 5.375,
+            "steered_margin": 5.5,
+            "x_flipped_true_to_false": false
+          }
+        },
+        "controls": {
+          "TX_C01": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 10.375,
+            "steered_margin": 10.375
+          },
+          "TX_C02": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 7.25,
+            "steered_margin": 7.0
+          },
+          "TX_C03": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 15.0,
+            "steered_margin": 14.75
+          },
+          "TX_C04": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 11.625,
+            "steered_margin": 11.125
+          },
+          "TX_N01": {
+            "baseline_x": false,
+            "steered_x": false,
+            "baseline_margin": -13.625,
+            "steered_margin": -13.625
+          },
+          "TX_N02": {
+            "baseline_x": false,
+            "steered_x": false,
+            "baseline_margin": -12.5,
+            "steered_margin": -12.75
+          }
+        }
+      },
+      "reverse": {
+        "label": "reverse_vector",
+        "alpha": 8.0,
+        "n_target_flips": 0,
+        "n_eval": 8,
+        "contra_stay_true": true,
+        "nofail_stay_false": true,
+        "safe": false,
+        "results": {
+          "TX_E01": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 5.5,
+            "steered_margin": 7.5,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E02": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 5.25,
+            "steered_margin": 7.375,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E03": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 9.0,
+            "steered_margin": 11.5,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E04": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 1.875,
+            "steered_margin": 4.125,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E05": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 0.0,
+            "steered_margin": 2.25,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E06": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 0.0,
+            "steered_margin": 2.625,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E07": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 6.875,
+            "steered_margin": 9.125,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E09": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 5.375,
+            "steered_margin": 7.875,
+            "x_flipped_true_to_false": false
+          }
+        },
+        "controls": {
+          "TX_C01": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 10.375,
+            "steered_margin": 13.5
+          },
+          "TX_C02": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 7.25,
+            "steered_margin": 10.125
+          },
+          "TX_C03": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 15.0,
+            "steered_margin": 17.875
+          },
+          "TX_C04": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 11.625,
+            "steered_margin": 14.75
+          },
+          "TX_N01": {
+            "baseline_x": false,
+            "steered_x": false,
+            "baseline_margin": -13.625,
+            "steered_margin": -13.375
+          },
+          "TX_N02": {
+            "baseline_x": false,
+            "steered_x": false,
+            "baseline_margin": -12.5,
+            "steered_margin": -12.25
+          }
+        }
+      },
+      "full_beats_gaussian_flips": true,
+      "full_safe": true,
+      "gaussian_safe": false,
+      "reverse_fewer_or_equal_flips_vs_full": true
+    },
+    "16.0": {
+      "full": {
+        "label": "full_vector",
+        "alpha": 16.0,
+        "n_target_flips": 3,
+        "n_eval": 8,
+        "contra_stay_true": true,
+        "nofail_stay_false": true,
+        "safe": true,
+        "results": {
+          "TX_E01": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 5.5,
+            "steered_margin": 2.125,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E02": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 5.25,
+            "steered_margin": 0.375,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E03": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 9.0,
+            "steered_margin": 5.25,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E04": {
+            "baseline_x": true,
+            "steered_x": false,
+            "baseline_margin": 1.875,
+            "steered_margin": -2.0,
+            "x_flipped_true_to_false": true
+          },
+          "TX_E05": {
+            "baseline_x": true,
+            "steered_x": false,
+            "baseline_margin": 0.0,
+            "steered_margin": -3.125,
+            "x_flipped_true_to_false": true
+          },
+          "TX_E06": {
+            "baseline_x": true,
+            "steered_x": false,
+            "baseline_margin": 0.0,
+            "steered_margin": -3.5,
+            "x_flipped_true_to_false": true
+          },
+          "TX_E07": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 6.875,
+            "steered_margin": 2.375,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E09": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 5.375,
+            "steered_margin": 0.625,
+            "x_flipped_true_to_false": false
+          }
+        },
+        "controls": {
+          "TX_C01": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 10.375,
+            "steered_margin": 5.375
+          },
+          "TX_C02": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 7.25,
+            "steered_margin": 2.0
+          },
+          "TX_C03": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 15.0,
+            "steered_margin": 8.75
+          },
+          "TX_C04": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 11.625,
+            "steered_margin": 5.875
+          },
+          "TX_N01": {
+            "baseline_x": false,
+            "steered_x": false,
+            "baseline_margin": -13.625,
+            "steered_margin": -13.75
+          },
+          "TX_N02": {
+            "baseline_x": false,
+            "steered_x": false,
+            "baseline_margin": -12.5,
+            "steered_margin": -13.0
+          }
+        }
+      },
+      "gaussian": {
+        "label": "gaussian_unit",
+        "alpha": 16.0,
+        "n_target_flips": 2,
+        "n_eval": 8,
+        "contra_stay_true": true,
+        "nofail_stay_false": true,
+        "safe": true,
+        "results": {
+          "TX_E01": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 5.5,
+            "steered_margin": 5.875,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E02": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 5.25,
+            "steered_margin": 5.125,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E03": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 9.0,
+            "steered_margin": 9.375,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E04": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 1.875,
+            "steered_margin": 1.625,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E05": {
+            "baseline_x": true,
+            "steered_x": false,
+            "baseline_margin": 0.0,
+            "steered_margin": -0.375,
+            "x_flipped_true_to_false": true
+          },
+          "TX_E06": {
+            "baseline_x": true,
+            "steered_x": false,
+            "baseline_margin": 0.0,
+            "steered_margin": -0.375,
+            "x_flipped_true_to_false": true
+          },
+          "TX_E07": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 6.875,
+            "steered_margin": 7.0,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E09": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 5.375,
+            "steered_margin": 5.5,
+            "x_flipped_true_to_false": false
+          }
+        },
+        "controls": {
+          "TX_C01": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 10.375,
+            "steered_margin": 11.25
+          },
+          "TX_C02": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 7.25,
+            "steered_margin": 7.375
+          },
+          "TX_C03": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 15.0,
+            "steered_margin": 15.625
+          },
+          "TX_C04": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 11.625,
+            "steered_margin": 12.125
+          },
+          "TX_N01": {
+            "baseline_x": false,
+            "steered_x": false,
+            "baseline_margin": -13.625,
+            "steered_margin": -14.5
+          },
+          "TX_N02": {
+            "baseline_x": false,
+            "steered_x": false,
+            "baseline_margin": -12.5,
+            "steered_margin": -13.5
+          }
+        }
+      },
+      "reverse": {
+        "label": "reverse_vector",
+        "alpha": 16.0,
+        "n_target_flips": 0,
+        "n_eval": 8,
+        "contra_stay_true": true,
+        "nofail_stay_false": true,
+        "safe": false,
+        "results": {
+          "TX_E01": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 5.5,
+            "steered_margin": 9.75,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E02": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 5.25,
+            "steered_margin": 9.625,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E03": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 9.0,
+            "steered_margin": 14.125,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E04": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 1.875,
+            "steered_margin": 6.5,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E05": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 0.0,
+            "steered_margin": 4.875,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E06": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 0.0,
+            "steered_margin": 5.25,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E07": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 6.875,
+            "steered_margin": 11.5,
+            "x_flipped_true_to_false": false
+          },
+          "TX_E09": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 5.375,
+            "steered_margin": 10.25,
+            "x_flipped_true_to_false": false
+          }
+        },
+        "controls": {
+          "TX_C01": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 10.375,
+            "steered_margin": 16.125
+          },
+          "TX_C02": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 7.25,
+            "steered_margin": 13.125
+          },
+          "TX_C03": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 15.0,
+            "steered_margin": 20.0
+          },
+          "TX_C04": {
+            "baseline_x": true,
+            "steered_x": true,
+            "baseline_margin": 11.625,
+            "steered_margin": 17.875
+          },
+          "TX_N01": {
+            "baseline_x": false,
+            "steered_x": false,
+            "baseline_margin": -13.625,
+            "steered_margin": -13.375
+          },
+          "TX_N02": {
+            "baseline_x": false,
+            "steered_x": false,
+            "baseline_margin": -12.5,
+            "steered_margin": -12.25
+          }
+        }
+      },
+      "full_beats_gaussian_flips": true,
+      "full_safe": true,
+      "gaussian_safe": true,
+      "reverse_fewer_or_equal_flips_vs_full": true
+    }
+  },
+  "gate_7b_endpoint": {
+    "pass": true,
+    "best_alpha": 8.0,
+    "mean_loo_cosine_to_full": 0.9851,
+    "loo_safe_counts": {
+      "8.0": 4,
+      "16.0": 4
+    },
+    "note": "7B endpoint YES @ \u03b1=8.0 \u2014 LOO-stable partial editor"
+  },
+  "claim_hygiene": "Limited claim only: partial editor on weak-margin fails. Not a family-wide temporal-change fix. Test sealed. G3 untouched.",
+  "test_set_not_used": "temporal-family-test.json"
+}

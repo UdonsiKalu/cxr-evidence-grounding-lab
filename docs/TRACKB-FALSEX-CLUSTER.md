@@ -182,8 +182,8 @@ Semantic family direction: **blocked on current DEV** — no clean temporal-chan
 ### Open
 
 1. ~~Need clean class A~~ — expand panel has n_A=4 on 7B; see [TRACKB-EXPAND-PANEL.md](./TRACKB-EXPAND-PANEL.md).
-2. LOO + specificity on the expand L20 vector at α=8/16 before freeze.
-3. Then score `temporal-family-test.json`. Do not modify G3.
+2. ~~LOO + specificity~~ — **7B endpoint YES @ α=8** (LOO-stable partial editor); 14B transfer: failure cluster does **not** persist (1/24 fail) — no 14B MI ladder.
+3. Freeze limited α=8 claim vs Track A reconnect; then optionally score `temporal-family-test.json`. Do not modify G3.
 
 ## Claim hygiene
 

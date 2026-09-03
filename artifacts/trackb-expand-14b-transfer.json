@@ -1,0 +1,363 @@
+{
+  "kind": "trackb_expand_14b_transfer",
+  "timestamp": "2026-09-03T22:41:39.568889+00:00",
+  "model_id": "Qwen/Qwen2.5-14B-Instruct",
+  "question": "Does the temporal neural\u2192symbolic failure and its internal signature persist when the model changes?",
+  "not_the_question": "Can 14B solve this better?",
+  "case_source": "temporal-family-dev-expand.json",
+  "n_temporal": 24,
+  "n_class_a_x_false": 21,
+  "n_class_b_x_true": 4,
+  "n_fail_temporal_x_true": 1,
+  "n_temporal_x_true": 1,
+  "n_temporal_x_false": 21,
+  "classes": {
+    "class_a": [
+      "TX_E01",
+      "TX_E02",
+      "TX_E03",
+      "TX_E04",
+      "TX_E06",
+      "TX_E07",
+      "TX_E08",
+      "TX_E09",
+      "TX_E10",
+      "TX_E11",
+      "TX_E12",
+      "TX_E13",
+      "TX_E15",
+      "TX_E16",
+      "TX_E18",
+      "TX_E19",
+      "TX_E20",
+      "TX_E21",
+      "TX_E22",
+      "TX_E23",
+      "TX_E24"
+    ],
+    "class_b": [
+      "TX_C01",
+      "TX_C02",
+      "TX_C03",
+      "TX_C04"
+    ],
+    "fail_temporal": [
+      "TX_E14"
+    ],
+    "nofail": [
+      "TX_N01",
+      "TX_N02"
+    ]
+  },
+  "baselines": {
+    "TX_E01": {
+      "case_id": "TX_E01",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "therapy_worked_then_failed",
+      "repair_final_x": false,
+      "margin": -5.625,
+      "verdict": "NOT_SATISFIED",
+      "usable": true
+    },
+    "TX_E02": {
+      "case_id": "TX_E02",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "stable_then_progression",
+      "repair_final_x": false,
+      "margin": -3.375,
+      "verdict": "SATISFIED",
+      "usable": true
+    },
+    "TX_E03": {
+      "case_id": "TX_E03",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "therapy_worked_then_failed",
+      "repair_final_x": false,
+      "margin": -3.875,
+      "verdict": "NOT_SATISFIED",
+      "usable": true
+    },
+    "TX_E04": {
+      "case_id": "TX_E04",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "prior_neg_then_pos",
+      "repair_final_x": false,
+      "margin": -3.84375,
+      "verdict": "SATISFIED",
+      "usable": true
+    },
+    "TX_E05": {
+      "case_id": "TX_E05",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "possible_then_confirmed_progression",
+      "repair_final_x": null,
+      "margin": -14.90625,
+      "verdict": null,
+      "usable": true
+    },
+    "TX_E06": {
+      "case_id": "TX_E06",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "therapy_worked_then_failed",
+      "repair_final_x": false,
+      "margin": -5.65625,
+      "verdict": "SATISFIED",
+      "usable": true
+    },
+    "TX_E07": {
+      "case_id": "TX_E07",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "stable_then_progression",
+      "repair_final_x": false,
+      "margin": -1.5,
+      "verdict": "SATISFIED",
+      "usable": true
+    },
+    "TX_E08": {
+      "case_id": "TX_E08",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "therapy_worked_then_failed",
+      "repair_final_x": false,
+      "margin": -6.34375,
+      "verdict": "NOT_SATISFIED",
+      "usable": true
+    },
+    "TX_E09": {
+      "case_id": "TX_E09",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "prior_neg_then_pos",
+      "repair_final_x": false,
+      "margin": -2.4375,
+      "verdict": "NOT_SATISFIED",
+      "usable": true
+    },
+    "TX_E10": {
+      "case_id": "TX_E10",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "therapy_worked_then_failed",
+      "repair_final_x": false,
+      "margin": -6.40625,
+      "verdict": "SATISFIED",
+      "usable": true
+    },
+    "TX_E11": {
+      "case_id": "TX_E11",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "stable_then_progression",
+      "repair_final_x": false,
+      "margin": -1.6875,
+      "verdict": "SATISFIED",
+      "usable": true
+    },
+    "TX_E12": {
+      "case_id": "TX_E12",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "possible_then_confirmed_progression",
+      "repair_final_x": false,
+      "margin": -23.8828125,
+      "verdict": "UNCERTAIN",
+      "usable": true
+    },
+    "TX_E13": {
+      "case_id": "TX_E13",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "therapy_worked_then_failed",
+      "repair_final_x": false,
+      "margin": -5.40625,
+      "verdict": "SATISFIED",
+      "usable": true
+    },
+    "TX_E14": {
+      "case_id": "TX_E14",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "prior_neg_then_pos",
+      "repair_final_x": true,
+      "margin": 1.34375,
+      "verdict": "CONTRADICTION",
+      "usable": true
+    },
+    "TX_E15": {
+      "case_id": "TX_E15",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "stable_then_progression",
+      "repair_final_x": false,
+      "margin": -2.8125,
+      "verdict": "SATISFIED",
+      "usable": true
+    },
+    "TX_E16": {
+      "case_id": "TX_E16",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "therapy_worked_then_failed",
+      "repair_final_x": false,
+      "margin": -5.8125,
+      "verdict": "NOT_SATISFIED",
+      "usable": true
+    },
+    "TX_E17": {
+      "case_id": "TX_E17",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "possible_then_confirmed_progression",
+      "repair_final_x": null,
+      "margin": -18.953125,
+      "verdict": null,
+      "usable": true
+    },
+    "TX_E18": {
+      "case_id": "TX_E18",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "prior_neg_then_pos",
+      "repair_final_x": false,
+      "margin": -4.5,
+      "verdict": "SATISFIED",
+      "usable": true
+    },
+    "TX_E19": {
+      "case_id": "TX_E19",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "therapy_worked_then_failed",
+      "repair_final_x": false,
+      "margin": -2.78125,
+      "verdict": "SATISFIED",
+      "usable": true
+    },
+    "TX_E20": {
+      "case_id": "TX_E20",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "stable_then_progression",
+      "repair_final_x": false,
+      "margin": -3.46875,
+      "verdict": "SATISFIED",
+      "usable": true
+    },
+    "TX_E21": {
+      "case_id": "TX_E21",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "therapy_worked_then_failed",
+      "repair_final_x": false,
+      "margin": -4.75,
+      "verdict": "SATISFIED",
+      "usable": true
+    },
+    "TX_E22": {
+      "case_id": "TX_E22",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "prior_neg_then_pos",
+      "repair_final_x": false,
+      "margin": -1.71875,
+      "verdict": "SATISFIED",
+      "usable": true
+    },
+    "TX_E23": {
+      "case_id": "TX_E23",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "possible_then_confirmed_progression",
+      "repair_final_x": false,
+      "margin": -3.96875,
+      "verdict": "SATISFIED",
+      "usable": true
+    },
+    "TX_E24": {
+      "case_id": "TX_E24",
+      "gold": "SATISFIED",
+      "role": "expand_temporal",
+      "subtype": "therapy_worked_then_failed",
+      "repair_final_x": false,
+      "margin": -3.46875,
+      "verdict": "NOT_SATISFIED",
+      "usable": true
+    },
+    "TX_C01": {
+      "case_id": "TX_C01",
+      "gold": "CONTRADICTION",
+      "role": "expand_contradiction",
+      "subtype": "true_contradiction_control",
+      "repair_final_x": true,
+      "margin": 28.578125,
+      "verdict": "CONTRADICTION",
+      "usable": true
+    },
+    "TX_C02": {
+      "case_id": "TX_C02",
+      "gold": "CONTRADICTION",
+      "role": "expand_contradiction",
+      "subtype": "true_contradiction_control",
+      "repair_final_x": true,
+      "margin": 24.5625,
+      "verdict": "CONTRADICTION",
+      "usable": true
+    },
+    "TX_C03": {
+      "case_id": "TX_C03",
+      "gold": "CONTRADICTION",
+      "role": "expand_contradiction",
+      "subtype": "true_contradiction_control",
+      "repair_final_x": true,
+      "margin": 20.4375,
+      "verdict": "CONTRADICTION",
+      "usable": true
+    },
+    "TX_C04": {
+      "case_id": "TX_C04",
+      "gold": "CONTRADICTION",
+      "role": "expand_contradiction",
+      "subtype": "true_contradiction_control",
+      "repair_final_x": true,
+      "margin": 22.5,
+      "verdict": "CONTRADICTION",
+      "usable": true
+    },
+    "TX_N01": {
+      "case_id": "TX_N01",
+      "gold": "NOT_SATISFIED",
+      "role": "expand_nofail",
+      "subtype": "no_failure_control",
+      "repair_final_x": false,
+      "margin": -11.0,
+      "verdict": "NOT_SATISFIED",
+      "usable": true
+    },
+    "TX_N02": {
+      "case_id": "TX_N02",
+      "gold": "NOT_SATISFIED",
+      "role": "expand_nofail",
+      "subtype": "no_failure_control",
+      "repair_final_x": false,
+      "margin": -31.40625,
+      "verdict": "UNCERTAIN",
+      "usable": true
+    }
+  },
+  "matched_failure_contrast_useful": false,
+  "forced_mi_ladder": false,
+  "reading": [
+    "Only 1 temporal false-X commits \u2014 too thin for a 14B MI ladder.",
+    "No useful matched failure/contrast for a forced MI ladder."
+  ],
+  "test_set_not_used": "temporal-family-test.json",
+  "g3_untouched": true,
+  "collect_artifact": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/trackb-expand-collect-Qwen_Qwen2.5-14B-Instruct.json"
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "trackb_expand_finish7b_then_14b",
+  "timestamp": "2026-09-03T22:41:39.584747+00:00",
+  "gate_7b_endpoint": {
+    "pass": true,
+    "best_alpha": 8.0,
+    "mean_loo_cosine_to_full": 0.9851,
+    "loo_safe_counts": {
+      "8.0": 4,
+      "16.0": 4
+    },
+    "note": "7B endpoint YES @ \u03b1=8.0 \u2014 LOO-stable partial editor"
+  },
+  "transfer_14b": {
+    "n_class_a": 21,
+    "n_class_b": 4,
+    "n_fail_temporal": 1,
+    "matched_useful": false,
+    "forced_mi_ladder": false,
+    "reading": [
+      "Only 1 temporal false-X commits \u2014 too thin for a 14B MI ladder.",
+      "No useful matched failure/contrast for a forced MI ladder."
+    ]
+  },
+  "artifacts": {
+    "7b_endpoint": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/trackb-expand-7b-endpoint.json",
+    "14b_transfer": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/trackb-expand-14b-transfer.json"
+  },
+  "test_set_not_used": "temporal-family-test.json",
+  "g3_untouched": true
+}
