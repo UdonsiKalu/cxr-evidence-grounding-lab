@@ -83,7 +83,9 @@ Use a method when it answers a gate or transfer question — not as a checklist 
 Half-page rule: **AUTO only if all gates pass**; else **REVIEW**.  
 Metric: wrong AUTO / REVIEW / correct AUTO on a frozen eval set.
 
-**Frozen:** [AUTO-CONTRACT.md](./AUTO-CONTRACT.md) · scorer `run_auto_contract_score.py` · family `data/heldout-temporal-family.json`
+**Frozen:** [AUTO-CONTRACT.md](./AUTO-CONTRACT.md) · scorer `run_auto_contract_score.py` · **dev** family `data/temporal-family-dev.json` (not held-out) · future `temporal-family-test.json` frozen unseen
+
+**Measure before fix:** run unchanged Phase-7 Dual on `temporal-dev` → case-level diagnose → **then** consider G3 / Track B. Do not redesign gates on BC_E1 alone.
 
 ### Phase 1 — Track A harness
 

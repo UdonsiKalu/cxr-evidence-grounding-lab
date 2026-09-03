@@ -13,6 +13,7 @@ from .paths import (
     HELDOUT_BMTCART_PHASE7_PATH,
     HELDOUT_PATH,
     HELDOUT_PHASE4_PATH,
+    TEMPORAL_FAMILY_DEV_PATH,
 )
 from .predicate import PREDICATE_FORMULA, PREDICATE_ID, PREDICATE_TEXT, evaluate_rule, selftest
 from .types import BaselineResult, Verdict
@@ -33,6 +34,11 @@ def load_heldout_phase4_cases() -> list[dict[str, Any]]:
 
 def load_heldout_bmtcart_cases() -> list[dict[str, Any]]:
     return load_cases(HELDOUT_BMTCART_PHASE7_PATH)
+
+
+def load_temporal_family_dev_cases() -> list[dict[str, Any]]:
+    """Track A/B development family — NOT a held-out test set."""
+    return load_cases(TEMPORAL_FAMILY_DEV_PATH)
 
 
 def run_pipeline(evidence: str, *, mode: str) -> dict[str, Any]:

@@ -10,6 +10,7 @@ from .evidence import gate_verdict_with_evidence
 from .experiment import (
     load_heldout_bmtcart_cases,
     load_heldout_phase4_cases,
+    load_temporal_family_dev_cases,
 )
 from .ollama_client import DEFAULT_MODEL, ollama_reachable
 from .paths import ARTIFACTS_DIR
@@ -180,6 +181,12 @@ def run_phase7_panel(
         experiment = experiment or "phase7_phase4_evidence"
         if out_name == "phase7-bmtcart-panel.json":
             out_name = "phase7-phase4-panel.json"
+    elif case_set == "temporal-dev":
+        cases = load_temporal_family_dev_cases()
+        case_ids = [c["id"] for c in cases]
+        experiment = experiment or "phase7_temporal_family_dev"
+        if out_name == "phase7-bmtcart-panel.json":
+            out_name = "phase7-temporal-dev-panel.json"
     else:
         raise ValueError(case_set)
 

@@ -67,8 +67,18 @@ Writes `artifacts/auto-contract-score-*.json` without overwriting Phase 1–14 p
 
 ## Failure family (Track A breadth + Track B science)
 
-Temporal-distinction family: `data/heldout-temporal-family.json`  
-Same predicate `FIRST_LINE_THERAPY_FAILED`. Designed for wrong-AUTO measurement and later probe/patch/steer.
+**Development / diagnostic set (inspect during design):** `data/temporal-family-dev.json`  
+Same predicate `FIRST_LINE_THERAPY_FAILED`. **Not held-out** once used to design G3 or RepEng.
+
+**Frozen unseen test (create later, do not peek while designing):** `data/temporal-family-test.json` (not yet).
+
+Baseline command (unchanged Phase-7 Dual stack — **do not tighten G3 first**):
+
+```bash
+python3 run_phase7.py --set temporal-dev
+python3 run_auto_contract_score.py --from-artifacts temporal-dev --paths Dual_full,D_full,C_full
+python3 run_auto_contract_score.py --diagnose --from-artifacts temporal-dev
+```
 
 ---
 

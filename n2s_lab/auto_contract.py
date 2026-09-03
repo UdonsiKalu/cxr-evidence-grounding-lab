@@ -293,6 +293,8 @@ def score_preset(name: str, *, paths: tuple[str, ...] | None = None) -> dict[str
         files = ["phase6-faithfulness-panel.json"]
     elif name == "phase5":
         files = ["phase5-verify-panel.json"]
+    elif name == "temporal-dev":
+        files = ["phase7-temporal-dev-panel.json"]
     else:
         raise ValueError(f"unknown preset: {name}")
 
@@ -308,6 +310,11 @@ def score_preset(name: str, *, paths: tuple[str, ...] | None = None) -> dict[str
         "preset": name,
         "scored_at": datetime.now(timezone.utc).isoformat(),
         "primary_objective": "wrong_AUTO → 0",
+        "note": (
+            "temporal-dev is a DEVELOPMENT set — not held-out test"
+            if name == "temporal-dev"
+            else None
+        ),
         "results": results,
     }
 
@@ -317,6 +324,167 @@ def write_score_artifact(payload: dict[str, Any], out_name: str) -> Path:
     out = ARTIFACTS_DIR / out_name
     out.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
     return out
+
+
+def _extract_verify_ok(block: dict[str, Any] | None) -> bool | None:
+    if not block:
+        return None
+    verify = block.get("verify")
+    if isinstance(verify, dict):
+        if "ok" in verify:
+            return bool(verify["ok"])
+        # phase5/6 nested first/second
+        for key in ("second", "first", "final"):
+            nested = verify.get(key)
+            if isinstance(nested, dict) and "ok" in nested:
+                return bool(nested["ok"])
+    if "verify_ok" in block:
+        return bool(block["verify_ok"])
+    return None
+
+
+def _contradiction_present(block: dict[str, Any] | None) -> bool | None:
+    if not block:
+        return None
+    ext = block.get("extraction") or {}
+    if "contradiction_present" in ext:
+        return ext.get("contradiction_present")
+    contra = ext.get("contradiction") or {}
+    if isinstance(contra, dict) and "present" in contra:
+        return contra.get("present")
+    g = block.get("grounding") or {}
+    if "contradiction" in g:
+        return g.get("contradiction")
+    return None
+
+
+def diagnose_row(row: dict[str, Any], path: str = "Dual_full") -> dict[str, Any] | None:
+    """Case-level forensic card for wrong_AUTO / REVIEW under Dual_full (or other path)."""
+    scored = score_row(row, path)
+    if scored is None:
+        return None
+    if scored["bucket"] not in ("wrong_AUTO", "REVIEW"):
+        return None
+
+    cond = row.get("conditions") or {}
+    c_full = _condition_block(row, "C_full")
+    d_full = _condition_block(row, "D_full")
+    dual = _condition_block(row, "Dual_full") or cond.get("Dual_full")
+    if not isinstance(dual, dict):
+        dual = {}
+
+    c_v = (c_full or {}).get("verdict")
+    d_v = (d_full or {}).get("verdict")
+    dual_reason = dual.get("reason")
+    dual_agreed = dual.get("agreed")
+    if dual_agreed is None and c_v and d_v:
+        dual_agreed = c_v == d_v and c_v != REVIEW
+
+    c_x = _contradiction_present(c_full)
+    d_x = _contradiction_present(d_full)
+    # Prefer D (analysis→structure) as symbolic commit signal
+    x_commit = d_x if d_x is not None else c_x
+
+    gold = scored["gold"]
+    verdict = scored["verdict"]
+    false_contradiction_like = (
+        gold == "SATISFIED"
+        and verdict == Verdict.CONTRADICTION.value
+        and scored["bucket"] == "wrong_AUTO"
+    ) or (
+        gold == "SATISFIED"
+        and x_commit is True
+        and scored["bucket"] == "wrong_AUTO"
+    )
+
+    gate = apply_gates(
+        verify_ok=_extract_verify_ok(d_full) is not False
+        and _extract_verify_ok(c_full) is not False,
+        dual_agreed=dual_agreed if path.startswith("Dual") else None,
+        contradiction_supported=True if x_commit is True else (False if x_commit is False else None),
+        proposed_verdict=verdict if scored["disposition"] == "AUTO" else None,
+    )
+
+    return {
+        **scored,
+        "subtype": row.get("subtype") or row.get("category"),
+        "why": row.get("why"),
+        "C_full_verdict": c_v,
+        "D_full_verdict": d_v,
+        "Dual_full_verdict": dual.get("verdict"),
+        "Dual_reason": dual_reason,
+        "paths_agreed": dual_agreed,
+        "C_verify_ok": _extract_verify_ok(c_full),
+        "D_verify_ok": _extract_verify_ok(d_full),
+        "C_contradiction_present": c_x,
+        "D_contradiction_present": d_x,
+        "false_contradiction_like_BC_E1": false_contradiction_like,
+        "gate_replay": gate,
+        "evidence_preview": (row.get("evidence") or "")[:180],
+    }
+
+
+def diagnose_report(
+    report: dict[str, Any],
+    *,
+    path: str = "Dual_full",
+) -> dict[str, Any]:
+    cards = []
+    for row in report.get("rows") or []:
+        card = diagnose_row(row, path)
+        if card:
+            cards.append(card)
+    wrong = [c for c in cards if c["bucket"] == "wrong_AUTO"]
+    reviews = [c for c in cards if c["bucket"] == "REVIEW"]
+    return {
+        "model": report.get("model"),
+        "path": path,
+        "n_rows": len(report.get("rows") or []),
+        "wrong_AUTO_n": len(wrong),
+        "REVIEW_n": len(reviews),
+        "false_contradiction_like_n": sum(
+            1 for c in wrong if c.get("false_contradiction_like_BC_E1")
+        ),
+        "wrong_AUTO": wrong,
+        "REVIEW": reviews,
+    }
+
+
+def diagnose_panel_or_report(
+    path: Path,
+    *,
+    score_path: str = "Dual_full",
+) -> dict[str, Any]:
+    data = load_json(path)
+    if isinstance(data.get("models"), list):
+        models_out = []
+        for entry in data["models"]:
+            art = resolve_artifact_entry(entry, path.parent)
+            if art is None:
+                models_out.append(
+                    {"model": entry.get("model"), "error": f"missing {entry.get('artifact')}"}
+                )
+                continue
+            report = load_json(art)
+            diag = diagnose_report(report, path=score_path)
+            diag["artifact"] = (
+                str(art.relative_to(LAB_ROOT)) if art.is_relative_to(LAB_ROOT) else str(art)
+            )
+            models_out.append(diag)
+        return {
+            "kind": "panel_diagnose",
+            "source": str(path.relative_to(LAB_ROOT)) if path.is_relative_to(LAB_ROOT) else str(path),
+            "score_path": score_path,
+            "models": models_out,
+            "diagnosed_at": datetime.now(timezone.utc).isoformat(),
+            "contract": "docs/AUTO-CONTRACT.md",
+            "note": "Measure-before-fix diagnostic. Do not use this set as held-out test.",
+        }
+    diag = diagnose_report(data, path=score_path)
+    diag["kind"] = "report_diagnose"
+    diag["source"] = str(path.relative_to(LAB_ROOT)) if path.is_relative_to(LAB_ROOT) else str(path)
+    diag["contract"] = "docs/AUTO-CONTRACT.md"
+    return diag
 
 
 def selftest() -> None:
@@ -339,14 +507,28 @@ def selftest() -> None:
         "id": "BC_E1",
         "gold": "SATISFIED",
         "conditions": {
-            "Dual_full": {"verdict": "CONTRADICTION", "disposition": "AUTO"},
+            "Dual_full": {"verdict": "CONTRADICTION", "disposition": "AUTO", "agreed": True, "reason": "paths_agree"},
+            "C_full": {
+                "verdict": "CONTRADICTION",
+                "disposition": "AUTO",
+                "extraction": {"contradiction_present": True},
+                "verify": {"ok": True},
+            },
+            "D_full": {
+                "verdict": "CONTRADICTION",
+                "disposition": "AUTO",
+                "extraction": {"contradiction_present": True},
+                "verify": {"ok": True},
+            },
         },
     }
     s = score_row(row, "Dual_full")
     assert s and s["wrong_AUTO"] and s["id"] == "BC_E1"
+    d = diagnose_row(row, "Dual_full")
+    assert d and d["false_contradiction_like_BC_E1"]
     print("auto_contract selftest OK")
 
 
 def load_temporal_family() -> dict[str, Any]:
-    path = LAB_ROOT / "data" / "heldout-temporal-family.json"
+    path = LAB_ROOT / "data" / "temporal-family-dev.json"
     return load_json(path)

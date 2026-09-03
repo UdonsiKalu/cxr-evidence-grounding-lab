@@ -1,12 +1,12 @@
 {
   "predicate_id": "FIRST_LINE_THERAPY_FAILED",
   "gold_is_not_fed_to_models": true,
-  "held_out": true,
-  "phase": "temporal_family",
+  "held_out": false,
+  "phase": "temporal_family_dev",
   "domain": "temporal_distinction_family",
   "prompts_were_not_designed_on_these": true,
   "wording_status": "draft_v1",
-  "note": "Track A/B failure family: temporal success→later failure (and controls) mis-read as contradiction. Same predicate as main lab. Includes seed BC_E1 / BC11_* ids for linkage plus new TF_* paraphrases. Synthetic notes only.",
+  "note": "DEVELOPMENT/diagnostic set \u2014 NOT held-out. Inspect during Track A/B design. Freeze a separate temporal-family-test.json later and do not peek while designing G3 or RepEng. Track A/B failure family: temporal success\u2192later failure (and controls) mis-read as contradiction. Same predicate as main lab. Includes seed BC_E1 / BC11_* ids for linkage plus new TF_* paraphrases. Synthetic notes only.",
   "family": "temporal_response_then_failure",
   "subtypes": [
     "therapy_worked_then_failed",
@@ -26,7 +26,7 @@
       "category": "explicit",
       "domain_tag": "car_t",
       "expected": "SATISFIED",
-      "why": "Clear first-line R-CHOP failure then switch to second line — not a contradiction.",
+      "why": "Clear first-line R-CHOP failure then switch to second line \u2014 not a contradiction.",
       "evidence": "DLBCL: first-line R-CHOP for four cycles with initial response, then radiographic progression in cycle 5. Discontinued R-CHOP for progression; started R-ICE as second-line therapy.",
       "source_set": "heldout-bmtcart-phase7"
     },
@@ -37,8 +37,8 @@
       "category": "explicit",
       "domain_tag": "lymphoma",
       "expected": "SATISFIED",
-      "why": "Paraphrase of response→progression on first-line; gold SATISFIED.",
-      "evidence": "Diffuse large B-cell lymphoma. Patient completed cycles 1–3 of first-line R-CHOP with partial metabolic response. During cycle 4, PET showed new FDG-avid nodes. R-CHOP was stopped because of disease progression and second-line R-ICE was started."
+      "why": "Paraphrase of response\u2192progression on first-line; gold SATISFIED.",
+      "evidence": "Diffuse large B-cell lymphoma. Patient completed cycles 1\u20133 of first-line R-CHOP with partial metabolic response. During cycle 4, PET showed new FDG-avid nodes. R-CHOP was stopped because of disease progression and second-line R-ICE was started."
     },
     {
       "id": "TF_E2",
@@ -57,7 +57,7 @@
       "category": "explicit",
       "domain_tag": "myeloma",
       "expected": "SATISFIED",
-      "why": "Linked to BC11_E1 pattern — response then biochemical progression.",
+      "why": "Linked to BC11_E1 pattern \u2014 response then biochemical progression.",
       "evidence": "Multiple myeloma: first-line RVd produced a partial response after three cycles, then rising M-protein and new lesions at cycle 4. Held lenalidomide for progression; started daratumumab-based second-line therapy."
     },
     {
@@ -88,7 +88,7 @@
       "category": "explicit",
       "domain_tag": "solid",
       "expected": "SATISFIED",
-      "why": "Early imaging negative for progression; later imaging positive — sequence, not contradiction.",
+      "why": "Early imaging negative for progression; later imaging positive \u2014 sequence, not contradiction.",
       "evidence": "Colon cancer on first-line FOLFOX: CT after cycle 3 showed no progression. CT after cycle 6 showed new hepatic metastases. FOLFOX discontinued for progression; started FOLFIRI."
     },
     {
@@ -98,7 +98,7 @@
       "category": "uncertain",
       "domain_tag": "lymphoma",
       "expected": "UNCERTAIN",
-      "why": "Possible progression only; confirmatory scan pending — must not AUTO failure.",
+      "why": "Possible progression only; confirmatory scan pending \u2014 must not AUTO failure.",
       "evidence": "DLBCL on first-line R-CHOP cycle 3: possible new adenopathy on exam. PET scheduled next week; no regimen change until imaging returns."
     },
     {
@@ -108,7 +108,7 @@
       "category": "explicit",
       "domain_tag": "solid",
       "expected": "NOT_SATISFIED",
-      "why": "Stopped first-line for toxicity while disease controlled — not therapy failure.",
+      "why": "Stopped first-line for toxicity while disease controlled \u2014 not therapy failure.",
       "evidence": "Breast cancer on first-line paclitaxel: tumor markers falling and imaging stable. Paclitaxel stopped for grade 3 neuropathy. Plan alternate first-line partner agent; no progression documented."
     },
     {
@@ -118,7 +118,7 @@
       "category": "explicit",
       "domain_tag": "heme",
       "expected": "NOT_SATISFIED",
-      "why": "Later toxicity after early tolerance; disease still responding — not first-line failure.",
+      "why": "Later toxicity after early tolerance; disease still responding \u2014 not first-line failure.",
       "evidence": "AML on first-line 7+3: cycles 1 tolerated without major toxicity and day-14 marrow showed response. Cycle 2 complicated by culture-positive sepsis requiring ICU. Induction held for toxicity; marrow still without progression."
     },
     {
@@ -128,7 +128,7 @@
       "category": "conflicting",
       "domain_tag": "car_t",
       "expected": "CONTRADICTION",
-      "why": "Same workup denies vs documents completed first-line — true contradiction.",
+      "why": "Same workup denies vs documents completed first-line \u2014 true contradiction.",
       "evidence": "CAR-T intake: patient reports never receiving systemic chemotherapy for DLBCL. Same-day oncology addendum: completed six cycles of first-line R-CHOP with subsequent progression; proceed to apheresis."
     },
     {
@@ -163,5 +163,6 @@
       "evidence": "AML: currently receiving first-line 7+3 induction, day 14 marrow shows ongoing response. Plan to complete consolidation; no progression documented.",
       "source_set": "heldout-bmtcart-phase7"
     }
-  ]
+  ],
+  "split": "development"
 }

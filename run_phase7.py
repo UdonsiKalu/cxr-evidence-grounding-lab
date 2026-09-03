@@ -32,9 +32,9 @@ def main() -> None:
     )
     parser.add_argument(
         "--set",
-        choices=("bmtcart", "phase4"),
+        choices=("bmtcart", "phase4", "temporal-dev"),
         default="bmtcart",
-        help="held-out case set (default: BMT/CAR-T phase7)",
+        help="case set (temporal-dev = Track A development family, not held-out)",
     )
     parser.add_argument("--out", default="")
     parser.add_argument(
@@ -51,11 +51,14 @@ def main() -> None:
         return
 
     models = [x.strip() for x in args.models.split(",") if x.strip()]
-    out_name = args.out or (
-        "phase7-bmtcart-panel.json"
-        if args.set == "bmtcart"
-        else "phase7-phase4-panel.json"
-    )
+    if args.out:
+        out_name = args.out
+    elif args.set == "bmtcart":
+        out_name = "phase7-bmtcart-panel.json"
+    elif args.set == "phase4":
+        out_name = "phase7-phase4-panel.json"
+    else:
+        out_name = "phase7-temporal-dev-panel.json"
     panel = run_phase7_panel(models=models, case_set=args.set, out_name=out_name)
     print(f"wrote {panel['_artifact']}")
     print("Phase-1–6 artifacts were not overwritten.")

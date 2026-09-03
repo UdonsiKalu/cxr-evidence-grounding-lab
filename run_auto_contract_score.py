@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Score frozen panels under the Track A AUTO contract (wrong_AUTO / REVIEW / correct_AUTO).
+"""Score / diagnose frozen panels under the Track A AUTO contract.
 
 Does not overwrite Phase 1–14 experiment panels. See docs/AUTO-CONTRACT.md.
 """
@@ -15,6 +15,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from n2s_lab.auto_contract import (  # noqa: E402
+    diagnose_panel_or_report,
     load_temporal_family,
     score_panel_or_report,
     score_preset,
@@ -57,17 +58,48 @@ def _print_summary(payload: dict) -> None:
                 )
 
 
+def _print_diagnose(payload: dict) -> None:
+    print(f"diagnose path={payload.get('score_path')} source={payload.get('source')}")
+    for m in payload.get("models") or [payload]:
+        if m.get("error"):
+            print(f"  ERROR {m['error']}")
+            continue
+        print(
+            f"  model={m.get('model')} n={m.get('n_rows')} "
+            f"wrong_AUTO={m.get('wrong_AUTO_n')} REVIEW={m.get('REVIEW_n')} "
+            f"false_X_like={m.get('false_contradiction_like_n')}"
+        )
+        for c in m.get("wrong_AUTO") or []:
+            print(
+                f"    WRONG {c['id']}: gold={c['gold']} → {c['verdict']} "
+                f"C={c.get('C_full_verdict')} D={c.get('D_full_verdict')} "
+                f"agreed={c.get('paths_agreed')} X_D={c.get('D_contradiction_present')} "
+                f"BC_E1_like={c.get('false_contradiction_like_BC_E1')}"
+            )
+        for c in m.get("REVIEW") or []:
+            print(
+                f"    REVIEW {c['id']}: gold={c['gold']} "
+                f"C={c.get('C_full_verdict')} D={c.get('D_full_verdict')} "
+                f"reason={c.get('Dual_reason')}"
+            )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="AUTO contract score (Track A)")
     parser.add_argument("--selftest", action="store_true")
     parser.add_argument(
         "--from-artifacts",
-        choices=("phase5", "phase6", "phase7"),
+        choices=("phase5", "phase6", "phase7", "temporal-dev"),
         help="score frozen panel preset",
     )
     parser.add_argument(
         "--artifact",
         help="path to a panel or per-model report JSON",
+    )
+    parser.add_argument(
+        "--diagnose",
+        action="store_true",
+        help="case-level wrong_AUTO/REVIEW cards (gate/path/X fields)",
     )
     parser.add_argument(
         "--paths",
@@ -77,7 +109,7 @@ def main() -> None:
     parser.add_argument(
         "--list-family",
         action="store_true",
-        help="print temporal failure-family case ids",
+        help="print temporal-family-dev case ids",
     )
     parser.add_argument("--out", default="", help="artifact filename under artifacts/")
     args = parser.parse_args()
@@ -86,17 +118,41 @@ def main() -> None:
         selftest()
         fam = load_temporal_family()
         assert len(fam.get("cases") or []) >= 10
-        print(f"temporal family cases: {len(fam['cases'])}")
+        assert fam.get("split") == "development"
+        print(f"temporal-family-dev cases: {len(fam['cases'])} split={fam.get('split')}")
         return
 
     if args.list_family:
         fam = load_temporal_family()
-        print(f"family={fam.get('family')} n={len(fam['cases'])}")
+        print(
+            f"family={fam.get('family')} split={fam.get('split')} n={len(fam['cases'])} "
+            "(DEV — not held-out)"
+        )
         for c in fam["cases"]:
             print(f"  {c['id']:12} {c['expected']:16} {c.get('subtype')}")
         return
 
     paths = tuple(x.strip() for x in args.paths.split(",") if x.strip())
+
+    if args.diagnose:
+        if args.from_artifacts == "temporal-dev":
+            path = ARTIFACTS_DIR / "phase7-temporal-dev-panel.json"
+        elif args.from_artifacts == "phase7":
+            path = ARTIFACTS_DIR / "phase7-bmtcart-panel.json"
+        elif args.artifact:
+            path = Path(args.artifact)
+            if not path.is_file():
+                path = ARTIFACTS_DIR / args.artifact
+        else:
+            raise SystemExit("--diagnose needs --from-artifacts temporal-dev|phase7 or --artifact")
+        if not path.is_file():
+            raise SystemExit(f"missing panel for diagnose: {path}")
+        payload = diagnose_panel_or_report(path, score_path="Dual_full")
+        out_name = args.out or f"auto-contract-diagnose-{path.stem}.json"
+        out = write_score_artifact(payload, out_name)
+        _print_diagnose(payload)
+        print(f"\nwrote {out.relative_to(ROOT)}")
+        return
 
     if args.from_artifacts:
         payload = score_preset(args.from_artifacts, paths=paths)
