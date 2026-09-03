@@ -6,7 +6,8 @@
 **Demos (replay only, no models):**  
 [Grounding Ph1–4](https://udonsikalu.github.io/cxr-evidence-grounding-lab/) · [RepEng Workbench Ph9–11](https://udonsikalu.github.io/cxr-repeng-workbench/)
 
-**Related:** [ARCHITECTURE-DIRECTION.md](./ARCHITECTURE-DIRECTION.md) · [EVALUATION-JOURNEY.md](../EVALUATION-JOURNEY.md) · phase protocols `PHASE5`…`PHASE14`
+**Related:** [ARCHITECTURE-DIRECTION.md](./ARCHITECTURE-DIRECTION.md) · [EVALUATION-JOURNEY.md](../EVALUATION-JOURNEY.md) · phase protocols `PHASE5`…`PHASE14`  
+**Living record of advances:** [ADVANCE-LOG.md](./ADVANCE-LOG.md) — append one entry per advance (activity + result + artifacts).
 
 ---
 
