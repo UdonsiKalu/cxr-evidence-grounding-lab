@@ -17,7 +17,11 @@ ROOT = Path(__file__).resolve().parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from n2s_lab.paths import TEMPORAL_FAMILY_DEV_PATH, TEMPORAL_FAMILY_TEST_PATH  # noqa: E402
+from n2s_lab.paths import (  # noqa: E402
+    TEMPORAL_FAMILY_DEV_PATH,
+    TEMPORAL_FAMILY_EXPAND_PATH,
+    TEMPORAL_FAMILY_TEST_PATH,
+)
 from n2s_lab.trackb_falsex_cluster import (  # noqa: E402
     CONTRA_CONTROLS,
     NOFAIL_CONTROLS,
@@ -50,6 +54,11 @@ def main() -> None:
         action="store_true",
         help="fit L20 semantic family vector (temporal-change vs contradiction) and α-sweep",
     )
+    parser.add_argument(
+        "--expand-sequence",
+        action="store_true",
+        help="frozen expand panel: 7B collect → fit or 14B collect+patch-depth+fit",
+    )
     args = parser.parse_args()
 
     if args.selftest:
@@ -68,16 +77,27 @@ def main() -> None:
         ):
             print("phase10 gate not YES")
             sys.exit(1)
+        if not TEMPORAL_FAMILY_EXPAND_PATH.is_file():
+            print("missing temporal-family-dev-expand.json")
+            sys.exit(1)
         from n2s_lab.hf_intervene import ActivationPatchSpec, ActivationSteerSpec  # noqa: F401
         from n2s_lab.trackb_patch_depth import DEFAULT_SWEEP_LAYERS  # noqa: F401
         from n2s_lab.trackb_bce1_alpha import SWEEP_ALPHAS  # noqa: F401
         from n2s_lab.trackb_family_vector import CLASS_A_CANDIDATES, FAMILY_LAYER  # noqa: F401
+        from n2s_lab.trackb_expand_pipeline import ENOUGH_A, load_expand  # noqa: F401
 
+        exp = load_expand()
+        assert exp.get("frozen_wording") is True
+        assert exp.get("held_out") is False
+        assert len(exp["cases"]) >= 20
+        ids = [c["id"] for c in exp["cases"]]
+        assert all(not i.startswith("TFT_") for i in ids)
         print(
             f"trackb selftest OK — targets={list(TARGETS)} "
             f"contra={list(CONTRA_CONTROLS)} nofail={list(NOFAIL_CONTROLS)} "
             f"sweep_L={list(DEFAULT_SWEEP_LAYERS)} bce1_alphas={list(SWEEP_ALPHAS)} "
             f"family_L={FAMILY_LAYER} class_a={list(CLASS_A_CANDIDATES)} "
+            f"expand_n={len(exp['cases'])} enough_A={ENOUGH_A} "
             f"test_sealed={TEMPORAL_FAMILY_TEST_PATH.name}"
         )
         return
@@ -141,6 +161,13 @@ def main() -> None:
             )
         if not gate["pass"]:
             sys.exit(2)
+        return
+
+    if args.expand_sequence:
+        from n2s_lab.trackb_expand_pipeline import run_expand_sequence  # noqa: E402
+
+        summary = run_expand_sequence()
+        print(f"\nEXPAND SEQUENCE stage={summary.get('stage')}")
         return
 
     if args.patch_frac:

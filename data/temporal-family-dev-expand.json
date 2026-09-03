@@ -1,0 +1,323 @@
+{
+  "predicate_id": "FIRST_LINE_THERAPY_FAILED",
+  "gold_is_not_fed_to_models": true,
+  "held_out": false,
+  "frozen_wording": true,
+  "frozen_at": "2026-09-03",
+  "phase": "temporal_family_dev_expand",
+  "domain": "temporal_distinction_family",
+  "prompts_were_not_designed_on_these": true,
+  "wording_status": "expand_v1_pre_model",
+  "note": "DEV expand panel — wording frozen BEFORE any HF run on these notes. Not conditioned on 7B/14B output. Not the sealed temporal-family-test.json (no TFT_*). Not merged into temporal-family-dev.json. Synthetic notes only. Same predicate FIRST_LINE_THERAPY_FAILED.",
+  "family": "temporal_response_then_failure",
+  "n_cases": 30,
+  "split": "development_expand",
+  "predeclared_fit": {
+    "class_a": "gold SATISFIED temporal-change AND model commit contradiction.present=false",
+    "class_b": "gold CONTRADICTION AND model commit contradiction.present=true",
+    "enough_on_model": "n_class_a >= 3 and n_class_b >= 2",
+    "nearly_empty": "n_class_a <= 2 — do not fit family vector on that model"
+  },
+  "cases": [
+    {
+      "id": "TX_E01",
+      "role": "expand_temporal",
+      "subtype": "therapy_worked_then_failed",
+      "category": "explicit",
+      "domain_tag": "pancreas",
+      "expected": "SATISFIED",
+      "why": "First-line response then radiographic progression and switch.",
+      "evidence": "Metastatic pancreatic adenocarcinoma: first-line gemcitabine/nab-paclitaxel with CA19-9 decline and smaller liver lesions after two cycles. Restaging after cycle 6 showed new peritoneal implants. Gemcitabine/nab-paclitaxel discontinued for progression; started FOLFIRINOX as second-line."
+    },
+    {
+      "id": "TX_E02",
+      "role": "expand_temporal",
+      "subtype": "stable_then_progression",
+      "category": "explicit",
+      "domain_tag": "gist",
+      "expected": "SATISFIED",
+      "why": "Initial SD on first-line then clear progression.",
+      "evidence": "Imatinib-sensitive GIST: first-line imatinib 400 mg daily. CT at month 3 showed stable disease. CT at month 11 documented new peritoneal nodules meeting progression. Imatinib stopped for progression; sunitinib planned."
+    },
+    {
+      "id": "TX_E03",
+      "role": "expand_temporal",
+      "subtype": "therapy_worked_then_failed",
+      "category": "explicit",
+      "domain_tag": "sclc",
+      "expected": "SATISFIED",
+      "why": "Initial response on first-line then progression and regimen change.",
+      "evidence": "Extensive-stage SCLC: first-line carboplatin/etoposide/atezolizumab with marked shrinkage of mediastinal nodes after cycle 2. After cycle 4, brain MRI showed new metastases. Platinum doublet held for progression; lurbinectedin discussed as second-line."
+    },
+    {
+      "id": "TX_E04",
+      "role": "expand_temporal",
+      "subtype": "prior_neg_then_pos",
+      "category": "explicit",
+      "domain_tag": "prostate",
+      "expected": "SATISFIED",
+      "why": "Early imaging negative for progression; later positive.",
+      "evidence": "Metastatic castration-sensitive prostate cancer on first-line ADT plus docetaxel: bone scan after cycle 3 showed no new lesions. Scan after cycle 6 showed new rib metastases. Docetaxel discontinued for progression; abiraterone started."
+    },
+    {
+      "id": "TX_E05",
+      "role": "expand_temporal",
+      "subtype": "possible_then_confirmed_progression",
+      "category": "explicit",
+      "domain_tag": "hcc",
+      "expected": "SATISFIED",
+      "why": "Possible progression later confirmed; first-line stopped for confirmed failure.",
+      "evidence": "Unresectable HCC on first-line atezolizumab/bevacizumab: week-8 note flagged a possible new satellite lesion. Confirmatory triphasic CT 12 days later showed unequivocal intrahepatic progression. Atezo/bev stopped for confirmed progression; lenvatinib planned."
+    },
+    {
+      "id": "TX_E06",
+      "role": "expand_temporal",
+      "subtype": "therapy_worked_then_failed",
+      "category": "explicit",
+      "domain_tag": "hnscc",
+      "expected": "SATISFIED",
+      "why": "First-line pembrolizumab response then progression.",
+      "evidence": "Recurrent HNSCC: first-line pembrolizumab with partial response at week 9. At week 18, CT showed enlarging neck mass and new lung nodules. Pembrolizumab discontinued for progression; platinum/5-FU salvage started."
+    },
+    {
+      "id": "TX_E07",
+      "role": "expand_temporal",
+      "subtype": "stable_then_progression",
+      "category": "explicit",
+      "domain_tag": "endometrial",
+      "expected": "SATISFIED",
+      "why": "Stable then progression on first-line carboplatin/paclitaxel.",
+      "evidence": "Advanced endometrial carcinoma on first-line carboplatin/paclitaxel: CT after cycle 3 stable. CT after cycle 6 showed new retroperitoneal nodes. Carboplatin/paclitaxel stopped for progression; pembrolizumab/lenvatinib planned."
+    },
+    {
+      "id": "TX_E08",
+      "role": "expand_temporal",
+      "subtype": "therapy_worked_then_failed",
+      "category": "explicit",
+      "domain_tag": "net",
+      "expected": "SATISFIED",
+      "why": "Biochemical/radiographic response then later failure.",
+      "evidence": "Pancreatic NET on first-line everolimus: chromogranin fell and liver lesions were smaller at month 4. At month 10, new bone lesions appeared. Everolimus discontinued for progression; lutetium DOTATATE considered second-line."
+    },
+    {
+      "id": "TX_E09",
+      "role": "expand_temporal",
+      "subtype": "prior_neg_then_pos",
+      "category": "explicit",
+      "domain_tag": "wm",
+      "expected": "SATISFIED",
+      "why": "Early marrow without progression; later clear failure.",
+      "evidence": "Waldenström macroglobulinemia on first-line bendamustine-rituximab: IgM falling after cycle 2 with no new adenopathy. After cycle 6, IgM rebound and new bulky nodes. BR stopped for progression; ibrutinib started as second-line."
+    },
+    {
+      "id": "TX_E10",
+      "role": "expand_temporal",
+      "subtype": "therapy_worked_then_failed",
+      "category": "explicit",
+      "domain_tag": "all",
+      "expected": "SATISFIED",
+      "why": "Marrow response then relapse on first-line.",
+      "evidence": "Ph-negative B-ALL: first-line hyper-CVAD with day-28 MRD-negative marrow. At month 5, circulating blasts returned. Hyper-CVAD discontinued for relapse; blinatumomab started as next line."
+    },
+    {
+      "id": "TX_E11",
+      "role": "expand_temporal",
+      "subtype": "stable_then_progression",
+      "category": "explicit",
+      "domain_tag": "cholangio",
+      "expected": "SATISFIED",
+      "why": "Initial SD on gem/cis then progression.",
+      "evidence": "Intrahepatic cholangiocarcinoma on first-line gemcitabine/cisplatin: MRI after cycle 3 stable. MRI after cycle 6 showed new satellite lesions. Gem/cis stopped for progression; FOLFOX second-line planned."
+    },
+    {
+      "id": "TX_E12",
+      "role": "expand_temporal",
+      "subtype": "possible_then_confirmed_progression",
+      "category": "explicit",
+      "domain_tag": "gbm",
+      "expected": "SATISFIED",
+      "why": "Possible then confirmed progression; first-line TMZ stopped.",
+      "evidence": "GBM on first-line temozolomide after chemoradiation: month-2 MRI raised possible pseudoprogression versus true growth. Month-3 MRI confirmed increasing enhancing volume outside the RT field. TMZ stopped for confirmed progression; lomustine planned."
+    },
+    {
+      "id": "TX_E13",
+      "role": "expand_temporal",
+      "subtype": "therapy_worked_then_failed",
+      "category": "explicit",
+      "domain_tag": "merkel",
+      "expected": "SATISFIED",
+      "why": "Checkpoint response then later failure.",
+      "evidence": "Metastatic Merkel-cell carcinoma: first-line avelumab with near-complete cutaneous response at week 8. At week 20, new nodal basin involvement. Avelumab discontinued for progression; paclitaxel salvage started."
+    },
+    {
+      "id": "TX_E14",
+      "role": "expand_temporal",
+      "subtype": "prior_neg_then_pos",
+      "category": "explicit",
+      "domain_tag": "testicular",
+      "expected": "SATISFIED",
+      "why": "Early markers/imaging negative; later progression.",
+      "evidence": "NSGCT on first-line BEP: tumor markers normalized after cycle 2 and CT showed no residual mass. After cycle 4, AFP rose and CT showed a new retroperitoneal node. BEP stopped for progression; TIP salvage planned."
+    },
+    {
+      "id": "TX_E15",
+      "role": "expand_temporal",
+      "subtype": "stable_then_progression",
+      "category": "explicit",
+      "domain_tag": "mesothelioma",
+      "expected": "SATISFIED",
+      "why": "Stable pleural disease then progression on first-line.",
+      "evidence": "Pleural mesothelioma on first-line pemetrexed/cisplatin: CT after cycle 2 stable. CT after cycle 5 showed increasing pleural rind and new ascites. Pemetrexed/cisplatin discontinued for progression; nivolumab/ipilimumab discussed."
+    },
+    {
+      "id": "TX_E16",
+      "role": "expand_temporal",
+      "subtype": "therapy_worked_then_failed",
+      "category": "explicit",
+      "domain_tag": "thyroid",
+      "expected": "SATISFIED",
+      "why": "TKI response then progression.",
+      "evidence": "Radioiodine-refractory DTC on first-line lenvatinib: thyroglobulin fell and lung nodules shrank at month 3. At month 9, new liver metastases. Lenvatinib stopped for progression; cabozantinib planned as second-line."
+    },
+    {
+      "id": "TX_E17",
+      "role": "expand_temporal",
+      "subtype": "possible_then_confirmed_progression",
+      "category": "explicit",
+      "domain_tag": "cervix",
+      "expected": "SATISFIED",
+      "why": "Possible then confirmed PD; first-line stopped.",
+      "evidence": "Recurrent cervical cancer on first-line pembrolizumab/cisplatin/paclitaxel: cycle-3 note mentioned possible new pelvic thickening. Confirmatory MRI two weeks later showed clear progressive disease. First-line stopped for confirmed progression; tisotumab vedotin planned."
+    },
+    {
+      "id": "TX_E18",
+      "role": "expand_temporal",
+      "subtype": "prior_neg_then_pos",
+      "category": "explicit",
+      "domain_tag": "esophagus",
+      "expected": "SATISFIED",
+      "why": "Early CT without PD; later new metastases.",
+      "evidence": "HER2-negative esophageal adenocarcinoma on first-line FOLFOX plus nivolumab: CT after cycle 4 showed no progression. CT after cycle 8 showed new peritoneal deposits. FOLFOX/nivo discontinued for progression; paclitaxel/ramucirumab started."
+    },
+    {
+      "id": "TX_E19",
+      "role": "expand_temporal",
+      "subtype": "therapy_worked_then_failed",
+      "category": "explicit",
+      "domain_tag": "osteosarcoma",
+      "expected": "SATISFIED",
+      "why": "Neoadjuvant response then later failure of first-line MAP.",
+      "evidence": "Osteosarcoma: first-line MAP with >90% necrosis at resection. During adjuvant MAP, restaging showed new pulmonary nodules. MAP discontinued for progression; ifosfamide/etoposide second-line started."
+    },
+    {
+      "id": "TX_E20",
+      "role": "expand_temporal",
+      "subtype": "stable_then_progression",
+      "category": "explicit",
+      "domain_tag": "thymoma",
+      "expected": "SATISFIED",
+      "why": "Stable then progression on first-line CAP.",
+      "evidence": "Unresectable thymoma on first-line cyclophosphamide/doxorubicin/cisplatin: CT after cycle 2 stable. CT after cycle 6 showed increasing mediastinal bulk. CAP stopped for progression; octreotide plus everolimus discussed."
+    },
+    {
+      "id": "TX_E21",
+      "role": "expand_temporal",
+      "subtype": "therapy_worked_then_failed",
+      "category": "explicit",
+      "domain_tag": "mpn",
+      "expected": "SATISFIED",
+      "why": "Spleen/symptom response then progression on first-line ruxolitinib.",
+      "evidence": "Intermediate-risk myelofibrosis: first-line ruxolitinib with spleen reduction and better scores at month 3. At month 10, spleen re-enlarged with rising blasts. Ruxolitinib discontinued for progression; fedratinib started."
+    },
+    {
+      "id": "TX_E22",
+      "role": "expand_temporal",
+      "subtype": "prior_neg_then_pos",
+      "category": "explicit",
+      "domain_tag": "penile",
+      "expected": "SATISFIED",
+      "why": "Early imaging without PD; later inguinal progression.",
+      "evidence": "Penile squamous carcinoma on first-line paclitaxel/ifosfamide/cisplatin: CT after cycle 2 showed no new nodes. CT after cycle 4 showed enlarging inguinal adenopathy. TIP stopped for progression; pembrolizumab considered next."
+    },
+    {
+      "id": "TX_E23",
+      "role": "expand_temporal",
+      "subtype": "possible_then_confirmed_progression",
+      "category": "explicit",
+      "domain_tag": "vulva",
+      "expected": "SATISFIED",
+      "why": "Possible then confirmed PD on first-line cisplatin.",
+      "evidence": "Advanced vulvar cancer on first-line cisplatin: week-5 exam noted a possible new satellite plaque. Punch biopsy and photo documentation one week later confirmed progressive cutaneous disease. Cisplatin stopped for confirmed progression; paclitaxel planned."
+    },
+    {
+      "id": "TX_E24",
+      "role": "expand_temporal",
+      "subtype": "therapy_worked_then_failed",
+      "category": "explicit",
+      "domain_tag": "cutaneous_tcell",
+      "expected": "SATISFIED",
+      "why": "Skin response then later systemic failure of first-line.",
+      "evidence": "Advanced mycosis fungoides: first-line brentuximab vedotin with clearing of plaques at cycle 3. At cycle 8, new visceral lesions on PET. Brentuximab stopped for progression; gemcitabine-based second-line started."
+    },
+    {
+      "id": "TX_C01",
+      "role": "expand_contradiction",
+      "subtype": "true_contradiction_control",
+      "category": "conflicting",
+      "domain_tag": "pancreas",
+      "expected": "CONTRADICTION",
+      "why": "Same workup denies vs documents completed first-line.",
+      "evidence": "Pancreatic-cancer intake: patient reports never receiving systemic chemotherapy. Same-day oncology addendum: completed six cycles of first-line gemcitabine/nab-paclitaxel with subsequent progression; proceed to second-line consult."
+    },
+    {
+      "id": "TX_C02",
+      "role": "expand_contradiction",
+      "subtype": "true_contradiction_control",
+      "category": "conflicting",
+      "domain_tag": "sclc",
+      "expected": "CONTRADICTION",
+      "why": "Denies prior systemic therapy vs documents completed first-line platinum.",
+      "evidence": "SCLC second-opinion (4 Mar 2025): patient states no prior systemic therapy. Outside records same day: completed four cycles of first-line carboplatin/etoposide with subsequent progression on CT."
+    },
+    {
+      "id": "TX_C03",
+      "role": "expand_contradiction",
+      "subtype": "true_contradiction_control",
+      "category": "conflicting",
+      "domain_tag": "gist",
+      "expected": "CONTRADICTION",
+      "why": "Never treated vs documented completed first-line imatinib.",
+      "evidence": "GIST clinic: intake form says never treated with a TKI. Pharmacy reconciliation the same visit lists completed 12 months of first-line imatinib with later radiographic progression."
+    },
+    {
+      "id": "TX_C04",
+      "role": "expand_contradiction",
+      "subtype": "true_contradiction_control",
+      "category": "conflicting",
+      "domain_tag": "all",
+      "expected": "CONTRADICTION",
+      "why": "Never received induction vs documented completed first-line hyper-CVAD.",
+      "evidence": "ALL transplant evaluation: patient reports never receiving induction chemotherapy. Leukemia note same week: completed first-line hyper-CVAD with subsequent marrow relapse."
+    },
+    {
+      "id": "TX_N01",
+      "role": "expand_nofail",
+      "subtype": "no_failure_control",
+      "category": "explicit",
+      "domain_tag": "gist",
+      "expected": "NOT_SATISFIED",
+      "why": "Ongoing first-line with response; no failure event.",
+      "evidence": "GIST: currently on first-line imatinib month 4. Last CT showed ongoing response. Plan to continue imatinib; no progression documented."
+    },
+    {
+      "id": "TX_N02",
+      "role": "expand_nofail",
+      "subtype": "no_failure_control",
+      "category": "explicit",
+      "domain_tag": "net",
+      "expected": "NOT_SATISFIED",
+      "why": "Ongoing first-line with continued response.",
+      "evidence": "Pancreatic NET: currently receiving first-line everolimus month 2. Chromogranin falling; no new lesions. Plan to continue; no progression documented."
+    }
+  ]
+}
