@@ -80,6 +80,8 @@ python3 run_auto_contract_score.py --from-artifacts temporal-dev --paths Dual_fu
 python3 run_auto_contract_score.py --diagnose --from-artifacts temporal-dev
 ```
 
+**Baseline write-up (2026-09-03):** [TEMPORAL-FAMILY-DEV-BASELINE.md](./TEMPORAL-FAMILY-DEV-BASELINE.md) — G3 not changed.
+
 ---
 
 ## Claim hygiene
