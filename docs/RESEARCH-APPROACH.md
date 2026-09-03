@@ -66,11 +66,11 @@ Use a method when it answers a gate or transfer question — not as a checklist 
 | Method | Status in this lab | Next use |
 |--------|-------------------|----------|
 | Behavior panels | **Done** Ph1–11 | Expand via failure **family** |
-| **Probing** | Soft (norms / logit margin) | Explicit probe: is temporal distinction decodable at commit? |
+| **Probing** | **Done** — false-X vs contradiction separable at commit (gap 0.072, LOO 1.00, n=5) | Scale n; hold-out probe |
 | Localization | **Done** Ph9B | Reuse sites; refine per family |
-| **Activation patching** | **Not yet** | Clean-run activations → rescue fail run; layer map |
-| **RepEng / steering** | **Done** Ph10 | Refit/test on family; freeze discipline |
-| **Ablation** | **Not yet** | Suppress direction → correct cases degrade? |
+| **Activation patching** | **Done** Track B — 3/3 flips patching **0.75 only** | Layer sweep for earliest sufficient depth; see [TRACKB-FALSEX-CLUSTER.md](./TRACKB-FALSEX-CLUSTER.md) |
+| **RepEng / steering** | **Done** Ph10; **does not transfer** to false-X cluster at α=4 | Refit vector on the cluster; α sweep |
+| **Ablation** | **Done** α=−4 — sign-consistent, underpowered | Larger \|α\|; cluster-fitted direction |
 | **Generalization + controls** | **Partial** Ph11 | In-family ~50–200 + paraphrase; then 7B→14B |
 | Intervention frameworks (pyvene / TL) | Optional later | Refactor when science stable; hooks OK now |
 | SAE / circuits | Optional later | After causal evidence; not required to close Track A |
@@ -84,9 +84,9 @@ Use a method when it answers a gate or transfer question — not as a checklist 
 Half-page rule: **AUTO only if all gates pass**; else **REVIEW**.  
 Metric: wrong AUTO / REVIEW / correct AUTO on a frozen eval set.
 
-**Frozen:** [AUTO-CONTRACT.md](./AUTO-CONTRACT.md) · scorer `run_auto_contract_score.py` · **dev** family `data/temporal-family-dev.json` (not held-out) · future `temporal-family-test.json` frozen unseen
+**Frozen:** [AUTO-CONTRACT.md](./AUTO-CONTRACT.md) · scorer `run_auto_contract_score.py` · **dev** family `data/temporal-family-dev.json` (not held-out) · **test** `data/temporal-family-test.json` frozen unseen ([TEMPORAL-FAMILY-TEST.md](./TEMPORAL-FAMILY-TEST.md))
 
-**Measure before fix:** run unchanged Phase-7 Dual on `temporal-dev` → case-level diagnose → **then** consider G3 / Track B. Do not redesign gates on BC_E1 alone.
+**Measure before fix:** run unchanged Phase-7 Dual on `temporal-dev` → case-level diagnose → **then** Track B on DEV cluster. Do not redesign gates on BC_E1 alone. Do not peek at test evidence while designing.
 
 ### Phase 1 — Track A harness
 

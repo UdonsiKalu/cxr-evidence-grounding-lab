@@ -4,6 +4,7 @@ __pycache__/
 # Ephemeral local re-runs only — keep frozen Phase / milestone snapshots
 artifacts/live-latest.json
 artifacts/mock-latest.json
+artifacts/logs/
 notes/*.aux
 notes/*.log
 notes/*.out

@@ -89,7 +89,7 @@ def main() -> None:
     parser.add_argument("--selftest", action="store_true")
     parser.add_argument(
         "--from-artifacts",
-        choices=("phase5", "phase6", "phase7", "temporal-dev"),
+        choices=("phase5", "phase6", "phase7", "temporal-dev", "temporal-test"),
         help="score frozen panel preset",
     )
     parser.add_argument(

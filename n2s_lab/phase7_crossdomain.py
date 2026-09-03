@@ -11,6 +11,7 @@ from .experiment import (
     load_heldout_bmtcart_cases,
     load_heldout_phase4_cases,
     load_temporal_family_dev_cases,
+    load_temporal_family_test_cases,
 )
 from .ollama_client import DEFAULT_MODEL, ollama_reachable
 from .paths import ARTIFACTS_DIR
@@ -187,6 +188,13 @@ def run_phase7_panel(
         experiment = experiment or "phase7_temporal_family_dev"
         if out_name == "phase7-bmtcart-panel.json":
             out_name = "phase7-temporal-dev-panel.json"
+    elif case_set == "temporal-test":
+        # Score only after intervention frozen on temporal-dev — do not peek while designing.
+        cases = load_temporal_family_test_cases()
+        case_ids = [c["id"] for c in cases]
+        experiment = experiment or "phase7_temporal_family_test"
+        if out_name == "phase7-bmtcart-panel.json":
+            out_name = "phase7-temporal-test-panel.json"
     else:
         raise ValueError(case_set)
 

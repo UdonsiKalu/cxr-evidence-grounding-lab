@@ -1,0 +1,466 @@
+{
+  "kind": "trackb_falsex_cluster",
+  "protocol": "docs/TRACKB-FALSEX-CLUSTER.md",
+  "timestamp": "2026-09-03T15:11:34.918282+00:00",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "case_source": "data/temporal-family-dev.json",
+  "test_set_not_used": "data/temporal-family-test.json",
+  "targets": [
+    "TF_E3",
+    "BC11_E3",
+    "TF_E4"
+  ],
+  "contra_controls": [
+    "TF_C1",
+    "BC_C1"
+  ],
+  "nofail_controls": [
+    "TF_N1",
+    "BC_E2"
+  ],
+  "steering_vectors": {
+    "model_id": "Qwen/Qwen2.5-7B-Instruct",
+    "source_cases": {
+      "true_commit": "BC_E1",
+      "false_commit": "BC_E2"
+    },
+    "layer_fractions": [
+      0.75,
+      1.0
+    ],
+    "vectors_by_layer_idx": [
+      20,
+      27
+    ],
+    "per_layer": {
+      "0.75": {
+        "layer_idx": 20,
+        "norm_delta_raw": 44.247676849365234,
+        "direction": "BC_E2_false_commit_minus_BC_E1_true_commit"
+      },
+      "1.00": {
+        "layer_idx": 27,
+        "norm_delta_raw": 284.6798400878906,
+        "direction": "BC_E2_false_commit_minus_BC_E1_true_commit"
+      }
+    }
+  },
+  "steer_alpha": 4.0,
+  "ablate_alpha": -4.0,
+  "patch_donor": "BC_E2",
+  "baselines": {
+    "TF_E3": {
+      "case_id": "TF_E3",
+      "gold": "SATISFIED",
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "alpha": null,
+      "raw_x": false,
+      "verify_ok": false,
+      "repair_final_x": true,
+      "parse_ok": true,
+      "commit_step": 139,
+      "commit_value": "true",
+      "logit_margin_true_minus_false": 6.875,
+      "intervened_steps": [],
+      "verdict": "CONTRADICTION",
+      "usable": true,
+      "cosine_by_frac": {
+        "0.75": -0.17127021012440374,
+        "1.00": -0.6865282943747109
+      },
+      "class": "false_x"
+    },
+    "BC11_E3": {
+      "case_id": "BC11_E3",
+      "gold": "SATISFIED",
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "alpha": null,
+      "raw_x": false,
+      "verify_ok": false,
+      "repair_final_x": true,
+      "parse_ok": true,
+      "commit_step": 136,
+      "commit_value": "true",
+      "logit_margin_true_minus_false": 2.75,
+      "intervened_steps": [],
+      "verdict": "CONTRADICTION",
+      "usable": true,
+      "cosine_by_frac": {
+        "0.75": -0.10589577845479105,
+        "1.00": -0.712647758977037
+      },
+      "class": "false_x"
+    },
+    "TF_E4": {
+      "case_id": "TF_E4",
+      "gold": "SATISFIED",
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "alpha": null,
+      "raw_x": false,
+      "verify_ok": false,
+      "repair_final_x": true,
+      "parse_ok": true,
+      "commit_step": 144,
+      "commit_value": "true",
+      "logit_margin_true_minus_false": 9.5,
+      "intervened_steps": [],
+      "verdict": "UNCERTAIN",
+      "usable": true,
+      "cosine_by_frac": {
+        "0.75": -0.2030780735466242,
+        "1.00": -0.6265034089224661
+      },
+      "class": "false_x"
+    },
+    "TF_C1": {
+      "case_id": "TF_C1",
+      "gold": "CONTRADICTION",
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "alpha": null,
+      "raw_x": true,
+      "verify_ok": true,
+      "repair_final_x": true,
+      "parse_ok": true,
+      "commit_step": 115,
+      "commit_value": "true",
+      "logit_margin_true_minus_false": 12.375,
+      "intervened_steps": [],
+      "verdict": "CONTRADICTION",
+      "usable": true,
+      "cosine_by_frac": {
+        "0.75": -0.16573636204961315,
+        "1.00": -0.5297014138029588
+      },
+      "class": "contradiction"
+    },
+    "BC_C1": {
+      "case_id": "BC_C1",
+      "gold": "CONTRADICTION",
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "alpha": null,
+      "raw_x": true,
+      "verify_ok": true,
+      "repair_final_x": true,
+      "parse_ok": true,
+      "commit_step": 106,
+      "commit_value": "true",
+      "logit_margin_true_minus_false": 13.375,
+      "intervened_steps": [],
+      "verdict": "CONTRADICTION",
+      "usable": true,
+      "cosine_by_frac": {
+        "0.75": -0.16532104345409038,
+        "1.00": -0.5544009198414944
+      },
+      "class": "contradiction"
+    },
+    "TF_N1": {
+      "case_id": "TF_N1",
+      "gold": "NOT_SATISFIED",
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "alpha": null,
+      "raw_x": false,
+      "verify_ok": false,
+      "repair_final_x": false,
+      "parse_ok": true,
+      "commit_step": 106,
+      "commit_value": "false",
+      "logit_margin_true_minus_false": -12.375,
+      "intervened_steps": [],
+      "verdict": "NOT_SATISFIED",
+      "usable": true,
+      "cosine_by_frac": {
+        "0.75": 0.2738525106958781,
+        "1.00": -0.2760396054450473
+      },
+      "class": "nofail"
+    },
+    "BC_E2": {
+      "case_id": "BC_E2",
+      "gold": "NOT_SATISFIED",
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "alpha": null,
+      "raw_x": false,
+      "verify_ok": false,
+      "repair_final_x": false,
+      "parse_ok": true,
+      "commit_step": 104,
+      "commit_value": "false",
+      "logit_margin_true_minus_false": -14.0,
+      "intervened_steps": [],
+      "verdict": "NOT_SATISFIED",
+      "usable": true,
+      "cosine_by_frac": {
+        "0.75": 0.2968686487283314,
+        "1.00": -0.17045183312915038
+      },
+      "class": "nofail"
+    }
+  },
+  "probe_rows": [
+    {
+      "case_id": "TF_E3",
+      "class": "false_x",
+      "usable": true,
+      "baseline_x": true,
+      "margin": 6.875,
+      "verdict": "CONTRADICTION",
+      "cosine_by_frac": {
+        "0.75": -0.17127021012440374,
+        "1.00": -0.6865282943747109
+      },
+      "norm_by_frac": {
+        "0.75": 105.27242097600926,
+        "1.00": 441.96587144617854
+      }
+    },
+    {
+      "case_id": "BC11_E3",
+      "class": "false_x",
+      "usable": true,
+      "baseline_x": true,
+      "margin": 2.75,
+      "verdict": "CONTRADICTION",
+      "cosine_by_frac": {
+        "0.75": -0.10589577845479105,
+        "1.00": -0.712647758977037
+      },
+      "norm_by_frac": {
+        "0.75": 104.98640003929384,
+        "1.00": 484.4565709178995
+      }
+    },
+    {
+      "case_id": "TF_E4",
+      "class": "false_x",
+      "usable": true,
+      "baseline_x": true,
+      "margin": 9.5,
+      "verdict": "UNCERTAIN",
+      "cosine_by_frac": {
+        "0.75": -0.2030780735466242,
+        "1.00": -0.6265034089224661
+      },
+      "norm_by_frac": {
+        "0.75": 101.87973073538923,
+        "1.00": 378.2020419632649
+      }
+    },
+    {
+      "case_id": "TF_C1",
+      "class": "contradiction",
+      "usable": true,
+      "baseline_x": true,
+      "margin": 12.375,
+      "verdict": "CONTRADICTION",
+      "cosine_by_frac": {
+        "0.75": -0.16573636204961315,
+        "1.00": -0.5297014138029588
+      },
+      "norm_by_frac": {
+        "0.75": 105.50360286757584,
+        "1.00": 337.0979724261348
+      }
+    },
+    {
+      "case_id": "BC_C1",
+      "class": "contradiction",
+      "usable": true,
+      "baseline_x": true,
+      "margin": 13.375,
+      "verdict": "CONTRADICTION",
+      "cosine_by_frac": {
+        "0.75": -0.16532104345409038,
+        "1.00": -0.5544009198414944
+      },
+      "norm_by_frac": {
+        "0.75": 104.68897160318221,
+        "1.00": 352.84408819195744
+      }
+    },
+    {
+      "case_id": "TF_N1",
+      "class": "nofail",
+      "usable": true,
+      "baseline_x": false,
+      "margin": -12.375,
+      "verdict": "NOT_SATISFIED",
+      "cosine_by_frac": {
+        "0.75": 0.2738525106958781,
+        "1.00": -0.2760396054450473
+      },
+      "norm_by_frac": {
+        "0.75": 110.7365157779117,
+        "1.00": 378.54484982641037
+      }
+    },
+    {
+      "case_id": "BC_E2",
+      "class": "nofail",
+      "usable": true,
+      "baseline_x": false,
+      "margin": -14.0,
+      "verdict": "NOT_SATISFIED",
+      "cosine_by_frac": {
+        "0.75": 0.2968686487283314,
+        "1.00": -0.17045183312915038
+      },
+      "norm_by_frac": {
+        "0.75": 110.37830934661153,
+        "1.00": 352.63065643330907
+      }
+    }
+  ],
+  "gate_probe": {
+    "pass": true,
+    "n_false_x_usable": 3,
+    "n_contradiction_usable": 2,
+    "cosine_1_00_false_x": [
+      -0.6865282943747109,
+      -0.712647758977037,
+      -0.6265034089224661
+    ],
+    "cosine_1_00_contradiction": [
+      -0.5297014138029588,
+      -0.5544009198414944
+    ],
+    "cosine_1_00_ranges_overlap": false,
+    "cosine_1_00_gap": 0.07210248908097172,
+    "loo_probe_acc": 1.0,
+    "note": "probe YES \u2014 false-X vs contradiction separable at commit (soft)"
+  },
+  "patch": {
+    "TF_E3": {
+      "baseline_x": true,
+      "patched_x": false,
+      "baseline_margin": 6.875,
+      "patched_margin": -14.0,
+      "verdict_patched": "SATISFIED",
+      "x_flipped_true_to_false": true
+    },
+    "BC11_E3": {
+      "baseline_x": true,
+      "patched_x": false,
+      "baseline_margin": 2.75,
+      "patched_margin": -14.0,
+      "verdict_patched": "SATISFIED",
+      "x_flipped_true_to_false": true
+    },
+    "TF_E4": {
+      "baseline_x": true,
+      "patched_x": false,
+      "baseline_margin": 9.5,
+      "patched_margin": -14.0,
+      "verdict_patched": "UNCERTAIN",
+      "x_flipped_true_to_false": true
+    }
+  },
+  "steer": {
+    "TF_E3": {
+      "class": "false_x",
+      "baseline_x": true,
+      "steered_x": true,
+      "baseline_margin": 6.875,
+      "steered_margin": 6.0,
+      "verdict_steered": "CONTRADICTION",
+      "x_flipped_true_to_false": false
+    },
+    "BC11_E3": {
+      "class": "false_x",
+      "baseline_x": true,
+      "steered_x": true,
+      "baseline_margin": 2.75,
+      "steered_margin": 1.25,
+      "verdict_steered": "CONTRADICTION",
+      "x_flipped_true_to_false": false
+    },
+    "TF_E4": {
+      "class": "false_x",
+      "baseline_x": true,
+      "steered_x": true,
+      "baseline_margin": 9.5,
+      "steered_margin": 8.25,
+      "verdict_steered": "UNCERTAIN",
+      "x_flipped_true_to_false": false
+    },
+    "TF_C1": {
+      "class": "contradiction",
+      "baseline_x": true,
+      "steered_x": true,
+      "baseline_margin": 12.375,
+      "steered_margin": 11.5,
+      "verdict_steered": "CONTRADICTION",
+      "x_flipped_true_to_false": false
+    },
+    "BC_C1": {
+      "class": "contradiction",
+      "baseline_x": true,
+      "steered_x": true,
+      "baseline_margin": 13.375,
+      "steered_margin": 12.25,
+      "verdict_steered": "CONTRADICTION",
+      "x_flipped_true_to_false": false
+    },
+    "TF_N1": {
+      "class": "nofail",
+      "baseline_x": false,
+      "steered_x": false,
+      "baseline_margin": -12.375,
+      "steered_margin": -13.375,
+      "verdict_steered": "NOT_SATISFIED",
+      "x_flipped_true_to_false": false
+    },
+    "BC_E2": {
+      "class": "nofail",
+      "baseline_x": false,
+      "steered_x": false,
+      "baseline_margin": -14.0,
+      "steered_margin": -14.875,
+      "verdict_steered": "NOT_SATISFIED",
+      "x_flipped_true_to_false": false
+    }
+  },
+  "ablate": {
+    "TF_E3": {
+      "baseline_x": true,
+      "ablated_x": true,
+      "baseline_margin": 6.875,
+      "ablated_margin": 7.75,
+      "verdict_ablated": "CONTRADICTION",
+      "note": "negative \u03b1 \u2014 if direction causal, may worsen margin toward true"
+    },
+    "BC11_E3": {
+      "baseline_x": true,
+      "ablated_x": true,
+      "baseline_margin": 2.75,
+      "ablated_margin": 4.25,
+      "verdict_ablated": "CONTRADICTION",
+      "note": "negative \u03b1 \u2014 if direction causal, may worsen margin toward true"
+    },
+    "TF_E4": {
+      "baseline_x": true,
+      "ablated_x": true,
+      "baseline_margin": 9.5,
+      "ablated_margin": 10.5,
+      "verdict_ablated": "UNCERTAIN",
+      "note": "negative \u03b1 \u2014 if direction causal, may worsen margin toward true"
+    }
+  },
+  "gate_causal": {
+    "pass": true,
+    "n_targets_baseline_false_x": 3,
+    "n_steer_flips": 0,
+    "n_patch_flips": 3,
+    "contra_controls_stay_true_under_steer": true,
+    "nofail_controls_not_true_under_steer": true,
+    "note": "causal YES \u2014 at least one false-X commit flipped by patch or steer (soft)"
+  },
+  "note": "Track B ladder on DEV false-X cluster only. G3 unchanged. temporal-family-test sealed \u2014 do not peek."
+}

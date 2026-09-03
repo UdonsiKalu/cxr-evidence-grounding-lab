@@ -14,6 +14,7 @@ from .paths import (
     HELDOUT_PATH,
     HELDOUT_PHASE4_PATH,
     TEMPORAL_FAMILY_DEV_PATH,
+    TEMPORAL_FAMILY_TEST_PATH,
 )
 from .predicate import PREDICATE_FORMULA, PREDICATE_ID, PREDICATE_TEXT, evaluate_rule, selftest
 from .types import BaselineResult, Verdict
@@ -39,6 +40,11 @@ def load_heldout_bmtcart_cases() -> list[dict[str, Any]]:
 def load_temporal_family_dev_cases() -> list[dict[str, Any]]:
     """Track A/B development family — NOT a held-out test set."""
     return load_cases(TEMPORAL_FAMILY_DEV_PATH)
+
+
+def load_temporal_family_test_cases() -> list[dict[str, Any]]:
+    """Frozen unseen test — do not inspect evidence while designing G3/RepEng."""
+    return load_cases(TEMPORAL_FAMILY_TEST_PATH)
 
 
 def run_pipeline(evidence: str, *, mode: str) -> dict[str, Any]:

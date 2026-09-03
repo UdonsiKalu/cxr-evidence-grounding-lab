@@ -70,7 +70,8 @@ Writes `artifacts/auto-contract-score-*.json` without overwriting Phase 1–14 p
 **Development / diagnostic set (inspect during design):** `data/temporal-family-dev.json`  
 Same predicate `FIRST_LINE_THERAPY_FAILED`. **Not held-out** once used to design G3 or RepEng.
 
-**Frozen unseen test (create later, do not peek while designing):** `data/temporal-family-test.json` (not yet).
+**Frozen unseen test:** `data/temporal-family-test.json` (n=12, `TFT_*`) — [TEMPORAL-FAMILY-TEST.md](./TEMPORAL-FAMILY-TEST.md).  
+**Do not open evidence** while designing. Score with `--set temporal-test` only after intervention freeze.
 
 Baseline command (unchanged Phase-7 Dual stack — **do not tighten G3 first**):
 
@@ -80,7 +81,8 @@ python3 run_auto_contract_score.py --from-artifacts temporal-dev --paths Dual_fu
 python3 run_auto_contract_score.py --diagnose --from-artifacts temporal-dev
 ```
 
-**Baseline write-up (2026-09-03):** [TEMPORAL-FAMILY-DEV-BASELINE.md](./TEMPORAL-FAMILY-DEV-BASELINE.md) — G3 not changed.
+**Baseline write-up (2026-09-03):** [TEMPORAL-FAMILY-DEV-BASELINE.md](./TEMPORAL-FAMILY-DEV-BASELINE.md) — G3 not changed.  
+**Track B (DEV cluster):** [TRACKB-FALSEX-CLUSTER.md](./TRACKB-FALSEX-CLUSTER.md) · `python3 run_trackb_falsex.py`
 
 ---
 

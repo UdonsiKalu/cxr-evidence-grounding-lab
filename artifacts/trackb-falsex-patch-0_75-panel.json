@@ -1,0 +1,59 @@
+{
+  "kind": "trackb_falsex_patch_layer_subset",
+  "protocol": "docs/TRACKB-FALSEX-CLUSTER.md",
+  "timestamp": "2026-09-03T15:20:11.757820+00:00",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "case_source": "data/temporal-family-dev.json",
+  "patch_donor": "BC_E2",
+  "targets": [
+    "TF_E3",
+    "BC11_E3",
+    "TF_E4"
+  ],
+  "results": {
+    "TF_E3": {
+      "baseline_x": true,
+      "patched_x": false,
+      "baseline_margin": 6.875,
+      "patched_margin": -11.375,
+      "verdict_baseline": "CONTRADICTION",
+      "verdict_patched": "SATISFIED",
+      "x_flipped_true_to_false": true
+    },
+    "BC11_E3": {
+      "baseline_x": true,
+      "patched_x": false,
+      "baseline_margin": 2.75,
+      "patched_margin": -11.5,
+      "verdict_baseline": "CONTRADICTION",
+      "verdict_patched": "SATISFIED",
+      "x_flipped_true_to_false": true
+    },
+    "TF_E4": {
+      "baseline_x": true,
+      "patched_x": false,
+      "baseline_margin": 9.5,
+      "patched_margin": -11.375,
+      "verdict_baseline": "UNCERTAIN",
+      "verdict_patched": "UNCERTAIN",
+      "x_flipped_true_to_false": true
+    }
+  },
+  "gate_patch_depth": {
+    "pass": true,
+    "patched_fracs": [
+      "0.75"
+    ],
+    "n_targets_baseline_false_x": 3,
+    "n_patch_flips": 3,
+    "donor_margin": -14.0,
+    "patched_margins": [
+      -11.375,
+      -11.5,
+      -11.375
+    ],
+    "margins_equal_donor_tautology": false,
+    "note": "patch YES \u2014 mid-depth donor activation flips commit downstream (soft)"
+  },
+  "note": "Depth-restricted patch. Full-depth (incl. 1.00) patching is confounded with token forcing; this arm isolates mid-depth sufficiency."
+}

@@ -1,0 +1,147 @@
+{
+  "predicate_id": "FIRST_LINE_THERAPY_FAILED",
+  "gold_is_not_fed_to_models": true,
+  "held_out": true,
+  "frozen": true,
+  "frozen_at": "2026-09-03",
+  "phase": "temporal_family_test",
+  "domain": "temporal_distinction_family",
+  "prompts_were_not_designed_on_these": true,
+  "wording_status": "freeze_v1",
+  "note": "FROZEN UNSEEN TEST — do not open case evidence while designing G3, gates, or RepEng interventions. Score only after an intervention is frozen on temporal-family-dev. Same predicate as lab. Synthetic notes only. Ids TFT_* are test-only; no overlap with temporal-family-dev wording.",
+  "family": "temporal_response_then_failure",
+  "subtypes": [
+    "therapy_worked_then_failed",
+    "stable_then_progression",
+    "prior_neg_then_pos",
+    "no_tox_then_tox",
+    "possible_then_confirmed_progression",
+    "stop_for_toxicity_not_progression",
+    "true_contradiction_control",
+    "no_failure_control"
+  ],
+  "cases": [
+    {
+      "id": "TFT_E1",
+      "role": "test_target",
+      "subtype": "therapy_worked_then_failed",
+      "category": "explicit",
+      "domain_tag": "hodgkin",
+      "expected": "SATISFIED",
+      "why": "First-line ABVD response then progression and switch — not a contradiction.",
+      "evidence": "Classical Hodgkin lymphoma: first-line ABVD for three cycles with interim PET Deauville 2, then Deauville 5 progression at cycle 5. ABVD discontinued for progression; started Brentuximab-based second-line therapy."
+    },
+    {
+      "id": "TFT_E2",
+      "role": "test_target",
+      "subtype": "stable_then_progression",
+      "category": "explicit",
+      "domain_tag": "renal",
+      "expected": "SATISFIED",
+      "why": "Initial SD on first-line then clear progression and regimen change.",
+      "evidence": "Metastatic clear-cell RCC on first-line axitinib/pembrolizumab: restaging after two cycles showed stable disease. Scan at month 5 showed new pulmonary nodules meeting progression criteria. First-line discontinued for progression; switched to cabozantinib."
+    },
+    {
+      "id": "TFT_E3",
+      "role": "test_target",
+      "subtype": "therapy_worked_then_failed",
+      "category": "explicit",
+      "domain_tag": "leukemia",
+      "expected": "SATISFIED",
+      "why": "Response then relapse on first-line TKI — temporal sequence, not contradiction.",
+      "evidence": "Chronic myeloid leukemia: first-line imatinib achieved major molecular response by month 6, then BCR-ABL rose with hematologic relapse at month 14. Imatinib stopped for failure; switched to dasatinib."
+    },
+    {
+      "id": "TFT_E4",
+      "role": "test_target",
+      "subtype": "possible_then_confirmed_progression",
+      "category": "explicit",
+      "domain_tag": "sarcoma",
+      "expected": "SATISFIED",
+      "why": "Possible progression later confirmed; first-line stopped for confirmed failure.",
+      "evidence": "Soft-tissue sarcoma on first-line doxorubicin: week-6 note flagged possible new soft-tissue mass. Confirmatory MRI ten days later documented unequivocal progressive disease. Doxorubicin stopped for confirmed progression; second-line ifosfamide planned."
+    },
+    {
+      "id": "TFT_E5",
+      "role": "test_target",
+      "subtype": "prior_neg_then_pos",
+      "category": "explicit",
+      "domain_tag": "gastric",
+      "expected": "SATISFIED",
+      "why": "Early imaging negative for progression; later positive — sequence, not contradiction.",
+      "evidence": "Gastric adenocarcinoma on first-line FOLFOX: CT after cycle 2 showed no progression. CT after cycle 5 showed new peritoneal deposits. FOLFOX discontinued for progression; started paclitaxel/ramucirumab."
+    },
+    {
+      "id": "TFT_U1",
+      "role": "test_uncertain",
+      "subtype": "possible_then_confirmed_progression",
+      "category": "uncertain",
+      "domain_tag": "melanoma",
+      "expected": "UNCERTAIN",
+      "why": "Possible progression only; confirmatory imaging pending — must not AUTO failure.",
+      "evidence": "Melanoma on first-line nivolumab cycle 4: possible new subcutaneous nodule on exam. Biopsy and staging PET pending; no regimen change until results return."
+    },
+    {
+      "id": "TFT_T1",
+      "role": "test_target",
+      "subtype": "stop_for_toxicity_not_progression",
+      "category": "explicit",
+      "domain_tag": "ovarian",
+      "expected": "NOT_SATISFIED",
+      "why": "Stopped first-line for toxicity while disease controlled — not therapy failure.",
+      "evidence": "Ovarian cancer on first-line carboplatin/paclitaxel: CA-125 falling and imaging stable. Paclitaxel held for grade 3 hypersensitivity. Plan alternate taxane partner; no progression documented."
+    },
+    {
+      "id": "TFT_T2",
+      "role": "test_target",
+      "subtype": "no_tox_then_tox",
+      "category": "explicit",
+      "domain_tag": "bladder",
+      "expected": "NOT_SATISFIED",
+      "why": "Later toxicity after early tolerance; disease still responding — not first-line failure.",
+      "evidence": "Urothelial carcinoma on first-line gemcitabine/cisplatin: cycles 1–2 well tolerated with radiographic response. Cycle 3 complicated by febrile neutropenia requiring admission. Cisplatin held for toxicity; disease still responding without progression."
+    },
+    {
+      "id": "TFT_C1",
+      "role": "test_control_contradiction",
+      "subtype": "true_contradiction_control",
+      "category": "conflicting",
+      "domain_tag": "transplant",
+      "expected": "CONTRADICTION",
+      "why": "Same workup denies vs documents completed first-line — true contradiction.",
+      "evidence": "Allogeneic transplant intake: patient reports never receiving systemic chemotherapy for AML. Same-day leukemia addendum: completed two cycles of first-line 7+3 with subsequent refractory blasts; proceed to donor search."
+    },
+    {
+      "id": "TFT_C2",
+      "role": "test_control_contradiction",
+      "subtype": "true_contradiction_control",
+      "category": "conflicting",
+      "domain_tag": "lymphoma",
+      "expected": "CONTRADICTION",
+      "why": "Denies prior systemic therapy vs documents completed first-line R-CHOP.",
+      "evidence": "Second-opinion consult (3 Feb 2025): patient states no prior systemic therapy for mantle-cell lymphoma. Outside records uploaded same day: completed six cycles of first-line R-CHOP with subsequent progression on PET."
+    },
+    {
+      "id": "TFT_N1",
+      "role": "test_control_no_failure",
+      "subtype": "no_failure_control",
+      "category": "explicit",
+      "domain_tag": "mds",
+      "expected": "NOT_SATISFIED",
+      "why": "Ongoing first-line with response; no failure event.",
+      "evidence": "MDS: currently on first-line azacitidine cycle 3 day 5. Counts improving; marrow planned after cycle 4. No progression documented."
+    },
+    {
+      "id": "TFT_N2",
+      "role": "test_control_no_failure",
+      "subtype": "no_failure_control",
+      "category": "explicit",
+      "domain_tag": "breast",
+      "expected": "NOT_SATISFIED",
+      "why": "Ongoing first-line with continued response; no failure.",
+      "evidence": "HER2+ breast cancer: currently receiving first-line THP (taxane/trastuzumab/pertuzumab) cycle 4. Imaging shows ongoing partial response. Plan to complete planned cycles; no progression documented."
+    }
+  ],
+  "split": "test",
+  "n_cases": 12
+}

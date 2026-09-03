@@ -19,7 +19,13 @@ from .hf_trace import (
     _top_logits,
 )
 
-InterventionKind = Literal["none", "logit_bias_false", "force_false_at_commit", "activation_steer"]
+InterventionKind = Literal[
+    "none",
+    "logit_bias_false",
+    "force_false_at_commit",
+    "activation_steer",
+    "activation_patch",
+]
 
 
 @dataclass
@@ -28,6 +34,13 @@ class ActivationSteerSpec:
 
     vectors_by_layer: dict[int, torch.Tensor]
     alpha: float = 1.0
+
+
+@dataclass
+class ActivationPatchSpec:
+    """Replace last-token hidden at commit with donor activations (by layer idx)."""
+
+    vectors_by_layer: dict[int, torch.Tensor]
 
 
 def _at_contradiction_present_commit(prefix_text: str) -> bool:
@@ -50,6 +63,7 @@ def generate_intervened(
     logit_bias: float = 4.0,
     layer_fractions: tuple[float, ...] = (0.25, 0.5, 0.75, 1.0),
     activation_steer: ActivationSteerSpec | None = None,
+    activation_patch: ActivationPatchSpec | None = None,
 ) -> tuple[GenerationTrace, list[int]]:
     """Greedy decode; intervene only at contradiction.present boolean commit."""
     configure_determinism()
@@ -99,11 +113,31 @@ def generate_intervened(
 
         return hook
 
+    def _make_patch_hook(layer_idx: int, vec: torch.Tensor):
+        def hook(_module, _inp, out):
+            if not steer_active["on"]:
+                return
+            hs = out[0] if isinstance(out, tuple) else out
+            modified = hs.clone()
+            v = vec.to(device=modified.device, dtype=modified.dtype)
+            modified[0, -1, :] = v
+            if isinstance(out, tuple):
+                return (modified,) + out[1:]
+            return modified
+
+        return hook
+
     if intervention == "activation_steer" and activation_steer is not None:
         for layer_idx, vec in activation_steer.vectors_by_layer.items():
             if 0 <= layer_idx < len(layers):
                 steer_handles.append(
                     layers[layer_idx].register_forward_hook(_make_steer_hook(layer_idx, vec))
+                )
+    if intervention == "activation_patch" and activation_patch is not None:
+        for layer_idx, vec in activation_patch.vectors_by_layer.items():
+            if 0 <= layer_idx < len(layers):
+                steer_handles.append(
+                    layers[layer_idx].register_forward_hook(_make_patch_hook(layer_idx, vec))
                 )
 
     steps: list[StepTrace] = []
@@ -126,10 +160,15 @@ def generate_intervened(
             for step_i in range(max_new_tokens):
                 captured.clear()
                 at_commit = _at_contradiction_present_commit(gen_prefix)
-                use_activation = (
-                    at_commit
-                    and intervention == "activation_steer"
-                    and activation_steer is not None
+                use_activation = at_commit and (
+                    (
+                        intervention == "activation_steer"
+                        and activation_steer is not None
+                    )
+                    or (
+                        intervention == "activation_patch"
+                        and activation_patch is not None
+                    )
                 )
                 steer_active["on"] = use_activation
 

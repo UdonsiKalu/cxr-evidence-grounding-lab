@@ -295,6 +295,8 @@ def score_preset(name: str, *, paths: tuple[str, ...] | None = None) -> dict[str
         files = ["phase5-verify-panel.json"]
     elif name == "temporal-dev":
         files = ["phase7-temporal-dev-panel.json"]
+    elif name == "temporal-test":
+        files = ["phase7-temporal-test-panel.json"]
     else:
         raise ValueError(f"unknown preset: {name}")
 
@@ -305,16 +307,16 @@ def score_preset(name: str, *, paths: tuple[str, ...] | None = None) -> dict[str
             results.append({"error": f"missing {fname}"})
             continue
         results.append(score_panel_or_report(p, paths=use_paths))
+    notes = {
+        "temporal-dev": "temporal-dev is a DEVELOPMENT set — not held-out test",
+        "temporal-test": "temporal-test is FROZEN unseen — score only after design freeze on temporal-dev",
+    }
     return {
         "contract": "docs/AUTO-CONTRACT.md",
         "preset": name,
         "scored_at": datetime.now(timezone.utc).isoformat(),
         "primary_objective": "wrong_AUTO → 0",
-        "note": (
-            "temporal-dev is a DEVELOPMENT set — not held-out test"
-            if name == "temporal-dev"
-            else None
-        ),
+        "note": notes.get(name),
         "results": results,
     }
 

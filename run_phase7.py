@@ -32,9 +32,9 @@ def main() -> None:
     )
     parser.add_argument(
         "--set",
-        choices=("bmtcart", "phase4", "temporal-dev"),
+        choices=("bmtcart", "phase4", "temporal-dev", "temporal-test"),
         default="bmtcart",
-        help="case set (temporal-dev = Track A development family, not held-out)",
+        help="case set (temporal-dev=dev family; temporal-test=frozen unseen — score after design freeze)",
     )
     parser.add_argument("--out", default="")
     parser.add_argument(
@@ -57,6 +57,8 @@ def main() -> None:
         out_name = "phase7-bmtcart-panel.json"
     elif args.set == "phase4":
         out_name = "phase7-phase4-panel.json"
+    elif args.set == "temporal-test":
+        out_name = "phase7-temporal-test-panel.json"
     else:
         out_name = "phase7-temporal-dev-panel.json"
     panel = run_phase7_panel(models=models, case_set=args.set, out_name=out_name)
