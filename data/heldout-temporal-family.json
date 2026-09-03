@@ -1,0 +1,167 @@
+{
+  "predicate_id": "FIRST_LINE_THERAPY_FAILED",
+  "gold_is_not_fed_to_models": true,
+  "held_out": true,
+  "phase": "temporal_family",
+  "domain": "temporal_distinction_family",
+  "prompts_were_not_designed_on_these": true,
+  "wording_status": "draft_v1",
+  "note": "Track A/B failure family: temporal success→later failure (and controls) mis-read as contradiction. Same predicate as main lab. Includes seed BC_E1 / BC11_* ids for linkage plus new TF_* paraphrases. Synthetic notes only.",
+  "family": "temporal_response_then_failure",
+  "subtypes": [
+    "therapy_worked_then_failed",
+    "stable_then_progression",
+    "prior_neg_then_pos",
+    "no_tox_then_tox",
+    "possible_then_confirmed_progression",
+    "stop_for_toxicity_not_progression",
+    "true_contradiction_control",
+    "no_failure_control"
+  ],
+  "cases": [
+    {
+      "id": "BC_E1",
+      "role": "seed_pilot",
+      "subtype": "therapy_worked_then_failed",
+      "category": "explicit",
+      "domain_tag": "car_t",
+      "expected": "SATISFIED",
+      "why": "Clear first-line R-CHOP failure then switch to second line — not a contradiction.",
+      "evidence": "DLBCL: first-line R-CHOP for four cycles with initial response, then radiographic progression in cycle 5. Discontinued R-CHOP for progression; started R-ICE as second-line therapy.",
+      "source_set": "heldout-bmtcart-phase7"
+    },
+    {
+      "id": "TF_E1",
+      "role": "family_target",
+      "subtype": "therapy_worked_then_failed",
+      "category": "explicit",
+      "domain_tag": "lymphoma",
+      "expected": "SATISFIED",
+      "why": "Paraphrase of response→progression on first-line; gold SATISFIED.",
+      "evidence": "Diffuse large B-cell lymphoma. Patient completed cycles 1–3 of first-line R-CHOP with partial metabolic response. During cycle 4, PET showed new FDG-avid nodes. R-CHOP was stopped because of disease progression and second-line R-ICE was started."
+    },
+    {
+      "id": "TF_E2",
+      "role": "family_target",
+      "subtype": "stable_then_progression",
+      "category": "explicit",
+      "domain_tag": "solid",
+      "expected": "SATISFIED",
+      "why": "Initial stable disease on first-line then clear progression and regimen change.",
+      "evidence": "Metastatic NSCLC on first-line pembrolizumab/pemetrexed: imaging after two cycles showed stable disease. Restaging at cycle 5 demonstrated progressive osseous metastases. First-line therapy discontinued for progression; switched to docetaxel."
+    },
+    {
+      "id": "TF_E3",
+      "role": "family_target",
+      "subtype": "therapy_worked_then_failed",
+      "category": "explicit",
+      "domain_tag": "myeloma",
+      "expected": "SATISFIED",
+      "why": "Linked to BC11_E1 pattern — response then biochemical progression.",
+      "evidence": "Multiple myeloma: first-line RVd produced a partial response after three cycles, then rising M-protein and new lesions at cycle 4. Held lenalidomide for progression; started daratumumab-based second-line therapy."
+    },
+    {
+      "id": "BC11_E3",
+      "role": "seed_partial_transfer",
+      "subtype": "therapy_worked_then_failed",
+      "category": "explicit",
+      "domain_tag": "cll",
+      "expected": "SATISFIED",
+      "why": "Ibrutinib response then Richter progression; Ph11 steer miss candidate.",
+      "evidence": "CLL: first-line ibrutinib with initial nodal response, then Richter transformation with bulky adenopathy at month 9. Discontinued ibrutinib for progression; switched to R-CHOP.",
+      "source_set": "heldout-phase11"
+    },
+    {
+      "id": "TF_E4",
+      "role": "family_target",
+      "subtype": "possible_then_confirmed_progression",
+      "category": "explicit",
+      "domain_tag": "lymphoma",
+      "expected": "SATISFIED",
+      "why": "Possible progression later confirmed; first-line stopped for confirmed failure.",
+      "evidence": "Follicular lymphoma on first-line bendamustine-rituximab: mid-treatment note raised possible progression. Confirmatory PET two weeks later showed clear progressive disease. Bendamustine-rituximab stopped for confirmed progression; second-line therapy planned."
+    },
+    {
+      "id": "TF_E5",
+      "role": "family_target",
+      "subtype": "prior_neg_then_pos",
+      "category": "explicit",
+      "domain_tag": "solid",
+      "expected": "SATISFIED",
+      "why": "Early imaging negative for progression; later imaging positive — sequence, not contradiction.",
+      "evidence": "Colon cancer on first-line FOLFOX: CT after cycle 3 showed no progression. CT after cycle 6 showed new hepatic metastases. FOLFOX discontinued for progression; started FOLFIRI."
+    },
+    {
+      "id": "TF_U1",
+      "role": "family_uncertain",
+      "subtype": "possible_then_confirmed_progression",
+      "category": "uncertain",
+      "domain_tag": "lymphoma",
+      "expected": "UNCERTAIN",
+      "why": "Possible progression only; confirmatory scan pending — must not AUTO failure.",
+      "evidence": "DLBCL on first-line R-CHOP cycle 3: possible new adenopathy on exam. PET scheduled next week; no regimen change until imaging returns."
+    },
+    {
+      "id": "TF_T1",
+      "role": "family_target",
+      "subtype": "stop_for_toxicity_not_progression",
+      "category": "explicit",
+      "domain_tag": "solid",
+      "expected": "NOT_SATISFIED",
+      "why": "Stopped first-line for toxicity while disease controlled — not therapy failure.",
+      "evidence": "Breast cancer on first-line paclitaxel: tumor markers falling and imaging stable. Paclitaxel stopped for grade 3 neuropathy. Plan alternate first-line partner agent; no progression documented."
+    },
+    {
+      "id": "TF_T2",
+      "role": "family_target",
+      "subtype": "no_tox_then_tox",
+      "category": "explicit",
+      "domain_tag": "heme",
+      "expected": "NOT_SATISFIED",
+      "why": "Later toxicity after early tolerance; disease still responding — not first-line failure.",
+      "evidence": "AML on first-line 7+3: cycles 1 tolerated without major toxicity and day-14 marrow showed response. Cycle 2 complicated by culture-positive sepsis requiring ICU. Induction held for toxicity; marrow still without progression."
+    },
+    {
+      "id": "TF_C1",
+      "role": "control_contradiction",
+      "subtype": "true_contradiction_control",
+      "category": "conflicting",
+      "domain_tag": "car_t",
+      "expected": "CONTRADICTION",
+      "why": "Same workup denies vs documents completed first-line — true contradiction.",
+      "evidence": "CAR-T intake: patient reports never receiving systemic chemotherapy for DLBCL. Same-day oncology addendum: completed six cycles of first-line R-CHOP with subsequent progression; proceed to apheresis."
+    },
+    {
+      "id": "BC_C1",
+      "role": "seed_control",
+      "subtype": "true_contradiction_control",
+      "category": "conflicting",
+      "domain_tag": "car_t",
+      "expected": "CONTRADICTION",
+      "why": "Seed true contradiction from Phase-7 set.",
+      "evidence": "CAR-T referral intake (14 Jan 2024): patient reports never receiving systemic chemotherapy for DLBCL. Lymphoma clinic note (22 Mar 2024): completed six cycles of first-line R-CHOP, then PET showed progressive nodal disease; relapsed/refractory DLBCL.",
+      "source_set": "heldout-bmtcart-phase7"
+    },
+    {
+      "id": "TF_N1",
+      "role": "control_no_failure",
+      "subtype": "no_failure_control",
+      "category": "explicit",
+      "domain_tag": "bmt",
+      "expected": "NOT_SATISFIED",
+      "why": "Ongoing first-line with response; no failure event.",
+      "evidence": "AML: currently on first-line 7+3 induction day 10. Interim marrow shows ongoing response. Plan to complete induction; no progression documented."
+    },
+    {
+      "id": "BC_E2",
+      "role": "seed_control",
+      "subtype": "no_failure_control",
+      "category": "explicit",
+      "domain_tag": "bmt",
+      "expected": "NOT_SATISFIED",
+      "why": "Seed no-failure control from Phase-7.",
+      "evidence": "AML: currently receiving first-line 7+3 induction, day 14 marrow shows ongoing response. Plan to complete consolidation; no progression documented.",
+      "source_set": "heldout-bmtcart-phase7"
+    }
+  ]
+}

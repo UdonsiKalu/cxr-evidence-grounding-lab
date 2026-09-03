@@ -83,6 +83,8 @@ Use a method when it answers a gate or transfer question — not as a checklist 
 Half-page rule: **AUTO only if all gates pass**; else **REVIEW**.  
 Metric: wrong AUTO / REVIEW / correct AUTO on a frozen eval set.
 
+**Frozen:** [AUTO-CONTRACT.md](./AUTO-CONTRACT.md) · scorer `run_auto_contract_score.py` · family `data/heldout-temporal-family.json`
+
 ### Phase 1 — Track A harness
 
 Mandatory gates on the Phase-5+ path + one-command score table.  

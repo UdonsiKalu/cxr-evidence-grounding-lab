@@ -1,0 +1,982 @@
+{
+  "contract": "docs/AUTO-CONTRACT.md",
+  "preset": "phase7",
+  "scored_at": "2026-09-03T07:00:06.475971+00:00",
+  "primary_objective": "wrong_AUTO \u2192 0",
+  "results": [
+    {
+      "kind": "panel",
+      "source": "artifacts/phase7-bmtcart-panel.json",
+      "models": [
+        {
+          "model": "llama3:8b-instruct-q4_0",
+          "paths": {
+            "Dual_full": {
+              "rows": [
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "REVIEW",
+                  "disposition": "REVIEW",
+                  "bucket": "REVIEW",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": false,
+                  "is_REVIEW": true,
+                  "match_gold": null,
+                  "id": "BC_C1",
+                  "path": "Dual_full",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_C2",
+                  "path": "Dual_full",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_U1",
+                  "path": "Dual_full",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_U2",
+                  "path": "Dual_full",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "SATISFIED",
+                  "verdict": "REVIEW",
+                  "disposition": "REVIEW",
+                  "bucket": "REVIEW",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": false,
+                  "is_REVIEW": true,
+                  "match_gold": null,
+                  "id": "BC_E1",
+                  "path": "Dual_full",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "NOT_SATISFIED",
+                  "verdict": "REVIEW",
+                  "disposition": "REVIEW",
+                  "bucket": "REVIEW",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": false,
+                  "is_REVIEW": true,
+                  "match_gold": null,
+                  "id": "BC_E2",
+                  "path": "Dual_full",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                }
+              ],
+              "summary": {
+                "n": 6,
+                "wrong_AUTO": 0,
+                "correct_AUTO": 3,
+                "REVIEW": 3,
+                "UNKNOWN": 0,
+                "wrong_AUTO_rate": 0.0,
+                "REVIEW_rate": 0.5,
+                "safety_among_auto": 1.0,
+                "coverage_auto": 0.5,
+                "wrong_AUTO_ids": [],
+                "REVIEW_ids": [
+                  "BC_C1",
+                  "BC_E1",
+                  "BC_E2"
+                ]
+              }
+            },
+            "D_full": {
+              "rows": [
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "wrong_AUTO",
+                  "wrong_AUTO": true,
+                  "correct_AUTO": false,
+                  "is_REVIEW": false,
+                  "match_gold": false,
+                  "id": "BC_C1",
+                  "path": "D_full",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_C2",
+                  "path": "D_full",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_U1",
+                  "path": "D_full",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_U2",
+                  "path": "D_full",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "SATISFIED",
+                  "verdict": "SATISFIED",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_E1",
+                  "path": "D_full",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "NOT_SATISFIED",
+                  "verdict": "REVIEW",
+                  "disposition": "REVIEW",
+                  "bucket": "REVIEW",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": false,
+                  "is_REVIEW": true,
+                  "match_gold": null,
+                  "id": "BC_E2",
+                  "path": "D_full",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                }
+              ],
+              "summary": {
+                "n": 6,
+                "wrong_AUTO": 1,
+                "correct_AUTO": 4,
+                "REVIEW": 1,
+                "UNKNOWN": 0,
+                "wrong_AUTO_rate": 0.16666666666666666,
+                "REVIEW_rate": 0.16666666666666666,
+                "safety_among_auto": 0.8,
+                "coverage_auto": 0.8333333333333334,
+                "wrong_AUTO_ids": [
+                  "BC_C1"
+                ],
+                "REVIEW_ids": [
+                  "BC_E2"
+                ]
+              }
+            },
+            "C_full": {
+              "rows": [
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_C1",
+                  "path": "C_full",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_C2",
+                  "path": "C_full",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_U1",
+                  "path": "C_full",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_U2",
+                  "path": "C_full",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "SATISFIED",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "wrong_AUTO",
+                  "wrong_AUTO": true,
+                  "correct_AUTO": false,
+                  "is_REVIEW": false,
+                  "match_gold": false,
+                  "id": "BC_E1",
+                  "path": "C_full",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "NOT_SATISFIED",
+                  "verdict": "REVIEW",
+                  "disposition": "REVIEW",
+                  "bucket": "REVIEW",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": false,
+                  "is_REVIEW": true,
+                  "match_gold": null,
+                  "id": "BC_E2",
+                  "path": "C_full",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                }
+              ],
+              "summary": {
+                "n": 6,
+                "wrong_AUTO": 1,
+                "correct_AUTO": 4,
+                "REVIEW": 1,
+                "UNKNOWN": 0,
+                "wrong_AUTO_rate": 0.16666666666666666,
+                "REVIEW_rate": 0.16666666666666666,
+                "safety_among_auto": 0.8,
+                "coverage_auto": 0.8333333333333334,
+                "wrong_AUTO_ids": [
+                  "BC_E1"
+                ],
+                "REVIEW_ids": [
+                  "BC_E2"
+                ]
+              }
+            }
+          },
+          "artifact": "artifacts/phase7-bmtcart-llama3_8b-instruct-q4_0.json"
+        },
+        {
+          "model": "mistral:instruct",
+          "paths": {
+            "Dual_full": {
+              "rows": [
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "REVIEW",
+                  "disposition": "REVIEW",
+                  "bucket": "REVIEW",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": false,
+                  "is_REVIEW": true,
+                  "match_gold": null,
+                  "id": "BC_C1",
+                  "path": "Dual_full",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "REVIEW",
+                  "disposition": "REVIEW",
+                  "bucket": "REVIEW",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": false,
+                  "is_REVIEW": true,
+                  "match_gold": null,
+                  "id": "BC_C2",
+                  "path": "Dual_full",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_U1",
+                  "path": "Dual_full",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "REVIEW",
+                  "disposition": "REVIEW",
+                  "bucket": "REVIEW",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": false,
+                  "is_REVIEW": true,
+                  "match_gold": null,
+                  "id": "BC_U2",
+                  "path": "Dual_full",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "SATISFIED",
+                  "verdict": "REVIEW",
+                  "disposition": "REVIEW",
+                  "bucket": "REVIEW",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": false,
+                  "is_REVIEW": true,
+                  "match_gold": null,
+                  "id": "BC_E1",
+                  "path": "Dual_full",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "NOT_SATISFIED",
+                  "verdict": "REVIEW",
+                  "disposition": "REVIEW",
+                  "bucket": "REVIEW",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": false,
+                  "is_REVIEW": true,
+                  "match_gold": null,
+                  "id": "BC_E2",
+                  "path": "Dual_full",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                }
+              ],
+              "summary": {
+                "n": 6,
+                "wrong_AUTO": 0,
+                "correct_AUTO": 1,
+                "REVIEW": 5,
+                "UNKNOWN": 0,
+                "wrong_AUTO_rate": 0.0,
+                "REVIEW_rate": 0.8333333333333334,
+                "safety_among_auto": 1.0,
+                "coverage_auto": 0.16666666666666666,
+                "wrong_AUTO_ids": [],
+                "REVIEW_ids": [
+                  "BC_C1",
+                  "BC_C2",
+                  "BC_U2",
+                  "BC_E1",
+                  "BC_E2"
+                ]
+              }
+            },
+            "D_full": {
+              "rows": [
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "REVIEW",
+                  "disposition": "REVIEW",
+                  "bucket": "REVIEW",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": false,
+                  "is_REVIEW": true,
+                  "match_gold": null,
+                  "id": "BC_C1",
+                  "path": "D_full",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "REVIEW",
+                  "disposition": "REVIEW",
+                  "bucket": "REVIEW",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": false,
+                  "is_REVIEW": true,
+                  "match_gold": null,
+                  "id": "BC_C2",
+                  "path": "D_full",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_U1",
+                  "path": "D_full",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "REVIEW",
+                  "disposition": "REVIEW",
+                  "bucket": "REVIEW",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": false,
+                  "is_REVIEW": true,
+                  "match_gold": null,
+                  "id": "BC_U2",
+                  "path": "D_full",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "SATISFIED",
+                  "verdict": "REVIEW",
+                  "disposition": "REVIEW",
+                  "bucket": "REVIEW",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": false,
+                  "is_REVIEW": true,
+                  "match_gold": null,
+                  "id": "BC_E1",
+                  "path": "D_full",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "NOT_SATISFIED",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "wrong_AUTO",
+                  "wrong_AUTO": true,
+                  "correct_AUTO": false,
+                  "is_REVIEW": false,
+                  "match_gold": false,
+                  "id": "BC_E2",
+                  "path": "D_full",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                }
+              ],
+              "summary": {
+                "n": 6,
+                "wrong_AUTO": 1,
+                "correct_AUTO": 1,
+                "REVIEW": 4,
+                "UNKNOWN": 0,
+                "wrong_AUTO_rate": 0.16666666666666666,
+                "REVIEW_rate": 0.6666666666666666,
+                "safety_among_auto": 0.5,
+                "coverage_auto": 0.3333333333333333,
+                "wrong_AUTO_ids": [
+                  "BC_E2"
+                ],
+                "REVIEW_ids": [
+                  "BC_C1",
+                  "BC_C2",
+                  "BC_U2",
+                  "BC_E1"
+                ]
+              }
+            },
+            "C_full": {
+              "rows": [
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "REVIEW",
+                  "disposition": "REVIEW",
+                  "bucket": "REVIEW",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": false,
+                  "is_REVIEW": true,
+                  "match_gold": null,
+                  "id": "BC_C1",
+                  "path": "C_full",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_C2",
+                  "path": "C_full",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_U1",
+                  "path": "C_full",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_U2",
+                  "path": "C_full",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "SATISFIED",
+                  "verdict": "REVIEW",
+                  "disposition": "REVIEW",
+                  "bucket": "REVIEW",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": false,
+                  "is_REVIEW": true,
+                  "match_gold": null,
+                  "id": "BC_E1",
+                  "path": "C_full",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "NOT_SATISFIED",
+                  "verdict": "REVIEW",
+                  "disposition": "REVIEW",
+                  "bucket": "REVIEW",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": false,
+                  "is_REVIEW": true,
+                  "match_gold": null,
+                  "id": "BC_E2",
+                  "path": "C_full",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                }
+              ],
+              "summary": {
+                "n": 6,
+                "wrong_AUTO": 0,
+                "correct_AUTO": 3,
+                "REVIEW": 3,
+                "UNKNOWN": 0,
+                "wrong_AUTO_rate": 0.0,
+                "REVIEW_rate": 0.5,
+                "safety_among_auto": 1.0,
+                "coverage_auto": 0.5,
+                "wrong_AUTO_ids": [],
+                "REVIEW_ids": [
+                  "BC_C1",
+                  "BC_E1",
+                  "BC_E2"
+                ]
+              }
+            }
+          },
+          "artifact": "artifacts/phase7-bmtcart-mistral_instruct.json"
+        },
+        {
+          "model": "qwen2.5-coder:32b",
+          "paths": {
+            "Dual_full": {
+              "rows": [
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "REVIEW",
+                  "disposition": "REVIEW",
+                  "bucket": "REVIEW",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": false,
+                  "is_REVIEW": true,
+                  "match_gold": null,
+                  "id": "BC_C1",
+                  "path": "Dual_full",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "REVIEW",
+                  "disposition": "REVIEW",
+                  "bucket": "REVIEW",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": false,
+                  "is_REVIEW": true,
+                  "match_gold": null,
+                  "id": "BC_C2",
+                  "path": "Dual_full",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_U1",
+                  "path": "Dual_full",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_U2",
+                  "path": "Dual_full",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "SATISFIED",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "wrong_AUTO",
+                  "wrong_AUTO": true,
+                  "correct_AUTO": false,
+                  "is_REVIEW": false,
+                  "match_gold": false,
+                  "id": "BC_E1",
+                  "path": "Dual_full",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "NOT_SATISFIED",
+                  "verdict": "NOT_SATISFIED",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_E2",
+                  "path": "Dual_full",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                }
+              ],
+              "summary": {
+                "n": 6,
+                "wrong_AUTO": 1,
+                "correct_AUTO": 3,
+                "REVIEW": 2,
+                "UNKNOWN": 0,
+                "wrong_AUTO_rate": 0.16666666666666666,
+                "REVIEW_rate": 0.3333333333333333,
+                "safety_among_auto": 0.75,
+                "coverage_auto": 0.6666666666666666,
+                "wrong_AUTO_ids": [
+                  "BC_E1"
+                ],
+                "REVIEW_ids": [
+                  "BC_C1",
+                  "BC_C2"
+                ]
+              }
+            },
+            "D_full": {
+              "rows": [
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "REVIEW",
+                  "disposition": "REVIEW",
+                  "bucket": "REVIEW",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": false,
+                  "is_REVIEW": true,
+                  "match_gold": null,
+                  "id": "BC_C1",
+                  "path": "D_full",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "REVIEW",
+                  "disposition": "REVIEW",
+                  "bucket": "REVIEW",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": false,
+                  "is_REVIEW": true,
+                  "match_gold": null,
+                  "id": "BC_C2",
+                  "path": "D_full",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_U1",
+                  "path": "D_full",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_U2",
+                  "path": "D_full",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "SATISFIED",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "wrong_AUTO",
+                  "wrong_AUTO": true,
+                  "correct_AUTO": false,
+                  "is_REVIEW": false,
+                  "match_gold": false,
+                  "id": "BC_E1",
+                  "path": "D_full",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "NOT_SATISFIED",
+                  "verdict": "NOT_SATISFIED",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_E2",
+                  "path": "D_full",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                }
+              ],
+              "summary": {
+                "n": 6,
+                "wrong_AUTO": 1,
+                "correct_AUTO": 3,
+                "REVIEW": 2,
+                "UNKNOWN": 0,
+                "wrong_AUTO_rate": 0.16666666666666666,
+                "REVIEW_rate": 0.3333333333333333,
+                "safety_among_auto": 0.75,
+                "coverage_auto": 0.6666666666666666,
+                "wrong_AUTO_ids": [
+                  "BC_E1"
+                ],
+                "REVIEW_ids": [
+                  "BC_C1",
+                  "BC_C2"
+                ]
+              }
+            },
+            "C_full": {
+              "rows": [
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_C1",
+                  "path": "C_full",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_C2",
+                  "path": "C_full",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_U1",
+                  "path": "C_full",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_U2",
+                  "path": "C_full",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "SATISFIED",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "wrong_AUTO",
+                  "wrong_AUTO": true,
+                  "correct_AUTO": false,
+                  "is_REVIEW": false,
+                  "match_gold": false,
+                  "id": "BC_E1",
+                  "path": "C_full",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "NOT_SATISFIED",
+                  "verdict": "NOT_SATISFIED",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "BC_E2",
+                  "path": "C_full",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                }
+              ],
+              "summary": {
+                "n": 6,
+                "wrong_AUTO": 1,
+                "correct_AUTO": 5,
+                "REVIEW": 0,
+                "UNKNOWN": 0,
+                "wrong_AUTO_rate": 0.16666666666666666,
+                "REVIEW_rate": 0.0,
+                "safety_among_auto": 0.8333333333333334,
+                "coverage_auto": 1.0,
+                "wrong_AUTO_ids": [
+                  "BC_E1"
+                ],
+                "REVIEW_ids": []
+              }
+            }
+          },
+          "artifact": "artifacts/phase7-bmtcart-qwen2.5-coder_32b.json"
+        }
+      ]
+    }
+  ]
+}

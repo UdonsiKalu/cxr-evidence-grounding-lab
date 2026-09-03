@@ -1,0 +1,731 @@
+{
+  "contract": "docs/AUTO-CONTRACT.md",
+  "preset": "phase5",
+  "scored_at": "2026-09-03T07:00:13.792176+00:00",
+  "primary_objective": "wrong_AUTO \u2192 0",
+  "results": [
+    {
+      "kind": "panel",
+      "source": "artifacts/phase5-verify-panel.json",
+      "models": [
+        {
+          "model": "llama3:8b-instruct-q4_0",
+          "paths": {
+            "D_v": {
+              "rows": [
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "C9",
+                  "path": "D_v",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "wrong_AUTO",
+                  "wrong_AUTO": true,
+                  "correct_AUTO": false,
+                  "is_REVIEW": false,
+                  "match_gold": false,
+                  "id": "C10",
+                  "path": "D_v",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "C11",
+                  "path": "D_v",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U9",
+                  "path": "D_v",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U10",
+                  "path": "D_v",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U11",
+                  "path": "D_v",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U12",
+                  "path": "D_v",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                }
+              ],
+              "summary": {
+                "n": 7,
+                "wrong_AUTO": 1,
+                "correct_AUTO": 6,
+                "REVIEW": 0,
+                "UNKNOWN": 0,
+                "wrong_AUTO_rate": 0.14285714285714285,
+                "REVIEW_rate": 0.0,
+                "safety_among_auto": 0.8571428571428571,
+                "coverage_auto": 1.0,
+                "wrong_AUTO_ids": [
+                  "C10"
+                ],
+                "REVIEW_ids": []
+              }
+            },
+            "C_v": {
+              "rows": [
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "C9",
+                  "path": "C_v",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "SATISFIED",
+                  "disposition": "AUTO",
+                  "bucket": "wrong_AUTO",
+                  "wrong_AUTO": true,
+                  "correct_AUTO": false,
+                  "is_REVIEW": false,
+                  "match_gold": false,
+                  "id": "C10",
+                  "path": "C_v",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "C11",
+                  "path": "C_v",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U9",
+                  "path": "C_v",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U10",
+                  "path": "C_v",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U11",
+                  "path": "C_v",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U12",
+                  "path": "C_v",
+                  "model": "llama3:8b-instruct-q4_0",
+                  "source": "condition_block"
+                }
+              ],
+              "summary": {
+                "n": 7,
+                "wrong_AUTO": 1,
+                "correct_AUTO": 6,
+                "REVIEW": 0,
+                "UNKNOWN": 0,
+                "wrong_AUTO_rate": 0.14285714285714285,
+                "REVIEW_rate": 0.0,
+                "safety_among_auto": 0.8571428571428571,
+                "coverage_auto": 1.0,
+                "wrong_AUTO_ids": [
+                  "C10"
+                ],
+                "REVIEW_ids": []
+              }
+            }
+          },
+          "artifact": "artifacts/phase5-phase4-llama3_8b-instruct-q4_0.json"
+        },
+        {
+          "model": "mistral:instruct",
+          "paths": {
+            "D_v": {
+              "rows": [
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "wrong_AUTO",
+                  "wrong_AUTO": true,
+                  "correct_AUTO": false,
+                  "is_REVIEW": false,
+                  "match_gold": false,
+                  "id": "C9",
+                  "path": "D_v",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "SATISFIED",
+                  "disposition": "AUTO",
+                  "bucket": "wrong_AUTO",
+                  "wrong_AUTO": true,
+                  "correct_AUTO": false,
+                  "is_REVIEW": false,
+                  "match_gold": false,
+                  "id": "C10",
+                  "path": "D_v",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "C11",
+                  "path": "D_v",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U9",
+                  "path": "D_v",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U10",
+                  "path": "D_v",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U11",
+                  "path": "D_v",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U12",
+                  "path": "D_v",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                }
+              ],
+              "summary": {
+                "n": 7,
+                "wrong_AUTO": 2,
+                "correct_AUTO": 5,
+                "REVIEW": 0,
+                "UNKNOWN": 0,
+                "wrong_AUTO_rate": 0.2857142857142857,
+                "REVIEW_rate": 0.0,
+                "safety_among_auto": 0.7142857142857143,
+                "coverage_auto": 1.0,
+                "wrong_AUTO_ids": [
+                  "C9",
+                  "C10"
+                ],
+                "REVIEW_ids": []
+              }
+            },
+            "C_v": {
+              "rows": [
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "C9",
+                  "path": "C_v",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "C10",
+                  "path": "C_v",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "C11",
+                  "path": "C_v",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U9",
+                  "path": "C_v",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U10",
+                  "path": "C_v",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U11",
+                  "path": "C_v",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U12",
+                  "path": "C_v",
+                  "model": "mistral:instruct",
+                  "source": "condition_block"
+                }
+              ],
+              "summary": {
+                "n": 7,
+                "wrong_AUTO": 0,
+                "correct_AUTO": 7,
+                "REVIEW": 0,
+                "UNKNOWN": 0,
+                "wrong_AUTO_rate": 0.0,
+                "REVIEW_rate": 0.0,
+                "safety_among_auto": 1.0,
+                "coverage_auto": 1.0,
+                "wrong_AUTO_ids": [],
+                "REVIEW_ids": []
+              }
+            }
+          },
+          "artifact": "artifacts/phase5-phase4-mistral_instruct.json"
+        },
+        {
+          "model": "qwen2.5-coder:32b",
+          "paths": {
+            "D_v": {
+              "rows": [
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "C9",
+                  "path": "D_v",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "REVIEW",
+                  "disposition": "REVIEW",
+                  "bucket": "REVIEW",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": false,
+                  "is_REVIEW": true,
+                  "match_gold": null,
+                  "id": "C10",
+                  "path": "D_v",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "C11",
+                  "path": "D_v",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U9",
+                  "path": "D_v",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U10",
+                  "path": "D_v",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U11",
+                  "path": "D_v",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U12",
+                  "path": "D_v",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                }
+              ],
+              "summary": {
+                "n": 7,
+                "wrong_AUTO": 0,
+                "correct_AUTO": 6,
+                "REVIEW": 1,
+                "UNKNOWN": 0,
+                "wrong_AUTO_rate": 0.0,
+                "REVIEW_rate": 0.14285714285714285,
+                "safety_among_auto": 1.0,
+                "coverage_auto": 0.8571428571428571,
+                "wrong_AUTO_ids": [],
+                "REVIEW_ids": [
+                  "C10"
+                ]
+              }
+            },
+            "C_v": {
+              "rows": [
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "C9",
+                  "path": "C_v",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "C10",
+                  "path": "C_v",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "CONTRADICTION",
+                  "verdict": "CONTRADICTION",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "C11",
+                  "path": "C_v",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U9",
+                  "path": "C_v",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U10",
+                  "path": "C_v",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U11",
+                  "path": "C_v",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                },
+                {
+                  "gold": "UNCERTAIN",
+                  "verdict": "UNCERTAIN",
+                  "disposition": "AUTO",
+                  "bucket": "correct_AUTO",
+                  "wrong_AUTO": false,
+                  "correct_AUTO": true,
+                  "is_REVIEW": false,
+                  "match_gold": true,
+                  "id": "U12",
+                  "path": "C_v",
+                  "model": "qwen2.5-coder:32b",
+                  "source": "condition_block"
+                }
+              ],
+              "summary": {
+                "n": 7,
+                "wrong_AUTO": 0,
+                "correct_AUTO": 7,
+                "REVIEW": 0,
+                "UNKNOWN": 0,
+                "wrong_AUTO_rate": 0.0,
+                "REVIEW_rate": 0.0,
+                "safety_among_auto": 1.0,
+                "coverage_auto": 1.0,
+                "wrong_AUTO_ids": [],
+                "REVIEW_ids": []
+              }
+            }
+          },
+          "artifact": "artifacts/phase5-phase4-qwen2.5-coder_32b.json"
+        }
+      ]
+    }
+  ]
+}
