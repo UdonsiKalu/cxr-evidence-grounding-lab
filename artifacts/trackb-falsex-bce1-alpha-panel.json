@@ -1,0 +1,551 @@
+{
+  "kind": "trackb_falsex_bce1_alpha_sweep",
+  "protocol": "docs/TRACKB-FALSEX-CLUSTER.md",
+  "timestamp": "2026-09-03T18:25:55.010481+00:00",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "case_source": "data/temporal-family-dev.json",
+  "steering_vectors": {
+    "model_id": "Qwen/Qwen2.5-7B-Instruct",
+    "source_cases": {
+      "true_commit": "BC_E1",
+      "false_commit": "BC_E2"
+    },
+    "layer_fractions": [
+      0.75,
+      1.0
+    ],
+    "vectors_by_layer_idx": [
+      20,
+      27
+    ],
+    "per_layer": {
+      "0.75": {
+        "layer_idx": 20,
+        "norm_delta_raw": 44.247676849365234,
+        "direction": "BC_E2_false_commit_minus_BC_E1_true_commit"
+      },
+      "1.00": {
+        "layer_idx": 27,
+        "norm_delta_raw": 284.6798400878906,
+        "direction": "BC_E2_false_commit_minus_BC_E1_true_commit"
+      }
+    }
+  },
+  "alpha_grid": [
+    0.0,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0
+  ],
+  "phase10_alpha_grid_ref": [
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    -4.0,
+    -8.0
+  ],
+  "targets": [
+    "TF_E3",
+    "BC11_E3",
+    "TF_E4"
+  ],
+  "baselines": {
+    "TF_E3": {
+      "repair_final_x": true,
+      "margin": 6.875,
+      "verdict": "CONTRADICTION"
+    },
+    "BC11_E3": {
+      "repair_final_x": true,
+      "margin": 2.75,
+      "verdict": "CONTRADICTION"
+    },
+    "TF_E4": {
+      "repair_final_x": true,
+      "margin": 9.5,
+      "verdict": "UNCERTAIN"
+    },
+    "TF_C1": {
+      "repair_final_x": true,
+      "margin": 12.375,
+      "verdict": "CONTRADICTION"
+    },
+    "BC_C1": {
+      "repair_final_x": true,
+      "margin": 13.375,
+      "verdict": "CONTRADICTION"
+    },
+    "TF_N1": {
+      "repair_final_x": false,
+      "margin": -12.375,
+      "verdict": "NOT_SATISFIED"
+    },
+    "BC_E2": {
+      "repair_final_x": false,
+      "margin": -14.0,
+      "verdict": "NOT_SATISFIED"
+    }
+  },
+  "by_alpha": {
+    "0": {
+      "alpha": 0.0,
+      "results": {
+        "TF_E3": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 6.875,
+          "steered_margin": 6.875,
+          "verdict_steered": "CONTRADICTION",
+          "x_flipped_true_to_false": false
+        },
+        "BC11_E3": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 2.75,
+          "steered_margin": 2.75,
+          "verdict_steered": "CONTRADICTION",
+          "x_flipped_true_to_false": false
+        },
+        "TF_E4": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 9.5,
+          "steered_margin": 9.5,
+          "verdict_steered": "UNCERTAIN",
+          "x_flipped_true_to_false": false
+        }
+      },
+      "controls": {
+        "TF_C1": {
+          "steered_x": true,
+          "steered_margin": 12.375
+        },
+        "BC_C1": {
+          "steered_x": true,
+          "steered_margin": 13.375
+        },
+        "TF_N1": {
+          "steered_x": false,
+          "steered_margin": -12.375
+        },
+        "BC_E2": {
+          "steered_x": false,
+          "steered_margin": -14.0
+        }
+      },
+      "n_target_flips": 0,
+      "contra_stay_true": true,
+      "nofail_stay_false": true
+    },
+    "1.0": {
+      "alpha": 1.0,
+      "results": {
+        "TF_E3": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 6.875,
+          "steered_margin": 6.875,
+          "verdict_steered": "CONTRADICTION",
+          "x_flipped_true_to_false": false,
+          "margin_delta": 0.0
+        },
+        "BC11_E3": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 2.75,
+          "steered_margin": 2.5,
+          "verdict_steered": "CONTRADICTION",
+          "x_flipped_true_to_false": false,
+          "margin_delta": -0.25
+        },
+        "TF_E4": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 9.5,
+          "steered_margin": 9.125,
+          "verdict_steered": "UNCERTAIN",
+          "x_flipped_true_to_false": false,
+          "margin_delta": -0.375
+        }
+      },
+      "controls": {
+        "TF_C1": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 12.375,
+          "steered_margin": 12.125,
+          "verdict_steered": "CONTRADICTION"
+        },
+        "BC_C1": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 13.375,
+          "steered_margin": 13.125,
+          "verdict_steered": "CONTRADICTION"
+        },
+        "TF_N1": {
+          "baseline_x": false,
+          "steered_x": false,
+          "baseline_margin": -12.375,
+          "steered_margin": -12.625,
+          "verdict_steered": "NOT_SATISFIED"
+        },
+        "BC_E2": {
+          "baseline_x": false,
+          "steered_x": false,
+          "baseline_margin": -14.0,
+          "steered_margin": -14.25,
+          "verdict_steered": "NOT_SATISFIED"
+        }
+      },
+      "n_target_flips": 0,
+      "contra_stay_true": true,
+      "nofail_BC_E2_stay_false": true,
+      "mean_target_margin_delta": -0.20833333333333334
+    },
+    "2.0": {
+      "alpha": 2.0,
+      "results": {
+        "TF_E3": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 6.875,
+          "steered_margin": 6.5,
+          "verdict_steered": "CONTRADICTION",
+          "x_flipped_true_to_false": false,
+          "margin_delta": -0.375
+        },
+        "BC11_E3": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 2.75,
+          "steered_margin": 2.125,
+          "verdict_steered": "CONTRADICTION",
+          "x_flipped_true_to_false": false,
+          "margin_delta": -0.625
+        },
+        "TF_E4": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 9.5,
+          "steered_margin": 9.0,
+          "verdict_steered": "UNCERTAIN",
+          "x_flipped_true_to_false": false,
+          "margin_delta": -0.5
+        }
+      },
+      "controls": {
+        "TF_C1": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 12.375,
+          "steered_margin": 12.0,
+          "verdict_steered": "CONTRADICTION"
+        },
+        "BC_C1": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 13.375,
+          "steered_margin": 12.875,
+          "verdict_steered": "CONTRADICTION"
+        },
+        "TF_N1": {
+          "baseline_x": false,
+          "steered_x": false,
+          "baseline_margin": -12.375,
+          "steered_margin": -13.125,
+          "verdict_steered": "NOT_SATISFIED"
+        },
+        "BC_E2": {
+          "baseline_x": false,
+          "steered_x": false,
+          "baseline_margin": -14.0,
+          "steered_margin": -14.375,
+          "verdict_steered": "NOT_SATISFIED"
+        }
+      },
+      "n_target_flips": 0,
+      "contra_stay_true": true,
+      "nofail_BC_E2_stay_false": true,
+      "mean_target_margin_delta": -0.5
+    },
+    "4.0": {
+      "alpha": 4.0,
+      "results": {
+        "TF_E3": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 6.875,
+          "steered_margin": 6.0,
+          "verdict_steered": "CONTRADICTION",
+          "x_flipped_true_to_false": false,
+          "margin_delta": -0.875
+        },
+        "BC11_E3": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 2.75,
+          "steered_margin": 1.25,
+          "verdict_steered": "CONTRADICTION",
+          "x_flipped_true_to_false": false,
+          "margin_delta": -1.5
+        },
+        "TF_E4": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 9.5,
+          "steered_margin": 8.25,
+          "verdict_steered": "UNCERTAIN",
+          "x_flipped_true_to_false": false,
+          "margin_delta": -1.25
+        }
+      },
+      "controls": {
+        "TF_C1": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 12.375,
+          "steered_margin": 11.5,
+          "verdict_steered": "CONTRADICTION"
+        },
+        "BC_C1": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 13.375,
+          "steered_margin": 12.25,
+          "verdict_steered": "CONTRADICTION"
+        },
+        "TF_N1": {
+          "baseline_x": false,
+          "steered_x": false,
+          "baseline_margin": -12.375,
+          "steered_margin": -13.375,
+          "verdict_steered": "NOT_SATISFIED"
+        },
+        "BC_E2": {
+          "baseline_x": false,
+          "steered_x": false,
+          "baseline_margin": -14.0,
+          "steered_margin": -14.875,
+          "verdict_steered": "NOT_SATISFIED"
+        }
+      },
+      "n_target_flips": 0,
+      "contra_stay_true": true,
+      "nofail_BC_E2_stay_false": true,
+      "mean_target_margin_delta": -1.2083333333333333
+    },
+    "8.0": {
+      "alpha": 8.0,
+      "results": {
+        "TF_E3": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 6.875,
+          "steered_margin": 5.0,
+          "verdict_steered": "CONTRADICTION",
+          "x_flipped_true_to_false": false,
+          "margin_delta": -1.875
+        },
+        "BC11_E3": {
+          "baseline_x": true,
+          "steered_x": false,
+          "baseline_margin": 2.75,
+          "steered_margin": -0.5,
+          "verdict_steered": "SATISFIED",
+          "x_flipped_true_to_false": true,
+          "margin_delta": -3.25
+        },
+        "TF_E4": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 9.5,
+          "steered_margin": 7.0,
+          "verdict_steered": "UNCERTAIN",
+          "x_flipped_true_to_false": false,
+          "margin_delta": -2.5
+        }
+      },
+      "controls": {
+        "TF_C1": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 12.375,
+          "steered_margin": 10.375,
+          "verdict_steered": "CONTRADICTION"
+        },
+        "BC_C1": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 13.375,
+          "steered_margin": 11.25,
+          "verdict_steered": "CONTRADICTION"
+        },
+        "TF_N1": {
+          "baseline_x": false,
+          "steered_x": false,
+          "baseline_margin": -12.375,
+          "steered_margin": -14.125,
+          "verdict_steered": "NOT_SATISFIED"
+        },
+        "BC_E2": {
+          "baseline_x": false,
+          "steered_x": false,
+          "baseline_margin": -14.0,
+          "steered_margin": -15.625,
+          "verdict_steered": "NOT_SATISFIED"
+        }
+      },
+      "n_target_flips": 1,
+      "contra_stay_true": true,
+      "nofail_BC_E2_stay_false": true,
+      "mean_target_margin_delta": -2.5416666666666665
+    },
+    "16.0": {
+      "alpha": 16.0,
+      "results": {
+        "TF_E3": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 6.875,
+          "steered_margin": 2.25,
+          "verdict_steered": "CONTRADICTION",
+          "x_flipped_true_to_false": false,
+          "margin_delta": -4.625
+        },
+        "BC11_E3": {
+          "baseline_x": true,
+          "steered_x": false,
+          "baseline_margin": 2.75,
+          "steered_margin": -4.25,
+          "verdict_steered": "SATISFIED",
+          "x_flipped_true_to_false": true,
+          "margin_delta": -7.0
+        },
+        "TF_E4": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 9.5,
+          "steered_margin": 3.25,
+          "verdict_steered": "UNCERTAIN",
+          "x_flipped_true_to_false": false,
+          "margin_delta": -6.25
+        }
+      },
+      "controls": {
+        "TF_C1": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 12.375,
+          "steered_margin": 7.75,
+          "verdict_steered": "CONTRADICTION"
+        },
+        "BC_C1": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 13.375,
+          "steered_margin": 8.5,
+          "verdict_steered": "CONTRADICTION"
+        },
+        "TF_N1": {
+          "baseline_x": false,
+          "steered_x": false,
+          "baseline_margin": -12.375,
+          "steered_margin": -15.875,
+          "verdict_steered": "NOT_SATISFIED"
+        },
+        "BC_E2": {
+          "baseline_x": false,
+          "steered_x": false,
+          "baseline_margin": -14.0,
+          "steered_margin": -17.25,
+          "verdict_steered": "NOT_SATISFIED"
+        }
+      },
+      "n_target_flips": 1,
+      "contra_stay_true": true,
+      "nofail_BC_E2_stay_false": true,
+      "mean_target_margin_delta": -5.958333333333333
+    },
+    "32.0": {
+      "alpha": 32.0,
+      "results": {
+        "TF_E3": {
+          "baseline_x": true,
+          "steered_x": false,
+          "baseline_margin": 6.875,
+          "steered_margin": -6.75,
+          "verdict_steered": "SATISFIED",
+          "x_flipped_true_to_false": true,
+          "margin_delta": -13.625
+        },
+        "BC11_E3": {
+          "baseline_x": true,
+          "steered_x": false,
+          "baseline_margin": 2.75,
+          "steered_margin": -10.875,
+          "verdict_steered": "SATISFIED",
+          "x_flipped_true_to_false": true,
+          "margin_delta": -13.625
+        },
+        "TF_E4": {
+          "baseline_x": true,
+          "steered_x": false,
+          "baseline_margin": 9.5,
+          "steered_margin": -7.5,
+          "verdict_steered": "UNCERTAIN",
+          "x_flipped_true_to_false": true,
+          "margin_delta": -17.0
+        }
+      },
+      "controls": {
+        "TF_C1": {
+          "baseline_x": true,
+          "steered_x": false,
+          "baseline_margin": 12.375,
+          "steered_margin": -2.25,
+          "verdict_steered": "SATISFIED"
+        },
+        "BC_C1": {
+          "baseline_x": true,
+          "steered_x": true,
+          "baseline_margin": 13.375,
+          "steered_margin": 0.25,
+          "verdict_steered": "CONTRADICTION"
+        },
+        "TF_N1": {
+          "baseline_x": false,
+          "steered_x": false,
+          "baseline_margin": -12.375,
+          "steered_margin": -18.25,
+          "verdict_steered": "NOT_SATISFIED"
+        },
+        "BC_E2": {
+          "baseline_x": false,
+          "steered_x": false,
+          "baseline_margin": -14.0,
+          "steered_margin": -19.25,
+          "verdict_steered": "NOT_SATISFIED"
+        }
+      },
+      "n_target_flips": 3,
+      "contra_stay_true": false,
+      "nofail_BC_E2_stay_false": true,
+      "mean_target_margin_delta": -14.75
+    }
+  },
+  "gate_bce1_alpha": {
+    "pass": true,
+    "any_target_flip": true,
+    "margins_move_toward_false_at_all_alpha": true,
+    "transfer_failure_looks": "magnitude_only_if_high_alpha_flips",
+    "note": "BC_E1 vector flips \u22651 target at some \u03b1 \u2014 transfer failure was magnitude"
+  },
+  "note": "Frozen Ph10 BC_E2\u2212BC_E1 vector only \u2014 not a refit. TF_N1 reported but BC_E2 is the preferred nofail control integrity check."
+}

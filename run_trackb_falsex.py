@@ -2,6 +2,8 @@
 """Track B: false-X cluster ladder on temporal-family-dev (HF 7B).
 
 See docs/TRACKB-FALSEX-CLUSTER.md. Does not touch temporal-family-test evidence.
+
+Use .venv-phase9/bin/python (bare python3 lacks accelerate).
 """
 
 from __future__ import annotations
@@ -31,7 +33,17 @@ def main() -> None:
     parser.add_argument(
         "--patch-frac",
         default="",
-        help="run ONLY the depth-restricted patch arm, e.g. 0.75 (avoids 1.00 token-forcing confound)",
+        help="depth-restricted patch by fraction, e.g. 0.75",
+    )
+    parser.add_argument(
+        "--patch-depth-sweep",
+        action="store_true",
+        help="absolute-layer patch sweep + specificity controls (ChatGPT order step 1)",
+    )
+    parser.add_argument(
+        "--bce1-alpha-sweep",
+        action="store_true",
+        help="α-sweep frozen Ph10 BC_E1 vector on cluster (step 2, before refit)",
     )
     args = parser.parse_args()
 
@@ -52,12 +64,52 @@ def main() -> None:
             print("phase10 gate not YES")
             sys.exit(1)
         from n2s_lab.hf_intervene import ActivationPatchSpec, ActivationSteerSpec  # noqa: F401
+        from n2s_lab.trackb_patch_depth import DEFAULT_SWEEP_LAYERS  # noqa: F401
+        from n2s_lab.trackb_bce1_alpha import SWEEP_ALPHAS  # noqa: F401
 
         print(
             f"trackb selftest OK — targets={list(TARGETS)} "
             f"contra={list(CONTRA_CONTROLS)} nofail={list(NOFAIL_CONTROLS)} "
+            f"sweep_L={list(DEFAULT_SWEEP_LAYERS)} bce1_alphas={list(SWEEP_ALPHAS)} "
             f"test_sealed={TEMPORAL_FAMILY_TEST_PATH.name}"
         )
+        return
+
+    if args.patch_depth_sweep:
+        from n2s_lab.trackb_patch_depth import run_patch_depth_sweep  # noqa: E402
+
+        panel = run_patch_depth_sweep()
+        gate = panel["gate_patch_depth_sweep"]
+        print(f"\nwrote {panel['_artifact']}")
+        print(f"depth gate: {'YES' if gate['pass'] else 'NO'} — {gate['note']}")
+        print(f"  earliest={gate.get('earliest_sufficient_layer')} "
+              f"specificity={gate.get('specificity_soft_pass')}")
+        for key, block in panel["by_layer"].items():
+            print(
+                f"  {key}: flips={block['n_flips']}/3 "
+                f"margins={block['patched_margins']} taut={block['margins_equal_donor_tautology']}"
+            )
+        if not gate["pass"]:
+            sys.exit(2)
+        return
+
+    if args.bce1_alpha_sweep:
+        from n2s_lab.trackb_bce1_alpha import run_bce1_alpha_sweep  # noqa: E402
+
+        panel = run_bce1_alpha_sweep()
+        gate = panel["gate_bce1_alpha"]
+        print(f"\nwrote {panel['_artifact']}")
+        print(f"BC_E1-α: {gate['note']}")
+        print(f"  any_flip={gate['any_target_flip']} look={gate['transfer_failure_looks']}")
+        for a, block in panel["by_alpha"].items():
+            if a == "0":
+                continue
+            print(
+                f"  α={a}: flips={block['n_target_flips']}/3 "
+                f"mean_Δmargin={block.get('mean_target_margin_delta')} "
+                f"contra_ok={block.get('contra_stay_true')} "
+                f"nofail_ok={block.get('nofail_BC_E2_stay_false')}"
+            )
         return
 
     if args.patch_frac:

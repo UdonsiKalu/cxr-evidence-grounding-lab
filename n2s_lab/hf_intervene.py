@@ -62,10 +62,15 @@ def generate_intervened(
     intervention: InterventionKind = "none",
     logit_bias: float = 4.0,
     layer_fractions: tuple[float, ...] = (0.25, 0.5, 0.75, 1.0),
+    layer_indices: tuple[int, ...] | None = None,
     activation_steer: ActivationSteerSpec | None = None,
     activation_patch: ActivationPatchSpec | None = None,
 ) -> tuple[GenerationTrace, list[int]]:
-    """Greedy decode; intervene only at contradiction.present boolean commit."""
+    """Greedy decode; intervene only at contradiction.present boolean commit.
+
+    If ``layer_indices`` is set, hook those absolute block indices (labels ``L{idx}``)
+    instead of fractional depths — preferred for patch-depth writeups.
+    """
     configure_determinism()
     model, tokenizer = load_model(model_id)
     reseeds_before_generate()
@@ -77,11 +82,18 @@ def generate_intervened(
         messages, tokenize=False, add_generation_prompt=True
     )
 
-    layer_idxs = _fraction_layers(model, layer_fractions)
-    frac_by_idx = {
-        idx: f"{f:.2f}" for idx, f in zip(layer_idxs, layer_fractions, strict=False)
-    }
     layers = _model_layers(model)
+    n_layers = len(layers)
+    if layer_indices is not None:
+        layer_idxs = sorted({i for i in layer_indices if 0 <= i < n_layers})
+        if not layer_idxs:
+            raise ValueError(f"no valid layer_indices in 0..{n_layers - 1}")
+        frac_by_idx = {idx: f"L{idx}" for idx in layer_idxs}
+    else:
+        layer_idxs = _fraction_layers(model, layer_fractions)
+        frac_by_idx = {
+            idx: f"{f:.2f}" for idx, f in zip(layer_idxs, layer_fractions, strict=False)
+        }
     captured: dict[str, torch.Tensor] = {}
 
     def _make_hook(layer_idx: int, frac_label: str):

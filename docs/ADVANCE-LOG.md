@@ -27,6 +27,28 @@
 
 ## Log (newest first)
 
+### 2026-09-03 — Frozen BC_E1 α-sweep: α=4 miss was magnitude
+
+| | |
+|--|--|
+| **Track** | B |
+| **Activity** | Swept frozen Ph10 BC_E2−BC_E1 vector at α ∈ {0,1,2,4,8,16,32} on DEV false-X cluster + controls. Did **not** replace the vector. |
+| **Result** | α=1–4: 0/3 flips, margins drift down, controls intact. **α=8 and 16: 1/3** (`BC11_E3` only) with contradictions preserved. **α=32: 3/3 flips but `TF_C1` destroyed**. Transfer failure at the frozen α=4 was **magnitude**, not a dead direction — but there is no α that flips the whole family without harming true contradiction. |
+| **Artifacts** | `artifacts/trackb-falsex-bce1-alpha-panel.json` · [TRACKB-FALSEX-CLUSTER.md](./TRACKB-FALSEX-CLUSTER.md) |
+| **Decision** | Keep Ph10 vector as a characterized baseline. Next: family-level **semantic** vector at L20 (temporal-change vs contradiction), not 3-fail−`BC_E2`. No G3; test sealed. |
+| **Commit** | _(pending push)_ |
+
+### 2026-09-03 — Patch-depth sweep: earliest sufficient L20; specificity mixed
+
+| | |
+|--|--|
+| **Track** | B |
+| **Activity** | Absolute-layer patch (L4/8/12/16/20/24) donor `BC_E2` → {TF_E3, BC11_E3, TF_E4}. Specificity @ L20: Gaussian, contradiction-donor, reverse, donor→contradiction, donor→self. `TF_N1` not used as donor. |
+| **Result** | L4–L16: **0/3** flips. **L20: 3/3** (margins ≈ −11.4, ≠ donor −14). L24: 3/3. Gaussian **0/3**; `TF_C1` donor **0/3**. Reverse induces false X on `BC_E2`. **Donor into true contradictions flips both to false** — causal but not class-selective. |
+| **Artifacts** | `artifacts/trackb-falsex-patch-depth-panel.json` · `n2s_lab/trackb_patch_depth.py` |
+| **Decision** | Fit any new steer at **L20**. Do not treat L20 patch as a safe contradiction-preserving editor. |
+| **Commit** | _(pending push)_ |
+
 ### 2026-09-03 — Track B false-X cluster ladder (DEV) — probe YES, patch YES, steer NO
 
 | | |

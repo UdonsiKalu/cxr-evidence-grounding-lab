@@ -1,0 +1,585 @@
+{
+  "kind": "trackb_falsex_patch_depth_sweep",
+  "protocol": "docs/TRACKB-FALSEX-CLUSTER.md",
+  "timestamp": "2026-09-03T17:50:31.807225+00:00",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "case_source": "data/temporal-family-dev.json",
+  "test_set_not_used": "data/temporal-family-test.json",
+  "n_layers": 28,
+  "sweep_layers": [
+    4,
+    8,
+    12,
+    16,
+    20,
+    24
+  ],
+  "patch_donor": "BC_E2",
+  "targets": [
+    "TF_E3",
+    "BC11_E3",
+    "TF_E4"
+  ],
+  "baselines": {
+    "BC_E2": {
+      "repair_final_x": false,
+      "margin": -14.0,
+      "verdict": "NOT_SATISFIED"
+    },
+    "TF_E3": {
+      "repair_final_x": true,
+      "margin": 6.875,
+      "verdict": "CONTRADICTION"
+    },
+    "BC11_E3": {
+      "repair_final_x": true,
+      "margin": 2.75,
+      "verdict": "CONTRADICTION"
+    },
+    "TF_E4": {
+      "repair_final_x": true,
+      "margin": 9.5,
+      "verdict": "UNCERTAIN"
+    },
+    "TF_C1": {
+      "repair_final_x": true,
+      "margin": 12.375,
+      "verdict": "CONTRADICTION"
+    },
+    "BC_C1": {
+      "repair_final_x": true,
+      "margin": 13.375,
+      "verdict": "CONTRADICTION"
+    }
+  },
+  "by_layer": {
+    "L4": {
+      "layer_idx": 4,
+      "n_baseline_false_x": 3,
+      "n_flips": 0,
+      "margins_equal_donor_tautology": false,
+      "patched_margins": [
+        7.0,
+        3.0,
+        9.5
+      ],
+      "donor_margin": -14.0,
+      "results": [
+        {
+          "recipient": "TF_E3",
+          "donor": "BC_E2",
+          "donor_kind": "clean_nofail_donor",
+          "layer_idx": 4,
+          "baseline_x": true,
+          "patched_x": true,
+          "baseline_margin": 6.875,
+          "patched_margin": 7.0,
+          "verdict_baseline": "CONTRADICTION",
+          "verdict_patched": "CONTRADICTION",
+          "x_flipped_true_to_false": false,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": true
+        },
+        {
+          "recipient": "BC11_E3",
+          "donor": "BC_E2",
+          "donor_kind": "clean_nofail_donor",
+          "layer_idx": 4,
+          "baseline_x": true,
+          "patched_x": true,
+          "baseline_margin": 2.75,
+          "patched_margin": 3.0,
+          "verdict_baseline": "CONTRADICTION",
+          "verdict_patched": "CONTRADICTION",
+          "x_flipped_true_to_false": false,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": true
+        },
+        {
+          "recipient": "TF_E4",
+          "donor": "BC_E2",
+          "donor_kind": "clean_nofail_donor",
+          "layer_idx": 4,
+          "baseline_x": true,
+          "patched_x": true,
+          "baseline_margin": 9.5,
+          "patched_margin": 9.5,
+          "verdict_baseline": "UNCERTAIN",
+          "verdict_patched": "UNCERTAIN",
+          "x_flipped_true_to_false": false,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": true
+        }
+      ]
+    },
+    "L8": {
+      "layer_idx": 8,
+      "n_baseline_false_x": 3,
+      "n_flips": 0,
+      "margins_equal_donor_tautology": false,
+      "patched_margins": [
+        6.875,
+        2.875,
+        9.625
+      ],
+      "donor_margin": -14.0,
+      "results": [
+        {
+          "recipient": "TF_E3",
+          "donor": "BC_E2",
+          "donor_kind": "clean_nofail_donor",
+          "layer_idx": 8,
+          "baseline_x": true,
+          "patched_x": true,
+          "baseline_margin": 6.875,
+          "patched_margin": 6.875,
+          "verdict_baseline": "CONTRADICTION",
+          "verdict_patched": "CONTRADICTION",
+          "x_flipped_true_to_false": false,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": true
+        },
+        {
+          "recipient": "BC11_E3",
+          "donor": "BC_E2",
+          "donor_kind": "clean_nofail_donor",
+          "layer_idx": 8,
+          "baseline_x": true,
+          "patched_x": true,
+          "baseline_margin": 2.75,
+          "patched_margin": 2.875,
+          "verdict_baseline": "CONTRADICTION",
+          "verdict_patched": "CONTRADICTION",
+          "x_flipped_true_to_false": false,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": true
+        },
+        {
+          "recipient": "TF_E4",
+          "donor": "BC_E2",
+          "donor_kind": "clean_nofail_donor",
+          "layer_idx": 8,
+          "baseline_x": true,
+          "patched_x": true,
+          "baseline_margin": 9.5,
+          "patched_margin": 9.625,
+          "verdict_baseline": "UNCERTAIN",
+          "verdict_patched": "UNCERTAIN",
+          "x_flipped_true_to_false": false,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": true
+        }
+      ]
+    },
+    "L12": {
+      "layer_idx": 12,
+      "n_baseline_false_x": 3,
+      "n_flips": 0,
+      "margins_equal_donor_tautology": false,
+      "patched_margins": [
+        6.875,
+        2.75,
+        9.625
+      ],
+      "donor_margin": -14.0,
+      "results": [
+        {
+          "recipient": "TF_E3",
+          "donor": "BC_E2",
+          "donor_kind": "clean_nofail_donor",
+          "layer_idx": 12,
+          "baseline_x": true,
+          "patched_x": true,
+          "baseline_margin": 6.875,
+          "patched_margin": 6.875,
+          "verdict_baseline": "CONTRADICTION",
+          "verdict_patched": "CONTRADICTION",
+          "x_flipped_true_to_false": false,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": true
+        },
+        {
+          "recipient": "BC11_E3",
+          "donor": "BC_E2",
+          "donor_kind": "clean_nofail_donor",
+          "layer_idx": 12,
+          "baseline_x": true,
+          "patched_x": true,
+          "baseline_margin": 2.75,
+          "patched_margin": 2.75,
+          "verdict_baseline": "CONTRADICTION",
+          "verdict_patched": "CONTRADICTION",
+          "x_flipped_true_to_false": false,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": true
+        },
+        {
+          "recipient": "TF_E4",
+          "donor": "BC_E2",
+          "donor_kind": "clean_nofail_donor",
+          "layer_idx": 12,
+          "baseline_x": true,
+          "patched_x": true,
+          "baseline_margin": 9.5,
+          "patched_margin": 9.625,
+          "verdict_baseline": "UNCERTAIN",
+          "verdict_patched": "UNCERTAIN",
+          "x_flipped_true_to_false": false,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": true
+        }
+      ]
+    },
+    "L16": {
+      "layer_idx": 16,
+      "n_baseline_false_x": 3,
+      "n_flips": 0,
+      "margins_equal_donor_tautology": false,
+      "patched_margins": [
+        7.25,
+        2.25,
+        9.75
+      ],
+      "donor_margin": -14.0,
+      "results": [
+        {
+          "recipient": "TF_E3",
+          "donor": "BC_E2",
+          "donor_kind": "clean_nofail_donor",
+          "layer_idx": 16,
+          "baseline_x": true,
+          "patched_x": true,
+          "baseline_margin": 6.875,
+          "patched_margin": 7.25,
+          "verdict_baseline": "CONTRADICTION",
+          "verdict_patched": "CONTRADICTION",
+          "x_flipped_true_to_false": false,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": true
+        },
+        {
+          "recipient": "BC11_E3",
+          "donor": "BC_E2",
+          "donor_kind": "clean_nofail_donor",
+          "layer_idx": 16,
+          "baseline_x": true,
+          "patched_x": true,
+          "baseline_margin": 2.75,
+          "patched_margin": 2.25,
+          "verdict_baseline": "CONTRADICTION",
+          "verdict_patched": "CONTRADICTION",
+          "x_flipped_true_to_false": false,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": true
+        },
+        {
+          "recipient": "TF_E4",
+          "donor": "BC_E2",
+          "donor_kind": "clean_nofail_donor",
+          "layer_idx": 16,
+          "baseline_x": true,
+          "patched_x": true,
+          "baseline_margin": 9.5,
+          "patched_margin": 9.75,
+          "verdict_baseline": "UNCERTAIN",
+          "verdict_patched": "UNCERTAIN",
+          "x_flipped_true_to_false": false,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": true
+        }
+      ]
+    },
+    "L20": {
+      "layer_idx": 20,
+      "n_baseline_false_x": 3,
+      "n_flips": 3,
+      "margins_equal_donor_tautology": false,
+      "patched_margins": [
+        -11.375,
+        -11.5,
+        -11.375
+      ],
+      "donor_margin": -14.0,
+      "results": [
+        {
+          "recipient": "TF_E3",
+          "donor": "BC_E2",
+          "donor_kind": "clean_nofail_donor",
+          "layer_idx": 20,
+          "baseline_x": true,
+          "patched_x": false,
+          "baseline_margin": 6.875,
+          "patched_margin": -11.375,
+          "verdict_baseline": "CONTRADICTION",
+          "verdict_patched": "SATISFIED",
+          "x_flipped_true_to_false": true,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": false
+        },
+        {
+          "recipient": "BC11_E3",
+          "donor": "BC_E2",
+          "donor_kind": "clean_nofail_donor",
+          "layer_idx": 20,
+          "baseline_x": true,
+          "patched_x": false,
+          "baseline_margin": 2.75,
+          "patched_margin": -11.5,
+          "verdict_baseline": "CONTRADICTION",
+          "verdict_patched": "SATISFIED",
+          "x_flipped_true_to_false": true,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": false
+        },
+        {
+          "recipient": "TF_E4",
+          "donor": "BC_E2",
+          "donor_kind": "clean_nofail_donor",
+          "layer_idx": 20,
+          "baseline_x": true,
+          "patched_x": false,
+          "baseline_margin": 9.5,
+          "patched_margin": -11.375,
+          "verdict_baseline": "UNCERTAIN",
+          "verdict_patched": "UNCERTAIN",
+          "x_flipped_true_to_false": true,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": false
+        }
+      ]
+    },
+    "L24": {
+      "layer_idx": 24,
+      "n_baseline_false_x": 3,
+      "n_flips": 3,
+      "margins_equal_donor_tautology": false,
+      "patched_margins": [
+        -12.625,
+        -12.625,
+        -11.625
+      ],
+      "donor_margin": -14.0,
+      "results": [
+        {
+          "recipient": "TF_E3",
+          "donor": "BC_E2",
+          "donor_kind": "clean_nofail_donor",
+          "layer_idx": 24,
+          "baseline_x": true,
+          "patched_x": false,
+          "baseline_margin": 6.875,
+          "patched_margin": -12.625,
+          "verdict_baseline": "CONTRADICTION",
+          "verdict_patched": "SATISFIED",
+          "x_flipped_true_to_false": true,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": false
+        },
+        {
+          "recipient": "BC11_E3",
+          "donor": "BC_E2",
+          "donor_kind": "clean_nofail_donor",
+          "layer_idx": 24,
+          "baseline_x": true,
+          "patched_x": false,
+          "baseline_margin": 2.75,
+          "patched_margin": -12.625,
+          "verdict_baseline": "CONTRADICTION",
+          "verdict_patched": "SATISFIED",
+          "x_flipped_true_to_false": true,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": false
+        },
+        {
+          "recipient": "TF_E4",
+          "donor": "BC_E2",
+          "donor_kind": "clean_nofail_donor",
+          "layer_idx": 24,
+          "baseline_x": true,
+          "patched_x": false,
+          "baseline_margin": 9.5,
+          "patched_margin": -11.625,
+          "verdict_baseline": "UNCERTAIN",
+          "verdict_patched": "UNCERTAIN",
+          "x_flipped_true_to_false": true,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": false
+        }
+      ]
+    }
+  },
+  "controls": {
+    "L20": {
+      "layer_idx": 20,
+      "gaussian_into_falsex": [
+        {
+          "recipient": "TF_E3",
+          "donor": "gaussian_matched_norm",
+          "donor_kind": "unrelated_gaussian",
+          "layer_idx": 20,
+          "baseline_x": true,
+          "patched_x": true,
+          "baseline_margin": 6.875,
+          "patched_margin": 5.75,
+          "verdict_baseline": "CONTRADICTION",
+          "verdict_patched": "CONTRADICTION",
+          "x_flipped_true_to_false": false,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": true
+        },
+        {
+          "recipient": "BC11_E3",
+          "donor": "gaussian_matched_norm",
+          "donor_kind": "unrelated_gaussian",
+          "layer_idx": 20,
+          "baseline_x": true,
+          "patched_x": true,
+          "baseline_margin": 2.75,
+          "patched_margin": 3.125,
+          "verdict_baseline": "CONTRADICTION",
+          "verdict_patched": "CONTRADICTION",
+          "x_flipped_true_to_false": false,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": true
+        },
+        {
+          "recipient": "TF_E4",
+          "donor": "gaussian_matched_norm",
+          "donor_kind": "unrelated_gaussian",
+          "layer_idx": 20,
+          "baseline_x": true,
+          "patched_x": true,
+          "baseline_margin": 9.5,
+          "patched_margin": 5.75,
+          "verdict_baseline": "UNCERTAIN",
+          "verdict_patched": "UNCERTAIN",
+          "x_flipped_true_to_false": false,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": true
+        }
+      ],
+      "gaussian_n_flips": 0,
+      "contradiction_donor_into_falsex": [
+        {
+          "recipient": "TF_E3",
+          "donor": "TF_C1",
+          "donor_kind": "unrelated_true_contradiction_donor",
+          "layer_idx": 20,
+          "baseline_x": true,
+          "patched_x": true,
+          "baseline_margin": 6.875,
+          "patched_margin": 12.875,
+          "verdict_baseline": "CONTRADICTION",
+          "verdict_patched": "CONTRADICTION",
+          "x_flipped_true_to_false": false,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": true
+        },
+        {
+          "recipient": "BC11_E3",
+          "donor": "TF_C1",
+          "donor_kind": "unrelated_true_contradiction_donor",
+          "layer_idx": 20,
+          "baseline_x": true,
+          "patched_x": true,
+          "baseline_margin": 2.75,
+          "patched_margin": 12.875,
+          "verdict_baseline": "CONTRADICTION",
+          "verdict_patched": "CONTRADICTION",
+          "x_flipped_true_to_false": false,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": true
+        },
+        {
+          "recipient": "TF_E4",
+          "donor": "TF_C1",
+          "donor_kind": "unrelated_true_contradiction_donor",
+          "layer_idx": 20,
+          "baseline_x": true,
+          "patched_x": true,
+          "baseline_margin": 9.5,
+          "patched_margin": 11.875,
+          "verdict_baseline": "UNCERTAIN",
+          "verdict_patched": "UNCERTAIN",
+          "x_flipped_true_to_false": false,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": true
+        }
+      ],
+      "contradiction_donor_n_flips": 0,
+      "reverse_falsex_into_nofail": {
+        "recipient": "BC_E2",
+        "donor": "TF_E3",
+        "donor_kind": "reverse_falsex_into_nofail",
+        "layer_idx": 20,
+        "baseline_x": false,
+        "patched_x": true,
+        "baseline_margin": -14.0,
+        "patched_margin": 4.0,
+        "verdict_baseline": "NOT_SATISFIED",
+        "verdict_patched": "CONTRADICTION",
+        "x_flipped_true_to_false": false,
+        "x_flipped_false_to_true": true,
+        "x_unchanged": false
+      },
+      "reverse_induced_false_x": true,
+      "donor_into_contradiction": [
+        {
+          "recipient": "TF_C1",
+          "donor": "BC_E2",
+          "donor_kind": "donor_into_true_contradiction",
+          "layer_idx": 20,
+          "baseline_x": true,
+          "patched_x": false,
+          "baseline_margin": 12.375,
+          "patched_margin": -12.75,
+          "verdict_baseline": "CONTRADICTION",
+          "verdict_patched": "SATISFIED",
+          "x_flipped_true_to_false": true,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": false
+        },
+        {
+          "recipient": "BC_C1",
+          "donor": "BC_E2",
+          "donor_kind": "donor_into_true_contradiction",
+          "layer_idx": 20,
+          "baseline_x": true,
+          "patched_x": false,
+          "baseline_margin": 13.375,
+          "patched_margin": -11.5,
+          "verdict_baseline": "CONTRADICTION",
+          "verdict_patched": "SATISFIED",
+          "x_flipped_true_to_false": true,
+          "x_flipped_false_to_true": false,
+          "x_unchanged": false
+        }
+      ],
+      "contradiction_stayed_true": false,
+      "donor_into_self": {
+        "recipient": "BC_E2",
+        "donor": "BC_E2",
+        "donor_kind": "donor_into_self",
+        "layer_idx": 20,
+        "baseline_x": false,
+        "patched_x": false,
+        "baseline_margin": -14.0,
+        "patched_margin": -14.0,
+        "verdict_baseline": "NOT_SATISFIED",
+        "verdict_patched": "NOT_SATISFIED",
+        "x_flipped_true_to_false": false,
+        "x_flipped_false_to_true": false,
+        "x_unchanged": true
+      },
+      "self_stayed_false": true
+    }
+  },
+  "gate_patch_depth_sweep": {
+    "pass": true,
+    "earliest_sufficient_layer": 20,
+    "n_layers_model": 28,
+    "specificity_soft_pass": false,
+    "note": "depth YES \u2014 earliest sufficient L20; specificity soft-fail/incomplete"
+  },
+  "note": "Absolute-layer patch sweep + specificity controls. TF_N1 not used as donor (Qwen Dual wrong_AUTO). Final layer excluded from primary sweep."
+}

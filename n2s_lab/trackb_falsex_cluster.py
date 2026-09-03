@@ -97,6 +97,8 @@ def _repair_run(
     alpha: float = 1.0,
     patch_by_layer: dict[int, torch.Tensor] | None = None,
     store_commit_hidden: bool = False,
+    layer_indices: tuple[int, ...] | None = None,
+    layer_fractions: tuple[float, ...] | None = None,
 ) -> dict[str, Any]:
     evidence = case["evidence"]
     gold = case["expected"]
@@ -113,13 +115,20 @@ def _repair_run(
     )
     user = _repair_user_prompt(evidence, raw, v1.reasons)
 
+    # When patching/capturing absolute layers, hook exactly those indices.
+    if layer_indices is None and patch_by_layer is not None:
+        layer_indices = tuple(sorted(patch_by_layer.keys()))
+
     kwargs: dict[str, Any] = {
         "system": EXTRACT_SYSTEM,
         "user": user,
         "model_id": model_id,
         "max_new_tokens": 400,
-        "layer_fractions": STEER_FRACTIONS,
     }
+    if layer_indices is not None:
+        kwargs["layer_indices"] = layer_indices
+    else:
+        kwargs["layer_fractions"] = layer_fractions or STEER_FRACTIONS
     if intervention == "activation_steer" and vectors_by_layer is not None:
         kwargs["intervention"] = "activation_steer"
         kwargs["activation_steer"] = ActivationSteerSpec(

@@ -33,8 +33,10 @@ Use the Ph9–14 venv — bare `python3` lacks `accelerate` and fails at model l
 
 ```bash
 ./.venv-phase9/bin/python run_trackb_falsex.py --selftest
-./.venv-phase9/bin/python run_trackb_falsex.py                    # full ladder
-./.venv-phase9/bin/python run_trackb_falsex.py --patch-frac 0.75  # depth-restricted patch only
+./.venv-phase9/bin/python run_trackb_falsex.py                    # original ladder
+./.venv-phase9/bin/python run_trackb_falsex.py --patch-frac 0.75
+./.venv-phase9/bin/python run_trackb_falsex.py --patch-depth-sweep  # ChatGPT order step 1
+./.venv-phase9/bin/python run_trackb_falsex.py --bce1-alpha-sweep   # step 2 (frozen Ph10)
 ```
 
 ## Gates (soft)
@@ -103,23 +105,62 @@ Re-run at **0.75 only**, leaving the remaining blocks free to recompute:
 Patched margins differ from the donor's `−14.0`, so the network genuinely recomputed:
 **mid-depth donor activation is sufficient to flip the commit downstream** (3/3, soft, n=3).
 
+### Patch-depth sweep (absolute layers) — earliest sufficient **L20**
+
+Qwen2.5-7B has **28** blocks. Coarse sweep L4 / L8 / L12 / L16 / L20 / L24 (final L27 excluded).
+Donor = `BC_E2` only (**not** `TF_N1` — Qwen Dual wrong_AUTO).
+
+| Layer | flips | patched margins |
+|-------|-------|-----------------|
+| L4 | 0/3 | 7.0, 3.0, 9.5 |
+| L8 | 0/3 | 6.875, 2.875, 9.625 |
+| L12 | 0/3 | 6.875, 2.75, 9.625 |
+| L16 | 0/3 | 7.25, 2.25, 9.75 |
+| **L20** | **3/3** | **−11.375, −11.5, −11.375** (≠ donor −14.0) |
+| L24 | 3/3 | −12.625, −12.625, −11.625 |
+
+Rescue **starts at L20** (same site as Ph9B 0.75 / idx 20). Earlier layers do not carry a sufficient donor state.
+
+### Specificity controls @ L20 — mixed
+
+| Control | Result | Read |
+|---------|--------|------|
+| Gaussian matched-norm → false-X | **0/3** flips | not “any vector works” |
+| True-contradiction (`TF_C1`) → false-X | **0/3** flips (margins **up**) | contradiction state does not rescue |
+| Reverse: `TF_E3` → `BC_E2` | **induces** X=true (margin −14 → +4) | false-X state is causally sufficient both ways |
+| `BC_E2` → `TF_C1` / `BC_C1` | **destroys** true X (both flipped false) | donor is a general push-to-false, not class-selective |
+| `BC_E2` → self | stays false | sanity |
+
+Soft specificity gate **failed** because contradictions were not preserved. Patch at L20 is **causally real** but **not a contradiction-preserving temporal editor**.
+
+### Frozen BC_E1 α-sweep — transfer failure at α=4 was **magnitude**
+
+| α | flips | mean Δmargin | contra stay | nofail `BC_E2` |
+|---|-------|--------------|-------------|----------------|
+| 1 | 0/3 | −0.21 | yes | yes |
+| 2 | 0/3 | −0.50 | yes | yes |
+| 4 | 0/3 | −1.21 | yes | yes |
+| 8 | **1/3** (`BC11_E3`) | −2.54 | yes | yes |
+| 16 | **1/3** (`BC11_E3`) | −5.96 | yes | yes |
+| 32 | **3/3** | −14.75 | **no** (`TF_C1` flipped) | yes |
+
+BC_E1 captured part of a shared direction; α=4 was underpowered. α=8–16 is the only band that flips a target **without** breaking contradiction controls (only the easiest case, `BC11_E3`, margin 2.75). α=32 is a sledgehammer.
+
 ### Reading
 
-The temporal distinction is **decodable and manipulable at layer 0.75**, but the frozen Ph10
-steering direction is the wrong instrument for this cluster at α=4 — too weak, and fitted on
-BC_E1. Patch (sufficiency) succeeds where steer (targeted edit) fails.
+Localize: L20 is the earliest sufficient patch site.  
+Characterize old intervention: Ph10 vector is the right *sign*, wrong *strength/specificity* for the family.  
+Do **not** yet claim a semantic temporal-vs-contradiction editor — L20 patch fails to preserve true contradictions.
 
 ### Artifacts
 
-`artifacts/trackb-falsex-cluster-panel.json` · `artifacts/trackb-falsex-patch-0_75-panel.json`
-· logs under `artifacts/logs/`
+`artifacts/trackb-falsex-cluster-panel.json` · `artifacts/trackb-falsex-patch-0_75-panel.json` · `artifacts/trackb-falsex-patch-depth-panel.json` · `artifacts/trackb-falsex-bce1-alpha-panel.json`
 
 ### Open
 
-1. α sweep on this cluster (Ph10 grid reached 32; only α=4 tested here).
-2. Refit a steering vector **on this cluster** rather than reusing the BC_E1 vector.
-3. Layer sweep for patch (0.25 / 0.5) to find the earliest sufficient depth.
-4. Only after an intervention is frozen: score `temporal-family-test.json`.
+1. Family-level steering vector at **L20**: mean(clean temporal-change commits) − mean(true same-state contradiction commits). **Not** mean(3 failures)−`BC_E2`. **Not** `TF_N1` as clean negative. Collect HF baselines for `TF_E1`/`TF_E2`/`TF_E5` first (must be X=false to count as clean class A).
+2. α-sweep that family vector; freeze best on **dev only**.
+3. Then score `temporal-family-test.json`. Do not modify G3.
 
 ## Claim hygiene
 
