@@ -1,0 +1,111 @@
+{
+  "kind": "trackb_falsex_family_vector_l20",
+  "protocol": "docs/TRACKB-FALSEX-CLUSTER.md",
+  "timestamp": "2026-09-03T18:47:57.747371+00:00",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "case_source": "data/temporal-family-dev.json",
+  "test_set_not_used": "data/temporal-family-test.json",
+  "construction": {
+    "layer_idx": 20,
+    "class_a_definition": "gold SATISFIED temporal-change AND HF commit X=false (candidates ['TF_E1', 'TF_E2', 'TF_E5'])",
+    "class_b_definition": "gold CONTRADICTION AND HF commit X=true (['TF_C1', 'BC_C1'])",
+    "class_a_kept": [],
+    "class_b_kept": [
+      "TF_C1",
+      "BC_C1"
+    ],
+    "excluded_from_contrast": [
+      "TF_N1",
+      "TF_E3",
+      "BC11_E3",
+      "TF_E4"
+    ],
+    "formula": "unit(mean(A) \u2212 mean(B)) at L20",
+    "n_class_a": 0,
+    "n_class_b": 2,
+    "error": "need \u22652 clean class A and \u22652 class B to fit"
+  },
+  "baselines": {
+    "TF_E1": {
+      "repair_final_x": true,
+      "margin": 4.125,
+      "verdict": "CONTRADICTION",
+      "in_class_a": false,
+      "in_class_b": false
+    },
+    "TF_E2": {
+      "repair_final_x": true,
+      "margin": 3.375,
+      "verdict": "CONTRADICTION",
+      "in_class_a": false,
+      "in_class_b": false
+    },
+    "TF_E5": {
+      "repair_final_x": true,
+      "margin": 5.25,
+      "verdict": "CONTRADICTION",
+      "in_class_a": false,
+      "in_class_b": false
+    },
+    "TF_C1": {
+      "repair_final_x": true,
+      "margin": 12.375,
+      "verdict": "CONTRADICTION",
+      "in_class_a": false,
+      "in_class_b": true
+    },
+    "BC_C1": {
+      "repair_final_x": true,
+      "margin": 13.375,
+      "verdict": "CONTRADICTION",
+      "in_class_a": false,
+      "in_class_b": true
+    },
+    "TF_E3": {
+      "repair_final_x": true,
+      "margin": 6.875,
+      "verdict": "CONTRADICTION",
+      "in_class_a": false,
+      "in_class_b": false
+    },
+    "BC11_E3": {
+      "repair_final_x": true,
+      "margin": 2.75,
+      "verdict": "CONTRADICTION",
+      "in_class_a": false,
+      "in_class_b": false
+    },
+    "TF_E4": {
+      "repair_final_x": true,
+      "margin": 9.5,
+      "verdict": "UNCERTAIN",
+      "in_class_a": false,
+      "in_class_b": false
+    },
+    "BC_E2": {
+      "repair_final_x": false,
+      "margin": -14.0,
+      "verdict": "NOT_SATISFIED",
+      "in_class_a": false,
+      "in_class_b": false
+    }
+  },
+  "alpha_grid": [
+    0.0,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0
+  ],
+  "by_alpha": {},
+  "gate_family_vector": {
+    "pass": false,
+    "fitted": false,
+    "any_target_flip": false,
+    "best_safe_alpha": null,
+    "note": "need \u22652 clean class A and \u22652 class B to fit"
+  },
+  "note": "Semantic family direction at L20. Failures TF_E3/BC11_E3/TF_E4 are eval-only, not in the contrast. TF_N1 excluded."
+}

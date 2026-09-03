@@ -27,6 +27,17 @@
 
 ## Log (newest first)
 
+### 2026-09-03 — Family L20 vector: empty class A (cannot fit)
+
+| | |
+|--|--|
+| **Track** | B |
+| **Activity** | Attempted semantic contrast at L20: mean(clean temporal-change, X=false) − mean(true contradiction, X=true). Candidates A=`TF_E1/E2/E5`; B=`TF_C1/BC_C1`. Did **not** put {TF_E3, BC11_E3, TF_E4} or `TF_N1` in the contrast. |
+| **Result** | **Class A = ∅.** HF 7B commits false X on **all** gold-SATISFIED temporal-change notes collected (E1 m=4.125, E2 m=3.375, E5 m=5.25, plus original cluster). Class B intact. **No vector fitted, no α-sweep.** Gate NO. |
+| **Artifacts** | `artifacts/trackb-falsex-family-l20-panel.json` · `n2s_lab/trackb_family_vector.py` · [TRACKB-FALSEX-CLUSTER.md](./TRACKB-FALSEX-CLUSTER.md) |
+| **Decision** | Do not fall back to fail−`BC_E2`. Need new clean class-A notes (or a model that commits some SATISFIED cases as X=false) before a family-level editor. G3 untouched; test sealed. |
+| **Commit** | _(pending push)_ |
+
 ### 2026-09-03 — Frozen BC_E1 α-sweep: α=4 miss was magnitude
 
 | | |

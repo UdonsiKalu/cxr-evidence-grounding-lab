@@ -45,6 +45,11 @@ def main() -> None:
         action="store_true",
         help="α-sweep frozen Ph10 BC_E1 vector on cluster (step 2, before refit)",
     )
+    parser.add_argument(
+        "--family-vector",
+        action="store_true",
+        help="fit L20 semantic family vector (temporal-change vs contradiction) and α-sweep",
+    )
     args = parser.parse_args()
 
     if args.selftest:
@@ -66,11 +71,13 @@ def main() -> None:
         from n2s_lab.hf_intervene import ActivationPatchSpec, ActivationSteerSpec  # noqa: F401
         from n2s_lab.trackb_patch_depth import DEFAULT_SWEEP_LAYERS  # noqa: F401
         from n2s_lab.trackb_bce1_alpha import SWEEP_ALPHAS  # noqa: F401
+        from n2s_lab.trackb_family_vector import CLASS_A_CANDIDATES, FAMILY_LAYER  # noqa: F401
 
         print(
             f"trackb selftest OK — targets={list(TARGETS)} "
             f"contra={list(CONTRA_CONTROLS)} nofail={list(NOFAIL_CONTROLS)} "
             f"sweep_L={list(DEFAULT_SWEEP_LAYERS)} bce1_alphas={list(SWEEP_ALPHAS)} "
+            f"family_L={FAMILY_LAYER} class_a={list(CLASS_A_CANDIDATES)} "
             f"test_sealed={TEMPORAL_FAMILY_TEST_PATH.name}"
         )
         return
@@ -110,6 +117,30 @@ def main() -> None:
                 f"contra_ok={block.get('contra_stay_true')} "
                 f"nofail_ok={block.get('nofail_BC_E2_stay_false')}"
             )
+        return
+
+    if args.family_vector:
+        from n2s_lab.trackb_family_vector import run_family_vector  # noqa: E402
+
+        panel = run_family_vector()
+        gate = panel["gate_family_vector"]
+        cons = panel["construction"]
+        print(f"\nwrote {panel['_artifact']}")
+        print(f"family L20: {'YES' if gate['pass'] else 'NO'} — {gate['note']}")
+        print(f"  class A kept={cons.get('class_a_kept')} class B kept={cons.get('class_b_kept')}")
+        print(f"  best_safe_α={gate.get('best_safe_alpha')} any_flip={gate.get('any_target_flip')}")
+        for a, block in panel.get("by_alpha", {}).items():
+            if a == "0":
+                continue
+            print(
+                f"  α={a}: flips={block['n_target_flips']}/3 "
+                f"mean_Δmargin={block.get('mean_target_margin_delta')} "
+                f"contra_ok={block.get('contra_stay_true')} "
+                f"nofail_ok={block.get('nofail_BC_E2_stay_false')} "
+                f"safe={block.get('safe_family_edit')}"
+            )
+        if not gate["pass"]:
+            sys.exit(2)
         return
 
     if args.patch_frac:

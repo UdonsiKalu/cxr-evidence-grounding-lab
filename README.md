@@ -195,7 +195,7 @@ Sibling UIs (separate folders; share this lab’s `artifacts/` + `n2s_lab/`):
 | Phase-7 temporal-family **test** (frozen; score after design) | `python3 run_phase7.py --set temporal-test` | Yes (Ollama) |
 | Track B false-X cluster (DEV, HF 7B) | `./.venv-phase9/bin/python run_trackb_falsex.py` | Yes (GPU) |
 | Track B patch-depth + controls | `./.venv-phase9/bin/python run_trackb_falsex.py --patch-depth-sweep` | Yes (GPU) |
-| Track B frozen BC_E1 α-sweep | `./.venv-phase9/bin/python run_trackb_falsex.py --bce1-alpha-sweep` | Yes (GPU) |
+| Track B family L20 vector (DEV) | `./.venv-phase9/bin/python run_trackb_falsex.py --family-vector` | Yes (GPU) |
 | Phase-7 oncology replay + evidence | `python3 run_phase7.py --set phase4` | Yes |
 | Phase-8 ladder selftest | `python3 run_phase8.py --selftest` | No |
 | Phase-8 ladder (14B + non-coder 32B) | `python3 run_phase8.py --set both` | Yes |

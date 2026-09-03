@@ -36,7 +36,7 @@ Use the Ph9–14 venv — bare `python3` lacks `accelerate` and fails at model l
 ./.venv-phase9/bin/python run_trackb_falsex.py                    # original ladder
 ./.venv-phase9/bin/python run_trackb_falsex.py --patch-frac 0.75
 ./.venv-phase9/bin/python run_trackb_falsex.py --patch-depth-sweep  # ChatGPT order step 1
-./.venv-phase9/bin/python run_trackb_falsex.py --bce1-alpha-sweep   # step 2 (frozen Ph10)
+./.venv-phase9/bin/python run_trackb_falsex.py --family-vector      # step 3 (may not fit)
 ```
 
 ## Gates (soft)
@@ -146,20 +146,40 @@ Soft specificity gate **failed** because contradictions were not preserved. Patc
 
 BC_E1 captured part of a shared direction; α=4 was underpowered. α=8–16 is the only band that flips a target **without** breaking contradiction controls (only the easiest case, `BC11_E3`, margin 2.75). α=32 is a sledgehammer.
 
+### Family-level L20 vector — **could not fit** (empty class A)
+
+Attempted `unit(mean(A) − mean(B))` at L20 with:
+
+- **Class A** = gold SATISFIED temporal-change **and** HF commit X=false (`TF_E1`, `TF_E2`, `TF_E5`)
+- **Class B** = gold CONTRADICTION **and** HF commit X=true (`TF_C1`, `BC_C1`)
+- Failures `{TF_E3, BC11_E3, TF_E4}` **eval-only** (not in the contrast). `TF_N1` excluded.
+
+| Case | intended | HF X | margin | kept |
+|------|----------|------|--------|------|
+| TF_E1 | class A | **true** | 4.125 | no |
+| TF_E2 | class A | **true** | 3.375 | no |
+| TF_E5 | class A | **true** | 5.25 | no |
+| TF_C1 / BC_C1 | class B | true | 12.375 / 13.375 | yes |
+| BC_E2 | nofail control | false | −14.0 | not in contrast |
+
+**Class A kept = ∅.** On HF `Qwen2.5-7B-Instruct`, *every* gold-SATISFIED temporal-change note we have in DEV commits false `contradiction.present`. The “three-case cluster” is the whole SATISFIED family, not a subset. Fitting `mean(3 failures) − BC_E2` was **not** done (that is the overfit contrast we rejected).
+
+No α-sweep. No intervention frozen. Test set still sealed.
+
 ### Reading
 
 Localize: L20 is the earliest sufficient patch site.  
 Characterize old intervention: Ph10 vector is the right *sign*, wrong *strength/specificity* for the family.  
-Do **not** yet claim a semantic temporal-vs-contradiction editor — L20 patch fails to preserve true contradictions.
+Semantic family direction: **blocked on current DEV** — no clean temporal-change commits to average. L20 patch remains causal but not class-selective.
 
 ### Artifacts
 
-`artifacts/trackb-falsex-cluster-panel.json` · `artifacts/trackb-falsex-patch-0_75-panel.json` · `artifacts/trackb-falsex-patch-depth-panel.json` · `artifacts/trackb-falsex-bce1-alpha-panel.json`
+`artifacts/trackb-falsex-cluster-panel.json` · `artifacts/trackb-falsex-patch-0_75-panel.json` · `artifacts/trackb-falsex-patch-depth-panel.json` · `artifacts/trackb-falsex-bce1-alpha-panel.json` · `artifacts/trackb-falsex-family-l20-panel.json`
 
 ### Open
 
-1. Family-level steering vector at **L20**: mean(clean temporal-change commits) − mean(true same-state contradiction commits). **Not** mean(3 failures)−`BC_E2`. **Not** `TF_N1` as clean negative. Collect HF baselines for `TF_E1`/`TF_E2`/`TF_E5` first (must be X=false to count as clean class A).
-2. α-sweep that family vector; freeze best on **dev only**.
+1. Need **clean class A** on HF 7B: new DEV wording for temporal-change that this model actually commits X=false, **or** a different HF model that gets some SATISFIED cases right — then refit L20. Do **not** substitute no-failure (`BC_E2`) as class A for a temporal-vs-contradiction claim.
+2. Freeze best intervention on DEV only after a vector actually fits.
 3. Then score `temporal-family-test.json`. Do not modify G3.
 
 ## Claim hygiene

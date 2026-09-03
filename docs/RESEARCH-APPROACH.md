@@ -69,7 +69,7 @@ Use a method when it answers a gate or transfer question — not as a checklist 
 | **Probing** | **Done** — false-X vs contradiction separable at commit (gap 0.072, LOO 1.00, n=5) | Scale n; hold-out probe |
 | Localization | **Done** Ph9B | Reuse sites; refine per family |
 | **Activation patching** | **Done** — earliest sufficient **L20** (3/3); L4–L16 0/3; not class-selective (destroys true X) | Family-level steer at L20; see [TRACKB-FALSEX-CLUSTER.md](./TRACKB-FALSEX-CLUSTER.md) |
-| **RepEng / steering** | **Done** Ph10; α=4 0/3; **α=8–16 flips 1/3** (`BC11_E3`); α=32 3/3 but breaks contra | Semantic family vector at L20 (not 3-fail−control) |
+| **RepEng / steering** | **Done** Ph10; α=4 0/3; **α=8–16 flips 1/3** (`BC11_E3`); α=32 3/3 but breaks contra; **family L20 contrast cannot fit** (HF 7B false-X on all SATISFIED temporal-change DEV notes) | New clean class-A wording or different model; do not use BC_E2 as class A |
 | **Ablation** | **Done** α=−4 — sign-consistent, underpowered | Larger \|α\|; cluster-fitted direction |
 | **Generalization + controls** | **Partial** Ph11 | In-family ~50–200 + paraphrase; then 7B→14B |
 | Intervention frameworks (pyvene / TL) | Optional later | Refactor when science stable; hooks OK now |
