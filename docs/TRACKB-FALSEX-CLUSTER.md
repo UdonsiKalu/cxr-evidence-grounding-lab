@@ -37,6 +37,7 @@ Use the Ph9–14 venv — bare `python3` lacks `accelerate` and fails at model l
 ./.venv-phase9/bin/python run_trackb_falsex.py --patch-frac 0.75
 ./.venv-phase9/bin/python run_trackb_falsex.py --patch-depth-sweep  # ChatGPT order step 1
 ./.venv-phase9/bin/python run_trackb_falsex.py --family-vector      # step 3 (may not fit)
+./.venv-phase9/bin/python run_trackb_falsex.py --expand-sequence    # expand panel 7B→(14B if needed)
 ```
 
 ## Gates (soft)
@@ -166,6 +167,8 @@ Attempted `unit(mean(A) − mean(B))` at L20 with:
 
 No α-sweep. No intervention frozen. Test set still sealed.
 
+**Update 2026-09-03:** expand panel (`TX_*`, n=30) found **n_A=4**, fitted L20 family vector, safe α≤16 with 3/8 weak-fail flips — see [TRACKB-EXPAND-PANEL.md](./TRACKB-EXPAND-PANEL.md). Original `TF_*` Class A emptiness stands; expand did not rewrite those notes.
+
 ### Reading
 
 Localize: L20 is the earliest sufficient patch site.  
@@ -178,8 +181,8 @@ Semantic family direction: **blocked on current DEV** — no clean temporal-chan
 
 ### Open
 
-1. Need **clean class A** on HF 7B: new DEV wording for temporal-change that this model actually commits X=false, **or** a different HF model that gets some SATISFIED cases right — then refit L20. Do **not** substitute no-failure (`BC_E2`) as class A for a temporal-vs-contradiction claim.
-2. Freeze best intervention on DEV only after a vector actually fits.
+1. ~~Need clean class A~~ — expand panel has n_A=4 on 7B; see [TRACKB-EXPAND-PANEL.md](./TRACKB-EXPAND-PANEL.md).
+2. LOO + specificity on the expand L20 vector at α=8/16 before freeze.
 3. Then score `temporal-family-test.json`. Do not modify G3.
 
 ## Claim hygiene

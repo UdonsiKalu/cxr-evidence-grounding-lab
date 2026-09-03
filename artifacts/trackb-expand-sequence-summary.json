@@ -1,0 +1,1014 @@
+{
+  "stage": "7b_fit",
+  "collect_7b": {
+    "kind": "trackb_expand_collect",
+    "timestamp": "2026-09-03T19:30:25.556738+00:00",
+    "model_id": "Qwen/Qwen2.5-7B-Instruct",
+    "case_source": "temporal-family-dev-expand.json",
+    "test_set_not_used": "temporal-family-test.json",
+    "n_layers_hint": 28,
+    "layer_indices": [
+      20
+    ],
+    "predeclared": {
+      "enough": "n_A>=3 and n_B>=2",
+      "nearly_empty": "n_A<=2"
+    },
+    "classes": {
+      "class_a": [
+        "TX_E08",
+        "TX_E13",
+        "TX_E21",
+        "TX_E23"
+      ],
+      "class_b": [
+        "TX_C01",
+        "TX_C02",
+        "TX_C03",
+        "TX_C04"
+      ],
+      "fail_temporal": [
+        "TX_E01",
+        "TX_E02",
+        "TX_E03",
+        "TX_E04",
+        "TX_E05",
+        "TX_E06",
+        "TX_E07",
+        "TX_E09",
+        "TX_E10",
+        "TX_E11",
+        "TX_E12",
+        "TX_E14",
+        "TX_E15",
+        "TX_E16",
+        "TX_E17",
+        "TX_E18",
+        "TX_E19",
+        "TX_E20",
+        "TX_E22",
+        "TX_E24"
+      ],
+      "nofail": [
+        "TX_N01",
+        "TX_N02"
+      ]
+    },
+    "n_class_a": 4,
+    "n_class_b": 4,
+    "enough_to_fit": true,
+    "nearly_empty_class_a": false,
+    "baselines": {
+      "TX_E01": {
+        "case_id": "TX_E01",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "therapy_worked_then_failed",
+        "repair_final_x": true,
+        "margin": 5.5,
+        "verdict": "CONTRADICTION",
+        "usable": true
+      },
+      "TX_E02": {
+        "case_id": "TX_E02",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "stable_then_progression",
+        "repair_final_x": true,
+        "margin": 5.25,
+        "verdict": "CONTRADICTION",
+        "usable": true
+      },
+      "TX_E03": {
+        "case_id": "TX_E03",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "therapy_worked_then_failed",
+        "repair_final_x": true,
+        "margin": 9.0,
+        "verdict": "CONTRADICTION",
+        "usable": true
+      },
+      "TX_E04": {
+        "case_id": "TX_E04",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "prior_neg_then_pos",
+        "repair_final_x": true,
+        "margin": 1.875,
+        "verdict": "CONTRADICTION",
+        "usable": true
+      },
+      "TX_E05": {
+        "case_id": "TX_E05",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "possible_then_confirmed_progression",
+        "repair_final_x": true,
+        "margin": 0.0,
+        "verdict": "UNCERTAIN",
+        "usable": true
+      },
+      "TX_E06": {
+        "case_id": "TX_E06",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "therapy_worked_then_failed",
+        "repair_final_x": true,
+        "margin": 0.0,
+        "verdict": "CONTRADICTION",
+        "usable": true
+      },
+      "TX_E07": {
+        "case_id": "TX_E07",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "stable_then_progression",
+        "repair_final_x": true,
+        "margin": 6.875,
+        "verdict": "CONTRADICTION",
+        "usable": true
+      },
+      "TX_E08": {
+        "case_id": "TX_E08",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "therapy_worked_then_failed",
+        "repair_final_x": false,
+        "margin": -2.375,
+        "verdict": "SATISFIED",
+        "usable": true
+      },
+      "TX_E09": {
+        "case_id": "TX_E09",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "prior_neg_then_pos",
+        "repair_final_x": true,
+        "margin": 5.375,
+        "verdict": "CONTRADICTION",
+        "usable": true
+      },
+      "TX_E10": {
+        "case_id": "TX_E10",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "therapy_worked_then_failed",
+        "repair_final_x": true,
+        "margin": 1.5,
+        "verdict": "CONTRADICTION",
+        "usable": true
+      },
+      "TX_E11": {
+        "case_id": "TX_E11",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "stable_then_progression",
+        "repair_final_x": true,
+        "margin": 5.5,
+        "verdict": "CONTRADICTION",
+        "usable": true
+      },
+      "TX_E12": {
+        "case_id": "TX_E12",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "possible_then_confirmed_progression",
+        "repair_final_x": true,
+        "margin": 2.0,
+        "verdict": "CONTRADICTION",
+        "usable": true
+      },
+      "TX_E13": {
+        "case_id": "TX_E13",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "therapy_worked_then_failed",
+        "repair_final_x": false,
+        "margin": -0.25,
+        "verdict": "SATISFIED",
+        "usable": true
+      },
+      "TX_E14": {
+        "case_id": "TX_E14",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "prior_neg_then_pos",
+        "repair_final_x": true,
+        "margin": 6.5,
+        "verdict": "CONTRADICTION",
+        "usable": true
+      },
+      "TX_E15": {
+        "case_id": "TX_E15",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "stable_then_progression",
+        "repair_final_x": true,
+        "margin": 6.5,
+        "verdict": "CONTRADICTION",
+        "usable": true
+      },
+      "TX_E16": {
+        "case_id": "TX_E16",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "therapy_worked_then_failed",
+        "repair_final_x": true,
+        "margin": 1.375,
+        "verdict": "CONTRADICTION",
+        "usable": true
+      },
+      "TX_E17": {
+        "case_id": "TX_E17",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "possible_then_confirmed_progression",
+        "repair_final_x": true,
+        "margin": 4.625,
+        "verdict": "UNCERTAIN",
+        "usable": true
+      },
+      "TX_E18": {
+        "case_id": "TX_E18",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "prior_neg_then_pos",
+        "repair_final_x": true,
+        "margin": 5.125,
+        "verdict": "CONTRADICTION",
+        "usable": true
+      },
+      "TX_E19": {
+        "case_id": "TX_E19",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "therapy_worked_then_failed",
+        "repair_final_x": true,
+        "margin": 5.125,
+        "verdict": "CONTRADICTION",
+        "usable": true
+      },
+      "TX_E20": {
+        "case_id": "TX_E20",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "stable_then_progression",
+        "repair_final_x": true,
+        "margin": 4.75,
+        "verdict": "CONTRADICTION",
+        "usable": true
+      },
+      "TX_E21": {
+        "case_id": "TX_E21",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "therapy_worked_then_failed",
+        "repair_final_x": false,
+        "margin": -0.75,
+        "verdict": "SATISFIED",
+        "usable": true
+      },
+      "TX_E22": {
+        "case_id": "TX_E22",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "prior_neg_then_pos",
+        "repair_final_x": true,
+        "margin": 3.0,
+        "verdict": "CONTRADICTION",
+        "usable": true
+      },
+      "TX_E23": {
+        "case_id": "TX_E23",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "possible_then_confirmed_progression",
+        "repair_final_x": false,
+        "margin": -0.5,
+        "verdict": "UNCERTAIN",
+        "usable": true
+      },
+      "TX_E24": {
+        "case_id": "TX_E24",
+        "gold": "SATISFIED",
+        "role": "expand_temporal",
+        "subtype": "therapy_worked_then_failed",
+        "repair_final_x": true,
+        "margin": 8.25,
+        "verdict": "CONTRADICTION",
+        "usable": true
+      },
+      "TX_C01": {
+        "case_id": "TX_C01",
+        "gold": "CONTRADICTION",
+        "role": "expand_contradiction",
+        "subtype": "true_contradiction_control",
+        "repair_final_x": true,
+        "margin": 10.375,
+        "verdict": "CONTRADICTION",
+        "usable": true
+      },
+      "TX_C02": {
+        "case_id": "TX_C02",
+        "gold": "CONTRADICTION",
+        "role": "expand_contradiction",
+        "subtype": "true_contradiction_control",
+        "repair_final_x": true,
+        "margin": 7.25,
+        "verdict": "CONTRADICTION",
+        "usable": true
+      },
+      "TX_C03": {
+        "case_id": "TX_C03",
+        "gold": "CONTRADICTION",
+        "role": "expand_contradiction",
+        "subtype": "true_contradiction_control",
+        "repair_final_x": true,
+        "margin": 15.0,
+        "verdict": "CONTRADICTION",
+        "usable": true
+      },
+      "TX_C04": {
+        "case_id": "TX_C04",
+        "gold": "CONTRADICTION",
+        "role": "expand_contradiction",
+        "subtype": "true_contradiction_control",
+        "repair_final_x": true,
+        "margin": 11.625,
+        "verdict": "CONTRADICTION",
+        "usable": true
+      },
+      "TX_N01": {
+        "case_id": "TX_N01",
+        "gold": "NOT_SATISFIED",
+        "role": "expand_nofail",
+        "subtype": "no_failure_control",
+        "repair_final_x": false,
+        "margin": -13.625,
+        "verdict": "NOT_SATISFIED",
+        "usable": true
+      },
+      "TX_N02": {
+        "case_id": "TX_N02",
+        "gold": "NOT_SATISFIED",
+        "role": "expand_nofail",
+        "subtype": "no_failure_control",
+        "repair_final_x": false,
+        "margin": -12.5,
+        "verdict": "NOT_SATISFIED",
+        "usable": true
+      }
+    },
+    "note": "Wording frozen before this collect. G3 untouched."
+  },
+  "fit": {
+    "kind": "trackb_expand_family_fit",
+    "timestamp": "2026-09-03T20:12:47.326440+00:00",
+    "model_id": "Qwen/Qwen2.5-7B-Instruct",
+    "class_a": [
+      "TX_E08",
+      "TX_E13",
+      "TX_E21",
+      "TX_E23"
+    ],
+    "class_b": [
+      "TX_C01",
+      "TX_C02",
+      "TX_C03",
+      "TX_C04"
+    ],
+    "sweep": {
+      "layer_idx": 20,
+      "formula": "unit(mean(A)-mean(B))",
+      "vector_norm_raw": 33.79888916015625,
+      "by_alpha": {
+        "1.0": {
+          "alpha": 1.0,
+          "n_target_flips": 2,
+          "n_eval": 8,
+          "contra_stay_true": true,
+          "nofail_stay_false": true,
+          "safe": true,
+          "results": {
+            "TX_E01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.5,
+              "steered_margin": 5.5,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.25,
+              "steered_margin": 5.0,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 9.0,
+              "steered_margin": 8.75,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E04": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 1.875,
+              "steered_margin": 1.625,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E05": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -0.25,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E06": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -0.25,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E07": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 6.875,
+              "steered_margin": 6.75,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E09": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.375,
+              "steered_margin": 5.125,
+              "x_flipped_true_to_false": false
+            }
+          },
+          "controls": {
+            "TX_C01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 10.375,
+              "steered_margin": 10.375
+            },
+            "TX_C02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 7.25,
+              "steered_margin": 6.75
+            },
+            "TX_C03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 15.0,
+              "steered_margin": 14.625
+            },
+            "TX_C04": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 11.625,
+              "steered_margin": 11.0
+            },
+            "TX_N01": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -13.625,
+              "steered_margin": -13.625
+            },
+            "TX_N02": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -12.5,
+              "steered_margin": -12.5
+            }
+          }
+        },
+        "2.0": {
+          "alpha": 2.0,
+          "n_target_flips": 2,
+          "n_eval": 8,
+          "contra_stay_true": true,
+          "nofail_stay_false": true,
+          "safe": true,
+          "results": {
+            "TX_E01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.5,
+              "steered_margin": 5.25,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.25,
+              "steered_margin": 4.625,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 9.0,
+              "steered_margin": 8.375,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E04": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 1.875,
+              "steered_margin": 1.25,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E05": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -0.5,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E06": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -0.5,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E07": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 6.875,
+              "steered_margin": 6.375,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E09": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.375,
+              "steered_margin": 5.0,
+              "x_flipped_true_to_false": false
+            }
+          },
+          "controls": {
+            "TX_C01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 10.375,
+              "steered_margin": 9.75
+            },
+            "TX_C02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 7.25,
+              "steered_margin": 6.5
+            },
+            "TX_C03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 15.0,
+              "steered_margin": 14.0
+            },
+            "TX_C04": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 11.625,
+              "steered_margin": 10.625
+            },
+            "TX_N01": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -13.625,
+              "steered_margin": -13.625
+            },
+            "TX_N02": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -12.5,
+              "steered_margin": -12.625
+            }
+          }
+        },
+        "4.0": {
+          "alpha": 4.0,
+          "n_target_flips": 2,
+          "n_eval": 8,
+          "contra_stay_true": true,
+          "nofail_stay_false": true,
+          "safe": true,
+          "results": {
+            "TX_E01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.5,
+              "steered_margin": 4.875,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.25,
+              "steered_margin": 4.0,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 9.0,
+              "steered_margin": 8.0,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E04": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 1.875,
+              "steered_margin": 0.75,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E05": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -0.875,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E06": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -1.125,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E07": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 6.875,
+              "steered_margin": 5.75,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E09": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.375,
+              "steered_margin": 4.375,
+              "x_flipped_true_to_false": false
+            }
+          },
+          "controls": {
+            "TX_C01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 10.375,
+              "steered_margin": 9.125
+            },
+            "TX_C02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 7.25,
+              "steered_margin": 5.625
+            },
+            "TX_C03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 15.0,
+              "steered_margin": 13.25
+            },
+            "TX_C04": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 11.625,
+              "steered_margin": 10.0
+            },
+            "TX_N01": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -13.625,
+              "steered_margin": -13.625
+            },
+            "TX_N02": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -12.5,
+              "steered_margin": -12.75
+            }
+          }
+        },
+        "8.0": {
+          "alpha": 8.0,
+          "n_target_flips": 3,
+          "n_eval": 8,
+          "contra_stay_true": true,
+          "nofail_stay_false": true,
+          "safe": true,
+          "results": {
+            "TX_E01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.5,
+              "steered_margin": 3.875,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.25,
+              "steered_margin": 2.75,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 9.0,
+              "steered_margin": 6.75,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E04": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 1.875,
+              "steered_margin": -0.25,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E05": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -1.75,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E06": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -2.0,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E07": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 6.875,
+              "steered_margin": 4.625,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E09": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.375,
+              "steered_margin": 3.375,
+              "x_flipped_true_to_false": false
+            }
+          },
+          "controls": {
+            "TX_C01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 10.375,
+              "steered_margin": 7.875
+            },
+            "TX_C02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 7.25,
+              "steered_margin": 4.5
+            },
+            "TX_C03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 15.0,
+              "steered_margin": 11.625
+            },
+            "TX_C04": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 11.625,
+              "steered_margin": 8.5
+            },
+            "TX_N01": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -13.625,
+              "steered_margin": -13.75
+            },
+            "TX_N02": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -12.5,
+              "steered_margin": -12.75
+            }
+          }
+        },
+        "16.0": {
+          "alpha": 16.0,
+          "n_target_flips": 3,
+          "n_eval": 8,
+          "contra_stay_true": true,
+          "nofail_stay_false": true,
+          "safe": true,
+          "results": {
+            "TX_E01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.5,
+              "steered_margin": 2.125,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.25,
+              "steered_margin": 0.375,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 9.0,
+              "steered_margin": 5.25,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E04": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 1.875,
+              "steered_margin": -2.0,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E05": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -3.125,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E06": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -3.5,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E07": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 6.875,
+              "steered_margin": 2.375,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E09": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 5.375,
+              "steered_margin": 0.625,
+              "x_flipped_true_to_false": false
+            }
+          },
+          "controls": {
+            "TX_C01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 10.375,
+              "steered_margin": 5.375
+            },
+            "TX_C02": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 7.25,
+              "steered_margin": 2.0
+            },
+            "TX_C03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 15.0,
+              "steered_margin": 8.75
+            },
+            "TX_C04": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 11.625,
+              "steered_margin": 5.875
+            },
+            "TX_N01": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -13.625,
+              "steered_margin": -13.75
+            },
+            "TX_N02": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -12.5,
+              "steered_margin": -13.0
+            }
+          }
+        },
+        "32.0": {
+          "alpha": 32.0,
+          "n_target_flips": 7,
+          "n_eval": 8,
+          "contra_stay_true": false,
+          "nofail_stay_false": true,
+          "safe": false,
+          "results": {
+            "TX_E01": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 5.5,
+              "steered_margin": -1.125,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E02": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 5.25,
+              "steered_margin": -3.125,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 9.0,
+              "steered_margin": 1.375,
+              "x_flipped_true_to_false": false
+            },
+            "TX_E04": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 1.875,
+              "steered_margin": -4.0,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E05": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -4.75,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E06": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 0.0,
+              "steered_margin": -5.375,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E07": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 6.875,
+              "steered_margin": -2.125,
+              "x_flipped_true_to_false": true
+            },
+            "TX_E09": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 5.375,
+              "steered_margin": -3.375,
+              "x_flipped_true_to_false": true
+            }
+          },
+          "controls": {
+            "TX_C01": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 10.375,
+              "steered_margin": 0.75
+            },
+            "TX_C02": {
+              "baseline_x": true,
+              "steered_x": false,
+              "baseline_margin": 7.25,
+              "steered_margin": -2.125
+            },
+            "TX_C03": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 15.0,
+              "steered_margin": 3.75
+            },
+            "TX_C04": {
+              "baseline_x": true,
+              "steered_x": true,
+              "baseline_margin": 11.625,
+              "steered_margin": 1.125
+            },
+            "TX_N01": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -13.625,
+              "steered_margin": -13.875
+            },
+            "TX_N02": {
+              "baseline_x": false,
+              "steered_x": false,
+              "baseline_margin": -12.5,
+              "steered_margin": -13.125
+            }
+          }
+        }
+      }
+    },
+    "test_set_not_used": "temporal-family-test.json"
+  }
+}

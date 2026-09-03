@@ -27,6 +27,17 @@
 
 ## Log (newest first)
 
+### 2026-09-03 — Expand panel: natural Class A on 7B; L20 family vector safe at α≤16
+
+| | |
+|--|--|
+| **Track** | B |
+| **Activity** | Froze `temporal-family-dev-expand.json` (n=30, wording pre-HF). Ran `--expand-sequence`: HF 7B collect → Class A/B thresholds → L20 `unit(mean(A)−mean(B))` α-sweep. Predeclared: fit only if n_A≥3 and n_B≥2. Test sealed; G3 untouched. **Did not** escalate to 14B (7B had enough A). |
+| **Result** | **Class A = 4** (`TX_E08/E13/E21/E23`); **Class B = 4**; fail_temporal = 20/24. Safe flips: α=1–4 → 2/8 (`TX_E05/E06`); α=8–16 → **3/8** (+`TX_E04`) with contra+nofail intact. α=32 → 7/8 but **destroys `TX_C02`**. Hard fails (m≳5) only move partially under safe α. |
+| **Artifacts** | `artifacts/trackb-expand-collect-*.json` · `artifacts/trackb-expand-fit-*-L20.json` · `artifacts/trackb-expand-sequence-summary.json` · [TRACKB-EXPAND-PANEL.md](./TRACKB-EXPAND-PANEL.md) |
+| **Decision** | Prefer **α=8 or 16** as candidate safe family edit (not 32). Next: LOO Class-A stability + specificity before freeze; still **no** `temporal-test` score. 14B deferred. |
+| **Commit** | `ef311bd` / `852fee3` (+ follow-up for results docs) |
+
 ### 2026-09-03 — Family L20 vector: empty class A (cannot fit)
 
 | | |

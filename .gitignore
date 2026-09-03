@@ -13,3 +13,4 @@ notes/*.fls
 notes/*.fdb_latexmk
 notes/*.synctex.gz
 .venv-phase9/
+artifacts/trackb-expand-hiddens-*.json
