@@ -36,7 +36,7 @@
 | **Result** | Family **reproduces on HF 7B** (3/3 false X). **Probe YES** — cos@1.00 false-X [−0.713,−0.627] vs contradiction [−0.554,−0.530], no overlap, gap 0.072, LOO 1.00 (replicates Ph13 with a wider gap). **Steer α=4: 0/3 flips** — frozen BC_E1 vector does not transfer; controls fully intact. **Ablate α=−4** raises margins (sign-consistent, underpowered). **Patch @0.75 only: 3/3 flips**, margins 6.875→−11.375, 2.75→−11.5, 9.5→−11.375 (≠ donor −14.0, so genuine recompute). Full-depth patch incl. 1.00 was **discarded** — margins were exactly the donor's, i.e. token forcing, not sufficiency. |
 | **Artifacts** | [TRACKB-FALSEX-CLUSTER.md](./TRACKB-FALSEX-CLUSTER.md) · `artifacts/trackb-falsex-cluster-panel.json` · `artifacts/trackb-falsex-patch-0_75-panel.json` · `run_trackb_falsex.py` · `n2s_lab/trackb_falsex_cluster.py` |
 | **Decision** | Do **not** claim steering fixes this family. Next: α sweep on cluster, refit vector on cluster (not BC_E1), layer sweep for earliest sufficient patch depth. G3 untouched; `temporal-test` stays sealed until an intervention is frozen. |
-| **Commit** | _(pending push)_ |
+| **Commit** | `be0e222` |
 
 ### 2026-09-03 — Env provenance: `.venv-phase9` is the HF runtime
 
@@ -47,7 +47,7 @@
 | **Result** | Nothing had been uninstalled — those two packages only ever lived in that venv. `cxrlabs/faiss_gpu1` also works (accelerate 1.10.0); `cxrlabs-dev/faiss_gpu1` and `cxr-migration/faiss_gpu1` are broken (no interpreter / dangling base on an unmounted drive). |
 | **Artifacts** | `.venv-phase9/pyvenv.cfg` · run commands in [TRACKB-FALSEX-CLUSTER.md](./TRACKB-FALSEX-CLUSTER.md) |
 | **Decision** | All HF/GPU phases run via `./.venv-phase9/bin/python`. No package installs needed. |
-| **Commit** | _(pending push)_ |
+| **Commit** | `be0e222` |
 
 ### 2026-09-03 — Freeze temporal-family-test.json
 
@@ -58,7 +58,7 @@
 | **Result** | Test sealed before Track B design on DEV. |
 | **Artifacts** | `data/temporal-family-test.json` · [TEMPORAL-FAMILY-TEST.md](./TEMPORAL-FAMILY-TEST.md) |
 | **Decision** | Do not peek evidence while designing; do not run Dual on test until intervention frozen. |
-| **Commit** | _(pending push)_ |
+| **Commit** | `be0e222` |
 
 ### 2026-09-03 — Temporal-family-dev Dual baseline (measure before G3)
 
