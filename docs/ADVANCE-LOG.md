@@ -36,7 +36,7 @@
 | **Result** | **Class A = ∅.** HF 7B commits false X on **all** gold-SATISFIED temporal-change notes collected (E1 m=4.125, E2 m=3.375, E5 m=5.25, plus original cluster). Class B intact. **No vector fitted, no α-sweep.** Gate NO. |
 | **Artifacts** | `artifacts/trackb-falsex-family-l20-panel.json` · `n2s_lab/trackb_family_vector.py` · [TRACKB-FALSEX-CLUSTER.md](./TRACKB-FALSEX-CLUSTER.md) |
 | **Decision** | Do not fall back to fail−`BC_E2`. Need new clean class-A notes (or a model that commits some SATISFIED cases as X=false) before a family-level editor. G3 untouched; test sealed. |
-| **Commit** | _(pending push)_ |
+| **Commit** | `3f80b78` |
 
 ### 2026-09-03 — Frozen BC_E1 α-sweep: α=4 miss was magnitude
 
