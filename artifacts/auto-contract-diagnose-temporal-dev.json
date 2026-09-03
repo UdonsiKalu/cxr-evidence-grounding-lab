@@ -1,0 +1,1615 @@
+{
+  "kind": "panel_diagnose",
+  "source": "artifacts/phase7-temporal-dev-panel.json",
+  "score_path": "Dual_full",
+  "models": [
+    {
+      "model": "llama3:8b-instruct-q4_0",
+      "path": "Dual_full",
+      "n_rows": 14,
+      "wrong_AUTO_n": 2,
+      "REVIEW_n": 11,
+      "false_contradiction_like_n": 0,
+      "wrong_AUTO": [
+        {
+          "gold": "SATISFIED",
+          "verdict": "UNCERTAIN",
+          "disposition": "AUTO",
+          "bucket": "wrong_AUTO",
+          "wrong_AUTO": true,
+          "correct_AUTO": false,
+          "is_REVIEW": false,
+          "match_gold": false,
+          "id": "TF_E3",
+          "path": "Dual_full",
+          "model": "llama3:8b-instruct-q4_0",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Linked to BC11_E1 pattern \u2014 response then biochemical progression.",
+          "C_full_verdict": "UNCERTAIN",
+          "D_full_verdict": "UNCERTAIN",
+          "Dual_full_verdict": "UNCERTAIN",
+          "Dual_reason": "paths_agree",
+          "paths_agreed": true,
+          "C_verify_ok": true,
+          "D_verify_ok": true,
+          "C_contradiction_present": true,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": true,
+            "disposition": "AUTO",
+            "reasons": [],
+            "gates": {
+              "G1_verify": true,
+              "G2_dual_agree": true,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "Multiple myeloma: first-line RVd produced a partial response after three cycles, then rising M-protein and new lesions at cycle 4. Held lenalidomide for progression; started daratu"
+        },
+        {
+          "gold": "NOT_SATISFIED",
+          "verdict": "UNCERTAIN",
+          "disposition": "AUTO",
+          "bucket": "wrong_AUTO",
+          "wrong_AUTO": true,
+          "correct_AUTO": false,
+          "is_REVIEW": false,
+          "match_gold": false,
+          "id": "TF_T2",
+          "path": "Dual_full",
+          "model": "llama3:8b-instruct-q4_0",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Later toxicity after early tolerance; disease still responding \u2014 not first-line failure.",
+          "C_full_verdict": "UNCERTAIN",
+          "D_full_verdict": "UNCERTAIN",
+          "Dual_full_verdict": "UNCERTAIN",
+          "Dual_reason": "paths_agree",
+          "paths_agreed": true,
+          "C_verify_ok": true,
+          "D_verify_ok": true,
+          "C_contradiction_present": true,
+          "D_contradiction_present": true,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": true,
+            "disposition": "AUTO",
+            "reasons": [],
+            "gates": {
+              "G1_verify": true,
+              "G2_dual_agree": true,
+              "G3_contradiction_supported": true
+            }
+          },
+          "evidence_preview": "AML on first-line 7+3: cycles 1 tolerated without major toxicity and day-14 marrow showed response. Cycle 2 complicated by culture-positive sepsis requiring ICU. Induction held for"
+        }
+      ],
+      "REVIEW": [
+        {
+          "gold": "SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "BC_E1",
+          "path": "Dual_full",
+          "model": "llama3:8b-instruct-q4_0",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Clear first-line R-CHOP failure then switch to second line \u2014 not a contradiction.",
+          "C_full_verdict": "CONTRADICTION",
+          "D_full_verdict": "SATISFIED",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "paths_disagree",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": true,
+          "C_contradiction_present": true,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": true,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "DLBCL: first-line R-CHOP for four cycles with initial response, then radiographic progression in cycle 5. Discontinued R-CHOP for progression; started R-ICE as second-line therapy."
+        },
+        {
+          "gold": "SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "TF_E1",
+          "path": "Dual_full",
+          "model": "llama3:8b-instruct-q4_0",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Paraphrase of response\u2192progression on first-line; gold SATISFIED.",
+          "C_full_verdict": "REVIEW",
+          "D_full_verdict": "SATISFIED",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": true,
+          "C_contradiction_present": true,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": true,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "Diffuse large B-cell lymphoma. Patient completed cycles 1\u20133 of first-line R-CHOP with partial metabolic response. During cycle 4, PET showed new FDG-avid nodes. R-CHOP was stopped "
+        },
+        {
+          "gold": "SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "TF_E2",
+          "path": "Dual_full",
+          "model": "llama3:8b-instruct-q4_0",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Initial stable disease on first-line then clear progression and regimen change.",
+          "C_full_verdict": "REVIEW",
+          "D_full_verdict": "REVIEW",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": true,
+          "C_contradiction_present": true,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": true,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "Metastatic NSCLC on first-line pembrolizumab/pemetrexed: imaging after two cycles showed stable disease. Restaging at cycle 5 demonstrated progressive osseous metastases. First-lin"
+        },
+        {
+          "gold": "SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "BC11_E3",
+          "path": "Dual_full",
+          "model": "llama3:8b-instruct-q4_0",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Ibrutinib response then Richter progression; Ph11 steer miss candidate.",
+          "C_full_verdict": "CONTRADICTION",
+          "D_full_verdict": "SATISFIED",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "paths_disagree",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": true,
+          "C_contradiction_present": true,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": true,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "CLL: first-line ibrutinib with initial nodal response, then Richter transformation with bulky adenopathy at month 9. Discontinued ibrutinib for progression; switched to R-CHOP."
+        },
+        {
+          "gold": "SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "TF_E4",
+          "path": "Dual_full",
+          "model": "llama3:8b-instruct-q4_0",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Possible progression later confirmed; first-line stopped for confirmed failure.",
+          "C_full_verdict": "UNCERTAIN",
+          "D_full_verdict": "SATISFIED",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "paths_disagree",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": true,
+          "C_contradiction_present": false,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": true,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "Follicular lymphoma on first-line bendamustine-rituximab: mid-treatment note raised possible progression. Confirmatory PET two weeks later showed clear progressive disease. Bendamu"
+        },
+        {
+          "gold": "SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "TF_E5",
+          "path": "Dual_full",
+          "model": "llama3:8b-instruct-q4_0",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Early imaging negative for progression; later imaging positive \u2014 sequence, not contradiction.",
+          "C_full_verdict": "CONTRADICTION",
+          "D_full_verdict": "SATISFIED",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "paths_disagree",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": true,
+          "C_contradiction_present": true,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": true,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "Colon cancer on first-line FOLFOX: CT after cycle 3 showed no progression. CT after cycle 6 showed new hepatic metastases. FOLFOX discontinued for progression; started FOLFIRI."
+        },
+        {
+          "gold": "NOT_SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "TF_T1",
+          "path": "Dual_full",
+          "model": "llama3:8b-instruct-q4_0",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Stopped first-line for toxicity while disease controlled \u2014 not therapy failure.",
+          "C_full_verdict": "UNCERTAIN",
+          "D_full_verdict": "REVIEW",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": true,
+          "C_contradiction_present": true,
+          "D_contradiction_present": true,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": true,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": true
+            }
+          },
+          "evidence_preview": "Breast cancer on first-line paclitaxel: tumor markers falling and imaging stable. Paclitaxel stopped for grade 3 neuropathy. Plan alternate first-line partner agent; no progression"
+        },
+        {
+          "gold": "CONTRADICTION",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "TF_C1",
+          "path": "Dual_full",
+          "model": "llama3:8b-instruct-q4_0",
+          "source": "condition_block",
+          "subtype": "conflicting",
+          "why": "Same workup denies vs documents completed first-line \u2014 true contradiction.",
+          "C_full_verdict": "CONTRADICTION",
+          "D_full_verdict": "SATISFIED",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "paths_disagree",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": true,
+          "C_contradiction_present": true,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": true,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "CAR-T intake: patient reports never receiving systemic chemotherapy for DLBCL. Same-day oncology addendum: completed six cycles of first-line R-CHOP with subsequent progression; pr"
+        },
+        {
+          "gold": "CONTRADICTION",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "BC_C1",
+          "path": "Dual_full",
+          "model": "llama3:8b-instruct-q4_0",
+          "source": "condition_block",
+          "subtype": "conflicting",
+          "why": "Seed true contradiction from Phase-7 set.",
+          "C_full_verdict": "CONTRADICTION",
+          "D_full_verdict": "UNCERTAIN",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "paths_disagree",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": true,
+          "C_contradiction_present": true,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": true,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "CAR-T referral intake (14 Jan 2024): patient reports never receiving systemic chemotherapy for DLBCL. Lymphoma clinic note (22 Mar 2024): completed six cycles of first-line R-CHOP,"
+        },
+        {
+          "gold": "NOT_SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "TF_N1",
+          "path": "Dual_full",
+          "model": "llama3:8b-instruct-q4_0",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Ongoing first-line with response; no failure event.",
+          "C_full_verdict": "UNCERTAIN",
+          "D_full_verdict": "REVIEW",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": false,
+          "C_contradiction_present": true,
+          "D_contradiction_present": true,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G1_verify_fail",
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": false,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": true
+            }
+          },
+          "evidence_preview": "AML: currently on first-line 7+3 induction day 10. Interim marrow shows ongoing response. Plan to complete induction; no progression documented."
+        },
+        {
+          "gold": "NOT_SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "BC_E2",
+          "path": "Dual_full",
+          "model": "llama3:8b-instruct-q4_0",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Seed no-failure control from Phase-7.",
+          "C_full_verdict": "REVIEW",
+          "D_full_verdict": "REVIEW",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": false,
+          "D_verify_ok": false,
+          "C_contradiction_present": false,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G1_verify_fail",
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": false,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "AML: currently receiving first-line 7+3 induction, day 14 marrow shows ongoing response. Plan to complete consolidation; no progression documented."
+        }
+      ],
+      "artifact": "artifacts/phase7-temporal-dev-llama3_8b-instruct-q4_0.json"
+    },
+    {
+      "model": "mistral:instruct",
+      "path": "Dual_full",
+      "n_rows": 14,
+      "wrong_AUTO_n": 0,
+      "REVIEW_n": 14,
+      "false_contradiction_like_n": 0,
+      "wrong_AUTO": [],
+      "REVIEW": [
+        {
+          "gold": "SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "BC_E1",
+          "path": "Dual_full",
+          "model": "mistral:instruct",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Clear first-line R-CHOP failure then switch to second line \u2014 not a contradiction.",
+          "C_full_verdict": "REVIEW",
+          "D_full_verdict": "REVIEW",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": false,
+          "C_contradiction_present": true,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G1_verify_fail",
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": false,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "DLBCL: first-line R-CHOP for four cycles with initial response, then radiographic progression in cycle 5. Discontinued R-CHOP for progression; started R-ICE as second-line therapy."
+        },
+        {
+          "gold": "SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "TF_E1",
+          "path": "Dual_full",
+          "model": "mistral:instruct",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Paraphrase of response\u2192progression on first-line; gold SATISFIED.",
+          "C_full_verdict": "REVIEW",
+          "D_full_verdict": "REVIEW",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": false,
+          "D_verify_ok": true,
+          "C_contradiction_present": false,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G1_verify_fail",
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": false,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "Diffuse large B-cell lymphoma. Patient completed cycles 1\u20133 of first-line R-CHOP with partial metabolic response. During cycle 4, PET showed new FDG-avid nodes. R-CHOP was stopped "
+        },
+        {
+          "gold": "SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "TF_E2",
+          "path": "Dual_full",
+          "model": "mistral:instruct",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Initial stable disease on first-line then clear progression and regimen change.",
+          "C_full_verdict": "REVIEW",
+          "D_full_verdict": "REVIEW",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": false,
+          "D_verify_ok": true,
+          "C_contradiction_present": true,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G1_verify_fail",
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": false,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "Metastatic NSCLC on first-line pembrolizumab/pemetrexed: imaging after two cycles showed stable disease. Restaging at cycle 5 demonstrated progressive osseous metastases. First-lin"
+        },
+        {
+          "gold": "SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "TF_E3",
+          "path": "Dual_full",
+          "model": "mistral:instruct",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Linked to BC11_E1 pattern \u2014 response then biochemical progression.",
+          "C_full_verdict": "UNCERTAIN",
+          "D_full_verdict": "REVIEW",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": true,
+          "C_contradiction_present": false,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": true,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "Multiple myeloma: first-line RVd produced a partial response after three cycles, then rising M-protein and new lesions at cycle 4. Held lenalidomide for progression; started daratu"
+        },
+        {
+          "gold": "SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "BC11_E3",
+          "path": "Dual_full",
+          "model": "mistral:instruct",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Ibrutinib response then Richter progression; Ph11 steer miss candidate.",
+          "C_full_verdict": "REVIEW",
+          "D_full_verdict": "REVIEW",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": false,
+          "D_verify_ok": true,
+          "C_contradiction_present": true,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G1_verify_fail",
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": false,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "CLL: first-line ibrutinib with initial nodal response, then Richter transformation with bulky adenopathy at month 9. Discontinued ibrutinib for progression; switched to R-CHOP."
+        },
+        {
+          "gold": "SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "TF_E4",
+          "path": "Dual_full",
+          "model": "mistral:instruct",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Possible progression later confirmed; first-line stopped for confirmed failure.",
+          "C_full_verdict": "REVIEW",
+          "D_full_verdict": "UNCERTAIN",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": false,
+          "D_verify_ok": true,
+          "C_contradiction_present": false,
+          "D_contradiction_present": true,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G1_verify_fail",
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": false,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": true
+            }
+          },
+          "evidence_preview": "Follicular lymphoma on first-line bendamustine-rituximab: mid-treatment note raised possible progression. Confirmatory PET two weeks later showed clear progressive disease. Bendamu"
+        },
+        {
+          "gold": "SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "TF_E5",
+          "path": "Dual_full",
+          "model": "mistral:instruct",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Early imaging negative for progression; later imaging positive \u2014 sequence, not contradiction.",
+          "C_full_verdict": "CONTRADICTION",
+          "D_full_verdict": "REVIEW",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": false,
+          "C_contradiction_present": true,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G1_verify_fail",
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": false,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "Colon cancer on first-line FOLFOX: CT after cycle 3 showed no progression. CT after cycle 6 showed new hepatic metastases. FOLFOX discontinued for progression; started FOLFIRI."
+        },
+        {
+          "gold": "UNCERTAIN",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "TF_U1",
+          "path": "Dual_full",
+          "model": "mistral:instruct",
+          "source": "condition_block",
+          "subtype": "uncertain",
+          "why": "Possible progression only; confirmatory scan pending \u2014 must not AUTO failure.",
+          "C_full_verdict": "UNCERTAIN",
+          "D_full_verdict": "REVIEW",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": true,
+          "C_contradiction_present": false,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": true,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "DLBCL on first-line R-CHOP cycle 3: possible new adenopathy on exam. PET scheduled next week; no regimen change until imaging returns."
+        },
+        {
+          "gold": "NOT_SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "TF_T1",
+          "path": "Dual_full",
+          "model": "mistral:instruct",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Stopped first-line for toxicity while disease controlled \u2014 not therapy failure.",
+          "C_full_verdict": "CONTRADICTION",
+          "D_full_verdict": "REVIEW",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": false,
+          "C_contradiction_present": true,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G1_verify_fail",
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": false,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "Breast cancer on first-line paclitaxel: tumor markers falling and imaging stable. Paclitaxel stopped for grade 3 neuropathy. Plan alternate first-line partner agent; no progression"
+        },
+        {
+          "gold": "NOT_SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "TF_T2",
+          "path": "Dual_full",
+          "model": "mistral:instruct",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Later toxicity after early tolerance; disease still responding \u2014 not first-line failure.",
+          "C_full_verdict": "CONTRADICTION",
+          "D_full_verdict": "REVIEW",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": false,
+          "C_contradiction_present": true,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G1_verify_fail",
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": false,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "AML on first-line 7+3: cycles 1 tolerated without major toxicity and day-14 marrow showed response. Cycle 2 complicated by culture-positive sepsis requiring ICU. Induction held for"
+        },
+        {
+          "gold": "CONTRADICTION",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "TF_C1",
+          "path": "Dual_full",
+          "model": "mistral:instruct",
+          "source": "condition_block",
+          "subtype": "conflicting",
+          "why": "Same workup denies vs documents completed first-line \u2014 true contradiction.",
+          "C_full_verdict": "REVIEW",
+          "D_full_verdict": "REVIEW",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": false,
+          "C_contradiction_present": true,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G1_verify_fail",
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": false,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "CAR-T intake: patient reports never receiving systemic chemotherapy for DLBCL. Same-day oncology addendum: completed six cycles of first-line R-CHOP with subsequent progression; pr"
+        },
+        {
+          "gold": "CONTRADICTION",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "BC_C1",
+          "path": "Dual_full",
+          "model": "mistral:instruct",
+          "source": "condition_block",
+          "subtype": "conflicting",
+          "why": "Seed true contradiction from Phase-7 set.",
+          "C_full_verdict": "REVIEW",
+          "D_full_verdict": "REVIEW",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": false,
+          "C_contradiction_present": true,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G1_verify_fail",
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": false,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "CAR-T referral intake (14 Jan 2024): patient reports never receiving systemic chemotherapy for DLBCL. Lymphoma clinic note (22 Mar 2024): completed six cycles of first-line R-CHOP,"
+        },
+        {
+          "gold": "NOT_SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "TF_N1",
+          "path": "Dual_full",
+          "model": "mistral:instruct",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Ongoing first-line with response; no failure event.",
+          "C_full_verdict": "REVIEW",
+          "D_full_verdict": "REVIEW",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": false,
+          "D_verify_ok": false,
+          "C_contradiction_present": false,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G1_verify_fail",
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": false,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "AML: currently on first-line 7+3 induction day 10. Interim marrow shows ongoing response. Plan to complete induction; no progression documented."
+        },
+        {
+          "gold": "NOT_SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "BC_E2",
+          "path": "Dual_full",
+          "model": "mistral:instruct",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Seed no-failure control from Phase-7.",
+          "C_full_verdict": "REVIEW",
+          "D_full_verdict": "CONTRADICTION",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": false,
+          "D_verify_ok": true,
+          "C_contradiction_present": false,
+          "D_contradiction_present": true,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G1_verify_fail",
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": false,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": true
+            }
+          },
+          "evidence_preview": "AML: currently receiving first-line 7+3 induction, day 14 marrow shows ongoing response. Plan to complete consolidation; no progression documented."
+        }
+      ],
+      "artifact": "artifacts/phase7-temporal-dev-mistral_instruct.json"
+    },
+    {
+      "model": "qwen2.5-coder:32b",
+      "path": "Dual_full",
+      "n_rows": 14,
+      "wrong_AUTO_n": 5,
+      "REVIEW_n": 8,
+      "false_contradiction_like_n": 3,
+      "wrong_AUTO": [
+        {
+          "gold": "SATISFIED",
+          "verdict": "CONTRADICTION",
+          "disposition": "AUTO",
+          "bucket": "wrong_AUTO",
+          "wrong_AUTO": true,
+          "correct_AUTO": false,
+          "is_REVIEW": false,
+          "match_gold": false,
+          "id": "TF_E3",
+          "path": "Dual_full",
+          "model": "qwen2.5-coder:32b",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Linked to BC11_E1 pattern \u2014 response then biochemical progression.",
+          "C_full_verdict": "CONTRADICTION",
+          "D_full_verdict": "CONTRADICTION",
+          "Dual_full_verdict": "CONTRADICTION",
+          "Dual_reason": "paths_agree",
+          "paths_agreed": true,
+          "C_verify_ok": true,
+          "D_verify_ok": true,
+          "C_contradiction_present": true,
+          "D_contradiction_present": true,
+          "false_contradiction_like_BC_E1": true,
+          "gate_replay": {
+            "ok": true,
+            "disposition": "AUTO",
+            "reasons": [],
+            "gates": {
+              "G1_verify": true,
+              "G2_dual_agree": true,
+              "G3_contradiction_supported": true
+            }
+          },
+          "evidence_preview": "Multiple myeloma: first-line RVd produced a partial response after three cycles, then rising M-protein and new lesions at cycle 4. Held lenalidomide for progression; started daratu"
+        },
+        {
+          "gold": "SATISFIED",
+          "verdict": "CONTRADICTION",
+          "disposition": "AUTO",
+          "bucket": "wrong_AUTO",
+          "wrong_AUTO": true,
+          "correct_AUTO": false,
+          "is_REVIEW": false,
+          "match_gold": false,
+          "id": "BC11_E3",
+          "path": "Dual_full",
+          "model": "qwen2.5-coder:32b",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Ibrutinib response then Richter progression; Ph11 steer miss candidate.",
+          "C_full_verdict": "CONTRADICTION",
+          "D_full_verdict": "CONTRADICTION",
+          "Dual_full_verdict": "CONTRADICTION",
+          "Dual_reason": "paths_agree",
+          "paths_agreed": true,
+          "C_verify_ok": true,
+          "D_verify_ok": true,
+          "C_contradiction_present": true,
+          "D_contradiction_present": true,
+          "false_contradiction_like_BC_E1": true,
+          "gate_replay": {
+            "ok": true,
+            "disposition": "AUTO",
+            "reasons": [],
+            "gates": {
+              "G1_verify": true,
+              "G2_dual_agree": true,
+              "G3_contradiction_supported": true
+            }
+          },
+          "evidence_preview": "CLL: first-line ibrutinib with initial nodal response, then Richter transformation with bulky adenopathy at month 9. Discontinued ibrutinib for progression; switched to R-CHOP."
+        },
+        {
+          "gold": "SATISFIED",
+          "verdict": "CONTRADICTION",
+          "disposition": "AUTO",
+          "bucket": "wrong_AUTO",
+          "wrong_AUTO": true,
+          "correct_AUTO": false,
+          "is_REVIEW": false,
+          "match_gold": false,
+          "id": "TF_E4",
+          "path": "Dual_full",
+          "model": "qwen2.5-coder:32b",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Possible progression later confirmed; first-line stopped for confirmed failure.",
+          "C_full_verdict": "CONTRADICTION",
+          "D_full_verdict": "CONTRADICTION",
+          "Dual_full_verdict": "CONTRADICTION",
+          "Dual_reason": "paths_agree",
+          "paths_agreed": true,
+          "C_verify_ok": true,
+          "D_verify_ok": true,
+          "C_contradiction_present": true,
+          "D_contradiction_present": true,
+          "false_contradiction_like_BC_E1": true,
+          "gate_replay": {
+            "ok": true,
+            "disposition": "AUTO",
+            "reasons": [],
+            "gates": {
+              "G1_verify": true,
+              "G2_dual_agree": true,
+              "G3_contradiction_supported": true
+            }
+          },
+          "evidence_preview": "Follicular lymphoma on first-line bendamustine-rituximab: mid-treatment note raised possible progression. Confirmatory PET two weeks later showed clear progressive disease. Bendamu"
+        },
+        {
+          "gold": "NOT_SATISFIED",
+          "verdict": "CONTRADICTION",
+          "disposition": "AUTO",
+          "bucket": "wrong_AUTO",
+          "wrong_AUTO": true,
+          "correct_AUTO": false,
+          "is_REVIEW": false,
+          "match_gold": false,
+          "id": "TF_T1",
+          "path": "Dual_full",
+          "model": "qwen2.5-coder:32b",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Stopped first-line for toxicity while disease controlled \u2014 not therapy failure.",
+          "C_full_verdict": "CONTRADICTION",
+          "D_full_verdict": "CONTRADICTION",
+          "Dual_full_verdict": "CONTRADICTION",
+          "Dual_reason": "paths_agree",
+          "paths_agreed": true,
+          "C_verify_ok": true,
+          "D_verify_ok": true,
+          "C_contradiction_present": true,
+          "D_contradiction_present": true,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": true,
+            "disposition": "AUTO",
+            "reasons": [],
+            "gates": {
+              "G1_verify": true,
+              "G2_dual_agree": true,
+              "G3_contradiction_supported": true
+            }
+          },
+          "evidence_preview": "Breast cancer on first-line paclitaxel: tumor markers falling and imaging stable. Paclitaxel stopped for grade 3 neuropathy. Plan alternate first-line partner agent; no progression"
+        },
+        {
+          "gold": "NOT_SATISFIED",
+          "verdict": "CONTRADICTION",
+          "disposition": "AUTO",
+          "bucket": "wrong_AUTO",
+          "wrong_AUTO": true,
+          "correct_AUTO": false,
+          "is_REVIEW": false,
+          "match_gold": false,
+          "id": "TF_N1",
+          "path": "Dual_full",
+          "model": "qwen2.5-coder:32b",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Ongoing first-line with response; no failure event.",
+          "C_full_verdict": "CONTRADICTION",
+          "D_full_verdict": "CONTRADICTION",
+          "Dual_full_verdict": "CONTRADICTION",
+          "Dual_reason": "paths_agree",
+          "paths_agreed": true,
+          "C_verify_ok": true,
+          "D_verify_ok": true,
+          "C_contradiction_present": true,
+          "D_contradiction_present": true,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": true,
+            "disposition": "AUTO",
+            "reasons": [],
+            "gates": {
+              "G1_verify": true,
+              "G2_dual_agree": true,
+              "G3_contradiction_supported": true
+            }
+          },
+          "evidence_preview": "AML: currently on first-line 7+3 induction day 10. Interim marrow shows ongoing response. Plan to complete induction; no progression documented."
+        }
+      ],
+      "REVIEW": [
+        {
+          "gold": "SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "BC_E1",
+          "path": "Dual_full",
+          "model": "qwen2.5-coder:32b",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Clear first-line R-CHOP failure then switch to second line \u2014 not a contradiction.",
+          "C_full_verdict": "CONTRADICTION",
+          "D_full_verdict": "REVIEW",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": false,
+          "C_contradiction_present": true,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G1_verify_fail",
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": false,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "DLBCL: first-line R-CHOP for four cycles with initial response, then radiographic progression in cycle 5. Discontinued R-CHOP for progression; started R-ICE as second-line therapy."
+        },
+        {
+          "gold": "SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "TF_E1",
+          "path": "Dual_full",
+          "model": "qwen2.5-coder:32b",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Paraphrase of response\u2192progression on first-line; gold SATISFIED.",
+          "C_full_verdict": "CONTRADICTION",
+          "D_full_verdict": "REVIEW",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": false,
+          "C_contradiction_present": true,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G1_verify_fail",
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": false,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "Diffuse large B-cell lymphoma. Patient completed cycles 1\u20133 of first-line R-CHOP with partial metabolic response. During cycle 4, PET showed new FDG-avid nodes. R-CHOP was stopped "
+        },
+        {
+          "gold": "SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "TF_E2",
+          "path": "Dual_full",
+          "model": "qwen2.5-coder:32b",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Initial stable disease on first-line then clear progression and regimen change.",
+          "C_full_verdict": "CONTRADICTION",
+          "D_full_verdict": "REVIEW",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": false,
+          "C_contradiction_present": true,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G1_verify_fail",
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": false,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "Metastatic NSCLC on first-line pembrolizumab/pemetrexed: imaging after two cycles showed stable disease. Restaging at cycle 5 demonstrated progressive osseous metastases. First-lin"
+        },
+        {
+          "gold": "SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "TF_E5",
+          "path": "Dual_full",
+          "model": "qwen2.5-coder:32b",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Early imaging negative for progression; later imaging positive \u2014 sequence, not contradiction.",
+          "C_full_verdict": "CONTRADICTION",
+          "D_full_verdict": "REVIEW",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": true,
+          "C_contradiction_present": true,
+          "D_contradiction_present": true,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": true,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": true
+            }
+          },
+          "evidence_preview": "Colon cancer on first-line FOLFOX: CT after cycle 3 showed no progression. CT after cycle 6 showed new hepatic metastases. FOLFOX discontinued for progression; started FOLFIRI."
+        },
+        {
+          "gold": "NOT_SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "TF_T2",
+          "path": "Dual_full",
+          "model": "qwen2.5-coder:32b",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Later toxicity after early tolerance; disease still responding \u2014 not first-line failure.",
+          "C_full_verdict": "REVIEW",
+          "D_full_verdict": "UNCERTAIN",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": false,
+          "D_verify_ok": true,
+          "C_contradiction_present": false,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G1_verify_fail",
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": false,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "AML on first-line 7+3: cycles 1 tolerated without major toxicity and day-14 marrow showed response. Cycle 2 complicated by culture-positive sepsis requiring ICU. Induction held for"
+        },
+        {
+          "gold": "CONTRADICTION",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "TF_C1",
+          "path": "Dual_full",
+          "model": "qwen2.5-coder:32b",
+          "source": "condition_block",
+          "subtype": "conflicting",
+          "why": "Same workup denies vs documents completed first-line \u2014 true contradiction.",
+          "C_full_verdict": "CONTRADICTION",
+          "D_full_verdict": "REVIEW",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": false,
+          "C_contradiction_present": true,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G1_verify_fail",
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": false,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "CAR-T intake: patient reports never receiving systemic chemotherapy for DLBCL. Same-day oncology addendum: completed six cycles of first-line R-CHOP with subsequent progression; pr"
+        },
+        {
+          "gold": "CONTRADICTION",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "BC_C1",
+          "path": "Dual_full",
+          "model": "qwen2.5-coder:32b",
+          "source": "condition_block",
+          "subtype": "conflicting",
+          "why": "Seed true contradiction from Phase-7 set.",
+          "C_full_verdict": "CONTRADICTION",
+          "D_full_verdict": "REVIEW",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": false,
+          "C_contradiction_present": true,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G1_verify_fail",
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": false,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "CAR-T referral intake (14 Jan 2024): patient reports never receiving systemic chemotherapy for DLBCL. Lymphoma clinic note (22 Mar 2024): completed six cycles of first-line R-CHOP,"
+        },
+        {
+          "gold": "NOT_SATISFIED",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "bucket": "REVIEW",
+          "wrong_AUTO": false,
+          "correct_AUTO": false,
+          "is_REVIEW": true,
+          "match_gold": null,
+          "id": "BC_E2",
+          "path": "Dual_full",
+          "model": "qwen2.5-coder:32b",
+          "source": "condition_block",
+          "subtype": "explicit",
+          "why": "Seed no-failure control from Phase-7.",
+          "C_full_verdict": "CONTRADICTION",
+          "D_full_verdict": "REVIEW",
+          "Dual_full_verdict": "REVIEW",
+          "Dual_reason": "one_or_both_paths_already_REVIEW",
+          "paths_agreed": false,
+          "C_verify_ok": true,
+          "D_verify_ok": false,
+          "C_contradiction_present": true,
+          "D_contradiction_present": false,
+          "false_contradiction_like_BC_E1": false,
+          "gate_replay": {
+            "ok": false,
+            "disposition": "REVIEW",
+            "reasons": [
+              "G1_verify_fail",
+              "G2_dual_disagree"
+            ],
+            "gates": {
+              "G1_verify": false,
+              "G2_dual_agree": false,
+              "G3_contradiction_supported": false
+            }
+          },
+          "evidence_preview": "AML: currently receiving first-line 7+3 induction, day 14 marrow shows ongoing response. Plan to complete consolidation; no progression documented."
+        }
+      ],
+      "artifact": "artifacts/phase7-temporal-dev-qwen2.5-coder_32b.json"
+    }
+  ],
+  "diagnosed_at": "2026-09-03T08:43:58.648767+00:00",
+  "contract": "docs/AUTO-CONTRACT.md",
+  "note": "Measure-before-fix diagnostic. Do not use this set as held-out test."
+}

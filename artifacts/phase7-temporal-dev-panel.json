@@ -1,0 +1,523 @@
+{
+  "experiment": "phase7_temporal_family_dev",
+  "optional": true,
+  "prompts_frozen_abcd": true,
+  "bprime_not_default": true,
+  "case_set": "temporal-dev",
+  "case_ids": [
+    "BC_E1",
+    "TF_E1",
+    "TF_E2",
+    "TF_E3",
+    "BC11_E3",
+    "TF_E4",
+    "TF_E5",
+    "TF_U1",
+    "TF_T1",
+    "TF_T2",
+    "TF_C1",
+    "BC_C1",
+    "TF_N1",
+    "BC_E2"
+  ],
+  "models": [
+    {
+      "model": "llama3:8b-instruct-q4_0",
+      "artifact": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/phase7-temporal-dev-llama3_8b-instruct-q4_0.json",
+      "summary": {
+        "n": 14,
+        "match_gold": {
+          "A": 5,
+          "B": 3,
+          "C": 8,
+          "D": 7,
+          "C_full": 3,
+          "D_full": 6,
+          "Dual_full": 1
+        },
+        "loss_stage_counts_all_rows": {
+          "A": {
+            "none": 5,
+            "model_interpretation_failure": 0,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 9
+          },
+          "B": {
+            "none": 1,
+            "model_interpretation_failure": 13,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          },
+          "C": {
+            "none": 3,
+            "model_interpretation_failure": 11,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          },
+          "D": {
+            "none": 1,
+            "model_interpretation_failure": 13,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          }
+        },
+        "error_stage_counts_when_verdict_misses_gold": {
+          "A": {
+            "direct_verdict_miss": 9
+          },
+          "B": {
+            "model_interpretation_failure": 11
+          },
+          "C": {
+            "model_interpretation_failure": 6
+          },
+          "D": {
+            "model_interpretation_failure": 7
+          }
+        },
+        "note": "Headline research numbers are error_stage_counts_when_verdict_misses_gold. C4 left unresolved by design; do not treat its miss as a bug to fix here."
+      },
+      "phase7_metrics": {
+        "C": {
+          "n": 14,
+          "gold_match": 8,
+          "rate": 0.5714285714285714
+        },
+        "D": {
+          "n": 14,
+          "gold_match": 7,
+          "rate": 0.5
+        },
+        "C_v": {
+          "n": 14,
+          "review_n": 1,
+          "coverage_auto": 0.9285714285714286,
+          "safety_among_auto": 0.23076923076923078,
+          "gold_match_including_null": 3
+        },
+        "D_v": {
+          "n": 14,
+          "review_n": 2,
+          "coverage_auto": 0.8571428571428571,
+          "safety_among_auto": 0.5,
+          "gold_match_including_null": 6
+        },
+        "d_representation_loss": {
+          "baseline_D": 0,
+          "D_v": 0,
+          "D_v_review": 2
+        },
+        "former_D_rep_loss_outcomes": [],
+        "C_rt": {
+          "n": 14,
+          "review_n": 2,
+          "coverage_auto": 0.8571428571428571,
+          "safety_among_auto": 0.25,
+          "gold_match_including_null": 3
+        },
+        "D_rt": {
+          "n": 14,
+          "review_n": 3,
+          "coverage_auto": 0.7857142857142857,
+          "safety_among_auto": 0.5454545454545454,
+          "gold_match_including_null": 6
+        },
+        "Dual": {
+          "n": 14,
+          "review_n": 11,
+          "coverage_auto": 0.21428571428571427,
+          "safety_among_auto": 0.3333333333333333,
+          "gold_match_including_null": 1
+        },
+        "Dual_rt": {
+          "n": 14,
+          "review_n": 11,
+          "coverage_auto": 0.21428571428571427,
+          "safety_among_auto": 0.3333333333333333,
+          "gold_match_including_null": 1
+        },
+        "roundtrip_new_reviews": {
+          "C": 1,
+          "D": 1
+        },
+        "dual_disagreements": {
+          "Dual": 9,
+          "Dual_rt": 7
+        },
+        "C_full": {
+          "n": 14,
+          "review_n": 3,
+          "coverage_auto": 0.7857142857142857,
+          "safety_among_auto": 0.2727272727272727,
+          "gold_match_including_null": 3
+        },
+        "D_full": {
+          "n": 14,
+          "review_n": 4,
+          "coverage_auto": 0.7142857142857143,
+          "safety_among_auto": 0.6,
+          "gold_match_including_null": 6
+        },
+        "Dual_full": {
+          "n": 14,
+          "review_n": 11,
+          "coverage_auto": 0.21428571428571427,
+          "safety_among_auto": 0.3333333333333333,
+          "gold_match_including_null": 1
+        },
+        "evidence_new_reviews": {
+          "C": 1,
+          "D": 1
+        }
+      }
+    },
+    {
+      "model": "mistral:instruct",
+      "artifact": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/phase7-temporal-dev-mistral_instruct.json",
+      "summary": {
+        "n": 14,
+        "match_gold": {
+          "A": 2,
+          "B": 2,
+          "C": 7,
+          "D": 4,
+          "C_full": 1,
+          "D_full": 0,
+          "Dual_full": 0
+        },
+        "loss_stage_counts_all_rows": {
+          "A": {
+            "none": 2,
+            "model_interpretation_failure": 0,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 12
+          },
+          "B": {
+            "none": 1,
+            "model_interpretation_failure": 11,
+            "analysis_output_misalignment": 2,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          },
+          "C": {
+            "none": 3,
+            "model_interpretation_failure": 11,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          },
+          "D": {
+            "none": 1,
+            "model_interpretation_failure": 11,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 2,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          }
+        },
+        "error_stage_counts_when_verdict_misses_gold": {
+          "A": {
+            "direct_verdict_miss": 12
+          },
+          "B": {
+            "model_interpretation_failure": 10,
+            "analysis_output_misalignment": 2
+          },
+          "C": {
+            "model_interpretation_failure": 7
+          },
+          "D": {
+            "model_interpretation_failure": 8,
+            "representation_loss": 2
+          }
+        },
+        "note": "Headline research numbers are error_stage_counts_when_verdict_misses_gold. C4 left unresolved by design; do not treat its miss as a bug to fix here."
+      },
+      "phase7_metrics": {
+        "C": {
+          "n": 14,
+          "gold_match": 7,
+          "rate": 0.5
+        },
+        "D": {
+          "n": 14,
+          "gold_match": 4,
+          "rate": 0.2857142857142857
+        },
+        "C_v": {
+          "n": 14,
+          "review_n": 6,
+          "coverage_auto": 0.5714285714285714,
+          "safety_among_auto": 0.375,
+          "gold_match_including_null": 3
+        },
+        "D_v": {
+          "n": 14,
+          "review_n": 7,
+          "coverage_auto": 0.5,
+          "safety_among_auto": 0.14285714285714285,
+          "gold_match_including_null": 1
+        },
+        "d_representation_loss": {
+          "baseline_D": 2,
+          "D_v": 0,
+          "D_v_review": 7
+        },
+        "former_D_rep_loss_outcomes": [
+          {
+            "id": "TF_C1",
+            "D_v": "REVIEW"
+          },
+          {
+            "id": "BC_C1",
+            "D_v": "REVIEW"
+          }
+        ],
+        "C_rt": {
+          "n": 14,
+          "review_n": 8,
+          "coverage_auto": 0.42857142857142855,
+          "safety_among_auto": 0.16666666666666666,
+          "gold_match_including_null": 1
+        },
+        "D_rt": {
+          "n": 14,
+          "review_n": 8,
+          "coverage_auto": 0.42857142857142855,
+          "safety_among_auto": 0.16666666666666666,
+          "gold_match_including_null": 1
+        },
+        "Dual": {
+          "n": 14,
+          "review_n": 12,
+          "coverage_auto": 0.14285714285714285,
+          "safety_among_auto": 0.5,
+          "gold_match_including_null": 1
+        },
+        "Dual_rt": {
+          "n": 14,
+          "review_n": 12,
+          "coverage_auto": 0.14285714285714285,
+          "safety_among_auto": 0.5,
+          "gold_match_including_null": 1
+        },
+        "roundtrip_new_reviews": {
+          "C": 2,
+          "D": 1
+        },
+        "dual_disagreements": {
+          "Dual": 0,
+          "Dual_rt": 0
+        },
+        "C_full": {
+          "n": 14,
+          "review_n": 9,
+          "coverage_auto": 0.35714285714285715,
+          "safety_among_auto": 0.2,
+          "gold_match_including_null": 1
+        },
+        "D_full": {
+          "n": 14,
+          "review_n": 12,
+          "coverage_auto": 0.14285714285714285,
+          "safety_among_auto": 0.0,
+          "gold_match_including_null": 0
+        },
+        "Dual_full": {
+          "n": 14,
+          "review_n": 14,
+          "coverage_auto": 0.0,
+          "safety_among_auto": null,
+          "gold_match_including_null": 0
+        },
+        "evidence_new_reviews": {
+          "C": 1,
+          "D": 4
+        }
+      }
+    },
+    {
+      "model": "qwen2.5-coder:32b",
+      "artifact": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/phase7-temporal-dev-qwen2.5-coder_32b.json",
+      "summary": {
+        "n": 14,
+        "match_gold": {
+          "A": 10,
+          "B": 10,
+          "C": 12,
+          "D": 9,
+          "C_full": 3,
+          "D_full": 1,
+          "Dual_full": 1
+        },
+        "loss_stage_counts_all_rows": {
+          "A": {
+            "none": 10,
+            "model_interpretation_failure": 0,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 4
+          },
+          "B": {
+            "none": 1,
+            "model_interpretation_failure": 11,
+            "analysis_output_misalignment": 2,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          },
+          "C": {
+            "none": 3,
+            "model_interpretation_failure": 11,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 0,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          },
+          "D": {
+            "none": 1,
+            "model_interpretation_failure": 11,
+            "analysis_output_misalignment": 0,
+            "representation_loss": 2,
+            "symbolic_failure": 0,
+            "direct_verdict_miss": 0
+          }
+        },
+        "error_stage_counts_when_verdict_misses_gold": {
+          "A": {
+            "direct_verdict_miss": 4
+          },
+          "B": {
+            "model_interpretation_failure": 2,
+            "analysis_output_misalignment": 2
+          },
+          "C": {
+            "model_interpretation_failure": 2
+          },
+          "D": {
+            "model_interpretation_failure": 3,
+            "representation_loss": 2
+          }
+        },
+        "note": "Headline research numbers are error_stage_counts_when_verdict_misses_gold. C4 left unresolved by design; do not treat its miss as a bug to fix here."
+      },
+      "phase7_metrics": {
+        "C": {
+          "n": 14,
+          "gold_match": 12,
+          "rate": 0.8571428571428571
+        },
+        "D": {
+          "n": 14,
+          "gold_match": 9,
+          "rate": 0.6428571428571429
+        },
+        "C_v": {
+          "n": 14,
+          "review_n": 1,
+          "coverage_auto": 0.9285714285714286,
+          "safety_among_auto": 0.23076923076923078,
+          "gold_match_including_null": 3
+        },
+        "D_v": {
+          "n": 14,
+          "review_n": 6,
+          "coverage_auto": 0.5714285714285714,
+          "safety_among_auto": 0.125,
+          "gold_match_including_null": 1
+        },
+        "d_representation_loss": {
+          "baseline_D": 2,
+          "D_v": 0,
+          "D_v_review": 6
+        },
+        "former_D_rep_loss_outcomes": [
+          {
+            "id": "TF_C1",
+            "D_v": "REVIEW"
+          },
+          {
+            "id": "BC_C1",
+            "D_v": "REVIEW"
+          }
+        ],
+        "C_rt": {
+          "n": 14,
+          "review_n": 1,
+          "coverage_auto": 0.9285714285714286,
+          "safety_among_auto": 0.23076923076923078,
+          "gold_match_including_null": 3
+        },
+        "D_rt": {
+          "n": 14,
+          "review_n": 6,
+          "coverage_auto": 0.5714285714285714,
+          "safety_among_auto": 0.125,
+          "gold_match_including_null": 1
+        },
+        "Dual": {
+          "n": 14,
+          "review_n": 7,
+          "coverage_auto": 0.5,
+          "safety_among_auto": 0.14285714285714285,
+          "gold_match_including_null": 1
+        },
+        "Dual_rt": {
+          "n": 14,
+          "review_n": 7,
+          "coverage_auto": 0.5,
+          "safety_among_auto": 0.14285714285714285,
+          "gold_match_including_null": 1
+        },
+        "roundtrip_new_reviews": {
+          "C": 0,
+          "D": 0
+        },
+        "dual_disagreements": {
+          "Dual": 0,
+          "Dual_rt": 0
+        },
+        "C_full": {
+          "n": 14,
+          "review_n": 1,
+          "coverage_auto": 0.9285714285714286,
+          "safety_among_auto": 0.23076923076923078,
+          "gold_match_including_null": 3
+        },
+        "D_full": {
+          "n": 14,
+          "review_n": 7,
+          "coverage_auto": 0.5,
+          "safety_among_auto": 0.14285714285714285,
+          "gold_match_including_null": 1
+        },
+        "Dual_full": {
+          "n": 14,
+          "review_n": 8,
+          "coverage_auto": 0.42857142857142855,
+          "safety_among_auto": 0.16666666666666666,
+          "gold_match_including_null": 1
+        },
+        "evidence_new_reviews": {
+          "C": 0,
+          "D": 1
+        }
+      }
+    }
+  ],
+  "generated_at": "2026-09-03T08:43:09.090637+00:00",
+  "note": "See docs/PHASE7-PROTOCOL.md"
+}
