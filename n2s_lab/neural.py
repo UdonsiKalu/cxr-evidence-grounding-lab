@@ -171,6 +171,14 @@ Describe only what the note supports about:
 - whether claims conflict
 - whether evidence is uncertain, incomplete, or mixed
 
+Administration clarity (important):
+- If therapy was declined, refused, not started, or explicitly not administered, state that
+  clearly as not given. That is decisive non-administration, not clinical uncertainty.
+- If therapy is only planned / scheduled / recommended for the future, state planned-not-given.
+- Reserve "uncertain / unclear / mixed / pending" for unresolved facts about whether therapy
+  was given, which line it was, or whether an outcome counts as failure — not for a clear
+  decline or clear never-given.
+
 Do NOT output a final categorical verdict (do not write SATISFIED, NOT_SATISFIED,
 UNCERTAIN, or CONTRADICTION as a label). Use ordinary prose. Be concrete; quote short spans.
 """
@@ -178,7 +186,17 @@ UNCERTAIN, or CONTRADICTION as a label). Use ordinary prose. Be concrete; quote 
 ANALYSIS_TO_EXTRACT_SYSTEM = """You convert a free-text semantic analysis of a clinical note into
 structured extraction JSON. Use only information stated in the analysis (and short quotes it
 contains). Do not invent facts. Do not output a predicate verdict.
-Fill contradiction.present and uncertainty.present as true or false. Return JSON only."""
+Fill contradiction.present and uncertainty.present as true or false.
+
+Administration vs uncertainty:
+- If the analysis says therapy was declined, refused, not administered, or only planned,
+  set administration_status to not_given or planned as appropriate.
+- Do NOT set uncertainty.present=true merely because the patient declined or therapy was
+  never given. Those are definitive non-administration.
+- Set uncertainty.present=true only when the analysis describes unresolved doubt about
+  administration, line/setting, mixed/unclear outcome, or pending confirmation of failure.
+
+Return JSON only."""
 
 VERDICT_FROM_ANALYSIS_SYSTEM = f"""You read a free-text semantic analysis of a clinical note and
 output only a categorical verdict for {PREDICATE_ID}.

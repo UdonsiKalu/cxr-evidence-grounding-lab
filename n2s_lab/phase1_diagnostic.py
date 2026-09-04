@@ -46,7 +46,7 @@ LOSS_STAGES = (
 )
 
 CONTRA_MARKERS = re.compile(
-    r"\b(contradict|contradiction|conflict(?:ing|s)?|incompatible|"
+    r"\b(contradict(?:ion|s|ory)?|conflict(?:ing|s)?|incompatible|"
     r"mutually exclusive|cannot both|disagree|inconsistent|vs\.?)\b",
     re.I,
 )
@@ -56,6 +56,29 @@ UNCERT_MARKERS = re.compile(
     r"cannot determine|ambiguous)\b",
     re.I,
 )
+# "no conflicting claims" / "without contradiction" must not count as a contradiction cue.
+_CONTRA_NEGATION_PREFIX = re.compile(
+    r"(?:\bno|not|without|lack of)\s+(?:any\s+|clear\s+|explicit\s+)?$",
+    re.I,
+)
+
+
+def _mentions_marker(text: str, pattern: re.Pattern[str]) -> bool:
+    if not text:
+        return False
+    for m in pattern.finditer(text):
+        prefix = text[max(0, m.start() - 28) : m.start()]
+        if _CONTRA_NEGATION_PREFIX.search(prefix):
+            continue
+        # also: "does not mention … contradictions|conflicting"
+        window = text[max(0, m.start() - 48) : m.start()].lower()
+        if re.search(
+            r"(?:does not|do not|didn't|did not)\s+(?:mention|describe|contain|include)\b",
+            window,
+        ):
+            continue
+        return True
+    return False
 
 OLLAMA_OUTPUT_NOTE = (
     "Current Ollama path uses POST /api/chat with format=json (when structured), "
@@ -75,8 +98,8 @@ def expected_distinction(case_id: str, gold: str) -> str:
 
 def analysis_flags(text: str) -> dict[str, bool]:
     return {
-        "mentions_contradiction": bool(CONTRA_MARKERS.search(text or "")),
-        "mentions_uncertainty": bool(UNCERT_MARKERS.search(text or "")),
+        "mentions_contradiction": _mentions_marker(text or "", CONTRA_MARKERS),
+        "mentions_uncertainty": _mentions_marker(text or "", UNCERT_MARKERS),
     }
 
 

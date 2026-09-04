@@ -72,20 +72,22 @@ def _apply_uncertainty(
     extraction: Extraction,
     trace: list[str],
 ) -> tuple[Atom, Atom, Atom, Atom]:
-    """Keep implicated atoms unknown so the unchanged rule can fire UNCERTAIN.
+    """Soften *why-mapped* atoms to unknown so the rule can fire UNCERTAIN.
 
-    Does not change X. FALSE cannot close the predicate while the note flags
-    unresolved evidence; why-mapped atoms are unknown even if they were true.
+    Only letters in ``_uncertainty_targets`` are touched. Decisive FALSE atoms
+    outside that set stay FALSE (e.g. administration_status=not_given with
+    why=pending about outcomes must remain B=false → NOT_SATISFIED, not wipe
+    B so Dual becomes UNCERTAIN). Does not change X.
     """
     targets = _uncertainty_targets(extraction)
     trace.append(
         "U=true (extractor uncertainty.present"
         + (f", why={extraction.uncertainty_why!r}" if extraction.uncertainty_why else "")
-        + f"; keep {''.join(sorted(targets))} unknown)"
+        + f"; keep {''.join(sorted(targets)) or '—'} unknown)"
     )
 
     def maybe_unknown(atom: Atom, letter: str) -> Atom:
-        if letter not in targets and atom is not Atom.FALSE:
+        if letter not in targets:
             return atom
         if atom is Atom.UNKNOWN:
             return atom
@@ -113,6 +115,50 @@ def _blob_has_word(blob: str, words: tuple[str, ...]) -> bool:
     return False
 
 
+def _negated_admin_claim(blob: str) -> bool:
+    """True when blob asserts therapy was not given / not administered / declined."""
+    import re
+
+    patterns = (
+        r"\bnot[\s-]+given\b",
+        r"\bnever[\s-]+given\b",
+        r"\bnot[\s-]+administered\b",
+        r"\bnever[\s-]+administered\b",
+        r"\bno(?:\s+\w+){0,4}\s+(?:been\s+)?administered\b",
+        r"\bhas not been administered\b",
+        r"\bhave not been administered\b",
+        r"\bdeclined\b",
+        r"\brefused\b",
+        r"\bnot started\b",
+        r"\bnever started\b",
+        r"\bnot_given\b",
+    )
+    return any(re.search(p, blob) for p in patterns)
+
+
+def _positive_admin_evidence(blob: str) -> bool:
+    """True for positive administration evidence after stripping negated phrases."""
+    import re
+
+    cleaned = blob
+    for p in (
+        r"\bnot[\s-]+given\b",
+        r"\bnever[\s-]+given\b",
+        r"\bnot[\s-]+administered\b",
+        r"\bnever[\s-]+administered\b",
+        r"\bno(?:\s+\w+){0,4}\s+(?:been\s+)?administered\b",
+        r"\bhas not been administered\b",
+        r"\bhave not been administered\b",
+        r"\bnot started\b",
+        r"\bnever started\b",
+        r"\bnot_given\b",
+    ):
+        cleaned = re.sub(p, " ", cleaned)
+    return _blob_has_word(
+        cleaned, ("given", "cycles", "received", "started", "administered")
+    )
+
+
 def _hard_simultaneous_conflict(extraction: Extraction, polarities: list[str]) -> bool:
     """True for incompatible *same-time* facts — not sequenced response→later failure."""
     has_failure = any(p in FAILURE_POLARITIES for p in polarities)
@@ -122,15 +168,21 @@ def _hard_simultaneous_conflict(extraction: Extraction, polarities: list[str]) -
         + [c.a + " " + c.b for c in extraction.contradiction_cues]
         + [o.text for o in extraction.outcome_statements]
     ).lower()
-    never = _blob_has_word(blob, ("never", "not_given", "not given", "no prior"))
-    given = _blob_has_word(
-        blob, ("given", "cycles", "received", "started", "administered")
+    never = (
+        _blob_has_word(blob, ("never", "not_given", "not given", "no prior"))
+        or _negated_admin_claim(blob)
+        or extraction.administration_status.lower().strip() in {"not_given", "planned"}
     )
-    # Exclude 'not_given' rows from counting as given via substring.
-    if extraction.administration_status.lower().strip() == "not_given":
-        given = _blob_has_word(
-            blob, ("cycles", "received", "started", "administered")
-        ) or (" given" in f" {blob}" and "not given" not in blob)
+    given = _positive_admin_evidence(blob)
+    # Status planned/not_given alone is not "given"; require positive evidence beyond status token.
+    if extraction.administration_status.lower().strip() in {"not_given", "planned"}:
+        # Drop the status token from the given check (already in blob).
+        given = _positive_admin_evidence(
+            " ".join(
+                [c.a + " " + c.b for c in extraction.contradiction_cues]
+                + [o.text for o in extraction.outcome_statements]
+            ).lower()
+        )
     failed = _blob_has_word(
         blob, ("failed", "progressed", "refractory", "progression", "progressive")
     )
@@ -529,3 +581,44 @@ def selftest_ground() -> None:
     assert g_plan.uncertainty is False
     assert g_plan.first_line_administered is Atom.FALSE
     assert evaluate_rule(g_plan).verdict is Verdict.NOT_SATISFIED
+
+    # Declined / never-given: D-path often sets U=true with why=pending (outcomes),
+    # but B=false from not_given must stay decisive → NOT_SATISFIED (not UNCERTAIN).
+    declined_pending_u = Extraction(
+        stated_line="first",
+        regimen_names=["FOLFIRINOX"],
+        administration_status="not_given",
+        contradiction_present=False,
+        uncertainty_present=True,
+        uncertainty_cue="the patient declined systemic therapy",
+        uncertainty_why="pending",
+        uncertainty_cues=[
+            "the patient declined systemic therapy",
+            "No chemotherapy has been administered",
+            "pending",
+        ],
+        outcome_statements=[],
+    )
+    g_dec = ground(declined_pending_u)
+    assert g_dec.first_line_administered is Atom.FALSE
+    assert g_dec.uncertainty is True  # flag retained; atoms outside CD not wiped
+    assert evaluate_rule(g_dec).verdict is Verdict.NOT_SATISFIED
+
+    # Recommended + declined + "no chemo administered" is consistent, not X.
+    declined_false_x = Extraction(
+        stated_line="first",
+        regimen_names=["FOLFIRINOX"],
+        administration_status="not_given",
+        contradiction_present=True,
+        contradiction_cues=[
+            ContradictionCue(
+                a="First-line FOLFIRINOX was recommended but the patient declined systemic therapy.",
+                b="No chemotherapy has been administered.",
+            )
+        ],
+        outcome_statements=[],
+    )
+    g_fx = ground(declined_false_x)
+    assert g_fx.contradiction is False
+    assert g_fx.first_line_administered is Atom.FALSE
+    assert evaluate_rule(g_fx).verdict is Verdict.NOT_SATISFIED
