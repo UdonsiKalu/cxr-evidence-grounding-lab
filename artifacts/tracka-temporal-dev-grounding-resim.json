@@ -1,0 +1,677 @@
+{
+  "kind": "tracka_temporal_dev_grounding_resim",
+  "timestamp": "2026-09-04T04:54:25.122444+00:00",
+  "note": "Re-ground C_full/D_full from frozen Phase-7 temporal-dev extractions after sequenced temporal-change \u2260 contradiction. G3 untouched. Test set not used.",
+  "g3_untouched": true,
+  "test_set_not_used": "temporal-family-test.json",
+  "results": [
+    {
+      "source": "phase7-temporal-dev-qwen2.5-coder_32b.json",
+      "model": "qwen2.5-coder:32b",
+      "error": null,
+      "Dual_full_summary": {
+        "n": 14,
+        "wrong_AUTO": 2,
+        "correct_AUTO": 3,
+        "REVIEW": 9,
+        "UNKNOWN": 0,
+        "wrong_AUTO_rate": 0.14285714285714285,
+        "REVIEW_rate": 0.6428571428571429,
+        "safety_among_auto": 0.6,
+        "coverage_auto": 0.35714285714285715,
+        "wrong_AUTO_ids": [
+          "TF_T1",
+          "TF_N1"
+        ],
+        "REVIEW_ids": [
+          "BC_E1",
+          "TF_E1",
+          "TF_E2",
+          "TF_E4",
+          "TF_E5",
+          "TF_T2",
+          "TF_C1",
+          "BC_C1",
+          "BC_E2"
+        ]
+      }
+    },
+    {
+      "source": "phase7-temporal-dev-llama3_8b-instruct-q4_0.json",
+      "model": "llama3:8b-instruct-q4_0",
+      "error": null,
+      "Dual_full_summary": {
+        "n": 14,
+        "wrong_AUTO": 2,
+        "correct_AUTO": 2,
+        "REVIEW": 10,
+        "UNKNOWN": 0,
+        "wrong_AUTO_rate": 0.14285714285714285,
+        "REVIEW_rate": 0.7142857142857143,
+        "safety_among_auto": 0.5,
+        "coverage_auto": 0.2857142857142857,
+        "wrong_AUTO_ids": [
+          "TF_E3",
+          "TF_T2"
+        ],
+        "REVIEW_ids": [
+          "BC_E1",
+          "TF_E1",
+          "TF_E2",
+          "TF_E4",
+          "TF_E5",
+          "TF_T1",
+          "TF_C1",
+          "BC_C1",
+          "TF_N1",
+          "BC_E2"
+        ]
+      }
+    },
+    {
+      "source": "phase7-temporal-dev-mistral_instruct.json",
+      "model": "mistral:instruct",
+      "error": null,
+      "Dual_full_summary": {
+        "n": 14,
+        "wrong_AUTO": 0,
+        "correct_AUTO": 0,
+        "REVIEW": 14,
+        "UNKNOWN": 0,
+        "wrong_AUTO_rate": 0.0,
+        "REVIEW_rate": 1.0,
+        "safety_among_auto": null,
+        "coverage_auto": 0.0,
+        "wrong_AUTO_ids": [],
+        "REVIEW_ids": [
+          "BC_E1",
+          "TF_E1",
+          "TF_E2",
+          "TF_E3",
+          "BC11_E3",
+          "TF_E4",
+          "TF_E5",
+          "TF_U1",
+          "TF_T1",
+          "TF_T2",
+          "TF_C1",
+          "BC_C1",
+          "TF_N1",
+          "BC_E2"
+        ]
+      }
+    }
+  ],
+  "detail": [
+    {
+      "source": "phase7-temporal-dev-qwen2.5-coder_32b.json",
+      "model": "qwen2.5-coder:32b",
+      "error": null,
+      "Dual_full": {
+        "summary": {
+          "n": 14,
+          "wrong_AUTO": 2,
+          "correct_AUTO": 3,
+          "REVIEW": 9,
+          "UNKNOWN": 0,
+          "wrong_AUTO_rate": 0.14285714285714285,
+          "REVIEW_rate": 0.6428571428571429,
+          "safety_among_auto": 0.6,
+          "coverage_auto": 0.35714285714285715,
+          "wrong_AUTO_ids": [
+            "TF_T1",
+            "TF_N1"
+          ],
+          "REVIEW_ids": [
+            "BC_E1",
+            "TF_E1",
+            "TF_E2",
+            "TF_E4",
+            "TF_E5",
+            "TF_T2",
+            "TF_C1",
+            "BC_C1",
+            "BC_E2"
+          ]
+        },
+        "cases": [
+          {
+            "id": "BC_E1",
+            "gold": "SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_E1",
+            "gold": "SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_E2",
+            "gold": "SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_E3",
+            "gold": "SATISFIED",
+            "verdict": "SATISFIED",
+            "disposition": "AUTO",
+            "bucket": "correct_AUTO",
+            "wrong_AUTO": false,
+            "correct_AUTO": true,
+            "is_REVIEW": false,
+            "match_gold": true
+          },
+          {
+            "id": "BC11_E3",
+            "gold": "SATISFIED",
+            "verdict": "SATISFIED",
+            "disposition": "AUTO",
+            "bucket": "correct_AUTO",
+            "wrong_AUTO": false,
+            "correct_AUTO": true,
+            "is_REVIEW": false,
+            "match_gold": true
+          },
+          {
+            "id": "TF_E4",
+            "gold": "SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_E5",
+            "gold": "SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_U1",
+            "gold": "UNCERTAIN",
+            "verdict": "UNCERTAIN",
+            "disposition": "AUTO",
+            "bucket": "correct_AUTO",
+            "wrong_AUTO": false,
+            "correct_AUTO": true,
+            "is_REVIEW": false,
+            "match_gold": true
+          },
+          {
+            "id": "TF_T1",
+            "gold": "NOT_SATISFIED",
+            "verdict": "CONTRADICTION",
+            "disposition": "AUTO",
+            "bucket": "wrong_AUTO",
+            "wrong_AUTO": true,
+            "correct_AUTO": false,
+            "is_REVIEW": false,
+            "match_gold": false
+          },
+          {
+            "id": "TF_T2",
+            "gold": "NOT_SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_C1",
+            "gold": "CONTRADICTION",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "BC_C1",
+            "gold": "CONTRADICTION",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_N1",
+            "gold": "NOT_SATISFIED",
+            "verdict": "CONTRADICTION",
+            "disposition": "AUTO",
+            "bucket": "wrong_AUTO",
+            "wrong_AUTO": true,
+            "correct_AUTO": false,
+            "is_REVIEW": false,
+            "match_gold": false
+          },
+          {
+            "id": "BC_E2",
+            "gold": "NOT_SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          }
+        ]
+      }
+    },
+    {
+      "source": "phase7-temporal-dev-llama3_8b-instruct-q4_0.json",
+      "model": "llama3:8b-instruct-q4_0",
+      "error": null,
+      "Dual_full": {
+        "summary": {
+          "n": 14,
+          "wrong_AUTO": 2,
+          "correct_AUTO": 2,
+          "REVIEW": 10,
+          "UNKNOWN": 0,
+          "wrong_AUTO_rate": 0.14285714285714285,
+          "REVIEW_rate": 0.7142857142857143,
+          "safety_among_auto": 0.5,
+          "coverage_auto": 0.2857142857142857,
+          "wrong_AUTO_ids": [
+            "TF_E3",
+            "TF_T2"
+          ],
+          "REVIEW_ids": [
+            "BC_E1",
+            "TF_E1",
+            "TF_E2",
+            "TF_E4",
+            "TF_E5",
+            "TF_T1",
+            "TF_C1",
+            "BC_C1",
+            "TF_N1",
+            "BC_E2"
+          ]
+        },
+        "cases": [
+          {
+            "id": "BC_E1",
+            "gold": "SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_E1",
+            "gold": "SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_E2",
+            "gold": "SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_E3",
+            "gold": "SATISFIED",
+            "verdict": "UNCERTAIN",
+            "disposition": "AUTO",
+            "bucket": "wrong_AUTO",
+            "wrong_AUTO": true,
+            "correct_AUTO": false,
+            "is_REVIEW": false,
+            "match_gold": false
+          },
+          {
+            "id": "BC11_E3",
+            "gold": "SATISFIED",
+            "verdict": "SATISFIED",
+            "disposition": "AUTO",
+            "bucket": "correct_AUTO",
+            "wrong_AUTO": false,
+            "correct_AUTO": true,
+            "is_REVIEW": false,
+            "match_gold": true
+          },
+          {
+            "id": "TF_E4",
+            "gold": "SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_E5",
+            "gold": "SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_U1",
+            "gold": "UNCERTAIN",
+            "verdict": "UNCERTAIN",
+            "disposition": "AUTO",
+            "bucket": "correct_AUTO",
+            "wrong_AUTO": false,
+            "correct_AUTO": true,
+            "is_REVIEW": false,
+            "match_gold": true
+          },
+          {
+            "id": "TF_T1",
+            "gold": "NOT_SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_T2",
+            "gold": "NOT_SATISFIED",
+            "verdict": "UNCERTAIN",
+            "disposition": "AUTO",
+            "bucket": "wrong_AUTO",
+            "wrong_AUTO": true,
+            "correct_AUTO": false,
+            "is_REVIEW": false,
+            "match_gold": false
+          },
+          {
+            "id": "TF_C1",
+            "gold": "CONTRADICTION",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "BC_C1",
+            "gold": "CONTRADICTION",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_N1",
+            "gold": "NOT_SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "BC_E2",
+            "gold": "NOT_SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          }
+        ]
+      }
+    },
+    {
+      "source": "phase7-temporal-dev-mistral_instruct.json",
+      "model": "mistral:instruct",
+      "error": null,
+      "Dual_full": {
+        "summary": {
+          "n": 14,
+          "wrong_AUTO": 0,
+          "correct_AUTO": 0,
+          "REVIEW": 14,
+          "UNKNOWN": 0,
+          "wrong_AUTO_rate": 0.0,
+          "REVIEW_rate": 1.0,
+          "safety_among_auto": null,
+          "coverage_auto": 0.0,
+          "wrong_AUTO_ids": [],
+          "REVIEW_ids": [
+            "BC_E1",
+            "TF_E1",
+            "TF_E2",
+            "TF_E3",
+            "BC11_E3",
+            "TF_E4",
+            "TF_E5",
+            "TF_U1",
+            "TF_T1",
+            "TF_T2",
+            "TF_C1",
+            "BC_C1",
+            "TF_N1",
+            "BC_E2"
+          ]
+        },
+        "cases": [
+          {
+            "id": "BC_E1",
+            "gold": "SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_E1",
+            "gold": "SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_E2",
+            "gold": "SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_E3",
+            "gold": "SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "BC11_E3",
+            "gold": "SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_E4",
+            "gold": "SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_E5",
+            "gold": "SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_U1",
+            "gold": "UNCERTAIN",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_T1",
+            "gold": "NOT_SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_T2",
+            "gold": "NOT_SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_C1",
+            "gold": "CONTRADICTION",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "BC_C1",
+            "gold": "CONTRADICTION",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TF_N1",
+            "gold": "NOT_SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "BC_E2",
+            "gold": "NOT_SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          }
+        ]
+      }
+    }
+  ]
+}

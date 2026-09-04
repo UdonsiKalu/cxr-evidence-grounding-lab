@@ -100,21 +100,84 @@ def _apply_uncertainty(
     )
 
 
-def _same_event_fact_conflict(extraction: Extraction, polarities: list[str]) -> bool:
-    """True when spans/outcomes look like incompatible facts, not unresolved alternatives."""
+def _blob_has_word(blob: str, words: tuple[str, ...]) -> bool:
+    """Word / phrase match; avoid 'continue'∈'discontinued', 'given'∈'not_given'."""
+    import re
+
+    for w in words:
+        if " " in w:
+            if w in blob:
+                return True
+        elif re.search(rf"(?<![a-z]){re.escape(w)}(?![a-z])", blob):
+            return True
+    return False
+
+
+def _hard_simultaneous_conflict(extraction: Extraction, polarities: list[str]) -> bool:
+    """True for incompatible *same-time* facts — not sequenced response→later failure."""
     has_failure = any(p in FAILURE_POLARITIES for p in polarities)
-    has_positive = any(p in POSITIVE_POLARITIES for p in polarities)
-    if has_failure and has_positive:
-        return True
+    has_ongoing = any(p == "ongoing" for p in polarities)
     blob = " ".join(
         [extraction.administration_status]
         + [c.a + " " + c.b for c in extraction.contradiction_cues]
+        + [o.text for o in extraction.outcome_statements]
     ).lower()
-    never = any(w in blob for w in ("never", "not_given", "not given", "no prior"))
-    given = any(w in blob for w in ("given", "cycles", "received", "started", "administered"))
-    failed = any(w in blob for w in ("failed", "progressed", "refractory"))
-    ongoing = any(w in blob for w in ("continues", "stable", "ongoing", "continue"))
-    return (never and given) or (failed and ongoing)
+    never = _blob_has_word(blob, ("never", "not_given", "not given", "no prior"))
+    given = _blob_has_word(
+        blob, ("given", "cycles", "received", "started", "administered")
+    )
+    # Exclude 'not_given' rows from counting as given via substring.
+    if extraction.administration_status.lower().strip() == "not_given":
+        given = _blob_has_word(
+            blob, ("cycles", "received", "started", "administered")
+        ) or (" given" in f" {blob}" and "not given" not in blob)
+    failed = _blob_has_word(
+        blob, ("failed", "progressed", "refractory", "progression", "progressive")
+    )
+    ongoing = _blob_has_word(blob, ("continues", "stable", "ongoing", "continue"))
+    return (
+        (never and given)
+        or (failed and ongoing)
+        or (has_failure and has_ongoing)
+    )
+
+
+def _meta_contradiction_cues(extraction: Extraction) -> bool:
+    """Extractor marked X but spans are commentary, not two clinical facts."""
+    if not extraction.contradiction_cues:
+        return False
+    blob = " ".join(c.a + " " + c.b for c in extraction.contradiction_cues).lower()
+    markers = (
+        "no contradictory",
+        "no contradiction",
+        "does not support",
+        "therefore, the note does not",
+        "explicitly mentioned as",
+    )
+    return any(m in blob for m in markers)
+
+
+def _sequenced_temporal_change(extraction: Extraction, polarities: list[str]) -> bool:
+    """Therapy responded / possible, then later failed — temporal change, not contradiction."""
+    if _hard_simultaneous_conflict(extraction, polarities):
+        return False
+    cues = {c.lower() for c in extraction.implicit_cues}
+    has_failure = any(p in FAILURE_POLARITIES for p in polarities)
+    has_response = any(p == "response" for p in polarities)
+    has_unknown = any(p == "unknown" for p in polarities)
+    if "response_then_progression" in cues and has_failure:
+        return True
+    if has_failure and has_response:
+        return True
+    # possible → confirmed progression (unknown then failure polarities)
+    if has_failure and has_unknown:
+        return True
+    return False
+
+
+def _same_event_fact_conflict(extraction: Extraction, polarities: list[str]) -> bool:
+    """Backward-compatible name: hard simultaneous conflict only."""
+    return _hard_simultaneous_conflict(extraction, polarities)
 
 
 def ground(extraction: Extraction) -> Grounding:
@@ -135,21 +198,41 @@ def ground(extraction: Extraction) -> Grounding:
             trace.append("X=true (extractor contradiction.present=true with spans)")
         else:
             trace.append("X=true (extractor contradiction.present=true; spans missing)")
+        # Track A reconnect (not G3): sequenced temporal-change is not a contradiction.
+        if _sequenced_temporal_change(extraction, polarities):
+            contradiction = False
+            trace.append(
+                "X=false (sequenced temporal-change; extractor contradiction overridden)"
+            )
+        elif _meta_contradiction_cues(extraction) and not _hard_simultaneous_conflict(
+            extraction, polarities
+        ):
+            contradiction = False
+            trace.append(
+                "X=false (meta contradiction cues; extractor contradiction overridden)"
+            )
     elif extraction.contradiction_present is False:
         contradiction = False
         trace.append("X=false (extractor contradiction.present=false / none)")
     elif extraction.contradiction_cues:
         contradiction = True
         trace.append("X=true (contradiction_cues list, present omitted)")
+        if _sequenced_temporal_change(extraction, polarities):
+            contradiction = False
+            trace.append(
+                "X=false (sequenced temporal-change; cue-list contradiction overridden)"
+            )
     elif has_failure and has_positive and "temporary_hold" not in cues:
-        if "response_then_progression" in cues:
-            trace.append("response_then_progression cue: treat as sequenced, not X")
+        if "response_then_progression" in cues or _sequenced_temporal_change(
+            extraction, polarities
+        ):
+            trace.append("response_then_progression / sequenced: treat as temporal, not X")
         else:
             contradiction = True
             trace.append("failure polarity and response/ongoing polarity both present → X=true")
 
     unc = {c.lower() for c in extraction.uncertainty_cues}
-    if contradiction and not _same_event_fact_conflict(extraction, polarities):
+    if contradiction and not _hard_simultaneous_conflict(extraction, polarities):
         if (unc & SOFT_UNCERTAINTY) or _uncertainty_present(extraction):
             contradiction = False
             trace.append("X=false (uncertainty: unresolved alternative, not same-event conflict)")
@@ -267,6 +350,40 @@ def selftest_ground() -> None:
         ],
     )
     assert ground(with_spans).contradiction is True
+
+    # Track A reconnect: response → later failure is temporal, even if extractor sets X.
+    temporal_rx_fail = Extraction(
+        stated_line="first",
+        administration_status="given",
+        contradiction_present=True,
+        contradiction_cues=[
+            ContradictionCue(
+                a="partial response after three cycles",
+                b="rising M-protein and new lesions at cycle 4",
+            )
+        ],
+        outcome_statements=[
+            OutcomeStatement(text="partial response after three cycles", polarity="response"),
+            OutcomeStatement(text="rising M-protein and new lesions", polarity="failure"),
+        ],
+    )
+    g_tmp = ground(temporal_rx_fail)
+    assert g_tmp.contradiction is False
+    assert any("temporal-change" in t for t in g_tmp.trace)
+
+    possible_then_confirmed = Extraction(
+        stated_line="first",
+        administration_status="given",
+        contradiction_present=True,
+        contradiction_cues=[
+            ContradictionCue(a="possible progression", b="clear progressive disease")
+        ],
+        outcome_statements=[
+            OutcomeStatement(text="possible progression", polarity="unknown"),
+            OutcomeStatement(text="clear progressive disease", polarity="failure"),
+        ],
+    )
+    assert ground(possible_then_confirmed).contradiction is False
 
     explicit_none = Extraction(
         stated_line="first",

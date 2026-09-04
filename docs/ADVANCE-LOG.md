@@ -27,6 +27,17 @@
 
 ## Log (newest first)
 
+### 2026-09-04 — Freeze α=8 Track B claim + Track A temporal grounding reconnect
+
+| | |
+|--|--|
+| **Track** | both |
+| **Activity** | (1) Froze limited Track B claim @ α=8 (`TRACKB-ALPHA8-FREEZE.md`). (2) Track A reconnect **without G3 change**: `ground.py` treats sequenced temporal-change (response→failure / possible→confirmed) as X=false even if extractor sets X; fixed substring traps (`continue`∈`Discontinued`). Resim Dual_full from frozen Phase-7 temporal-dev extractions (no LLM). |
+| **Result** | Qwen Dual_full wrong_AUTO **5→2**; false-X family **TF_E3 / BC11_E3 / TF_E4 cleared**; remaining wrongs = `TF_T1`/`TF_N1` (control overfire, different shape). Llama/Mistral unchanged pattern (2 / 0 wrong). True-contradiction controls stay REVIEW. |
+| **Artifacts** | `docs/TRACKB-ALPHA8-FREEZE.md` · `docs/TRACKA-TEMPORAL-RECONNECT.md` · `artifacts/tracka-temporal-dev-grounding-resim.json` |
+| **Decision** | Track B family closed as limited claim. Track A primary path = Qwen Dual containment via grounding; optional live Dual re-run later. Test sealed; G3 untouched. |
+| **Commit** | (this) |
+
 ### 2026-09-03 — 7B endpoint YES (α=8); 14B transfer: failure does not persist
 
 | | |

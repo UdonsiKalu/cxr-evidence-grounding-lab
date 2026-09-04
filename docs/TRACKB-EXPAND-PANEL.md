@@ -58,6 +58,8 @@ Vector: `unit(mean(A) − mean(B))` @ **L20**.
 
 ## Open
 
-1. Optional: score sealed `temporal-test` only after an explicit freeze decision on the α=8 claim (or Track A path).  
-2. Track A reconnect — REVIEW containment for models that still wrong_AUTO.  
-3. Do **not** modify G3 from this panel alone.
+1. ~~Freeze α=8~~ — [TRACKB-ALPHA8-FREEZE.md](./TRACKB-ALPHA8-FREEZE.md)  
+2. ~~Track A reconnect~~ — grounding temporal≠contradiction; Qwen Dual wrong_AUTO 5→2 on resim ([TRACKA-TEMPORAL-RECONNECT.md](./TRACKA-TEMPORAL-RECONNECT.md))  
+3. Optional live Dual re-run; remaining Qwen wrongs `TF_T1`/`TF_N1`  
+4. Sealed `temporal-test` only after explicit freeze decision  
+5. Do **not** modify G3 from this panel alone

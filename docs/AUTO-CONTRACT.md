@@ -27,6 +27,11 @@ else  →  REVIEW
 | G2 | **Dual-path agree** (when Dual path used) | C-path and D-path AUTO verdicts identical |
 | G3 | **Contradiction hygiene** | Do not AUTO CONTRADICTION unless verify supports `contradiction.present` (no keyword-only force) |
 
+**Grounding reconnect (2026-09-04, not a G3 change):** sequenced temporal-change
+(response→later failure, or possible→confirmed progression) is **not** a contradiction
+even if the extractor sets `contradiction.present=true`. See `n2s_lab/ground.py` and
+`docs/TRACKA-TEMPORAL-RECONNECT.md`. Resim: `run_auto_contract_score.py --tracka-resim`.
+
 Optional later (not required for v1 scoring):
 
 | # | Gate | Pass condition |

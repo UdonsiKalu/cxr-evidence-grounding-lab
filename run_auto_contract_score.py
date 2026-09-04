@@ -111,6 +111,11 @@ def main() -> None:
         action="store_true",
         help="print temporal-family-dev case ids",
     )
+    parser.add_argument(
+        "--tracka-resim",
+        action="store_true",
+        help="resim temporal-dev Dual_full after grounding temporal-change fix (no LLM)",
+    )
     parser.add_argument("--out", default="", help="artifact filename under artifacts/")
     args = parser.parse_args()
 
@@ -119,7 +124,17 @@ def main() -> None:
         fam = load_temporal_family()
         assert len(fam.get("cases") or []) >= 10
         assert fam.get("split") == "development"
+        from n2s_lab.ground import selftest_ground  # noqa: E402
+
+        selftest_ground()
         print(f"temporal-family-dev cases: {len(fam['cases'])} split={fam.get('split')}")
+        print("ground selftest OK")
+        return
+
+    if args.tracka_resim:
+        from n2s_lab.tracka_temporal_resim import run_tracka_temporal_resim  # noqa: E402
+
+        run_tracka_temporal_resim()
         return
 
     if args.list_family:
