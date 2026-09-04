@@ -1,0 +1,157 @@
+{
+  "kind": "tracka_temporal_test_qwen_dual_score",
+  "timestamp": "2026-09-04T07:39:58.356872+00:00",
+  "model": "qwen2.5-coder:32b",
+  "set": "temporal-family-test.json",
+  "held_out": true,
+  "paths": {
+    "Dual_full": {
+      "n": 12,
+      "wrong_AUTO": 0,
+      "correct_AUTO": 5,
+      "REVIEW": 7,
+      "UNKNOWN": 0,
+      "wrong_AUTO_rate": 0.0,
+      "REVIEW_rate": 0.5833333333333334,
+      "safety_among_auto": 1.0,
+      "coverage_auto": 0.4166666666666667,
+      "wrong_AUTO_ids": [],
+      "REVIEW_ids": [
+        "TFT_E1",
+        "TFT_E2",
+        "TFT_E4",
+        "TFT_E5",
+        "TFT_T1",
+        "TFT_T2",
+        "TFT_C2"
+      ]
+    },
+    "D_full": {
+      "n": 12,
+      "wrong_AUTO": 1,
+      "correct_AUTO": 7,
+      "REVIEW": 4,
+      "UNKNOWN": 0,
+      "wrong_AUTO_rate": 0.08333333333333333,
+      "REVIEW_rate": 0.3333333333333333,
+      "safety_among_auto": 0.875,
+      "coverage_auto": 0.6666666666666666,
+      "wrong_AUTO_ids": [
+        "TFT_T1"
+      ],
+      "REVIEW_ids": [
+        "TFT_E1",
+        "TFT_E4",
+        "TFT_E5",
+        "TFT_C2"
+      ]
+    },
+    "C_full": {
+      "n": 12,
+      "wrong_AUTO": 2,
+      "correct_AUTO": 8,
+      "REVIEW": 2,
+      "UNKNOWN": 0,
+      "wrong_AUTO_rate": 0.16666666666666666,
+      "REVIEW_rate": 0.16666666666666666,
+      "safety_among_auto": 0.8,
+      "coverage_auto": 0.8333333333333334,
+      "wrong_AUTO_ids": [
+        "TFT_E2",
+        "TFT_T2"
+      ],
+      "REVIEW_ids": [
+        "TFT_E4",
+        "TFT_T1"
+      ]
+    }
+  },
+  "Dual_full_cases": [
+    {
+      "id": "TFT_E1",
+      "gold": "SATISFIED",
+      "verdict": "REVIEW",
+      "disposition": "REVIEW",
+      "reason": "one_or_both_paths_already_REVIEW"
+    },
+    {
+      "id": "TFT_E2",
+      "gold": "SATISFIED",
+      "verdict": "REVIEW",
+      "disposition": "REVIEW",
+      "reason": "paths_disagree"
+    },
+    {
+      "id": "TFT_E3",
+      "gold": "SATISFIED",
+      "verdict": "SATISFIED",
+      "disposition": "AUTO",
+      "reason": "paths_agree"
+    },
+    {
+      "id": "TFT_E4",
+      "gold": "SATISFIED",
+      "verdict": "REVIEW",
+      "disposition": "REVIEW",
+      "reason": "one_or_both_paths_already_REVIEW"
+    },
+    {
+      "id": "TFT_E5",
+      "gold": "SATISFIED",
+      "verdict": "REVIEW",
+      "disposition": "REVIEW",
+      "reason": "one_or_both_paths_already_REVIEW"
+    },
+    {
+      "id": "TFT_U1",
+      "gold": "UNCERTAIN",
+      "verdict": "UNCERTAIN",
+      "disposition": "AUTO",
+      "reason": "paths_agree"
+    },
+    {
+      "id": "TFT_T1",
+      "gold": "NOT_SATISFIED",
+      "verdict": "REVIEW",
+      "disposition": "REVIEW",
+      "reason": "one_or_both_paths_already_REVIEW"
+    },
+    {
+      "id": "TFT_T2",
+      "gold": "NOT_SATISFIED",
+      "verdict": "REVIEW",
+      "disposition": "REVIEW",
+      "reason": "paths_disagree"
+    },
+    {
+      "id": "TFT_C1",
+      "gold": "CONTRADICTION",
+      "verdict": "CONTRADICTION",
+      "disposition": "AUTO",
+      "reason": "paths_agree"
+    },
+    {
+      "id": "TFT_C2",
+      "gold": "CONTRADICTION",
+      "verdict": "REVIEW",
+      "disposition": "REVIEW",
+      "reason": "one_or_both_paths_already_REVIEW"
+    },
+    {
+      "id": "TFT_N1",
+      "gold": "NOT_SATISFIED",
+      "verdict": "NOT_SATISFIED",
+      "disposition": "AUTO",
+      "reason": "paths_agree"
+    },
+    {
+      "id": "TFT_N2",
+      "gold": "NOT_SATISFIED",
+      "verdict": "NOT_SATISFIED",
+      "disposition": "AUTO",
+      "reason": "paths_agree"
+    }
+  ],
+  "note": "First sealed-test score after DEV freeze. No redesign from this run. G3 untouched.",
+  "redesign_forbidden": true
+}

@@ -27,6 +27,17 @@
 
 ## Log (newest first)
 
+### 2026-09-04 — Sealed temporal-test: Qwen Dual wrong_AUTO=0
+
+| | |
+|--|--|
+| **Track** | A |
+| **Activity** | First open of `temporal-family-test.json` after DEV freeze. Live Dual on `qwen2.5-coder:32b` only. Scored AUTO contract. **No redesign** from results. G3 untouched. |
+| **Result** | Dual_full n=12: **wrong_AUTO=0**, correct_AUTO=5, REVIEW=7, safety_among_auto=**1.00**. Matches DEV live claim. |
+| **Artifacts** | `artifacts/tracka-temporal-test-qwen-dual-score.json` · `phase7-temporal-test-qwen-*.json` · [TRACKA-TEMPORAL-FAMILY-FREEZE.md](./TRACKA-TEMPORAL-FAMILY-FREEZE.md) |
+| **Decision** | Track A temporal-family claim frozen (DEV+test). Do not retune from this open. Optional later: Llama residual / coverage improvement without raising wrong_AUTO. |
+| **Commit** | (this) |
+
 ### 2026-09-04 — Live Qwen Dual: wrong_AUTO=0 after grounding reconnect
 
 | | |
