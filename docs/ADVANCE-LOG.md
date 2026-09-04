@@ -27,6 +27,17 @@
 
 ## Log (newest first)
 
+### 2026-09-04 — Live Qwen Dual: wrong_AUTO=0 after grounding reconnect
+
+| | |
+|--|--|
+| **Track** | A |
+| **Activity** | Extended grounding overrides (no-failure / toxicity-stop false X; “no progression” ≠ failure). Live `run_phase7.py --set temporal-dev --models qwen2.5-coder:32b`. Scored Dual_full under AUTO contract. G3 untouched; test sealed. |
+| **Result** | **Dual_full wrong_AUTO=0** / correct_AUTO=3 / REVIEW=11 / safety_among_auto=**1.0**. False-X family live-confirmed (TF_E3/BC11_E3 AUTO SATISFIED; TF_E4 REVIEW). TF_T1/TF_N1 Dual **REVIEW** (contained) even when D_full alone still errs. Resim also Qwen wrong_AUTO **0**. |
+| **Artifacts** | `artifacts/phase7-temporal-dev-qwen-live-grounding.json` · `artifacts/phase7-temporal-dev-qwen2.5-coder_32b.json` (live overwrite) · `artifacts/tracka-qwen-live-dual-score.json` · `artifacts/tracka-temporal-dev-grounding-resim.json` |
+| **Decision** | Track A containment for this DEV family is **live-confirmed** on Qwen Dual. Next: optional Llama residual / sealed-test decision. No G3 redesign. |
+| **Commit** | (this) |
+
 ### 2026-09-04 — Freeze α=8 Track B claim + Track A temporal grounding reconnect
 
 | | |

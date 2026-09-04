@@ -1,0 +1,76 @@
+{
+  "kind": "tracka_qwen_live_dual_score",
+  "source": "artifacts/phase7-temporal-dev-qwen2.5-coder_32b.json",
+  "panel": "artifacts/phase7-temporal-dev-qwen-live-grounding.json",
+  "paths": {
+    "Dual_full": {
+      "n": 14,
+      "wrong_AUTO": 0,
+      "correct_AUTO": 3,
+      "REVIEW": 11,
+      "UNKNOWN": 0,
+      "wrong_AUTO_rate": 0.0,
+      "REVIEW_rate": 0.7857142857142857,
+      "safety_among_auto": 1.0,
+      "coverage_auto": 0.21428571428571427,
+      "wrong_AUTO_ids": [],
+      "REVIEW_ids": [
+        "BC_E1",
+        "TF_E1",
+        "TF_E2",
+        "TF_E4",
+        "TF_E5",
+        "TF_T1",
+        "TF_T2",
+        "TF_C1",
+        "BC_C1",
+        "TF_N1",
+        "BC_E2"
+      ]
+    },
+    "D_full": {
+      "n": 14,
+      "wrong_AUTO": 3,
+      "correct_AUTO": 4,
+      "REVIEW": 7,
+      "UNKNOWN": 0,
+      "wrong_AUTO_rate": 0.21428571428571427,
+      "REVIEW_rate": 0.5,
+      "safety_among_auto": 0.5714285714285714,
+      "coverage_auto": 0.5,
+      "wrong_AUTO_ids": [
+        "TF_T1",
+        "TF_T2",
+        "TF_N1"
+      ],
+      "REVIEW_ids": [
+        "BC_E1",
+        "TF_E1",
+        "TF_E2",
+        "TF_E5",
+        "TF_C1",
+        "BC_C1",
+        "BC_E2"
+      ]
+    },
+    "C_full": {
+      "n": 14,
+      "wrong_AUTO": 2,
+      "correct_AUTO": 11,
+      "REVIEW": 1,
+      "UNKNOWN": 0,
+      "wrong_AUTO_rate": 0.14285714285714285,
+      "REVIEW_rate": 0.07142857142857142,
+      "safety_among_auto": 0.8461538461538461,
+      "coverage_auto": 0.9285714285714286,
+      "wrong_AUTO_ids": [
+        "TF_E2",
+        "TF_E4"
+      ],
+      "REVIEW_ids": [
+        "TF_T2"
+      ]
+    }
+  },
+  "note": "Live Dual after grounding reconnect; G3 untouched; test sealed"
+}

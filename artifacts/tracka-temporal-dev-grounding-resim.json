@@ -1,6 +1,6 @@
 {
   "kind": "tracka_temporal_dev_grounding_resim",
-  "timestamp": "2026-09-04T04:54:25.122444+00:00",
+  "timestamp": "2026-09-04T05:01:49.023198+00:00",
   "note": "Re-ground C_full/D_full from frozen Phase-7 temporal-dev extractions after sequenced temporal-change \u2260 contradiction. G3 untouched. Test set not used.",
   "g3_untouched": true,
   "test_set_not_used": "temporal-family-test.json",
@@ -11,27 +11,26 @@
       "error": null,
       "Dual_full_summary": {
         "n": 14,
-        "wrong_AUTO": 2,
+        "wrong_AUTO": 0,
         "correct_AUTO": 3,
-        "REVIEW": 9,
+        "REVIEW": 11,
         "UNKNOWN": 0,
-        "wrong_AUTO_rate": 0.14285714285714285,
-        "REVIEW_rate": 0.6428571428571429,
-        "safety_among_auto": 0.6,
-        "coverage_auto": 0.35714285714285715,
-        "wrong_AUTO_ids": [
-          "TF_T1",
-          "TF_N1"
-        ],
+        "wrong_AUTO_rate": 0.0,
+        "REVIEW_rate": 0.7857142857142857,
+        "safety_among_auto": 1.0,
+        "coverage_auto": 0.21428571428571427,
+        "wrong_AUTO_ids": [],
         "REVIEW_ids": [
           "BC_E1",
           "TF_E1",
           "TF_E2",
           "TF_E4",
           "TF_E5",
+          "TF_T1",
           "TF_T2",
           "TF_C1",
           "BC_C1",
+          "TF_N1",
           "BC_E2"
         ]
       }
@@ -110,27 +109,26 @@
       "Dual_full": {
         "summary": {
           "n": 14,
-          "wrong_AUTO": 2,
+          "wrong_AUTO": 0,
           "correct_AUTO": 3,
-          "REVIEW": 9,
+          "REVIEW": 11,
           "UNKNOWN": 0,
-          "wrong_AUTO_rate": 0.14285714285714285,
-          "REVIEW_rate": 0.6428571428571429,
-          "safety_among_auto": 0.6,
-          "coverage_auto": 0.35714285714285715,
-          "wrong_AUTO_ids": [
-            "TF_T1",
-            "TF_N1"
-          ],
+          "wrong_AUTO_rate": 0.0,
+          "REVIEW_rate": 0.7857142857142857,
+          "safety_among_auto": 1.0,
+          "coverage_auto": 0.21428571428571427,
+          "wrong_AUTO_ids": [],
           "REVIEW_ids": [
             "BC_E1",
             "TF_E1",
             "TF_E2",
             "TF_E4",
             "TF_E5",
+            "TF_T1",
             "TF_T2",
             "TF_C1",
             "BC_C1",
+            "TF_N1",
             "BC_E2"
           ]
         },
@@ -226,13 +224,13 @@
           {
             "id": "TF_T1",
             "gold": "NOT_SATISFIED",
-            "verdict": "CONTRADICTION",
-            "disposition": "AUTO",
-            "bucket": "wrong_AUTO",
-            "wrong_AUTO": true,
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
             "correct_AUTO": false,
-            "is_REVIEW": false,
-            "match_gold": false
+            "is_REVIEW": true,
+            "match_gold": null
           },
           {
             "id": "TF_T2",
@@ -270,13 +268,13 @@
           {
             "id": "TF_N1",
             "gold": "NOT_SATISFIED",
-            "verdict": "CONTRADICTION",
-            "disposition": "AUTO",
-            "bucket": "wrong_AUTO",
-            "wrong_AUTO": true,
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
             "correct_AUTO": false,
-            "is_REVIEW": false,
-            "match_gold": false
+            "is_REVIEW": true,
+            "match_gold": null
           },
           {
             "id": "BC_E2",

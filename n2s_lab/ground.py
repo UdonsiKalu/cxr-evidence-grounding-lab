@@ -134,6 +134,20 @@ def _hard_simultaneous_conflict(extraction: Extraction, polarities: list[str]) -
     failed = _blob_has_word(
         blob, ("failed", "progressed", "refractory", "progression", "progressive")
     )
+    # "no progression" / "without progression" are absence claims, not failure.
+    if any(
+        p in blob
+        for p in (
+            "no progression",
+            "without progression",
+            "not progressed",
+            "no clear progression",
+        )
+    ):
+        # Only count failure if an explicit failure polarity exists.
+        failed = any(p in FAILURE_POLARITIES for p in polarities) or _blob_has_word(
+            blob, ("failed", "progressed", "refractory")
+        )
     ongoing = _blob_has_word(blob, ("continues", "stable", "ongoing", "continue"))
     return (
         (never and given)
@@ -153,8 +167,27 @@ def _meta_contradiction_cues(extraction: Extraction) -> bool:
         "does not support",
         "therefore, the note does not",
         "explicitly mentioned as",
+        "no clear indication of a failure",
+        "not support the formal condition",
+        "suggests ongoing response",
     )
     return any(m in blob for m in markers)
+
+
+def _false_x_without_failure(
+    extraction: Extraction, polarities: list[str]
+) -> bool:
+    """X asserted but note has no failure polarity and no never↔given conflict.
+
+    Covers toxicity-stop / no-failure controls where extractors invent X.
+    """
+    if any(p in FAILURE_POLARITIES for p in polarities):
+        return False
+    if _hard_simultaneous_conflict(extraction, polarities):
+        return False
+    return extraction.contradiction_present is True or bool(
+        extraction.contradiction_cues
+    )
 
 
 def _sequenced_temporal_change(extraction: Extraction, polarities: list[str]) -> bool:
@@ -210,6 +243,11 @@ def ground(extraction: Extraction) -> Grounding:
             contradiction = False
             trace.append(
                 "X=false (meta contradiction cues; extractor contradiction overridden)"
+            )
+        elif _false_x_without_failure(extraction, polarities):
+            contradiction = False
+            trace.append(
+                "X=false (no failure polarity / no hard conflict; extractor X overridden)"
             )
     elif extraction.contradiction_present is False:
         contradiction = False
@@ -384,6 +422,40 @@ def selftest_ground() -> None:
         ],
     )
     assert ground(possible_then_confirmed).contradiction is False
+
+    # Toxicity-stop / no-failure: extractor invents X without failure polarity.
+    tox_stop = Extraction(
+        stated_line="first",
+        administration_status="given",
+        contradiction_present=True,
+        contradiction_cues=[
+            ContradictionCue(
+                a="tumor markers falling and imaging stable",
+                b="Paclitaxel stopped for grade 3 neuropathy",
+            )
+        ],
+        outcome_statements=[
+            OutcomeStatement(text="markers falling", polarity="response"),
+            OutcomeStatement(text="imaging stable", polarity="ongoing"),
+        ],
+    )
+    assert ground(tox_stop).contradiction is False
+
+    nofail = Extraction(
+        stated_line="first",
+        administration_status="given",
+        contradiction_present=True,
+        contradiction_cues=[
+            ContradictionCue(
+                a="ongoing response",
+                b="Plan to complete induction; no progression documented",
+            )
+        ],
+        outcome_statements=[
+            OutcomeStatement(text="ongoing response", polarity="ongoing"),
+        ],
+    )
+    assert ground(nofail).contradiction is False
 
     explicit_none = Extraction(
         stated_line="first",

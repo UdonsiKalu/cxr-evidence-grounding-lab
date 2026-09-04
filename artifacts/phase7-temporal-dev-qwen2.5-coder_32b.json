@@ -21,7 +21,7 @@
     "TF_N1",
     "BC_E2"
   ],
-  "generated_at": "2026-09-03T08:43:09.074831+00:00",
+  "generated_at": "2026-09-04T06:18:50.808117+00:00",
   "summary": {
     "n": 14,
     "match_gold": {
@@ -29,9 +29,9 @@
       "B": 10,
       "C": 12,
       "D": 9,
-      "C_full": 3,
-      "D_full": 1,
-      "Dual_full": 1
+      "C_full": 11,
+      "D_full": 4,
+      "Dual_full": 3
     },
     "loss_stage_counts_all_rows": {
       "A": {
@@ -100,15 +100,15 @@
       "n": 14,
       "review_n": 1,
       "coverage_auto": 0.9285714285714286,
-      "safety_among_auto": 0.23076923076923078,
-      "gold_match_including_null": 3
+      "safety_among_auto": 0.8461538461538461,
+      "gold_match_including_null": 11
     },
     "D_v": {
       "n": 14,
       "review_n": 6,
       "coverage_auto": 0.5714285714285714,
-      "safety_among_auto": 0.125,
-      "gold_match_including_null": 1
+      "safety_among_auto": 0.5,
+      "gold_match_including_null": 4
     },
     "d_representation_loss": {
       "baseline_D": 2,
@@ -129,37 +129,37 @@
       "n": 14,
       "review_n": 1,
       "coverage_auto": 0.9285714285714286,
-      "safety_among_auto": 0.23076923076923078,
-      "gold_match_including_null": 3
+      "safety_among_auto": 0.8461538461538461,
+      "gold_match_including_null": 11
     },
     "D_rt": {
       "n": 14,
       "review_n": 6,
       "coverage_auto": 0.5714285714285714,
-      "safety_among_auto": 0.125,
-      "gold_match_including_null": 1
+      "safety_among_auto": 0.5,
+      "gold_match_including_null": 4
     },
     "Dual": {
       "n": 14,
-      "review_n": 7,
-      "coverage_auto": 0.5,
-      "safety_among_auto": 0.14285714285714285,
-      "gold_match_including_null": 1
+      "review_n": 11,
+      "coverage_auto": 0.21428571428571427,
+      "safety_among_auto": 1.0,
+      "gold_match_including_null": 3
     },
     "Dual_rt": {
       "n": 14,
-      "review_n": 7,
-      "coverage_auto": 0.5,
-      "safety_among_auto": 0.14285714285714285,
-      "gold_match_including_null": 1
+      "review_n": 11,
+      "coverage_auto": 0.21428571428571427,
+      "safety_among_auto": 1.0,
+      "gold_match_including_null": 3
     },
     "roundtrip_new_reviews": {
       "C": 0,
       "D": 0
     },
     "dual_disagreements": {
-      "Dual": 0,
-      "Dual_rt": 0
+      "Dual": 4,
+      "Dual_rt": 4
     }
   },
   "phase7_metrics": {
@@ -177,15 +177,15 @@
       "n": 14,
       "review_n": 1,
       "coverage_auto": 0.9285714285714286,
-      "safety_among_auto": 0.23076923076923078,
-      "gold_match_including_null": 3
+      "safety_among_auto": 0.8461538461538461,
+      "gold_match_including_null": 11
     },
     "D_v": {
       "n": 14,
       "review_n": 6,
       "coverage_auto": 0.5714285714285714,
-      "safety_among_auto": 0.125,
-      "gold_match_including_null": 1
+      "safety_among_auto": 0.5,
+      "gold_match_including_null": 4
     },
     "d_representation_loss": {
       "baseline_D": 2,
@@ -206,58 +206,58 @@
       "n": 14,
       "review_n": 1,
       "coverage_auto": 0.9285714285714286,
-      "safety_among_auto": 0.23076923076923078,
-      "gold_match_including_null": 3
+      "safety_among_auto": 0.8461538461538461,
+      "gold_match_including_null": 11
     },
     "D_rt": {
       "n": 14,
       "review_n": 6,
       "coverage_auto": 0.5714285714285714,
-      "safety_among_auto": 0.125,
-      "gold_match_including_null": 1
+      "safety_among_auto": 0.5,
+      "gold_match_including_null": 4
     },
     "Dual": {
       "n": 14,
-      "review_n": 7,
-      "coverage_auto": 0.5,
-      "safety_among_auto": 0.14285714285714285,
-      "gold_match_including_null": 1
+      "review_n": 11,
+      "coverage_auto": 0.21428571428571427,
+      "safety_among_auto": 1.0,
+      "gold_match_including_null": 3
     },
     "Dual_rt": {
       "n": 14,
-      "review_n": 7,
-      "coverage_auto": 0.5,
-      "safety_among_auto": 0.14285714285714285,
-      "gold_match_including_null": 1
+      "review_n": 11,
+      "coverage_auto": 0.21428571428571427,
+      "safety_among_auto": 1.0,
+      "gold_match_including_null": 3
     },
     "roundtrip_new_reviews": {
       "C": 0,
       "D": 0
     },
     "dual_disagreements": {
-      "Dual": 0,
-      "Dual_rt": 0
+      "Dual": 4,
+      "Dual_rt": 4
     },
     "C_full": {
       "n": 14,
       "review_n": 1,
       "coverage_auto": 0.9285714285714286,
-      "safety_among_auto": 0.23076923076923078,
-      "gold_match_including_null": 3
+      "safety_among_auto": 0.8461538461538461,
+      "gold_match_including_null": 11
     },
     "D_full": {
       "n": 14,
       "review_n": 7,
       "coverage_auto": 0.5,
-      "safety_among_auto": 0.14285714285714285,
-      "gold_match_including_null": 1
+      "safety_among_auto": 0.5714285714285714,
+      "gold_match_including_null": 4
     },
     "Dual_full": {
       "n": 14,
-      "review_n": 8,
-      "coverage_auto": 0.42857142857142855,
-      "safety_among_auto": 0.16666666666666666,
-      "gold_match_including_null": 1
+      "review_n": 11,
+      "coverage_auto": 0.21428571428571427,
+      "safety_among_auto": 1.0,
+      "gold_match_including_null": 3
     },
     "evidence_new_reviews": {
       "C": 0,
@@ -482,10 +482,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -517,13 +518,13 @@
           },
           "verify_attempts": 2,
           "rule": {
-            "verdict": "CONTRADICTION",
-            "fired_rule": "X \u2192 CONTRADICTION",
+            "verdict": "SATISFIED",
+            "fired_rule": "A \u2227 B \u2227 C \u2227 D \u2192 SATISFIED",
             "trace": [
-              "X is true \u2192 CONTRADICTION (short-circuit)"
+              "A \u2227 B \u2227 C \u2227 D all true"
             ]
           },
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO"
         },
         "D_verified": {
@@ -613,7 +614,7 @@
           "note": "verification failed after repair \u2014 REVIEW, not UNCERTAIN"
         },
         "C_roundtrip": {
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -630,7 +631,7 @@
           },
           "paraphrase": "The patient initially responded to first-line R-CHOP but later experienced radiographic progression in cycle 5, leading to a switch to second-line R-ICE. The record contains incompatible claims: initial response and radiographic progression in cycle 5.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -684,10 +685,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -809,7 +811,7 @@
           "verdict": "REVIEW",
           "disposition": "REVIEW",
           "reason": "one_or_both_paths_already_REVIEW",
-          "C": "CONTRADICTION",
+          "C": "SATISFIED",
           "D": "REVIEW",
           "agreed": false
         },
@@ -817,12 +819,12 @@
           "verdict": "REVIEW",
           "disposition": "REVIEW",
           "reason": "one_or_both_paths_already_REVIEW",
-          "C": "CONTRADICTION",
+          "C": "SATISFIED",
           "D": "REVIEW",
           "agreed": false
         },
         "C_full": {
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -839,7 +841,7 @@
           },
           "paraphrase": "The patient initially responded to first-line R-CHOP but later experienced radiographic progression in cycle 5, leading to a switch to second-line R-ICE. The record contains incompatible claims: initial response and radiographic progression in cycle 5.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -893,10 +895,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -1080,7 +1083,7 @@
           "verdict": "REVIEW",
           "disposition": "REVIEW",
           "reason": "one_or_both_paths_already_REVIEW",
-          "C": "CONTRADICTION",
+          "C": "SATISFIED",
           "D": "REVIEW",
           "agreed": false
         }
@@ -1090,13 +1093,13 @@
         "B": true,
         "C": true,
         "D": true,
-        "C_v": false,
+        "C_v": true,
         "D_v": null,
-        "C_rt": false,
+        "C_rt": true,
         "D_rt": null,
         "Dual": null,
         "Dual_rt": null,
-        "C_full": false,
+        "C_full": true,
         "D_full": null,
         "Dual_full": null
       },
@@ -1349,10 +1352,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -1384,13 +1388,13 @@
           },
           "verify_attempts": 2,
           "rule": {
-            "verdict": "CONTRADICTION",
-            "fired_rule": "X \u2192 CONTRADICTION",
+            "verdict": "SATISFIED",
+            "fired_rule": "A \u2227 B \u2227 C \u2227 D \u2192 SATISFIED",
             "trace": [
-              "X is true \u2192 CONTRADICTION (short-circuit)"
+              "A \u2227 B \u2227 C \u2227 D all true"
             ]
           },
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO"
         },
         "D_verified": {
@@ -1476,7 +1480,7 @@
           "note": "verification failed after repair \u2014 REVIEW, not UNCERTAIN"
         },
         "C_roundtrip": {
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -1493,7 +1497,7 @@
           },
           "paraphrase": "The patient completed cycles 1\u20133 of first-line R-CHOP with a partial metabolic response. However, during cycle 4, PET showed new FDG-avid nodes, leading to the discontinuation of R-CHOP due to disease progression and the initiation of second-line R-ICE. The record contains incompatible claims: it states both a response and subsequent progression.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -1548,10 +1552,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -1669,7 +1674,7 @@
           "verdict": "REVIEW",
           "disposition": "REVIEW",
           "reason": "one_or_both_paths_already_REVIEW",
-          "C": "CONTRADICTION",
+          "C": "SATISFIED",
           "D": "REVIEW",
           "agreed": false
         },
@@ -1677,12 +1682,12 @@
           "verdict": "REVIEW",
           "disposition": "REVIEW",
           "reason": "one_or_both_paths_already_REVIEW",
-          "C": "CONTRADICTION",
+          "C": "SATISFIED",
           "D": "REVIEW",
           "agreed": false
         },
         "C_full": {
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -1699,7 +1704,7 @@
           },
           "paraphrase": "The patient completed cycles 1\u20133 of first-line R-CHOP with a partial metabolic response. However, during cycle 4, PET showed new FDG-avid nodes, leading to the discontinuation of R-CHOP due to disease progression and the initiation of second-line R-ICE. The record contains incompatible claims: it states both a response and subsequent progression.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -1754,10 +1759,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -1937,7 +1943,7 @@
           "verdict": "REVIEW",
           "disposition": "REVIEW",
           "reason": "one_or_both_paths_already_REVIEW",
-          "C": "CONTRADICTION",
+          "C": "SATISFIED",
           "D": "REVIEW",
           "agreed": false
         }
@@ -1947,13 +1953,13 @@
         "B": true,
         "C": true,
         "D": true,
-        "C_v": false,
+        "C_v": true,
         "D_v": null,
-        "C_rt": false,
+        "C_rt": true,
         "D_rt": null,
         "Dual": null,
         "Dual_rt": null,
-        "C_full": false,
+        "C_full": true,
         "D_full": null,
         "Dual_full": null
       },
@@ -3062,10 +3068,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -3097,13 +3104,13 @@
           },
           "verify_attempts": 2,
           "rule": {
-            "verdict": "CONTRADICTION",
-            "fired_rule": "X \u2192 CONTRADICTION",
+            "verdict": "SATISFIED",
+            "fired_rule": "A \u2227 B \u2227 C \u2227 D \u2192 SATISFIED",
             "trace": [
-              "X is true \u2192 CONTRADICTION (short-circuit)"
+              "A \u2227 B \u2227 C \u2227 D all true"
             ]
           },
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO"
         },
         "D_verified": {
@@ -3159,10 +3166,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -3194,17 +3202,17 @@
           },
           "verify_attempts": 2,
           "rule": {
-            "verdict": "CONTRADICTION",
-            "fired_rule": "X \u2192 CONTRADICTION",
+            "verdict": "SATISFIED",
+            "fired_rule": "A \u2227 B \u2227 C \u2227 D \u2192 SATISFIED",
             "trace": [
-              "X is true \u2192 CONTRADICTION (short-circuit)"
+              "A \u2227 B \u2227 C \u2227 D all true"
             ]
           },
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO"
         },
         "C_roundtrip": {
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -3221,7 +3229,7 @@
           },
           "paraphrase": "The record contains incompatible claims: first-line RVd produced a partial response after three cycles, but there were rising M-protein levels and new lesions at cycle 4. This progression led to switching to second-line therapy.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -3274,10 +3282,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -3309,7 +3318,7 @@
           }
         },
         "D_roundtrip": {
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -3326,7 +3335,7 @@
           },
           "paraphrase": "The record contains incompatible claims: RVd therapy produced a partial response after three cycles, but there were rising M-protein levels and new lesions at cycle 4.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -3379,10 +3388,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -3414,23 +3424,23 @@
           }
         },
         "Dual": {
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO",
           "reason": "paths_agree",
-          "C": "CONTRADICTION",
-          "D": "CONTRADICTION",
+          "C": "SATISFIED",
+          "D": "SATISFIED",
           "agreed": true
         },
         "Dual_rt": {
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO",
           "reason": "paths_agree",
-          "C": "CONTRADICTION",
-          "D": "CONTRADICTION",
+          "C": "SATISFIED",
+          "D": "SATISFIED",
           "agreed": true
         },
         "C_full": {
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -3447,7 +3457,7 @@
           },
           "paraphrase": "The record contains incompatible claims: first-line RVd produced a partial response after three cycles, but there were rising M-protein levels and new lesions at cycle 4. This progression led to switching to second-line therapy.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -3500,10 +3510,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -3596,7 +3607,7 @@
           }
         },
         "D_full": {
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -3613,7 +3624,7 @@
           },
           "paraphrase": "The record contains incompatible claims: RVd therapy produced a partial response after three cycles, but there were rising M-protein levels and new lesions at cycle 4.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -3666,10 +3677,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -3762,11 +3774,11 @@
           }
         },
         "Dual_full": {
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO",
           "reason": "paths_agree",
-          "C": "CONTRADICTION",
-          "D": "CONTRADICTION",
+          "C": "SATISFIED",
+          "D": "SATISFIED",
           "agreed": true
         }
       },
@@ -3775,15 +3787,15 @@
         "B": true,
         "C": true,
         "D": true,
-        "C_v": false,
-        "D_v": false,
-        "C_rt": false,
-        "D_rt": false,
-        "Dual": false,
-        "Dual_rt": false,
-        "C_full": false,
-        "D_full": false,
-        "Dual_full": false
+        "C_v": true,
+        "D_v": true,
+        "C_rt": true,
+        "D_rt": true,
+        "Dual": true,
+        "Dual_rt": true,
+        "C_full": true,
+        "D_full": true,
+        "Dual_full": true
       },
       "loss_stage": {
         "A": "none",
@@ -4040,10 +4052,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -4075,13 +4088,13 @@
           },
           "verify_attempts": 2,
           "rule": {
-            "verdict": "CONTRADICTION",
-            "fired_rule": "X \u2192 CONTRADICTION",
+            "verdict": "SATISFIED",
+            "fired_rule": "A \u2227 B \u2227 C \u2227 D \u2192 SATISFIED",
             "trace": [
-              "X is true \u2192 CONTRADICTION (short-circuit)"
+              "A \u2227 B \u2227 C \u2227 D all true"
             ]
           },
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO"
         },
         "D_verified": {
@@ -4138,10 +4151,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -4173,17 +4187,17 @@
           },
           "verify_attempts": 2,
           "rule": {
-            "verdict": "CONTRADICTION",
-            "fired_rule": "X \u2192 CONTRADICTION",
+            "verdict": "SATISFIED",
+            "fired_rule": "A \u2227 B \u2227 C \u2227 D \u2192 SATISFIED",
             "trace": [
-              "X is true \u2192 CONTRADICTION (short-circuit)"
+              "A \u2227 B \u2227 C \u2227 D all true"
             ]
           },
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO"
         },
         "C_roundtrip": {
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -4200,7 +4214,7 @@
           },
           "paraphrase": "The record contains incompatible claims: the patient had an initial nodal response with ibrutinib, but later discontinued it due to progression and switched to R-CHOP.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -4254,10 +4268,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -4289,7 +4304,7 @@
           }
         },
         "D_roundtrip": {
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -4306,7 +4321,7 @@
           },
           "paraphrase": "The record contains incompatible claims: CLL was treated with first-line ibrutinib, which initially showed a nodal response, but the treatment was discontinued due to progression.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -4360,10 +4375,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -4395,23 +4411,23 @@
           }
         },
         "Dual": {
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO",
           "reason": "paths_agree",
-          "C": "CONTRADICTION",
-          "D": "CONTRADICTION",
+          "C": "SATISFIED",
+          "D": "SATISFIED",
           "agreed": true
         },
         "Dual_rt": {
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO",
           "reason": "paths_agree",
-          "C": "CONTRADICTION",
-          "D": "CONTRADICTION",
+          "C": "SATISFIED",
+          "D": "SATISFIED",
           "agreed": true
         },
         "C_full": {
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -4428,7 +4444,7 @@
           },
           "paraphrase": "The record contains incompatible claims: the patient had an initial nodal response with ibrutinib, but later discontinued it due to progression and switched to R-CHOP.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -4482,10 +4498,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -4578,7 +4595,7 @@
           }
         },
         "D_full": {
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -4595,7 +4612,7 @@
           },
           "paraphrase": "The record contains incompatible claims: CLL was treated with first-line ibrutinib, which initially showed a nodal response, but the treatment was discontinued due to progression.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -4649,10 +4666,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -4745,11 +4763,11 @@
           }
         },
         "Dual_full": {
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO",
           "reason": "paths_agree",
-          "C": "CONTRADICTION",
-          "D": "CONTRADICTION",
+          "C": "SATISFIED",
+          "D": "SATISFIED",
           "agreed": true
         }
       },
@@ -4758,15 +4776,15 @@
         "B": true,
         "C": true,
         "D": true,
-        "C_v": false,
-        "D_v": false,
-        "C_rt": false,
-        "D_rt": false,
-        "Dual": false,
-        "Dual_rt": false,
-        "C_full": false,
-        "D_full": false,
-        "Dual_full": false
+        "C_v": true,
+        "D_v": true,
+        "C_rt": true,
+        "D_rt": true,
+        "Dual": true,
+        "Dual_rt": true,
+        "C_full": true,
+        "D_full": true,
+        "Dual_full": true
       },
       "loss_stage": {
         "A": "none",
@@ -5015,10 +5033,11 @@
             "first_line_administered": "false",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=false (administration_status=not_given)",
               "C=true (failure polarity)",
@@ -5050,13 +5069,13 @@
           },
           "verify_attempts": 2,
           "rule": {
-            "verdict": "CONTRADICTION",
-            "fired_rule": "X \u2192 CONTRADICTION",
+            "verdict": "NOT_SATISFIED",
+            "fired_rule": "any(A,B,C,D)=false \u2192 NOT_SATISFIED",
             "trace": [
-              "X is true \u2192 CONTRADICTION (short-circuit)"
+              "False atoms: B first_line_administered"
             ]
           },
-          "verdict": "CONTRADICTION",
+          "verdict": "NOT_SATISFIED",
           "disposition": "AUTO"
         },
         "D_verified": {
@@ -5105,10 +5124,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (meta contradiction cues; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -5140,17 +5160,17 @@
           },
           "verify_attempts": 2,
           "rule": {
-            "verdict": "CONTRADICTION",
-            "fired_rule": "X \u2192 CONTRADICTION",
+            "verdict": "SATISFIED",
+            "fired_rule": "A \u2227 B \u2227 C \u2227 D \u2192 SATISFIED",
             "trace": [
-              "X is true \u2192 CONTRADICTION (short-circuit)"
+              "A \u2227 B \u2227 C \u2227 D all true"
             ]
           },
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO"
         },
         "C_roundtrip": {
-          "verdict": "CONTRADICTION",
+          "verdict": "NOT_SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -5167,7 +5187,7 @@
           },
           "paraphrase": "The record contains incompatible claims: possible progression and clear progressive disease. First-line therapy with bendamustine-rituximab was not given, and second-line therapy is planned due to confirmed progression.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "NOT_SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -5220,10 +5240,11 @@
             "first_line_administered": "false",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=false (administration_status=not_given)",
               "C=true (failure polarity)",
@@ -5255,7 +5276,7 @@
           }
         },
         "D_roundtrip": {
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -5272,7 +5293,7 @@
           },
           "paraphrase": "The first-line therapy bendamustine-rituximab was administered, but a confirmatory PET two weeks later showed clear progressive disease. The record contains incompatible claims: it explicitly mentions 'bendamustine-rituximab' as the first-line therapy, yet there are no contradictory statements regarding its administration or outcome.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -5318,10 +5339,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (meta contradiction cues; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -5353,23 +5375,23 @@
           }
         },
         "Dual": {
-          "verdict": "CONTRADICTION",
-          "disposition": "AUTO",
-          "reason": "paths_agree",
-          "C": "CONTRADICTION",
-          "D": "CONTRADICTION",
-          "agreed": true
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "reason": "paths_disagree",
+          "C": "NOT_SATISFIED",
+          "D": "SATISFIED",
+          "agreed": false
         },
         "Dual_rt": {
-          "verdict": "CONTRADICTION",
-          "disposition": "AUTO",
-          "reason": "paths_agree",
-          "C": "CONTRADICTION",
-          "D": "CONTRADICTION",
-          "agreed": true
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "reason": "paths_disagree",
+          "C": "NOT_SATISFIED",
+          "D": "SATISFIED",
+          "agreed": false
         },
         "C_full": {
-          "verdict": "CONTRADICTION",
+          "verdict": "NOT_SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -5386,7 +5408,7 @@
           },
           "paraphrase": "The record contains incompatible claims: possible progression and clear progressive disease. First-line therapy with bendamustine-rituximab was not given, and second-line therapy is planned due to confirmed progression.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "NOT_SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -5439,10 +5461,11 @@
             "first_line_administered": "false",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=false (administration_status=not_given)",
               "C=true (failure polarity)",
@@ -5535,7 +5558,7 @@
           }
         },
         "D_full": {
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -5552,7 +5575,7 @@
           },
           "paraphrase": "The first-line therapy bendamustine-rituximab was administered, but a confirmatory PET two weeks later showed clear progressive disease. The record contains incompatible claims: it explicitly mentions 'bendamustine-rituximab' as the first-line therapy, yet there are no contradictory statements regarding its administration or outcome.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -5598,10 +5621,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (meta contradiction cues; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -5694,12 +5718,12 @@
           }
         },
         "Dual_full": {
-          "verdict": "CONTRADICTION",
-          "disposition": "AUTO",
-          "reason": "paths_agree",
-          "C": "CONTRADICTION",
-          "D": "CONTRADICTION",
-          "agreed": true
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "reason": "paths_disagree",
+          "C": "NOT_SATISFIED",
+          "D": "SATISFIED",
+          "agreed": false
         }
       },
       "match_gold": {
@@ -5708,14 +5732,14 @@
         "C": false,
         "D": true,
         "C_v": false,
-        "D_v": false,
+        "D_v": true,
         "C_rt": false,
-        "D_rt": false,
-        "Dual": false,
-        "Dual_rt": false,
+        "D_rt": true,
+        "Dual": null,
+        "Dual_rt": null,
         "C_full": false,
-        "D_full": false,
-        "Dual_full": false
+        "D_full": true,
+        "Dual_full": null
       },
       "loss_stage": {
         "A": "none",
@@ -5726,22 +5750,22 @@
         "D_v": "model_interpretation_failure",
         "C_rt": "model_interpretation_failure",
         "D_rt": "model_interpretation_failure",
-        "Dual": "none",
-        "Dual_rt": "none",
+        "Dual": "review_dual_disagree",
+        "Dual_rt": "review_dual_disagree",
         "C_full": "model_interpretation_failure",
         "D_full": "model_interpretation_failure",
-        "Dual_full": "none"
+        "Dual_full": "review_dual_disagree"
       },
       "review": {
         "C_v": false,
         "D_v": false,
         "C_rt": false,
         "D_rt": false,
-        "Dual": false,
-        "Dual_rt": false,
+        "Dual": true,
+        "Dual_rt": true,
         "C_full": false,
         "D_full": false,
-        "Dual_full": false
+        "Dual_full": true
       },
       "phase6": true,
       "phase7": true,
@@ -5964,10 +5988,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -5999,13 +6024,13 @@
           },
           "verify_attempts": 2,
           "rule": {
-            "verdict": "CONTRADICTION",
-            "fired_rule": "X \u2192 CONTRADICTION",
+            "verdict": "SATISFIED",
+            "fired_rule": "A \u2227 B \u2227 C \u2227 D \u2192 SATISFIED",
             "trace": [
-              "X is true \u2192 CONTRADICTION (short-circuit)"
+              "A \u2227 B \u2227 C \u2227 D all true"
             ]
           },
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO"
         },
         "D_verified": {
@@ -6099,7 +6124,7 @@
           "disposition": "AUTO"
         },
         "C_roundtrip": {
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -6116,7 +6141,7 @@
           },
           "paraphrase": "The patient initially responded to first-line FOLFOX, as CT after cycle 3 showed no progression. However, the record contains incompatible claims: CT after cycle 6 showed new hepatic metastases, leading to discontinuation of FOLFOX and switching to second-line FOLFIRI.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -6170,10 +6195,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -6303,23 +6329,23 @@
           }
         },
         "Dual": {
-          "verdict": "CONTRADICTION",
-          "disposition": "AUTO",
-          "reason": "paths_agree",
-          "C": "CONTRADICTION",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "reason": "paths_disagree",
+          "C": "SATISFIED",
           "D": "CONTRADICTION",
-          "agreed": true
+          "agreed": false
         },
         "Dual_rt": {
-          "verdict": "CONTRADICTION",
-          "disposition": "AUTO",
-          "reason": "paths_agree",
-          "C": "CONTRADICTION",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "reason": "paths_disagree",
+          "C": "SATISFIED",
           "D": "CONTRADICTION",
-          "agreed": true
+          "agreed": false
         },
         "C_full": {
-          "verdict": "CONTRADICTION",
+          "verdict": "SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -6336,7 +6362,7 @@
           },
           "paraphrase": "The patient initially responded to first-line FOLFOX, as CT after cycle 3 showed no progression. However, the record contains incompatible claims: CT after cycle 6 showed new hepatic metastases, leading to discontinuation of FOLFOX and switching to second-line FOLFIRI.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -6390,10 +6416,11 @@
             "first_line_administered": "true",
             "failure_event": "true",
             "failure_of_first_line": "true",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (sequenced temporal-change; extractor contradiction overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=true (failure polarity)",
@@ -6651,7 +6678,7 @@
           "verdict": "REVIEW",
           "disposition": "REVIEW",
           "reason": "one_or_both_paths_already_REVIEW",
-          "C": "CONTRADICTION",
+          "C": "SATISFIED",
           "D": "REVIEW",
           "agreed": false
         }
@@ -6661,13 +6688,13 @@
         "B": true,
         "C": true,
         "D": false,
-        "C_v": false,
+        "C_v": true,
         "D_v": false,
-        "C_rt": false,
+        "C_rt": true,
         "D_rt": false,
-        "Dual": false,
-        "Dual_rt": false,
-        "C_full": false,
+        "Dual": null,
+        "Dual_rt": null,
+        "C_full": true,
         "D_full": null,
         "Dual_full": null
       },
@@ -6680,8 +6707,8 @@
         "D_v": "model_interpretation_failure",
         "C_rt": "model_interpretation_failure",
         "D_rt": "model_interpretation_failure",
-        "Dual": "none",
-        "Dual_rt": "none",
+        "Dual": "review_dual_disagree",
+        "Dual_rt": "review_dual_disagree",
         "C_full": "model_interpretation_failure",
         "D_full": "review_after_evidence",
         "Dual_full": "review_dual_disagree"
@@ -6691,8 +6718,8 @@
         "D_v": false,
         "C_rt": false,
         "D_rt": false,
-        "Dual": false,
-        "Dual_rt": false,
+        "Dual": true,
+        "Dual_rt": true,
         "C_full": false,
         "D_full": true,
         "Dual_full": true
@@ -7821,10 +7848,11 @@
             "first_line_administered": "false",
             "failure_event": "false",
             "failure_of_first_line": "false",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (no failure polarity / no hard conflict; extractor X overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=false (administration_status=not_given)",
               "C=false (temporary hold, plan to resume, no progression)",
@@ -7856,13 +7884,13 @@
           },
           "verify_attempts": 2,
           "rule": {
-            "verdict": "CONTRADICTION",
-            "fired_rule": "X \u2192 CONTRADICTION",
+            "verdict": "NOT_SATISFIED",
+            "fired_rule": "any(A,B,C,D)=false \u2192 NOT_SATISFIED",
             "trace": [
-              "X is true \u2192 CONTRADICTION (short-circuit)"
+              "False atoms: B first_line_administered, C failure_event, D failure_of_first_line"
             ]
           },
-          "verdict": "CONTRADICTION",
+          "verdict": "NOT_SATISFIED",
           "disposition": "AUTO"
         },
         "D_verified": {
@@ -7966,7 +7994,7 @@
           "disposition": "AUTO"
         },
         "C_roundtrip": {
-          "verdict": "CONTRADICTION",
+          "verdict": "NOT_SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -7983,7 +8011,7 @@
           },
           "paraphrase": "The patient was responding to first-line paclitaxel with tumor markers falling and imaging stable. However, treatment was halted due to grade 3 neuropathy, and an alternative agent is planned. The record contains incompatible claims: the ongoing response despite stopping therapy contradicts the reason for treatment cessation.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "NOT_SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -8036,10 +8064,11 @@
             "first_line_administered": "false",
             "failure_event": "false",
             "failure_of_first_line": "false",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (no failure polarity / no hard conflict; extractor X overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=false (administration_status=not_given)",
               "C=false (temporary hold, plan to resume, no progression)",
@@ -8179,23 +8208,23 @@
           }
         },
         "Dual": {
-          "verdict": "CONTRADICTION",
-          "disposition": "AUTO",
-          "reason": "paths_agree",
-          "C": "CONTRADICTION",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "reason": "paths_disagree",
+          "C": "NOT_SATISFIED",
           "D": "CONTRADICTION",
-          "agreed": true
+          "agreed": false
         },
         "Dual_rt": {
-          "verdict": "CONTRADICTION",
-          "disposition": "AUTO",
-          "reason": "paths_agree",
-          "C": "CONTRADICTION",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "reason": "paths_disagree",
+          "C": "NOT_SATISFIED",
           "D": "CONTRADICTION",
-          "agreed": true
+          "agreed": false
         },
         "C_full": {
-          "verdict": "CONTRADICTION",
+          "verdict": "NOT_SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -8212,7 +8241,7 @@
           },
           "paraphrase": "The patient was responding to first-line paclitaxel with tumor markers falling and imaging stable. However, treatment was halted due to grade 3 neuropathy, and an alternative agent is planned. The record contains incompatible claims: the ongoing response despite stopping therapy contradicts the reason for treatment cessation.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "NOT_SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -8265,10 +8294,11 @@
             "first_line_administered": "false",
             "failure_event": "false",
             "failure_of_first_line": "false",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (no failure polarity / no hard conflict; extractor X overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=false (administration_status=not_given)",
               "C=false (temporary hold, plan to resume, no progression)",
@@ -8530,12 +8560,12 @@
           }
         },
         "Dual_full": {
-          "verdict": "CONTRADICTION",
-          "disposition": "AUTO",
-          "reason": "paths_agree",
-          "C": "CONTRADICTION",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "reason": "paths_disagree",
+          "C": "NOT_SATISFIED",
           "D": "CONTRADICTION",
-          "agreed": true
+          "agreed": false
         }
       },
       "match_gold": {
@@ -8543,15 +8573,15 @@
         "B": false,
         "C": true,
         "D": false,
-        "C_v": false,
+        "C_v": true,
         "D_v": false,
-        "C_rt": false,
+        "C_rt": true,
         "D_rt": false,
-        "Dual": false,
-        "Dual_rt": false,
-        "C_full": false,
+        "Dual": null,
+        "Dual_rt": null,
+        "C_full": true,
         "D_full": false,
-        "Dual_full": false
+        "Dual_full": null
       },
       "loss_stage": {
         "A": "none",
@@ -8562,22 +8592,22 @@
         "D_v": "model_interpretation_failure",
         "C_rt": "model_interpretation_failure",
         "D_rt": "model_interpretation_failure",
-        "Dual": "none",
-        "Dual_rt": "none",
+        "Dual": "review_dual_disagree",
+        "Dual_rt": "review_dual_disagree",
         "C_full": "model_interpretation_failure",
         "D_full": "model_interpretation_failure",
-        "Dual_full": "none"
+        "Dual_full": "review_dual_disagree"
       },
       "review": {
         "C_v": false,
         "D_v": false,
         "C_rt": false,
         "D_rt": false,
-        "Dual": false,
-        "Dual_rt": false,
+        "Dual": true,
+        "Dual_rt": true,
         "C_full": false,
         "D_full": false,
-        "Dual_full": false
+        "Dual_full": true
       },
       "phase6": true,
       "phase7": true,
@@ -11354,10 +11384,11 @@
             "first_line_administered": "true",
             "failure_event": "false",
             "failure_of_first_line": "false",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (no failure polarity / no hard conflict; extractor X overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=false (response/ongoing/planned, no failure)",
@@ -11389,13 +11420,13 @@
           },
           "verify_attempts": 2,
           "rule": {
-            "verdict": "CONTRADICTION",
-            "fired_rule": "X \u2192 CONTRADICTION",
+            "verdict": "NOT_SATISFIED",
+            "fired_rule": "any(A,B,C,D)=false \u2192 NOT_SATISFIED",
             "trace": [
-              "X is true \u2192 CONTRADICTION (short-circuit)"
+              "False atoms: C failure_event, D failure_of_first_line"
             ]
           },
-          "verdict": "CONTRADICTION",
+          "verdict": "NOT_SATISFIED",
           "disposition": "AUTO"
         },
         "D_verified": {
@@ -11495,7 +11526,7 @@
           "disposition": "AUTO"
         },
         "C_roundtrip": {
-          "verdict": "CONTRADICTION",
+          "verdict": "NOT_SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -11512,7 +11543,7 @@
           },
           "paraphrase": "The patient is on first-line 7+3 induction with an ongoing response. However, the record contains incompatible claims: one states that the interim marrow shows ongoing response, while another indicates a plan to complete induction without documented progression.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "NOT_SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -11559,10 +11590,11 @@
             "first_line_administered": "true",
             "failure_event": "false",
             "failure_of_first_line": "false",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (no failure polarity / no hard conflict; extractor X overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=false (response/ongoing/planned, no failure)",
@@ -11698,23 +11730,23 @@
           }
         },
         "Dual": {
-          "verdict": "CONTRADICTION",
-          "disposition": "AUTO",
-          "reason": "paths_agree",
-          "C": "CONTRADICTION",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "reason": "paths_disagree",
+          "C": "NOT_SATISFIED",
           "D": "CONTRADICTION",
-          "agreed": true
+          "agreed": false
         },
         "Dual_rt": {
-          "verdict": "CONTRADICTION",
-          "disposition": "AUTO",
-          "reason": "paths_agree",
-          "C": "CONTRADICTION",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "reason": "paths_disagree",
+          "C": "NOT_SATISFIED",
           "D": "CONTRADICTION",
-          "agreed": true
+          "agreed": false
         },
         "C_full": {
-          "verdict": "CONTRADICTION",
+          "verdict": "NOT_SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -11731,7 +11763,7 @@
           },
           "paraphrase": "The patient is on first-line 7+3 induction with an ongoing response. However, the record contains incompatible claims: one states that the interim marrow shows ongoing response, while another indicates a plan to complete induction without documented progression.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "NOT_SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -11778,10 +11810,11 @@
             "first_line_administered": "true",
             "failure_event": "false",
             "failure_of_first_line": "false",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (no failure polarity / no hard conflict; extractor X overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=false (response/ongoing/planned, no failure)",
@@ -12039,12 +12072,12 @@
           }
         },
         "Dual_full": {
-          "verdict": "CONTRADICTION",
-          "disposition": "AUTO",
-          "reason": "paths_agree",
-          "C": "CONTRADICTION",
+          "verdict": "REVIEW",
+          "disposition": "REVIEW",
+          "reason": "paths_disagree",
+          "C": "NOT_SATISFIED",
           "D": "CONTRADICTION",
-          "agreed": true
+          "agreed": false
         }
       },
       "match_gold": {
@@ -12052,15 +12085,15 @@
         "B": true,
         "C": true,
         "D": true,
-        "C_v": false,
+        "C_v": true,
         "D_v": false,
-        "C_rt": false,
+        "C_rt": true,
         "D_rt": false,
-        "Dual": false,
-        "Dual_rt": false,
-        "C_full": false,
+        "Dual": null,
+        "Dual_rt": null,
+        "C_full": true,
         "D_full": false,
-        "Dual_full": false
+        "Dual_full": null
       },
       "loss_stage": {
         "A": "none",
@@ -12071,22 +12104,22 @@
         "D_v": "model_interpretation_failure",
         "C_rt": "model_interpretation_failure",
         "D_rt": "model_interpretation_failure",
-        "Dual": "none",
-        "Dual_rt": "none",
+        "Dual": "review_dual_disagree",
+        "Dual_rt": "review_dual_disagree",
         "C_full": "model_interpretation_failure",
         "D_full": "model_interpretation_failure",
-        "Dual_full": "none"
+        "Dual_full": "review_dual_disagree"
       },
       "review": {
         "C_v": false,
         "D_v": false,
         "C_rt": false,
         "D_rt": false,
-        "Dual": false,
-        "Dual_rt": false,
+        "Dual": true,
+        "Dual_rt": true,
         "C_full": false,
         "D_full": false,
-        "Dual_full": false
+        "Dual_full": true
       },
       "phase6": true,
       "phase7": true,
@@ -12302,10 +12335,11 @@
             "first_line_administered": "true",
             "failure_event": "false",
             "failure_of_first_line": "false",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (no failure polarity / no hard conflict; extractor X overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=false (response/ongoing/planned, no failure)",
@@ -12337,13 +12371,13 @@
           },
           "verify_attempts": 2,
           "rule": {
-            "verdict": "CONTRADICTION",
-            "fired_rule": "X \u2192 CONTRADICTION",
+            "verdict": "NOT_SATISFIED",
+            "fired_rule": "any(A,B,C,D)=false \u2192 NOT_SATISFIED",
             "trace": [
-              "X is true \u2192 CONTRADICTION (short-circuit)"
+              "False atoms: C failure_event, D failure_of_first_line"
             ]
           },
-          "verdict": "CONTRADICTION",
+          "verdict": "NOT_SATISFIED",
           "disposition": "AUTO"
         },
         "D_verified": {
@@ -12435,7 +12469,7 @@
           "note": "verification failed after repair \u2014 REVIEW, not UNCERTAIN"
         },
         "C_roundtrip": {
-          "verdict": "CONTRADICTION",
+          "verdict": "NOT_SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -12452,7 +12486,7 @@
           },
           "paraphrase": "The patient is currently receiving the first-line 7+3 induction and shows ongoing response at day 14. However, there are incompatible claims in the record: one states that the patient is currently receiving the induction, while another claims no progression has been documented.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "NOT_SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -12500,10 +12534,11 @@
             "first_line_administered": "true",
             "failure_event": "false",
             "failure_of_first_line": "false",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (no failure polarity / no hard conflict; extractor X overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=false (response/ongoing/planned, no failure)",
@@ -12627,7 +12662,7 @@
           "verdict": "REVIEW",
           "disposition": "REVIEW",
           "reason": "one_or_both_paths_already_REVIEW",
-          "C": "CONTRADICTION",
+          "C": "NOT_SATISFIED",
           "D": "REVIEW",
           "agreed": false
         },
@@ -12635,12 +12670,12 @@
           "verdict": "REVIEW",
           "disposition": "REVIEW",
           "reason": "one_or_both_paths_already_REVIEW",
-          "C": "CONTRADICTION",
+          "C": "NOT_SATISFIED",
           "D": "REVIEW",
           "agreed": false
         },
         "C_full": {
-          "verdict": "CONTRADICTION",
+          "verdict": "NOT_SATISFIED",
           "disposition": "AUTO",
           "roundtrip": {
             "ok": true,
@@ -12657,7 +12692,7 @@
           },
           "paraphrase": "The patient is currently receiving the first-line 7+3 induction and shows ongoing response at day 14. However, there are incompatible claims in the record: one states that the patient is currently receiving the induction, while another claims no progression has been documented.",
           "skipped": null,
-          "base_verdict": "CONTRADICTION",
+          "base_verdict": "NOT_SATISFIED",
           "extraction": {
             "stated_line": "first",
             "regimen_names": [
@@ -12705,10 +12740,11 @@
             "first_line_administered": "true",
             "failure_event": "false",
             "failure_of_first_line": "false",
-            "contradiction": true,
+            "contradiction": false,
             "uncertainty": false,
             "trace": [
               "X=true (extractor contradiction.present=true with spans)",
+              "X=false (no failure polarity / no hard conflict; extractor X overridden)",
               "A=true (stated first-line or implicit 1L cue)",
               "B=true (administered/given)",
               "C=false (response/ongoing/planned, no failure)",
@@ -12894,7 +12930,7 @@
           "verdict": "REVIEW",
           "disposition": "REVIEW",
           "reason": "one_or_both_paths_already_REVIEW",
-          "C": "CONTRADICTION",
+          "C": "NOT_SATISFIED",
           "D": "REVIEW",
           "agreed": false
         }
@@ -12904,13 +12940,13 @@
         "B": true,
         "C": true,
         "D": true,
-        "C_v": false,
+        "C_v": true,
         "D_v": null,
-        "C_rt": false,
+        "C_rt": true,
         "D_rt": null,
         "Dual": null,
         "Dual_rt": null,
-        "C_full": false,
+        "C_full": true,
         "D_full": null,
         "Dual_full": null
       },
