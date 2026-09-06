@@ -36,7 +36,7 @@
 | **Result** | C1 soft_gate YES retained; C2 **LOCAL_SUFFICIENT** (L16 alone weak; stack ≈ L20). |
 | **Artifacts** | `TRACKB-CIRCUIT-C01-FREEZE.md` · `n2s-circuit-c2-path-restrict.json` · CIRCUIT-PILOT / SAE-CIRCUIT-WHERE / SYSTEM-CLAIM |
 | **Decision** | Circuit ladder frozen at site+local path. Do not reopen Upstream U-C/U-D. Stop C3 unless new Q. |
-| **Commit** | (this push) |
+| **Commit** | `e2d9123` (local; push wait-go) |
 
 ### 2026-09-06 — Circuit C1 L20 MLP causal patch (soft_gate YES)
 
