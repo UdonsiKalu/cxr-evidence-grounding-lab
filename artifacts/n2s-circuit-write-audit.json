@@ -1,0 +1,302 @@
+{
+  "ok": true,
+  "kind": "n2s_circuit_write_audit_v1",
+  "timestamp": "2026-09-06T16:17:53.886018+00:00",
+  "quest": "Which layer\u00d7attn/mlp writes along frozen v / SAE dirs at commit differ for Class A vs B?",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "layers": [
+    16,
+    20,
+    24
+  ],
+  "class_a": [
+    "TX_E08",
+    "TX_E13"
+  ],
+  "class_b": [
+    "TX_C01",
+    "TX_C02"
+  ],
+  "direction_source": "n2s-forensics-directions-qwen7b.json",
+  "sae_scores_used": true,
+  "fit_layer": 20,
+  "cases_A": [
+    {
+      "case_id": "TX_E08",
+      "gold": "SATISFIED",
+      "repair_final_x": false,
+      "margin": -8.125,
+      "verdict": "SATISFIED",
+      "commit_captured": true
+    },
+    {
+      "case_id": "TX_E13",
+      "gold": "SATISFIED",
+      "repair_final_x": false,
+      "margin": -5.875,
+      "verdict": "SATISFIED",
+      "commit_captured": true
+    }
+  ],
+  "cases_B": [
+    {
+      "case_id": "TX_C01",
+      "gold": "CONTRADICTION",
+      "repair_final_x": true,
+      "margin": 10.375,
+      "verdict": "CONTRADICTION",
+      "commit_captured": true
+    },
+    {
+      "case_id": "TX_C02",
+      "gold": "CONTRADICTION",
+      "repair_final_x": true,
+      "margin": 7.25,
+      "verdict": "CONTRADICTION",
+      "commit_captured": true
+    }
+  ],
+  "summary_ranked": [
+    {
+      "layer": "L20",
+      "component": "mlp",
+      "direction": "frozen_v",
+      "feat_id": null,
+      "mean_proj_A": 3.9075629711151123,
+      "mean_proj_B": -2.84136426448822,
+      "delta_A_minus_B": 6.7489272356033325,
+      "abs_delta": 6.7489272356033325
+    },
+    {
+      "layer": "L20",
+      "component": "mlp",
+      "direction": "sae_165",
+      "feat_id": 165,
+      "mean_proj_A": 2.7312092781066895,
+      "mean_proj_B": -0.47263264656066895,
+      "delta_A_minus_B": 3.2038419246673584,
+      "abs_delta": 3.2038419246673584
+    },
+    {
+      "layer": "L20",
+      "component": "mlp",
+      "direction": "sae_9204",
+      "feat_id": 9204,
+      "mean_proj_A": 0.15981048345565796,
+      "mean_proj_B": -2.1282017827033997,
+      "delta_A_minus_B": 2.2880122661590576,
+      "abs_delta": 2.2880122661590576
+    },
+    {
+      "layer": "L20",
+      "component": "attn",
+      "direction": "frozen_v",
+      "feat_id": null,
+      "mean_proj_A": 1.3898203372955322,
+      "mean_proj_B": -0.8584090173244476,
+      "delta_A_minus_B": 2.24822935461998,
+      "abs_delta": 2.24822935461998
+    },
+    {
+      "layer": "L20",
+      "component": "attn",
+      "direction": "sae_1196",
+      "feat_id": 1196,
+      "mean_proj_A": 7.71480655670166,
+      "mean_proj_B": 9.459416389465332,
+      "delta_A_minus_B": -1.7446098327636719,
+      "abs_delta": 1.7446098327636719
+    },
+    {
+      "layer": "L24",
+      "component": "mlp",
+      "direction": "sae_165",
+      "feat_id": 165,
+      "mean_proj_A": -1.4608317613601685,
+      "mean_proj_B": -3.0691511631011963,
+      "delta_A_minus_B": 1.6083194017410278,
+      "abs_delta": 1.6083194017410278
+    },
+    {
+      "layer": "L24",
+      "component": "mlp",
+      "direction": "sae_9204",
+      "feat_id": 9204,
+      "mean_proj_A": -1.1709907054901123,
+      "mean_proj_B": -2.6817092895507812,
+      "delta_A_minus_B": 1.510718584060669,
+      "abs_delta": 1.510718584060669
+    },
+    {
+      "layer": "L24",
+      "component": "attn",
+      "direction": "sae_1196",
+      "feat_id": 1196,
+      "mean_proj_A": 9.193694591522217,
+      "mean_proj_B": 7.924144744873047,
+      "delta_A_minus_B": 1.26954984664917,
+      "abs_delta": 1.26954984664917
+    },
+    {
+      "layer": "L16",
+      "component": "attn",
+      "direction": "frozen_v",
+      "feat_id": null,
+      "mean_proj_A": -0.036554716527462006,
+      "mean_proj_B": -1.1707295179367065,
+      "delta_A_minus_B": 1.1341748014092445,
+      "abs_delta": 1.1341748014092445
+    },
+    {
+      "layer": "L24",
+      "component": "mlp",
+      "direction": "frozen_v",
+      "feat_id": null,
+      "mean_proj_A": -0.497392863035202,
+      "mean_proj_B": -1.3037127256393433,
+      "delta_A_minus_B": 0.8063198626041412,
+      "abs_delta": 0.8063198626041412
+    },
+    {
+      "layer": "L20",
+      "component": "mlp",
+      "direction": "sae_1196",
+      "feat_id": 1196,
+      "mean_proj_A": -5.043727159500122,
+      "mean_proj_B": -5.8348283767700195,
+      "delta_A_minus_B": 0.7911012172698975,
+      "abs_delta": 0.7911012172698975
+    },
+    {
+      "layer": "L16",
+      "component": "attn",
+      "direction": "sae_1196",
+      "feat_id": 1196,
+      "mean_proj_A": 8.171533584594727,
+      "mean_proj_B": 8.946006774902344,
+      "delta_A_minus_B": -0.7744731903076172,
+      "abs_delta": 0.7744731903076172
+    },
+    {
+      "layer": "L16",
+      "component": "mlp",
+      "direction": "frozen_v",
+      "feat_id": null,
+      "mean_proj_A": -0.22490833699703217,
+      "mean_proj_B": -0.939551591873169,
+      "delta_A_minus_B": 0.7146432548761368,
+      "abs_delta": 0.7146432548761368
+    },
+    {
+      "layer": "L16",
+      "component": "mlp",
+      "direction": "sae_1196",
+      "feat_id": 1196,
+      "mean_proj_A": -5.435479164123535,
+      "mean_proj_B": -5.928338050842285,
+      "delta_A_minus_B": 0.49285888671875,
+      "abs_delta": 0.49285888671875
+    },
+    {
+      "layer": "L16",
+      "component": "attn",
+      "direction": "sae_9204",
+      "feat_id": 9204,
+      "mean_proj_A": 0.602242112159729,
+      "mean_proj_B": 0.12511779740452766,
+      "delta_A_minus_B": 0.47712431475520134,
+      "abs_delta": 0.47712431475520134
+    },
+    {
+      "layer": "L24",
+      "component": "attn",
+      "direction": "sae_165",
+      "feat_id": 165,
+      "mean_proj_A": -0.16268540918827057,
+      "mean_proj_B": 0.15408013761043549,
+      "delta_A_minus_B": -0.31676554679870605,
+      "abs_delta": 0.31676554679870605
+    },
+    {
+      "layer": "L16",
+      "component": "mlp",
+      "direction": "sae_9204",
+      "feat_id": 9204,
+      "mean_proj_A": 0.8248085081577301,
+      "mean_proj_B": 0.6051861047744751,
+      "delta_A_minus_B": 0.219622403383255,
+      "abs_delta": 0.219622403383255
+    },
+    {
+      "layer": "L24",
+      "component": "mlp",
+      "direction": "sae_1196",
+      "feat_id": 1196,
+      "mean_proj_A": 12.5108003616333,
+      "mean_proj_B": 12.717761516571045,
+      "delta_A_minus_B": -0.20696115493774414,
+      "abs_delta": 0.20696115493774414
+    },
+    {
+      "layer": "L24",
+      "component": "attn",
+      "direction": "sae_9204",
+      "feat_id": 9204,
+      "mean_proj_A": -0.5412925034761429,
+      "mean_proj_B": -0.3686849921941757,
+      "delta_A_minus_B": -0.17260751128196716,
+      "abs_delta": 0.17260751128196716
+    },
+    {
+      "layer": "L20",
+      "component": "attn",
+      "direction": "sae_9204",
+      "feat_id": 9204,
+      "mean_proj_A": -1.4270020723342896,
+      "mean_proj_B": -1.5017133355140686,
+      "delta_A_minus_B": 0.07471126317977905,
+      "abs_delta": 0.07471126317977905
+    },
+    {
+      "layer": "L20",
+      "component": "attn",
+      "direction": "sae_165",
+      "feat_id": 165,
+      "mean_proj_A": 1.391297161579132,
+      "mean_proj_B": 1.3379390835762024,
+      "delta_A_minus_B": 0.05335807800292969,
+      "abs_delta": 0.05335807800292969
+    },
+    {
+      "layer": "L16",
+      "component": "attn",
+      "direction": "sae_165",
+      "feat_id": 165,
+      "mean_proj_A": 0.7770606279373169,
+      "mean_proj_B": 0.7466551065444946,
+      "delta_A_minus_B": 0.030405521392822266,
+      "abs_delta": 0.030405521392822266
+    },
+    {
+      "layer": "L16",
+      "component": "mlp",
+      "direction": "sae_165",
+      "feat_id": 165,
+      "mean_proj_A": -0.8195928335189819,
+      "mean_proj_B": -0.8059628903865814,
+      "delta_A_minus_B": -0.013629943132400513,
+      "abs_delta": 0.013629943132400513
+    },
+    {
+      "layer": "L24",
+      "component": "attn",
+      "direction": "frozen_v",
+      "feat_id": null,
+      "mean_proj_A": -0.23839211463928223,
+      "mean_proj_B": -0.24284352362155914,
+      "delta_A_minus_B": 0.0044514089822769165,
+      "abs_delta": 0.0044514089822769165
+    }
+  ],
+  "next": "C1: activation-patch top abs_delta sites between A/B; metric = repair X / margin; random-site control."
+}

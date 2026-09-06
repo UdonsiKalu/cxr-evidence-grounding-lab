@@ -39,6 +39,7 @@ On the temporal-family lab predicate (`FIRST_LINE_THERAPY_FAILED`), after ground
 
 - Frozen expand **v** @ L20, **α=8**: **partial** editor — selective flip on some temporal false-X; **no flip** on true-contradiction controls; beats gaussian/reverse in the freeze panel.  
 - SAE (Chanin L20): decompose **v** + top-k steers — pilot only; ranking ≠ “temporality neuron.”  
+- **Circuit C0–C2 (frozen):** top write **L20/mlp** along `v`; C1 soft_gate **YES** (causal site); C2 **LOCAL_SUFFICIENT** (L16 feeder weak). **Not** a full circuit — [TRACKB-CIRCUIT-C01-FREEZE.md](./TRACKB-CIRCUIT-C01-FREEZE.md).  
 - Workbench `:8257` + CLI implement sketches ship Evaluate → Deep dive → Intervene → SAE.
 
 ### Upstream — formation (U0 / U1 / U-A / U-B)
@@ -47,9 +48,10 @@ On the temporal-family lab predicate (`FIRST_LINE_THERAPY_FAILED`), after ground
 - U1/U1b: prefill-position ±α·v at recipe / L16 outcome sites (**no** commit X flip).  
 - **U-A:** multi-token class-mean Δ map — strongest separation **L24**; cos(d, freeze-v)≈0.03 (formation ≠ commit editor).  
 - **U-A gen:** frozen `d` separates held-out near/far paraphrases @ L24 (**soft+strong YES** on small panel) — correlational lexical generalization only.  
+- **U-A causal-d:** steer along frozen `d` @ L24 (commit + prefill) — **NULL/weak** (no dose-dependent X/margin editor on FOLFOX/CONTRA panel).  
 - **U-B / U-B2:** component ablation at top sites — **null** (no X flip). Ablation family **paused**.  
 - **Workbench `:8258`:** live score vs frozen U-A `d` + optional custom-pair map (correlational demos). Not on `:8257`.  
-- **Null causal** at recipe ablation sites — do **not** claim an upstream editor or circuit.
+- **Null causal** at recipe ablation sites **and** α·d steer — do **not** claim an upstream editor or circuit.
 
 ---
 
@@ -59,7 +61,7 @@ On the temporal-family lab predicate (`FIRST_LINE_THERAPY_FAILED`), after ground
 - Steering fixed healthcare or all temporal false-X.  
 - α=16/32 freeze; 14B MI editor transfer.  
 - Upstream circuit / named clinical feature / “found temporality neuron.”  
-- Live ablate / U-C SAE / U-D circuits from the U-B/U-B2 nulls.  
+- Live ablate / U-C SAE / U-D circuits from the U-B/U-B2 nulls **or** from Downstream C0–C2.  
 - Universal coverage (AUTO rate remains modest).
 
 ---
@@ -73,10 +75,12 @@ On the temporal-family lab predicate (`FIRST_LINE_THERAPY_FAILED`), after ground
 | Upstream U-A | Done — L24 formation map (correlational) |
 | Upstream U-B/U-B2 | Done — ablation **null**; family **paused** |
 | Upstream GUI `:8258` | Live score + custom pair demos OK |
+| Downstream circuit C0–C2 | **FROZEN** L20 MLP causal site (+ path restrict) — [TRACKB-CIRCUIT-C01-FREEZE.md](./TRACKB-CIRCUIT-C01-FREEZE.md) |
 | Upstream U-A gen | **FROZEN** soft+strong YES @ L24 — [TRACKB-UPSTREAM-UA-GEN-FREEZE.md](./TRACKB-UPSTREAM-UA-GEN-FREEZE.md) |
+| Upstream U-A causal-d | First panel **NULL/weak** (commit+prefill @ L24) — [TRACKB-UPSTREAM-UA-CAUSAL.md](./TRACKB-UPSTREAM-UA-CAUSAL.md) |
 | Track A temporal family | **Frozen** wrong_AUTO=0 DEV+test |
 | Residual Track A | Live Dual confirm **done** (wrong_AUTO=0, correct_AUTO=7); TF_T1·N1 still REVIEW live |
 | Sealed test | Re-scored under current ground (`--tracka-resim-test`); unchanged 0/5/7; do not redesign |
-| **Next** | Ablation branch left alone; gen correlational OK — causal follow-up only with explicit go |
+| **Next** | Circuit ladder frozen; **leave Upstream U-C/U-D alone**; no α-chase / sealed redesign |
 
-**Portfolio line:** Track A contains uncertain neural→symbolic transforms via REVIEW; Track B shows a limited commit-time editor; Upstream shows a correlational late-layer formation map that generalizes to held-out paraphrases on a small panel but does not yield a causal prefill editor at the tested ablation sites (see [TRACKB-UPSTREAM-PORTFOLIO.md](./TRACKB-UPSTREAM-PORTFOLIO.md) · [TRACKB-UPSTREAM-UA-GENERALIZE.md](./TRACKB-UPSTREAM-UA-GENERALIZE.md)).
+**Portfolio line:** Track A contains uncertain neural→symbolic transforms via REVIEW; Track B shows a limited commit-time editor **and** a frozen L20 MLP causal site (not a full circuit); Upstream shows a correlational late-layer formation map that generalizes to held-out paraphrases but does **not** yield a causal editor via top-site ablation **or** α·d steer at L24 (see [TRACKB-UPSTREAM-PORTFOLIO.md](./TRACKB-UPSTREAM-PORTFOLIO.md) · [TRACKB-CIRCUIT-C01-FREEZE.md](./TRACKB-CIRCUIT-C01-FREEZE.md)).

@@ -1,0 +1,377 @@
+{
+  "ok": true,
+  "kind": "n2s_circuit_c1_l20_mlp_patch_v1",
+  "timestamp": "2026-09-06T16:52:37.760604+00:00",
+  "quest": "Does causal patch of L20 MLP at contradiction.present move repair X / margin in the direction predicted by the C0 write map?",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "c0_top_site": "L20/mlp/frozen_v",
+  "layer": 20,
+  "class_a": [
+    "TX_E08",
+    "TX_E13"
+  ],
+  "class_b": [
+    "TX_C01",
+    "TX_C02"
+  ],
+  "arms": [
+    "baseline",
+    "l20_mlp_zero",
+    "l20_mlp_replace_A_mean",
+    "l20_mlp_replace_B_mean",
+    "l20_attn_zero",
+    "l16_mlp_zero"
+  ],
+  "donor": {
+    "mean_A_l20_mlp_norm": 44.533836364746094,
+    "mean_B_l20_mlp_norm": 45.83512496948242,
+    "cos_meanA_meanB": 0.8783905506134033
+  },
+  "rows": [
+    {
+      "arm": "baseline",
+      "class": "A",
+      "case_id": "TX_E08",
+      "gold": "SATISFIED",
+      "repair_final_x": false,
+      "margin": -8.125,
+      "verdict": "SATISFIED",
+      "parse_ok": true,
+      "commit_step": 163,
+      "intervened_steps": []
+    },
+    {
+      "arm": "l20_mlp_zero",
+      "class": "A",
+      "case_id": "TX_E08",
+      "gold": "SATISFIED",
+      "repair_final_x": false,
+      "margin": -7.5,
+      "verdict": "SATISFIED",
+      "parse_ok": true,
+      "commit_step": 163,
+      "intervened_steps": [
+        163
+      ]
+    },
+    {
+      "arm": "l20_mlp_replace_A_mean",
+      "class": "A",
+      "case_id": "TX_E08",
+      "gold": "SATISFIED",
+      "repair_final_x": false,
+      "margin": -4.0,
+      "verdict": "SATISFIED",
+      "parse_ok": true,
+      "commit_step": 163,
+      "intervened_steps": [
+        163
+      ]
+    },
+    {
+      "arm": "l20_mlp_replace_B_mean",
+      "class": "A",
+      "case_id": "TX_E08",
+      "gold": "SATISFIED",
+      "repair_final_x": true,
+      "margin": 0.25,
+      "verdict": "SATISFIED",
+      "parse_ok": true,
+      "commit_step": 163,
+      "intervened_steps": [
+        163
+      ]
+    },
+    {
+      "arm": "l20_attn_zero",
+      "class": "A",
+      "case_id": "TX_E08",
+      "gold": "SATISFIED",
+      "repair_final_x": false,
+      "margin": -8.75,
+      "verdict": "SATISFIED",
+      "parse_ok": true,
+      "commit_step": 163,
+      "intervened_steps": [
+        163
+      ]
+    },
+    {
+      "arm": "l16_mlp_zero",
+      "class": "A",
+      "case_id": "TX_E08",
+      "gold": "SATISFIED",
+      "repair_final_x": false,
+      "margin": -8.25,
+      "verdict": "SATISFIED",
+      "parse_ok": true,
+      "commit_step": 163,
+      "intervened_steps": [
+        163
+      ]
+    },
+    {
+      "arm": "baseline",
+      "class": "A",
+      "case_id": "TX_E13",
+      "gold": "SATISFIED",
+      "repair_final_x": false,
+      "margin": -5.875,
+      "verdict": "SATISFIED",
+      "parse_ok": true,
+      "commit_step": 135,
+      "intervened_steps": []
+    },
+    {
+      "arm": "l20_mlp_zero",
+      "class": "A",
+      "case_id": "TX_E13",
+      "gold": "SATISFIED",
+      "repair_final_x": false,
+      "margin": -4.125,
+      "verdict": "SATISFIED",
+      "parse_ok": true,
+      "commit_step": 135,
+      "intervened_steps": [
+        135
+      ]
+    },
+    {
+      "arm": "l20_mlp_replace_A_mean",
+      "class": "A",
+      "case_id": "TX_E13",
+      "gold": "SATISFIED",
+      "repair_final_x": false,
+      "margin": -1.875,
+      "verdict": "SATISFIED",
+      "parse_ok": true,
+      "commit_step": 135,
+      "intervened_steps": [
+        135
+      ]
+    },
+    {
+      "arm": "l20_mlp_replace_B_mean",
+      "class": "A",
+      "case_id": "TX_E13",
+      "gold": "SATISFIED",
+      "repair_final_x": true,
+      "margin": 1.875,
+      "verdict": "SATISFIED",
+      "parse_ok": true,
+      "commit_step": 135,
+      "intervened_steps": [
+        135
+      ]
+    },
+    {
+      "arm": "l20_attn_zero",
+      "class": "A",
+      "case_id": "TX_E13",
+      "gold": "SATISFIED",
+      "repair_final_x": false,
+      "margin": -6.875,
+      "verdict": "SATISFIED",
+      "parse_ok": true,
+      "commit_step": 135,
+      "intervened_steps": [
+        135
+      ]
+    },
+    {
+      "arm": "l16_mlp_zero",
+      "class": "A",
+      "case_id": "TX_E13",
+      "gold": "SATISFIED",
+      "repair_final_x": false,
+      "margin": -6.375,
+      "verdict": "SATISFIED",
+      "parse_ok": true,
+      "commit_step": 135,
+      "intervened_steps": [
+        135
+      ]
+    },
+    {
+      "arm": "baseline",
+      "class": "B",
+      "case_id": "TX_C01",
+      "gold": "CONTRADICTION",
+      "repair_final_x": true,
+      "margin": 10.375,
+      "verdict": "CONTRADICTION",
+      "parse_ok": true,
+      "commit_step": 133,
+      "intervened_steps": []
+    },
+    {
+      "arm": "l20_mlp_zero",
+      "class": "B",
+      "case_id": "TX_C01",
+      "gold": "CONTRADICTION",
+      "repair_final_x": true,
+      "margin": 9.0,
+      "verdict": "CONTRADICTION",
+      "parse_ok": true,
+      "commit_step": 133,
+      "intervened_steps": [
+        133
+      ]
+    },
+    {
+      "arm": "l20_mlp_replace_A_mean",
+      "class": "B",
+      "case_id": "TX_C01",
+      "gold": "CONTRADICTION",
+      "repair_final_x": true,
+      "margin": 6.625,
+      "verdict": "CONTRADICTION",
+      "parse_ok": true,
+      "commit_step": 133,
+      "intervened_steps": [
+        133
+      ]
+    },
+    {
+      "arm": "l20_mlp_replace_B_mean",
+      "class": "B",
+      "case_id": "TX_C01",
+      "gold": "CONTRADICTION",
+      "repair_final_x": true,
+      "margin": 10.25,
+      "verdict": "CONTRADICTION",
+      "parse_ok": true,
+      "commit_step": 133,
+      "intervened_steps": [
+        133
+      ]
+    },
+    {
+      "arm": "l20_attn_zero",
+      "class": "B",
+      "case_id": "TX_C01",
+      "gold": "CONTRADICTION",
+      "repair_final_x": true,
+      "margin": 10.125,
+      "verdict": "CONTRADICTION",
+      "parse_ok": true,
+      "commit_step": 133,
+      "intervened_steps": [
+        133
+      ]
+    },
+    {
+      "arm": "l16_mlp_zero",
+      "class": "B",
+      "case_id": "TX_C01",
+      "gold": "CONTRADICTION",
+      "repair_final_x": true,
+      "margin": 10.25,
+      "verdict": "CONTRADICTION",
+      "parse_ok": true,
+      "commit_step": 133,
+      "intervened_steps": [
+        133
+      ]
+    },
+    {
+      "arm": "baseline",
+      "class": "B",
+      "case_id": "TX_C02",
+      "gold": "CONTRADICTION",
+      "repair_final_x": true,
+      "margin": 7.25,
+      "verdict": "CONTRADICTION",
+      "parse_ok": true,
+      "commit_step": 111,
+      "intervened_steps": []
+    },
+    {
+      "arm": "l20_mlp_zero",
+      "class": "B",
+      "case_id": "TX_C02",
+      "gold": "CONTRADICTION",
+      "repair_final_x": true,
+      "margin": 6.5,
+      "verdict": "CONTRADICTION",
+      "parse_ok": true,
+      "commit_step": 111,
+      "intervened_steps": [
+        111
+      ]
+    },
+    {
+      "arm": "l20_mlp_replace_A_mean",
+      "class": "B",
+      "case_id": "TX_C02",
+      "gold": "CONTRADICTION",
+      "repair_final_x": true,
+      "margin": 4.75,
+      "verdict": "CONTRADICTION",
+      "parse_ok": true,
+      "commit_step": 111,
+      "intervened_steps": [
+        111
+      ]
+    },
+    {
+      "arm": "l20_mlp_replace_B_mean",
+      "class": "B",
+      "case_id": "TX_C02",
+      "gold": "CONTRADICTION",
+      "repair_final_x": true,
+      "margin": 8.625,
+      "verdict": "CONTRADICTION",
+      "parse_ok": true,
+      "commit_step": 111,
+      "intervened_steps": [
+        111
+      ]
+    },
+    {
+      "arm": "l20_attn_zero",
+      "class": "B",
+      "case_id": "TX_C02",
+      "gold": "CONTRADICTION",
+      "repair_final_x": true,
+      "margin": 9.0,
+      "verdict": "CONTRADICTION",
+      "parse_ok": true,
+      "commit_step": 111,
+      "intervened_steps": [
+        111
+      ]
+    },
+    {
+      "arm": "l16_mlp_zero",
+      "class": "B",
+      "case_id": "TX_C02",
+      "gold": "CONTRADICTION",
+      "repair_final_x": true,
+      "margin": 6.375,
+      "verdict": "CONTRADICTION",
+      "parse_ok": true,
+      "commit_step": 111,
+      "intervened_steps": [
+        111
+      ]
+    }
+  ],
+  "soft_gate": {
+    "passed": true,
+    "verdict": "YES",
+    "class_b_mean_delta_margin_primary": -3.125,
+    "class_b_mean_delta_margin_l20_mlp_zero": -1.0625,
+    "class_b_control_mean_delta_margin": {
+      "l20_attn_zero": 0.75,
+      "l16_mlp_zero": -0.5
+    },
+    "class_b_n_flip_to_x_false_primary": 0,
+    "class_b_n": 2,
+    "primary_beats_controls": true,
+    "class_a_mean_delta_margin_replace_B": 8.0625,
+    "note": "Primary = Class B repair with L20 MLP replaced by Class A mean write. Pass if mean \u0394margin < \u22121 and (X flips false on \u22651 B case or primary beats controls)."
+  },
+  "claim_hygiene": "Say: C1 soft_gate YES — L20 MLP commit write is a causal site for X/margin (B margin down; A←B flips X). Do not say: full temporality circuit found.",
+  "next": "Optional C2 path restrict wait-go. Do not reopen Upstream U-C/U-D from this Downstream site hit."
+}

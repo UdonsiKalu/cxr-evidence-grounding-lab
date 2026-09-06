@@ -1,8 +1,8 @@
 # Upstream program — after U0/U1 null (intent freeze)
 
-**Status:** program locked 2026-09-06 · **U-A done · U-B null · U-B2 null → pause** · `:8258` demos OK · **portfolio package frozen** — **leave this branch alone**  
+**Status:** program locked 2026-09-06 · **U-A done · U-B null · U-B2 null → pause** · `:8258` demos OK · **portfolio package frozen** · Downstream C0–C2 frozen **does not** reopen this branch · **leave Upstream alone**  
 **Portfolio write-up:** [TRACKB-UPSTREAM-PORTFOLIO.md](./TRACKB-UPSTREAM-PORTFOLIO.md)  
-**Does not reopen:** α-chase on freeze-`v`, U1/U1b cue×layer squeeze, sealed-test redesign, **U-C SAE / U-D circuits / live ablate thrash** from null U-B/U-B2  
+**Does not reopen:** α-chase on freeze-`v`, U1/U1b cue×layer squeeze, sealed-test redesign, **U-C SAE / U-D circuits / live ablate thrash** from null U-B/U-B2 **or** from Downstream circuit C0–C2  
 **Prior null:** [TRACKB-UPSTREAM-PREFILL.md](./TRACKB-UPSTREAM-PREFILL.md)
 
 ---
@@ -59,7 +59,7 @@ Null kills the *v × cue × layer* editor story. It does **not** characterize up
 
 **Operator demos (2026-09-06):** Score EX_TEMPORAL_FOLFOX vs frozen `d` (best L24 `|μ·d|≈71`); Score EX_CONTRA vs frozen `d` (best L24 `|μ·d|≈18.5`; top `Disease`/`remains`); Map custom pair short progression vs no-new-lesions (new `d`, L24 `||Δμ||≈25.6`). Correlational only.
 
-**Hard stop (locked):** do **not** open U-C SAE, U-D circuits, or live ablate thrash from U-B/U-B2 null. **Portfolio package shipped** (`TRACKB-UPSTREAM-PORTFOLIO.md`) — leave this ablation-family branch alone. **New Q (open):** held-out paraphrase generalization — [TRACKB-UPSTREAM-UA-GENERALIZE.md](./TRACKB-UPSTREAM-UA-GENERALIZE.md).
+**Hard stop (locked):** do **not** open U-C SAE, U-D circuits, or live ablate thrash from U-B/U-B2 null. **Portfolio package shipped** (`TRACKB-UPSTREAM-PORTFOLIO.md`). **U-A gen frozen** YES. **U-A causal-d** first panel **NULL/weak** ([TRACKB-UPSTREAM-UA-CAUSAL.md](./TRACKB-UPSTREAM-UA-CAUSAL.md)) — direction steer ≠ editor either.
 
 ## U-A run
 

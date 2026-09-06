@@ -27,6 +27,39 @@
 
 ## Log (newest first)
 
+### 2026-09-06 — Circuit C0–C2 freeze + leave Upstream alone
+
+| | |
+|--|--|
+| **Track** | B / Downstream circuit + portfolio hygiene |
+| **Activity** | Freeze C0+C1; run C2 path restrict (L16 feeder vs L20); lock Upstream U-C/U-D leave-alone in PROGRAM / SYSTEM-CLAIM. |
+| **Result** | C1 soft_gate YES retained; C2 **LOCAL_SUFFICIENT** (L16 alone weak; stack ≈ L20). |
+| **Artifacts** | `TRACKB-CIRCUIT-C01-FREEZE.md` · `n2s-circuit-c2-path-restrict.json` · CIRCUIT-PILOT / SAE-CIRCUIT-WHERE / SYSTEM-CLAIM |
+| **Decision** | Circuit ladder frozen at site+local path. Do not reopen Upstream U-C/U-D. Stop C3 unless new Q. |
+| **Commit** | (this push) |
+
+### 2026-09-06 — Circuit C1 L20 MLP causal patch (soft_gate YES)
+
+| | |
+|--|--|
+| **Track** | B / Downstream circuit |
+| **Activity** | C0 top site L20/mlp; commit-time zero/replace MLP (+ attn & L16 controls) on Class A/B expand cases. |
+| **Result** | Soft gate **YES** — B←A mean Δmargin ≈ −3.1 (beats controls); no B X-flip. A←B flips X false→true on both TX_E08/E13 (Δmargin ≈ +8.1). |
+| **Artifacts** | `TRACKB-CIRCUIT-PILOT.md` · `n2s_circuit_pilot.py` (`patch`) · `n2s-circuit-c1-l20-mlp-patch.json` |
+| **Decision** | L20 MLP commit write is a causal site (not full circuit). Optional C2 path restrict wait-go; do not reopen Upstream U-C/U-D from this. |
+| **Commit** | (local) |
+
+### 2026-09-06 — U-A causal-d intervene panel (commit+prefill NULL)
+
+| | |
+|--|--|
+| **Track** | B / new causal Q |
+| **Activity** | Protocol + runner; steer along frozen U-A `d` @ L24 (commit + prefill note-body); α=1/2/4/8; ±d + gaussian; FOLFOX+CONTRA. |
+| **Result** | **NULL/weak** both sites — no X flip; margins flat/noise; contra control held. Distinct from U-B (direction vs top-site ablate); both null families. |
+| **Artifacts** | `TRACKB-UPSTREAM-UA-CAUSAL.md` · `n2s_upstream_ua_causal.py` · `*-commit-panel.json` · `*-prefill-panel.json` |
+| **Decision** | Frozen `d` remains correlational. Do not claim causal editor. Do not reopen U-C/U-D/ablate thrash from this null. |
+| **Commit** | (local) |
+
 ### 2026-09-06 — Freeze U-A paraphrase generalization (soft+strong YES)
 
 | | |

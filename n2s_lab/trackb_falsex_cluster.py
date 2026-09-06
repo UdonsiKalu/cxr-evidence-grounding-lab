@@ -14,7 +14,12 @@ import torch
 
 from .ground import ground
 from .hf_client import load_model, unload_model
-from .hf_intervene import ActivationPatchSpec, ActivationSteerSpec, generate_intervened
+from .hf_intervene import (
+    ActivationPatchSpec,
+    ActivationSteerSpec,
+    CommitComponentSpec,
+    generate_intervened,
+)
 from .hf_trace import _fraction_layers, find_present_commit_step
 from .neural import EXTRACT_SYSTEM
 from .ollama_client import parse_json_object
@@ -96,6 +101,8 @@ def _repair_run(
     vectors_by_layer: dict[int, torch.Tensor] | None = None,
     alpha: float = 1.0,
     patch_by_layer: dict[int, torch.Tensor] | None = None,
+    commit_component: CommitComponentSpec | None = None,
+    commit_components: list[CommitComponentSpec] | None = None,
     store_commit_hidden: bool = False,
     layer_indices: tuple[int, ...] | None = None,
     layer_fractions: tuple[float, ...] | None = None,
@@ -115,9 +122,17 @@ def _repair_run(
     )
     user = _repair_user_prompt(evidence, raw, v1.reasons)
 
+    specs: list[CommitComponentSpec] = []
+    if commit_components:
+        specs.extend(commit_components)
+    elif commit_component is not None:
+        specs.append(commit_component)
+
     # When patching/capturing absolute layers, hook exactly those indices.
     if layer_indices is None and patch_by_layer is not None:
         layer_indices = tuple(sorted(patch_by_layer.keys()))
+    if layer_indices is None and specs:
+        layer_indices = tuple(sorted({int(s.layer) for s in specs}))
 
     kwargs: dict[str, Any] = {
         "system": EXTRACT_SYSTEM,
@@ -137,6 +152,9 @@ def _repair_run(
     elif intervention == "activation_patch" and patch_by_layer is not None:
         kwargs["intervention"] = "activation_patch"
         kwargs["activation_patch"] = ActivationPatchSpec(vectors_by_layer=patch_by_layer)
+    elif intervention == "commit_component" and specs:
+        kwargs["intervention"] = "commit_component"
+        kwargs["commit_components"] = specs
     else:
         kwargs["intervention"] = "none"
 
