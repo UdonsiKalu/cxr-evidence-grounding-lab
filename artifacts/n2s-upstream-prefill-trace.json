@@ -1,0 +1,898 @@
+{
+  "ok": true,
+  "kind": "n2s_upstream_prefill_trace_v1",
+  "timestamp": "2026-09-06T10:44:04.305820+00:00",
+  "quest": "U0 observational: how do cue tokens align with frozen expand v (and L20 SAE) during prefill \u2014 formation, not commit utilization.",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "layers": [
+    8,
+    12,
+    16,
+    20,
+    24
+  ],
+  "cues": [
+    "FOLFOX",
+    "failed",
+    "response",
+    "later",
+    "progression",
+    "responsive",
+    "discontinued",
+    "addendum"
+  ],
+  "direction_source": "n2s-forensics-directions-qwen7b.json",
+  "direction_meta_keys": [
+    "class_a",
+    "class_b",
+    "dim",
+    "direction_a_minus_b",
+    "fit_layer",
+    "formula",
+    "kind",
+    "mean_a",
+    "mean_b",
+    "model_id",
+    "source_fit",
+    "source_hiddens"
+  ],
+  "sae": {
+    "repo": "chanind/qwen2.5-7B-it-layer-20-saes",
+    "subdir": "pile/matryoshka/k-100",
+    "interest_feat_ids": [
+      165,
+      9204,
+      1196
+    ]
+  },
+  "notes": [
+    {
+      "id": "EX_TEMPORAL_FOLFOX",
+      "gold": "SATISFIED",
+      "prompt_token_count": 467,
+      "n_cue_spans": 6,
+      "sites": [
+        {
+          "cue": "FOLFOX",
+          "char_start": 2102,
+          "char_end": 2108,
+          "token_start": 423,
+          "token_end": 426,
+          "readout_pos": 425,
+          "snippet": "FOLFOX",
+          "in_note_body": true,
+          "layers": {
+            "L8": {
+              "proj_v": -0.23003,
+              "cos_v": -0.002807,
+              "norm": 81.961609
+            },
+            "L12": {
+              "proj_v": 1.563097,
+              "cos_v": 0.019512,
+              "norm": 80.111107
+            },
+            "L16": {
+              "proj_v": 1.496871,
+              "cos_v": 0.017355,
+              "norm": 86.250534
+            },
+            "L20": {
+              "proj_v": 0.745238,
+              "cos_v": 0.006183,
+              "norm": 120.537338,
+              "sae_topk": [
+                {
+                  "feat_id": 182,
+                  "act": 42.54397964477539
+                },
+                {
+                  "feat_id": 586,
+                  "act": 31.795608520507812
+                },
+                {
+                  "feat_id": 171,
+                  "act": 29.036367416381836
+                },
+                {
+                  "feat_id": 942,
+                  "act": 27.939451217651367
+                },
+                {
+                  "feat_id": 1070,
+                  "act": 24.735979080200195
+                },
+                {
+                  "feat_id": 165,
+                  "act": 0.0,
+                  "from_sae_pilot_top": true
+                },
+                {
+                  "feat_id": 9204,
+                  "act": -0.0,
+                  "from_sae_pilot_top": true
+                },
+                {
+                  "feat_id": 1196,
+                  "act": 15.288023948669434,
+                  "from_sae_pilot_top": true
+                }
+              ]
+            },
+            "L24": {
+              "proj_v": -1.973549,
+              "cos_v": -0.007352,
+              "norm": 268.441895
+            }
+          }
+        },
+        {
+          "cue": "FOLFOX",
+          "char_start": 2240,
+          "char_end": 2246,
+          "token_start": 448,
+          "token_end": 451,
+          "readout_pos": 450,
+          "snippet": "FOLFOX",
+          "in_note_body": true,
+          "layers": {
+            "L8": {
+              "proj_v": 0.082332,
+              "cos_v": 0.001138,
+              "norm": 72.340347
+            },
+            "L12": {
+              "proj_v": 1.145547,
+              "cos_v": 0.017405,
+              "norm": 65.817863
+            },
+            "L16": {
+              "proj_v": 3.171846,
+              "cos_v": 0.039875,
+              "norm": 79.544792
+            },
+            "L20": {
+              "proj_v": 5.950551,
+              "cos_v": 0.051173,
+              "norm": 116.282074,
+              "sae_topk": [
+                {
+                  "feat_id": 182,
+                  "act": 29.731550216674805
+                },
+                {
+                  "feat_id": 1070,
+                  "act": 23.513885498046875
+                },
+                {
+                  "feat_id": 586,
+                  "act": 22.360820770263672
+                },
+                {
+                  "feat_id": 1102,
+                  "act": 20.298696517944336
+                },
+                {
+                  "feat_id": 1780,
+                  "act": 20.20177459716797
+                },
+                {
+                  "feat_id": 165,
+                  "act": -0.0,
+                  "from_sae_pilot_top": true
+                },
+                {
+                  "feat_id": 9204,
+                  "act": 0.0,
+                  "from_sae_pilot_top": true
+                },
+                {
+                  "feat_id": 1196,
+                  "act": 6.258160591125488,
+                  "from_sae_pilot_top": true
+                }
+              ]
+            },
+            "L24": {
+              "proj_v": 5.861029,
+              "cos_v": 0.019917,
+              "norm": 294.278992
+            }
+          }
+        },
+        {
+          "cue": "response",
+          "char_start": 2128,
+          "char_end": 2136,
+          "token_start": 429,
+          "token_end": 430,
+          "readout_pos": 429,
+          "snippet": "response",
+          "in_note_body": true,
+          "layers": {
+            "L8": {
+              "proj_v": -1.524336,
+              "cos_v": -0.029301,
+              "norm": 52.022793
+            },
+            "L12": {
+              "proj_v": 0.049605,
+              "cos_v": 0.000726,
+              "norm": 68.294281
+            },
+            "L16": {
+              "proj_v": 1.290049,
+              "cos_v": 0.016478,
+              "norm": 78.287178
+            },
+            "L20": {
+              "proj_v": -0.540602,
+              "cos_v": -0.004583,
+              "norm": 117.968201,
+              "sae_topk": [
+                {
+                  "feat_id": 182,
+                  "act": 40.246971130371094
+                },
+                {
+                  "feat_id": 1102,
+                  "act": 37.528587341308594
+                },
+                {
+                  "feat_id": 586,
+                  "act": 29.353885650634766
+                },
+                {
+                  "feat_id": 171,
+                  "act": 23.237152099609375
+                },
+                {
+                  "feat_id": 942,
+                  "act": 22.45847511291504
+                },
+                {
+                  "feat_id": 165,
+                  "act": -0.0,
+                  "from_sae_pilot_top": true
+                },
+                {
+                  "feat_id": 9204,
+                  "act": -0.0,
+                  "from_sae_pilot_top": true
+                },
+                {
+                  "feat_id": 1196,
+                  "act": 12.578073501586914,
+                  "from_sae_pilot_top": true
+                }
+              ]
+            },
+            "L24": {
+              "proj_v": -6.673579,
+              "cos_v": -0.026227,
+              "norm": 254.45253
+            }
+          }
+        },
+        {
+          "cue": "later",
+          "char_start": 2163,
+          "char_end": 2168,
+          "token_start": 436,
+          "token_end": 437,
+          "readout_pos": 436,
+          "snippet": "later",
+          "in_note_body": true,
+          "layers": {
+            "L8": {
+              "proj_v": -0.548981,
+              "cos_v": -0.010048,
+              "norm": 54.636124
+            },
+            "L12": {
+              "proj_v": -0.627603,
+              "cos_v": -0.01038,
+              "norm": 60.461575
+            },
+            "L16": {
+              "proj_v": 0.558692,
+              "cos_v": 0.007573,
+              "norm": 73.771538
+            },
+            "L20": {
+              "proj_v": 0.623701,
+              "cos_v": 0.005834,
+              "norm": 106.916328,
+              "sae_topk": [
+                {
+                  "feat_id": 719,
+                  "act": 26.000789642333984
+                },
+                {
+                  "feat_id": 182,
+                  "act": 25.012052536010742
+                },
+                {
+                  "feat_id": 1102,
+                  "act": 21.87664222717285
+                },
+                {
+                  "feat_id": 600,
+                  "act": 20.699369430541992
+                },
+                {
+                  "feat_id": 586,
+                  "act": 18.657169342041016
+                },
+                {
+                  "feat_id": 165,
+                  "act": -0.0,
+                  "from_sae_pilot_top": true
+                },
+                {
+                  "feat_id": 9204,
+                  "act": -0.0,
+                  "from_sae_pilot_top": true
+                },
+                {
+                  "feat_id": 1196,
+                  "act": 6.924185752868652,
+                  "from_sae_pilot_top": true
+                }
+              ]
+            },
+            "L24": {
+              "proj_v": -3.287641,
+              "cos_v": -0.01297,
+              "norm": 253.471191
+            }
+          }
+        },
+        {
+          "cue": "progression",
+          "char_start": 2227,
+          "char_end": 2238,
+          "token_start": 446,
+          "token_end": 447,
+          "readout_pos": 446,
+          "snippet": "progression",
+          "in_note_body": true,
+          "layers": {
+            "L8": {
+              "proj_v": 0.091355,
+              "cos_v": 0.00177,
+              "norm": 51.612225
+            },
+            "L12": {
+              "proj_v": -0.018572,
+              "cos_v": -0.000279,
+              "norm": 66.65786
+            },
+            "L16": {
+              "proj_v": 1.263192,
+              "cos_v": 0.015184,
+              "norm": 83.189697
+            },
+            "L20": {
+              "proj_v": -0.15424,
+              "cos_v": -0.00136,
+              "norm": 113.432823,
+              "sae_topk": [
+                {
+                  "feat_id": 182,
+                  "act": 42.40861511230469
+                },
+                {
+                  "feat_id": 1102,
+                  "act": 40.74226760864258
+                },
+                {
+                  "feat_id": 586,
+                  "act": 31.304100036621094
+                },
+                {
+                  "feat_id": 942,
+                  "act": 21.591243743896484
+                },
+                {
+                  "feat_id": 60,
+                  "act": 20.507986068725586
+                },
+                {
+                  "feat_id": 165,
+                  "act": -0.0,
+                  "from_sae_pilot_top": true
+                },
+                {
+                  "feat_id": 9204,
+                  "act": -0.0,
+                  "from_sae_pilot_top": true
+                },
+                {
+                  "feat_id": 1196,
+                  "act": 12.476676940917969,
+                  "from_sae_pilot_top": true
+                }
+              ]
+            },
+            "L24": {
+              "proj_v": -2.908667,
+              "cos_v": -0.012117,
+              "norm": 240.055527
+            }
+          }
+        },
+        {
+          "cue": "discontinued",
+          "char_start": 2251,
+          "char_end": 2263,
+          "token_start": 452,
+          "token_end": 453,
+          "readout_pos": 452,
+          "snippet": "discontinued",
+          "in_note_body": true,
+          "layers": {
+            "L8": {
+              "proj_v": -0.190625,
+              "cos_v": -0.003664,
+              "norm": 52.026501
+            },
+            "L12": {
+              "proj_v": -0.527998,
+              "cos_v": -0.00864,
+              "norm": 61.10767
+            },
+            "L16": {
+              "proj_v": 0.417934,
+              "cos_v": 0.005264,
+              "norm": 79.399467
+            },
+            "L20": {
+              "proj_v": 0.533806,
+              "cos_v": 0.004421,
+              "norm": 120.729904,
+              "sae_topk": [
+                {
+                  "feat_id": 182,
+                  "act": 35.90336227416992
+                },
+                {
+                  "feat_id": 1102,
+                  "act": 30.645158767700195
+                },
+                {
+                  "feat_id": 719,
+                  "act": 23.53798484802246
+                },
+                {
+                  "feat_id": 897,
+                  "act": 22.611919403076172
+                },
+                {
+                  "feat_id": 1070,
+                  "act": 19.57721519470215
+                },
+                {
+                  "feat_id": 165,
+                  "act": -0.0,
+                  "from_sae_pilot_top": true
+                },
+                {
+                  "feat_id": 9204,
+                  "act": -0.0,
+                  "from_sae_pilot_top": true
+                },
+                {
+                  "feat_id": 1196,
+                  "act": 15.494894981384277,
+                  "from_sae_pilot_top": true
+                }
+              ]
+            },
+            "L24": {
+              "proj_v": -1.838847,
+              "cos_v": -0.007123,
+              "norm": 258.141144
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "EX_CONTRA",
+      "gold": "CONTRADICTION",
+      "prompt_token_count": 450,
+      "n_cue_spans": 5,
+      "sites": [
+        {
+          "cue": "FOLFOX",
+          "char_start": 2095,
+          "char_end": 2101,
+          "token_start": 421,
+          "token_end": 424,
+          "readout_pos": 423,
+          "snippet": "FOLFOX",
+          "in_note_body": true,
+          "layers": {
+            "L8": {
+              "proj_v": -0.325558,
+              "cos_v": -0.003955,
+              "norm": 82.323845
+            },
+            "L12": {
+              "proj_v": 1.666549,
+              "cos_v": 0.02125,
+              "norm": 78.42617
+            },
+            "L16": {
+              "proj_v": 2.175595,
+              "cos_v": 0.025305,
+              "norm": 85.974564
+            },
+            "L20": {
+              "proj_v": 0.968676,
+              "cos_v": 0.008358,
+              "norm": 115.897079,
+              "sae_topk": [
+                {
+                  "feat_id": 182,
+                  "act": 37.81039047241211
+                },
+                {
+                  "feat_id": 586,
+                  "act": 30.569961547851562
+                },
+                {
+                  "feat_id": 942,
+                  "act": 28.23638343811035
+                },
+                {
+                  "feat_id": 1070,
+                  "act": 25.951393127441406
+                },
+                {
+                  "feat_id": 171,
+                  "act": 25.176969528198242
+                },
+                {
+                  "feat_id": 165,
+                  "act": -0.0,
+                  "from_sae_pilot_top": true
+                },
+                {
+                  "feat_id": 9204,
+                  "act": -0.0,
+                  "from_sae_pilot_top": true
+                },
+                {
+                  "feat_id": 1196,
+                  "act": 15.472258567810059,
+                  "from_sae_pilot_top": true
+                }
+              ]
+            },
+            "L24": {
+              "proj_v": 1.035808,
+              "cos_v": 0.004229,
+              "norm": 244.957016
+            }
+          }
+        },
+        {
+          "cue": "FOLFOX",
+          "char_start": 2170,
+          "char_end": 2176,
+          "token_start": 437,
+          "token_end": 440,
+          "readout_pos": 439,
+          "snippet": "FOLFOX",
+          "in_note_body": true,
+          "layers": {
+            "L8": {
+              "proj_v": 0.458815,
+              "cos_v": 0.007924,
+              "norm": 57.903778
+            },
+            "L12": {
+              "proj_v": 2.039637,
+              "cos_v": 0.032716,
+              "norm": 62.342937
+            },
+            "L16": {
+              "proj_v": 2.870683,
+              "cos_v": 0.03779,
+              "norm": 75.96389
+            },
+            "L20": {
+              "proj_v": 2.580822,
+              "cos_v": 0.02491,
+              "norm": 103.604355,
+              "sae_topk": [
+                {
+                  "feat_id": 586,
+                  "act": 26.247577667236328
+                },
+                {
+                  "feat_id": 171,
+                  "act": 24.101953506469727
+                },
+                {
+                  "feat_id": 1102,
+                  "act": 23.390161514282227
+                },
+                {
+                  "feat_id": 719,
+                  "act": 22.96698570251465
+                },
+                {
+                  "feat_id": 182,
+                  "act": 21.894357681274414
+                },
+                {
+                  "feat_id": 165,
+                  "act": -0.0,
+                  "from_sae_pilot_top": true
+                },
+                {
+                  "feat_id": 9204,
+                  "act": -0.0,
+                  "from_sae_pilot_top": true
+                },
+                {
+                  "feat_id": 1196,
+                  "act": 3.5652530193328857,
+                  "from_sae_pilot_top": true
+                }
+              ]
+            },
+            "L24": {
+              "proj_v": -0.122526,
+              "cos_v": -0.000512,
+              "norm": 239.469635
+            }
+          }
+        },
+        {
+          "cue": "failed",
+          "char_start": 2077,
+          "char_end": 2083,
+          "token_start": 418,
+          "token_end": 419,
+          "readout_pos": 418,
+          "snippet": "failed",
+          "in_note_body": true,
+          "layers": {
+            "L8": {
+              "proj_v": -0.765731,
+              "cos_v": -0.015027,
+              "norm": 50.955826
+            },
+            "L12": {
+              "proj_v": -0.554572,
+              "cos_v": -0.00893,
+              "norm": 62.10133
+            },
+            "L16": {
+              "proj_v": 0.103501,
+              "cos_v": 0.001376,
+              "norm": 75.24614
+            },
+            "L20": {
+              "proj_v": 0.712558,
+              "cos_v": 0.006454,
+              "norm": 110.404762,
+              "sae_topk": [
+                {
+                  "feat_id": 182,
+                  "act": 45.907073974609375
+                },
+                {
+                  "feat_id": 586,
+                  "act": 26.664108276367188
+                },
+                {
+                  "feat_id": 1102,
+                  "act": 25.514545440673828
+                },
+                {
+                  "feat_id": 1070,
+                  "act": 22.824817657470703
+                },
+                {
+                  "feat_id": 1306,
+                  "act": 16.664852142333984
+                },
+                {
+                  "feat_id": 165,
+                  "act": -0.0,
+                  "from_sae_pilot_top": true
+                },
+                {
+                  "feat_id": 9204,
+                  "act": -0.0,
+                  "from_sae_pilot_top": true
+                },
+                {
+                  "feat_id": 1196,
+                  "act": 9.969880104064941,
+                  "from_sae_pilot_top": true
+                }
+              ]
+            },
+            "L24": {
+              "proj_v": -2.193183,
+              "cos_v": -0.008197,
+              "norm": 267.556976
+            }
+          }
+        },
+        {
+          "cue": "responsive",
+          "char_start": 2156,
+          "char_end": 2166,
+          "token_start": 435,
+          "token_end": 436,
+          "readout_pos": 435,
+          "snippet": "responsive",
+          "in_note_body": true,
+          "layers": {
+            "L8": {
+              "proj_v": 0.332362,
+              "cos_v": 0.006599,
+              "norm": 50.364277
+            },
+            "L12": {
+              "proj_v": 0.537735,
+              "cos_v": 0.008455,
+              "norm": 63.600239
+            },
+            "L16": {
+              "proj_v": 2.116765,
+              "cos_v": 0.02668,
+              "norm": 79.340271
+            },
+            "L20": {
+              "proj_v": 2.289564,
+              "cos_v": 0.019934,
+              "norm": 114.857941,
+              "sae_topk": [
+                {
+                  "feat_id": 1102,
+                  "act": 35.79573059082031
+                },
+                {
+                  "feat_id": 182,
+                  "act": 29.724214553833008
+                },
+                {
+                  "feat_id": 586,
+                  "act": 29.148483276367188
+                },
+                {
+                  "feat_id": 171,
+                  "act": 25.36797523498535
+                },
+                {
+                  "feat_id": 1070,
+                  "act": 22.724605560302734
+                },
+                {
+                  "feat_id": 165,
+                  "act": -0.0,
+                  "from_sae_pilot_top": true
+                },
+                {
+                  "feat_id": 9204,
+                  "act": -0.0,
+                  "from_sae_pilot_top": true
+                },
+                {
+                  "feat_id": 1196,
+                  "act": 7.546393871307373,
+                  "from_sae_pilot_top": true
+                }
+              ]
+            },
+            "L24": {
+              "proj_v": -4.374796,
+              "cos_v": -0.017417,
+              "norm": 251.183502
+            }
+          }
+        },
+        {
+          "cue": "addendum",
+          "char_start": 2121,
+          "char_end": 2129,
+          "token_start": 428,
+          "token_end": 430,
+          "readout_pos": 429,
+          "snippet": "Addendum",
+          "in_note_body": true,
+          "layers": {
+            "L8": {
+              "proj_v": 0.281026,
+              "cos_v": 0.005389,
+              "norm": 52.146599
+            },
+            "L12": {
+              "proj_v": 0.33155,
+              "cos_v": 0.00574,
+              "norm": 57.761631
+            },
+            "L16": {
+              "proj_v": 0.076185,
+              "cos_v": 0.000984,
+              "norm": 77.462799
+            },
+            "L20": {
+              "proj_v": 0.897933,
+              "cos_v": 0.007705,
+              "norm": 116.535904,
+              "sae_topk": [
+                {
+                  "feat_id": 719,
+                  "act": 23.35784912109375
+                },
+                {
+                  "feat_id": 182,
+                  "act": 21.910364151000977
+                },
+                {
+                  "feat_id": 27,
+                  "act": 17.585220336914062
+                },
+                {
+                  "feat_id": 593,
+                  "act": 15.765412330627441
+                },
+                {
+                  "feat_id": 1378,
+                  "act": 14.708037376403809
+                },
+                {
+                  "feat_id": 165,
+                  "act": -0.0,
+                  "from_sae_pilot_top": true
+                },
+                {
+                  "feat_id": 9204,
+                  "act": -0.0,
+                  "from_sae_pilot_top": true
+                },
+                {
+                  "feat_id": 1196,
+                  "act": 4.940091609954834,
+                  "from_sae_pilot_top": true
+                }
+              ]
+            },
+            "L24": {
+              "proj_v": -4.599404,
+              "cos_v": -0.018016,
+              "norm": 255.291595
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "contrast_L20": [
+    {
+      "cue": "FOLFOX",
+      "layer": 20,
+      "temporal_pos": 425,
+      "contra_pos": 423,
+      "temporal_cos_v": 0.006183,
+      "contra_cos_v": 0.008358,
+      "delta_cos_v_temporal_minus_contra": -0.002175,
+      "temporal_proj_v": 0.745238,
+      "contra_proj_v": 0.968676
+    }
+  ],
+  "claim_hygiene": {
+    "say": "prefill cue\u00d7layer alignment with frozen v / SAE activations",
+    "do_not_say": "found temporality circuit; patched X; upstream closed",
+    "next": "U1 site patch cue\u2192commit X (not this artifact)"
+  }
+}

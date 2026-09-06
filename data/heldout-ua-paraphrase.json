@@ -1,0 +1,78 @@
+{
+  "schema": "heldout_ua_paraphrase_v1",
+  "protocol": "docs/TRACKB-UPSTREAM-UA-GENERALIZE.md",
+  "quest": "Does frozen U-A d = unit(μ_T−μ_C) separate temporal-change vs contradiction on unseen paraphrases / lexical forms?",
+  "discovery_pair": ["EX_TEMPORAL_FOLFOX", "EX_CONTRA"],
+  "notes": [
+    {
+      "id": "EX_TEMPORAL_FOLFOX",
+      "role": "anchor",
+      "class": "temporal",
+      "gold": "SATISFIED",
+      "evidence": "Metastatic colorectal cancer. First-line FOLFOX produced a partial response. At follow-up four months later, imaging demonstrated new hepatic lesions consistent with progression. FOLFOX was discontinued for treatment failure; second-line therapy discussed."
+    },
+    {
+      "id": "EX_CONTRA",
+      "role": "anchor",
+      "class": "contra",
+      "gold": "CONTRADICTION",
+      "evidence": "Note A: Patient failed first-line FOLFOX after four cycles. Addendum same day: Disease remains responsive to FOLFOX; continue current regimen."
+    },
+    {
+      "id": "UA_GEN_P1_NEAR",
+      "role": "near_paraphrase",
+      "class": "temporal",
+      "gold": "SATISFIED",
+      "evidence": "Stage IV colon adenocarcinoma. The patient initially improved on first-line FOLFOX with shrinking metastases. Several months afterward, restaging showed enlarging liver metastases and treatment was stopped because the regimen had failed; options for next-line therapy were reviewed."
+    },
+    {
+      "id": "UA_GEN_C1_NEAR",
+      "role": "near_paraphrase",
+      "class": "contra",
+      "gold": "CONTRADICTION",
+      "evidence": "Same-day note: first-line FOLFOX is documented as having failed after four cycles. Same-day addendum: the disease is still responding to FOLFOX and the current regimen should continue without change."
+    },
+    {
+      "id": "UA_GEN_P2_FAR",
+      "role": "far_paraphrase",
+      "class": "temporal",
+      "gold": "SATISFIED",
+      "evidence": "Metastatic NSCLC on first-line pembrolizumab plus carboplatin/pemetrexed. Early scans showed partial response. At the six-month restaging visit, imaging now shows progression of known lesions with new nodal disease. Plan: discontinue current first-line regimen and discuss second-line options."
+    },
+    {
+      "id": "UA_GEN_C2_FAR",
+      "role": "far_paraphrase",
+      "class": "contra",
+      "gold": "CONTRADICTION",
+      "evidence": "Assessment: first-line pembrolizumab failed; switch therapy. Addendum recorded the same visit: disease remains responsive to pembrolizumab; do not change therapy."
+    },
+    {
+      "id": "UA_GEN_P3_FAR",
+      "role": "far_paraphrase",
+      "class": "temporal",
+      "gold": "SATISFIED",
+      "evidence": "Diffuse large B-cell lymphoma. After three cycles of R-CHOP the nodes had responded. Later restaging demonstrated new sites of disease consistent with progression on R-CHOP; first-line therapy was abandoned for failure and salvage was planned."
+    },
+    {
+      "id": "UA_GEN_C3_FAR",
+      "role": "far_paraphrase",
+      "class": "contra",
+      "gold": "CONTRADICTION",
+      "evidence": "Today's note states the patient progressed through first-line R-CHOP and should move to salvage. A same-day correction states excellent ongoing response to R-CHOP with plan to continue the identical regimen."
+    },
+    {
+      "id": "UA_GEN_P4_FAR",
+      "role": "far_paraphrase",
+      "class": "temporal",
+      "gold": "SATISFIED",
+      "evidence": "Metastatic pancreatic adenocarcinoma. First-line FOLFIRINOX yielded an initial radiographic response. On subsequent imaging months later, new peritoneal implants appeared; FOLFIRINOX was discontinued for treatment failure."
+    },
+    {
+      "id": "UA_GEN_C4_FAR",
+      "role": "far_paraphrase",
+      "class": "contra",
+      "gold": "CONTRADICTION",
+      "evidence": "Chart: Patient failed first-line FOLFIRINOX after six cycles. Same-day addendum: disease remains sensitive to FOLFIRINOX; continue present therapy."
+    }
+  ]
+}

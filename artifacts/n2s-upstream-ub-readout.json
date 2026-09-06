@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "kind": "n2s_upstream_ub_readout_v1",
+  "timestamp": "2026-09-06T14:22:27.804189+00:00",
+  "source_patch": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/n2s-upstream-ub-patch.json",
+  "findings": [
+    "EX_TEMPORAL_FOLFOX zero-attn: X False\u2192False \u0394margin=0.0 flip=False",
+    "EX_TEMPORAL_FOLFOX zero-mlp: X False\u2192False \u0394margin=0.0 flip=False",
+    "EX_TEMPORAL_FOLFOX zero-resid: X False\u2192False \u0394margin=0.25 flip=False",
+    "EX_CONTRA zero-attn: X True\u2192True \u0394margin=0.0 flip=False",
+    "EX_CONTRA zero-mlp: X True\u2192True \u0394margin=-0.25 flip=False",
+    "EX_CONTRA zero-resid: X True\u2192True \u0394margin=-0.5 flip=False"
+  ],
+  "shortlist": [],
+  "formation_hypothesis": "U-B null at L24 top sites: zeroing attn/mlp/resid did not flip X and did not move margin \u22651. Formation sites from U-A are not yet causally sufficient under this ablation \u2014 try U-B2 (mean-ablate / cross-patch / earlier layer) before SAE/circuits.",
+  "exit_criterion_met": true,
+  "next": "Optional U-B refine (L20 / mean-ablate) or stop before circuits \u2014 wait go"
+}

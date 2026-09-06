@@ -1,0 +1,664 @@
+{
+  "ok": true,
+  "kind": "n2s_upstream_live_score_v1",
+  "timestamp": "2026-09-06T15:25:48.966886+00:00",
+  "quest": "Live: where do this note's prefill residuals project onto the frozen U-A formation direction d = unit(\u03bc_T\u2212\u03bc_C)?",
+  "case_id": "EX_CONTRA",
+  "gold": "CONTRADICTION",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "directions_path": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/n2s-upstream-ua-directions.pt",
+  "directions_cached": true,
+  "pair_frozen": {
+    "temporal": "EX_TEMPORAL_FOLFOX",
+    "contra": "EX_CONTRA"
+  },
+  "freeze_v_source": "directions",
+  "n_note_tokens": 31,
+  "best_layer": "L24",
+  "by_layer": {
+    "L8": {
+      "layer": 8,
+      "mean_score_d": -2.738724,
+      "mean_abs_score_d": 3.54528,
+      "cos_d_vs_freeze_v": 0.023636,
+      "top_sites": [
+        {
+          "local_pos": 16,
+          "global_pos": 430,
+          "token": " same",
+          "score_d": -10.78461,
+          "abs_score_d": 10.78461,
+          "norm": 51.84716,
+          "cos_v": -0.022435,
+          "proj_v": -1.163191
+        },
+        {
+          "local_pos": 17,
+          "global_pos": 431,
+          "token": " day",
+          "score_d": -9.150043,
+          "abs_score_d": 9.150043,
+          "norm": 52.556953,
+          "cos_v": -0.004989,
+          "proj_v": -0.262201
+        },
+        {
+          "local_pos": 1,
+          "global_pos": 415,
+          "token": " A",
+          "score_d": -7.514312,
+          "abs_score_d": 7.514312,
+          "norm": 43.430695,
+          "cos_v": -0.024791,
+          "proj_v": -1.076677
+        },
+        {
+          "local_pos": 28,
+          "global_pos": 442,
+          "token": " current",
+          "score_d": -7.048189,
+          "abs_score_d": 7.048189,
+          "norm": 52.13562,
+          "cos_v": -0.010285,
+          "proj_v": -0.536211
+        },
+        {
+          "local_pos": 9,
+          "global_pos": 423,
+          "token": "FOX",
+          "score_d": 6.77773,
+          "abs_score_d": 6.77773,
+          "norm": 82.323845,
+          "cos_v": -0.003955,
+          "proj_v": -0.325558
+        },
+        {
+          "local_pos": 27,
+          "global_pos": 441,
+          "token": " continue",
+          "score_d": -6.594993,
+          "abs_score_d": 6.594993,
+          "norm": 50.519566,
+          "cos_v": -0.01039,
+          "proj_v": -0.524916
+        },
+        {
+          "local_pos": 14,
+          "global_pos": 428,
+          "token": " Add",
+          "score_d": -6.353086,
+          "abs_score_d": 6.353086,
+          "norm": 43.497589,
+          "cos_v": -0.016498,
+          "proj_v": -0.717644
+        },
+        {
+          "local_pos": 20,
+          "global_pos": 434,
+          "token": " remains",
+          "score_d": -5.938735,
+          "abs_score_d": 5.938735,
+          "norm": 52.079254,
+          "cos_v": -0.018126,
+          "proj_v": -0.944006
+        },
+        {
+          "local_pos": 5,
+          "global_pos": 419,
+          "token": " first",
+          "score_d": -5.936169,
+          "abs_score_d": 5.936169,
+          "norm": 49.492386,
+          "cos_v": -0.02284,
+          "proj_v": -1.130418
+        },
+        {
+          "local_pos": 0,
+          "global_pos": 414,
+          "token": "Note",
+          "score_d": -5.447111,
+          "abs_score_d": 5.447111,
+          "norm": 45.548302,
+          "cos_v": 0.001684,
+          "proj_v": 0.076714
+        },
+        {
+          "local_pos": 2,
+          "global_pos": 416,
+          "token": ":",
+          "score_d": -5.104885,
+          "abs_score_d": 5.104885,
+          "norm": 43.441925,
+          "cos_v": -0.032737,
+          "proj_v": -1.422159
+        },
+        {
+          "local_pos": 15,
+          "global_pos": 429,
+          "token": "endum",
+          "score_d": -4.884182,
+          "abs_score_d": 4.884182,
+          "norm": 52.146599,
+          "cos_v": 0.005389,
+          "proj_v": 0.281026
+        }
+      ]
+    },
+    "L12": {
+      "layer": 12,
+      "mean_score_d": -0.520201,
+      "mean_abs_score_d": 3.502733,
+      "cos_d_vs_freeze_v": 0.013457,
+      "top_sites": [
+        {
+          "local_pos": 19,
+          "global_pos": 433,
+          "token": " Disease",
+          "score_d": 9.528163,
+          "abs_score_d": 9.528163,
+          "norm": 65.193672,
+          "cos_v": -0.008088,
+          "proj_v": -0.52729
+        },
+        {
+          "local_pos": 1,
+          "global_pos": 415,
+          "token": " A",
+          "score_d": -8.600934,
+          "abs_score_d": 8.600934,
+          "norm": 52.093502,
+          "cos_v": -0.033928,
+          "proj_v": -1.767406
+        },
+        {
+          "local_pos": 16,
+          "global_pos": 430,
+          "token": " same",
+          "score_d": -7.941998,
+          "abs_score_d": 7.941998,
+          "norm": 57.900818,
+          "cos_v": -0.018032,
+          "proj_v": -1.044068
+        },
+        {
+          "local_pos": 2,
+          "global_pos": 416,
+          "token": ":",
+          "score_d": -7.297615,
+          "abs_score_d": 7.297615,
+          "norm": 51.515865,
+          "cos_v": -0.053826,
+          "proj_v": -2.7729
+        },
+        {
+          "local_pos": 17,
+          "global_pos": 431,
+          "token": " day",
+          "score_d": -6.273517,
+          "abs_score_d": 6.273517,
+          "norm": 58.36298,
+          "cos_v": 0.006744,
+          "proj_v": 0.393618
+        },
+        {
+          "local_pos": 0,
+          "global_pos": 414,
+          "token": "Note",
+          "score_d": -5.822005,
+          "abs_score_d": 5.822005,
+          "norm": 57.819572,
+          "cos_v": -0.023766,
+          "proj_v": -1.37414
+        },
+        {
+          "local_pos": 6,
+          "global_pos": 420,
+          "token": "-line",
+          "score_d": 4.888963,
+          "abs_score_d": 4.888963,
+          "norm": 69.055359,
+          "cos_v": 0.007559,
+          "proj_v": 0.521984
+        },
+        {
+          "local_pos": 15,
+          "global_pos": 429,
+          "token": "endum",
+          "score_d": -4.55952,
+          "abs_score_d": 4.55952,
+          "norm": 57.761631,
+          "cos_v": 0.00574,
+          "proj_v": 0.33155
+        },
+        {
+          "local_pos": 14,
+          "global_pos": 428,
+          "token": " Add",
+          "score_d": -4.333544,
+          "abs_score_d": 4.333544,
+          "norm": 51.314999,
+          "cos_v": 0.008016,
+          "proj_v": 0.411362
+        },
+        {
+          "local_pos": 9,
+          "global_pos": 423,
+          "token": "FOX",
+          "score_d": 4.298578,
+          "abs_score_d": 4.298578,
+          "norm": 78.42617,
+          "cos_v": 0.02125,
+          "proj_v": 1.666549
+        },
+        {
+          "local_pos": 28,
+          "global_pos": 442,
+          "token": " current",
+          "score_d": -4.253631,
+          "abs_score_d": 4.253631,
+          "norm": 61.233189,
+          "cos_v": -0.012713,
+          "proj_v": -0.778428
+        },
+        {
+          "local_pos": 18,
+          "global_pos": 432,
+          "token": ":",
+          "score_d": -4.210006,
+          "abs_score_d": 4.210006,
+          "norm": 52.538612,
+          "cos_v": -0.014164,
+          "proj_v": -0.744147
+        }
+      ]
+    },
+    "L16": {
+      "layer": 16,
+      "mean_score_d": 2.206244,
+      "mean_abs_score_d": 5.158559,
+      "cos_d_vs_freeze_v": 0.026632,
+      "top_sites": [
+        {
+          "local_pos": 19,
+          "global_pos": 433,
+          "token": " Disease",
+          "score_d": 14.881495,
+          "abs_score_d": 14.881495,
+          "norm": 79.446533,
+          "cos_v": 0.010158,
+          "proj_v": 0.807007
+        },
+        {
+          "local_pos": 6,
+          "global_pos": 420,
+          "token": "-line",
+          "score_d": 9.764868,
+          "abs_score_d": 9.764868,
+          "norm": 81.474815,
+          "cos_v": 0.018715,
+          "proj_v": 1.524829
+        },
+        {
+          "local_pos": 9,
+          "global_pos": 423,
+          "token": "FOX",
+          "score_d": 9.573009,
+          "abs_score_d": 9.573009,
+          "norm": 85.974564,
+          "cos_v": 0.025305,
+          "proj_v": 2.175595
+        },
+        {
+          "local_pos": 1,
+          "global_pos": 415,
+          "token": " A",
+          "score_d": -8.19801,
+          "abs_score_d": 8.19801,
+          "norm": 71.958092,
+          "cos_v": -0.024454,
+          "proj_v": -1.759699
+        },
+        {
+          "local_pos": 16,
+          "global_pos": 430,
+          "token": " same",
+          "score_d": -8.19438,
+          "abs_score_d": 8.19438,
+          "norm": 75.38588,
+          "cos_v": -0.005302,
+          "proj_v": -0.399725
+        },
+        {
+          "local_pos": 4,
+          "global_pos": 418,
+          "token": " failed",
+          "score_d": 8.117718,
+          "abs_score_d": 8.117718,
+          "norm": 75.24614,
+          "cos_v": 0.001376,
+          "proj_v": 0.103501
+        },
+        {
+          "local_pos": 11,
+          "global_pos": 425,
+          "token": " four",
+          "score_d": 7.362763,
+          "abs_score_d": 7.362763,
+          "norm": 79.911285,
+          "cos_v": 0.005624,
+          "proj_v": 0.449412
+        },
+        {
+          "local_pos": 10,
+          "global_pos": 424,
+          "token": " after",
+          "score_d": 6.856295,
+          "abs_score_d": 6.856295,
+          "norm": 76.061577,
+          "cos_v": -0.009445,
+          "proj_v": -0.718427
+        },
+        {
+          "local_pos": 8,
+          "global_pos": 422,
+          "token": "OL",
+          "score_d": 6.306526,
+          "abs_score_d": 6.306526,
+          "norm": 74.563393,
+          "cos_v": 0.006643,
+          "proj_v": 0.495326
+        },
+        {
+          "local_pos": 17,
+          "global_pos": 431,
+          "token": " day",
+          "score_d": -6.21682,
+          "abs_score_d": 6.21682,
+          "norm": 76.480476,
+          "cos_v": -0.002295,
+          "proj_v": -0.175547
+        },
+        {
+          "local_pos": 7,
+          "global_pos": 421,
+          "token": " F",
+          "score_d": 6.054789,
+          "abs_score_d": 6.054789,
+          "norm": 73.289688,
+          "cos_v": 0.000236,
+          "proj_v": 0.017266
+        },
+        {
+          "local_pos": 24,
+          "global_pos": 438,
+          "token": "OL",
+          "score_d": 5.681848,
+          "abs_score_d": 5.681848,
+          "norm": 76.453423,
+          "cos_v": 0.013156,
+          "proj_v": 1.005801
+        }
+      ]
+    },
+    "L20": {
+      "layer": 20,
+      "mean_score_d": 11.430825,
+      "mean_abs_score_d": 12.97969,
+      "cos_d_vs_freeze_v": 0.026993,
+      "top_sites": [
+        {
+          "local_pos": 19,
+          "global_pos": 433,
+          "token": " Disease",
+          "score_d": 28.195505,
+          "abs_score_d": 28.195505,
+          "norm": 112.695351,
+          "cos_v": 0.03039,
+          "proj_v": 3.42486
+        },
+        {
+          "local_pos": 4,
+          "global_pos": 418,
+          "token": " failed",
+          "score_d": 25.54607,
+          "abs_score_d": 25.54607,
+          "norm": 110.404762,
+          "cos_v": 0.006454,
+          "proj_v": 0.712558
+        },
+        {
+          "local_pos": 5,
+          "global_pos": 419,
+          "token": " first",
+          "score_d": 25.473141,
+          "abs_score_d": 25.473141,
+          "norm": 110.555405,
+          "cos_v": -0.021756,
+          "proj_v": -2.405236
+        },
+        {
+          "local_pos": 6,
+          "global_pos": 420,
+          "token": "-line",
+          "score_d": 24.891233,
+          "abs_score_d": 24.891233,
+          "norm": 108.910439,
+          "cos_v": -0.000374,
+          "proj_v": -0.040732
+        },
+        {
+          "local_pos": 7,
+          "global_pos": 421,
+          "token": " F",
+          "score_d": 23.839563,
+          "abs_score_d": 23.839563,
+          "norm": 105.292137,
+          "cos_v": -0.009628,
+          "proj_v": -1.013714
+        },
+        {
+          "local_pos": 9,
+          "global_pos": 423,
+          "token": "FOX",
+          "score_d": 22.461832,
+          "abs_score_d": 22.461832,
+          "norm": 115.897079,
+          "cos_v": 0.008358,
+          "proj_v": 0.968676
+        },
+        {
+          "local_pos": 8,
+          "global_pos": 422,
+          "token": "OL",
+          "score_d": 21.736811,
+          "abs_score_d": 21.736811,
+          "norm": 107.320084,
+          "cos_v": 0.002216,
+          "proj_v": 0.237863
+        },
+        {
+          "local_pos": 11,
+          "global_pos": 425,
+          "token": " four",
+          "score_d": 20.257105,
+          "abs_score_d": 20.257105,
+          "norm": 113.784973,
+          "cos_v": -0.032876,
+          "proj_v": -3.740781
+        },
+        {
+          "local_pos": 10,
+          "global_pos": 424,
+          "token": " after",
+          "score_d": 18.929075,
+          "abs_score_d": 18.929075,
+          "norm": 107.265816,
+          "cos_v": -0.00946,
+          "proj_v": -1.014729
+        },
+        {
+          "local_pos": 3,
+          "global_pos": 417,
+          "token": " Patient",
+          "score_d": 18.785728,
+          "abs_score_d": 18.785728,
+          "norm": 112.024269,
+          "cos_v": 0.002829,
+          "proj_v": 0.316893
+        },
+        {
+          "local_pos": 24,
+          "global_pos": 438,
+          "token": "OL",
+          "score_d": 17.127224,
+          "abs_score_d": 17.127224,
+          "norm": 105.390686,
+          "cos_v": -0.012551,
+          "proj_v": -1.32278
+        },
+        {
+          "local_pos": 21,
+          "global_pos": 435,
+          "token": " responsive",
+          "score_d": 16.401318,
+          "abs_score_d": 16.401318,
+          "norm": 114.857941,
+          "cos_v": 0.019934,
+          "proj_v": 2.289564
+        }
+      ]
+    },
+    "L24": {
+      "layer": 24,
+      "mean_score_d": 9.448472,
+      "mean_abs_score_d": 18.514408,
+      "cos_d_vs_freeze_v": 0.028097,
+      "top_sites": [
+        {
+          "local_pos": 19,
+          "global_pos": 433,
+          "token": " Disease",
+          "score_d": 57.367855,
+          "abs_score_d": 57.367855,
+          "norm": 272.352142,
+          "cos_v": 0.018089,
+          "proj_v": 4.926574
+        },
+        {
+          "local_pos": 20,
+          "global_pos": 434,
+          "token": " remains",
+          "score_d": 56.003754,
+          "abs_score_d": 56.003754,
+          "norm": 287.825439,
+          "cos_v": 0.010042,
+          "proj_v": 2.890364
+        },
+        {
+          "local_pos": 10,
+          "global_pos": 424,
+          "token": " after",
+          "score_d": 38.459705,
+          "abs_score_d": 38.459705,
+          "norm": 276.785461,
+          "cos_v": -0.01313,
+          "proj_v": -3.634076
+        },
+        {
+          "local_pos": 5,
+          "global_pos": 419,
+          "token": " first",
+          "score_d": 31.957649,
+          "abs_score_d": 31.957649,
+          "norm": 282.5383,
+          "cos_v": -0.026923,
+          "proj_v": -7.606842
+        },
+        {
+          "local_pos": 6,
+          "global_pos": 420,
+          "token": "-line",
+          "score_d": 30.995657,
+          "abs_score_d": 30.995657,
+          "norm": 284.111633,
+          "cos_v": -0.008196,
+          "proj_v": -2.328626
+        },
+        {
+          "local_pos": 26,
+          "global_pos": 440,
+          "token": ";",
+          "score_d": 29.733068,
+          "abs_score_d": 29.733068,
+          "norm": 268.335205,
+          "cos_v": 0.003018,
+          "proj_v": 0.809782
+        },
+        {
+          "local_pos": 21,
+          "global_pos": 435,
+          "token": " responsive",
+          "score_d": 28.073101,
+          "abs_score_d": 28.073101,
+          "norm": 251.183502,
+          "cos_v": -0.017417,
+          "proj_v": -4.374796
+        },
+        {
+          "local_pos": 15,
+          "global_pos": 429,
+          "token": "endum",
+          "score_d": -27.254896,
+          "abs_score_d": 27.254896,
+          "norm": 255.291595,
+          "cos_v": -0.018016,
+          "proj_v": -4.599404
+        },
+        {
+          "local_pos": 3,
+          "global_pos": 417,
+          "token": " Patient",
+          "score_d": 27.102215,
+          "abs_score_d": 27.102215,
+          "norm": 272.779205,
+          "cos_v": -0.002912,
+          "proj_v": -0.794424
+        },
+        {
+          "local_pos": 18,
+          "global_pos": 432,
+          "token": ":",
+          "score_d": 24.602245,
+          "abs_score_d": 24.602245,
+          "norm": 235.822357,
+          "cos_v": 0.004879,
+          "proj_v": 1.150669
+        },
+        {
+          "local_pos": 1,
+          "global_pos": 415,
+          "token": " A",
+          "score_d": -23.639023,
+          "abs_score_d": 23.639023,
+          "norm": 220.701492,
+          "cos_v": -0.038265,
+          "proj_v": -8.445086
+        },
+        {
+          "local_pos": 11,
+          "global_pos": 425,
+          "token": " four",
+          "score_d": 20.239246,
+          "abs_score_d": 20.239246,
+          "norm": 272.608948,
+          "cos_v": -0.020472,
+          "proj_v": -5.580721
+        }
+      ]
+    }
+  },
+  "claim_hygiene": {
+    "say": "live score vs frozen U-A d; correlational formation readout",
+    "do_not_say": "ablation; circuit found; upstream editor; freeze-v is temporality"
+  }
+}

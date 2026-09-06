@@ -1,0 +1,153 @@
+{
+  "ok": true,
+  "kind": "n2s_upstream_prefill_patch_u1b_v1",
+  "timestamp": "2026-09-06T13:02:22.011538+00:00",
+  "quest": "U1b: does \u00b1\u03b1\u00b7v at outcome-language cues @ L16 move repair commit X?",
+  "hypothesis": "u1b",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "alpha": 8.0,
+  "site_recipe": {
+    "EX_TEMPORAL_FOLFOX": {
+      "cues": [
+        "progression",
+        "failure"
+      ],
+      "which": "all",
+      "layer": 16
+    },
+    "EX_CONTRA": {
+      "cues": [
+        "failed",
+        "responsive",
+        "addendum"
+      ],
+      "which": "all",
+      "layer": 16
+    }
+  },
+  "u0_readout": null,
+  "notes": {
+    "EX_TEMPORAL_FOLFOX": {
+      "ok": true,
+      "gold": "SATISFIED",
+      "positions": [
+        740,
+        749
+      ],
+      "chosen_spans": [
+        {
+          "cue": "progression",
+          "readout_pos": 740,
+          "snippet": "progression"
+        },
+        {
+          "cue": "failure",
+          "readout_pos": 749,
+          "snippet": "failure"
+        }
+      ],
+      "steer_layer": 16,
+      "arms": [
+        {
+          "label": "baseline",
+          "alpha": null,
+          "repair_final_x": false,
+          "margin": -3.5,
+          "verdict": "UNCERTAIN",
+          "parse_ok": true,
+          "commit_step": 128,
+          "commit_value": "false",
+          "raw_x": false
+        },
+        {
+          "label": "prefill_+v",
+          "alpha": 8.0,
+          "repair_final_x": false,
+          "margin": -3.125,
+          "verdict": "UNCERTAIN",
+          "parse_ok": true,
+          "commit_step": 128,
+          "commit_value": "false",
+          "raw_x": false
+        },
+        {
+          "label": "prefill_-v",
+          "alpha": -8.0,
+          "repair_final_x": false,
+          "margin": -3.625,
+          "verdict": "UNCERTAIN",
+          "parse_ok": true,
+          "commit_step": 128,
+          "commit_value": "false",
+          "raw_x": false
+        }
+      ]
+    },
+    "EX_CONTRA": {
+      "ok": true,
+      "gold": "CONTRADICTION",
+      "positions": [
+        712,
+        729,
+        723
+      ],
+      "chosen_spans": [
+        {
+          "cue": "failed",
+          "readout_pos": 712,
+          "snippet": "failed"
+        },
+        {
+          "cue": "responsive",
+          "readout_pos": 729,
+          "snippet": "responsive"
+        },
+        {
+          "cue": "addendum",
+          "readout_pos": 723,
+          "snippet": "Addendum"
+        }
+      ],
+      "steer_layer": 16,
+      "arms": [
+        {
+          "label": "baseline",
+          "alpha": null,
+          "repair_final_x": true,
+          "margin": 15.625,
+          "verdict": "CONTRADICTION",
+          "parse_ok": true,
+          "commit_step": 143,
+          "commit_value": "true",
+          "raw_x": true
+        },
+        {
+          "label": "prefill_+v",
+          "alpha": 8.0,
+          "repair_final_x": true,
+          "margin": 15.375,
+          "verdict": "CONTRADICTION",
+          "parse_ok": true,
+          "commit_step": 143,
+          "commit_value": "true",
+          "raw_x": true
+        },
+        {
+          "label": "prefill_-v",
+          "alpha": -8.0,
+          "repair_final_x": true,
+          "margin": 15.375,
+          "verdict": "CONTRADICTION",
+          "parse_ok": true,
+          "commit_step": 143,
+          "commit_value": "true",
+          "raw_x": true
+        }
+      ]
+    }
+  },
+  "claim_hygiene": {
+    "say": "different-site/layer prefill steer pilot (\u03b1 frozen); not \u03b1-chase",
+    "do_not_say": "upstream circuit found; formation fully characterized; upstream editor"
+  }
+}

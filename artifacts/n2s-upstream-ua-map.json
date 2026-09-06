@@ -1,0 +1,1437 @@
+{
+  "ok": true,
+  "kind": "n2s_upstream_ua_map_v1",
+  "timestamp": "2026-09-06T14:14:18.434669+00:00",
+  "quest": "U-A: where do note-body residuals separate temporal-change vs contradiction during prefill (class-mean \u0394 direction)?",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "layers": [
+    8,
+    12,
+    16,
+    20,
+    24
+  ],
+  "top_k": 12,
+  "pair": {
+    "temporal": "EX_TEMPORAL_FOLFOX",
+    "contra": "EX_CONTRA"
+  },
+  "freeze_v_source": "directions",
+  "notes": {
+    "EX_TEMPORAL_FOLFOX": {
+      "id": "EX_TEMPORAL_FOLFOX",
+      "gold": "SATISFIED",
+      "prompt_token_count": 467,
+      "note_token_start": 414,
+      "note_token_end": 462,
+      "n_note_tokens": 48,
+      "tokens": [
+        "Met",
+        "ast",
+        "atic",
+        " colore",
+        "ctal",
+        " cancer",
+        ".",
+        " First",
+        "-line",
+        " F",
+        "OL",
+        "FOX",
+        " produced",
+        " a",
+        " partial",
+        " response",
+        ".",
+        " At",
+        " follow",
+        "-up",
+        " four",
+        " months",
+        " later",
+        ",",
+        " imaging",
+        " demonstrated",
+        " new",
+        " hep",
+        "atic",
+        " lesions",
+        " consistent",
+        " with",
+        " progression",
+        ".",
+        " F",
+        "OL",
+        "FOX",
+        " was",
+        " discontinued",
+        " for",
+        " treatment",
+        " failure",
+        ";",
+        " second",
+        "-line",
+        " therapy",
+        " discussed",
+        "."
+      ]
+    },
+    "EX_CONTRA": {
+      "id": "EX_CONTRA",
+      "gold": "CONTRADICTION",
+      "prompt_token_count": 450,
+      "note_token_start": 414,
+      "note_token_end": 445,
+      "n_note_tokens": 31,
+      "tokens": [
+        "Note",
+        " A",
+        ":",
+        " Patient",
+        " failed",
+        " first",
+        "-line",
+        " F",
+        "OL",
+        "FOX",
+        " after",
+        " four",
+        " cycles",
+        ".",
+        " Add",
+        "endum",
+        " same",
+        " day",
+        ":",
+        " Disease",
+        " remains",
+        " responsive",
+        " to",
+        " F",
+        "OL",
+        "FOX",
+        ";",
+        " continue",
+        " current",
+        " regimen",
+        "."
+      ]
+    }
+  },
+  "by_layer": {
+    "L8": {
+      "layer": 8,
+      "cos_d_vs_freeze_v": 0.023636,
+      "proj_d_vs_freeze_v": 0.023636,
+      "mean_norm_temporal": 30.637445,
+      "mean_norm_contra": 29.430555,
+      "delta_mean_norm": 11.682778,
+      "notes": {
+        "EX_TEMPORAL_FOLFOX": {
+          "n_tokens": 48,
+          "mean_score_d": 8.944057,
+          "top_sites": [
+            {
+              "local_pos": 28,
+              "global_pos": 442,
+              "token": "atic",
+              "score_d": 20.122463,
+              "abs_score_d": 20.122463,
+              "norm": 62.10199,
+              "cos_v": -0.01603,
+              "proj_v": -0.995517
+            },
+            {
+              "local_pos": 4,
+              "global_pos": 418,
+              "token": "ctal",
+              "score_d": 18.615408,
+              "abs_score_d": 18.615408,
+              "norm": 69.876648,
+              "cos_v": -0.017222,
+              "proj_v": -1.203396
+            },
+            {
+              "local_pos": 24,
+              "global_pos": 438,
+              "token": " imaging",
+              "score_d": 17.099554,
+              "abs_score_d": 17.099554,
+              "norm": 58.417953,
+              "cos_v": -0.011793,
+              "proj_v": -0.688923
+            },
+            {
+              "local_pos": 29,
+              "global_pos": 443,
+              "token": " lesions",
+              "score_d": 16.426216,
+              "abs_score_d": 16.426216,
+              "norm": 55.044514,
+              "cos_v": 0.006795,
+              "proj_v": 0.374042
+            },
+            {
+              "local_pos": 27,
+              "global_pos": 441,
+              "token": " hep",
+              "score_d": 16.297941,
+              "abs_score_d": 16.297941,
+              "norm": 56.722771,
+              "cos_v": -0.012209,
+              "proj_v": -0.692527
+            },
+            {
+              "local_pos": 1,
+              "global_pos": 415,
+              "token": "ast",
+              "score_d": 15.321342,
+              "abs_score_d": 15.321342,
+              "norm": 58.844231,
+              "cos_v": -0.00305,
+              "proj_v": -0.179461
+            },
+            {
+              "local_pos": 2,
+              "global_pos": 416,
+              "token": "atic",
+              "score_d": 13.966443,
+              "abs_score_d": 13.966443,
+              "norm": 54.983383,
+              "cos_v": -0.016155,
+              "proj_v": -0.888262
+            },
+            {
+              "local_pos": 5,
+              "global_pos": 419,
+              "token": " cancer",
+              "score_d": 12.199544,
+              "abs_score_d": 12.199544,
+              "norm": 51.113464,
+              "cos_v": -0.021552,
+              "proj_v": -1.10159
+            },
+            {
+              "local_pos": 3,
+              "global_pos": 417,
+              "token": " colore",
+              "score_d": 11.910392,
+              "abs_score_d": 11.910392,
+              "norm": 54.273109,
+              "cos_v": -0.023956,
+              "proj_v": -1.300162
+            },
+            {
+              "local_pos": 31,
+              "global_pos": 445,
+              "token": " with",
+              "score_d": 11.870231,
+              "abs_score_d": 11.870231,
+              "norm": 49.833176,
+              "cos_v": -0.001014,
+              "proj_v": -0.050515
+            },
+            {
+              "local_pos": 45,
+              "global_pos": 459,
+              "token": " therapy",
+              "score_d": 11.122662,
+              "abs_score_d": 11.122662,
+              "norm": 47.91151,
+              "cos_v": 0.003937,
+              "proj_v": 0.188633
+            },
+            {
+              "local_pos": 25,
+              "global_pos": 439,
+              "token": " demonstrated",
+              "score_d": 10.97563,
+              "abs_score_d": 10.97563,
+              "norm": 49.575317,
+              "cos_v": -0.005361,
+              "proj_v": -0.265787
+            }
+          ]
+        },
+        "EX_CONTRA": {
+          "n_tokens": 31,
+          "mean_score_d": -2.738724,
+          "top_sites": [
+            {
+              "local_pos": 16,
+              "global_pos": 430,
+              "token": " same",
+              "score_d": -10.78461,
+              "abs_score_d": 10.78461,
+              "norm": 51.84716,
+              "cos_v": -0.022435,
+              "proj_v": -1.163191
+            },
+            {
+              "local_pos": 17,
+              "global_pos": 431,
+              "token": " day",
+              "score_d": -9.150043,
+              "abs_score_d": 9.150043,
+              "norm": 52.556953,
+              "cos_v": -0.004989,
+              "proj_v": -0.262201
+            },
+            {
+              "local_pos": 1,
+              "global_pos": 415,
+              "token": " A",
+              "score_d": -7.514312,
+              "abs_score_d": 7.514312,
+              "norm": 43.430695,
+              "cos_v": -0.024791,
+              "proj_v": -1.076677
+            },
+            {
+              "local_pos": 28,
+              "global_pos": 442,
+              "token": " current",
+              "score_d": -7.048189,
+              "abs_score_d": 7.048189,
+              "norm": 52.13562,
+              "cos_v": -0.010285,
+              "proj_v": -0.536211
+            },
+            {
+              "local_pos": 9,
+              "global_pos": 423,
+              "token": "FOX",
+              "score_d": 6.77773,
+              "abs_score_d": 6.77773,
+              "norm": 82.323845,
+              "cos_v": -0.003955,
+              "proj_v": -0.325558
+            },
+            {
+              "local_pos": 27,
+              "global_pos": 441,
+              "token": " continue",
+              "score_d": -6.594993,
+              "abs_score_d": 6.594993,
+              "norm": 50.519566,
+              "cos_v": -0.01039,
+              "proj_v": -0.524916
+            },
+            {
+              "local_pos": 14,
+              "global_pos": 428,
+              "token": " Add",
+              "score_d": -6.353086,
+              "abs_score_d": 6.353086,
+              "norm": 43.497589,
+              "cos_v": -0.016498,
+              "proj_v": -0.717644
+            },
+            {
+              "local_pos": 20,
+              "global_pos": 434,
+              "token": " remains",
+              "score_d": -5.938735,
+              "abs_score_d": 5.938735,
+              "norm": 52.079254,
+              "cos_v": -0.018126,
+              "proj_v": -0.944006
+            },
+            {
+              "local_pos": 5,
+              "global_pos": 419,
+              "token": " first",
+              "score_d": -5.936169,
+              "abs_score_d": 5.936169,
+              "norm": 49.492386,
+              "cos_v": -0.02284,
+              "proj_v": -1.130418
+            },
+            {
+              "local_pos": 0,
+              "global_pos": 414,
+              "token": "Note",
+              "score_d": -5.447111,
+              "abs_score_d": 5.447111,
+              "norm": 45.548302,
+              "cos_v": 0.001684,
+              "proj_v": 0.076714
+            },
+            {
+              "local_pos": 2,
+              "global_pos": 416,
+              "token": ":",
+              "score_d": -5.104885,
+              "abs_score_d": 5.104885,
+              "norm": 43.441925,
+              "cos_v": -0.032737,
+              "proj_v": -1.422159
+            },
+            {
+              "local_pos": 15,
+              "global_pos": 429,
+              "token": "endum",
+              "score_d": -4.884182,
+              "abs_score_d": 4.884182,
+              "norm": 52.146599,
+              "cos_v": 0.005389,
+              "proj_v": 0.281026
+            }
+          ]
+        }
+      }
+    },
+    "L12": {
+      "layer": 12,
+      "cos_d_vs_freeze_v": 0.013457,
+      "proj_d_vs_freeze_v": 0.013457,
+      "mean_norm_temporal": 41.829453,
+      "mean_norm_contra": 39.430286,
+      "delta_mean_norm": 14.492519,
+      "notes": {
+        "EX_TEMPORAL_FOLFOX": {
+          "n_tokens": 48,
+          "mean_score_d": 13.97232,
+          "top_sites": [
+            {
+              "local_pos": 28,
+              "global_pos": 442,
+              "token": "atic",
+              "score_d": 30.541473,
+              "abs_score_d": 30.541473,
+              "norm": 72.087227,
+              "cos_v": -0.007529,
+              "proj_v": -0.542738
+            },
+            {
+              "local_pos": 29,
+              "global_pos": 443,
+              "token": " lesions",
+              "score_d": 29.633482,
+              "abs_score_d": 29.633482,
+              "norm": 69.705093,
+              "cos_v": 0.01159,
+              "proj_v": 0.807914
+            },
+            {
+              "local_pos": 1,
+              "global_pos": 415,
+              "token": "ast",
+              "score_d": 27.808319,
+              "abs_score_d": 27.808319,
+              "norm": 72.4841,
+              "cos_v": -0.003346,
+              "proj_v": -0.242566
+            },
+            {
+              "local_pos": 27,
+              "global_pos": 441,
+              "token": " hep",
+              "score_d": 26.601917,
+              "abs_score_d": 26.601917,
+              "norm": 68.796555,
+              "cos_v": 0.00449,
+              "proj_v": 0.308928
+            },
+            {
+              "local_pos": 24,
+              "global_pos": 438,
+              "token": " imaging",
+              "score_d": 25.385313,
+              "abs_score_d": 25.385313,
+              "norm": 71.87307,
+              "cos_v": -0.004428,
+              "proj_v": -0.318238
+            },
+            {
+              "local_pos": 32,
+              "global_pos": 446,
+              "token": " progression",
+              "score_d": 22.352287,
+              "abs_score_d": 22.352287,
+              "norm": 66.65786,
+              "cos_v": -0.000279,
+              "proj_v": -0.018572
+            },
+            {
+              "local_pos": 4,
+              "global_pos": 418,
+              "token": "ctal",
+              "score_d": 21.409094,
+              "abs_score_d": 21.409094,
+              "norm": 75.375168,
+              "cos_v": 0.000332,
+              "proj_v": 0.025022
+            },
+            {
+              "local_pos": 2,
+              "global_pos": 416,
+              "token": "atic",
+              "score_d": 21.087139,
+              "abs_score_d": 21.087139,
+              "norm": 65.790344,
+              "cos_v": -0.010553,
+              "proj_v": -0.694315
+            },
+            {
+              "local_pos": 14,
+              "global_pos": 428,
+              "token": " partial",
+              "score_d": 20.414625,
+              "abs_score_d": 20.414625,
+              "norm": 77.939903,
+              "cos_v": -0.016782,
+              "proj_v": -1.308025
+            },
+            {
+              "local_pos": 25,
+              "global_pos": 439,
+              "token": " demonstrated",
+              "score_d": 20.253782,
+              "abs_score_d": 20.253782,
+              "norm": 63.347939,
+              "cos_v": 0.008438,
+              "proj_v": 0.534542
+            },
+            {
+              "local_pos": 5,
+              "global_pos": 419,
+              "token": " cancer",
+              "score_d": 18.394709,
+              "abs_score_d": 18.394709,
+              "norm": 64.125359,
+              "cos_v": -0.015157,
+              "proj_v": -0.971953
+            },
+            {
+              "local_pos": 31,
+              "global_pos": 445,
+              "token": " with",
+              "score_d": 18.055561,
+              "abs_score_d": 18.055561,
+              "norm": 60.263878,
+              "cos_v": 0.002831,
+              "proj_v": 0.17058
+            }
+          ]
+        },
+        "EX_CONTRA": {
+          "n_tokens": 31,
+          "mean_score_d": -0.520201,
+          "top_sites": [
+            {
+              "local_pos": 19,
+              "global_pos": 433,
+              "token": " Disease",
+              "score_d": 9.528163,
+              "abs_score_d": 9.528163,
+              "norm": 65.193672,
+              "cos_v": -0.008088,
+              "proj_v": -0.52729
+            },
+            {
+              "local_pos": 1,
+              "global_pos": 415,
+              "token": " A",
+              "score_d": -8.600934,
+              "abs_score_d": 8.600934,
+              "norm": 52.093502,
+              "cos_v": -0.033928,
+              "proj_v": -1.767406
+            },
+            {
+              "local_pos": 16,
+              "global_pos": 430,
+              "token": " same",
+              "score_d": -7.941998,
+              "abs_score_d": 7.941998,
+              "norm": 57.900818,
+              "cos_v": -0.018032,
+              "proj_v": -1.044068
+            },
+            {
+              "local_pos": 2,
+              "global_pos": 416,
+              "token": ":",
+              "score_d": -7.297615,
+              "abs_score_d": 7.297615,
+              "norm": 51.515865,
+              "cos_v": -0.053826,
+              "proj_v": -2.7729
+            },
+            {
+              "local_pos": 17,
+              "global_pos": 431,
+              "token": " day",
+              "score_d": -6.273517,
+              "abs_score_d": 6.273517,
+              "norm": 58.36298,
+              "cos_v": 0.006744,
+              "proj_v": 0.393618
+            },
+            {
+              "local_pos": 0,
+              "global_pos": 414,
+              "token": "Note",
+              "score_d": -5.822005,
+              "abs_score_d": 5.822005,
+              "norm": 57.819572,
+              "cos_v": -0.023766,
+              "proj_v": -1.37414
+            },
+            {
+              "local_pos": 6,
+              "global_pos": 420,
+              "token": "-line",
+              "score_d": 4.888963,
+              "abs_score_d": 4.888963,
+              "norm": 69.055359,
+              "cos_v": 0.007559,
+              "proj_v": 0.521984
+            },
+            {
+              "local_pos": 15,
+              "global_pos": 429,
+              "token": "endum",
+              "score_d": -4.55952,
+              "abs_score_d": 4.55952,
+              "norm": 57.761631,
+              "cos_v": 0.00574,
+              "proj_v": 0.33155
+            },
+            {
+              "local_pos": 14,
+              "global_pos": 428,
+              "token": " Add",
+              "score_d": -4.333544,
+              "abs_score_d": 4.333544,
+              "norm": 51.314999,
+              "cos_v": 0.008016,
+              "proj_v": 0.411362
+            },
+            {
+              "local_pos": 9,
+              "global_pos": 423,
+              "token": "FOX",
+              "score_d": 4.298578,
+              "abs_score_d": 4.298578,
+              "norm": 78.42617,
+              "cos_v": 0.02125,
+              "proj_v": 1.666549
+            },
+            {
+              "local_pos": 28,
+              "global_pos": 442,
+              "token": " current",
+              "score_d": -4.253631,
+              "abs_score_d": 4.253631,
+              "norm": 61.233189,
+              "cos_v": -0.012713,
+              "proj_v": -0.778428
+            },
+            {
+              "local_pos": 18,
+              "global_pos": 432,
+              "token": ":",
+              "score_d": -4.210006,
+              "abs_score_d": 4.210006,
+              "norm": 52.538612,
+              "cos_v": -0.014164,
+              "proj_v": -0.744147
+            }
+          ]
+        }
+      }
+    },
+    "L16": {
+      "layer": 16,
+      "cos_d_vs_freeze_v": 0.026632,
+      "proj_d_vs_freeze_v": 0.026632,
+      "mean_norm_temporal": 53.884945,
+      "mean_norm_contra": 49.931988,
+      "delta_mean_norm": 18.171453,
+      "notes": {
+        "EX_TEMPORAL_FOLFOX": {
+          "n_tokens": 48,
+          "mean_score_d": 20.377697,
+          "top_sites": [
+            {
+              "local_pos": 29,
+              "global_pos": 443,
+              "token": " lesions",
+              "score_d": 34.331291,
+              "abs_score_d": 34.331291,
+              "norm": 83.193863,
+              "cos_v": 0.016478,
+              "proj_v": 1.370881
+            },
+            {
+              "local_pos": 1,
+              "global_pos": 415,
+              "token": "ast",
+              "score_d": 33.567795,
+              "abs_score_d": 33.567795,
+              "norm": 88.587837,
+              "cos_v": 0.003199,
+              "proj_v": 0.283405
+            },
+            {
+              "local_pos": 28,
+              "global_pos": 442,
+              "token": "atic",
+              "score_d": 33.540825,
+              "abs_score_d": 33.540825,
+              "norm": 85.322243,
+              "cos_v": 0.005689,
+              "proj_v": 0.485392
+            },
+            {
+              "local_pos": 24,
+              "global_pos": 438,
+              "token": " imaging",
+              "score_d": 30.881056,
+              "abs_score_d": 30.881056,
+              "norm": 87.96286,
+              "cos_v": 0.018886,
+              "proj_v": 1.661278
+            },
+            {
+              "local_pos": 27,
+              "global_pos": 441,
+              "token": " hep",
+              "score_d": 30.547365,
+              "abs_score_d": 30.547365,
+              "norm": 82.809929,
+              "cos_v": 0.014822,
+              "proj_v": 1.227369
+            },
+            {
+              "local_pos": 14,
+              "global_pos": 428,
+              "token": " partial",
+              "score_d": 29.31926,
+              "abs_score_d": 29.31926,
+              "norm": 92.425331,
+              "cos_v": -0.01186,
+              "proj_v": -1.096179
+            },
+            {
+              "local_pos": 32,
+              "global_pos": 446,
+              "token": " progression",
+              "score_d": 28.648914,
+              "abs_score_d": 28.648914,
+              "norm": 83.189697,
+              "cos_v": 0.015184,
+              "proj_v": 1.263192
+            },
+            {
+              "local_pos": 4,
+              "global_pos": 418,
+              "token": "ctal",
+              "score_d": 27.569305,
+              "abs_score_d": 27.569305,
+              "norm": 84.522316,
+              "cos_v": -0.001023,
+              "proj_v": -0.086457
+            },
+            {
+              "local_pos": 5,
+              "global_pos": 419,
+              "token": " cancer",
+              "score_d": 27.094877,
+              "abs_score_d": 27.094877,
+              "norm": 78.431068,
+              "cos_v": -0.015414,
+              "proj_v": -1.208971
+            },
+            {
+              "local_pos": 26,
+              "global_pos": 440,
+              "token": " new",
+              "score_d": 26.71917,
+              "abs_score_d": 26.71917,
+              "norm": 82.774475,
+              "cos_v": 0.014811,
+              "proj_v": 1.226011
+            },
+            {
+              "local_pos": 25,
+              "global_pos": 439,
+              "token": " demonstrated",
+              "score_d": 26.457211,
+              "abs_score_d": 26.457211,
+              "norm": 76.91172,
+              "cos_v": 0.033461,
+              "proj_v": 2.573575
+            },
+            {
+              "local_pos": 31,
+              "global_pos": 445,
+              "token": " with",
+              "score_d": 25.54862,
+              "abs_score_d": 25.54862,
+              "norm": 78.648766,
+              "cos_v": 0.020485,
+              "proj_v": 1.611107
+            }
+          ]
+        },
+        "EX_CONTRA": {
+          "n_tokens": 31,
+          "mean_score_d": 2.206244,
+          "top_sites": [
+            {
+              "local_pos": 19,
+              "global_pos": 433,
+              "token": " Disease",
+              "score_d": 14.881495,
+              "abs_score_d": 14.881495,
+              "norm": 79.446533,
+              "cos_v": 0.010158,
+              "proj_v": 0.807007
+            },
+            {
+              "local_pos": 6,
+              "global_pos": 420,
+              "token": "-line",
+              "score_d": 9.764868,
+              "abs_score_d": 9.764868,
+              "norm": 81.474815,
+              "cos_v": 0.018715,
+              "proj_v": 1.524829
+            },
+            {
+              "local_pos": 9,
+              "global_pos": 423,
+              "token": "FOX",
+              "score_d": 9.573009,
+              "abs_score_d": 9.573009,
+              "norm": 85.974564,
+              "cos_v": 0.025305,
+              "proj_v": 2.175595
+            },
+            {
+              "local_pos": 1,
+              "global_pos": 415,
+              "token": " A",
+              "score_d": -8.19801,
+              "abs_score_d": 8.19801,
+              "norm": 71.958092,
+              "cos_v": -0.024454,
+              "proj_v": -1.759699
+            },
+            {
+              "local_pos": 16,
+              "global_pos": 430,
+              "token": " same",
+              "score_d": -8.19438,
+              "abs_score_d": 8.19438,
+              "norm": 75.38588,
+              "cos_v": -0.005302,
+              "proj_v": -0.399725
+            },
+            {
+              "local_pos": 4,
+              "global_pos": 418,
+              "token": " failed",
+              "score_d": 8.117718,
+              "abs_score_d": 8.117718,
+              "norm": 75.24614,
+              "cos_v": 0.001376,
+              "proj_v": 0.103501
+            },
+            {
+              "local_pos": 11,
+              "global_pos": 425,
+              "token": " four",
+              "score_d": 7.362763,
+              "abs_score_d": 7.362763,
+              "norm": 79.911285,
+              "cos_v": 0.005624,
+              "proj_v": 0.449412
+            },
+            {
+              "local_pos": 10,
+              "global_pos": 424,
+              "token": " after",
+              "score_d": 6.856295,
+              "abs_score_d": 6.856295,
+              "norm": 76.061577,
+              "cos_v": -0.009445,
+              "proj_v": -0.718427
+            },
+            {
+              "local_pos": 8,
+              "global_pos": 422,
+              "token": "OL",
+              "score_d": 6.306526,
+              "abs_score_d": 6.306526,
+              "norm": 74.563393,
+              "cos_v": 0.006643,
+              "proj_v": 0.495326
+            },
+            {
+              "local_pos": 17,
+              "global_pos": 431,
+              "token": " day",
+              "score_d": -6.21682,
+              "abs_score_d": 6.21682,
+              "norm": 76.480476,
+              "cos_v": -0.002295,
+              "proj_v": -0.175547
+            },
+            {
+              "local_pos": 7,
+              "global_pos": 421,
+              "token": " F",
+              "score_d": 6.054789,
+              "abs_score_d": 6.054789,
+              "norm": 73.289688,
+              "cos_v": 0.000236,
+              "proj_v": 0.017266
+            },
+            {
+              "local_pos": 24,
+              "global_pos": 438,
+              "token": "OL",
+              "score_d": 5.681848,
+              "abs_score_d": 5.681848,
+              "norm": 76.453423,
+              "cos_v": 0.013156,
+              "proj_v": 1.005801
+            }
+          ]
+        }
+      }
+    },
+    "L20": {
+      "layer": 20,
+      "cos_d_vs_freeze_v": 0.026993,
+      "proj_d_vs_freeze_v": 0.026993,
+      "mean_norm_temporal": 80.532379,
+      "mean_norm_contra": 70.509148,
+      "delta_mean_norm": 29.122679,
+      "notes": {
+        "EX_TEMPORAL_FOLFOX": {
+          "n_tokens": 48,
+          "mean_score_d": 40.553502,
+          "top_sites": [
+            {
+              "local_pos": 28,
+              "global_pos": 442,
+              "token": "atic",
+              "score_d": 57.525269,
+              "abs_score_d": 57.525269,
+              "norm": 122.433495,
+              "cos_v": 0.010144,
+              "proj_v": 1.241936
+            },
+            {
+              "local_pos": 24,
+              "global_pos": 438,
+              "token": " imaging",
+              "score_d": 56.347645,
+              "abs_score_d": 56.347645,
+              "norm": 132.876862,
+              "cos_v": 0.01346,
+              "proj_v": 1.788477
+            },
+            {
+              "local_pos": 29,
+              "global_pos": 443,
+              "token": " lesions",
+              "score_d": 56.148956,
+              "abs_score_d": 56.148956,
+              "norm": 123.692131,
+              "cos_v": 0.000524,
+              "proj_v": 0.064832
+            },
+            {
+              "local_pos": 31,
+              "global_pos": 445,
+              "token": " with",
+              "score_d": 53.54837,
+              "abs_score_d": 53.54837,
+              "norm": 117.440102,
+              "cos_v": 0.016554,
+              "proj_v": 1.944082
+            },
+            {
+              "local_pos": 26,
+              "global_pos": 440,
+              "token": " new",
+              "score_d": 52.778862,
+              "abs_score_d": 52.778862,
+              "norm": 122.80957,
+              "cos_v": 0.013384,
+              "proj_v": 1.643645
+            },
+            {
+              "local_pos": 25,
+              "global_pos": 439,
+              "token": " demonstrated",
+              "score_d": 51.127323,
+              "abs_score_d": 51.127323,
+              "norm": 114.571465,
+              "cos_v": 0.045819,
+              "proj_v": 5.249562
+            },
+            {
+              "local_pos": 4,
+              "global_pos": 418,
+              "token": "ctal",
+              "score_d": 49.15036,
+              "abs_score_d": 49.15036,
+              "norm": 120.804718,
+              "cos_v": -0.024372,
+              "proj_v": -2.944294
+            },
+            {
+              "local_pos": 30,
+              "global_pos": 444,
+              "token": " consistent",
+              "score_d": 48.162914,
+              "abs_score_d": 48.162914,
+              "norm": 120.718994,
+              "cos_v": 0.005196,
+              "proj_v": 0.62721
+            },
+            {
+              "local_pos": 5,
+              "global_pos": 419,
+              "token": " cancer",
+              "score_d": 46.908287,
+              "abs_score_d": 46.908287,
+              "norm": 118.299667,
+              "cos_v": -0.027071,
+              "proj_v": -3.202451
+            },
+            {
+              "local_pos": 27,
+              "global_pos": 441,
+              "token": " hep",
+              "score_d": 46.742188,
+              "abs_score_d": 46.742188,
+              "norm": 112.052673,
+              "cos_v": 0.011652,
+              "proj_v": 1.305601
+            },
+            {
+              "local_pos": 1,
+              "global_pos": 415,
+              "token": "ast",
+              "score_d": 46.621132,
+              "abs_score_d": 46.621132,
+              "norm": 114.611069,
+              "cos_v": -0.007553,
+              "proj_v": -0.865668
+            },
+            {
+              "local_pos": 2,
+              "global_pos": 416,
+              "token": "atic",
+              "score_d": 46.448021,
+              "abs_score_d": 46.448021,
+              "norm": 115.253227,
+              "cos_v": -0.015315,
+              "proj_v": -1.765143
+            }
+          ]
+        },
+        "EX_CONTRA": {
+          "n_tokens": 31,
+          "mean_score_d": 11.430825,
+          "top_sites": [
+            {
+              "local_pos": 19,
+              "global_pos": 433,
+              "token": " Disease",
+              "score_d": 28.195505,
+              "abs_score_d": 28.195505,
+              "norm": 112.695351,
+              "cos_v": 0.03039,
+              "proj_v": 3.42486
+            },
+            {
+              "local_pos": 4,
+              "global_pos": 418,
+              "token": " failed",
+              "score_d": 25.54607,
+              "abs_score_d": 25.54607,
+              "norm": 110.404762,
+              "cos_v": 0.006454,
+              "proj_v": 0.712558
+            },
+            {
+              "local_pos": 5,
+              "global_pos": 419,
+              "token": " first",
+              "score_d": 25.473141,
+              "abs_score_d": 25.473141,
+              "norm": 110.555405,
+              "cos_v": -0.021756,
+              "proj_v": -2.405236
+            },
+            {
+              "local_pos": 6,
+              "global_pos": 420,
+              "token": "-line",
+              "score_d": 24.891233,
+              "abs_score_d": 24.891233,
+              "norm": 108.910439,
+              "cos_v": -0.000374,
+              "proj_v": -0.040732
+            },
+            {
+              "local_pos": 7,
+              "global_pos": 421,
+              "token": " F",
+              "score_d": 23.839563,
+              "abs_score_d": 23.839563,
+              "norm": 105.292137,
+              "cos_v": -0.009628,
+              "proj_v": -1.013714
+            },
+            {
+              "local_pos": 9,
+              "global_pos": 423,
+              "token": "FOX",
+              "score_d": 22.461832,
+              "abs_score_d": 22.461832,
+              "norm": 115.897079,
+              "cos_v": 0.008358,
+              "proj_v": 0.968676
+            },
+            {
+              "local_pos": 8,
+              "global_pos": 422,
+              "token": "OL",
+              "score_d": 21.736811,
+              "abs_score_d": 21.736811,
+              "norm": 107.320084,
+              "cos_v": 0.002216,
+              "proj_v": 0.237863
+            },
+            {
+              "local_pos": 11,
+              "global_pos": 425,
+              "token": " four",
+              "score_d": 20.257105,
+              "abs_score_d": 20.257105,
+              "norm": 113.784973,
+              "cos_v": -0.032876,
+              "proj_v": -3.740781
+            },
+            {
+              "local_pos": 10,
+              "global_pos": 424,
+              "token": " after",
+              "score_d": 18.929075,
+              "abs_score_d": 18.929075,
+              "norm": 107.265816,
+              "cos_v": -0.00946,
+              "proj_v": -1.014729
+            },
+            {
+              "local_pos": 3,
+              "global_pos": 417,
+              "token": " Patient",
+              "score_d": 18.785728,
+              "abs_score_d": 18.785728,
+              "norm": 112.024269,
+              "cos_v": 0.002829,
+              "proj_v": 0.316893
+            },
+            {
+              "local_pos": 24,
+              "global_pos": 438,
+              "token": "OL",
+              "score_d": 17.127224,
+              "abs_score_d": 17.127224,
+              "norm": 105.390686,
+              "cos_v": -0.012551,
+              "proj_v": -1.32278
+            },
+            {
+              "local_pos": 21,
+              "global_pos": 435,
+              "token": " responsive",
+              "score_d": 16.401318,
+              "abs_score_d": 16.401318,
+              "norm": 114.857941,
+              "cos_v": 0.019934,
+              "proj_v": 2.289564
+            }
+          ]
+        }
+      }
+    },
+    "L24": {
+      "layer": 24,
+      "cos_d_vs_freeze_v": 0.028097,
+      "proj_d_vs_freeze_v": 0.028097,
+      "mean_norm_temporal": 195.617081,
+      "mean_norm_contra": 182.349045,
+      "delta_mean_norm": 61.994724,
+      "notes": {
+        "EX_TEMPORAL_FOLFOX": {
+          "n_tokens": 48,
+          "mean_score_d": 71.44319,
+          "top_sites": [
+            {
+              "local_pos": 28,
+              "global_pos": 442,
+              "token": "atic",
+              "score_d": 156.028641,
+              "abs_score_d": 156.028641,
+              "norm": 311.270569,
+              "cos_v": 0.006353,
+              "proj_v": 1.977463
+            },
+            {
+              "local_pos": 26,
+              "global_pos": 440,
+              "token": " new",
+              "score_d": 143.18721,
+              "abs_score_d": 143.18721,
+              "norm": 306.464111,
+              "cos_v": 0.010044,
+              "proj_v": 3.077977
+            },
+            {
+              "local_pos": 31,
+              "global_pos": 445,
+              "token": " with",
+              "score_d": 142.874542,
+              "abs_score_d": 142.874542,
+              "norm": 301.449188,
+              "cos_v": 0.026563,
+              "proj_v": 8.007367
+            },
+            {
+              "local_pos": 25,
+              "global_pos": 439,
+              "token": " demonstrated",
+              "score_d": 140.109467,
+              "abs_score_d": 140.109467,
+              "norm": 307.383759,
+              "cos_v": 0.051106,
+              "proj_v": 15.709202
+            },
+            {
+              "local_pos": 12,
+              "global_pos": 426,
+              "token": " produced",
+              "score_d": 120.544579,
+              "abs_score_d": 120.544579,
+              "norm": 311.114014,
+              "cos_v": 0.003041,
+              "proj_v": 0.946228
+            },
+            {
+              "local_pos": 13,
+              "global_pos": 427,
+              "token": " a",
+              "score_d": 115.096306,
+              "abs_score_d": 115.096306,
+              "norm": 304.602509,
+              "cos_v": -0.00539,
+              "proj_v": -1.641938
+            },
+            {
+              "local_pos": 27,
+              "global_pos": 441,
+              "token": " hep",
+              "score_d": 102.412819,
+              "abs_score_d": 102.412819,
+              "norm": 268.711243,
+              "cos_v": -0.009317,
+              "proj_v": -2.503519
+            },
+            {
+              "local_pos": 23,
+              "global_pos": 437,
+              "token": ",",
+              "score_d": 99.135559,
+              "abs_score_d": 99.135559,
+              "norm": 275.652405,
+              "cos_v": 0.003976,
+              "proj_v": 1.096034
+            },
+            {
+              "local_pos": 29,
+              "global_pos": 443,
+              "token": " lesions",
+              "score_d": 96.74144,
+              "abs_score_d": 96.74144,
+              "norm": 266.103638,
+              "cos_v": -0.01563,
+              "proj_v": -4.159288
+            },
+            {
+              "local_pos": 2,
+              "global_pos": 416,
+              "token": "atic",
+              "score_d": 94.34935,
+              "abs_score_d": 94.34935,
+              "norm": 290.269379,
+              "cos_v": -0.013082,
+              "proj_v": -3.797428
+            },
+            {
+              "local_pos": 39,
+              "global_pos": 453,
+              "token": " for",
+              "score_d": 93.949043,
+              "abs_score_d": 93.949043,
+              "norm": 275.83551,
+              "cos_v": 0.015338,
+              "proj_v": 4.230821
+            },
+            {
+              "local_pos": 40,
+              "global_pos": 454,
+              "token": " treatment",
+              "score_d": 86.187798,
+              "abs_score_d": 86.187798,
+              "norm": 287.852448,
+              "cos_v": 0.023232,
+              "proj_v": 6.687392
+            }
+          ]
+        },
+        "EX_CONTRA": {
+          "n_tokens": 31,
+          "mean_score_d": 9.448472,
+          "top_sites": [
+            {
+              "local_pos": 19,
+              "global_pos": 433,
+              "token": " Disease",
+              "score_d": 57.367855,
+              "abs_score_d": 57.367855,
+              "norm": 272.352142,
+              "cos_v": 0.018089,
+              "proj_v": 4.926574
+            },
+            {
+              "local_pos": 20,
+              "global_pos": 434,
+              "token": " remains",
+              "score_d": 56.003754,
+              "abs_score_d": 56.003754,
+              "norm": 287.825439,
+              "cos_v": 0.010042,
+              "proj_v": 2.890364
+            },
+            {
+              "local_pos": 10,
+              "global_pos": 424,
+              "token": " after",
+              "score_d": 38.459705,
+              "abs_score_d": 38.459705,
+              "norm": 276.785461,
+              "cos_v": -0.01313,
+              "proj_v": -3.634076
+            },
+            {
+              "local_pos": 5,
+              "global_pos": 419,
+              "token": " first",
+              "score_d": 31.957649,
+              "abs_score_d": 31.957649,
+              "norm": 282.5383,
+              "cos_v": -0.026923,
+              "proj_v": -7.606842
+            },
+            {
+              "local_pos": 6,
+              "global_pos": 420,
+              "token": "-line",
+              "score_d": 30.995657,
+              "abs_score_d": 30.995657,
+              "norm": 284.111633,
+              "cos_v": -0.008196,
+              "proj_v": -2.328626
+            },
+            {
+              "local_pos": 26,
+              "global_pos": 440,
+              "token": ";",
+              "score_d": 29.733068,
+              "abs_score_d": 29.733068,
+              "norm": 268.335205,
+              "cos_v": 0.003018,
+              "proj_v": 0.809782
+            },
+            {
+              "local_pos": 21,
+              "global_pos": 435,
+              "token": " responsive",
+              "score_d": 28.073101,
+              "abs_score_d": 28.073101,
+              "norm": 251.183502,
+              "cos_v": -0.017417,
+              "proj_v": -4.374796
+            },
+            {
+              "local_pos": 15,
+              "global_pos": 429,
+              "token": "endum",
+              "score_d": -27.254896,
+              "abs_score_d": 27.254896,
+              "norm": 255.291595,
+              "cos_v": -0.018016,
+              "proj_v": -4.599404
+            },
+            {
+              "local_pos": 3,
+              "global_pos": 417,
+              "token": " Patient",
+              "score_d": 27.102215,
+              "abs_score_d": 27.102215,
+              "norm": 272.779205,
+              "cos_v": -0.002912,
+              "proj_v": -0.794424
+            },
+            {
+              "local_pos": 18,
+              "global_pos": 432,
+              "token": ":",
+              "score_d": 24.602245,
+              "abs_score_d": 24.602245,
+              "norm": 235.822357,
+              "cos_v": 0.004879,
+              "proj_v": 1.150669
+            },
+            {
+              "local_pos": 1,
+              "global_pos": 415,
+              "token": " A",
+              "score_d": -23.639023,
+              "abs_score_d": 23.639023,
+              "norm": 220.701492,
+              "cos_v": -0.038265,
+              "proj_v": -8.445086
+            },
+            {
+              "local_pos": 11,
+              "global_pos": 425,
+              "token": " four",
+              "score_d": 20.239246,
+              "abs_score_d": 20.239246,
+              "norm": 272.608948,
+              "cos_v": -0.020472,
+              "proj_v": -5.580721
+            }
+          ]
+        }
+      }
+    }
+  },
+  "claim_hygiene": {
+    "say": "multi-token formation map; class \u0394 direction; candidate patch sites",
+    "do_not_say": "upstream circuit; freeze-v is the temporality feature; U1 null closed formation"
+  }
+}

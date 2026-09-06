@@ -1,0 +1,205 @@
+{
+  "ok": true,
+  "kind": "n2s_upstream_ub2_patch_v1",
+  "timestamp": "2026-09-06T14:29:11.530842+00:00",
+  "quest": "U-B2: does mean-ablating attn vs mlp vs resid at U-A L20 top sites during prefill move extract commit X/margin?",
+  "variant": "ub2",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "layer": 20,
+  "mode": "mean",
+  "top_k": 5,
+  "ua_map": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/n2s-upstream-ua-map.json",
+  "ua_readout": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/n2s-upstream-ua-readout.json",
+  "notes": {
+    "EX_TEMPORAL_FOLFOX": {
+      "ok": true,
+      "gold": "SATISFIED",
+      "layer": 20,
+      "mode": "mean",
+      "note_token_range": [
+        414,
+        462
+      ],
+      "positions": [
+        442,
+        438,
+        443,
+        445,
+        440
+      ],
+      "tokens": [
+        "atic",
+        " imaging",
+        " lesions",
+        " with",
+        " new"
+      ],
+      "arms": [
+        {
+          "component": "baseline",
+          "mode": null,
+          "extract_x": false,
+          "margin": -15.875,
+          "verdict": "NOT_SATISFIED",
+          "parse_ok": true,
+          "commit_step": 12,
+          "commit_value": "false",
+          "n_gen_tokens": 58
+        },
+        {
+          "component": "attn",
+          "mode": "mean",
+          "extract_x": false,
+          "margin": -15.625,
+          "verdict": "NOT_SATISFIED",
+          "parse_ok": true,
+          "commit_step": 12,
+          "commit_value": "false",
+          "n_gen_tokens": 58
+        },
+        {
+          "component": "mlp",
+          "mode": "mean",
+          "extract_x": false,
+          "margin": -15.875,
+          "verdict": "NOT_SATISFIED",
+          "parse_ok": true,
+          "commit_step": 12,
+          "commit_value": "false",
+          "n_gen_tokens": 58
+        },
+        {
+          "component": "resid",
+          "mode": "mean",
+          "extract_x": false,
+          "margin": -15.875,
+          "verdict": "NOT_SATISFIED",
+          "parse_ok": true,
+          "commit_step": 12,
+          "commit_value": "false",
+          "n_gen_tokens": 58
+        }
+      ],
+      "deltas_vs_baseline": [
+        {
+          "component": "attn",
+          "x_flipped": false,
+          "delta_margin": 0.25,
+          "extract_x": false,
+          "baseline_x": false
+        },
+        {
+          "component": "mlp",
+          "x_flipped": false,
+          "delta_margin": 0.0,
+          "extract_x": false,
+          "baseline_x": false
+        },
+        {
+          "component": "resid",
+          "x_flipped": false,
+          "delta_margin": 0.0,
+          "extract_x": false,
+          "baseline_x": false
+        }
+      ]
+    },
+    "EX_CONTRA": {
+      "ok": true,
+      "gold": "CONTRADICTION",
+      "layer": 20,
+      "mode": "mean",
+      "note_token_range": [
+        414,
+        445
+      ],
+      "positions": [
+        433,
+        418,
+        419,
+        420,
+        421
+      ],
+      "tokens": [
+        " Disease",
+        " failed",
+        " first",
+        "-line",
+        " F"
+      ],
+      "arms": [
+        {
+          "component": "baseline",
+          "mode": null,
+          "extract_x": true,
+          "margin": 9.125,
+          "verdict": "CONTRADICTION",
+          "parse_ok": true,
+          "commit_step": 12,
+          "commit_value": "true",
+          "n_gen_tokens": 80
+        },
+        {
+          "component": "attn",
+          "mode": "mean",
+          "extract_x": true,
+          "margin": 9.125,
+          "verdict": "CONTRADICTION",
+          "parse_ok": true,
+          "commit_step": 12,
+          "commit_value": "true",
+          "n_gen_tokens": 80
+        },
+        {
+          "component": "mlp",
+          "mode": "mean",
+          "extract_x": true,
+          "margin": 9.125,
+          "verdict": "CONTRADICTION",
+          "parse_ok": true,
+          "commit_step": 12,
+          "commit_value": "true",
+          "n_gen_tokens": 80
+        },
+        {
+          "component": "resid",
+          "mode": "mean",
+          "extract_x": true,
+          "margin": 9.0,
+          "verdict": "NOT_SATISFIED",
+          "parse_ok": true,
+          "commit_step": 12,
+          "commit_value": "true",
+          "n_gen_tokens": 79
+        }
+      ],
+      "deltas_vs_baseline": [
+        {
+          "component": "attn",
+          "x_flipped": false,
+          "delta_margin": 0.0,
+          "extract_x": true,
+          "baseline_x": true
+        },
+        {
+          "component": "mlp",
+          "x_flipped": false,
+          "delta_margin": 0.0,
+          "extract_x": true,
+          "baseline_x": true
+        },
+        {
+          "component": "resid",
+          "x_flipped": false,
+          "delta_margin": -0.125,
+          "extract_x": true,
+          "baseline_x": true
+        }
+      ]
+    }
+  },
+  "claim_hygiene": {
+    "say": "component ablation at formation sites; attn vs MLP shortlist",
+    "do_not_say": "full circuit; freeze-v editor; \u03b1-chase"
+  }
+}

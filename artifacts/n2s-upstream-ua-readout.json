@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "kind": "n2s_upstream_ua_readout_v1",
+  "timestamp": "2026-09-06T14:14:18.437521+00:00",
+  "source_map": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/n2s-upstream-ua-map.json",
+  "best_layer": "L24",
+  "findings": [
+    "U-A uses class-mean \u0394 over all note-body tokens (not hand-picked cues).",
+    "L8: ||\u03bc_T\u2212\u03bc_C||=11.683; cos(d, freeze-v)=0.023636",
+    "L12: ||\u03bc_T\u2212\u03bc_C||=14.493; cos(d, freeze-v)=0.013457",
+    "L16: ||\u03bc_T\u2212\u03bc_C||=18.171; cos(d, freeze-v)=0.026632",
+    "L20: ||\u03bc_T\u2212\u03bc_C||=29.123; cos(d, freeze-v)=0.026993",
+    "L24: ||\u03bc_T\u2212\u03bc_C||=61.995; cos(d, freeze-v)=0.028097",
+    "Freeze-v is secondary: weak |cos(d,v)| means formation \u2260 commit editor direction."
+  ],
+  "top_sites_summary": [
+    "L24 EX_TEMPORAL_FOLFOX top: 'atic'(+156.03) | 'new'(+143.19) | 'with'(+142.87) | 'demonstrated'(+140.11) | 'produced'(+120.54)",
+    "L24 EX_CONTRA top: 'Disease'(+57.37) | 'remains'(+56.00) | 'after'(+38.46) | 'first'(+31.96) | '-line'(+31.00)"
+  ],
+  "formation_hypothesis": "Strongest mean separation at L24 (||\u03bc_T\u2212\u03bc_C||\u224861.99); freeze-v alignment cos\u22480.028097. Next U-B: path-patch top sites at that layer (attn vs MLP) \u2014 not \u03b1\u00b7v.",
+  "exit_criterion": "U-A exit met if best_layer + hypothesis written; then wait go for U-B.",
+  "next": "U-B component patch at top sites \u2014 wait go; no browser yet; no \u03b1-chase."
+}

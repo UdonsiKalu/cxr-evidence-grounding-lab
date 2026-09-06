@@ -1,0 +1,5955 @@
+{
+  "ok": true,
+  "kind": "n2s_upstream_ua_gen_panel_v1",
+  "timestamp": "2026-09-06T15:46:10.407506+00:00",
+  "protocol": "docs/TRACKB-UPSTREAM-UA-GENERALIZE.md",
+  "quest": "Does frozen U-A d separate temporal vs contradiction on held-out paraphrases / lexical forms?",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "directions_path": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/n2s-upstream-ua-directions.pt",
+  "directions_cached": true,
+  "pair_frozen": {
+    "temporal": "EX_TEMPORAL_FOLFOX",
+    "contra": "EX_CONTRA"
+  },
+  "heldout": "heldout-ua-paraphrase.json",
+  "freeze_v_source": "directions",
+  "soft_gate": {
+    "best_layer": "L24",
+    "heldout_temporal_n": 4,
+    "heldout_contra_n": 4,
+    "heldout_temporal_mean_score_d": 58.394946,
+    "heldout_contra_mean_score_d": 23.48131,
+    "heldout_mean_sep": 34.913635,
+    "heldout_min_temporal": 45.469418,
+    "heldout_max_contra": 29.011641,
+    "soft_pass_mean_T_gt_mean_C": true,
+    "strong_pass_min_T_gt_max_C": true,
+    "note": "YES soft \u2014 held-out class means separate in expected direction"
+  },
+  "rows": [
+    {
+      "ok": true,
+      "case_id": "EX_TEMPORAL_FOLFOX",
+      "role": "anchor",
+      "class": "temporal",
+      "gold": "SATISFIED",
+      "n_note_tokens": 48,
+      "best_layer": "L24",
+      "headline_mean_score_d": 71.44319,
+      "by_layer": {
+        "L8": {
+          "layer": 8,
+          "mean_score_d": 8.944057,
+          "mean_abs_score_d": 8.944057,
+          "cos_d_vs_freeze_v": 0.023636,
+          "top_sites": [
+            {
+              "local_pos": 28,
+              "token": "atic",
+              "score_d": 20.122463,
+              "abs_score_d": 20.122463,
+              "norm": 62.10199,
+              "cos_v": -0.01603,
+              "proj_v": -0.995517
+            },
+            {
+              "local_pos": 4,
+              "token": "ctal",
+              "score_d": 18.615408,
+              "abs_score_d": 18.615408,
+              "norm": 69.876648,
+              "cos_v": -0.017222,
+              "proj_v": -1.203396
+            },
+            {
+              "local_pos": 24,
+              "token": " imaging",
+              "score_d": 17.099554,
+              "abs_score_d": 17.099554,
+              "norm": 58.417953,
+              "cos_v": -0.011793,
+              "proj_v": -0.688923
+            },
+            {
+              "local_pos": 29,
+              "token": " lesions",
+              "score_d": 16.426216,
+              "abs_score_d": 16.426216,
+              "norm": 55.044514,
+              "cos_v": 0.006795,
+              "proj_v": 0.374042
+            },
+            {
+              "local_pos": 27,
+              "token": " hep",
+              "score_d": 16.297941,
+              "abs_score_d": 16.297941,
+              "norm": 56.722771,
+              "cos_v": -0.012209,
+              "proj_v": -0.692527
+            },
+            {
+              "local_pos": 1,
+              "token": "ast",
+              "score_d": 15.321342,
+              "abs_score_d": 15.321342,
+              "norm": 58.844231,
+              "cos_v": -0.00305,
+              "proj_v": -0.179461
+            },
+            {
+              "local_pos": 2,
+              "token": "atic",
+              "score_d": 13.966443,
+              "abs_score_d": 13.966443,
+              "norm": 54.983383,
+              "cos_v": -0.016155,
+              "proj_v": -0.888262
+            },
+            {
+              "local_pos": 5,
+              "token": " cancer",
+              "score_d": 12.199544,
+              "abs_score_d": 12.199544,
+              "norm": 51.113464,
+              "cos_v": -0.021552,
+              "proj_v": -1.10159
+            },
+            {
+              "local_pos": 3,
+              "token": " colore",
+              "score_d": 11.910392,
+              "abs_score_d": 11.910392,
+              "norm": 54.273109,
+              "cos_v": -0.023956,
+              "proj_v": -1.300162
+            },
+            {
+              "local_pos": 31,
+              "token": " with",
+              "score_d": 11.870231,
+              "abs_score_d": 11.870231,
+              "norm": 49.833176,
+              "cos_v": -0.001014,
+              "proj_v": -0.050515
+            },
+            {
+              "local_pos": 45,
+              "token": " therapy",
+              "score_d": 11.122662,
+              "abs_score_d": 11.122662,
+              "norm": 47.91151,
+              "cos_v": 0.003937,
+              "proj_v": 0.188633
+            },
+            {
+              "local_pos": 25,
+              "token": " demonstrated",
+              "score_d": 10.97563,
+              "abs_score_d": 10.97563,
+              "norm": 49.575317,
+              "cos_v": -0.005361,
+              "proj_v": -0.265787
+            }
+          ]
+        },
+        "L12": {
+          "layer": 12,
+          "mean_score_d": 13.97232,
+          "mean_abs_score_d": 13.97232,
+          "cos_d_vs_freeze_v": 0.013457,
+          "top_sites": [
+            {
+              "local_pos": 28,
+              "token": "atic",
+              "score_d": 30.541473,
+              "abs_score_d": 30.541473,
+              "norm": 72.087227,
+              "cos_v": -0.007529,
+              "proj_v": -0.542738
+            },
+            {
+              "local_pos": 29,
+              "token": " lesions",
+              "score_d": 29.633482,
+              "abs_score_d": 29.633482,
+              "norm": 69.705093,
+              "cos_v": 0.01159,
+              "proj_v": 0.807914
+            },
+            {
+              "local_pos": 1,
+              "token": "ast",
+              "score_d": 27.808319,
+              "abs_score_d": 27.808319,
+              "norm": 72.4841,
+              "cos_v": -0.003346,
+              "proj_v": -0.242566
+            },
+            {
+              "local_pos": 27,
+              "token": " hep",
+              "score_d": 26.601917,
+              "abs_score_d": 26.601917,
+              "norm": 68.796555,
+              "cos_v": 0.00449,
+              "proj_v": 0.308928
+            },
+            {
+              "local_pos": 24,
+              "token": " imaging",
+              "score_d": 25.385313,
+              "abs_score_d": 25.385313,
+              "norm": 71.87307,
+              "cos_v": -0.004428,
+              "proj_v": -0.318238
+            },
+            {
+              "local_pos": 32,
+              "token": " progression",
+              "score_d": 22.352287,
+              "abs_score_d": 22.352287,
+              "norm": 66.65786,
+              "cos_v": -0.000279,
+              "proj_v": -0.018572
+            },
+            {
+              "local_pos": 4,
+              "token": "ctal",
+              "score_d": 21.409094,
+              "abs_score_d": 21.409094,
+              "norm": 75.375168,
+              "cos_v": 0.000332,
+              "proj_v": 0.025022
+            },
+            {
+              "local_pos": 2,
+              "token": "atic",
+              "score_d": 21.087139,
+              "abs_score_d": 21.087139,
+              "norm": 65.790344,
+              "cos_v": -0.010553,
+              "proj_v": -0.694315
+            },
+            {
+              "local_pos": 14,
+              "token": " partial",
+              "score_d": 20.414625,
+              "abs_score_d": 20.414625,
+              "norm": 77.939903,
+              "cos_v": -0.016782,
+              "proj_v": -1.308025
+            },
+            {
+              "local_pos": 25,
+              "token": " demonstrated",
+              "score_d": 20.253782,
+              "abs_score_d": 20.253782,
+              "norm": 63.347939,
+              "cos_v": 0.008438,
+              "proj_v": 0.534542
+            },
+            {
+              "local_pos": 5,
+              "token": " cancer",
+              "score_d": 18.394709,
+              "abs_score_d": 18.394709,
+              "norm": 64.125359,
+              "cos_v": -0.015157,
+              "proj_v": -0.971953
+            },
+            {
+              "local_pos": 31,
+              "token": " with",
+              "score_d": 18.055561,
+              "abs_score_d": 18.055561,
+              "norm": 60.263878,
+              "cos_v": 0.002831,
+              "proj_v": 0.17058
+            }
+          ]
+        },
+        "L16": {
+          "layer": 16,
+          "mean_score_d": 20.377697,
+          "mean_abs_score_d": 20.377697,
+          "cos_d_vs_freeze_v": 0.026632,
+          "top_sites": [
+            {
+              "local_pos": 29,
+              "token": " lesions",
+              "score_d": 34.331291,
+              "abs_score_d": 34.331291,
+              "norm": 83.193863,
+              "cos_v": 0.016478,
+              "proj_v": 1.370881
+            },
+            {
+              "local_pos": 1,
+              "token": "ast",
+              "score_d": 33.567795,
+              "abs_score_d": 33.567795,
+              "norm": 88.587837,
+              "cos_v": 0.003199,
+              "proj_v": 0.283405
+            },
+            {
+              "local_pos": 28,
+              "token": "atic",
+              "score_d": 33.540825,
+              "abs_score_d": 33.540825,
+              "norm": 85.322243,
+              "cos_v": 0.005689,
+              "proj_v": 0.485392
+            },
+            {
+              "local_pos": 24,
+              "token": " imaging",
+              "score_d": 30.881056,
+              "abs_score_d": 30.881056,
+              "norm": 87.96286,
+              "cos_v": 0.018886,
+              "proj_v": 1.661278
+            },
+            {
+              "local_pos": 27,
+              "token": " hep",
+              "score_d": 30.547365,
+              "abs_score_d": 30.547365,
+              "norm": 82.809929,
+              "cos_v": 0.014822,
+              "proj_v": 1.227369
+            },
+            {
+              "local_pos": 14,
+              "token": " partial",
+              "score_d": 29.31926,
+              "abs_score_d": 29.31926,
+              "norm": 92.425331,
+              "cos_v": -0.01186,
+              "proj_v": -1.096179
+            },
+            {
+              "local_pos": 32,
+              "token": " progression",
+              "score_d": 28.648914,
+              "abs_score_d": 28.648914,
+              "norm": 83.189697,
+              "cos_v": 0.015184,
+              "proj_v": 1.263192
+            },
+            {
+              "local_pos": 4,
+              "token": "ctal",
+              "score_d": 27.569305,
+              "abs_score_d": 27.569305,
+              "norm": 84.522316,
+              "cos_v": -0.001023,
+              "proj_v": -0.086457
+            },
+            {
+              "local_pos": 5,
+              "token": " cancer",
+              "score_d": 27.094877,
+              "abs_score_d": 27.094877,
+              "norm": 78.431068,
+              "cos_v": -0.015414,
+              "proj_v": -1.208971
+            },
+            {
+              "local_pos": 26,
+              "token": " new",
+              "score_d": 26.71917,
+              "abs_score_d": 26.71917,
+              "norm": 82.774475,
+              "cos_v": 0.014811,
+              "proj_v": 1.226011
+            },
+            {
+              "local_pos": 25,
+              "token": " demonstrated",
+              "score_d": 26.457211,
+              "abs_score_d": 26.457211,
+              "norm": 76.91172,
+              "cos_v": 0.033461,
+              "proj_v": 2.573575
+            },
+            {
+              "local_pos": 31,
+              "token": " with",
+              "score_d": 25.54862,
+              "abs_score_d": 25.54862,
+              "norm": 78.648766,
+              "cos_v": 0.020485,
+              "proj_v": 1.611107
+            }
+          ]
+        },
+        "L20": {
+          "layer": 20,
+          "mean_score_d": 40.553502,
+          "mean_abs_score_d": 40.553502,
+          "cos_d_vs_freeze_v": 0.026993,
+          "top_sites": [
+            {
+              "local_pos": 28,
+              "token": "atic",
+              "score_d": 57.525269,
+              "abs_score_d": 57.525269,
+              "norm": 122.433495,
+              "cos_v": 0.010144,
+              "proj_v": 1.241936
+            },
+            {
+              "local_pos": 24,
+              "token": " imaging",
+              "score_d": 56.347645,
+              "abs_score_d": 56.347645,
+              "norm": 132.876862,
+              "cos_v": 0.01346,
+              "proj_v": 1.788477
+            },
+            {
+              "local_pos": 29,
+              "token": " lesions",
+              "score_d": 56.148956,
+              "abs_score_d": 56.148956,
+              "norm": 123.692131,
+              "cos_v": 0.000524,
+              "proj_v": 0.064832
+            },
+            {
+              "local_pos": 31,
+              "token": " with",
+              "score_d": 53.54837,
+              "abs_score_d": 53.54837,
+              "norm": 117.440102,
+              "cos_v": 0.016554,
+              "proj_v": 1.944082
+            },
+            {
+              "local_pos": 26,
+              "token": " new",
+              "score_d": 52.778862,
+              "abs_score_d": 52.778862,
+              "norm": 122.80957,
+              "cos_v": 0.013384,
+              "proj_v": 1.643645
+            },
+            {
+              "local_pos": 25,
+              "token": " demonstrated",
+              "score_d": 51.127323,
+              "abs_score_d": 51.127323,
+              "norm": 114.571465,
+              "cos_v": 0.045819,
+              "proj_v": 5.249562
+            },
+            {
+              "local_pos": 4,
+              "token": "ctal",
+              "score_d": 49.15036,
+              "abs_score_d": 49.15036,
+              "norm": 120.804718,
+              "cos_v": -0.024372,
+              "proj_v": -2.944294
+            },
+            {
+              "local_pos": 30,
+              "token": " consistent",
+              "score_d": 48.162914,
+              "abs_score_d": 48.162914,
+              "norm": 120.718994,
+              "cos_v": 0.005196,
+              "proj_v": 0.62721
+            },
+            {
+              "local_pos": 5,
+              "token": " cancer",
+              "score_d": 46.908287,
+              "abs_score_d": 46.908287,
+              "norm": 118.299667,
+              "cos_v": -0.027071,
+              "proj_v": -3.202451
+            },
+            {
+              "local_pos": 27,
+              "token": " hep",
+              "score_d": 46.742188,
+              "abs_score_d": 46.742188,
+              "norm": 112.052673,
+              "cos_v": 0.011652,
+              "proj_v": 1.305601
+            },
+            {
+              "local_pos": 1,
+              "token": "ast",
+              "score_d": 46.621132,
+              "abs_score_d": 46.621132,
+              "norm": 114.611069,
+              "cos_v": -0.007553,
+              "proj_v": -0.865668
+            },
+            {
+              "local_pos": 2,
+              "token": "atic",
+              "score_d": 46.448021,
+              "abs_score_d": 46.448021,
+              "norm": 115.253227,
+              "cos_v": -0.015315,
+              "proj_v": -1.765143
+            }
+          ]
+        },
+        "L24": {
+          "layer": 24,
+          "mean_score_d": 71.44319,
+          "mean_abs_score_d": 71.44319,
+          "cos_d_vs_freeze_v": 0.028097,
+          "top_sites": [
+            {
+              "local_pos": 28,
+              "token": "atic",
+              "score_d": 156.028641,
+              "abs_score_d": 156.028641,
+              "norm": 311.270569,
+              "cos_v": 0.006353,
+              "proj_v": 1.977463
+            },
+            {
+              "local_pos": 26,
+              "token": " new",
+              "score_d": 143.18721,
+              "abs_score_d": 143.18721,
+              "norm": 306.464111,
+              "cos_v": 0.010044,
+              "proj_v": 3.077977
+            },
+            {
+              "local_pos": 31,
+              "token": " with",
+              "score_d": 142.874542,
+              "abs_score_d": 142.874542,
+              "norm": 301.449188,
+              "cos_v": 0.026563,
+              "proj_v": 8.007367
+            },
+            {
+              "local_pos": 25,
+              "token": " demonstrated",
+              "score_d": 140.109467,
+              "abs_score_d": 140.109467,
+              "norm": 307.383759,
+              "cos_v": 0.051106,
+              "proj_v": 15.709202
+            },
+            {
+              "local_pos": 12,
+              "token": " produced",
+              "score_d": 120.544579,
+              "abs_score_d": 120.544579,
+              "norm": 311.114014,
+              "cos_v": 0.003041,
+              "proj_v": 0.946228
+            },
+            {
+              "local_pos": 13,
+              "token": " a",
+              "score_d": 115.096306,
+              "abs_score_d": 115.096306,
+              "norm": 304.602509,
+              "cos_v": -0.00539,
+              "proj_v": -1.641938
+            },
+            {
+              "local_pos": 27,
+              "token": " hep",
+              "score_d": 102.412819,
+              "abs_score_d": 102.412819,
+              "norm": 268.711243,
+              "cos_v": -0.009317,
+              "proj_v": -2.503519
+            },
+            {
+              "local_pos": 23,
+              "token": ",",
+              "score_d": 99.135559,
+              "abs_score_d": 99.135559,
+              "norm": 275.652405,
+              "cos_v": 0.003976,
+              "proj_v": 1.096034
+            },
+            {
+              "local_pos": 29,
+              "token": " lesions",
+              "score_d": 96.74144,
+              "abs_score_d": 96.74144,
+              "norm": 266.103638,
+              "cos_v": -0.01563,
+              "proj_v": -4.159288
+            },
+            {
+              "local_pos": 2,
+              "token": "atic",
+              "score_d": 94.34935,
+              "abs_score_d": 94.34935,
+              "norm": 290.269379,
+              "cos_v": -0.013082,
+              "proj_v": -3.797428
+            },
+            {
+              "local_pos": 39,
+              "token": " for",
+              "score_d": 93.949043,
+              "abs_score_d": 93.949043,
+              "norm": 275.83551,
+              "cos_v": 0.015338,
+              "proj_v": 4.230821
+            },
+            {
+              "local_pos": 40,
+              "token": " treatment",
+              "score_d": 86.187798,
+              "abs_score_d": 86.187798,
+              "norm": 287.852448,
+              "cos_v": 0.023232,
+              "proj_v": 6.687392
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ok": true,
+      "case_id": "EX_CONTRA",
+      "role": "anchor",
+      "class": "contra",
+      "gold": "CONTRADICTION",
+      "n_note_tokens": 31,
+      "best_layer": "L24",
+      "headline_mean_score_d": 9.448472,
+      "by_layer": {
+        "L8": {
+          "layer": 8,
+          "mean_score_d": -2.738724,
+          "mean_abs_score_d": 3.54528,
+          "cos_d_vs_freeze_v": 0.023636,
+          "top_sites": [
+            {
+              "local_pos": 16,
+              "token": " same",
+              "score_d": -10.78461,
+              "abs_score_d": 10.78461,
+              "norm": 51.84716,
+              "cos_v": -0.022435,
+              "proj_v": -1.163191
+            },
+            {
+              "local_pos": 17,
+              "token": " day",
+              "score_d": -9.150043,
+              "abs_score_d": 9.150043,
+              "norm": 52.556953,
+              "cos_v": -0.004989,
+              "proj_v": -0.262201
+            },
+            {
+              "local_pos": 1,
+              "token": " A",
+              "score_d": -7.514312,
+              "abs_score_d": 7.514312,
+              "norm": 43.430695,
+              "cos_v": -0.024791,
+              "proj_v": -1.076677
+            },
+            {
+              "local_pos": 28,
+              "token": " current",
+              "score_d": -7.048189,
+              "abs_score_d": 7.048189,
+              "norm": 52.13562,
+              "cos_v": -0.010285,
+              "proj_v": -0.536211
+            },
+            {
+              "local_pos": 9,
+              "token": "FOX",
+              "score_d": 6.77773,
+              "abs_score_d": 6.77773,
+              "norm": 82.323845,
+              "cos_v": -0.003955,
+              "proj_v": -0.325558
+            },
+            {
+              "local_pos": 27,
+              "token": " continue",
+              "score_d": -6.594993,
+              "abs_score_d": 6.594993,
+              "norm": 50.519566,
+              "cos_v": -0.01039,
+              "proj_v": -0.524916
+            },
+            {
+              "local_pos": 14,
+              "token": " Add",
+              "score_d": -6.353086,
+              "abs_score_d": 6.353086,
+              "norm": 43.497589,
+              "cos_v": -0.016498,
+              "proj_v": -0.717644
+            },
+            {
+              "local_pos": 20,
+              "token": " remains",
+              "score_d": -5.938735,
+              "abs_score_d": 5.938735,
+              "norm": 52.079254,
+              "cos_v": -0.018126,
+              "proj_v": -0.944006
+            },
+            {
+              "local_pos": 5,
+              "token": " first",
+              "score_d": -5.936169,
+              "abs_score_d": 5.936169,
+              "norm": 49.492386,
+              "cos_v": -0.02284,
+              "proj_v": -1.130418
+            },
+            {
+              "local_pos": 0,
+              "token": "Note",
+              "score_d": -5.447111,
+              "abs_score_d": 5.447111,
+              "norm": 45.548302,
+              "cos_v": 0.001684,
+              "proj_v": 0.076714
+            },
+            {
+              "local_pos": 2,
+              "token": ":",
+              "score_d": -5.104885,
+              "abs_score_d": 5.104885,
+              "norm": 43.441925,
+              "cos_v": -0.032737,
+              "proj_v": -1.422159
+            },
+            {
+              "local_pos": 15,
+              "token": "endum",
+              "score_d": -4.884182,
+              "abs_score_d": 4.884182,
+              "norm": 52.146599,
+              "cos_v": 0.005389,
+              "proj_v": 0.281026
+            }
+          ]
+        },
+        "L12": {
+          "layer": 12,
+          "mean_score_d": -0.520201,
+          "mean_abs_score_d": 3.502733,
+          "cos_d_vs_freeze_v": 0.013457,
+          "top_sites": [
+            {
+              "local_pos": 19,
+              "token": " Disease",
+              "score_d": 9.528163,
+              "abs_score_d": 9.528163,
+              "norm": 65.193672,
+              "cos_v": -0.008088,
+              "proj_v": -0.52729
+            },
+            {
+              "local_pos": 1,
+              "token": " A",
+              "score_d": -8.600934,
+              "abs_score_d": 8.600934,
+              "norm": 52.093502,
+              "cos_v": -0.033928,
+              "proj_v": -1.767406
+            },
+            {
+              "local_pos": 16,
+              "token": " same",
+              "score_d": -7.941998,
+              "abs_score_d": 7.941998,
+              "norm": 57.900818,
+              "cos_v": -0.018032,
+              "proj_v": -1.044068
+            },
+            {
+              "local_pos": 2,
+              "token": ":",
+              "score_d": -7.297615,
+              "abs_score_d": 7.297615,
+              "norm": 51.515865,
+              "cos_v": -0.053826,
+              "proj_v": -2.7729
+            },
+            {
+              "local_pos": 17,
+              "token": " day",
+              "score_d": -6.273517,
+              "abs_score_d": 6.273517,
+              "norm": 58.36298,
+              "cos_v": 0.006744,
+              "proj_v": 0.393618
+            },
+            {
+              "local_pos": 0,
+              "token": "Note",
+              "score_d": -5.822005,
+              "abs_score_d": 5.822005,
+              "norm": 57.819572,
+              "cos_v": -0.023766,
+              "proj_v": -1.37414
+            },
+            {
+              "local_pos": 6,
+              "token": "-line",
+              "score_d": 4.888963,
+              "abs_score_d": 4.888963,
+              "norm": 69.055359,
+              "cos_v": 0.007559,
+              "proj_v": 0.521984
+            },
+            {
+              "local_pos": 15,
+              "token": "endum",
+              "score_d": -4.55952,
+              "abs_score_d": 4.55952,
+              "norm": 57.761631,
+              "cos_v": 0.00574,
+              "proj_v": 0.33155
+            },
+            {
+              "local_pos": 14,
+              "token": " Add",
+              "score_d": -4.333544,
+              "abs_score_d": 4.333544,
+              "norm": 51.314999,
+              "cos_v": 0.008016,
+              "proj_v": 0.411362
+            },
+            {
+              "local_pos": 9,
+              "token": "FOX",
+              "score_d": 4.298578,
+              "abs_score_d": 4.298578,
+              "norm": 78.42617,
+              "cos_v": 0.02125,
+              "proj_v": 1.666549
+            },
+            {
+              "local_pos": 28,
+              "token": " current",
+              "score_d": -4.253631,
+              "abs_score_d": 4.253631,
+              "norm": 61.233189,
+              "cos_v": -0.012713,
+              "proj_v": -0.778428
+            },
+            {
+              "local_pos": 18,
+              "token": ":",
+              "score_d": -4.210006,
+              "abs_score_d": 4.210006,
+              "norm": 52.538612,
+              "cos_v": -0.014164,
+              "proj_v": -0.744147
+            }
+          ]
+        },
+        "L16": {
+          "layer": 16,
+          "mean_score_d": 2.206244,
+          "mean_abs_score_d": 5.158559,
+          "cos_d_vs_freeze_v": 0.026632,
+          "top_sites": [
+            {
+              "local_pos": 19,
+              "token": " Disease",
+              "score_d": 14.881495,
+              "abs_score_d": 14.881495,
+              "norm": 79.446533,
+              "cos_v": 0.010158,
+              "proj_v": 0.807007
+            },
+            {
+              "local_pos": 6,
+              "token": "-line",
+              "score_d": 9.764868,
+              "abs_score_d": 9.764868,
+              "norm": 81.474815,
+              "cos_v": 0.018715,
+              "proj_v": 1.524829
+            },
+            {
+              "local_pos": 9,
+              "token": "FOX",
+              "score_d": 9.573009,
+              "abs_score_d": 9.573009,
+              "norm": 85.974564,
+              "cos_v": 0.025305,
+              "proj_v": 2.175595
+            },
+            {
+              "local_pos": 1,
+              "token": " A",
+              "score_d": -8.19801,
+              "abs_score_d": 8.19801,
+              "norm": 71.958092,
+              "cos_v": -0.024454,
+              "proj_v": -1.759699
+            },
+            {
+              "local_pos": 16,
+              "token": " same",
+              "score_d": -8.19438,
+              "abs_score_d": 8.19438,
+              "norm": 75.38588,
+              "cos_v": -0.005302,
+              "proj_v": -0.399725
+            },
+            {
+              "local_pos": 4,
+              "token": " failed",
+              "score_d": 8.117718,
+              "abs_score_d": 8.117718,
+              "norm": 75.24614,
+              "cos_v": 0.001376,
+              "proj_v": 0.103501
+            },
+            {
+              "local_pos": 11,
+              "token": " four",
+              "score_d": 7.362763,
+              "abs_score_d": 7.362763,
+              "norm": 79.911285,
+              "cos_v": 0.005624,
+              "proj_v": 0.449412
+            },
+            {
+              "local_pos": 10,
+              "token": " after",
+              "score_d": 6.856295,
+              "abs_score_d": 6.856295,
+              "norm": 76.061577,
+              "cos_v": -0.009445,
+              "proj_v": -0.718427
+            },
+            {
+              "local_pos": 8,
+              "token": "OL",
+              "score_d": 6.306526,
+              "abs_score_d": 6.306526,
+              "norm": 74.563393,
+              "cos_v": 0.006643,
+              "proj_v": 0.495326
+            },
+            {
+              "local_pos": 17,
+              "token": " day",
+              "score_d": -6.21682,
+              "abs_score_d": 6.21682,
+              "norm": 76.480476,
+              "cos_v": -0.002295,
+              "proj_v": -0.175547
+            },
+            {
+              "local_pos": 7,
+              "token": " F",
+              "score_d": 6.054789,
+              "abs_score_d": 6.054789,
+              "norm": 73.289688,
+              "cos_v": 0.000236,
+              "proj_v": 0.017266
+            },
+            {
+              "local_pos": 24,
+              "token": "OL",
+              "score_d": 5.681848,
+              "abs_score_d": 5.681848,
+              "norm": 76.453423,
+              "cos_v": 0.013156,
+              "proj_v": 1.005801
+            }
+          ]
+        },
+        "L20": {
+          "layer": 20,
+          "mean_score_d": 11.430825,
+          "mean_abs_score_d": 12.97969,
+          "cos_d_vs_freeze_v": 0.026993,
+          "top_sites": [
+            {
+              "local_pos": 19,
+              "token": " Disease",
+              "score_d": 28.195505,
+              "abs_score_d": 28.195505,
+              "norm": 112.695351,
+              "cos_v": 0.03039,
+              "proj_v": 3.42486
+            },
+            {
+              "local_pos": 4,
+              "token": " failed",
+              "score_d": 25.54607,
+              "abs_score_d": 25.54607,
+              "norm": 110.404762,
+              "cos_v": 0.006454,
+              "proj_v": 0.712558
+            },
+            {
+              "local_pos": 5,
+              "token": " first",
+              "score_d": 25.473141,
+              "abs_score_d": 25.473141,
+              "norm": 110.555405,
+              "cos_v": -0.021756,
+              "proj_v": -2.405236
+            },
+            {
+              "local_pos": 6,
+              "token": "-line",
+              "score_d": 24.891233,
+              "abs_score_d": 24.891233,
+              "norm": 108.910439,
+              "cos_v": -0.000374,
+              "proj_v": -0.040732
+            },
+            {
+              "local_pos": 7,
+              "token": " F",
+              "score_d": 23.839563,
+              "abs_score_d": 23.839563,
+              "norm": 105.292137,
+              "cos_v": -0.009628,
+              "proj_v": -1.013714
+            },
+            {
+              "local_pos": 9,
+              "token": "FOX",
+              "score_d": 22.461832,
+              "abs_score_d": 22.461832,
+              "norm": 115.897079,
+              "cos_v": 0.008358,
+              "proj_v": 0.968676
+            },
+            {
+              "local_pos": 8,
+              "token": "OL",
+              "score_d": 21.736811,
+              "abs_score_d": 21.736811,
+              "norm": 107.320084,
+              "cos_v": 0.002216,
+              "proj_v": 0.237863
+            },
+            {
+              "local_pos": 11,
+              "token": " four",
+              "score_d": 20.257105,
+              "abs_score_d": 20.257105,
+              "norm": 113.784973,
+              "cos_v": -0.032876,
+              "proj_v": -3.740781
+            },
+            {
+              "local_pos": 10,
+              "token": " after",
+              "score_d": 18.929075,
+              "abs_score_d": 18.929075,
+              "norm": 107.265816,
+              "cos_v": -0.00946,
+              "proj_v": -1.014729
+            },
+            {
+              "local_pos": 3,
+              "token": " Patient",
+              "score_d": 18.785728,
+              "abs_score_d": 18.785728,
+              "norm": 112.024269,
+              "cos_v": 0.002829,
+              "proj_v": 0.316893
+            },
+            {
+              "local_pos": 24,
+              "token": "OL",
+              "score_d": 17.127224,
+              "abs_score_d": 17.127224,
+              "norm": 105.390686,
+              "cos_v": -0.012551,
+              "proj_v": -1.32278
+            },
+            {
+              "local_pos": 21,
+              "token": " responsive",
+              "score_d": 16.401318,
+              "abs_score_d": 16.401318,
+              "norm": 114.857941,
+              "cos_v": 0.019934,
+              "proj_v": 2.289564
+            }
+          ]
+        },
+        "L24": {
+          "layer": 24,
+          "mean_score_d": 9.448472,
+          "mean_abs_score_d": 18.514408,
+          "cos_d_vs_freeze_v": 0.028097,
+          "top_sites": [
+            {
+              "local_pos": 19,
+              "token": " Disease",
+              "score_d": 57.367855,
+              "abs_score_d": 57.367855,
+              "norm": 272.352142,
+              "cos_v": 0.018089,
+              "proj_v": 4.926574
+            },
+            {
+              "local_pos": 20,
+              "token": " remains",
+              "score_d": 56.003754,
+              "abs_score_d": 56.003754,
+              "norm": 287.825439,
+              "cos_v": 0.010042,
+              "proj_v": 2.890364
+            },
+            {
+              "local_pos": 10,
+              "token": " after",
+              "score_d": 38.459705,
+              "abs_score_d": 38.459705,
+              "norm": 276.785461,
+              "cos_v": -0.01313,
+              "proj_v": -3.634076
+            },
+            {
+              "local_pos": 5,
+              "token": " first",
+              "score_d": 31.957649,
+              "abs_score_d": 31.957649,
+              "norm": 282.5383,
+              "cos_v": -0.026923,
+              "proj_v": -7.606842
+            },
+            {
+              "local_pos": 6,
+              "token": "-line",
+              "score_d": 30.995657,
+              "abs_score_d": 30.995657,
+              "norm": 284.111633,
+              "cos_v": -0.008196,
+              "proj_v": -2.328626
+            },
+            {
+              "local_pos": 26,
+              "token": ";",
+              "score_d": 29.733068,
+              "abs_score_d": 29.733068,
+              "norm": 268.335205,
+              "cos_v": 0.003018,
+              "proj_v": 0.809782
+            },
+            {
+              "local_pos": 21,
+              "token": " responsive",
+              "score_d": 28.073101,
+              "abs_score_d": 28.073101,
+              "norm": 251.183502,
+              "cos_v": -0.017417,
+              "proj_v": -4.374796
+            },
+            {
+              "local_pos": 15,
+              "token": "endum",
+              "score_d": -27.254896,
+              "abs_score_d": 27.254896,
+              "norm": 255.291595,
+              "cos_v": -0.018016,
+              "proj_v": -4.599404
+            },
+            {
+              "local_pos": 3,
+              "token": " Patient",
+              "score_d": 27.102215,
+              "abs_score_d": 27.102215,
+              "norm": 272.779205,
+              "cos_v": -0.002912,
+              "proj_v": -0.794424
+            },
+            {
+              "local_pos": 18,
+              "token": ":",
+              "score_d": 24.602245,
+              "abs_score_d": 24.602245,
+              "norm": 235.822357,
+              "cos_v": 0.004879,
+              "proj_v": 1.150669
+            },
+            {
+              "local_pos": 1,
+              "token": " A",
+              "score_d": -23.639023,
+              "abs_score_d": 23.639023,
+              "norm": 220.701492,
+              "cos_v": -0.038265,
+              "proj_v": -8.445086
+            },
+            {
+              "local_pos": 11,
+              "token": " four",
+              "score_d": 20.239246,
+              "abs_score_d": 20.239246,
+              "norm": 272.608948,
+              "cos_v": -0.020472,
+              "proj_v": -5.580721
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ok": true,
+      "case_id": "UA_GEN_P1_NEAR",
+      "role": "near_paraphrase",
+      "class": "temporal",
+      "gold": "SATISFIED",
+      "n_note_tokens": 54,
+      "best_layer": "L24",
+      "headline_mean_score_d": 62.756028,
+      "by_layer": {
+        "L8": {
+          "layer": 8,
+          "mean_score_d": 6.923162,
+          "mean_abs_score_d": 7.006081,
+          "cos_d_vs_freeze_v": 0.023636,
+          "top_sites": [
+            {
+              "local_pos": 34,
+              "token": " metast",
+              "score_d": 18.328072,
+              "abs_score_d": 18.328072,
+              "norm": 61.267876,
+              "cos_v": 0.002081,
+              "proj_v": 0.127513
+            },
+            {
+              "local_pos": 33,
+              "token": " liver",
+              "score_d": 16.288086,
+              "abs_score_d": 16.288086,
+              "norm": 60.035446,
+              "cos_v": -0.012397,
+              "proj_v": -0.744272
+            },
+            {
+              "local_pos": 21,
+              "token": " metast",
+              "score_d": 15.244235,
+              "abs_score_d": 15.244235,
+              "norm": 57.085499,
+              "cos_v": -0.003335,
+              "proj_v": -0.190376
+            },
+            {
+              "local_pos": 6,
+              "token": "in",
+              "score_d": 12.744816,
+              "abs_score_d": 12.744816,
+              "norm": 58.753857,
+              "cos_v": 0.000729,
+              "proj_v": 0.042831
+            },
+            {
+              "local_pos": 35,
+              "token": "ases",
+              "score_d": 11.6315,
+              "abs_score_d": 11.6315,
+              "norm": 46.362392,
+              "cos_v": 0.007039,
+              "proj_v": 0.326354
+            },
+            {
+              "local_pos": 37,
+              "token": " treatment",
+              "score_d": 11.11547,
+              "abs_score_d": 11.11547,
+              "norm": 49.47501,
+              "cos_v": 0.001437,
+              "proj_v": 0.071097
+            },
+            {
+              "local_pos": 22,
+              "token": "ases",
+              "score_d": 10.970093,
+              "abs_score_d": 10.970093,
+              "norm": 51.429531,
+              "cos_v": -0.007196,
+              "proj_v": -0.370083
+            },
+            {
+              "local_pos": 7,
+              "token": "oma",
+              "score_d": 10.922728,
+              "abs_score_d": 10.922728,
+              "norm": 52.074478,
+              "cos_v": -0.033006,
+              "proj_v": -1.718783
+            },
+            {
+              "local_pos": 25,
+              "token": " months",
+              "score_d": 10.920341,
+              "abs_score_d": 10.920341,
+              "norm": 54.778164,
+              "cos_v": -0.003796,
+              "proj_v": -0.207933
+            },
+            {
+              "local_pos": 38,
+              "token": " was",
+              "score_d": 10.813679,
+              "abs_score_d": 10.813679,
+              "norm": 54.90659,
+              "cos_v": -0.000973,
+              "proj_v": -0.053397
+            },
+            {
+              "local_pos": 29,
+              "token": "aging",
+              "score_d": 10.631145,
+              "abs_score_d": 10.631145,
+              "norm": 56.758247,
+              "cos_v": -0.010246,
+              "proj_v": -0.581566
+            },
+            {
+              "local_pos": 52,
+              "token": " reviewed",
+              "score_d": 10.334198,
+              "abs_score_d": 10.334198,
+              "norm": 52.564575,
+              "cos_v": -0.000101,
+              "proj_v": -0.005309
+            }
+          ]
+        },
+        "L12": {
+          "layer": 12,
+          "mean_score_d": 11.566431,
+          "mean_abs_score_d": 11.566431,
+          "cos_d_vs_freeze_v": 0.013457,
+          "top_sites": [
+            {
+              "local_pos": 34,
+              "token": " metast",
+              "score_d": 30.241348,
+              "abs_score_d": 30.241348,
+              "norm": 70.344414,
+              "cos_v": 0.012681,
+              "proj_v": 0.892055
+            },
+            {
+              "local_pos": 21,
+              "token": " metast",
+              "score_d": 27.092188,
+              "abs_score_d": 27.092188,
+              "norm": 69.960297,
+              "cos_v": -0.001814,
+              "proj_v": -0.126875
+            },
+            {
+              "local_pos": 33,
+              "token": " liver",
+              "score_d": 23.939264,
+              "abs_score_d": 23.939264,
+              "norm": 66.135956,
+              "cos_v": -0.005099,
+              "proj_v": -0.337256
+            },
+            {
+              "local_pos": 35,
+              "token": "ases",
+              "score_d": 21.70746,
+              "abs_score_d": 21.70746,
+              "norm": 60.121735,
+              "cos_v": 0.017912,
+              "proj_v": 1.07693
+            },
+            {
+              "local_pos": 29,
+              "token": "aging",
+              "score_d": 19.693132,
+              "abs_score_d": 19.693132,
+              "norm": 67.062599,
+              "cos_v": 0.003591,
+              "proj_v": 0.240796
+            },
+            {
+              "local_pos": 6,
+              "token": "in",
+              "score_d": 19.645672,
+              "abs_score_d": 19.645672,
+              "norm": 70.777725,
+              "cos_v": -0.003873,
+              "proj_v": -0.274152
+            },
+            {
+              "local_pos": 1,
+              "token": " IV",
+              "score_d": 17.596767,
+              "abs_score_d": 17.596767,
+              "norm": 70.377762,
+              "cos_v": -0.012479,
+              "proj_v": -0.878214
+            },
+            {
+              "local_pos": 22,
+              "token": "ases",
+              "score_d": 17.508839,
+              "abs_score_d": 17.508839,
+              "norm": 61.358139,
+              "cos_v": 0.004577,
+              "proj_v": 0.280829
+            },
+            {
+              "local_pos": 31,
+              "token": " enlarg",
+              "score_d": 16.114283,
+              "abs_score_d": 16.114283,
+              "norm": 69.245956,
+              "cos_v": 0.003748,
+              "proj_v": 0.25953
+            },
+            {
+              "local_pos": 30,
+              "token": " showed",
+              "score_d": 15.880247,
+              "abs_score_d": 15.880247,
+              "norm": 59.257557,
+              "cos_v": 0.011146,
+              "proj_v": 0.660478
+            },
+            {
+              "local_pos": 36,
+              "token": " and",
+              "score_d": 15.73696,
+              "abs_score_d": 15.73696,
+              "norm": 51.799423,
+              "cos_v": 0.020281,
+              "proj_v": 1.05052
+            },
+            {
+              "local_pos": 20,
+              "token": " shrinking",
+              "score_d": 15.525301,
+              "abs_score_d": 15.525301,
+              "norm": 71.035927,
+              "cos_v": -0.024425,
+              "proj_v": -1.735057
+            }
+          ]
+        },
+        "L16": {
+          "layer": 16,
+          "mean_score_d": 17.711692,
+          "mean_abs_score_d": 17.711692,
+          "cos_d_vs_freeze_v": 0.026632,
+          "top_sites": [
+            {
+              "local_pos": 21,
+              "token": " metast",
+              "score_d": 34.131519,
+              "abs_score_d": 34.131519,
+              "norm": 89.667259,
+              "cos_v": 0.004448,
+              "proj_v": 0.398865
+            },
+            {
+              "local_pos": 34,
+              "token": " metast",
+              "score_d": 33.064323,
+              "abs_score_d": 33.064323,
+              "norm": 86.387924,
+              "cos_v": 0.016637,
+              "proj_v": 1.437231
+            },
+            {
+              "local_pos": 33,
+              "token": " liver",
+              "score_d": 28.95752,
+              "abs_score_d": 28.95752,
+              "norm": 89.161751,
+              "cos_v": 0.014356,
+              "proj_v": 1.279994
+            },
+            {
+              "local_pos": 35,
+              "token": "ases",
+              "score_d": 25.663061,
+              "abs_score_d": 25.663061,
+              "norm": 72.635391,
+              "cos_v": 0.029077,
+              "proj_v": 2.112048
+            },
+            {
+              "local_pos": 29,
+              "token": "aging",
+              "score_d": 25.480593,
+              "abs_score_d": 25.480593,
+              "norm": 85.801704,
+              "cos_v": -0.006013,
+              "proj_v": -0.515886
+            },
+            {
+              "local_pos": 6,
+              "token": "in",
+              "score_d": 24.804804,
+              "abs_score_d": 24.804804,
+              "norm": 80.727219,
+              "cos_v": -0.003984,
+              "proj_v": -0.321635
+            },
+            {
+              "local_pos": 1,
+              "token": " IV",
+              "score_d": 23.47364,
+              "abs_score_d": 23.47364,
+              "norm": 86.626167,
+              "cos_v": -0.01382,
+              "proj_v": -1.197163
+            },
+            {
+              "local_pos": 22,
+              "token": "ases",
+              "score_d": 23.284204,
+              "abs_score_d": 23.284204,
+              "norm": 78.555511,
+              "cos_v": 0.011072,
+              "proj_v": 0.869767
+            },
+            {
+              "local_pos": 31,
+              "token": " enlarg",
+              "score_d": 23.230423,
+              "abs_score_d": 23.230423,
+              "norm": 88.019073,
+              "cos_v": 0.010161,
+              "proj_v": 0.894379
+            },
+            {
+              "local_pos": 32,
+              "token": "ing",
+              "score_d": 22.770006,
+              "abs_score_d": 22.770006,
+              "norm": 83.295181,
+              "cos_v": 0.007147,
+              "proj_v": 0.595316
+            },
+            {
+              "local_pos": 25,
+              "token": " months",
+              "score_d": 22.373922,
+              "abs_score_d": 22.373922,
+              "norm": 81.929924,
+              "cos_v": 0.01437,
+              "proj_v": 1.177313
+            },
+            {
+              "local_pos": 37,
+              "token": " treatment",
+              "score_d": 22.169182,
+              "abs_score_d": 22.169182,
+              "norm": 80.114906,
+              "cos_v": 0.028746,
+              "proj_v": 2.302976
+            }
+          ]
+        },
+        "L20": {
+          "layer": 20,
+          "mean_score_d": 35.173765,
+          "mean_abs_score_d": 35.173765,
+          "cos_d_vs_freeze_v": 0.026993,
+          "top_sites": [
+            {
+              "local_pos": 33,
+              "token": " liver",
+              "score_d": 49.167721,
+              "abs_score_d": 49.167721,
+              "norm": 118.43364,
+              "cos_v": -0.001943,
+              "proj_v": -0.230096
+            },
+            {
+              "local_pos": 30,
+              "token": " showed",
+              "score_d": 46.345692,
+              "abs_score_d": 46.345692,
+              "norm": 113.993294,
+              "cos_v": 0.026708,
+              "proj_v": 3.044561
+            },
+            {
+              "local_pos": 34,
+              "token": " metast",
+              "score_d": 46.214069,
+              "abs_score_d": 46.214069,
+              "norm": 112.450691,
+              "cos_v": 0.013308,
+              "proj_v": 1.496493
+            },
+            {
+              "local_pos": 21,
+              "token": " metast",
+              "score_d": 44.538277,
+              "abs_score_d": 44.538277,
+              "norm": 112.327614,
+              "cos_v": 0.00679,
+              "proj_v": 0.762717
+            },
+            {
+              "local_pos": 31,
+              "token": " enlarg",
+              "score_d": 44.408791,
+              "abs_score_d": 44.408791,
+              "norm": 127.022102,
+              "cos_v": 0.006047,
+              "proj_v": 0.768083
+            },
+            {
+              "local_pos": 29,
+              "token": "aging",
+              "score_d": 43.894241,
+              "abs_score_d": 43.894241,
+              "norm": 124.666855,
+              "cos_v": -0.008245,
+              "proj_v": -1.027856
+            },
+            {
+              "local_pos": 32,
+              "token": "ing",
+              "score_d": 43.628304,
+              "abs_score_d": 43.628304,
+              "norm": 116.107712,
+              "cos_v": -0.000628,
+              "proj_v": -0.072932
+            },
+            {
+              "local_pos": 38,
+              "token": " was",
+              "score_d": 42.890678,
+              "abs_score_d": 42.890678,
+              "norm": 119.60968,
+              "cos_v": 0.025614,
+              "proj_v": 3.063659
+            },
+            {
+              "local_pos": 36,
+              "token": " and",
+              "score_d": 42.324333,
+              "abs_score_d": 42.324333,
+              "norm": 102.680389,
+              "cos_v": 0.031351,
+              "proj_v": 3.219183
+            },
+            {
+              "local_pos": 20,
+              "token": " shrinking",
+              "score_d": 42.287655,
+              "abs_score_d": 42.287655,
+              "norm": 125.598663,
+              "cos_v": -0.011352,
+              "proj_v": -1.425802
+            },
+            {
+              "local_pos": 35,
+              "token": "ases",
+              "score_d": 42.204449,
+              "abs_score_d": 42.204449,
+              "norm": 106.658279,
+              "cos_v": 0.000492,
+              "proj_v": 0.052465
+            },
+            {
+              "local_pos": 6,
+              "token": "in",
+              "score_d": 42.093098,
+              "abs_score_d": 42.093098,
+              "norm": 111.774315,
+              "cos_v": -0.020727,
+              "proj_v": -2.316739
+            }
+          ]
+        },
+        "L24": {
+          "layer": 24,
+          "mean_score_d": 62.756028,
+          "mean_abs_score_d": 62.756028,
+          "cos_d_vs_freeze_v": 0.028097,
+          "top_sites": [
+            {
+              "local_pos": 32,
+              "token": "ing",
+              "score_d": 131.42392,
+              "abs_score_d": 131.42392,
+              "norm": 300.83075,
+              "cos_v": 0.011034,
+              "proj_v": 3.31949
+            },
+            {
+              "local_pos": 30,
+              "token": " showed",
+              "score_d": 130.344193,
+              "abs_score_d": 130.344193,
+              "norm": 302.912476,
+              "cos_v": 0.033818,
+              "proj_v": 10.243828
+            },
+            {
+              "local_pos": 33,
+              "token": " liver",
+              "score_d": 130.298538,
+              "abs_score_d": 130.298538,
+              "norm": 296.006134,
+              "cos_v": -0.000888,
+              "proj_v": -0.262766
+            },
+            {
+              "local_pos": 36,
+              "token": " and",
+              "score_d": 121.297318,
+              "abs_score_d": 121.297318,
+              "norm": 280.736206,
+              "cos_v": 0.022026,
+              "proj_v": 6.183417
+            },
+            {
+              "local_pos": 20,
+              "token": " shrinking",
+              "score_d": 119.252419,
+              "abs_score_d": 119.252419,
+              "norm": 302.048645,
+              "cos_v": -0.007487,
+              "proj_v": -2.261486
+            },
+            {
+              "local_pos": 27,
+              "token": ",",
+              "score_d": 92.989319,
+              "abs_score_d": 92.989319,
+              "norm": 257.804779,
+              "cos_v": 0.006525,
+              "proj_v": 1.682119
+            },
+            {
+              "local_pos": 21,
+              "token": " metast",
+              "score_d": 91.037422,
+              "abs_score_d": 91.037422,
+              "norm": 249.701004,
+              "cos_v": -0.006691,
+              "proj_v": -1.67063
+            },
+            {
+              "local_pos": 19,
+              "token": " with",
+              "score_d": 90.190575,
+              "abs_score_d": 90.190575,
+              "norm": 277.242523,
+              "cos_v": 0.033053,
+              "proj_v": 9.163585
+            },
+            {
+              "local_pos": 34,
+              "token": " metast",
+              "score_d": 89.043251,
+              "abs_score_d": 89.043251,
+              "norm": 247.766083,
+              "cos_v": 0.002066,
+              "proj_v": 0.511916
+            },
+            {
+              "local_pos": 35,
+              "token": "ases",
+              "score_d": 88.140839,
+              "abs_score_d": 88.140839,
+              "norm": 253.342041,
+              "cos_v": -0.009575,
+              "proj_v": -2.425857
+            },
+            {
+              "local_pos": 40,
+              "token": " because",
+              "score_d": 81.363266,
+              "abs_score_d": 81.363266,
+              "norm": 282.701904,
+              "cos_v": 0.011313,
+              "proj_v": 3.198143
+            },
+            {
+              "local_pos": 43,
+              "token": " had",
+              "score_d": 79.519135,
+              "abs_score_d": 79.519135,
+              "norm": 294.708954,
+              "cos_v": 0.042026,
+              "proj_v": 12.385384
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ok": true,
+      "case_id": "UA_GEN_C1_NEAR",
+      "role": "near_paraphrase",
+      "class": "contra",
+      "gold": "CONTRADICTION",
+      "n_note_tokens": 41,
+      "best_layer": "L24",
+      "headline_mean_score_d": 25.218809,
+      "by_layer": {
+        "L8": {
+          "layer": 8,
+          "mean_score_d": -0.189451,
+          "mean_abs_score_d": 2.704716,
+          "cos_d_vs_freeze_v": 0.023636,
+          "top_sites": [
+            {
+              "local_pos": 0,
+              "token": "Same",
+              "score_d": -8.588693,
+              "abs_score_d": 8.588693,
+              "norm": 49.117466,
+              "cos_v": -0.058583,
+              "proj_v": -2.877472
+            },
+            {
+              "local_pos": 8,
+              "token": "FOX",
+              "score_d": 7.354251,
+              "abs_score_d": 7.354251,
+              "norm": 80.077927,
+              "cos_v": -0.00296,
+              "proj_v": -0.237005
+            },
+            {
+              "local_pos": 1,
+              "token": "-day",
+              "score_d": -7.004355,
+              "abs_score_d": 7.004355,
+              "norm": 58.11393,
+              "cos_v": -0.02226,
+              "proj_v": -1.293592
+            },
+            {
+              "local_pos": 10,
+              "token": " documented",
+              "score_d": 5.553404,
+              "abs_score_d": 5.553404,
+              "norm": 50.778641,
+              "cos_v": -0.004423,
+              "proj_v": -0.224584
+            },
+            {
+              "local_pos": 12,
+              "token": " having",
+              "score_d": 5.012197,
+              "abs_score_d": 5.012197,
+              "norm": 45.955524,
+              "cos_v": 0.002757,
+              "proj_v": 0.126699
+            },
+            {
+              "local_pos": 19,
+              "token": "-day",
+              "score_d": -4.991675,
+              "abs_score_d": 4.991675,
+              "norm": 55.065022,
+              "cos_v": -0.012481,
+              "proj_v": -0.687281
+            },
+            {
+              "local_pos": 18,
+              "token": " Same",
+              "score_d": -4.938576,
+              "abs_score_d": 4.938576,
+              "norm": 46.420658,
+              "cos_v": -0.02775,
+              "proj_v": -1.288182
+            },
+            {
+              "local_pos": 33,
+              "token": " the",
+              "score_d": 4.514641,
+              "abs_score_d": 4.514641,
+              "norm": 39.945305,
+              "cos_v": 0.008523,
+              "proj_v": 0.34044
+            },
+            {
+              "local_pos": 37,
+              "token": " continue",
+              "score_d": -4.213218,
+              "abs_score_d": 4.213218,
+              "norm": 51.23748,
+              "cos_v": -0.009526,
+              "proj_v": -0.488092
+            },
+            {
+              "local_pos": 2,
+              "token": " note",
+              "score_d": -3.807406,
+              "abs_score_d": 3.807406,
+              "norm": 46.213188,
+              "cos_v": -0.018164,
+              "proj_v": -0.83943
+            },
+            {
+              "local_pos": 20,
+              "token": " add",
+              "score_d": -3.7804,
+              "abs_score_d": 3.7804,
+              "norm": 47.330429,
+              "cos_v": -0.007269,
+              "proj_v": -0.344041
+            },
+            {
+              "local_pos": 24,
+              "token": " disease",
+              "score_d": 3.50854,
+              "abs_score_d": 3.50854,
+              "norm": 50.082657,
+              "cos_v": -0.036252,
+              "proj_v": -1.815601
+            }
+          ]
+        },
+        "L12": {
+          "layer": 12,
+          "mean_score_d": 1.471141,
+          "mean_abs_score_d": 3.604753,
+          "cos_d_vs_freeze_v": 0.013457,
+          "top_sites": [
+            {
+              "local_pos": 24,
+              "token": " disease",
+              "score_d": 12.000566,
+              "abs_score_d": 12.000566,
+              "norm": 63.386238,
+              "cos_v": -0.014273,
+              "proj_v": -0.904737
+            },
+            {
+              "local_pos": 13,
+              "token": " failed",
+              "score_d": 7.488193,
+              "abs_score_d": 7.488193,
+              "norm": 61.88821,
+              "cos_v": -0.000638,
+              "proj_v": -0.039465
+            },
+            {
+              "local_pos": 0,
+              "token": "Same",
+              "score_d": -7.35851,
+              "abs_score_d": 7.35851,
+              "norm": 53.323761,
+              "cos_v": -0.044558,
+              "proj_v": -2.376012
+            },
+            {
+              "local_pos": 12,
+              "token": " having",
+              "score_d": 6.813079,
+              "abs_score_d": 6.813079,
+              "norm": 53.716465,
+              "cos_v": 0.020373,
+              "proj_v": 1.094386
+            },
+            {
+              "local_pos": 33,
+              "token": " the",
+              "score_d": 5.981839,
+              "abs_score_d": 5.981839,
+              "norm": 47.089035,
+              "cos_v": 0.013474,
+              "proj_v": 0.634499
+            },
+            {
+              "local_pos": 2,
+              "token": " note",
+              "score_d": -5.632869,
+              "abs_score_d": 5.632869,
+              "norm": 58.442245,
+              "cos_v": -0.023169,
+              "proj_v": -1.354066
+            },
+            {
+              "local_pos": 3,
+              "token": ":",
+              "score_d": -5.53257,
+              "abs_score_d": 5.53257,
+              "norm": 49.067528,
+              "cos_v": -0.042093,
+              "proj_v": -2.065383
+            },
+            {
+              "local_pos": 5,
+              "token": "-line",
+              "score_d": 5.436438,
+              "abs_score_d": 5.436438,
+              "norm": 66.089905,
+              "cos_v": 0.00471,
+              "proj_v": 0.311261
+            },
+            {
+              "local_pos": 8,
+              "token": "FOX",
+              "score_d": 5.409078,
+              "abs_score_d": 5.409078,
+              "norm": 77.693199,
+              "cos_v": 0.018473,
+              "proj_v": 1.435188
+            },
+            {
+              "local_pos": 18,
+              "token": " Same",
+              "score_d": -5.124963,
+              "abs_score_d": 5.124963,
+              "norm": 49.371445,
+              "cos_v": -0.032666,
+              "proj_v": -1.612748
+            },
+            {
+              "local_pos": 27,
+              "token": " responding",
+              "score_d": 5.017143,
+              "abs_score_d": 5.017143,
+              "norm": 62.399879,
+              "cos_v": -0.007626,
+              "proj_v": -0.475868
+            },
+            {
+              "local_pos": 25,
+              "token": " is",
+              "score_d": 4.767201,
+              "abs_score_d": 4.767201,
+              "norm": 50.760376,
+              "cos_v": -0.001738,
+              "proj_v": -0.088217
+            }
+          ]
+        },
+        "L16": {
+          "layer": 16,
+          "mean_score_d": 5.435098,
+          "mean_abs_score_d": 6.721717,
+          "cos_d_vs_freeze_v": 0.026632,
+          "top_sites": [
+            {
+              "local_pos": 24,
+              "token": " disease",
+              "score_d": 21.152361,
+              "abs_score_d": 21.152361,
+              "norm": 79.987297,
+              "cos_v": 0.003848,
+              "proj_v": 0.307827
+            },
+            {
+              "local_pos": 13,
+              "token": " failed",
+              "score_d": 13.405951,
+              "abs_score_d": 13.405951,
+              "norm": 76.544785,
+              "cos_v": 0.007452,
+              "proj_v": 0.570443
+            },
+            {
+              "local_pos": 12,
+              "token": " having",
+              "score_d": 13.211181,
+              "abs_score_d": 13.211181,
+              "norm": 66.412071,
+              "cos_v": 0.03074,
+              "proj_v": 2.041489
+            },
+            {
+              "local_pos": 5,
+              "token": "-line",
+              "score_d": 12.642404,
+              "abs_score_d": 12.642404,
+              "norm": 79.026871,
+              "cos_v": 0.018875,
+              "proj_v": 1.491614
+            },
+            {
+              "local_pos": 8,
+              "token": "FOX",
+              "score_d": 11.703845,
+              "abs_score_d": 11.703845,
+              "norm": 85.146759,
+              "cos_v": 0.021876,
+              "proj_v": 1.862672
+            },
+            {
+              "local_pos": 25,
+              "token": " is",
+              "score_d": 11.639175,
+              "abs_score_d": 11.639175,
+              "norm": 64.914139,
+              "cos_v": -0.005031,
+              "proj_v": -0.326572
+            },
+            {
+              "local_pos": 35,
+              "token": " regimen",
+              "score_d": 10.297118,
+              "abs_score_d": 10.297118,
+              "norm": 78.239761,
+              "cos_v": 0.027117,
+              "proj_v": 2.121632
+            },
+            {
+              "local_pos": 27,
+              "token": " responding",
+              "score_d": 10.115506,
+              "abs_score_d": 10.115506,
+              "norm": 77.115578,
+              "cos_v": 0.014156,
+              "proj_v": 1.091632
+            },
+            {
+              "local_pos": 15,
+              "token": " four",
+              "score_d": 9.561743,
+              "abs_score_d": 9.561743,
+              "norm": 79.796265,
+              "cos_v": 0.014716,
+              "proj_v": 1.174247
+            },
+            {
+              "local_pos": 9,
+              "token": " is",
+              "score_d": 9.393838,
+              "abs_score_d": 9.393838,
+              "norm": 66.140549,
+              "cos_v": 0.015582,
+              "proj_v": 1.030619
+            },
+            {
+              "local_pos": 33,
+              "token": " the",
+              "score_d": 8.955466,
+              "abs_score_d": 8.955466,
+              "norm": 62.082691,
+              "cos_v": 0.033955,
+              "proj_v": 2.10799
+            },
+            {
+              "local_pos": 34,
+              "token": " current",
+              "score_d": 8.877995,
+              "abs_score_d": 8.877995,
+              "norm": 72.28241,
+              "cos_v": 0.017801,
+              "proj_v": 1.286719
+            }
+          ]
+        },
+        "L20": {
+          "layer": 20,
+          "mean_score_d": 16.43708,
+          "mean_abs_score_d": 16.485908,
+          "cos_d_vs_freeze_v": 0.026993,
+          "top_sites": [
+            {
+              "local_pos": 24,
+              "token": " disease",
+              "score_d": 32.64069,
+              "abs_score_d": 32.64069,
+              "norm": 112.971077,
+              "cos_v": 0.038087,
+              "proj_v": 4.302778
+            },
+            {
+              "local_pos": 13,
+              "token": " failed",
+              "score_d": 32.027092,
+              "abs_score_d": 32.027092,
+              "norm": 111.875374,
+              "cos_v": 0.004454,
+              "proj_v": 0.498287
+            },
+            {
+              "local_pos": 5,
+              "token": "-line",
+              "score_d": 29.56086,
+              "abs_score_d": 29.56086,
+              "norm": 105.681007,
+              "cos_v": 0.004881,
+              "proj_v": 0.515823
+            },
+            {
+              "local_pos": 8,
+              "token": "FOX",
+              "score_d": 28.330935,
+              "abs_score_d": 28.330935,
+              "norm": 118.494766,
+              "cos_v": 0.0105,
+              "proj_v": 1.244137
+            },
+            {
+              "local_pos": 12,
+              "token": " having",
+              "score_d": 27.385969,
+              "abs_score_d": 27.385969,
+              "norm": 98.449745,
+              "cos_v": 0.042315,
+              "proj_v": 4.165908
+            },
+            {
+              "local_pos": 6,
+              "token": " F",
+              "score_d": 26.171911,
+              "abs_score_d": 26.171911,
+              "norm": 102.747978,
+              "cos_v": -0.005277,
+              "proj_v": -0.542174
+            },
+            {
+              "local_pos": 25,
+              "token": " is",
+              "score_d": 24.863705,
+              "abs_score_d": 24.863705,
+              "norm": 99.133232,
+              "cos_v": 0.068167,
+              "proj_v": 6.757647
+            },
+            {
+              "local_pos": 9,
+              "token": " is",
+              "score_d": 24.840176,
+              "abs_score_d": 24.840176,
+              "norm": 95.524513,
+              "cos_v": 0.012936,
+              "proj_v": 1.235717
+            },
+            {
+              "local_pos": 7,
+              "token": "OL",
+              "score_d": 24.204865,
+              "abs_score_d": 24.204865,
+              "norm": 107.023781,
+              "cos_v": 0.00579,
+              "proj_v": 0.619712
+            },
+            {
+              "local_pos": 15,
+              "token": " four",
+              "score_d": 22.343462,
+              "abs_score_d": 22.343462,
+              "norm": 111.382477,
+              "cos_v": -0.014283,
+              "proj_v": -1.59091
+            },
+            {
+              "local_pos": 4,
+              "token": " first",
+              "score_d": 21.544058,
+              "abs_score_d": 21.544058,
+              "norm": 99.671333,
+              "cos_v": -0.022491,
+              "proj_v": -2.241722
+            },
+            {
+              "local_pos": 35,
+              "token": " regimen",
+              "score_d": 19.980709,
+              "abs_score_d": 19.980709,
+              "norm": 111.60479,
+              "cos_v": 0.027915,
+              "proj_v": 3.115444
+            }
+          ]
+        },
+        "L24": {
+          "layer": 24,
+          "mean_score_d": 25.218809,
+          "mean_abs_score_d": 26.811605,
+          "cos_d_vs_freeze_v": 0.028097,
+          "top_sites": [
+            {
+              "local_pos": 12,
+              "token": " having",
+              "score_d": 69.144142,
+              "abs_score_d": 69.144142,
+              "norm": 269.481903,
+              "cos_v": 0.012523,
+              "proj_v": 3.374674
+            },
+            {
+              "local_pos": 26,
+              "token": " still",
+              "score_d": 58.501968,
+              "abs_score_d": 58.501968,
+              "norm": 281.7659,
+              "cos_v": -0.01445,
+              "proj_v": -4.071483
+            },
+            {
+              "local_pos": 25,
+              "token": " is",
+              "score_d": 57.362343,
+              "abs_score_d": 57.362343,
+              "norm": 280.803925,
+              "cos_v": 0.023826,
+              "proj_v": 6.690451
+            },
+            {
+              "local_pos": 24,
+              "token": " disease",
+              "score_d": 55.465462,
+              "abs_score_d": 55.465462,
+              "norm": 269.531616,
+              "cos_v": 0.010222,
+              "proj_v": 2.755053
+            },
+            {
+              "local_pos": 13,
+              "token": " failed",
+              "score_d": 52.917118,
+              "abs_score_d": 52.917118,
+              "norm": 246.311951,
+              "cos_v": -0.002053,
+              "proj_v": -0.5057
+            },
+            {
+              "local_pos": 14,
+              "token": " after",
+              "score_d": 49.723019,
+              "abs_score_d": 49.723019,
+              "norm": 268.384308,
+              "cos_v": -0.00996,
+              "proj_v": -2.673038
+            },
+            {
+              "local_pos": 9,
+              "token": " is",
+              "score_d": 45.077473,
+              "abs_score_d": 45.077473,
+              "norm": 276.439728,
+              "cos_v": -0.01308,
+              "proj_v": -3.615748
+            },
+            {
+              "local_pos": 38,
+              "token": " without",
+              "score_d": 43.964058,
+              "abs_score_d": 43.964058,
+              "norm": 291.638733,
+              "cos_v": -0.001693,
+              "proj_v": -0.493671
+            },
+            {
+              "local_pos": 23,
+              "token": " the",
+              "score_d": 43.064342,
+              "abs_score_d": 43.064342,
+              "norm": 262.646393,
+              "cos_v": -0.013687,
+              "proj_v": -3.594902
+            },
+            {
+              "local_pos": 5,
+              "token": "-line",
+              "score_d": 42.920177,
+              "abs_score_d": 42.920177,
+              "norm": 279.026306,
+              "cos_v": -0.016384,
+              "proj_v": -4.571527
+            },
+            {
+              "local_pos": 11,
+              "token": " as",
+              "score_d": 40.902206,
+              "abs_score_d": 40.902206,
+              "norm": 276.716644,
+              "cos_v": -0.002995,
+              "proj_v": -0.828851
+            },
+            {
+              "local_pos": 4,
+              "token": " first",
+              "score_d": 40.883667,
+              "abs_score_d": 40.883667,
+              "norm": 283.416138,
+              "cos_v": -0.039677,
+              "proj_v": -11.245149
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ok": true,
+      "case_id": "UA_GEN_P2_FAR",
+      "role": "far_paraphrase",
+      "class": "temporal",
+      "gold": "SATISFIED",
+      "n_note_tokens": 64,
+      "best_layer": "L24",
+      "headline_mean_score_d": 57.243894,
+      "by_layer": {
+        "L8": {
+          "layer": 8,
+          "mean_score_d": 6.036239,
+          "mean_abs_score_d": 6.212249,
+          "cos_d_vs_freeze_v": 0.023636,
+          "top_sites": [
+            {
+              "local_pos": 37,
+              "token": " imaging",
+              "score_d": 16.141403,
+              "abs_score_d": 16.141403,
+              "norm": 56.735016,
+              "cos_v": -0.009965,
+              "proj_v": -0.565367
+            },
+            {
+              "local_pos": 1,
+              "token": "ast",
+              "score_d": 15.321342,
+              "abs_score_d": 15.321342,
+              "norm": 58.844231,
+              "cos_v": -0.00305,
+              "proj_v": -0.179461
+            },
+            {
+              "local_pos": 2,
+              "token": "atic",
+              "score_d": 13.966443,
+              "abs_score_d": 13.966443,
+              "norm": 54.983383,
+              "cos_v": -0.016155,
+              "proj_v": -0.888262
+            },
+            {
+              "local_pos": 11,
+              "token": "iz",
+              "score_d": 12.637639,
+              "abs_score_d": 12.637639,
+              "norm": 85.45549,
+              "cos_v": -0.000257,
+              "proj_v": -0.021937
+            },
+            {
+              "local_pos": 4,
+              "token": "CL",
+              "score_d": 11.815153,
+              "abs_score_d": 11.815153,
+              "norm": 72.374725,
+              "cos_v": -0.005687,
+              "proj_v": -0.411608
+            },
+            {
+              "local_pos": 43,
+              "token": " lesions",
+              "score_d": 11.231902,
+              "abs_score_d": 11.231902,
+              "norm": 51.311535,
+              "cos_v": 0.012371,
+              "proj_v": 0.634754
+            },
+            {
+              "local_pos": 5,
+              "token": "C",
+              "score_d": 11.136215,
+              "abs_score_d": 11.136215,
+              "norm": 59.213806,
+              "cos_v": -0.025309,
+              "proj_v": -1.498663
+            },
+            {
+              "local_pos": 34,
+              "token": "aging",
+              "score_d": 10.496888,
+              "abs_score_d": 10.496888,
+              "norm": 58.364597,
+              "cos_v": -0.017356,
+              "proj_v": -1.012972
+            },
+            {
+              "local_pos": 61,
+              "token": "-line",
+              "score_d": 9.841586,
+              "abs_score_d": 9.841586,
+              "norm": 59.132195,
+              "cos_v": -0.002129,
+              "proj_v": -0.125904
+            },
+            {
+              "local_pos": 40,
+              "token": " progression",
+              "score_d": 9.57242,
+              "abs_score_d": 9.57242,
+              "norm": 52.504265,
+              "cos_v": 0.00467,
+              "proj_v": 0.245216
+            },
+            {
+              "local_pos": 32,
+              "token": "-month",
+              "score_d": 9.373239,
+              "abs_score_d": 9.373239,
+              "norm": 56.915432,
+              "cos_v": -0.007996,
+              "proj_v": -0.455108
+            },
+            {
+              "local_pos": 10,
+              "token": "rol",
+              "score_d": 9.343533,
+              "abs_score_d": 9.343533,
+              "norm": 69.812553,
+              "cos_v": -0.000397,
+              "proj_v": -0.027688
+            }
+          ]
+        },
+        "L12": {
+          "layer": 12,
+          "mean_score_d": 11.322598,
+          "mean_abs_score_d": 11.322598,
+          "cos_d_vs_freeze_v": 0.013457,
+          "top_sites": [
+            {
+              "local_pos": 1,
+              "token": "ast",
+              "score_d": 27.808319,
+              "abs_score_d": 27.808319,
+              "norm": 72.4841,
+              "cos_v": -0.003346,
+              "proj_v": -0.242566
+            },
+            {
+              "local_pos": 37,
+              "token": " imaging",
+              "score_d": 24.801056,
+              "abs_score_d": 24.801056,
+              "norm": 71.906624,
+              "cos_v": -0.005159,
+              "proj_v": -0.370948
+            },
+            {
+              "local_pos": 40,
+              "token": " progression",
+              "score_d": 24.415033,
+              "abs_score_d": 24.415033,
+              "norm": 73.09967,
+              "cos_v": -0.002944,
+              "proj_v": -0.215216
+            },
+            {
+              "local_pos": 43,
+              "token": " lesions",
+              "score_d": 21.31246,
+              "abs_score_d": 21.31246,
+              "norm": 66.707222,
+              "cos_v": 0.007529,
+              "proj_v": 0.502237
+            },
+            {
+              "local_pos": 2,
+              "token": "atic",
+              "score_d": 21.087139,
+              "abs_score_d": 21.087139,
+              "norm": 65.790344,
+              "cos_v": -0.010553,
+              "proj_v": -0.694315
+            },
+            {
+              "local_pos": 26,
+              "token": " partial",
+              "score_d": 21.077818,
+              "abs_score_d": 21.077818,
+              "norm": 79.027504,
+              "cos_v": -0.021434,
+              "proj_v": -1.693888
+            },
+            {
+              "local_pos": 47,
+              "token": "al",
+              "score_d": 19.580925,
+              "abs_score_d": 19.580925,
+              "norm": 76.833664,
+              "cos_v": -0.002978,
+              "proj_v": -0.228845
+            },
+            {
+              "local_pos": 39,
+              "token": " shows",
+              "score_d": 18.824108,
+              "abs_score_d": 18.824108,
+              "norm": 65.565071,
+              "cos_v": -0.002572,
+              "proj_v": -0.168626
+            },
+            {
+              "local_pos": 34,
+              "token": "aging",
+              "score_d": 18.189014,
+              "abs_score_d": 18.189014,
+              "norm": 65.907684,
+              "cos_v": -0.004048,
+              "proj_v": -0.266802
+            },
+            {
+              "local_pos": 24,
+              "token": " scans",
+              "score_d": 17.795284,
+              "abs_score_d": 17.795284,
+              "norm": 68.76783,
+              "cos_v": -0.00746,
+              "proj_v": -0.513018
+            },
+            {
+              "local_pos": 48,
+              "token": " disease",
+              "score_d": 17.60375,
+              "abs_score_d": 17.60375,
+              "norm": 63.456852,
+              "cos_v": 0.008934,
+              "proj_v": 0.566932
+            },
+            {
+              "local_pos": 41,
+              "token": " of",
+              "score_d": 17.595768,
+              "abs_score_d": 17.595768,
+              "norm": 65.840797,
+              "cos_v": 0.001415,
+              "proj_v": 0.093169
+            }
+          ]
+        },
+        "L16": {
+          "layer": 16,
+          "mean_score_d": 17.498019,
+          "mean_abs_score_d": 17.498019,
+          "cos_d_vs_freeze_v": 0.026632,
+          "top_sites": [
+            {
+              "local_pos": 1,
+              "token": "ast",
+              "score_d": 33.567795,
+              "abs_score_d": 33.567795,
+              "norm": 88.587837,
+              "cos_v": 0.003199,
+              "proj_v": 0.283405
+            },
+            {
+              "local_pos": 40,
+              "token": " progression",
+              "score_d": 29.997122,
+              "abs_score_d": 29.997122,
+              "norm": 85.797691,
+              "cos_v": 0.022929,
+              "proj_v": 1.967268
+            },
+            {
+              "local_pos": 37,
+              "token": " imaging",
+              "score_d": 29.630051,
+              "abs_score_d": 29.630051,
+              "norm": 89.128532,
+              "cos_v": 0.024586,
+              "proj_v": 2.19131
+            },
+            {
+              "local_pos": 26,
+              "token": " partial",
+              "score_d": 28.566889,
+              "abs_score_d": 28.566889,
+              "norm": 94.293816,
+              "cos_v": -0.015423,
+              "proj_v": -1.45431
+            },
+            {
+              "local_pos": 48,
+              "token": " disease",
+              "score_d": 26.434086,
+              "abs_score_d": 26.434086,
+              "norm": 84.535309,
+              "cos_v": 0.026826,
+              "proj_v": 2.267742
+            },
+            {
+              "local_pos": 47,
+              "token": "al",
+              "score_d": 26.176863,
+              "abs_score_d": 26.176863,
+              "norm": 91.714676,
+              "cos_v": 0.024171,
+              "proj_v": 2.216872
+            },
+            {
+              "local_pos": 4,
+              "token": "CL",
+              "score_d": 25.247747,
+              "abs_score_d": 25.247747,
+              "norm": 91.256905,
+              "cos_v": -0.006775,
+              "proj_v": -0.618273
+            },
+            {
+              "local_pos": 2,
+              "token": "atic",
+              "score_d": 25.150911,
+              "abs_score_d": 25.150911,
+              "norm": 82.239548,
+              "cos_v": -0.003324,
+              "proj_v": -0.27339
+            },
+            {
+              "local_pos": 39,
+              "token": " shows",
+              "score_d": 24.764978,
+              "abs_score_d": 24.764978,
+              "norm": 78.377823,
+              "cos_v": 0.035888,
+              "proj_v": 2.812825
+            },
+            {
+              "local_pos": 5,
+              "token": "C",
+              "score_d": 24.631584,
+              "abs_score_d": 24.631584,
+              "norm": 79.955841,
+              "cos_v": -0.015771,
+              "proj_v": -1.261
+            },
+            {
+              "local_pos": 45,
+              "token": " new",
+              "score_d": 24.473284,
+              "abs_score_d": 24.473284,
+              "norm": 85.475464,
+              "cos_v": 0.024021,
+              "proj_v": 2.053245
+            },
+            {
+              "local_pos": 43,
+              "token": " lesions",
+              "score_d": 24.113451,
+              "abs_score_d": 24.113451,
+              "norm": 82.929626,
+              "cos_v": 0.017396,
+              "proj_v": 1.442677
+            }
+          ]
+        },
+        "L20": {
+          "layer": 20,
+          "mean_score_d": 36.234328,
+          "mean_abs_score_d": 36.234328,
+          "cos_d_vs_freeze_v": 0.026993,
+          "top_sites": [
+            {
+              "local_pos": 37,
+              "token": " imaging",
+              "score_d": 53.486767,
+              "abs_score_d": 53.486767,
+              "norm": 128.924438,
+              "cos_v": 0.025068,
+              "proj_v": 3.231934
+            },
+            {
+              "local_pos": 40,
+              "token": " progression",
+              "score_d": 49.512421,
+              "abs_score_d": 49.512421,
+              "norm": 118.356102,
+              "cos_v": 0.00047,
+              "proj_v": 0.055632
+            },
+            {
+              "local_pos": 39,
+              "token": " shows",
+              "score_d": 48.723545,
+              "abs_score_d": 48.723545,
+              "norm": 116.420433,
+              "cos_v": 0.046577,
+              "proj_v": 5.422495
+            },
+            {
+              "local_pos": 47,
+              "token": "al",
+              "score_d": 48.6432,
+              "abs_score_d": 48.6432,
+              "norm": 126.617645,
+              "cos_v": 0.019041,
+              "proj_v": 2.410867
+            },
+            {
+              "local_pos": 4,
+              "token": "CL",
+              "score_d": 47.433498,
+              "abs_score_d": 47.433498,
+              "norm": 129.495697,
+              "cos_v": -0.022491,
+              "proj_v": -2.912477
+            },
+            {
+              "local_pos": 45,
+              "token": " new",
+              "score_d": 46.662689,
+              "abs_score_d": 46.662689,
+              "norm": 124.039467,
+              "cos_v": 0.033561,
+              "proj_v": 4.162921
+            },
+            {
+              "local_pos": 1,
+              "token": "ast",
+              "score_d": 46.621132,
+              "abs_score_d": 46.621132,
+              "norm": 114.611069,
+              "cos_v": -0.007553,
+              "proj_v": -0.865668
+            },
+            {
+              "local_pos": 2,
+              "token": "atic",
+              "score_d": 46.448021,
+              "abs_score_d": 46.448021,
+              "norm": 115.253227,
+              "cos_v": -0.015315,
+              "proj_v": -1.765143
+            },
+            {
+              "local_pos": 26,
+              "token": " partial",
+              "score_d": 46.3797,
+              "abs_score_d": 46.3797,
+              "norm": 125.001007,
+              "cos_v": -0.019681,
+              "proj_v": -2.460123
+            },
+            {
+              "local_pos": 41,
+              "token": " of",
+              "score_d": 45.3619,
+              "abs_score_d": 45.3619,
+              "norm": 119.850006,
+              "cos_v": -0.005073,
+              "proj_v": -0.607999
+            },
+            {
+              "local_pos": 48,
+              "token": " disease",
+              "score_d": 45.222763,
+              "abs_score_d": 45.222763,
+              "norm": 120.088608,
+              "cos_v": 0.011243,
+              "proj_v": 1.350153
+            },
+            {
+              "local_pos": 35,
+              "token": " visit",
+              "score_d": 44.29097,
+              "abs_score_d": 44.29097,
+              "norm": 119.793137,
+              "cos_v": 0.00051,
+              "proj_v": 0.061052
+            }
+          ]
+        },
+        "L24": {
+          "layer": 24,
+          "mean_score_d": 57.243894,
+          "mean_abs_score_d": 57.243894,
+          "cos_d_vs_freeze_v": 0.028097,
+          "top_sites": [
+            {
+              "local_pos": 39,
+              "token": " shows",
+              "score_d": 138.578018,
+              "abs_score_d": 138.578018,
+              "norm": 316.949249,
+              "cos_v": 0.040736,
+              "proj_v": 12.911231
+            },
+            {
+              "local_pos": 44,
+              "token": " with",
+              "score_d": 132.49707,
+              "abs_score_d": 132.49707,
+              "norm": 313.415955,
+              "cos_v": 0.050639,
+              "proj_v": 15.870957
+            },
+            {
+              "local_pos": 45,
+              "token": " new",
+              "score_d": 132.323334,
+              "abs_score_d": 132.323334,
+              "norm": 305.360565,
+              "cos_v": 0.029643,
+              "proj_v": 9.051771
+            },
+            {
+              "local_pos": 47,
+              "token": "al",
+              "score_d": 123.580933,
+              "abs_score_d": 123.580933,
+              "norm": 309.62265,
+              "cos_v": 0.01521,
+              "proj_v": 4.709354
+            },
+            {
+              "local_pos": 25,
+              "token": " showed",
+              "score_d": 118.557808,
+              "abs_score_d": 118.557808,
+              "norm": 317.290802,
+              "cos_v": 0.022925,
+              "proj_v": 7.273936
+            },
+            {
+              "local_pos": 42,
+              "token": " known",
+              "score_d": 113.009926,
+              "abs_score_d": 113.009926,
+              "norm": 298.092682,
+              "cos_v": 0.010293,
+              "proj_v": 3.068256
+            },
+            {
+              "local_pos": 41,
+              "token": " of",
+              "score_d": 104.65641,
+              "abs_score_d": 104.65641,
+              "norm": 277.745087,
+              "cos_v": 0.000446,
+              "proj_v": 0.123817
+            },
+            {
+              "local_pos": 36,
+              "token": ",",
+              "score_d": 102.502197,
+              "abs_score_d": 102.502197,
+              "norm": 283.573425,
+              "cos_v": -0.00089,
+              "proj_v": -0.252285
+            },
+            {
+              "local_pos": 2,
+              "token": "atic",
+              "score_d": 94.34935,
+              "abs_score_d": 94.34935,
+              "norm": 290.269379,
+              "cos_v": -0.013082,
+              "proj_v": -3.797428
+            },
+            {
+              "local_pos": 40,
+              "token": " progression",
+              "score_d": 92.901215,
+              "abs_score_d": 92.901215,
+              "norm": 253.097488,
+              "cos_v": -0.004202,
+              "proj_v": -1.063591
+            },
+            {
+              "local_pos": 26,
+              "token": " partial",
+              "score_d": 91.759087,
+              "abs_score_d": 91.759087,
+              "norm": 293.494965,
+              "cos_v": -0.016185,
+              "proj_v": -4.750088
+            },
+            {
+              "local_pos": 1,
+              "token": "ast",
+              "score_d": 86.172676,
+              "abs_score_d": 86.172676,
+              "norm": 267.827423,
+              "cos_v": -0.024069,
+              "proj_v": -6.44632
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ok": true,
+      "case_id": "UA_GEN_C2_FAR",
+      "role": "far_paraphrase",
+      "class": "contra",
+      "gold": "CONTRADICTION",
+      "n_note_tokens": 37,
+      "best_layer": "L24",
+      "headline_mean_score_d": 29.011641,
+      "by_layer": {
+        "L8": {
+          "layer": 8,
+          "mean_score_d": 1.510305,
+          "mean_abs_score_d": 3.550817,
+          "cos_d_vs_freeze_v": 0.023636,
+          "top_sites": [
+            {
+              "local_pos": 7,
+              "token": "iz",
+              "score_d": 12.887736,
+              "abs_score_d": 12.887736,
+              "norm": 88.353813,
+              "cos_v": 0.00172,
+              "proj_v": 0.151985
+            },
+            {
+              "local_pos": 6,
+              "token": "rol",
+              "score_d": 9.108632,
+              "abs_score_d": 9.108632,
+              "norm": 70.834595,
+              "cos_v": 0.003055,
+              "proj_v": 0.216416
+            },
+            {
+              "local_pos": 28,
+              "token": "iz",
+              "score_d": 8.356309,
+              "abs_score_d": 8.356309,
+              "norm": 71.773552,
+              "cos_v": 0.012473,
+              "proj_v": 0.895212
+            },
+            {
+              "local_pos": 9,
+              "token": "ab",
+              "score_d": 7.266055,
+              "abs_score_d": 7.266055,
+              "norm": 52.473068,
+              "cos_v": -0.012098,
+              "proj_v": -0.634828
+            },
+            {
+              "local_pos": 5,
+              "token": " pemb",
+              "score_d": 5.996104,
+              "abs_score_d": 5.996104,
+              "norm": 55.885792,
+              "cos_v": 0.017627,
+              "proj_v": 0.985079
+            },
+            {
+              "local_pos": 23,
+              "token": " remains",
+              "score_d": -5.665311,
+              "abs_score_d": 5.665311,
+              "norm": 53.193806,
+              "cos_v": -0.022712,
+              "proj_v": -1.208136
+            },
+            {
+              "local_pos": 15,
+              "token": " Add",
+              "score_d": -5.584962,
+              "abs_score_d": 5.584962,
+              "norm": 45.41338,
+              "cos_v": 0.003043,
+              "proj_v": 0.138172
+            },
+            {
+              "local_pos": 8,
+              "token": "um",
+              "score_d": 5.197659,
+              "abs_score_d": 5.197659,
+              "norm": 58.319752,
+              "cos_v": -0.019013,
+              "proj_v": -1.108828
+            },
+            {
+              "local_pos": 27,
+              "token": "rol",
+              "score_d": 4.88917,
+              "abs_score_d": 4.88917,
+              "norm": 42.085011,
+              "cos_v": 0.001572,
+              "proj_v": 0.066147
+            },
+            {
+              "local_pos": 13,
+              "token": " therapy",
+              "score_d": 4.784124,
+              "abs_score_d": 4.784124,
+              "norm": 48.473701,
+              "cos_v": -0.0046,
+              "proj_v": -0.222988
+            },
+            {
+              "local_pos": 17,
+              "token": " recorded",
+              "score_d": 4.623863,
+              "abs_score_d": 4.623863,
+              "norm": 49.891777,
+              "cos_v": -0.007342,
+              "proj_v": -0.366289
+            },
+            {
+              "local_pos": 18,
+              "token": " the",
+              "score_d": 4.089974,
+              "abs_score_d": 4.089974,
+              "norm": 44.725101,
+              "cos_v": 0.002635,
+              "proj_v": 0.11786
+            }
+          ]
+        },
+        "L12": {
+          "layer": 12,
+          "mean_score_d": 3.109934,
+          "mean_abs_score_d": 4.185551,
+          "cos_d_vs_freeze_v": 0.013457,
+          "top_sites": [
+            {
+              "local_pos": 6,
+              "token": "rol",
+              "score_d": 12.563632,
+              "abs_score_d": 12.563632,
+              "norm": 80.036957,
+              "cos_v": 0.010633,
+              "proj_v": 0.851063
+            },
+            {
+              "local_pos": 22,
+              "token": " disease",
+              "score_d": 11.377535,
+              "abs_score_d": 11.377535,
+              "norm": 65.393707,
+              "cos_v": -0.014615,
+              "proj_v": -0.95576
+            },
+            {
+              "local_pos": 7,
+              "token": "iz",
+              "score_d": 10.987185,
+              "abs_score_d": 10.987185,
+              "norm": 78.1492,
+              "cos_v": 0.009627,
+              "proj_v": 0.752317
+            },
+            {
+              "local_pos": 28,
+              "token": "iz",
+              "score_d": 9.537538,
+              "abs_score_d": 9.537538,
+              "norm": 67.189674,
+              "cos_v": 0.022637,
+              "proj_v": 1.520996
+            },
+            {
+              "local_pos": 8,
+              "token": "um",
+              "score_d": 8.82653,
+              "abs_score_d": 8.82653,
+              "norm": 71.388779,
+              "cos_v": 0.001467,
+              "proj_v": 0.104715
+            },
+            {
+              "local_pos": 9,
+              "token": "ab",
+              "score_d": 8.293074,
+              "abs_score_d": 8.293074,
+              "norm": 57.71991,
+              "cos_v": 0.024433,
+              "proj_v": 1.410285
+            },
+            {
+              "local_pos": 13,
+              "token": " therapy",
+              "score_d": 7.285696,
+              "abs_score_d": 7.285696,
+              "norm": 58.533123,
+              "cos_v": 0.011317,
+              "proj_v": 0.662408
+            },
+            {
+              "local_pos": 27,
+              "token": "rol",
+              "score_d": 7.15447,
+              "abs_score_d": 7.15447,
+              "norm": 46.044575,
+              "cos_v": 0.005498,
+              "proj_v": 0.253158
+            },
+            {
+              "local_pos": 5,
+              "token": " pemb",
+              "score_d": 6.56848,
+              "abs_score_d": 6.56848,
+              "norm": 64.288513,
+              "cos_v": 0.006822,
+              "proj_v": 0.438571
+            },
+            {
+              "local_pos": 10,
+              "token": " failed",
+              "score_d": 6.096583,
+              "abs_score_d": 6.096583,
+              "norm": 59.248787,
+              "cos_v": 0.00457,
+              "proj_v": 0.270779
+            },
+            {
+              "local_pos": 4,
+              "token": "-line",
+              "score_d": 5.901924,
+              "abs_score_d": 5.901924,
+              "norm": 67.769684,
+              "cos_v": 0.007718,
+              "proj_v": 0.523028
+            },
+            {
+              "local_pos": 1,
+              "token": "essment",
+              "score_d": 5.077806,
+              "abs_score_d": 5.077806,
+              "norm": 58.25658,
+              "cos_v": -0.005147,
+              "proj_v": -0.299849
+            }
+          ]
+        },
+        "L16": {
+          "layer": 16,
+          "mean_score_d": 6.919834,
+          "mean_abs_score_d": 7.577002,
+          "cos_d_vs_freeze_v": 0.026632,
+          "top_sites": [
+            {
+              "local_pos": 22,
+              "token": " disease",
+              "score_d": 19.876093,
+              "abs_score_d": 19.876093,
+              "norm": 83.167946,
+              "cos_v": 0.002907,
+              "proj_v": 0.241784
+            },
+            {
+              "local_pos": 6,
+              "token": "rol",
+              "score_d": 16.632219,
+              "abs_score_d": 16.632219,
+              "norm": 85.739815,
+              "cos_v": 0.015207,
+              "proj_v": 1.303887
+            },
+            {
+              "local_pos": 13,
+              "token": " therapy",
+              "score_d": 16.360956,
+              "abs_score_d": 16.360956,
+              "norm": 78.876541,
+              "cos_v": 0.021614,
+              "proj_v": 1.704816
+            },
+            {
+              "local_pos": 7,
+              "token": "iz",
+              "score_d": 15.190712,
+              "abs_score_d": 15.190712,
+              "norm": 87.644493,
+              "cos_v": 0.022968,
+              "proj_v": 2.012994
+            },
+            {
+              "local_pos": 9,
+              "token": "ab",
+              "score_d": 14.828902,
+              "abs_score_d": 14.828902,
+              "norm": 72.359642,
+              "cos_v": 0.036542,
+              "proj_v": 2.644184
+            },
+            {
+              "local_pos": 8,
+              "token": "um",
+              "score_d": 14.106742,
+              "abs_score_d": 14.106742,
+              "norm": 81.65976,
+              "cos_v": 0.004633,
+              "proj_v": 0.378325
+            },
+            {
+              "local_pos": 4,
+              "token": "-line",
+              "score_d": 13.028158,
+              "abs_score_d": 13.028158,
+              "norm": 80.862183,
+              "cos_v": 0.015882,
+              "proj_v": 1.284291
+            },
+            {
+              "local_pos": 12,
+              "token": " switch",
+              "score_d": 12.96897,
+              "abs_score_d": 12.96897,
+              "norm": 76.419075,
+              "cos_v": 0.036097,
+              "proj_v": 2.758484
+            },
+            {
+              "local_pos": 10,
+              "token": " failed",
+              "score_d": 12.794002,
+              "abs_score_d": 12.794002,
+              "norm": 76.677551,
+              "cos_v": 0.007452,
+              "proj_v": 0.57137
+            },
+            {
+              "local_pos": 28,
+              "token": "iz",
+              "score_d": 12.516742,
+              "abs_score_d": 12.516742,
+              "norm": 83.669197,
+              "cos_v": 0.023023,
+              "proj_v": 1.926285
+            },
+            {
+              "local_pos": 27,
+              "token": "rol",
+              "score_d": 12.012472,
+              "abs_score_d": 12.012472,
+              "norm": 62.247982,
+              "cos_v": 0.00078,
+              "proj_v": 0.048542
+            },
+            {
+              "local_pos": 5,
+              "token": " pemb",
+              "score_d": 11.757911,
+              "abs_score_d": 11.757911,
+              "norm": 76.567818,
+              "cos_v": 0.011593,
+              "proj_v": 0.887674
+            }
+          ]
+        },
+        "L20": {
+          "layer": 20,
+          "mean_score_d": 19.105422,
+          "mean_abs_score_d": 19.105422,
+          "cos_d_vs_freeze_v": 0.026993,
+          "top_sites": [
+            {
+              "local_pos": 6,
+              "token": "rol",
+              "score_d": 35.503872,
+              "abs_score_d": 35.503872,
+              "norm": 119.079834,
+              "cos_v": -0.006795,
+              "proj_v": -0.809121
+            },
+            {
+              "local_pos": 7,
+              "token": "iz",
+              "score_d": 35.335945,
+              "abs_score_d": 35.335945,
+              "norm": 122.140984,
+              "cos_v": -0.004246,
+              "proj_v": -0.518618
+            },
+            {
+              "local_pos": 10,
+              "token": " failed",
+              "score_d": 34.197838,
+              "abs_score_d": 34.197838,
+              "norm": 116.392242,
+              "cos_v": 0.01191,
+              "proj_v": 1.386229
+            },
+            {
+              "local_pos": 9,
+              "token": "ab",
+              "score_d": 33.829308,
+              "abs_score_d": 33.829308,
+              "norm": 111.441833,
+              "cos_v": 0.022066,
+              "proj_v": 2.459128
+            },
+            {
+              "local_pos": 22,
+              "token": " disease",
+              "score_d": 33.186554,
+              "abs_score_d": 33.186554,
+              "norm": 117.974487,
+              "cos_v": 0.034795,
+              "proj_v": 4.104936
+            },
+            {
+              "local_pos": 13,
+              "token": " therapy",
+              "score_d": 31.703209,
+              "abs_score_d": 31.703209,
+              "norm": 114.32283,
+              "cos_v": 0.005796,
+              "proj_v": 0.662576
+            },
+            {
+              "local_pos": 4,
+              "token": "-line",
+              "score_d": 31.546898,
+              "abs_score_d": 31.546898,
+              "norm": 110.536293,
+              "cos_v": 0.006109,
+              "proj_v": 0.675314
+            },
+            {
+              "local_pos": 12,
+              "token": " switch",
+              "score_d": 31.279593,
+              "abs_score_d": 31.279593,
+              "norm": 123.270424,
+              "cos_v": 0.022899,
+              "proj_v": 2.822716
+            },
+            {
+              "local_pos": 5,
+              "token": " pemb",
+              "score_d": 31.114656,
+              "abs_score_d": 31.114656,
+              "norm": 113.009697,
+              "cos_v": 0.003828,
+              "proj_v": 0.432655
+            },
+            {
+              "local_pos": 3,
+              "token": " first",
+              "score_d": 28.675648,
+              "abs_score_d": 28.675648,
+              "norm": 110.337708,
+              "cos_v": -0.015618,
+              "proj_v": -1.723243
+            },
+            {
+              "local_pos": 8,
+              "token": "um",
+              "score_d": 26.675146,
+              "abs_score_d": 26.675146,
+              "norm": 110.671532,
+              "cos_v": -0.006488,
+              "proj_v": -0.717997
+            },
+            {
+              "local_pos": 2,
+              "token": ":",
+              "score_d": 24.845339,
+              "abs_score_d": 24.845339,
+              "norm": 101.436493,
+              "cos_v": -0.005108,
+              "proj_v": -0.518104
+            }
+          ]
+        },
+        "L24": {
+          "layer": 24,
+          "mean_score_d": 29.011641,
+          "mean_abs_score_d": 30.253713,
+          "cos_d_vs_freeze_v": 0.028097,
+          "top_sites": [
+            {
+              "local_pos": 2,
+              "token": ":",
+              "score_d": 78.024048,
+              "abs_score_d": 78.024048,
+              "norm": 281.570221,
+              "cos_v": -0.013584,
+              "proj_v": -3.824986
+            },
+            {
+              "local_pos": 11,
+              "token": ";",
+              "score_d": 66.372444,
+              "abs_score_d": 66.372444,
+              "norm": 281.524231,
+              "cos_v": 0.002693,
+              "proj_v": 0.758178
+            },
+            {
+              "local_pos": 10,
+              "token": " failed",
+              "score_d": 62.994469,
+              "abs_score_d": 62.994469,
+              "norm": 258.162659,
+              "cos_v": -0.001403,
+              "proj_v": -0.362126
+            },
+            {
+              "local_pos": 3,
+              "token": " first",
+              "score_d": 61.389698,
+              "abs_score_d": 61.389698,
+              "norm": 292.666138,
+              "cos_v": -0.031567,
+              "proj_v": -9.238651
+            },
+            {
+              "local_pos": 22,
+              "token": " disease",
+              "score_d": 59.765285,
+              "abs_score_d": 59.765285,
+              "norm": 282.391388,
+              "cos_v": 0.019491,
+              "proj_v": 5.504132
+            },
+            {
+              "local_pos": 23,
+              "token": " remains",
+              "score_d": 55.602028,
+              "abs_score_d": 55.602028,
+              "norm": 297.607574,
+              "cos_v": 0.016877,
+              "proj_v": 5.022609
+            },
+            {
+              "local_pos": 4,
+              "token": "-line",
+              "score_d": 54.265915,
+              "abs_score_d": 54.265915,
+              "norm": 288.310364,
+              "cos_v": -0.01455,
+              "proj_v": -4.194804
+            },
+            {
+              "local_pos": 9,
+              "token": "ab",
+              "score_d": 53.568649,
+              "abs_score_d": 53.568649,
+              "norm": 281.131073,
+              "cos_v": -0.006942,
+              "proj_v": -1.951597
+            },
+            {
+              "local_pos": 21,
+              "token": ":",
+              "score_d": 45.011829,
+              "abs_score_d": 45.011829,
+              "norm": 260.191681,
+              "cos_v": -0.000943,
+              "proj_v": -0.245313
+            },
+            {
+              "local_pos": 18,
+              "token": " the",
+              "score_d": 43.956425,
+              "abs_score_d": 43.956425,
+              "norm": 270.390778,
+              "cos_v": -0.006829,
+              "proj_v": -1.846453
+            },
+            {
+              "local_pos": 5,
+              "token": " pemb",
+              "score_d": 38.825043,
+              "abs_score_d": 38.825043,
+              "norm": 275.212524,
+              "cos_v": -0.023189,
+              "proj_v": -6.38194
+            },
+            {
+              "local_pos": 33,
+              "token": " not",
+              "score_d": 37.631863,
+              "abs_score_d": 37.631863,
+              "norm": 287.548798,
+              "cos_v": -0.018928,
+              "proj_v": -5.442854
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ok": true,
+      "case_id": "UA_GEN_P3_FAR",
+      "role": "far_paraphrase",
+      "class": "temporal",
+      "gold": "SATISFIED",
+      "n_note_tokens": 50,
+      "best_layer": "L24",
+      "headline_mean_score_d": 45.469418,
+      "by_layer": {
+        "L8": {
+          "layer": 8,
+          "mean_score_d": 5.636034,
+          "mean_abs_score_d": 5.660771,
+          "cos_d_vs_freeze_v": 0.023636,
+          "top_sites": [
+            {
+              "local_pos": 6,
+              "token": "oma",
+              "score_d": 11.539103,
+              "abs_score_d": 11.539103,
+              "norm": 55.523113,
+              "cos_v": -0.012502,
+              "proj_v": -0.694162
+            },
+            {
+              "local_pos": 23,
+              "token": "aging",
+              "score_d": 10.261278,
+              "abs_score_d": 10.261278,
+              "norm": 56.805511,
+              "cos_v": -0.010839,
+              "proj_v": -0.61569
+            },
+            {
+              "local_pos": 24,
+              "token": " demonstrated",
+              "score_d": 9.953754,
+              "abs_score_d": 9.953754,
+              "norm": 50.473251,
+              "cos_v": 0.003844,
+              "proj_v": 0.194018
+            },
+            {
+              "local_pos": 5,
+              "token": " lymph",
+              "score_d": 9.884275,
+              "abs_score_d": 9.884275,
+              "norm": 61.161968,
+              "cos_v": 0.003866,
+              "proj_v": 0.236428
+            },
+            {
+              "local_pos": 30,
+              "token": " with",
+              "score_d": 9.821313,
+              "abs_score_d": 9.821313,
+              "norm": 48.378815,
+              "cos_v": -0.004189,
+              "proj_v": -0.202649
+            },
+            {
+              "local_pos": 40,
+              "token": " therapy",
+              "score_d": 9.335772,
+              "abs_score_d": 9.335772,
+              "norm": 46.095097,
+              "cos_v": 0.007276,
+              "proj_v": 0.335384
+            },
+            {
+              "local_pos": 31,
+              "token": " progression",
+              "score_d": 9.128236,
+              "abs_score_d": 9.128236,
+              "norm": 50.137188,
+              "cos_v": 0.006236,
+              "proj_v": 0.312635
+            },
+            {
+              "local_pos": 41,
+              "token": " was",
+              "score_d": 8.798473,
+              "abs_score_d": 8.798473,
+              "norm": 45.493229,
+              "cos_v": -0.001491,
+              "proj_v": -0.067851
+            },
+            {
+              "local_pos": 4,
+              "token": "-cell",
+              "score_d": 8.732823,
+              "abs_score_d": 8.732823,
+              "norm": 66.383003,
+              "cos_v": 0.026701,
+              "proj_v": 1.772468
+            },
+            {
+              "local_pos": 15,
+              "token": "OP",
+              "score_d": 8.216052,
+              "abs_score_d": 8.216052,
+              "norm": 70.579102,
+              "cos_v": -0.022029,
+              "proj_v": -1.554811
+            },
+            {
+              "local_pos": 47,
+              "token": " was",
+              "score_d": 7.782379,
+              "abs_score_d": 7.782379,
+              "norm": 51.420677,
+              "cos_v": -0.000622,
+              "proj_v": -0.031959
+            },
+            {
+              "local_pos": 18,
+              "token": " had",
+              "score_d": 7.57198,
+              "abs_score_d": 7.57198,
+              "norm": 47.612255,
+              "cos_v": -0.008234,
+              "proj_v": -0.392035
+            }
+          ]
+        },
+        "L12": {
+          "layer": 12,
+          "mean_score_d": 9.927026,
+          "mean_abs_score_d": 9.988002,
+          "cos_d_vs_freeze_v": 0.013457,
+          "top_sites": [
+            {
+              "local_pos": 31,
+              "token": " progression",
+              "score_d": 20.11412,
+              "abs_score_d": 20.11412,
+              "norm": 65.592422,
+              "cos_v": 0.005389,
+              "proj_v": 0.35349
+            },
+            {
+              "local_pos": 23,
+              "token": "aging",
+              "score_d": 19.204069,
+              "abs_score_d": 19.204069,
+              "norm": 67.46933,
+              "cos_v": 0.000343,
+              "proj_v": 0.023117
+            },
+            {
+              "local_pos": 27,
+              "token": " of",
+              "score_d": 18.44911,
+              "abs_score_d": 18.44911,
+              "norm": 66.424522,
+              "cos_v": 0.012178,
+              "proj_v": 0.808895
+            },
+            {
+              "local_pos": 26,
+              "token": " sites",
+              "score_d": 18.156305,
+              "abs_score_d": 18.156305,
+              "norm": 65.668907,
+              "cos_v": 0.009436,
+              "proj_v": 0.619626
+            },
+            {
+              "local_pos": 5,
+              "token": " lymph",
+              "score_d": 17.394461,
+              "abs_score_d": 17.394461,
+              "norm": 81.229965,
+              "cos_v": 0.00428,
+              "proj_v": 0.347694
+            },
+            {
+              "local_pos": 28,
+              "token": " disease",
+              "score_d": 17.368092,
+              "abs_score_d": 17.368092,
+              "norm": 65.459641,
+              "cos_v": 0.007196,
+              "proj_v": 0.471069
+            },
+            {
+              "local_pos": 24,
+              "token": " demonstrated",
+              "score_d": 16.117857,
+              "abs_score_d": 16.117857,
+              "norm": 59.414795,
+              "cos_v": 0.020099,
+              "proj_v": 1.194196
+            },
+            {
+              "local_pos": 29,
+              "token": " consistent",
+              "score_d": 14.985498,
+              "abs_score_d": 14.985498,
+              "norm": 58.321815,
+              "cos_v": 0.034928,
+              "proj_v": 2.037077
+            },
+            {
+              "local_pos": 17,
+              "token": " nodes",
+              "score_d": 14.856046,
+              "abs_score_d": 14.856046,
+              "norm": 71.517563,
+              "cos_v": 0.011644,
+              "proj_v": 0.832776
+            },
+            {
+              "local_pos": 30,
+              "token": " with",
+              "score_d": 14.540082,
+              "abs_score_d": 14.540082,
+              "norm": 57.185432,
+              "cos_v": 0.008605,
+              "proj_v": 0.492056
+            },
+            {
+              "local_pos": 6,
+              "token": "oma",
+              "score_d": 14.189873,
+              "abs_score_d": 14.189873,
+              "norm": 64.208138,
+              "cos_v": -0.015557,
+              "proj_v": -0.99886
+            },
+            {
+              "local_pos": 25,
+              "token": " new",
+              "score_d": 14.095107,
+              "abs_score_d": 14.095107,
+              "norm": 60.912308,
+              "cos_v": 0.003466,
+              "proj_v": 0.211124
+            }
+          ]
+        },
+        "L16": {
+          "layer": 16,
+          "mean_score_d": 16.399122,
+          "mean_abs_score_d": 16.43794,
+          "cos_d_vs_freeze_v": 0.026632,
+          "top_sites": [
+            {
+              "local_pos": 31,
+              "token": " progression",
+              "score_d": 26.966225,
+              "abs_score_d": 26.966225,
+              "norm": 81.112068,
+              "cos_v": 0.021362,
+              "proj_v": 1.732709
+            },
+            {
+              "local_pos": 25,
+              "token": " new",
+              "score_d": 25.580746,
+              "abs_score_d": 25.580746,
+              "norm": 81.549858,
+              "cos_v": 0.013385,
+              "proj_v": 1.091547
+            },
+            {
+              "local_pos": 5,
+              "token": " lymph",
+              "score_d": 24.920769,
+              "abs_score_d": 24.920769,
+              "norm": 90.007568,
+              "cos_v": -0.008969,
+              "proj_v": -0.807296
+            },
+            {
+              "local_pos": 26,
+              "token": " sites",
+              "score_d": 24.633307,
+              "abs_score_d": 24.633307,
+              "norm": 80.755638,
+              "cos_v": 0.002889,
+              "proj_v": 0.233325
+            },
+            {
+              "local_pos": 28,
+              "token": " disease",
+              "score_d": 24.121471,
+              "abs_score_d": 24.121471,
+              "norm": 81.463432,
+              "cos_v": 0.010863,
+              "proj_v": 0.884908
+            },
+            {
+              "local_pos": 23,
+              "token": "aging",
+              "score_d": 23.74329,
+              "abs_score_d": 23.74329,
+              "norm": 85.216003,
+              "cos_v": 0.001433,
+              "proj_v": 0.122079
+            },
+            {
+              "local_pos": 30,
+              "token": " with",
+              "score_d": 23.397413,
+              "abs_score_d": 23.397413,
+              "norm": 76.487968,
+              "cos_v": 0.02307,
+              "proj_v": 1.764586
+            },
+            {
+              "local_pos": 27,
+              "token": " of",
+              "score_d": 23.14744,
+              "abs_score_d": 23.14744,
+              "norm": 80.688568,
+              "cos_v": 0.015185,
+              "proj_v": 1.225234
+            },
+            {
+              "local_pos": 17,
+              "token": " nodes",
+              "score_d": 23.05998,
+              "abs_score_d": 23.05998,
+              "norm": 87.931145,
+              "cos_v": 0.01042,
+              "proj_v": 0.916202
+            },
+            {
+              "local_pos": 6,
+              "token": "oma",
+              "score_d": 22.933693,
+              "abs_score_d": 22.933693,
+              "norm": 79.63488,
+              "cos_v": -0.00945,
+              "proj_v": -0.752526
+            },
+            {
+              "local_pos": 4,
+              "token": "-cell",
+              "score_d": 22.079424,
+              "abs_score_d": 22.079424,
+              "norm": 91.321175,
+              "cos_v": 0.00214,
+              "proj_v": 0.195404
+            },
+            {
+              "local_pos": 24,
+              "token": " demonstrated",
+              "score_d": 21.927202,
+              "abs_score_d": 21.927202,
+              "norm": 75.482529,
+              "cos_v": 0.038829,
+              "proj_v": 2.930897
+            }
+          ]
+        },
+        "L20": {
+          "layer": 20,
+          "mean_score_d": 31.488393,
+          "mean_abs_score_d": 31.488393,
+          "cos_d_vs_freeze_v": 0.026993,
+          "top_sites": [
+            {
+              "local_pos": 25,
+              "token": " new",
+              "score_d": 47.003498,
+              "abs_score_d": 47.003498,
+              "norm": 118.415932,
+              "cos_v": 0.012014,
+              "proj_v": 1.422594
+            },
+            {
+              "local_pos": 30,
+              "token": " with",
+              "score_d": 45.364475,
+              "abs_score_d": 45.364475,
+              "norm": 112.502213,
+              "cos_v": 0.010506,
+              "proj_v": 1.181933
+            },
+            {
+              "local_pos": 5,
+              "token": " lymph",
+              "score_d": 44.155376,
+              "abs_score_d": 44.155376,
+              "norm": 120.737274,
+              "cos_v": -0.021778,
+              "proj_v": -2.629406
+            },
+            {
+              "local_pos": 26,
+              "token": " sites",
+              "score_d": 42.761398,
+              "abs_score_d": 42.761398,
+              "norm": 119.798294,
+              "cos_v": -0.001706,
+              "proj_v": -0.204338
+            },
+            {
+              "local_pos": 27,
+              "token": " of",
+              "score_d": 41.901237,
+              "abs_score_d": 41.901237,
+              "norm": 114.495682,
+              "cos_v": 0.009956,
+              "proj_v": 1.139975
+            },
+            {
+              "local_pos": 47,
+              "token": " was",
+              "score_d": 41.206505,
+              "abs_score_d": 41.206505,
+              "norm": 121.035995,
+              "cos_v": 0.025013,
+              "proj_v": 3.027521
+            },
+            {
+              "local_pos": 24,
+              "token": " demonstrated",
+              "score_d": 40.629192,
+              "abs_score_d": 40.629192,
+              "norm": 109.332962,
+              "cos_v": 0.041338,
+              "proj_v": 4.519599
+            },
+            {
+              "local_pos": 23,
+              "token": "aging",
+              "score_d": 40.624432,
+              "abs_score_d": 40.624432,
+              "norm": 121.854057,
+              "cos_v": 0.003523,
+              "proj_v": 0.429271
+            },
+            {
+              "local_pos": 31,
+              "token": " progression",
+              "score_d": 40.242279,
+              "abs_score_d": 40.242279,
+              "norm": 110.302017,
+              "cos_v": 0.000256,
+              "proj_v": 0.028234
+            },
+            {
+              "local_pos": 4,
+              "token": "-cell",
+              "score_d": 39.376251,
+              "abs_score_d": 39.376251,
+              "norm": 118.901497,
+              "cos_v": -0.019107,
+              "proj_v": -2.271825
+            },
+            {
+              "local_pos": 46,
+              "token": " salvage",
+              "score_d": 39.011494,
+              "abs_score_d": 39.011494,
+              "norm": 117.389206,
+              "cos_v": 0.02277,
+              "proj_v": 2.673002
+            },
+            {
+              "local_pos": 28,
+              "token": " disease",
+              "score_d": 38.243229,
+              "abs_score_d": 38.243229,
+              "norm": 112.258072,
+              "cos_v": 0.004776,
+              "proj_v": 0.536129
+            }
+          ]
+        },
+        "L24": {
+          "layer": 24,
+          "mean_score_d": 45.469418,
+          "mean_abs_score_d": 45.762863,
+          "cos_d_vs_freeze_v": 0.028097,
+          "top_sites": [
+            {
+              "local_pos": 25,
+              "token": " new",
+              "score_d": 120.947807,
+              "abs_score_d": 120.947807,
+              "norm": 300.782745,
+              "cos_v": 0.011228,
+              "proj_v": 3.37711
+            },
+            {
+              "local_pos": 27,
+              "token": " of",
+              "score_d": 117.264023,
+              "abs_score_d": 117.264023,
+              "norm": 303.396759,
+              "cos_v": 0.011373,
+              "proj_v": 3.450541
+            },
+            {
+              "local_pos": 24,
+              "token": " demonstrated",
+              "score_d": 113.933784,
+              "abs_score_d": 113.933784,
+              "norm": 294.905029,
+              "cos_v": 0.036569,
+              "proj_v": 10.784331
+            },
+            {
+              "local_pos": 30,
+              "token": " with",
+              "score_d": 112.779839,
+              "abs_score_d": 112.779839,
+              "norm": 301.897125,
+              "cos_v": 0.025177,
+              "proj_v": 7.600847
+            },
+            {
+              "local_pos": 26,
+              "token": " sites",
+              "score_d": 95.260345,
+              "abs_score_d": 95.260345,
+              "norm": 272.479309,
+              "cos_v": -0.019079,
+              "proj_v": -5.198578
+            },
+            {
+              "local_pos": 18,
+              "token": " had",
+              "score_d": 85.989716,
+              "abs_score_d": 85.989716,
+              "norm": 307.583069,
+              "cos_v": 0.009241,
+              "proj_v": 2.842299
+            },
+            {
+              "local_pos": 16,
+              "token": " the",
+              "score_d": 80.097328,
+              "abs_score_d": 80.097328,
+              "norm": 278.880005,
+              "cos_v": -0.008888,
+              "proj_v": -2.478652
+            },
+            {
+              "local_pos": 17,
+              "token": " nodes",
+              "score_d": 76.898018,
+              "abs_score_d": 76.898018,
+              "norm": 285.092865,
+              "cos_v": -0.009267,
+              "proj_v": -2.641893
+            },
+            {
+              "local_pos": 28,
+              "token": " disease",
+              "score_d": 73.874008,
+              "abs_score_d": 73.874008,
+              "norm": 244.150864,
+              "cos_v": -0.020453,
+              "proj_v": -4.993661
+            },
+            {
+              "local_pos": 29,
+              "token": " consistent",
+              "score_d": 65.013206,
+              "abs_score_d": 65.013206,
+              "norm": 257.706207,
+              "cos_v": -0.012865,
+              "proj_v": -3.315513
+            },
+            {
+              "local_pos": 1,
+              "token": "use",
+              "score_d": 63.637142,
+              "abs_score_d": 63.637142,
+              "norm": 264.356598,
+              "cos_v": -0.00293,
+              "proj_v": -0.774438
+            },
+            {
+              "local_pos": 19,
+              "token": " responded",
+              "score_d": 63.104935,
+              "abs_score_d": 63.104935,
+              "norm": 275.97583,
+              "cos_v": -0.007239,
+              "proj_v": -1.99776
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ok": true,
+      "case_id": "UA_GEN_C3_FAR",
+      "role": "far_paraphrase",
+      "class": "contra",
+      "gold": "CONTRADICTION",
+      "n_note_tokens": 41,
+      "best_layer": "L24",
+      "headline_mean_score_d": 22.571358,
+      "by_layer": {
+        "L8": {
+          "layer": 8,
+          "mean_score_d": 0.767206,
+          "mean_abs_score_d": 2.481356,
+          "cos_d_vs_freeze_v": 0.023636,
+          "top_sites": [
+            {
+              "local_pos": 21,
+              "token": " same",
+              "score_d": -8.890123,
+              "abs_score_d": 8.890123,
+              "norm": 53.558212,
+              "cos_v": -0.027004,
+              "proj_v": -1.44628
+            },
+            {
+              "local_pos": 13,
+              "token": "OP",
+              "score_d": 7.512173,
+              "abs_score_d": 7.512173,
+              "norm": 70.309441,
+              "cos_v": -0.013769,
+              "proj_v": -0.968067
+            },
+            {
+              "local_pos": 22,
+              "token": "-day",
+              "score_d": -6.122815,
+              "abs_score_d": 6.122815,
+              "norm": 57.14101,
+              "cos_v": -0.001866,
+              "proj_v": -0.106631
+            },
+            {
+              "local_pos": 32,
+              "token": "OP",
+              "score_d": 4.925394,
+              "abs_score_d": 4.925394,
+              "norm": 56.81699,
+              "cos_v": 0.003519,
+              "proj_v": 0.199927
+            },
+            {
+              "local_pos": 18,
+              "token": " salvage",
+              "score_d": 4.791023,
+              "abs_score_d": 4.791023,
+              "norm": 57.92189,
+              "cos_v": -0.012803,
+              "proj_v": -0.741567
+            },
+            {
+              "local_pos": 23,
+              "token": " correction",
+              "score_d": 4.219638,
+              "abs_score_d": 4.219638,
+              "norm": 50.189003,
+              "cos_v": 0.001,
+              "proj_v": 0.050193
+            },
+            {
+              "local_pos": 36,
+              "token": " continue",
+              "score_d": -4.213479,
+              "abs_score_d": 4.213479,
+              "norm": 53.038445,
+              "cos_v": 0.002019,
+              "proj_v": 0.107111
+            },
+            {
+              "local_pos": 0,
+              "token": "Today",
+              "score_d": -4.207276,
+              "abs_score_d": 4.207276,
+              "norm": 49.915688,
+              "cos_v": -0.045443,
+              "proj_v": -2.268297
+            },
+            {
+              "local_pos": 33,
+              "token": " with",
+              "score_d": 3.495111,
+              "abs_score_d": 3.495111,
+              "norm": 45.344852,
+              "cos_v": 0.000883,
+              "proj_v": 0.040023
+            },
+            {
+              "local_pos": 2,
+              "token": " note",
+              "score_d": -3.255895,
+              "abs_score_d": 3.255895,
+              "norm": 48.355499,
+              "cos_v": -0.022913,
+              "proj_v": -1.107949
+            },
+            {
+              "local_pos": 31,
+              "token": "CH",
+              "score_d": 3.156361,
+              "abs_score_d": 3.156361,
+              "norm": 35.683479,
+              "cos_v": -0.0044,
+              "proj_v": -0.15699
+            },
+            {
+              "local_pos": 25,
+              "token": " excellent",
+              "score_d": 3.140989,
+              "abs_score_d": 3.140989,
+              "norm": 53.214367,
+              "cos_v": 0.001651,
+              "proj_v": 0.087843
+            }
+          ]
+        },
+        "L12": {
+          "layer": 12,
+          "mean_score_d": 2.8072,
+          "mean_abs_score_d": 3.88986,
+          "cos_d_vs_freeze_v": 0.013457,
+          "top_sites": [
+            {
+              "local_pos": 6,
+              "token": " progressed",
+              "score_d": 13.332055,
+              "abs_score_d": 13.332055,
+              "norm": 65.986115,
+              "cos_v": -0.006229,
+              "proj_v": -0.411039
+            },
+            {
+              "local_pos": 31,
+              "token": "CH",
+              "score_d": 9.362027,
+              "abs_score_d": 9.362027,
+              "norm": 57.824806,
+              "cos_v": -0.00328,
+              "proj_v": -0.189675
+            },
+            {
+              "local_pos": 27,
+              "token": " response",
+              "score_d": 8.121699,
+              "abs_score_d": 8.121699,
+              "norm": 64.734413,
+              "cos_v": -0.002986,
+              "proj_v": -0.193321
+            },
+            {
+              "local_pos": 18,
+              "token": " salvage",
+              "score_d": 8.060123,
+              "abs_score_d": 8.060123,
+              "norm": 64.961571,
+              "cos_v": 0.020149,
+              "proj_v": 1.308914
+            },
+            {
+              "local_pos": 9,
+              "token": "-line",
+              "score_d": 6.472636,
+              "abs_score_d": 6.472636,
+              "norm": 68.122238,
+              "cos_v": 0.006479,
+              "proj_v": 0.441349
+            },
+            {
+              "local_pos": 14,
+              "token": " and",
+              "score_d": 6.308598,
+              "abs_score_d": 6.308598,
+              "norm": 53.275467,
+              "cos_v": 0.013382,
+              "proj_v": 0.712919
+            },
+            {
+              "local_pos": 7,
+              "token": " through",
+              "score_d": 6.115583,
+              "abs_score_d": 6.115583,
+              "norm": 60.703838,
+              "cos_v": 0.007937,
+              "proj_v": 0.481789
+            },
+            {
+              "local_pos": 13,
+              "token": "OP",
+              "score_d": 6.040877,
+              "abs_score_d": 6.040877,
+              "norm": 77.853073,
+              "cos_v": 0.02729,
+              "proj_v": 2.124609
+            },
+            {
+              "local_pos": 17,
+              "token": " to",
+              "score_d": 5.926743,
+              "abs_score_d": 5.926743,
+              "norm": 59.708965,
+              "cos_v": 0.017081,
+              "proj_v": 1.019882
+            },
+            {
+              "local_pos": 35,
+              "token": " to",
+              "score_d": 5.05175,
+              "abs_score_d": 5.05175,
+              "norm": 54.223629,
+              "cos_v": 0.005672,
+              "proj_v": 0.307551
+            },
+            {
+              "local_pos": 33,
+              "token": " with",
+              "score_d": 5.019526,
+              "abs_score_d": 5.019526,
+              "norm": 55.176136,
+              "cos_v": 0.008294,
+              "proj_v": 0.457649
+            },
+            {
+              "local_pos": 21,
+              "token": " same",
+              "score_d": -4.589253,
+              "abs_score_d": 4.589253,
+              "norm": 56.454338,
+              "cos_v": -0.036511,
+              "proj_v": -2.061203
+            }
+          ]
+        },
+        "L16": {
+          "layer": 16,
+          "mean_score_d": 7.254884,
+          "mean_abs_score_d": 7.49348,
+          "cos_d_vs_freeze_v": 0.026632,
+          "top_sites": [
+            {
+              "local_pos": 6,
+              "token": " progressed",
+              "score_d": 21.417858,
+              "abs_score_d": 21.417858,
+              "norm": 80.925392,
+              "cos_v": 0.011551,
+              "proj_v": 0.934786
+            },
+            {
+              "local_pos": 17,
+              "token": " to",
+              "score_d": 17.595678,
+              "abs_score_d": 17.595678,
+              "norm": 79.395622,
+              "cos_v": 0.023191,
+              "proj_v": 1.841249
+            },
+            {
+              "local_pos": 18,
+              "token": " salvage",
+              "score_d": 17.259512,
+              "abs_score_d": 17.259512,
+              "norm": 83.346901,
+              "cos_v": 0.019533,
+              "proj_v": 1.628034
+            },
+            {
+              "local_pos": 31,
+              "token": "CH",
+              "score_d": 16.231741,
+              "abs_score_d": 16.231741,
+              "norm": 74.946106,
+              "cos_v": -0.015113,
+              "proj_v": -1.132661
+            },
+            {
+              "local_pos": 16,
+              "token": " move",
+              "score_d": 15.032588,
+              "abs_score_d": 15.032588,
+              "norm": 79.799004,
+              "cos_v": 0.034228,
+              "proj_v": 2.731354
+            },
+            {
+              "local_pos": 13,
+              "token": "OP",
+              "score_d": 12.37261,
+              "abs_score_d": 12.37261,
+              "norm": 84.310135,
+              "cos_v": 0.028467,
+              "proj_v": 2.400017
+            },
+            {
+              "local_pos": 14,
+              "token": " and",
+              "score_d": 12.171196,
+              "abs_score_d": 12.171196,
+              "norm": 66.445374,
+              "cos_v": 0.026858,
+              "proj_v": 1.784577
+            },
+            {
+              "local_pos": 9,
+              "token": "-line",
+              "score_d": 11.977566,
+              "abs_score_d": 11.977566,
+              "norm": 81.178772,
+              "cos_v": 0.017745,
+              "proj_v": 1.440494
+            },
+            {
+              "local_pos": 27,
+              "token": " response",
+              "score_d": 11.717278,
+              "abs_score_d": 11.717278,
+              "norm": 79.782242,
+              "cos_v": 0.014595,
+              "proj_v": 1.164455
+            },
+            {
+              "local_pos": 19,
+              "token": ".",
+              "score_d": 10.484265,
+              "abs_score_d": 10.484265,
+              "norm": 65.391281,
+              "cos_v": 0.01135,
+              "proj_v": 0.7422
+            },
+            {
+              "local_pos": 5,
+              "token": " patient",
+              "score_d": 9.841938,
+              "abs_score_d": 9.841938,
+              "norm": 75.597832,
+              "cos_v": -0.015563,
+              "proj_v": -1.176509
+            },
+            {
+              "local_pos": 35,
+              "token": " to",
+              "score_d": 9.610993,
+              "abs_score_d": 9.610993,
+              "norm": 72.801689,
+              "cos_v": 0.015612,
+              "proj_v": 1.13657
+            }
+          ]
+        },
+        "L20": {
+          "layer": 20,
+          "mean_score_d": 20.096642,
+          "mean_abs_score_d": 20.096642,
+          "cos_d_vs_freeze_v": 0.026993,
+          "top_sites": [
+            {
+              "local_pos": 6,
+              "token": " progressed",
+              "score_d": 40.657684,
+              "abs_score_d": 40.657684,
+              "norm": 116.437553,
+              "cos_v": -0.003758,
+              "proj_v": -0.437525
+            },
+            {
+              "local_pos": 17,
+              "token": " to",
+              "score_d": 37.491001,
+              "abs_score_d": 37.491001,
+              "norm": 112.396072,
+              "cos_v": 0.005527,
+              "proj_v": 0.621244
+            },
+            {
+              "local_pos": 16,
+              "token": " move",
+              "score_d": 37.293472,
+              "abs_score_d": 37.293472,
+              "norm": 124.253479,
+              "cos_v": 0.008628,
+              "proj_v": 1.071998
+            },
+            {
+              "local_pos": 18,
+              "token": " salvage",
+              "score_d": 36.374706,
+              "abs_score_d": 36.374706,
+              "norm": 115.852287,
+              "cos_v": 0.014057,
+              "proj_v": 1.628499
+            },
+            {
+              "local_pos": 14,
+              "token": " and",
+              "score_d": 30.873125,
+              "abs_score_d": 30.873125,
+              "norm": 103.270134,
+              "cos_v": 0.02293,
+              "proj_v": 2.367968
+            },
+            {
+              "local_pos": 15,
+              "token": " should",
+              "score_d": 29.076836,
+              "abs_score_d": 29.076836,
+              "norm": 110.967476,
+              "cos_v": 0.041545,
+              "proj_v": 4.61014
+            },
+            {
+              "local_pos": 13,
+              "token": "OP",
+              "score_d": 28.887022,
+              "abs_score_d": 28.887022,
+              "norm": 116.985992,
+              "cos_v": 0.013445,
+              "proj_v": 1.572819
+            },
+            {
+              "local_pos": 9,
+              "token": "-line",
+              "score_d": 27.85533,
+              "abs_score_d": 27.85533,
+              "norm": 107.83783,
+              "cos_v": 0.005435,
+              "proj_v": 0.586124
+            },
+            {
+              "local_pos": 11,
+              "token": "-",
+              "score_d": 26.115442,
+              "abs_score_d": 26.115442,
+              "norm": 107.547035,
+              "cos_v": 0.002939,
+              "proj_v": 0.316094
+            },
+            {
+              "local_pos": 12,
+              "token": "CH",
+              "score_d": 25.851694,
+              "abs_score_d": 25.851694,
+              "norm": 108.761612,
+              "cos_v": 0.009664,
+              "proj_v": 1.051021
+            },
+            {
+              "local_pos": 10,
+              "token": " R",
+              "score_d": 25.833044,
+              "abs_score_d": 25.833044,
+              "norm": 104.615562,
+              "cos_v": 0.005915,
+              "proj_v": 0.618758
+            },
+            {
+              "local_pos": 25,
+              "token": " excellent",
+              "score_d": 25.576,
+              "abs_score_d": 25.576,
+              "norm": 111.816467,
+              "cos_v": 0.024515,
+              "proj_v": 2.741189
+            }
+          ]
+        },
+        "L24": {
+          "layer": 24,
+          "mean_score_d": 22.571358,
+          "mean_abs_score_d": 25.258893,
+          "cos_d_vs_freeze_v": 0.028097,
+          "top_sites": [
+            {
+              "local_pos": 6,
+              "token": " progressed",
+              "score_d": 67.636261,
+              "abs_score_d": 67.636261,
+              "norm": 249.462723,
+              "cos_v": -0.005375,
+              "proj_v": -1.340964
+            },
+            {
+              "local_pos": 25,
+              "token": " excellent",
+              "score_d": 60.803242,
+              "abs_score_d": 60.803242,
+              "norm": 281.624146,
+              "cos_v": 0.001602,
+              "proj_v": 0.451289
+            },
+            {
+              "local_pos": 33,
+              "token": " with",
+              "score_d": 58.458138,
+              "abs_score_d": 58.458138,
+              "norm": 279.562622,
+              "cos_v": 0.045124,
+              "proj_v": 12.614921
+            },
+            {
+              "local_pos": 26,
+              "token": " ongoing",
+              "score_d": 53.101505,
+              "abs_score_d": 53.101505,
+              "norm": 293.64743,
+              "cos_v": -0.015481,
+              "proj_v": -4.546034
+            },
+            {
+              "local_pos": 7,
+              "token": " through",
+              "score_d": 52.826588,
+              "abs_score_d": 52.826588,
+              "norm": 266.839996,
+              "cos_v": -0.001395,
+              "proj_v": -0.37224
+            },
+            {
+              "local_pos": 4,
+              "token": " the",
+              "score_d": 46.934456,
+              "abs_score_d": 46.934456,
+              "norm": 272.974701,
+              "cos_v": -0.025634,
+              "proj_v": -6.997417
+            },
+            {
+              "local_pos": 8,
+              "token": " first",
+              "score_d": 46.222752,
+              "abs_score_d": 46.222752,
+              "norm": 281.414337,
+              "cos_v": -0.01443,
+              "proj_v": -4.060878
+            },
+            {
+              "local_pos": 14,
+              "token": " and",
+              "score_d": 44.879784,
+              "abs_score_d": 44.879784,
+              "norm": 272.371765,
+              "cos_v": 0.002602,
+              "proj_v": 0.708842
+            },
+            {
+              "local_pos": 20,
+              "token": " A",
+              "score_d": 41.915295,
+              "abs_score_d": 41.915295,
+              "norm": 263.7565,
+              "cos_v": -0.002329,
+              "proj_v": -0.614205
+            },
+            {
+              "local_pos": 5,
+              "token": " patient",
+              "score_d": 38.861347,
+              "abs_score_d": 38.861347,
+              "norm": 245.370667,
+              "cos_v": 0.003748,
+              "proj_v": 0.919727
+            },
+            {
+              "local_pos": 15,
+              "token": " should",
+              "score_d": 38.482159,
+              "abs_score_d": 38.482159,
+              "norm": 278.982758,
+              "cos_v": -0.010412,
+              "proj_v": -2.904794
+            },
+            {
+              "local_pos": 16,
+              "token": " move",
+              "score_d": 38.245453,
+              "abs_score_d": 38.245453,
+              "norm": 299.981049,
+              "cos_v": -0.011481,
+              "proj_v": -3.443937
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ok": true,
+      "case_id": "UA_GEN_P4_FAR",
+      "role": "far_paraphrase",
+      "class": "temporal",
+      "gold": "SATISFIED",
+      "n_note_tokens": 48,
+      "best_layer": "L24",
+      "headline_mean_score_d": 68.110443,
+      "by_layer": {
+        "L8": {
+          "layer": 8,
+          "mean_score_d": 7.7442,
+          "mean_abs_score_d": 7.7442,
+          "cos_d_vs_freeze_v": 0.023636,
+          "top_sites": [
+            {
+              "local_pos": 1,
+              "token": "ast",
+              "score_d": 15.321342,
+              "abs_score_d": 15.321342,
+              "norm": 58.844231,
+              "cos_v": -0.00305,
+              "proj_v": -0.179461
+            },
+            {
+              "local_pos": 26,
+              "token": " imaging",
+              "score_d": 14.818062,
+              "abs_score_d": 14.818062,
+              "norm": 53.843407,
+              "cos_v": -0.00632,
+              "proj_v": -0.340305
+            },
+            {
+              "local_pos": 3,
+              "token": " pancreatic",
+              "score_d": 14.008606,
+              "abs_score_d": 14.008606,
+              "norm": 64.299957,
+              "cos_v": -0.009783,
+              "proj_v": -0.62903
+            },
+            {
+              "local_pos": 2,
+              "token": "atic",
+              "score_d": 13.966443,
+              "abs_score_d": 13.966443,
+              "norm": 54.983383,
+              "cos_v": -0.016155,
+              "proj_v": -0.888262
+            },
+            {
+              "local_pos": 21,
+              "token": "ographic",
+              "score_d": 13.412153,
+              "abs_score_d": 13.412153,
+              "norm": 57.849926,
+              "cos_v": 0.003776,
+              "proj_v": 0.218465
+            },
+            {
+              "local_pos": 7,
+              "token": "in",
+              "score_d": 12.393549,
+              "abs_score_d": 12.393549,
+              "norm": 59.43718,
+              "cos_v": 0.007575,
+              "proj_v": 0.45026
+            },
+            {
+              "local_pos": 8,
+              "token": "oma",
+              "score_d": 11.966838,
+              "abs_score_d": 11.966838,
+              "norm": 54.024368,
+              "cos_v": -0.021859,
+              "proj_v": -1.180929
+            },
+            {
+              "local_pos": 32,
+              "token": "itone",
+              "score_d": 10.659434,
+              "abs_score_d": 10.659434,
+              "norm": 62.269794,
+              "cos_v": -0.006403,
+              "proj_v": -0.398745
+            },
+            {
+              "local_pos": 45,
+              "token": " treatment",
+              "score_d": 10.264049,
+              "abs_score_d": 10.264049,
+              "norm": 49.175797,
+              "cos_v": 0.008342,
+              "proj_v": 0.410228
+            },
+            {
+              "local_pos": 34,
+              "token": " implants",
+              "score_d": 10.234056,
+              "abs_score_d": 10.234056,
+              "norm": 52.32085,
+              "cos_v": 0.00205,
+              "proj_v": 0.107262
+            },
+            {
+              "local_pos": 20,
+              "token": " radi",
+              "score_d": 10.134894,
+              "abs_score_d": 10.134894,
+              "norm": 49.859703,
+              "cos_v": 0.000423,
+              "proj_v": 0.021077
+            },
+            {
+              "local_pos": 33,
+              "token": "al",
+              "score_d": 10.101912,
+              "abs_score_d": 10.101912,
+              "norm": 57.306202,
+              "cos_v": -0.018032,
+              "proj_v": -1.033365
+            }
+          ]
+        },
+        "L12": {
+          "layer": 12,
+          "mean_score_d": 12.12092,
+          "mean_abs_score_d": 12.12092,
+          "cos_d_vs_freeze_v": 0.013457,
+          "top_sites": [
+            {
+              "local_pos": 1,
+              "token": "ast",
+              "score_d": 27.808319,
+              "abs_score_d": 27.808319,
+              "norm": 72.4841,
+              "cos_v": -0.003346,
+              "proj_v": -0.242566
+            },
+            {
+              "local_pos": 21,
+              "token": "ographic",
+              "score_d": 24.668192,
+              "abs_score_d": 24.668192,
+              "norm": 73.651276,
+              "cos_v": -0.00834,
+              "proj_v": -0.614283
+            },
+            {
+              "local_pos": 26,
+              "token": " imaging",
+              "score_d": 23.257452,
+              "abs_score_d": 23.257452,
+              "norm": 69.504509,
+              "cos_v": 0.002031,
+              "proj_v": 0.141166
+            },
+            {
+              "local_pos": 2,
+              "token": "atic",
+              "score_d": 21.087139,
+              "abs_score_d": 21.087139,
+              "norm": 65.790344,
+              "cos_v": -0.010553,
+              "proj_v": -0.694315
+            },
+            {
+              "local_pos": 33,
+              "token": "al",
+              "score_d": 20.449759,
+              "abs_score_d": 20.449759,
+              "norm": 65.984749,
+              "cos_v": -0.004175,
+              "proj_v": -0.275474
+            },
+            {
+              "local_pos": 7,
+              "token": "in",
+              "score_d": 20.353077,
+              "abs_score_d": 20.353077,
+              "norm": 73.027977,
+              "cos_v": 0.003184,
+              "proj_v": 0.232554
+            },
+            {
+              "local_pos": 32,
+              "token": "itone",
+              "score_d": 19.845758,
+              "abs_score_d": 19.845758,
+              "norm": 71.522026,
+              "cos_v": -0.001314,
+              "proj_v": -0.094008
+            },
+            {
+              "local_pos": 34,
+              "token": " implants",
+              "score_d": 19.509504,
+              "abs_score_d": 19.509504,
+              "norm": 67.861229,
+              "cos_v": 0.006779,
+              "proj_v": 0.460001
+            },
+            {
+              "local_pos": 20,
+              "token": " radi",
+              "score_d": 19.163683,
+              "abs_score_d": 19.163683,
+              "norm": 68.43029,
+              "cos_v": 0.001592,
+              "proj_v": 0.10892
+            },
+            {
+              "local_pos": 3,
+              "token": " pancreatic",
+              "score_d": 17.489693,
+              "abs_score_d": 17.489693,
+              "norm": 73.996567,
+              "cos_v": -0.014216,
+              "proj_v": -1.051966
+            },
+            {
+              "local_pos": 35,
+              "token": " appeared",
+              "score_d": 16.738228,
+              "abs_score_d": 16.738228,
+              "norm": 60.091984,
+              "cos_v": 0.010108,
+              "proj_v": 0.60739
+            },
+            {
+              "local_pos": 30,
+              "token": " new",
+              "score_d": 16.391035,
+              "abs_score_d": 16.391035,
+              "norm": 62.852371,
+              "cos_v": -0.00891,
+              "proj_v": -0.560009
+            }
+          ]
+        },
+        "L16": {
+          "layer": 16,
+          "mean_score_d": 18.642342,
+          "mean_abs_score_d": 18.642342,
+          "cos_d_vs_freeze_v": 0.026632,
+          "top_sites": [
+            {
+              "local_pos": 1,
+              "token": "ast",
+              "score_d": 33.567795,
+              "abs_score_d": 33.567795,
+              "norm": 88.587837,
+              "cos_v": 0.003199,
+              "proj_v": 0.283405
+            },
+            {
+              "local_pos": 21,
+              "token": "ographic",
+              "score_d": 28.069794,
+              "abs_score_d": 28.069794,
+              "norm": 86.890503,
+              "cos_v": 0.012338,
+              "proj_v": 1.072091
+            },
+            {
+              "local_pos": 7,
+              "token": "in",
+              "score_d": 27.983049,
+              "abs_score_d": 27.983049,
+              "norm": 81.76963,
+              "cos_v": 0.006285,
+              "proj_v": 0.513914
+            },
+            {
+              "local_pos": 33,
+              "token": "al",
+              "score_d": 27.765427,
+              "abs_score_d": 27.765427,
+              "norm": 81.928505,
+              "cos_v": 0.020994,
+              "proj_v": 1.720024
+            },
+            {
+              "local_pos": 26,
+              "token": " imaging",
+              "score_d": 27.651365,
+              "abs_score_d": 27.651365,
+              "norm": 85.276176,
+              "cos_v": 0.022167,
+              "proj_v": 1.890304
+            },
+            {
+              "local_pos": 30,
+              "token": " new",
+              "score_d": 26.640726,
+              "abs_score_d": 26.640726,
+              "norm": 81.165878,
+              "cos_v": 0.012227,
+              "proj_v": 0.992382
+            },
+            {
+              "local_pos": 3,
+              "token": " pancreatic",
+              "score_d": 26.380774,
+              "abs_score_d": 26.380774,
+              "norm": 86.476433,
+              "cos_v": -0.015246,
+              "proj_v": -1.318387
+            },
+            {
+              "local_pos": 34,
+              "token": " implants",
+              "score_d": 26.080727,
+              "abs_score_d": 26.080727,
+              "norm": 81.43914,
+              "cos_v": 0.027908,
+              "proj_v": 2.272837
+            },
+            {
+              "local_pos": 32,
+              "token": "itone",
+              "score_d": 25.732897,
+              "abs_score_d": 25.732897,
+              "norm": 86.892387,
+              "cos_v": 0.021529,
+              "proj_v": 1.870671
+            },
+            {
+              "local_pos": 8,
+              "token": "oma",
+              "score_d": 25.358568,
+              "abs_score_d": 25.358568,
+              "norm": 77.904427,
+              "cos_v": -0.017768,
+              "proj_v": -1.384205
+            },
+            {
+              "local_pos": 2,
+              "token": "atic",
+              "score_d": 25.150911,
+              "abs_score_d": 25.150911,
+              "norm": 82.239548,
+              "cos_v": -0.003324,
+              "proj_v": -0.27339
+            },
+            {
+              "local_pos": 35,
+              "token": " appeared",
+              "score_d": 24.468456,
+              "abs_score_d": 24.468456,
+              "norm": 75.163528,
+              "cos_v": 0.024737,
+              "proj_v": 1.859338
+            }
+          ]
+        },
+        "L20": {
+          "layer": 20,
+          "mean_score_d": 37.500714,
+          "mean_abs_score_d": 37.500714,
+          "cos_d_vs_freeze_v": 0.026993,
+          "top_sites": [
+            {
+              "local_pos": 34,
+              "token": " implants",
+              "score_d": 52.097847,
+              "abs_score_d": 52.097847,
+              "norm": 125.328926,
+              "cos_v": 0.005798,
+              "proj_v": 0.726663
+            },
+            {
+              "local_pos": 30,
+              "token": " new",
+              "score_d": 51.527691,
+              "abs_score_d": 51.527691,
+              "norm": 121.342262,
+              "cos_v": 0.011099,
+              "proj_v": 1.346777
+            },
+            {
+              "local_pos": 26,
+              "token": " imaging",
+              "score_d": 50.857975,
+              "abs_score_d": 50.857975,
+              "norm": 127.74691,
+              "cos_v": 0.002201,
+              "proj_v": 0.281234
+            },
+            {
+              "local_pos": 33,
+              "token": "al",
+              "score_d": 50.290337,
+              "abs_score_d": 50.290337,
+              "norm": 116.575684,
+              "cos_v": 0.018157,
+              "proj_v": 2.116623
+            },
+            {
+              "local_pos": 3,
+              "token": " pancreatic",
+              "score_d": 48.269756,
+              "abs_score_d": 48.269756,
+              "norm": 118.220909,
+              "cos_v": -0.026047,
+              "proj_v": -3.079312
+            },
+            {
+              "local_pos": 44,
+              "token": " for",
+              "score_d": 46.655346,
+              "abs_score_d": 46.655346,
+              "norm": 114.270309,
+              "cos_v": 0.030314,
+              "proj_v": 3.463983
+            },
+            {
+              "local_pos": 1,
+              "token": "ast",
+              "score_d": 46.621132,
+              "abs_score_d": 46.621132,
+              "norm": 114.611069,
+              "cos_v": -0.007553,
+              "proj_v": -0.865668
+            },
+            {
+              "local_pos": 2,
+              "token": "atic",
+              "score_d": 46.448021,
+              "abs_score_d": 46.448021,
+              "norm": 115.253227,
+              "cos_v": -0.015315,
+              "proj_v": -1.765143
+            },
+            {
+              "local_pos": 7,
+              "token": "in",
+              "score_d": 46.176788,
+              "abs_score_d": 46.176788,
+              "norm": 116.040115,
+              "cos_v": -0.013395,
+              "proj_v": -1.554311
+            },
+            {
+              "local_pos": 29,
+              "token": ",",
+              "score_d": 45.405102,
+              "abs_score_d": 45.405102,
+              "norm": 105.255829,
+              "cos_v": 0.011481,
+              "proj_v": 1.208465
+            },
+            {
+              "local_pos": 8,
+              "token": "oma",
+              "score_d": 44.853233,
+              "abs_score_d": 44.853233,
+              "norm": 116.311264,
+              "cos_v": -0.022539,
+              "proj_v": -2.621582
+            },
+            {
+              "local_pos": 22,
+              "token": " response",
+              "score_d": 44.77198,
+              "abs_score_d": 44.77198,
+              "norm": 125.201309,
+              "cos_v": 0.016742,
+              "proj_v": 2.096154
+            }
+          ]
+        },
+        "L24": {
+          "layer": 24,
+          "mean_score_d": 68.110443,
+          "mean_abs_score_d": 68.110443,
+          "cos_d_vs_freeze_v": 0.028097,
+          "top_sites": [
+            {
+              "local_pos": 30,
+              "token": " new",
+              "score_d": 138.397858,
+              "abs_score_d": 138.397858,
+              "norm": 306.505585,
+              "cos_v": 0.008612,
+              "proj_v": 2.639512
+            },
+            {
+              "local_pos": 29,
+              "token": ",",
+              "score_d": 131.406952,
+              "abs_score_d": 131.406952,
+              "norm": 295.3349,
+              "cos_v": 0.012005,
+              "proj_v": 3.545569
+            },
+            {
+              "local_pos": 33,
+              "token": "al",
+              "score_d": 124.510651,
+              "abs_score_d": 124.510651,
+              "norm": 306.811859,
+              "cos_v": 0.02087,
+              "proj_v": 6.403183
+            },
+            {
+              "local_pos": 21,
+              "token": "ographic",
+              "score_d": 113.485672,
+              "abs_score_d": 113.485672,
+              "norm": 322.826996,
+              "cos_v": -0.002444,
+              "proj_v": -0.788863
+            },
+            {
+              "local_pos": 17,
+              "token": " yielded",
+              "score_d": 111.308098,
+              "abs_score_d": 111.308098,
+              "norm": 305.723389,
+              "cos_v": 0.018559,
+              "proj_v": 5.673907
+            },
+            {
+              "local_pos": 18,
+              "token": " an",
+              "score_d": 110.145576,
+              "abs_score_d": 110.145576,
+              "norm": 302.473785,
+              "cos_v": -0.006676,
+              "proj_v": -2.019418
+            },
+            {
+              "local_pos": 34,
+              "token": " implants",
+              "score_d": 103.387009,
+              "abs_score_d": 103.387009,
+              "norm": 290.808624,
+              "cos_v": -0.015729,
+              "proj_v": -4.574081
+            },
+            {
+              "local_pos": 19,
+              "token": " initial",
+              "score_d": 102.989204,
+              "abs_score_d": 102.989204,
+              "norm": 306.53244,
+              "cos_v": 0.000533,
+              "proj_v": 0.163313
+            },
+            {
+              "local_pos": 44,
+              "token": " for",
+              "score_d": 100.88726,
+              "abs_score_d": 100.88726,
+              "norm": 283.661804,
+              "cos_v": 0.027397,
+              "proj_v": 7.771373
+            },
+            {
+              "local_pos": 2,
+              "token": "atic",
+              "score_d": 94.34935,
+              "abs_score_d": 94.34935,
+              "norm": 290.269379,
+              "cos_v": -0.013082,
+              "proj_v": -3.797428
+            },
+            {
+              "local_pos": 45,
+              "token": " treatment",
+              "score_d": 88.701027,
+              "abs_score_d": 88.701027,
+              "norm": 286.060608,
+              "cos_v": 0.026753,
+              "proj_v": 7.652946
+            },
+            {
+              "local_pos": 36,
+              "token": ";",
+              "score_d": 86.226616,
+              "abs_score_d": 86.226616,
+              "norm": 282.216797,
+              "cos_v": 0.012088,
+              "proj_v": 3.411496
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ok": true,
+      "case_id": "UA_GEN_C4_FAR",
+      "role": "far_paraphrase",
+      "class": "contra",
+      "gold": "CONTRADICTION",
+      "n_note_tokens": 34,
+      "best_layer": "L24",
+      "headline_mean_score_d": 17.123433,
+      "by_layer": {
+        "L8": {
+          "layer": 8,
+          "mean_score_d": -0.822328,
+          "mean_abs_score_d": 2.868138,
+          "cos_d_vs_freeze_v": 0.023636,
+          "top_sites": [
+            {
+              "local_pos": 8,
+              "token": "IR",
+              "score_d": 7.676042,
+              "abs_score_d": 7.676042,
+              "norm": 83.250267,
+              "cos_v": 0.012215,
+              "proj_v": 1.016895
+            },
+            {
+              "local_pos": 15,
+              "token": " Same",
+              "score_d": -7.577648,
+              "abs_score_d": 7.577648,
+              "norm": 51.657944,
+              "cos_v": -0.036705,
+              "proj_v": -1.896118
+            },
+            {
+              "local_pos": 10,
+              "token": "X",
+              "score_d": 7.553124,
+              "abs_score_d": 7.553124,
+              "norm": 71.711693,
+              "cos_v": 0.004898,
+              "proj_v": 0.351278
+            },
+            {
+              "local_pos": 16,
+              "token": "-day",
+              "score_d": -6.44722,
+              "abs_score_d": 6.44722,
+              "norm": 56.648243,
+              "cos_v": -0.0053,
+              "proj_v": -0.300252
+            },
+            {
+              "local_pos": 4,
+              "token": " first",
+              "score_d": -5.869618,
+              "abs_score_d": 5.869618,
+              "norm": 48.582451,
+              "cos_v": -0.026084,
+              "proj_v": -1.267245
+            },
+            {
+              "local_pos": 30,
+              "token": " continue",
+              "score_d": -5.813508,
+              "abs_score_d": 5.813508,
+              "norm": 49.942947,
+              "cos_v": -0.011094,
+              "proj_v": -0.554065
+            },
+            {
+              "local_pos": 21,
+              "token": " remains",
+              "score_d": -5.411304,
+              "abs_score_d": 5.411304,
+              "norm": 52.021561,
+              "cos_v": -0.014946,
+              "proj_v": -0.777532
+            },
+            {
+              "local_pos": 26,
+              "token": "IR",
+              "score_d": 4.854675,
+              "abs_score_d": 4.854675,
+              "norm": 65.055367,
+              "cos_v": 0.026362,
+              "proj_v": 1.714958
+            },
+            {
+              "local_pos": 3,
+              "token": " failed",
+              "score_d": -4.70227,
+              "abs_score_d": 4.70227,
+              "norm": 51.113018,
+              "cos_v": -0.019534,
+              "proj_v": -0.998459
+            },
+            {
+              "local_pos": 17,
+              "token": " add",
+              "score_d": -4.543509,
+              "abs_score_d": 4.543509,
+              "norm": 46.95277,
+              "cos_v": -0.000914,
+              "proj_v": -0.042913
+            },
+            {
+              "local_pos": 6,
+              "token": " F",
+              "score_d": -3.875741,
+              "abs_score_d": 3.875741,
+              "norm": 46.289127,
+              "cos_v": -0.014005,
+              "proj_v": -0.64826
+            },
+            {
+              "local_pos": 18,
+              "token": "endum",
+              "score_d": -3.551144,
+              "abs_score_d": 3.551144,
+              "norm": 50.865112,
+              "cos_v": 0.004395,
+              "proj_v": 0.223532
+            }
+          ]
+        },
+        "L12": {
+          "layer": 12,
+          "mean_score_d": 0.781496,
+          "mean_abs_score_d": 2.501118,
+          "cos_d_vs_freeze_v": 0.013457,
+          "top_sites": [
+            {
+              "local_pos": 20,
+              "token": " disease",
+              "score_d": 10.819361,
+              "abs_score_d": 10.819361,
+              "norm": 63.35038,
+              "cos_v": -0.003912,
+              "proj_v": -0.247809
+            },
+            {
+              "local_pos": 10,
+              "token": "X",
+              "score_d": 6.600691,
+              "abs_score_d": 6.600691,
+              "norm": 72.225487,
+              "cos_v": 0.028436,
+              "proj_v": 2.053785
+            },
+            {
+              "local_pos": 8,
+              "token": "IR",
+              "score_d": 5.899957,
+              "abs_score_d": 5.899957,
+              "norm": 81.070694,
+              "cos_v": 0.028011,
+              "proj_v": 2.270838
+            },
+            {
+              "local_pos": 26,
+              "token": "IR",
+              "score_d": 5.440072,
+              "abs_score_d": 5.440072,
+              "norm": 69.290154,
+              "cos_v": 0.032808,
+              "proj_v": 2.273251
+            },
+            {
+              "local_pos": 5,
+              "token": "-line",
+              "score_d": 4.875514,
+              "abs_score_d": 4.875514,
+              "norm": 68.537872,
+              "cos_v": 0.00839,
+              "proj_v": 0.575005
+            },
+            {
+              "local_pos": 1,
+              "token": ":",
+              "score_d": -4.715835,
+              "abs_score_d": 4.715835,
+              "norm": 52.669552,
+              "cos_v": -0.05202,
+              "proj_v": -2.739868
+            },
+            {
+              "local_pos": 15,
+              "token": " Same",
+              "score_d": -4.082798,
+              "abs_score_d": 4.082798,
+              "norm": 54.720867,
+              "cos_v": -0.022653,
+              "proj_v": -1.239586
+            },
+            {
+              "local_pos": 18,
+              "token": "endum",
+              "score_d": -3.53267,
+              "abs_score_d": 3.53267,
+              "norm": 56.277588,
+              "cos_v": 0.006667,
+              "proj_v": 0.375183
+            },
+            {
+              "local_pos": 30,
+              "token": " continue",
+              "score_d": -3.272276,
+              "abs_score_d": 3.272276,
+              "norm": 59.509613,
+              "cos_v": -0.010183,
+              "proj_v": -0.605994
+            },
+            {
+              "local_pos": 13,
+              "token": " cycles",
+              "score_d": 3.114184,
+              "abs_score_d": 3.114184,
+              "norm": 66.202751,
+              "cos_v": -0.001682,
+              "proj_v": -0.111384
+            },
+            {
+              "local_pos": 19,
+              "token": ":",
+              "score_d": -2.867957,
+              "abs_score_d": 2.867957,
+              "norm": 50.645111,
+              "cos_v": -0.02169,
+              "proj_v": -1.098471
+            },
+            {
+              "local_pos": 28,
+              "token": "X",
+              "score_d": 2.622554,
+              "abs_score_d": 2.622554,
+              "norm": 59.173615,
+              "cos_v": 0.036706,
+              "proj_v": 2.172019
+            }
+          ]
+        },
+        "L16": {
+          "layer": 16,
+          "mean_score_d": 4.140185,
+          "mean_abs_score_d": 4.76849,
+          "cos_d_vs_freeze_v": 0.026632,
+          "top_sites": [
+            {
+              "local_pos": 20,
+              "token": " disease",
+              "score_d": 18.657988,
+              "abs_score_d": 18.657988,
+              "norm": 80.557457,
+              "cos_v": 0.012698,
+              "proj_v": 1.022942
+            },
+            {
+              "local_pos": 10,
+              "token": "X",
+              "score_d": 10.602456,
+              "abs_score_d": 10.602456,
+              "norm": 79.603127,
+              "cos_v": 0.03291,
+              "proj_v": 2.619737
+            },
+            {
+              "local_pos": 8,
+              "token": "IR",
+              "score_d": 10.014843,
+              "abs_score_d": 10.014843,
+              "norm": 93.221146,
+              "cos_v": 0.03618,
+              "proj_v": 3.372706
+            },
+            {
+              "local_pos": 5,
+              "token": "-line",
+              "score_d": 8.993409,
+              "abs_score_d": 8.993409,
+              "norm": 79.589584,
+              "cos_v": 0.018621,
+              "proj_v": 1.482012
+            },
+            {
+              "local_pos": 26,
+              "token": "IR",
+              "score_d": 7.209677,
+              "abs_score_d": 7.209677,
+              "norm": 83.053017,
+              "cos_v": 0.037184,
+              "proj_v": 3.088218
+            },
+            {
+              "local_pos": 3,
+              "token": " failed",
+              "score_d": 6.486585,
+              "abs_score_d": 6.486585,
+              "norm": 75.700043,
+              "cos_v": -0.004654,
+              "proj_v": -0.352317
+            },
+            {
+              "local_pos": 11,
+              "token": " after",
+              "score_d": 6.378701,
+              "abs_score_d": 6.378701,
+              "norm": 76.018311,
+              "cos_v": -0.004558,
+              "proj_v": -0.346491
+            },
+            {
+              "local_pos": 22,
+              "token": " sensitive",
+              "score_d": 6.298914,
+              "abs_score_d": 6.298914,
+              "norm": 82.537689,
+              "cos_v": 0.010894,
+              "proj_v": 0.899148
+            },
+            {
+              "local_pos": 23,
+              "token": " to",
+              "score_d": 6.139883,
+              "abs_score_d": 6.139883,
+              "norm": 78.241173,
+              "cos_v": 0.007512,
+              "proj_v": 0.587749
+            },
+            {
+              "local_pos": 6,
+              "token": " F",
+              "score_d": 5.712882,
+              "abs_score_d": 5.712882,
+              "norm": 72.217682,
+              "cos_v": 0.004818,
+              "proj_v": 0.347962
+            },
+            {
+              "local_pos": 13,
+              "token": " cycles",
+              "score_d": 5.597689,
+              "abs_score_d": 5.597689,
+              "norm": 78.355652,
+              "cos_v": 0.001896,
+              "proj_v": 0.148576
+            },
+            {
+              "local_pos": 21,
+              "token": " remains",
+              "score_d": 5.485027,
+              "abs_score_d": 5.485027,
+              "norm": 71.447128,
+              "cos_v": -0.001083,
+              "proj_v": -0.077387
+            }
+          ]
+        },
+        "L20": {
+          "layer": 20,
+          "mean_score_d": 15.221148,
+          "mean_abs_score_d": 15.280827,
+          "cos_d_vs_freeze_v": 0.026993,
+          "top_sites": [
+            {
+              "local_pos": 20,
+              "token": " disease",
+              "score_d": 31.44207,
+              "abs_score_d": 31.44207,
+              "norm": 114.880402,
+              "cos_v": 0.046014,
+              "proj_v": 5.286125
+            },
+            {
+              "local_pos": 3,
+              "token": " failed",
+              "score_d": 25.316422,
+              "abs_score_d": 25.316422,
+              "norm": 107.041374,
+              "cos_v": 0.007359,
+              "proj_v": 0.787744
+            },
+            {
+              "local_pos": 8,
+              "token": "IR",
+              "score_d": 24.616604,
+              "abs_score_d": 24.616604,
+              "norm": 119.425537,
+              "cos_v": 0.025384,
+              "proj_v": 3.03147
+            },
+            {
+              "local_pos": 4,
+              "token": " first",
+              "score_d": 24.101906,
+              "abs_score_d": 24.101906,
+              "norm": 108.288872,
+              "cos_v": -0.016942,
+              "proj_v": -1.834577
+            },
+            {
+              "local_pos": 7,
+              "token": "OLF",
+              "score_d": 22.968523,
+              "abs_score_d": 22.968523,
+              "norm": 116.236366,
+              "cos_v": -0.008954,
+              "proj_v": -1.040838
+            },
+            {
+              "local_pos": 10,
+              "token": "X",
+              "score_d": 22.924671,
+              "abs_score_d": 22.924671,
+              "norm": 105.356224,
+              "cos_v": 0.02481,
+              "proj_v": 2.613866
+            },
+            {
+              "local_pos": 6,
+              "token": " F",
+              "score_d": 22.715206,
+              "abs_score_d": 22.715206,
+              "norm": 102.637772,
+              "cos_v": -0.007025,
+              "proj_v": -0.720988
+            },
+            {
+              "local_pos": 5,
+              "token": "-line",
+              "score_d": 22.715029,
+              "abs_score_d": 22.715029,
+              "norm": 103.355019,
+              "cos_v": 0.006009,
+              "proj_v": 0.621111
+            },
+            {
+              "local_pos": 22,
+              "token": " sensitive",
+              "score_d": 22.35132,
+              "abs_score_d": 22.35132,
+              "norm": 118.229439,
+              "cos_v": 0.006636,
+              "proj_v": 0.784536
+            },
+            {
+              "local_pos": 21,
+              "token": " remains",
+              "score_d": 18.798296,
+              "abs_score_d": 18.798296,
+              "norm": 112.526718,
+              "cos_v": 0.022089,
+              "proj_v": 2.485631
+            },
+            {
+              "local_pos": 23,
+              "token": " to",
+              "score_d": 18.137316,
+              "abs_score_d": 18.137316,
+              "norm": 106.072983,
+              "cos_v": 0.023976,
+              "proj_v": 2.543228
+            },
+            {
+              "local_pos": 11,
+              "token": " after",
+              "score_d": 17.676527,
+              "abs_score_d": 17.676527,
+              "norm": 103.14814,
+              "cos_v": -0.011536,
+              "proj_v": -1.189906
+            }
+          ]
+        },
+        "L24": {
+          "layer": 24,
+          "mean_score_d": 17.123433,
+          "mean_abs_score_d": 18.707212,
+          "cos_d_vs_freeze_v": 0.028097,
+          "top_sites": [
+            {
+              "local_pos": 20,
+              "token": " disease",
+              "score_d": 57.147362,
+              "abs_score_d": 57.147362,
+              "norm": 266.865509,
+              "cos_v": 0.02888,
+              "proj_v": 7.706956
+            },
+            {
+              "local_pos": 21,
+              "token": " remains",
+              "score_d": 56.699638,
+              "abs_score_d": 56.699638,
+              "norm": 283.427307,
+              "cos_v": 0.008865,
+              "proj_v": 2.512717
+            },
+            {
+              "local_pos": 11,
+              "token": " after",
+              "score_d": 44.471676,
+              "abs_score_d": 44.471676,
+              "norm": 263.541565,
+              "cos_v": -0.01117,
+              "proj_v": -2.943776
+            },
+            {
+              "local_pos": 29,
+              "token": ";",
+              "score_d": 36.658398,
+              "abs_score_d": 36.658398,
+              "norm": 249.339371,
+              "cos_v": 0.006848,
+              "proj_v": 1.70755
+            },
+            {
+              "local_pos": 4,
+              "token": " first",
+              "score_d": 30.61507,
+              "abs_score_d": 30.61507,
+              "norm": 270.246246,
+              "cos_v": -0.023715,
+              "proj_v": -6.40894
+            },
+            {
+              "local_pos": 16,
+              "token": "-day",
+              "score_d": 28.651955,
+              "abs_score_d": 28.651955,
+              "norm": 261.723083,
+              "cos_v": -0.001078,
+              "proj_v": -0.282131
+            },
+            {
+              "local_pos": 5,
+              "token": "-line",
+              "score_d": 27.475088,
+              "abs_score_d": 27.475088,
+              "norm": 268.882568,
+              "cos_v": -0.005928,
+              "proj_v": -1.593944
+            },
+            {
+              "local_pos": 22,
+              "token": " sensitive",
+              "score_d": 27.220274,
+              "abs_score_d": 27.220274,
+              "norm": 247.75708,
+              "cos_v": -0.017853,
+              "proj_v": -4.423294
+            },
+            {
+              "local_pos": 8,
+              "token": "IR",
+              "score_d": 27.130947,
+              "abs_score_d": 27.130947,
+              "norm": 246.252518,
+              "cos_v": 0.016551,
+              "proj_v": 4.075817
+            },
+            {
+              "local_pos": 14,
+              "token": ".",
+              "score_d": 24.451315,
+              "abs_score_d": 24.451315,
+              "norm": 241.196671,
+              "cos_v": 0.010334,
+              "proj_v": 2.492585
+            },
+            {
+              "local_pos": 19,
+              "token": ":",
+              "score_d": 24.40119,
+              "abs_score_d": 24.40119,
+              "norm": 236.549316,
+              "cos_v": 0.015389,
+              "proj_v": 3.640145
+            },
+            {
+              "local_pos": 15,
+              "token": " Same",
+              "score_d": 22.000504,
+              "abs_score_d": 22.000504,
+              "norm": 253.250366,
+              "cos_v": -0.018815,
+              "proj_v": -4.764893
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "claim_hygiene": {
+    "say": "correlational lexical generalization of frozen U-A d",
+    "do_not_say": "causal editor; temporality neuron; reopen U-B ablation from this"
+  }
+}

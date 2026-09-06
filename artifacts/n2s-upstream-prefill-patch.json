@@ -1,0 +1,121 @@
+{
+  "ok": true,
+  "kind": "n2s_upstream_prefill_patch_v1",
+  "timestamp": "2026-09-06T10:50:48.862443+00:00",
+  "quest": "U1: does \u00b1\u03b1\u00b7v at U0 cue positions during prefill move repair commit X?",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "alpha": 8.0,
+  "u0_readout": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/n2s-upstream-u0-readout.json",
+  "notes": {
+    "EX_TEMPORAL_FOLFOX": {
+      "ok": true,
+      "gold": "SATISFIED",
+      "positions": [
+        744
+      ],
+      "chosen_spans": [
+        {
+          "cue": "FOLFOX",
+          "readout_pos": 744,
+          "snippet": "FOLFOX"
+        }
+      ],
+      "steer_layer": 20,
+      "arms": [
+        {
+          "label": "baseline",
+          "alpha": null,
+          "repair_final_x": false,
+          "margin": -3.5,
+          "verdict": "UNCERTAIN",
+          "parse_ok": true,
+          "commit_step": 128,
+          "commit_value": "false",
+          "raw_x": false
+        },
+        {
+          "label": "prefill_+v",
+          "alpha": 8.0,
+          "repair_final_x": false,
+          "margin": -3.375,
+          "verdict": "UNCERTAIN",
+          "parse_ok": true,
+          "commit_step": 128,
+          "commit_value": "false",
+          "raw_x": false
+        },
+        {
+          "label": "prefill_-v",
+          "alpha": -8.0,
+          "repair_final_x": false,
+          "margin": -3.375,
+          "verdict": "UNCERTAIN",
+          "parse_ok": true,
+          "commit_step": 128,
+          "commit_value": "false",
+          "raw_x": false
+        }
+      ]
+    },
+    "EX_CONTRA": {
+      "ok": true,
+      "gold": "CONTRADICTION",
+      "positions": [
+        712,
+        729
+      ],
+      "chosen_spans": [
+        {
+          "cue": "failed",
+          "readout_pos": 712,
+          "snippet": "failed"
+        },
+        {
+          "cue": "responsive",
+          "readout_pos": 729,
+          "snippet": "responsive"
+        }
+      ],
+      "steer_layer": 20,
+      "arms": [
+        {
+          "label": "baseline",
+          "alpha": null,
+          "repair_final_x": true,
+          "margin": 15.625,
+          "verdict": "CONTRADICTION",
+          "parse_ok": true,
+          "commit_step": 143,
+          "commit_value": "true",
+          "raw_x": true
+        },
+        {
+          "label": "prefill_+v",
+          "alpha": 8.0,
+          "repair_final_x": true,
+          "margin": 15.5,
+          "verdict": "CONTRADICTION",
+          "parse_ok": true,
+          "commit_step": 143,
+          "commit_value": "true",
+          "raw_x": true
+        },
+        {
+          "label": "prefill_-v",
+          "alpha": -8.0,
+          "repair_final_x": true,
+          "margin": 15.625,
+          "verdict": "CONTRADICTION",
+          "parse_ok": true,
+          "commit_step": 143,
+          "commit_value": "true",
+          "raw_x": true
+        }
+      ]
+    }
+  },
+  "claim_hygiene": {
+    "say": "prefill-position steer pilot linked to commit X/margin",
+    "do_not_say": "upstream circuit found; formation fully characterized"
+  }
+}

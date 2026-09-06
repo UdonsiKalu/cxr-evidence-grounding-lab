@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "kind": "n2s_upstream_ub2_readout_v1",
+  "timestamp": "2026-09-06T14:29:11.533617+00:00",
+  "source_patch": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/n2s-upstream-ub2-patch.json",
+  "variant": "ub2",
+  "findings": [
+    "EX_TEMPORAL_FOLFOX mean-attn@L20: X False\u2192False \u0394margin=0.25 flip=False",
+    "EX_TEMPORAL_FOLFOX mean-mlp@L20: X False\u2192False \u0394margin=0.0 flip=False",
+    "EX_TEMPORAL_FOLFOX mean-resid@L20: X False\u2192False \u0394margin=0.0 flip=False",
+    "EX_CONTRA mean-attn@L20: X True\u2192True \u0394margin=0.0 flip=False",
+    "EX_CONTRA mean-mlp@L20: X True\u2192True \u0394margin=0.0 flip=False",
+    "EX_CONTRA mean-resid@L20: X True\u2192True \u0394margin=-0.125 flip=False"
+  ],
+  "shortlist": [],
+  "formation_hypothesis": "U-B2 null at L20 (mean-ablate): no X flip and |\u0394margin|<1. Formation sites still not causally sufficient under this ablation \u2014 pause before SAE/circuits, or one more different question.",
+  "exit_criterion_met": true,
+  "next": "Pause upstream before circuits/SAE \u2014 or new fidelity question \u2014 wait go"
+}

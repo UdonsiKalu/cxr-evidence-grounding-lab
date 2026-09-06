@@ -1,0 +1,1315 @@
+{
+  "ok": true,
+  "kind": "n2s_upstream_live_pair_v1",
+  "timestamp": "2026-09-06T15:12:15.347836+00:00",
+  "quest": "Live custom pair: U-A-style class-mean \u0394 map on pasted temporal vs contra.",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "pair": {
+    "temporal": "LIVE_TEMPORAL",
+    "contra": "LIVE_CONTRA"
+  },
+  "best_layer": "L24",
+  "best_delta_mean_norm": 25.564329,
+  "freeze_v_source": "directions",
+  "by_layer": {
+    "L8": {
+      "layer": 8,
+      "delta_mean_norm": 4.928531,
+      "cos_d_vs_freeze_v": 0.029821,
+      "notes": {
+        "LIVE_TEMPORAL": {
+          "n_tokens": 28,
+          "mean_score_d": 1.780789,
+          "top_sites": [
+            {
+              "local_pos": 26,
+              "global_pos": 440,
+              "token": " failure",
+              "score_d": 24.109072,
+              "abs_score_d": 24.109072,
+              "norm": 56.659397,
+              "cos_v": -0.014759,
+              "proj_v": -0.836216
+            },
+            {
+              "local_pos": 25,
+              "global_pos": 439,
+              "token": " treatment",
+              "score_d": 22.546663,
+              "abs_score_d": 22.546663,
+              "norm": 49.220516,
+              "cos_v": 0.007885,
+              "proj_v": 0.388117
+            },
+            {
+              "local_pos": 24,
+              "global_pos": 438,
+              "token": " for",
+              "score_d": 19.326414,
+              "abs_score_d": 19.326414,
+              "norm": 48.796452,
+              "cos_v": -0.001758,
+              "proj_v": -0.085785
+            },
+            {
+              "local_pos": 23,
+              "global_pos": 437,
+              "token": " discontinued",
+              "score_d": 15.298973,
+              "abs_score_d": 15.298973,
+              "norm": 53.726177,
+              "cos_v": -0.009678,
+              "proj_v": -0.519984
+            },
+            {
+              "local_pos": 27,
+              "global_pos": 441,
+              "token": ".",
+              "score_d": 7.937152,
+              "abs_score_d": 7.937152,
+              "norm": 37.890812,
+              "cos_v": -0.006355,
+              "proj_v": -0.240782
+            },
+            {
+              "local_pos": 5,
+              "global_pos": 419,
+              "token": " partial",
+              "score_d": -5.714225,
+              "abs_score_d": 5.714225,
+              "norm": 54.464046,
+              "cos_v": -0.038183,
+              "proj_v": -2.07962
+            },
+            {
+              "local_pos": 2,
+              "global_pos": 416,
+              "token": "FOX",
+              "score_d": -5.596566,
+              "abs_score_d": 5.596566,
+              "norm": 79.359749,
+              "cos_v": -0.007633,
+              "proj_v": -0.605787
+            },
+            {
+              "local_pos": 1,
+              "global_pos": 415,
+              "token": "OL",
+              "score_d": -4.892748,
+              "abs_score_d": 4.892748,
+              "norm": 50.661358,
+              "cos_v": -0.007854,
+              "proj_v": -0.397893
+            },
+            {
+              "local_pos": 8,
+              "global_pos": 422,
+              "token": " Four",
+              "score_d": -3.900311,
+              "abs_score_d": 3.900311,
+              "norm": 43.123901,
+              "cos_v": -0.021953,
+              "proj_v": -0.946679
+            },
+            {
+              "local_pos": 13,
+              "global_pos": 427,
+              "token": " demonstrated",
+              "score_d": -3.373749,
+              "abs_score_d": 3.373749,
+              "norm": 50.714905,
+              "cos_v": -0.011132,
+              "proj_v": -0.564551
+            },
+            {
+              "local_pos": 10,
+              "global_pos": 424,
+              "token": " later",
+              "score_d": -3.256888,
+              "abs_score_d": 3.256888,
+              "norm": 53.242241,
+              "cos_v": -0.034678,
+              "proj_v": -1.846343
+            },
+            {
+              "local_pos": 18,
+              "global_pos": 432,
+              "token": ".",
+              "score_d": 3.003474,
+              "abs_score_d": 3.003474,
+              "norm": 38.672859,
+              "cos_v": -0.014779,
+              "proj_v": -0.571562
+            }
+          ]
+        },
+        "LIVE_CONTRA": {
+          "n_tokens": 25,
+          "mean_score_d": -3.147742,
+          "top_sites": [
+            {
+              "local_pos": 14,
+              "global_pos": 428,
+              "token": " no",
+              "score_d": -14.899018,
+              "abs_score_d": 14.899018,
+              "norm": 47.5938,
+              "cos_v": -0.02336,
+              "proj_v": -1.111809
+            },
+            {
+              "local_pos": 15,
+              "global_pos": 429,
+              "token": " new",
+              "score_d": -11.428333,
+              "abs_score_d": 11.428333,
+              "norm": 53.74836,
+              "cos_v": -0.02381,
+              "proj_v": -1.279755
+            },
+            {
+              "local_pos": 5,
+              "global_pos": 419,
+              "token": " partial",
+              "score_d": -5.714225,
+              "abs_score_d": 5.714225,
+              "norm": 54.464046,
+              "cos_v": -0.038183,
+              "proj_v": -2.07962
+            },
+            {
+              "local_pos": 2,
+              "global_pos": 416,
+              "token": "FOX",
+              "score_d": -5.596566,
+              "abs_score_d": 5.596566,
+              "norm": 79.359749,
+              "cos_v": -0.007633,
+              "proj_v": -0.605787
+            },
+            {
+              "local_pos": 1,
+              "global_pos": 415,
+              "token": "OL",
+              "score_d": -4.892748,
+              "abs_score_d": 4.892748,
+              "norm": 50.661358,
+              "cos_v": -0.007854,
+              "proj_v": -0.397893
+            },
+            {
+              "local_pos": 8,
+              "global_pos": 422,
+              "token": " Four",
+              "score_d": -3.900311,
+              "abs_score_d": 3.900311,
+              "norm": 43.123901,
+              "cos_v": -0.021953,
+              "proj_v": -0.946679
+            },
+            {
+              "local_pos": 17,
+              "global_pos": 431,
+              "token": "atic",
+              "score_d": -3.830177,
+              "abs_score_d": 3.830177,
+              "norm": 59.899059,
+              "cos_v": -0.012312,
+              "proj_v": -0.737493
+            },
+            {
+              "local_pos": 18,
+              "global_pos": 432,
+              "token": " lesions",
+              "score_d": -3.434424,
+              "abs_score_d": 3.434424,
+              "norm": 56.291561,
+              "cos_v": 0.000502,
+              "proj_v": 0.028278
+            },
+            {
+              "local_pos": 13,
+              "global_pos": 427,
+              "token": " demonstrated",
+              "score_d": -3.373749,
+              "abs_score_d": 3.373749,
+              "norm": 50.714905,
+              "cos_v": -0.011132,
+              "proj_v": -0.564551
+            },
+            {
+              "local_pos": 10,
+              "global_pos": 424,
+              "token": " later",
+              "score_d": -3.256888,
+              "abs_score_d": 3.256888,
+              "norm": 53.242241,
+              "cos_v": -0.034678,
+              "proj_v": -1.846343
+            },
+            {
+              "local_pos": 16,
+              "global_pos": 430,
+              "token": " hep",
+              "score_d": -3.252326,
+              "abs_score_d": 3.252326,
+              "norm": 54.999329,
+              "cos_v": -0.008607,
+              "proj_v": -0.47338
+            },
+            {
+              "local_pos": 3,
+              "global_pos": 417,
+              "token": " produced",
+              "score_d": -2.726859,
+              "abs_score_d": 2.726859,
+              "norm": 47.919567,
+              "cos_v": -0.004974,
+              "proj_v": -0.238351
+            }
+          ]
+        }
+      }
+    },
+    "L12": {
+      "layer": 12,
+      "delta_mean_norm": 6.297992,
+      "cos_d_vs_freeze_v": 0.016018,
+      "notes": {
+        "LIVE_TEMPORAL": {
+          "n_tokens": 28,
+          "mean_score_d": 3.36248,
+          "top_sites": [
+            {
+              "local_pos": 24,
+              "global_pos": 438,
+              "token": " for",
+              "score_d": 24.153996,
+              "abs_score_d": 24.153996,
+              "norm": 61.029686,
+              "cos_v": -0.005126,
+              "proj_v": -0.312828
+            },
+            {
+              "local_pos": 26,
+              "global_pos": 440,
+              "token": " failure",
+              "score_d": 23.000822,
+              "abs_score_d": 23.000822,
+              "norm": 62.070038,
+              "cos_v": -0.002049,
+              "proj_v": -0.127179
+            },
+            {
+              "local_pos": 25,
+              "global_pos": 439,
+              "token": " treatment",
+              "score_d": 21.784088,
+              "abs_score_d": 21.784088,
+              "norm": 60.245449,
+              "cos_v": 0.008072,
+              "proj_v": 0.486299
+            },
+            {
+              "local_pos": 23,
+              "global_pos": 437,
+              "token": " discontinued",
+              "score_d": 19.032539,
+              "abs_score_d": 19.032539,
+              "norm": 63.328278,
+              "cos_v": -0.012342,
+              "proj_v": -0.781593
+            },
+            {
+              "local_pos": 27,
+              "global_pos": 441,
+              "token": ".",
+              "score_d": 14.821726,
+              "abs_score_d": 14.821726,
+              "norm": 53.575222,
+              "cos_v": 0.000242,
+              "proj_v": 0.01296
+            },
+            {
+              "local_pos": 18,
+              "global_pos": 432,
+              "token": ".",
+              "score_d": 5.936345,
+              "abs_score_d": 5.936345,
+              "norm": 56.958317,
+              "cos_v": -0.007756,
+              "proj_v": -0.441778
+            },
+            {
+              "local_pos": 22,
+              "global_pos": 436,
+              "token": " was",
+              "score_d": 5.689726,
+              "abs_score_d": 5.689726,
+              "norm": 57.05735,
+              "cos_v": 0.001126,
+              "proj_v": 0.064224
+            },
+            {
+              "local_pos": 16,
+              "global_pos": 430,
+              "token": "atic",
+              "score_d": -4.76427,
+              "abs_score_d": 4.76427,
+              "norm": 73.975433,
+              "cos_v": 0.001981,
+              "proj_v": 0.146525
+            },
+            {
+              "local_pos": 5,
+              "global_pos": 419,
+              "token": " partial",
+              "score_d": -4.408082,
+              "abs_score_d": 4.408082,
+              "norm": 65.247696,
+              "cos_v": -0.021764,
+              "proj_v": -1.42004
+            },
+            {
+              "local_pos": 13,
+              "global_pos": 427,
+              "token": " demonstrated",
+              "score_d": -4.334249,
+              "abs_score_d": 4.334249,
+              "norm": 65.131599,
+              "cos_v": 0.001844,
+              "proj_v": 0.12009
+            },
+            {
+              "local_pos": 12,
+              "global_pos": 426,
+              "token": " imaging",
+              "score_d": -3.98191,
+              "abs_score_d": 3.98191,
+              "norm": 71.420853,
+              "cos_v": -0.004867,
+              "proj_v": -0.347609
+            },
+            {
+              "local_pos": 15,
+              "global_pos": 429,
+              "token": " hep",
+              "score_d": -3.685317,
+              "abs_score_d": 3.685317,
+              "norm": 68.811821,
+              "cos_v": 0.012629,
+              "proj_v": 0.869058
+            }
+          ]
+        },
+        "LIVE_CONTRA": {
+          "n_tokens": 25,
+          "mean_score_d": -2.935512,
+          "top_sites": [
+            {
+              "local_pos": 14,
+              "global_pos": 428,
+              "token": " no",
+              "score_d": -18.536842,
+              "abs_score_d": 18.536842,
+              "norm": 59.508945,
+              "cos_v": -0.006951,
+              "proj_v": -0.41366
+            },
+            {
+              "local_pos": 15,
+              "global_pos": 429,
+              "token": " new",
+              "score_d": -15.447204,
+              "abs_score_d": 15.447204,
+              "norm": 66.706932,
+              "cos_v": -0.005688,
+              "proj_v": -0.3794
+            },
+            {
+              "local_pos": 18,
+              "global_pos": 432,
+              "token": " lesions",
+              "score_d": -11.094085,
+              "abs_score_d": 11.094085,
+              "norm": 70.67421,
+              "cos_v": 0.004927,
+              "proj_v": 0.348221
+            },
+            {
+              "local_pos": 17,
+              "global_pos": 431,
+              "token": "atic",
+              "score_d": -9.178812,
+              "abs_score_d": 9.178812,
+              "norm": 73.427505,
+              "cos_v": 0.002021,
+              "proj_v": 0.148362
+            },
+            {
+              "local_pos": 16,
+              "global_pos": 430,
+              "token": " hep",
+              "score_d": -6.713088,
+              "abs_score_d": 6.713088,
+              "norm": 67.422752,
+              "cos_v": 0.013208,
+              "proj_v": 0.890544
+            },
+            {
+              "local_pos": 23,
+              "global_pos": 437,
+              "token": " was",
+              "score_d": 4.408918,
+              "abs_score_d": 4.408918,
+              "norm": 55.931534,
+              "cos_v": 0.004213,
+              "proj_v": 0.235642
+            },
+            {
+              "local_pos": 5,
+              "global_pos": 419,
+              "token": " partial",
+              "score_d": -4.408082,
+              "abs_score_d": 4.408082,
+              "norm": 65.247696,
+              "cos_v": -0.021764,
+              "proj_v": -1.42004
+            },
+            {
+              "local_pos": 13,
+              "global_pos": 427,
+              "token": " demonstrated",
+              "score_d": -4.334249,
+              "abs_score_d": 4.334249,
+              "norm": 65.131599,
+              "cos_v": 0.001844,
+              "proj_v": 0.12009
+            },
+            {
+              "local_pos": 12,
+              "global_pos": 426,
+              "token": " imaging",
+              "score_d": -3.98191,
+              "abs_score_d": 3.98191,
+              "norm": 71.420853,
+              "cos_v": -0.004867,
+              "proj_v": -0.347609
+            },
+            {
+              "local_pos": 7,
+              "global_pos": 421,
+              "token": ".",
+              "score_d": 3.63616,
+              "abs_score_d": 3.63616,
+              "norm": 51.860043,
+              "cos_v": -0.026026,
+              "proj_v": -1.349696
+            },
+            {
+              "local_pos": 2,
+              "global_pos": 416,
+              "token": "FOX",
+              "score_d": -3.114259,
+              "abs_score_d": 3.114259,
+              "norm": 81.895302,
+              "cos_v": 0.011518,
+              "proj_v": 0.943248
+            },
+            {
+              "local_pos": 1,
+              "global_pos": 415,
+              "token": "OL",
+              "score_d": -2.545986,
+              "abs_score_d": 2.545986,
+              "norm": 56.246574,
+              "cos_v": -0.011596,
+              "proj_v": -0.652248
+            }
+          ]
+        }
+      }
+    },
+    "L16": {
+      "layer": 16,
+      "delta_mean_norm": 8.31296,
+      "cos_d_vs_freeze_v": 0.01424,
+      "notes": {
+        "LIVE_TEMPORAL": {
+          "n_tokens": 28,
+          "mean_score_d": 6.596438,
+          "top_sites": [
+            {
+              "local_pos": 26,
+              "global_pos": 440,
+              "token": " failure",
+              "score_d": 32.374989,
+              "abs_score_d": 32.374989,
+              "norm": 82.829521,
+              "cos_v": 0.006832,
+              "proj_v": 0.565859
+            },
+            {
+              "local_pos": 25,
+              "global_pos": 439,
+              "token": " treatment",
+              "score_d": 28.859566,
+              "abs_score_d": 28.859566,
+              "norm": 78.288078,
+              "cos_v": 0.030536,
+              "proj_v": 2.390614
+            },
+            {
+              "local_pos": 24,
+              "global_pos": 438,
+              "token": " for",
+              "score_d": 28.598904,
+              "abs_score_d": 28.598904,
+              "norm": 77.852043,
+              "cos_v": 0.018789,
+              "proj_v": 1.462742
+            },
+            {
+              "local_pos": 23,
+              "global_pos": 437,
+              "token": " discontinued",
+              "score_d": 23.188519,
+              "abs_score_d": 23.188519,
+              "norm": 82.10083,
+              "cos_v": -0.000463,
+              "proj_v": -0.038006
+            },
+            {
+              "local_pos": 27,
+              "global_pos": 441,
+              "token": ".",
+              "score_d": 18.990908,
+              "abs_score_d": 18.990908,
+              "norm": 66.651581,
+              "cos_v": 0.011662,
+              "proj_v": 0.777284
+            },
+            {
+              "local_pos": 18,
+              "global_pos": 432,
+              "token": ".",
+              "score_d": 11.794861,
+              "abs_score_d": 11.794861,
+              "norm": 69.651619,
+              "cos_v": 0.014278,
+              "proj_v": 0.994494
+            },
+            {
+              "local_pos": 22,
+              "global_pos": 436,
+              "token": " was",
+              "score_d": 11.06097,
+              "abs_score_d": 11.06097,
+              "norm": 78.981758,
+              "cos_v": 0.020737,
+              "proj_v": 1.637872
+            },
+            {
+              "local_pos": 7,
+              "global_pos": 421,
+              "token": ".",
+              "score_d": 7.009001,
+              "abs_score_d": 7.009001,
+              "norm": 63.633682,
+              "cos_v": 0.013824,
+              "proj_v": 0.879698
+            },
+            {
+              "local_pos": 17,
+              "global_pos": 431,
+              "token": " lesions",
+              "score_d": 6.208743,
+              "abs_score_d": 6.208743,
+              "norm": 84.503464,
+              "cos_v": 0.024058,
+              "proj_v": 2.032944
+            },
+            {
+              "local_pos": 21,
+              "global_pos": 435,
+              "token": "FOX",
+              "score_d": 5.194687,
+              "abs_score_d": 5.194687,
+              "norm": 80.212479,
+              "cos_v": 0.028369,
+              "proj_v": 2.275509
+            },
+            {
+              "local_pos": 19,
+              "global_pos": 433,
+              "token": " F",
+              "score_d": 3.761834,
+              "abs_score_d": 3.761834,
+              "norm": 61.112049,
+              "cos_v": -0.011641,
+              "proj_v": -0.711422
+            },
+            {
+              "local_pos": 11,
+              "global_pos": 425,
+              "token": ",",
+              "score_d": 2.965547,
+              "abs_score_d": 2.965547,
+              "norm": 62.931961,
+              "cos_v": -0.000719,
+              "proj_v": -0.045255
+            }
+          ]
+        },
+        "LIVE_CONTRA": {
+          "n_tokens": 25,
+          "mean_score_d": -1.71652,
+          "top_sites": [
+            {
+              "local_pos": 14,
+              "global_pos": 428,
+              "token": " no",
+              "score_d": -17.766422,
+              "abs_score_d": 17.766422,
+              "norm": 77.600945,
+              "cos_v": 0.000854,
+              "proj_v": 0.066307
+            },
+            {
+              "local_pos": 15,
+              "global_pos": 429,
+              "token": " new",
+              "score_d": -16.547518,
+              "abs_score_d": 16.547518,
+              "norm": 85.689384,
+              "cos_v": 0.000607,
+              "proj_v": 0.05205
+            },
+            {
+              "local_pos": 18,
+              "global_pos": 432,
+              "token": " lesions",
+              "score_d": -13.658278,
+              "abs_score_d": 13.658278,
+              "norm": 83.5075,
+              "cos_v": 0.02491,
+              "proj_v": 2.080191
+            },
+            {
+              "local_pos": 17,
+              "global_pos": 431,
+              "token": "atic",
+              "score_d": -10.768658,
+              "abs_score_d": 10.768658,
+              "norm": 84.960167,
+              "cos_v": 0.016527,
+              "proj_v": 1.404127
+            },
+            {
+              "local_pos": 7,
+              "global_pos": 421,
+              "token": ".",
+              "score_d": 7.009001,
+              "abs_score_d": 7.009001,
+              "norm": 63.633682,
+              "cos_v": 0.013824,
+              "proj_v": 0.879698
+            },
+            {
+              "local_pos": 16,
+              "global_pos": 430,
+              "token": " hep",
+              "score_d": -6.769293,
+              "abs_score_d": 6.769293,
+              "norm": 80.437607,
+              "cos_v": 0.016962,
+              "proj_v": 1.364345
+            },
+            {
+              "local_pos": 23,
+              "global_pos": 437,
+              "token": " was",
+              "score_d": 4.639607,
+              "abs_score_d": 4.639607,
+              "norm": 76.611572,
+              "cos_v": 0.026673,
+              "proj_v": 2.043452
+            },
+            {
+              "local_pos": 20,
+              "global_pos": 434,
+              "token": " F",
+              "score_d": 3.124935,
+              "abs_score_d": 3.124935,
+              "norm": 62.169914,
+              "cos_v": -0.013112,
+              "proj_v": -0.815166
+            },
+            {
+              "local_pos": 11,
+              "global_pos": 425,
+              "token": ",",
+              "score_d": 2.965547,
+              "abs_score_d": 2.965547,
+              "norm": 62.931961,
+              "cos_v": -0.000719,
+              "proj_v": -0.045255
+            },
+            {
+              "local_pos": 6,
+              "global_pos": 420,
+              "token": " response",
+              "score_d": 2.946123,
+              "abs_score_d": 2.946123,
+              "norm": 78.301277,
+              "cos_v": 0.01051,
+              "proj_v": 0.822949
+            },
+            {
+              "local_pos": 2,
+              "global_pos": 416,
+              "token": "FOX",
+              "score_d": -2.588753,
+              "abs_score_d": 2.588753,
+              "norm": 88.468719,
+              "cos_v": 0.014066,
+              "proj_v": 1.244408
+            },
+            {
+              "local_pos": 0,
+              "global_pos": 414,
+              "token": "F",
+              "score_d": 2.56885,
+              "abs_score_d": 2.56885,
+              "norm": 64.501778,
+              "cos_v": -0.025495,
+              "proj_v": -1.644475
+            }
+          ]
+        }
+      }
+    },
+    "L20": {
+      "layer": 20,
+      "delta_mean_norm": 12.253127,
+      "cos_d_vs_freeze_v": 0.006964,
+      "notes": {
+        "LIVE_TEMPORAL": {
+          "n_tokens": 28,
+          "mean_score_d": 1.44387,
+          "top_sites": [
+            {
+              "local_pos": 25,
+              "global_pos": 439,
+              "token": " treatment",
+              "score_d": 34.940037,
+              "abs_score_d": 34.940037,
+              "norm": 115.65937,
+              "cos_v": 0.019189,
+              "proj_v": 2.219431
+            },
+            {
+              "local_pos": 24,
+              "global_pos": 438,
+              "token": " for",
+              "score_d": 32.00996,
+              "abs_score_d": 32.00996,
+              "norm": 111.114891,
+              "cos_v": 0.017432,
+              "proj_v": 1.936954
+            },
+            {
+              "local_pos": 26,
+              "global_pos": 440,
+              "token": " failure",
+              "score_d": 29.889105,
+              "abs_score_d": 29.889105,
+              "norm": 113.730042,
+              "cos_v": 0.003342,
+              "proj_v": 0.380101
+            },
+            {
+              "local_pos": 23,
+              "global_pos": 437,
+              "token": " discontinued",
+              "score_d": 24.487219,
+              "abs_score_d": 24.487219,
+              "norm": 121.956467,
+              "cos_v": -0.001848,
+              "proj_v": -0.225407
+            },
+            {
+              "local_pos": 27,
+              "global_pos": 441,
+              "token": ".",
+              "score_d": 12.918852,
+              "abs_score_d": 12.918852,
+              "norm": 91.00473,
+              "cos_v": 0.035067,
+              "proj_v": 3.191223
+            },
+            {
+              "local_pos": 5,
+              "global_pos": 419,
+              "token": " partial",
+              "score_d": -11.549361,
+              "abs_score_d": 11.549361,
+              "norm": 117.759476,
+              "cos_v": -0.007497,
+              "proj_v": -0.88284
+            },
+            {
+              "local_pos": 18,
+              "global_pos": 432,
+              "token": ".",
+              "score_d": 11.326438,
+              "abs_score_d": 11.326438,
+              "norm": 93.682861,
+              "cos_v": -0.001216,
+              "proj_v": -0.113872
+            },
+            {
+              "local_pos": 12,
+              "global_pos": 426,
+              "token": " imaging",
+              "score_d": -11.107093,
+              "abs_score_d": 11.107093,
+              "norm": 132.274139,
+              "cos_v": 0.004684,
+              "proj_v": 0.619609
+            },
+            {
+              "local_pos": 16,
+              "global_pos": 430,
+              "token": "atic",
+              "score_d": -10.677698,
+              "abs_score_d": 10.677698,
+              "norm": 121.690956,
+              "cos_v": 0.013927,
+              "proj_v": 1.694832
+            },
+            {
+              "local_pos": 2,
+              "global_pos": 416,
+              "token": "FOX",
+              "score_d": -9.701519,
+              "abs_score_d": 9.701519,
+              "norm": 123.509926,
+              "cos_v": 0.005623,
+              "proj_v": 0.694499
+            },
+            {
+              "local_pos": 13,
+              "global_pos": 427,
+              "token": " demonstrated",
+              "score_d": -9.630745,
+              "abs_score_d": 9.630745,
+              "norm": 117.345558,
+              "cos_v": 0.042228,
+              "proj_v": 4.955305
+            },
+            {
+              "local_pos": 9,
+              "global_pos": 423,
+              "token": " months",
+              "score_d": -9.097621,
+              "abs_score_d": 9.097621,
+              "norm": 123.940887,
+              "cos_v": 0.013188,
+              "proj_v": 1.634473
+            }
+          ]
+        },
+        "LIVE_CONTRA": {
+          "n_tokens": 25,
+          "mean_score_d": -10.809257,
+          "top_sites": [
+            {
+              "local_pos": 14,
+              "global_pos": 428,
+              "token": " no",
+              "score_d": -33.788773,
+              "abs_score_d": 33.788773,
+              "norm": 117.571404,
+              "cos_v": 0.00527,
+              "proj_v": 0.619626
+            },
+            {
+              "local_pos": 15,
+              "global_pos": 429,
+              "token": " new",
+              "score_d": -29.419083,
+              "abs_score_d": 29.419083,
+              "norm": 120.349037,
+              "cos_v": 0.01208,
+              "proj_v": 1.453827
+            },
+            {
+              "local_pos": 18,
+              "global_pos": 432,
+              "token": " lesions",
+              "score_d": -27.432676,
+              "abs_score_d": 27.432676,
+              "norm": 121.872398,
+              "cos_v": 0.018097,
+              "proj_v": 2.205567
+            },
+            {
+              "local_pos": 17,
+              "global_pos": 431,
+              "token": "atic",
+              "score_d": -26.797115,
+              "abs_score_d": 26.797115,
+              "norm": 121.683891,
+              "cos_v": 0.025118,
+              "proj_v": 3.056413
+            },
+            {
+              "local_pos": 16,
+              "global_pos": 430,
+              "token": " hep",
+              "score_d": -14.457628,
+              "abs_score_d": 14.457628,
+              "norm": 111.369865,
+              "cos_v": 0.016572,
+              "proj_v": 1.845637
+            },
+            {
+              "local_pos": 22,
+              "global_pos": 436,
+              "token": "FOX",
+              "score_d": -13.952778,
+              "abs_score_d": 13.952778,
+              "norm": 114.475716,
+              "cos_v": 0.048172,
+              "proj_v": 5.514491
+            },
+            {
+              "local_pos": 24,
+              "global_pos": 438,
+              "token": " continued",
+              "score_d": -13.671496,
+              "abs_score_d": 13.671496,
+              "norm": 127.222519,
+              "cos_v": -0.004583,
+              "proj_v": -0.583085
+            },
+            {
+              "local_pos": 23,
+              "global_pos": 437,
+              "token": " was",
+              "score_d": -13.587519,
+              "abs_score_d": 13.587519,
+              "norm": 122.678696,
+              "cos_v": 0.006198,
+              "proj_v": 0.760304
+            },
+            {
+              "local_pos": 5,
+              "global_pos": 419,
+              "token": " partial",
+              "score_d": -11.549361,
+              "abs_score_d": 11.549361,
+              "norm": 117.759476,
+              "cos_v": -0.007497,
+              "proj_v": -0.88284
+            },
+            {
+              "local_pos": 12,
+              "global_pos": 426,
+              "token": " imaging",
+              "score_d": -11.107093,
+              "abs_score_d": 11.107093,
+              "norm": 132.274139,
+              "cos_v": 0.004684,
+              "proj_v": 0.619609
+            },
+            {
+              "local_pos": 2,
+              "global_pos": 416,
+              "token": "FOX",
+              "score_d": -9.701519,
+              "abs_score_d": 9.701519,
+              "norm": 123.509926,
+              "cos_v": 0.005623,
+              "proj_v": 0.694499
+            },
+            {
+              "local_pos": 13,
+              "global_pos": 427,
+              "token": " demonstrated",
+              "score_d": -9.630745,
+              "abs_score_d": 9.630745,
+              "norm": 117.345558,
+              "cos_v": 0.042228,
+              "proj_v": 4.955305
+            }
+          ]
+        }
+      }
+    },
+    "L24": {
+      "layer": 24,
+      "delta_mean_norm": 25.564329,
+      "cos_d_vs_freeze_v": 0.002417,
+      "notes": {
+        "LIVE_TEMPORAL": {
+          "n_tokens": 28,
+          "mean_score_d": -20.062729,
+          "top_sites": [
+            {
+              "local_pos": 25,
+              "global_pos": 439,
+              "token": " treatment",
+              "score_d": 84.479309,
+              "abs_score_d": 84.479309,
+              "norm": 282.968842,
+              "cos_v": 0.019664,
+              "proj_v": 5.564351
+            },
+            {
+              "local_pos": 5,
+              "global_pos": 419,
+              "token": " partial",
+              "score_d": -66.304047,
+              "abs_score_d": 66.304047,
+              "norm": 293.424866,
+              "cos_v": -0.011864,
+              "proj_v": -3.48115
+            },
+            {
+              "local_pos": 13,
+              "global_pos": 427,
+              "token": " demonstrated",
+              "score_d": -54.390728,
+              "abs_score_d": 54.390728,
+              "norm": 307.956635,
+              "cos_v": 0.04593,
+              "proj_v": 14.144557
+            },
+            {
+              "local_pos": 4,
+              "global_pos": 418,
+              "token": " a",
+              "score_d": -53.881165,
+              "abs_score_d": 53.881165,
+              "norm": 298.991974,
+              "cos_v": -0.007838,
+              "proj_v": -2.343576
+            },
+            {
+              "local_pos": 12,
+              "global_pos": 426,
+              "token": " imaging",
+              "score_d": -53.125698,
+              "abs_score_d": 53.125698,
+              "norm": 297.713776,
+              "cos_v": -0.004578,
+              "proj_v": -1.362916
+            },
+            {
+              "local_pos": 16,
+              "global_pos": 430,
+              "token": "atic",
+              "score_d": -49.484291,
+              "abs_score_d": 49.484291,
+              "norm": 311.169189,
+              "cos_v": 0.008025,
+              "proj_v": 2.497105
+            },
+            {
+              "local_pos": 9,
+              "global_pos": 423,
+              "token": " months",
+              "score_d": -48.556763,
+              "abs_score_d": 48.556763,
+              "norm": 303.984406,
+              "cos_v": 0.015213,
+              "proj_v": 4.624471
+            },
+            {
+              "local_pos": 14,
+              "global_pos": 428,
+              "token": " new",
+              "score_d": -47.257229,
+              "abs_score_d": 47.257229,
+              "norm": 309.6073,
+              "cos_v": 0.008607,
+              "proj_v": 2.664816
+            },
+            {
+              "local_pos": 8,
+              "global_pos": 422,
+              "token": " Four",
+              "score_d": -45.047871,
+              "abs_score_d": 45.047871,
+              "norm": 288.565002,
+              "cos_v": 0.007202,
+              "proj_v": 2.078109
+            },
+            {
+              "local_pos": 24,
+              "global_pos": 438,
+              "token": " for",
+              "score_d": 44.224678,
+              "abs_score_d": 44.224678,
+              "norm": 277.032806,
+              "cos_v": 0.015478,
+              "proj_v": 4.28781
+            },
+            {
+              "local_pos": 15,
+              "global_pos": 429,
+              "token": " hep",
+              "score_d": -38.648342,
+              "abs_score_d": 38.648342,
+              "norm": 267.92334,
+              "cos_v": -0.004495,
+              "proj_v": -1.204408
+            },
+            {
+              "local_pos": 3,
+              "global_pos": 417,
+              "token": " produced",
+              "score_d": -34.31184,
+              "abs_score_d": 34.31184,
+              "norm": 303.148865,
+              "cos_v": 0.003328,
+              "proj_v": 1.008927
+            }
+          ]
+        },
+        "LIVE_CONTRA": {
+          "n_tokens": 25,
+          "mean_score_d": -45.627064,
+          "top_sites": [
+            {
+              "local_pos": 14,
+              "global_pos": 428,
+              "token": " no",
+              "score_d": -116.618134,
+              "abs_score_d": 116.618134,
+              "norm": 312.214142,
+              "cos_v": 0.007045,
+              "proj_v": 2.199619
+            },
+            {
+              "local_pos": 15,
+              "global_pos": 429,
+              "token": " new",
+              "score_d": -91.23838,
+              "abs_score_d": 91.23838,
+              "norm": 302.956848,
+              "cos_v": 0.002801,
+              "proj_v": 0.848615
+            },
+            {
+              "local_pos": 17,
+              "global_pos": 431,
+              "token": "atic",
+              "score_d": -84.513428,
+              "abs_score_d": 84.513428,
+              "norm": 309.955505,
+              "cos_v": 0.011798,
+              "proj_v": 3.656966
+            },
+            {
+              "local_pos": 5,
+              "global_pos": 419,
+              "token": " partial",
+              "score_d": -66.304047,
+              "abs_score_d": 66.304047,
+              "norm": 293.424866,
+              "cos_v": -0.011864,
+              "proj_v": -3.48115
+            },
+            {
+              "local_pos": 18,
+              "global_pos": 432,
+              "token": " lesions",
+              "score_d": -57.047447,
+              "abs_score_d": 57.047447,
+              "norm": 271.506592,
+              "cos_v": -0.006706,
+              "proj_v": -1.820639
+            },
+            {
+              "local_pos": 13,
+              "global_pos": 427,
+              "token": " demonstrated",
+              "score_d": -54.390728,
+              "abs_score_d": 54.390728,
+              "norm": 307.956635,
+              "cos_v": 0.04593,
+              "proj_v": 14.144557
+            },
+            {
+              "local_pos": 4,
+              "global_pos": 418,
+              "token": " a",
+              "score_d": -53.881165,
+              "abs_score_d": 53.881165,
+              "norm": 298.991974,
+              "cos_v": -0.007838,
+              "proj_v": -2.343576
+            },
+            {
+              "local_pos": 12,
+              "global_pos": 426,
+              "token": " imaging",
+              "score_d": -53.125698,
+              "abs_score_d": 53.125698,
+              "norm": 297.713776,
+              "cos_v": -0.004578,
+              "proj_v": -1.362916
+            },
+            {
+              "local_pos": 9,
+              "global_pos": 423,
+              "token": " months",
+              "score_d": -48.556763,
+              "abs_score_d": 48.556763,
+              "norm": 303.984406,
+              "cos_v": 0.015213,
+              "proj_v": 4.624471
+            },
+            {
+              "local_pos": 16,
+              "global_pos": 430,
+              "token": " hep",
+              "score_d": -47.711994,
+              "abs_score_d": 47.711994,
+              "norm": 269.10141,
+              "cos_v": -0.005434,
+              "proj_v": -1.46239
+            },
+            {
+              "local_pos": 22,
+              "global_pos": 436,
+              "token": "FOX",
+              "score_d": -45.295116,
+              "abs_score_d": 45.295116,
+              "norm": 293.653656,
+              "cos_v": 0.015914,
+              "proj_v": 4.673163
+            },
+            {
+              "local_pos": 8,
+              "global_pos": 422,
+              "token": " Four",
+              "score_d": -45.047871,
+              "abs_score_d": 45.047871,
+              "norm": 288.565002,
+              "cos_v": 0.007202,
+              "proj_v": 2.078109
+            }
+          ]
+        }
+      }
+    }
+  },
+  "claim_hygiene": {
+    "say": "live custom-pair formation map; correlational",
+    "do_not_say": "ablation; circuit; replaces frozen U-A claim without controls"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "kind": "n2s_upstream_ua_gen_readout_v1",
+  "timestamp": "2026-09-06T15:46:10.421817+00:00",
+  "panel": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/n2s-upstream-ua-gen-panel.json",
+  "soft_gate": {
+    "best_layer": "L24",
+    "heldout_temporal_n": 4,
+    "heldout_contra_n": 4,
+    "heldout_temporal_mean_score_d": 58.394946,
+    "heldout_contra_mean_score_d": 23.48131,
+    "heldout_mean_sep": 34.913635,
+    "heldout_min_temporal": 45.469418,
+    "heldout_max_contra": 29.011641,
+    "soft_pass_mean_T_gt_mean_C": true,
+    "strong_pass_min_T_gt_max_C": true,
+    "note": "YES soft \u2014 held-out class means separate in expected direction"
+  },
+  "text": "# U-A paraphrase generalization readout (2026-09-06T15:46:10.407506+00:00)\n\nQuest: Does frozen U-A d separate temporal vs contradiction on held-out paraphrases / lexical forms?\nDirections: /home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/n2s-upstream-ua-directions.pt (cached=True)\nHeld-out: heldout-ua-paraphrase.json\n\nSoft gate @ L24: YES soft \u2014 held-out class means separate in expected direction\n  mean_T=58.394946  mean_C=23.48131  sep=34.913635\n  min_T=45.469418  max_C=29.011641\n  soft_pass=True  strong_pass=True\n\n## Rows (headline mean_score_d)\n- EX_TEMPORAL_FOLFOX [anchor/temporal] L24 mean_score_d=71.44319\n- EX_CONTRA [anchor/contra] L24 mean_score_d=9.448472\n- UA_GEN_P1_NEAR [near_paraphrase/temporal] L24 mean_score_d=62.756028\n- UA_GEN_C1_NEAR [near_paraphrase/contra] L24 mean_score_d=25.218809\n- UA_GEN_P2_FAR [far_paraphrase/temporal] L24 mean_score_d=57.243894\n- UA_GEN_C2_FAR [far_paraphrase/contra] L24 mean_score_d=29.011641\n- UA_GEN_P3_FAR [far_paraphrase/temporal] L24 mean_score_d=45.469418\n- UA_GEN_C3_FAR [far_paraphrase/contra] L24 mean_score_d=22.571358\n- UA_GEN_P4_FAR [far_paraphrase/temporal] L24 mean_score_d=68.110443\n- UA_GEN_C4_FAR [far_paraphrase/contra] L24 mean_score_d=17.123433\n\n## Claim hygiene\n- Say: correlational lexical generalization of frozen U-A d\n- Do not say: causal editor; temporality neuron; reopen U-B ablation from this\n"
+}

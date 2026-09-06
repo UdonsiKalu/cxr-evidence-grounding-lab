@@ -1,13 +1,58 @@
 # Research approach — N2S fidelity (RepEng / MI)
 
-**Status:** housekeeping freeze (2026-09-03) — documents the innovative arc before the next build wave.  
+**Status:** downstream rounded up (2026-09-06); upstream **U0+U1 done** (U1 null on recipe sites).  
 **Lab-scale only.** Not clinical product claims. Not CXR production.
 
 **Demos (replay only, no models):**  
 [Grounding Ph1–4](https://udonsikalu.github.io/cxr-evidence-grounding-lab/) · [RepEng Workbench Ph9–11](https://udonsikalu.github.io/cxr-repeng-workbench/)
 
 **Related:** [ARCHITECTURE-DIRECTION.md](./ARCHITECTURE-DIRECTION.md) · [EVALUATION-JOURNEY.md](../EVALUATION-JOURNEY.md) · phase protocols `PHASE5`…`PHASE14`  
+**Downstream closeout:** [TRACKB-DOWNSTREAM-CLOSEOUT.md](./TRACKB-DOWNSTREAM-CLOSEOUT.md) · α=8 [TRACKB-ALPHA8-FREEZE.md](./TRACKB-ALPHA8-FREEZE.md)  
+**System claim (one-pager):** [N2S-SYSTEM-CLAIM.md](./N2S-SYSTEM-CLAIM.md)  
 **Living record of advances:** [ADVANCE-LOG.md](./ADVANCE-LOG.md) — append one entry per advance (activity + result + artifacts).
+
+---
+
+## 0. System characterization (locked 2026-09-06)
+
+Three pieces — do not collapse them:
+
+```text
+Doctor's note
+      ↓
+      ↓  UPSTREAM — How does note information become / evolve as internal reps?
+      ↓
+Tokenization / input-token processing
+      ↓
+Layer-by-layer internal computation
+      ↓
+Formation / evolution of representations
+      ↓
+────────────────────────────
+      ↓  DOWNSTREAM — How do those reps drive generation / structured output?
+      ↓
+Those representations influence generation
+      ↓
+Output-token generation → LLM structured output
+      ↓
+════════════════════════════
+   NEURAL → SYMBOLIC BOUNDARY  (hard cut)
+════════════════════════════
+      ↓
+CXR symbolic representation → rules → Decision (AUTO | REVIEW)
+```
+
+| Piece | Question | Experimental cut |
+|-------|----------|------------------|
+| **Upstream** | Formation / evolution of reps from the note | Prefill; cue token × layer; residual / SAE / writes; then causal |
+| **Downstream** | Utilization / readout into structured neural output | Commit / generation (`contradiction.present`); steer / SAE-at-commit |
+| **Boundary** | Faithful conversion into CXR symbols + gates | Track A: extract → ground → Dual → mismatch → AUTO/REVIEW |
+
+Upstream vs downstream is a useful **partition** (formation → utilization), **not** a physical line inside the transformer — the residual stream evolves continuously. The neural→symbolic boundary **is** a genuine external cut.
+
+**Map:** Track B MI straddles upstream + downstream. Track A owns the boundary. Fidelity = does decision-critical meaning survive note → reps → structured output → symbols?
+
+**Status:** Downstream + boundary **rounded up**. Upstream **U0/U1/U1b null** closed for freeze-`v`×cue. **U-A program started** — multi-token formation map; see [TRACKB-UPSTREAM-PROGRAM.md](./TRACKB-UPSTREAM-PROGRAM.md).
 
 ---
 
@@ -57,6 +102,16 @@ Stack choice: **HF `transformers` + custom forward hooks** (not a rewrite into T
 
 Ph12–14 exist as protocol/code extensions; soft pilot claim for portfolio centers on **9–11**.
 
+### Downstream eval workbench + expand editor (2026-09)
+
+| Piece | Status | Doc / surface |
+|-------|--------|----------------|
+| Expand L20 **α=8** limited editor | **Frozen** | [TRACKB-ALPHA8-FREEZE.md](./TRACKB-ALPHA8-FREEZE.md) |
+| N2S Eval UI `:8257` | Evaluate → Deep dive → Intervene → SAE | `cxr-n2s-eval-workbench/` |
+| Chanin L20 SAE pilot | Implemented; claim-hygiene | [TRACKB-SAE-PILOT.md](./TRACKB-SAE-PILOT.md) |
+| Downstream roundup | **Closed for expansion** | [TRACKB-DOWNSTREAM-CLOSEOUT.md](./TRACKB-DOWNSTREAM-CLOSEOUT.md) |
+| CLI implement sketches | W01–W08 Python Minimal patterns | `docs/N2S-CLI-Walkthrough.pdf` |
+
 ---
 
 ## 3. Method map (industry-relevant MI toolkit)
@@ -69,42 +124,48 @@ Use a method when it answers a gate or transfer question — not as a checklist 
 | **Probing** | **Done** — false-X vs contradiction separable at commit (gap 0.072, LOO 1.00, n=5) | Scale n; hold-out probe |
 | Localization | **Done** Ph9B | Reuse sites; refine per family |
 | **Activation patching** | **Done** — earliest sufficient **L20** (3/3); L4–L16 0/3; not class-selective (destroys true X) | Family-level steer at L20; see [TRACKB-FALSEX-CLUSTER.md](./TRACKB-FALSEX-CLUSTER.md) |
-| **RepEng / steering** | **Done** Ph10; α=4 0/3; **α=8–16 flips 1/3** (`BC11_E3`); α=32 3/3 but breaks contra; **family L20 contrast cannot fit** (HF 7B false-X on all SATISFIED temporal-change DEV notes) | New clean class-A wording or different model; do not use BC_E2 as class A |
-| **Ablation** | **Done** α=−4 — sign-consistent, underpowered | Larger \|α\|; cluster-fitted direction |
-| **Generalization + controls** | **Partial** Ph11 | In-family ~50–200 + paraphrase; then 7B→14B |
+| **RepEng / steering** | **Frozen** expand α=8 partial editor | Do not expand α/family; reuse **v** for upstream |
+| **Ablation** | **Done** α=−4 — sign-consistent, underpowered | Only if upstream needs sign checks |
+| **Generalization + controls** | **Partial** Ph11 + α=8 freeze controls | In-family later; not blocking upstream |
 | Intervention frameworks (pyvene / TL) | Optional later | Refactor when science stable; hooks OK now |
-| SAE / circuits | Optional later | After causal evidence; not required to close Track A |
+| **SAE** | **Pilot done** (Chanin L20 @ commit) | Reuse encode on **prefill** sites next |
+| **Upstream prefill** | **U0+U1+U1b null** | Program: [TRACKB-UPSTREAM-PROGRAM.md](./TRACKB-UPSTREAM-PROGRAM.md) U-A→U-D |
+| **U-A multi-token map** | **Done** | L24 strongest; cos(d,v)≈0.03 |
+| **U-B component ablate** | **Null @ L24 zero** | — |
+| **U-B2 mean @ L20** | **Null → pause** | Do not open U-C/D from null |
+| **Circuits** | C0 scaffold only | After upstream has a causal story |
 
 ---
 
-## 4. Resolution plan (before next “go”)
+## 4. Resolution plan
 
-### Phase 0 — AUTO contract
+### Done — downstream roundup (2026-09-06)
 
-Half-page rule: **AUTO only if all gates pass**; else **REVIEW**.  
-Metric: wrong AUTO / REVIEW / correct AUTO on a frozen eval set.
+Stop expanding workbench downstream MI unless a new fidelity question requires it. Boundary (Track A) remains the fidelity judge.
 
-**Frozen:** [AUTO-CONTRACT.md](./AUTO-CONTRACT.md) · scorer `run_auto_contract_score.py` · **dev** family `data/temporal-family-dev.json` (not held-out) · **test** `data/temporal-family-test.json` frozen unseen ([TEMPORAL-FAMILY-TEST.md](./TEMPORAL-FAMILY-TEST.md))
+### Done — upstream U0+U1 (2026-09-06)
 
-**Measure before fix:** run unchanged Phase-7 Dual on `temporal-dev` → case-level diagnose → **then** Track B on DEV cluster. Do not redesign gates on BC_E1 alone. Do not peek at test evidence while designing.
+U0 trace/readout; U1 `prefill_position_steer` ±α=8 @ L20 — **no commit X flip** on temporal or contra recipe sites.
 
-### Phase 1 — Track A harness
+### Done — options pass (2026-09-06)
 
-Mandatory gates on the Phase-5+ path + one-command score table.  
-Breadth first as a **failure family** (temporal distinction), not every clinical domain:
+Live Dual confirm (wrong_AUTO=0, correct_AUTO=7); sealed `--tracka-resim-test` unchanged 0/5/7; U1b null @ L16. See [TRACKA-RESIDUAL.md](./TRACKA-RESIDUAL.md) · [TRACKB-UPSTREAM-PREFILL.md](./TRACKB-UPSTREAM-PREFILL.md).
 
-- therapy worked → later failed  
-- stable → later progression  
-- prior neg → later pos  
-- no toxicity → later toxicity  
-- possible → confirmed progression  
-- stop for toxicity ≠ stop for progression  
+### Done — U-B2 L20 mean-ablate (2026-09-06)
 
-### Phase 2 — Track B ladder (per family)
+Also **null**. Ablation family paused. See [TRACKB-UPSTREAM-PROGRAM.md](./TRACKB-UPSTREAM-PROGRAM.md).
 
-`behavior → probe → localize → patch → steer → ablate → held-out transfer → 14B transfer`
+### Next — wait go
 
-### Phase 3 — Reconnect
+**Upstream ablation family left alone** — portfolio package frozen: [TRACKB-UPSTREAM-PORTFOLIO.md](./TRACKB-UPSTREAM-PORTFOLIO.md). **U-A paraphrase gen panel:** soft+strong YES — [TRACKB-UPSTREAM-UA-GENERALIZE.md](./TRACKB-UPSTREAM-UA-GENERALIZE.md). Do not open U-C SAE or U-D circuits from null. Optional next = causal follow-up only with explicit go. No α·v reopen.
+
+### Still open (wait go; not blocking)
+
+- U-B → U-C → U-D only after prior exit. No upstream browser until science stable.  
+- Phase 0 AUTO contract harness breadth — parallel Track A engineering.  
+- Llama residual UNCERTAIN-shaped — separate.
+
+### Reconnect (unchanged north star)
 
 Mechanistic detector or recovery → fewer REVIEWs **without** more wrong AUTO.
 
@@ -116,6 +177,7 @@ Mechanistic detector or recovery → fewer REVIEWs **without** more wrong AUTO.
 |------|------|
 | [cxr-evidence-grounding-lab](https://github.com/UdonsiKalu/cxr-evidence-grounding-lab) | Protocols, `n2s_lab/`, frozen `artifacts/`, Ph1–14 runners |
 | [cxr-repeng-workbench](https://github.com/UdonsiKalu/cxr-repeng-workbench) | Operator UI + Pages replay of Ph9–11 |
+| `cxr-n2s-eval-workbench` | Live Evaluate / Deep dive / Intervene / SAE (:8257) + CLI walkthrough |
 
 Curriculum PDFs (`cxr-repeng-curriculum`, `cxr-mi-repeng-grounding`) are **study / portfolio** tracks — not this research spine.
 
@@ -123,9 +185,9 @@ Curriculum PDFs (`cxr-repeng-curriculum`, `cxr-mi-repeng-grounding`) are **study
 
 ## 6. Claim hygiene
 
-**Say:** lab-scale fidelity failures; gated abstention; causal pilot on BC_E1 family; partial transfer.  
-**Do not say:** clinical validation; universal understanding; production CXR replacement; “steering fixed healthcare.”
+**Say:** lab-scale fidelity failures; gated abstention; causal pilot on BC_E1 / expand family; partial α=8 editor; SAE pilot without English labels; downstream utilization characterized; upstream formation next.  
+**Do not say:** clinical validation; universal understanding; production CXR replacement; “steering fixed healthcare”; “found the temporality neuron”; upstream already done.
 
 When Track A and Track B both exist in public docs, the portfolio line is:
 
-> Safety layer prevents uncertain neural→symbolic transforms from becoming wrong AUTO; separately, MI/RepEng investigates why those commits fail and whether targeted interventions recover them under controls.
+> Safety layer prevents uncertain neural→symbolic transforms from becoming wrong AUTO; separately, MI/RepEng investigates why those commits fail and whether targeted interventions recover them under controls — first at utilization (downstream), then at formation (upstream).

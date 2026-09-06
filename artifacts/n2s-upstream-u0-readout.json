@@ -1,0 +1,116 @@
+{
+  "ok": true,
+  "kind": "n2s_upstream_u0_readout_v1",
+  "timestamp": "2026-09-06T10:48:04.946868+00:00",
+  "source_trace": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/n2s-upstream-prefill-trace.json",
+  "findings": [
+    "Frozen commit-v is weakly expressed at note-body cues (|cos_v|\u22720.05 at L20).",
+    "Strongest U0 site: second FOLFOX on temporal note (cos_v rises L12\u2192L20).",
+    "SAE pilot feats 165/9204 are off at prefill cues; 1196 activates but is not class-selective here.",
+    "First-span FOLFOX temporal\u2212contra \u0394cos_v\u22480 \u2014 shared early drug mention is not a separator.",
+    "U1 hypothesis: steer last FOLFOX (temporal) and failed+responsive (contra) at L20 with \u00b1\u03b1\u00b7v; metric=repair X/margin."
+  ],
+  "top_sites_by_abs_cos_v_L20": [
+    {
+      "note_id": "EX_TEMPORAL_FOLFOX",
+      "cue": "FOLFOX",
+      "pos": 450,
+      "cos_v_L20": 0.051173,
+      "proj_v_L20": 5.950551,
+      "traj_cos_v": {
+        "L8": 0.001138,
+        "L12": 0.017405,
+        "L16": 0.039875,
+        "L20": 0.051173,
+        "L24": 0.019917
+      }
+    },
+    {
+      "note_id": "EX_CONTRA",
+      "cue": "FOLFOX",
+      "pos": 439,
+      "cos_v_L20": 0.02491,
+      "proj_v_L20": 2.580822,
+      "traj_cos_v": {
+        "L8": 0.007924,
+        "L12": 0.032716,
+        "L16": 0.03779,
+        "L20": 0.02491,
+        "L24": -0.000512
+      }
+    },
+    {
+      "note_id": "EX_CONTRA",
+      "cue": "responsive",
+      "pos": 435,
+      "cos_v_L20": 0.019934,
+      "proj_v_L20": 2.289564,
+      "traj_cos_v": {
+        "L8": 0.006599,
+        "L12": 0.008455,
+        "L16": 0.02668,
+        "L20": 0.019934,
+        "L24": -0.017417
+      }
+    },
+    {
+      "note_id": "EX_CONTRA",
+      "cue": "FOLFOX",
+      "pos": 423,
+      "cos_v_L20": 0.008358,
+      "proj_v_L20": 0.968676,
+      "traj_cos_v": {
+        "L8": -0.003955,
+        "L12": 0.02125,
+        "L16": 0.025305,
+        "L20": 0.008358,
+        "L24": 0.004229
+      }
+    },
+    {
+      "note_id": "EX_CONTRA",
+      "cue": "addendum",
+      "pos": 429,
+      "cos_v_L20": 0.007705,
+      "proj_v_L20": 0.897933,
+      "traj_cos_v": {
+        "L8": 0.005389,
+        "L12": 0.00574,
+        "L16": 0.000984,
+        "L20": 0.007705,
+        "L24": -0.018016
+      }
+    }
+  ],
+  "contrast_L20": [
+    {
+      "cue": "FOLFOX",
+      "layer": 20,
+      "temporal_pos": 425,
+      "contra_pos": 423,
+      "temporal_cos_v": 0.006183,
+      "contra_cos_v": 0.008358,
+      "delta_cos_v_temporal_minus_contra": -0.002175,
+      "temporal_proj_v": 0.745238,
+      "contra_proj_v": 0.968676
+    }
+  ],
+  "u1_site_recipe": {
+    "EX_TEMPORAL_FOLFOX": {
+      "cues": [
+        "FOLFOX"
+      ],
+      "which": "last",
+      "layer": 20
+    },
+    "EX_CONTRA": {
+      "cues": [
+        "failed",
+        "responsive"
+      ],
+      "which": "all",
+      "layer": 20
+    }
+  },
+  "decision": "Proceed to thin U1 prefill-position steer \u2192 commit X (not a circuit claim)."
+}

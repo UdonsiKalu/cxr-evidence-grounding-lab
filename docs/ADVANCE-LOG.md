@@ -27,6 +27,149 @@
 
 ## Log (newest first)
 
+### 2026-09-06 — Freeze U-A paraphrase generalization (soft+strong YES)
+
+| | |
+|--|--|
+| **Track** | B / freeze |
+| **Activity** | Locked freeze claim for held-out paraphrase gen of frozen U-A `d` @ L24. |
+| **Result** | Soft+strong YES frozen; correlational only; ablation branch still closed. |
+| **Artifacts** | `docs/TRACKB-UPSTREAM-UA-GEN-FREEZE.md` · panel/readout/directions |
+| **Decision** | Do not rebuild `d` from held-out; do not reopen U-C/U-D/ablate from this YES. |
+| **Commit** | (this freeze commit) |
+
+### 2026-09-06 — U-A held-out paraphrase generalization (soft+strong YES)
+
+| | |
+|--|--|
+| **Track** | B / new Q |
+| **Activity** | Froze protocol + held-out JSON; ran panel scoring frozen U-A `d` on near/far paraphrases (not rebuild `d`; not ablation). |
+| **Result** | L24 soft+strong **YES** — held-out mean_T≈58.4 > mean_C≈23.5; min_T≈45.5 > max_C≈29.0. Anchors 71.4 vs 9.4. |
+| **Artifacts** | `docs/TRACKB-UPSTREAM-UA-GENERALIZE.md` · `data/heldout-ua-paraphrase.json` · `n2s-upstream-ua-gen-panel.json` · `n2s_upstream_ua_generalize.py` |
+| **Decision** | Correlational lexical gen holds on this small panel. Still **not** causal editor; do **not** reopen U-C/U-D/ablate thrash. Optional next = causal Q only with explicit go. |
+| **Commit** | (local) |
+
+### 2026-09-06 — Upstream portfolio package (summary + diagram + plain English)
+
+| | |
+|--|--|
+| **Track** | B / portfolio |
+| **Activity** | Froze one Upstream write-up: summary (U-A / U-B·U-B2 / :8258 demos), correlation≠control diagram, plain-English portfolio line; leave-branch lock. |
+| **Result** | Package shipped; science branch left alone. Next technical Q deferred = held-out paraphrase / lexical generalization (not more L20/L24 ablate). |
+| **Artifacts** | `docs/TRACKB-UPSTREAM-PORTFOLIO.md` |
+| **Decision** | **Do not** reopen U-C SAE / U-D circuits / live ablate thrash. Portfolio package is the close for this Upstream ablation family. |
+| **Commit** | (local) |
+
+### 2026-09-06 — Upstream pause + :8258 demos (Score / custom pair)
+
+| | |
+|--|--|
+| **Track** | B / infra |
+| **Activity** | Dedicated `:8258` live workbench; Score FOLFOX temporal + EX_CONTRA vs frozen U-A `d`; custom-pair map (short progression vs no-new-lesions). Claim lock in `N2S-SYSTEM-CLAIM.md` + PROGRAM. |
+| **Result** | FOLFOX temporal L24 `|μ·d|≈71`; EX_CONTRA L24 `|μ·d|≈18.5` (top Disease/remains); custom pair weaker sep (~25.6 vs lab ~62). Ablation family remains null/paused. |
+| **Artifacts** | `n2s-upstream-live-runs/` · `upstream_server.py` · `n2s_upstream_live.py` |
+| **Decision** | **Pause** Upstream science for portfolio/write-up. **Do not** open U-C SAE / U-D circuits / live ablate thrash. |
+| **Commit** | (local) |
+
+### 2026-09-06 — Upstream U-B2 L20 mean-ablate (null → pause)
+
+| | |
+|--|--|
+| **Track** | B |
+| **Activity** | `PrefillComponentAblateSpec` mean mode; U-B2 `--layer 20 --mode mean` on U-A L20 top-5. |
+| **Result** | **Null** — no X flip; |Δmargin|<1. Same story as U-B. |
+| **Artifacts** | `n2s-upstream-ub2-patch.json` · `n2s-upstream-ub2-readout.json` |
+| **Decision** | **Pause** ablation family; do not open U-C/U-D from null. New question only on explicit go. |
+| **Commit** | (local) |
+
+### 2026-09-06 — Upstream U-B component ablation (null)
+
+| | |
+|--|--|
+| **Track** | B |
+| **Activity** | `PrefillComponentZeroSpec` in `hf_intervene`; `n2s_upstream_ub_patch` zero-ablate attn/mlp/resid @ U-A L24 top-5 → extract X/margin. |
+| **Result** | **Null** — no X flip either note; |Δmargin|≤0.5. Shortlist empty. |
+| **Artifacts** | `n2s-upstream-ub-patch.json` · `n2s-upstream-ub-readout.json` · `TRACKB-UPSTREAM-PROGRAM.md` |
+| **Decision** | Do not jump to circuits/SAE. Optional U-B2 (L20 / mean-ablate / cross-patch) wait-go. |
+| **Commit** | (local) |
+
+### 2026-09-06 — Upstream program + U-A multi-token map
+
+| | |
+|--|--|
+| **Track** | B |
+| **Activity** | Froze `TRACKB-UPSTREAM-PROGRAM.md` (U-A→U-D). Implemented `n2s_upstream_ua_map`; live map on FOLFOX temporal vs contra. |
+| **Result** | Separation grows with depth; strongest **L24** \|\|μ_T−μ_C\|\|≈62; **cos(d, freeze-v)≈0.03** everywhere. Temporal top sites = disease/imaging/lesions language; contra = Disease/failed/remains. U-A exit met. |
+| **Artifacts** | `TRACKB-UPSTREAM-PROGRAM.md` · `n2s-upstream-ua-map.json` · `n2s-upstream-ua-readout.json` |
+| **Decision** | No browser yet. Next = U-B path-patch top sites (attn/MLP) — wait go. Not α·v. |
+| **Commit** | (local) |
+
+### 2026-09-06 — Options pass: live Dual + sealed resim + U1b
+
+| | |
+|--|--|
+| **Track** | both |
+| **Activity** | (1) Live Qwen Dual temporal-dev confirm. (2) `--tracka-resim-test` sealed score re-open (no redesign). (3) U1b outcome cues @ L16 α=8. (4) Write-up polish. |
+| **Result** | Live Dual **wrong_AUTO=0**, correct_AUTO **7**, REVIEW **7** (TF_T1/N1 still REVIEW live). Sealed resim unchanged **0/5/7**. U1b **null** (no X flip). |
+| **Artifacts** | `phase7-temporal-dev-qwen-live-coverage.json` · `tracka-qwen-live-coverage-dual-score.json` · `tracka-temporal-test-grounding-resim.json` · `n2s-upstream-prefill-patch-u1b.json` |
+| **Decision** | Options closed for this family. No α-chase. Sealed test not used for redesign. |
+| **Commit** | (local) |
+
+### 2026-09-06 — Track A TF_T1/N1 coverage (meta/predicate grounding)
+
+| | |
+|--|--|
+| **Track** | A |
+| **Activity** | Fixed Path-D meta false-X: strip predicate-label noise in `_clinical_blob_for_conflict`; meta contradiction override no longer blocked by predicate-name “failure”; unit tests; `--tracka-resim` on frozen Phase-7 temporal-dev. G3 untouched. |
+| **Result** | Qwen Dual_full **wrong_AUTO=0**, **correct_AUTO 3→5**, **REVIEW 11→9**; TF_T1 + TF_N1 Dual **AUTO NOT_SATISFIED** (match gold). Llama wrong_AUTO=2 unchanged; Mistral all REVIEW. |
+| **Artifacts** | `n2s_lab/ground.py` · `artifacts/tracka-temporal-dev-grounding-resim.json` · `docs/TRACKA-RESIDUAL.md` |
+| **Decision** | Coverage win on DEV resim. Optional live Dual confirm wait-go; do not retune sealed test. |
+| **Commit** | (local) |
+
+### 2026-09-06 — System claim write-up + Track A residual assess
+
+| | |
+|--|--|
+| **Track** | both |
+| **Activity** | Wrote `N2S-SYSTEM-CLAIM.md`; updated newcomer tour + PDF (frozen claims crib). Assessed Track A residual: wrong_AUTO already 0; TF_T1/N1 = REVIEW coverage, not fire — `TRACKA-RESIDUAL.md`. No live Dual re-run; no gate redesign. |
+| **Result** | Portfolio/visitor claim locked. Track A residual = optional coverage wait-go. |
+| **Artifacts** | `docs/N2S-SYSTEM-CLAIM.md` · `docs/TRACKA-RESIDUAL.md` · `N2S-Workbench-Newcomer-Tour.pdf` |
+| **Decision** | Stop MI expand. Coverage experiments only on explicit go. |
+| **Commit** | (local) |
+
+### 2026-09-06 — Upstream U0 readout + U1 prefill patch (null)
+
+| | |
+|--|--|
+| **Track** | B |
+| **Activity** | Wrote U0 readout; added `prefill_position_steer` in `hf_intervene.py`; ran U1 ±α=8 @ L20 on recipe sites (last FOLFOX temporal; failed+responsive contra). |
+| **Result** | U0: commit-v weak at cues. U1: **no X flip** on either note; margins ~unchanged; true contra stays X=true. Negative causal result for these sites. |
+| **Artifacts** | `n2s-upstream-u0-readout.json` · `n2s-upstream-prefill-patch.json` · `TRACKB-UPSTREAM-PREFILL.md` |
+| **Decision** | Do not claim upstream editor. Stop α chase. Optional later: different cues / layers / notes — not blocking. Downstream α=8 claim unchanged. |
+| **Commit** | (local) |
+
+### 2026-09-06 — Upstream U0 prefill_trace
+
+| | |
+|--|--|
+| **Track** | B |
+| **Activity** | Implemented `n2s_upstream_prefill.py` + `run_upstream_prefill.sh` + `TRACKB-UPSTREAM-PREFILL.md`. Ran U0 on EX_TEMPORAL_FOLFOX + EX_CONTRA (note-body cues only; EXTRACT_SYSTEM hits excluded). |
+| **Result** | Artifact `n2s-upstream-prefill-trace.json` — cue×layer proj/cos_v + L20 SAE top-k; shared-cue L20 contrast primarily FOLFOX. Observational only (no patch). |
+| **Artifacts** | `artifacts/n2s-upstream-prefill-trace.json` · `docs/TRACKB-UPSTREAM-PREFILL.md` |
+| **Decision** | Next = interpret U0; U1 patch→commit only if coherent. Do not expand SAE/circuits yet. |
+| **Commit** | (local) |
+
+### 2026-09-06 — Downstream roundup + three-piece system map
+
+| | |
+|--|--|
+| **Track** | both |
+| **Activity** | Locked upstream / downstream / neural→symbolic characterization in `RESEARCH-APPROACH.md` §0. Wrote `TRACKB-DOWNSTREAM-CLOSEOUT.md`. Updated newcomer tour. CLI walkthrough already has implement sketches (W01–W08). |
+| **Result** | Downstream utilization + boundary **closed for expansion**; next = thin upstream prefill (`prefill_trace`). α=8 + SAE pilots unchanged; sealed test still sealed. |
+| **Artifacts** | `docs/TRACKB-DOWNSTREAM-CLOSEOUT.md` · `docs/RESEARCH-APPROACH.md` · `cxr-n2s-eval-workbench/docs/N2S-Workbench-Newcomer-Tour.pdf` |
+| **Decision** | Do not expand SAE/circuits/α before first upstream prefill slice. Reuse HF hooks + frozen **v** / Chanin L20. |
+| **Commit** | (local) |
+
 ### 2026-09-04 — Sealed temporal-test: Qwen Dual wrong_AUTO=0
 
 | | |
