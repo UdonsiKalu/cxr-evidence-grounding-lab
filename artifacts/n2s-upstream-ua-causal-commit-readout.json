@@ -1,0 +1,42 @@
+{
+  "ok": true,
+  "kind": "n2s_upstream_ua_causal_readout_v1",
+  "timestamp": "2026-09-06T16:06:57.404109+00:00",
+  "panel": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/n2s-upstream-ua-causal-commit-panel.json",
+  "soft_gate": {
+    "site": "commit",
+    "baseline_temporal_x": false,
+    "baseline_temporal_margin": -15.875,
+    "baseline_contra_x": true,
+    "plus_d_temporal_by_alpha": [
+      {
+        "alpha": 1.0,
+        "margin": -15.875,
+        "extract_x": false
+      },
+      {
+        "alpha": 2.0,
+        "margin": -15.875,
+        "extract_x": false
+      },
+      {
+        "alpha": 4.0,
+        "margin": -15.75,
+        "extract_x": false
+      },
+      {
+        "alpha": 8.0,
+        "margin": -15.875,
+        "extract_x": false
+      }
+    ],
+    "dose_yes": false,
+    "dose_partial": false,
+    "sign_ok": false,
+    "gaussian_distinct": false,
+    "contra_control_ok": true,
+    "contra_wrecks": [],
+    "note": "NULL / weak \u2014 no clear dose-dependent causal effect of d on this panel"
+  },
+  "text": "# U-A causal-d readout (2026-09-06T16:06:40.981135+00:00)\n\nQuest: Does intervening along frozen U-A d change extract X/margin dose-dependently?\nSite=commit layer=L24 alphas=[1.0, 2.0, 4.0, 8.0]\nSoft gate: NULL / weak \u2014 no clear dose-dependent causal effect of d on this panel\n  dose_yes=False dose_partial=False sign_ok=False gauss_distinct=False contra_ok=True\n  baseline temporal X=False margin=-15.875\n\n## Rows\n- EX_TEMPORAL_FOLFOX baseline \u03b1=0.0 X=False margin=-15.875 verdict=NOT_SATISFIED\n- EX_TEMPORAL_FOLFOX +d \u03b1=1.0 X=False margin=-15.875 verdict=NOT_SATISFIED\n- EX_TEMPORAL_FOLFOX -d \u03b1=1.0 X=False margin=-15.875 verdict=NOT_SATISFIED\n- EX_TEMPORAL_FOLFOX gaussian \u03b1=1.0 X=False margin=-15.875 verdict=NOT_SATISFIED\n- EX_TEMPORAL_FOLFOX +d \u03b1=2.0 X=False margin=-15.875 verdict=NOT_SATISFIED\n- EX_TEMPORAL_FOLFOX -d \u03b1=2.0 X=False margin=-15.75 verdict=NOT_SATISFIED\n- EX_TEMPORAL_FOLFOX gaussian \u03b1=2.0 X=False margin=-15.75 verdict=NOT_SATISFIED\n- EX_TEMPORAL_FOLFOX +d \u03b1=4.0 X=False margin=-15.75 verdict=NOT_SATISFIED\n- EX_TEMPORAL_FOLFOX -d \u03b1=4.0 X=False margin=-15.75 verdict=NOT_SATISFIED\n- EX_TEMPORAL_FOLFOX gaussian \u03b1=4.0 X=False margin=-16.0 verdict=NOT_SATISFIED\n- EX_TEMPORAL_FOLFOX +d \u03b1=8.0 X=False margin=-15.875 verdict=NOT_SATISFIED\n- EX_TEMPORAL_FOLFOX -d \u03b1=8.0 X=False margin=-15.5 verdict=NOT_SATISFIED\n- EX_TEMPORAL_FOLFOX gaussian \u03b1=8.0 X=False margin=-15.75 verdict=NOT_SATISFIED\n- EX_CONTRA baseline \u03b1=0.0 X=True margin=9.125 verdict=CONTRADICTION\n- EX_CONTRA +d \u03b1=1.0 X=True margin=9.0 verdict=CONTRADICTION\n- EX_CONTRA -d \u03b1=1.0 X=True margin=8.875 verdict=CONTRADICTION\n- EX_CONTRA gaussian \u03b1=1.0 X=True margin=8.875 verdict=CONTRADICTION\n- EX_CONTRA +d \u03b1=2.0 X=True margin=9.0 verdict=CONTRADICTION\n- EX_CONTRA -d \u03b1=2.0 X=True margin=9.0 verdict=CONTRADICTION\n- EX_CONTRA gaussian \u03b1=2.0 X=True margin=8.875 verdict=CONTRADICTION\n- EX_CONTRA +d \u03b1=4.0 X=True margin=9.0 verdict=CONTRADICTION\n- EX_CONTRA -d \u03b1=4.0 X=True margin=8.875 verdict=CONTRADICTION\n- EX_CONTRA gaussian \u03b1=4.0 X=True margin=8.75 verdict=CONTRADICTION\n- EX_CONTRA +d \u03b1=8.0 X=True margin=9.0 verdict=CONTRADICTION\n- EX_CONTRA -d \u03b1=8.0 X=True margin=8.875 verdict=CONTRADICTION\n- EX_CONTRA gaussian \u03b1=8.0 X=True margin=8.75 verdict=CONTRADICTION\n\n## Claim hygiene\n- Say: causal test of frozen U-A d via steer (not top-site ablation)\n- Do not say: U-B reopen; temporality neuron; expand-v \u03b1=8 freeze\n"
+}

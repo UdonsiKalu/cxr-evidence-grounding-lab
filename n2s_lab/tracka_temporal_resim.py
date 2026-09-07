@@ -1,7 +1,8 @@
 """Track A reconnect — resim Dual_full after grounding temporal-change fix.
 
-Re-grounds frozen C_full/D_full extractions from Phase-7 temporal-dev panels
-(no LLM). Does not modify G3. Does not read temporal-family-test evidence.
+Re-grounds frozen C_full/D_full extractions from Phase-7 temporal-dev (or sealed
+temporal-test) panels (no LLM). Does not modify G3. Test resim is score-only —
+do not redesign from results.
 """
 
 from __future__ import annotations
@@ -22,6 +23,11 @@ TEMPORAL_DEV_REPORTS = (
     "phase7-temporal-dev-qwen2.5-coder_32b.json",
     "phase7-temporal-dev-llama3_8b-instruct-q4_0.json",
     "phase7-temporal-dev-mistral_instruct.json",
+)
+
+# Sealed test — Qwen Dual only (score re-open; no redesign from results).
+TEMPORAL_TEST_REPORTS = (
+    "phase7-temporal-test-qwen2.5-coder_32b.json",
 )
 
 PATH_KEYS = ("C_full", "D_full")
@@ -100,25 +106,27 @@ def resim_report(path: Path) -> dict[str, Any]:
     }
 
 
-def run_tracka_temporal_resim() -> dict[str, Any]:
+def _write_resim_panel(
+    *,
+    kind: str,
+    note: str,
+    reports: tuple[str, ...],
+    out_name: str,
+    extra: dict[str, Any] | None = None,
+) -> dict[str, Any]:
     results = []
-    for name in TEMPORAL_DEV_REPORTS:
+    for name in reports:
         path = ARTIFACTS_DIR / name
         if not path.is_file():
             results.append({"source": name, "error": "missing"})
             continue
         results.append(resim_report(path))
 
-    panel = {
-        "kind": "tracka_temporal_dev_grounding_resim",
+    panel: dict[str, Any] = {
+        "kind": kind,
         "timestamp": datetime.now(timezone.utc).isoformat(),
-        "note": (
-            "Re-ground C_full/D_full from frozen Phase-7 temporal-dev extractions "
-            "after sequenced temporal-change ≠ contradiction. G3 untouched. "
-            "Test set not used."
-        ),
+        "note": note,
         "g3_untouched": True,
-        "test_set_not_used": "temporal-family-test.json",
         "results": [
             {
                 "source": r.get("source"),
@@ -130,10 +138,10 @@ def run_tracka_temporal_resim() -> dict[str, Any]:
         ],
         "detail": results,
     }
+    if extra:
+        panel.update(extra)
     ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
-    out = ARTIFACTS_DIR / "tracka-temporal-dev-grounding-resim.json"
-    # drop bulky rows from top-level write of detail? keep for audit but large —
-    # write summaries + wrong ids only in main; full in sidecar
+    out = ARTIFACTS_DIR / out_name
     slim = dict(panel)
     slim["detail"] = [
         {
@@ -155,3 +163,36 @@ def run_tracka_temporal_resim() -> dict[str, Any]:
             f"wrong_ids={s.get('wrong_AUTO_ids')}"
         )
     return slim
+
+
+def run_tracka_temporal_resim() -> dict[str, Any]:
+    return _write_resim_panel(
+        kind="tracka_temporal_dev_grounding_resim",
+        note=(
+            "Re-ground C_full/D_full from frozen Phase-7 temporal-dev extractions "
+            "after sequenced temporal-change ≠ contradiction. G3 untouched. "
+            "Test set not used."
+        ),
+        reports=TEMPORAL_DEV_REPORTS,
+        out_name="tracka-temporal-dev-grounding-resim.json",
+        extra={"test_set_not_used": "temporal-family-test.json"},
+    )
+
+
+def run_tracka_temporal_test_resim() -> dict[str, Any]:
+    """Re-score sealed temporal-test Dual under current grounding (no LLM, no redesign)."""
+    return _write_resim_panel(
+        kind="tracka_temporal_test_grounding_resim",
+        note=(
+            "Score re-open only: re-ground frozen Phase-7 temporal-test extractions "
+            "under current ground.py (incl. meta/predicate coverage). "
+            "Do not redesign from this result. G3 untouched."
+        ),
+        reports=TEMPORAL_TEST_REPORTS,
+        out_name="tracka-temporal-test-grounding-resim.json",
+        extra={
+            "held_out": True,
+            "redesign_forbidden": True,
+            "source_set": "temporal-family-test.json",
+        },
+    )

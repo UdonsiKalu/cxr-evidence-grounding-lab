@@ -16,7 +16,9 @@
 | REVIEW | 11 |
 | safety_among_auto | **1.00** |
 
-Live confirm: `artifacts/tracka-qwen-live-dual-score.json`
+Live confirm (2026-09-04): `artifacts/tracka-qwen-live-dual-score.json`  
+Coverage DEV resim (2026-09-06): correct_AUTO **5**, REVIEW **9** — see [TRACKA-RESIDUAL.md](./TRACKA-RESIDUAL.md)  
+Live coverage confirm (2026-09-06): Dual_full **wrong_AUTO=0 / correct_AUTO=7 / REVIEW=7** — `tracka-qwen-live-coverage-dual-score.json`
 
 ## Sealed TEST (`temporal-family-test.json`, n=12) — first open
 
@@ -28,6 +30,8 @@ Live confirm: `artifacts/tracka-qwen-live-dual-score.json`
 | safety_among_auto | **1.00** |
 
 Artifacts: `phase7-temporal-test-qwen-panel.json` · `phase7-temporal-test-qwen2.5-coder_32b.json` · `tracka-temporal-test-qwen-dual-score.json`
+
+**Score re-open (2026-09-06, no LLM / no redesign):** `--tracka-resim-test` → same Dual_full **wrong_AUTO=0 / correct_AUTO=5 / REVIEW=7** under current `ground.py` (meta/predicate coverage). Artifact: `tracka-temporal-test-grounding-resim.json`. TFT_T1/T2 remain REVIEW.
 
 **AUTO hits (correct):** TFT_E3 SATISFIED · TFT_U1 UNCERTAIN · TFT_C1 CONTRADICTION · TFT_N1/N2 NOT_SATISFIED  
 **REVIEW (contained, not wrong AUTO):** TFT_E1/E2/E4/E5 · TFT_T1/T2 · TFT_C2

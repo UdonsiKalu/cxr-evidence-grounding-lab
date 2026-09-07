@@ -157,7 +157,7 @@ Also **null**. Ablation family paused. See [TRACKB-UPSTREAM-PROGRAM.md](./TRACKB
 
 ### Next — wait go
 
-**Upstream ablation family left alone** — portfolio package frozen: [TRACKB-UPSTREAM-PORTFOLIO.md](./TRACKB-UPSTREAM-PORTFOLIO.md). **U-A paraphrase gen panel:** soft+strong YES — [TRACKB-UPSTREAM-UA-GENERALIZE.md](./TRACKB-UPSTREAM-UA-GENERALIZE.md). Do not open U-C SAE or U-D circuits from null. Optional next = causal follow-up only with explicit go. No α·v reopen.
+**Upstream ablation family left alone** — portfolio + U-A gen freeze stand. **U-A causal-d:** commit+prefill steer along frozen `d` @ L24 → **NULL/weak** ([TRACKB-UPSTREAM-UA-CAUSAL.md](./TRACKB-UPSTREAM-UA-CAUSAL.md)). Do not open U-C SAE or U-D from nulls. No α·v expand reopen.
 
 ### Still open (wait go; not blocking)
 

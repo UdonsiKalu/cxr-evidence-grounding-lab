@@ -1,0 +1,236 @@
+{
+  "ok": true,
+  "kind": "n2s_sae_pilot_causal_v1",
+  "timestamp": "2026-09-05T12:08:05.337106+00:00",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "steer_layer": 20,
+  "alpha": 8.0,
+  "top_k": 3,
+  "candidates": [
+    {
+      "feat_id": 165,
+      "mean_act_A": 7.394521713256836,
+      "mean_act_B": 0.0,
+      "delta_A_minus_B": 7.394521713256836,
+      "cos_to_v": 0.1622738540172577,
+      "abs_cos_to_v": 0.1622738540172577,
+      "corr_with_X": -0.6461552426692307,
+      "corr_with_margin": -0.9488905600814764,
+      "rank_score": 7.095504523409857
+    },
+    {
+      "feat_id": 9204,
+      "mean_act_A": 5.133586883544922,
+      "mean_act_B": 0.0,
+      "delta_A_minus_B": 5.133586883544922,
+      "cos_to_v": 0.1961192488670349,
+      "abs_cos_to_v": 0.1961192488670349,
+      "corr_with_X": -0.7428603103524863,
+      "corr_with_margin": -0.9319390421428516,
+      "rank_score": 5.117161101859327
+    },
+    {
+      "feat_id": 1196,
+      "mean_act_A": 23.107717514038086,
+      "mean_act_B": 27.856101989746094,
+      "delta_A_minus_B": -4.748384475708008,
+      "cos_to_v": -0.14503973722457886,
+      "abs_cos_to_v": 0.14503973722457886,
+      "corr_with_X": 0.4776199919198154,
+      "corr_with_margin": 0.6846860889305959,
+      "rank_score": 3.6285710820550245
+    }
+  ],
+  "random_feat_id": 33266,
+  "sae": {
+    "repo": "chanind/qwen2.5-7B-it-layer-20-saes",
+    "subdir": "pile/matryoshka/k-100"
+  },
+  "note_ids": [
+    "TX_E01",
+    "TX_C01"
+  ],
+  "notes": {
+    "TX_E01": {
+      "gold": "SATISFIED",
+      "arms": [
+        {
+          "label": "baseline",
+          "repair_final_x": false,
+          "margin": -1.25,
+          "verdict": "SATISFIED",
+          "commit_value": "false",
+          "parse_ok": true
+        },
+        {
+          "label": "feat_165_pos",
+          "repair_final_x": false,
+          "margin": -1.875,
+          "verdict": "SATISFIED",
+          "commit_value": "false",
+          "parse_ok": true
+        },
+        {
+          "label": "feat_165_neg",
+          "repair_final_x": false,
+          "margin": -0.625,
+          "verdict": "SATISFIED",
+          "commit_value": "false",
+          "parse_ok": true
+        },
+        {
+          "label": "feat_9204_pos",
+          "repair_final_x": false,
+          "margin": -1.625,
+          "verdict": "SATISFIED",
+          "commit_value": "false",
+          "parse_ok": true
+        },
+        {
+          "label": "feat_9204_neg",
+          "repair_final_x": false,
+          "margin": -0.875,
+          "verdict": "SATISFIED",
+          "commit_value": "false",
+          "parse_ok": true
+        },
+        {
+          "label": "feat_1196_pos",
+          "repair_final_x": false,
+          "margin": -1.25,
+          "verdict": "SATISFIED",
+          "commit_value": "false",
+          "parse_ok": true
+        },
+        {
+          "label": "feat_1196_neg",
+          "repair_final_x": false,
+          "margin": -1.25,
+          "verdict": "SATISFIED",
+          "commit_value": "false",
+          "parse_ok": true
+        },
+        {
+          "label": "random_feat_33266_pos",
+          "repair_final_x": false,
+          "margin": -1.5,
+          "verdict": "SATISFIED",
+          "commit_value": "false",
+          "parse_ok": true
+        },
+        {
+          "label": "top3_group_pos",
+          "repair_final_x": false,
+          "margin": -1.625,
+          "verdict": "SATISFIED",
+          "commit_value": "false",
+          "parse_ok": true
+        },
+        {
+          "label": "top3_group_neg",
+          "repair_final_x": false,
+          "margin": -0.625,
+          "verdict": "SATISFIED",
+          "commit_value": "false",
+          "parse_ok": true
+        }
+      ],
+      "baseline_x": false,
+      "baseline_margin": -1.25
+    },
+    "TX_C01": {
+      "gold": "CONTRADICTION",
+      "arms": [
+        {
+          "label": "baseline",
+          "repair_final_x": true,
+          "margin": 10.375,
+          "verdict": "CONTRADICTION",
+          "commit_value": "true",
+          "parse_ok": true
+        },
+        {
+          "label": "feat_165_pos",
+          "repair_final_x": true,
+          "margin": 9.375,
+          "verdict": "CONTRADICTION",
+          "commit_value": "true",
+          "parse_ok": true
+        },
+        {
+          "label": "feat_165_neg",
+          "repair_final_x": true,
+          "margin": 11.5,
+          "verdict": "CONTRADICTION",
+          "commit_value": "true",
+          "parse_ok": true
+        },
+        {
+          "label": "feat_9204_pos",
+          "repair_final_x": true,
+          "margin": 9.875,
+          "verdict": "CONTRADICTION",
+          "commit_value": "true",
+          "parse_ok": true
+        },
+        {
+          "label": "feat_9204_neg",
+          "repair_final_x": true,
+          "margin": 11.0,
+          "verdict": "CONTRADICTION",
+          "commit_value": "true",
+          "parse_ok": true
+        },
+        {
+          "label": "feat_1196_pos",
+          "repair_final_x": true,
+          "margin": 12.625,
+          "verdict": "CONTRADICTION",
+          "commit_value": "true",
+          "parse_ok": true
+        },
+        {
+          "label": "feat_1196_neg",
+          "repair_final_x": true,
+          "margin": 9.0,
+          "verdict": "CONTRADICTION",
+          "commit_value": "true",
+          "parse_ok": true
+        },
+        {
+          "label": "random_feat_33266_pos",
+          "repair_final_x": true,
+          "margin": 9.75,
+          "verdict": "CONTRADICTION",
+          "commit_value": "true",
+          "parse_ok": true
+        },
+        {
+          "label": "top3_group_pos",
+          "repair_final_x": true,
+          "margin": 8.625,
+          "verdict": "CONTRADICTION",
+          "commit_value": "true",
+          "parse_ok": true
+        },
+        {
+          "label": "top3_group_neg",
+          "repair_final_x": true,
+          "margin": 12.5,
+          "verdict": "CONTRADICTION",
+          "commit_value": "true",
+          "parse_ok": true
+        }
+      ],
+      "baseline_x": true,
+      "baseline_margin": 10.375
+    }
+  },
+  "readout": {
+    "temporal_note": "TX_E01",
+    "contra_note": "TX_C01",
+    "temporal_baseline_x": false,
+    "contra_baseline_x": true,
+    "note": "Success if some feat/group moves temporal X true\u2192false (or margin down) while contra stays X=true; random control should not mimic the effect."
+  }
+}

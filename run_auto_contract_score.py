@@ -116,6 +116,11 @@ def main() -> None:
         action="store_true",
         help="resim temporal-dev Dual_full after grounding temporal-change fix (no LLM)",
     )
+    parser.add_argument(
+        "--tracka-resim-test",
+        action="store_true",
+        help="score re-open: resim sealed temporal-test Dual under current grounding (no LLM, no redesign)",
+    )
     parser.add_argument("--out", default="", help="artifact filename under artifacts/")
     args = parser.parse_args()
 
@@ -135,6 +140,14 @@ def main() -> None:
         from n2s_lab.tracka_temporal_resim import run_tracka_temporal_resim  # noqa: E402
 
         run_tracka_temporal_resim()
+        return
+
+    if args.tracka_resim_test:
+        from n2s_lab.tracka_temporal_resim import (  # noqa: E402
+            run_tracka_temporal_test_resim,
+        )
+
+        run_tracka_temporal_test_resim()
         return
 
     if args.list_family:

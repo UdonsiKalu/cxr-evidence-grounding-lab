@@ -1,0 +1,360 @@
+{
+  "kind": "n2s_sae_pilot_scores_v1",
+  "timestamp": "2026-09-05T11:55:36.060982+00:00",
+  "quest": "Decompose frozen L20 v=unit(mean_A\u2212mean_B); find sparse features that distinguish A/B, align with v, track X/margin \u2014 then causal-test top-k. No English labels.",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "sae": {
+    "repo": "chanind/qwen2.5-7B-it-layer-20-saes",
+    "subdir": "pile/matryoshka/k-100",
+    "cfg_path": "/home/udonsi-kalu/.cache/huggingface/hub/models--chanind--qwen2.5-7B-it-layer-20-saes/snapshots/db8c88b400e36e603d0563abcf8d289e5eff5687/pile/matryoshka/k-100/cfg.json",
+    "weights_path": "/home/udonsi-kalu/.cache/huggingface/hub/models--chanind--qwen2.5-7B-it-layer-20-saes/snapshots/db8c88b400e36e603d0563abcf8d289e5eff5687/pile/matryoshka/k-100/sae_weights.safetensors",
+    "d_sae": 65536,
+    "d_in": 3584,
+    "hook_name": "blocks.20.hook_resid_post",
+    "model_name": "Qwen/Qwen2.5-7B-Instruct",
+    "architecture": "jumprelu",
+    "apply_b_dec_to_input": true
+  },
+  "class_a": [
+    "TX_E08",
+    "TX_E13",
+    "TX_E21",
+    "TX_E23"
+  ],
+  "class_b": [
+    "TX_C01",
+    "TX_C02",
+    "TX_C03",
+    "TX_C04"
+  ],
+  "hook_sanity": {
+    "n_hiddens": 8,
+    "recon_mse": 0.8379720449447632,
+    "frac_var_explained_approx": -4.723398778914127,
+    "max_abs_cos_decoder_to_v": 0.22960925102233887,
+    "mean_abs_cos_decoder_to_v": 0.014089778997004032,
+    "top10_abs_cos": [
+      {
+        "feat_id": 38457,
+        "abs_cos": 0.22960925102233887
+      },
+      {
+        "feat_id": 74,
+        "abs_cos": 0.2060718685388565
+      },
+      {
+        "feat_id": 9204,
+        "abs_cos": 0.1961192488670349
+      },
+      {
+        "feat_id": 34114,
+        "abs_cos": 0.17142455279827118
+      },
+      {
+        "feat_id": 165,
+        "abs_cos": 0.1622738540172577
+      },
+      {
+        "feat_id": 1196,
+        "abs_cos": 0.14503973722457886
+      },
+      {
+        "feat_id": 24170,
+        "abs_cos": 0.13417337834835052
+      },
+      {
+        "feat_id": 11805,
+        "abs_cos": 0.13416123390197754
+      },
+      {
+        "feat_id": 57,
+        "abs_cos": 0.1321471929550171
+      },
+      {
+        "feat_id": 11345,
+        "abs_cos": 0.11649524420499802
+      }
+    ],
+    "pass_heuristic": true,
+    "note": "HF L20 block-output hiddens vs SAELens resid_post \u2014 soft match. If pass_heuristic is false, stop and consider training a local SAE."
+  },
+  "n_candidates_scored": 133,
+  "top": [
+    {
+      "feat_id": 165,
+      "mean_act_A": 7.394521713256836,
+      "mean_act_B": 0.0,
+      "delta_A_minus_B": 7.394521713256836,
+      "cos_to_v": 0.1622738540172577,
+      "abs_cos_to_v": 0.1622738540172577,
+      "corr_with_X": -0.6461552426692307,
+      "corr_with_margin": -0.9488905600814764,
+      "rank_score": 7.095504523409857
+    },
+    {
+      "feat_id": 9204,
+      "mean_act_A": 5.133586883544922,
+      "mean_act_B": 0.0,
+      "delta_A_minus_B": 5.133586883544922,
+      "cos_to_v": 0.1961192488670349,
+      "abs_cos_to_v": 0.1961192488670349,
+      "corr_with_X": -0.7428603103524863,
+      "corr_with_margin": -0.9319390421428516,
+      "rank_score": 5.117161101859327
+    },
+    {
+      "feat_id": 1196,
+      "mean_act_A": 23.107717514038086,
+      "mean_act_B": 27.856101989746094,
+      "delta_A_minus_B": -4.748384475708008,
+      "cos_to_v": -0.14503973722457886,
+      "abs_cos_to_v": 0.14503973722457886,
+      "corr_with_X": 0.4776199919198154,
+      "corr_with_margin": 0.6846860889305959,
+      "rank_score": 3.6285710820550245
+    },
+    {
+      "feat_id": 74,
+      "mean_act_A": 3.5103557109832764,
+      "mean_act_B": 0.0,
+      "delta_A_minus_B": 3.5103557109832764,
+      "cos_to_v": 0.2060718685388565,
+      "abs_cos_to_v": 0.2060718685388565,
+      "corr_with_X": -0.7169329851972271,
+      "corr_with_margin": -0.8421505970868387,
+      "rank_score": 3.3266053688227992
+    },
+    {
+      "feat_id": 38457,
+      "mean_act_A": 0.6815767884254456,
+      "mean_act_B": 3.731614112854004,
+      "delta_A_minus_B": -3.050037384033203,
+      "cos_to_v": -0.22960925102233887,
+      "abs_cos_to_v": 0.22960925102233887,
+      "corr_with_X": 0.24477252327162566,
+      "corr_with_margin": 0.5253158138564522,
+      "rank_score": 2.281671670421889
+    },
+    {
+      "feat_id": 746,
+      "mean_act_A": 0.0,
+      "mean_act_B": 4.386321544647217,
+      "delta_A_minus_B": -4.386321544647217,
+      "cos_to_v": -0.04181680828332901,
+      "abs_cos_to_v": 0.04181680828332901,
+      "corr_with_X": 0.3135826313353095,
+      "corr_with_margin": 0.43458696137464364,
+      "rank_score": 2.2211232408947836
+    },
+    {
+      "feat_id": 10370,
+      "mean_act_A": 0.0,
+      "mean_act_B": 3.6702351570129395,
+      "delta_A_minus_B": -3.6702351570129395,
+      "cos_to_v": -0.07474467158317566,
+      "abs_cos_to_v": 0.07474467158317566,
+      "corr_with_X": 0.19581885988622436,
+      "corr_with_margin": 0.5165620934379554,
+      "rank_score": 2.1443849764843237
+    },
+    {
+      "feat_id": 16501,
+      "mean_act_A": 4.888484477996826,
+      "mean_act_B": 1.4840152263641357,
+      "delta_A_minus_B": 3.4044692516326904,
+      "cos_to_v": 0.05957409366965294,
+      "abs_cos_to_v": 0.05957409366965294,
+      "corr_with_X": -0.40760357339765835,
+      "corr_with_margin": -0.6156957635937925,
+      "rank_score": 2.125459333817695
+    },
+    {
+      "feat_id": 24170,
+      "mean_act_A": 2.470168352127075,
+      "mean_act_B": 0.0,
+      "delta_A_minus_B": 2.470168352127075,
+      "cos_to_v": 0.13417337834835052,
+      "abs_cos_to_v": 0.13417337834835052,
+      "corr_with_X": -0.7056415040167073,
+      "corr_with_margin": -0.7953340449262506,
+      "rank_score": 2.0291602229907366
+    },
+    {
+      "feat_id": 741,
+      "mean_act_A": 0.0,
+      "mean_act_B": 3.7201974391937256,
+      "delta_A_minus_B": -3.7201974391937256,
+      "cos_to_v": -0.021630285307765007,
+      "abs_cos_to_v": 0.021630285307765007,
+      "corr_with_X": 0.19587605357741705,
+      "corr_with_margin": 0.5127494909757276,
+      "rank_score": 1.9653089013698029
+    },
+    {
+      "feat_id": 33266,
+      "mean_act_A": 4.1755266189575195,
+      "mean_act_B": 0.8576816320419312,
+      "delta_A_minus_B": 3.317844867706299,
+      "cos_to_v": 0.0033350391313433647,
+      "abs_cos_to_v": 0.0033350391313433647,
+      "corr_with_X": -0.5068317357592067,
+      "corr_with_margin": -0.6723980511007874,
+      "rank_score": 1.957890179838544
+    },
+    {
+      "feat_id": 14660,
+      "mean_act_A": 0.0,
+      "mean_act_B": 3.2683234214782715,
+      "delta_A_minus_B": -3.2683234214782715,
+      "cos_to_v": -0.06646216660737991,
+      "abs_cos_to_v": 0.06646216660737991,
+      "corr_with_X": 0.222869698013631,
+      "corr_with_margin": 0.5054609037292452,
+      "rank_score": 1.8614917830050055
+    },
+    {
+      "feat_id": 63863,
+      "mean_act_A": 3.4692890644073486,
+      "mean_act_B": 0.0,
+      "delta_A_minus_B": 3.4692890644073486,
+      "cos_to_v": 0.04421050101518631,
+      "abs_cos_to_v": 0.04421050101518631,
+      "corr_with_X": -0.2514215633189329,
+      "corr_with_margin": -0.4330456115193539,
+      "rank_score": 1.76161207835605
+    },
+    {
+      "feat_id": 56308,
+      "mean_act_A": 3.529752254486084,
+      "mean_act_B": 0.7218739986419678,
+      "delta_A_minus_B": 2.807878255844116,
+      "cos_to_v": 0.02608538046479225,
+      "abs_cos_to_v": 0.02608538046479225,
+      "corr_with_X": -0.34948904350719107,
+      "corr_with_margin": -0.6680112460612391,
+      "rank_score": 1.7253671747110542
+    },
+    {
+      "feat_id": 1633,
+      "mean_act_A": 2.9407734870910645,
+      "mean_act_B": 5.241631507873535,
+      "delta_A_minus_B": -2.3008580207824707,
+      "cos_to_v": -0.09169226139783859,
+      "abs_cos_to_v": 0.09169226139783859,
+      "corr_with_X": 0.5939722029304226,
+      "corr_with_margin": 0.7573016746130932,
+      "rank_score": 1.7116903558221888
+    },
+    {
+      "feat_id": 1788,
+      "mean_act_A": 3.201568603515625,
+      "mean_act_B": 5.603158950805664,
+      "delta_A_minus_B": -2.401590347290039,
+      "cos_to_v": -0.0634540468454361,
+      "abs_cos_to_v": 0.0634540468454361,
+      "corr_with_X": 0.3126222617266961,
+      "corr_with_margin": 0.6996623958900017,
+      "rank_score": 1.6233661189669237
+    },
+    {
+      "feat_id": 375,
+      "mean_act_A": 5.095452308654785,
+      "mean_act_B": 2.3842244148254395,
+      "delta_A_minus_B": 2.7112278938293457,
+      "cos_to_v": 0.056254781782627106,
+      "abs_cos_to_v": 0.056254781782627106,
+      "corr_with_X": -0.21305293471800585,
+      "corr_with_margin": -0.536590896538818,
+      "rank_score": 1.5633174365947053
+    },
+    {
+      "feat_id": 3770,
+      "mean_act_A": 3.6891651153564453,
+      "mean_act_B": 1.4980175495147705,
+      "delta_A_minus_B": 2.191147565841675,
+      "cos_to_v": 0.05931996926665306,
+      "abs_cos_to_v": 0.05931996926665306,
+      "corr_with_X": -0.5268917907466947,
+      "corr_with_margin": -0.7310011419093684,
+      "rank_score": 1.5086566367570469
+    },
+    {
+      "feat_id": 329,
+      "mean_act_A": 3.053901195526123,
+      "mean_act_B": 0.0,
+      "delta_A_minus_B": 3.053901195526123,
+      "cos_to_v": 0.0282983910292387,
+      "abs_cos_to_v": 0.0282983910292387,
+      "corr_with_X": -0.12869738788649537,
+      "corr_with_margin": -0.430214358009541,
+      "rank_score": 1.5007809508166747
+    },
+    {
+      "feat_id": 34114,
+      "mean_act_A": 1.8492013216018677,
+      "mean_act_B": 0.0,
+      "delta_A_minus_B": 1.8492013216018677,
+      "cos_to_v": 0.17142455279827118,
+      "abs_cos_to_v": 0.17142455279827118,
+      "corr_with_X": -0.5873504201010563,
+      "corr_with_margin": -0.692131463167148,
+      "rank_score": 1.480149435664751
+    }
+  ],
+  "random_control_pool": [
+    1122,
+    966,
+    866,
+    1099,
+    1087,
+    719,
+    52476,
+    6881,
+    36483,
+    1749,
+    4277,
+    1386,
+    1321,
+    1580,
+    1735,
+    6909,
+    1683,
+    1992,
+    34639,
+    1550,
+    1101,
+    998,
+    6516,
+    1244,
+    466,
+    175,
+    1259,
+    12406,
+    2059,
+    44173,
+    1514,
+    1073,
+    398,
+    14372,
+    586,
+    16,
+    615,
+    9719,
+    2061,
+    822,
+    1186,
+    21954,
+    1902,
+    469,
+    53,
+    10808,
+    1265,
+    10526,
+    182,
+    473,
+    18677,
+    33266
+  ],
+  "rank_formula": "|\u0394(A\u2212B)| * (0.5+|cos_to_v|) * (0.5+max(|r_X|,|r_margin|))",
+  "success_criteria": "Feature or small group: distinguishes A/B, aligns with v, tracks X/margin, causally moves X on temporal FOLFOX without destroying true-contra control."
+}

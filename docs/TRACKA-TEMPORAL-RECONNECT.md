@@ -27,15 +27,15 @@ python3 run_auto_contract_score.py --tracka-resim
 
 Re-grounds frozen Phase-7 `temporal-dev` C_full/D_full extractions and rescored Dual_full.
 
-### Resim result (2026-09-04)
+### Resim result (2026-09-04 — temporal-change ≠ contradiction)
 
-| Model | wrong_AUTO before → after | Remaining wrongs |
-|-------|---------------------------|------------------|
-| Qwen coder 32B | **5 → 0** | none (false-X + TF_T1/TF_N1 cleared) |
+| Model | wrong_AUTO before → after | Notes |
+|-------|---------------------------|-------|
+| Qwen coder 32B | **5 → 2** then live Dual **0** | false-X family cleared; TF_T1/TF_N1 still REVIEW on live |
 | Llama 8B | 2 → 2 | `TF_E3` UNCERTAIN, `TF_T2` |
 | Mistral | 0 → 0 | — |
 
-False-X cluster **TF_E3 / BC11_E3 / TF_E4** cleared; toxicity-stop / no-failure overfire (`TF_T1`/`TF_N1`) cleared via no-failure-without-hard-conflict override.
+False-X cluster **TF_E3 / BC11_E3 / TF_E4** cleared via temporal-change / no-failure overrides.
 
 ## Live confirm (2026-09-04)
 
@@ -51,6 +51,16 @@ python3 run_auto_contract_score.py --artifact artifacts/phase7-temporal-dev-qwen
 
 Family TF_E3/BC11_E3 AUTO-correct; TF_E4 REVIEW; TF_T1/TF_N1 Dual REVIEW (contained).
 
+## Coverage follow-up (2026-09-06 — meta / predicate-name)
+
+Path D meta spans citing `FIRST_LINE_THERAPY_FAILED` falsely looked like hard conflict.  
+`ground.py`: strip predicate-label noise; meta X override applies. G3 untouched.
+
+DEV `--tracka-resim`: Qwen **wrong_AUTO=0**, **correct_AUTO=5**, **REVIEW=9**; **TF_T1 / TF_N1 AUTO** on frozen extractions.  
+Live Dual confirm: **wrong_AUTO=0**, **correct_AUTO=7**, **REVIEW=7**; TF_T1/N1 still **REVIEW** on live re-extract.  
+Sealed `--tracka-resim-test`: still **0 / 5 / 7** (no redesign).  
+Detail: [TRACKA-RESIDUAL.md](./TRACKA-RESIDUAL.md).
+
 ## Next
 
-Sealed `temporal-test` only after explicit go. G3 untouched. Llama residual wrongs are a separate UNCERTAIN-shaped issue.
+Spine options closed. Sealed test not for redesign. G3 untouched. Llama residual wrongs are a separate UNCERTAIN-shaped issue.

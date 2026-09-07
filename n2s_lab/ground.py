@@ -159,15 +159,33 @@ def _positive_admin_evidence(blob: str) -> bool:
     )
 
 
+def _clinical_blob_for_conflict(extraction: Extraction) -> str:
+    """Text used for never↔given / failed↔ongoing heuristics.
+
+    Strip predicate-label chatter so analysis meta like
+    ``FIRST_LINE_THERAPY_FAILED`` does not count as clinical ``failed``.
+    """
+    parts = (
+        [extraction.administration_status]
+        + [c.a + " " + c.b for c in extraction.contradiction_cues]
+        + [o.text for o in extraction.outcome_statements]
+    )
+    blob = " ".join(parts).lower()
+    for noise in (
+        "first_line_therapy_failed",
+        "first-line therapy failed",
+        "formal condition",
+        "formal predicate",
+    ):
+        blob = blob.replace(noise, " ")
+    return blob
+
+
 def _hard_simultaneous_conflict(extraction: Extraction, polarities: list[str]) -> bool:
     """True for incompatible *same-time* facts — not sequenced response→later failure."""
     has_failure = any(p in FAILURE_POLARITIES for p in polarities)
     has_ongoing = any(p == "ongoing" for p in polarities)
-    blob = " ".join(
-        [extraction.administration_status]
-        + [c.a + " " + c.b for c in extraction.contradiction_cues]
-        + [o.text for o in extraction.outcome_statements]
-    ).lower()
+    blob = _clinical_blob_for_conflict(extraction)
     never = (
         _blob_has_word(blob, ("never", "not_given", "not given", "no prior"))
         or _negated_admin_claim(blob)
@@ -289,9 +307,9 @@ def ground(extraction: Extraction) -> Grounding:
             trace.append(
                 "X=false (sequenced temporal-change; extractor contradiction overridden)"
             )
-        elif _meta_contradiction_cues(extraction) and not _hard_simultaneous_conflict(
-            extraction, polarities
-        ):
+        elif _meta_contradiction_cues(extraction):
+            # Meta/analysis spans are not clinical fact pairs — do not let
+            # predicate-name wording (e.g. FIRST_LINE_THERAPY_FAILED) block this.
             contradiction = False
             trace.append(
                 "X=false (meta contradiction cues; extractor contradiction overridden)"
@@ -508,6 +526,45 @@ def selftest_ground() -> None:
         ],
     )
     assert ground(nofail).contradiction is False
+
+    # Path-D meta: analysis cites the predicate name — must not invent hard conflict.
+    meta_predicate_name = Extraction(
+        stated_line="first",
+        administration_status="given",
+        contradiction_present=True,
+        contradiction_cues=[
+            ContradictionCue(
+                a="The clinical note supports identification of first-line 7+3 induction",
+                b="Therefore, the note does not support the formal condition FIRST_LINE_THERAPY_FAILED.",
+            )
+        ],
+        outcome_statements=[
+            OutcomeStatement(text="Interim marrow shows ongoing response", polarity="ongoing"),
+            OutcomeStatement(text="no progression documented", polarity="ongoing"),
+        ],
+    )
+    g_meta = ground(meta_predicate_name)
+    assert g_meta.contradiction is False
+    assert any("meta contradiction" in t for t in g_meta.trace)
+
+    # Path-D toxicity: meta "no clear indication of a failure" + unknown polarity.
+    meta_tox = Extraction(
+        stated_line="first",
+        administration_status="not_given",
+        contradiction_present=True,
+        contradiction_cues=[
+            ContradictionCue(
+                a="there is no clear indication of a failure event related to progression or non-response",
+                b="the tumor markers are described as falling and imaging stable, which suggests ongoing response or stable disease",
+            )
+        ],
+        outcome_statements=[
+            OutcomeStatement(text="tumor markers falling and imaging stable", polarity="ongoing"),
+            OutcomeStatement(text="paclitaxel was stopped due to grade 3 neuropathy", polarity="unknown"),
+        ],
+        implicit_cues=["switching_to_second_line"],
+    )
+    assert ground(meta_tox).contradiction is False
 
     explicit_none = Extraction(
         stated_line="first",

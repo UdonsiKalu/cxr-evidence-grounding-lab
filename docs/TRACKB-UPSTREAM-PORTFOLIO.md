@@ -3,7 +3,8 @@
 **Status:** frozen write-up 2026-09-06 · science branch **left alone**  
 **Audience:** portfolio / faculty / visitor one-pager  
 **Detail:** [TRACKB-UPSTREAM-PROGRAM.md](./TRACKB-UPSTREAM-PROGRAM.md) · [N2S-SYSTEM-CLAIM.md](./N2S-SYSTEM-CLAIM.md) · [TRACKB-UPSTREAM-PREFILL.md](./TRACKB-UPSTREAM-PREFILL.md)  
-**Live demos:** workbench `:8258` (score vs frozen `d` · optional custom pair) — correlational only
+**Live demos:** workbench `:8258` (score vs frozen `d` · optional custom pair) — correlational only  
+**UI write-up (code + buttons):** [N2S-Upstream-Workbench-Tour.md](../../cxr-n2s-eval-workbench/docs/N2S-Upstream-Workbench-Tour.md) · PDF via `cxr-n2s-eval-workbench/./build-upstream-tour-pdf.sh`
 
 ---
 

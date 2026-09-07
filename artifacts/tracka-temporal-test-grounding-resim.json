@@ -1,0 +1,201 @@
+{
+  "kind": "tracka_temporal_test_grounding_resim",
+  "timestamp": "2026-09-06T11:13:45.395263+00:00",
+  "note": "Score re-open only: re-ground frozen Phase-7 temporal-test extractions under current ground.py (incl. meta/predicate coverage). Do not redesign from this result. G3 untouched.",
+  "g3_untouched": true,
+  "results": [
+    {
+      "source": "phase7-temporal-test-qwen2.5-coder_32b.json",
+      "model": "qwen2.5-coder:32b",
+      "error": null,
+      "Dual_full_summary": {
+        "n": 12,
+        "wrong_AUTO": 0,
+        "correct_AUTO": 5,
+        "REVIEW": 7,
+        "UNKNOWN": 0,
+        "wrong_AUTO_rate": 0.0,
+        "REVIEW_rate": 0.5833333333333334,
+        "safety_among_auto": 1.0,
+        "coverage_auto": 0.4166666666666667,
+        "wrong_AUTO_ids": [],
+        "REVIEW_ids": [
+          "TFT_E1",
+          "TFT_E2",
+          "TFT_E4",
+          "TFT_E5",
+          "TFT_T1",
+          "TFT_T2",
+          "TFT_C2"
+        ]
+      }
+    }
+  ],
+  "detail": [
+    {
+      "source": "phase7-temporal-test-qwen2.5-coder_32b.json",
+      "model": "qwen2.5-coder:32b",
+      "error": null,
+      "Dual_full": {
+        "summary": {
+          "n": 12,
+          "wrong_AUTO": 0,
+          "correct_AUTO": 5,
+          "REVIEW": 7,
+          "UNKNOWN": 0,
+          "wrong_AUTO_rate": 0.0,
+          "REVIEW_rate": 0.5833333333333334,
+          "safety_among_auto": 1.0,
+          "coverage_auto": 0.4166666666666667,
+          "wrong_AUTO_ids": [],
+          "REVIEW_ids": [
+            "TFT_E1",
+            "TFT_E2",
+            "TFT_E4",
+            "TFT_E5",
+            "TFT_T1",
+            "TFT_T2",
+            "TFT_C2"
+          ]
+        },
+        "cases": [
+          {
+            "id": "TFT_E1",
+            "gold": "SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TFT_E2",
+            "gold": "SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TFT_E3",
+            "gold": "SATISFIED",
+            "verdict": "SATISFIED",
+            "disposition": "AUTO",
+            "bucket": "correct_AUTO",
+            "wrong_AUTO": false,
+            "correct_AUTO": true,
+            "is_REVIEW": false,
+            "match_gold": true
+          },
+          {
+            "id": "TFT_E4",
+            "gold": "SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TFT_E5",
+            "gold": "SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TFT_U1",
+            "gold": "UNCERTAIN",
+            "verdict": "UNCERTAIN",
+            "disposition": "AUTO",
+            "bucket": "correct_AUTO",
+            "wrong_AUTO": false,
+            "correct_AUTO": true,
+            "is_REVIEW": false,
+            "match_gold": true
+          },
+          {
+            "id": "TFT_T1",
+            "gold": "NOT_SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TFT_T2",
+            "gold": "NOT_SATISFIED",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TFT_C1",
+            "gold": "CONTRADICTION",
+            "verdict": "CONTRADICTION",
+            "disposition": "AUTO",
+            "bucket": "correct_AUTO",
+            "wrong_AUTO": false,
+            "correct_AUTO": true,
+            "is_REVIEW": false,
+            "match_gold": true
+          },
+          {
+            "id": "TFT_C2",
+            "gold": "CONTRADICTION",
+            "verdict": "REVIEW",
+            "disposition": "REVIEW",
+            "bucket": "REVIEW",
+            "wrong_AUTO": false,
+            "correct_AUTO": false,
+            "is_REVIEW": true,
+            "match_gold": null
+          },
+          {
+            "id": "TFT_N1",
+            "gold": "NOT_SATISFIED",
+            "verdict": "NOT_SATISFIED",
+            "disposition": "AUTO",
+            "bucket": "correct_AUTO",
+            "wrong_AUTO": false,
+            "correct_AUTO": true,
+            "is_REVIEW": false,
+            "match_gold": true
+          },
+          {
+            "id": "TFT_N2",
+            "gold": "NOT_SATISFIED",
+            "verdict": "NOT_SATISFIED",
+            "disposition": "AUTO",
+            "bucket": "correct_AUTO",
+            "wrong_AUTO": false,
+            "correct_AUTO": true,
+            "is_REVIEW": false,
+            "match_gold": true
+          }
+        ]
+      }
+    }
+  ],
+  "held_out": true,
+  "redesign_forbidden": true,
+  "source_set": "temporal-family-test.json"
+}
