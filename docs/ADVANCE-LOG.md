@@ -27,6 +27,61 @@
 
 ## Log (newest first)
 
+### 2026-09-10 — :8260 v1 FROZEN (walk + stop GUI)
+
+| | |
+|--|--|
+| **Track** | A contain + diagnostic routing |
+| **Activity** | Walked four known cases on live `:8260`; freeze completeness = explicit `invariants` (overlay only). No T1/C1 traces, no extra ports. |
+| **Result** | CONTRA → compute (`correlational_trace`) REVIEW `n2n_layer_loss`. FOLFOX → translate (`dual_analog`) REVIEW `dual_wrong_AUTO`. BC_E1 → translate (`dual_comparison`) REVIEW. T1 incomplete → fix refused. Invariants held: no hidden-state patch, no Dual_full rewrite. |
+| **Artifacts** | `TRACKB-LOCATOR-V1.md` · `:8260` · `n2s-locator-fixes.json` |
+| **Decision** | **Stop GUI.** Next science (wait-go) = localization intervention contrast, not more routing coverage. |
+| **Commit** | (local) |
+
+### 2026-09-10 — locator v1 GUI (first-break + gated REVIEW)
+
+| | |
+|--|--|
+| **Track** | A contain + three-surface locate |
+| **Activity** | CPU locator: encode @ L8 / compute lost-steps / translate Dual snapshot; Fix = Dual REVIEW only. GUI `:8260`. **Hygiene:** workbench = diagnostic routing; probe type + evidence strength; response = REVIEW/ABSTAIN contain not repair. |
+| **Result** | Selftest: CONTRA first-break **compute**; FOLFOX **translate** (7B analog); BC_E1 **translate** (frozen Dual_full wrong_AUTO); T1 incomplete. n2n d-patch stays closed. |
+| **Artifacts** | `TRACKB-LOCATOR-V1.md` · `n2s_locator.py` · `locator_server.py` · `:8260` |
+| **Decision** | Glue existing probes; no silent editor. Wait-go for live Dual on T1/C1. |
+| **Commit** | (local) |
+
+### 2026-09-10 — residual L12+L16+L20 `d` patch (still PARTIAL)
+
+| | |
+|--|--|
+| **Track** | B n2n correction |
+| **Activity** | Same Dual-shaped protocol; ±α·d @ L12+L16+L20 α=1–2 (keep first rescue + act at remaining lost later layer). New artifact; did not overwrite L12-only / L12+L16 panels. |
+| **Result** | α=2 first lost still rescued (L16 −1.06); **L16→L20 still lost** (L20 +7.21, sign flip; was +9.21 without L20). n_lost=1. Dual contra AUTO CONTRADICTION held. α=1 still 2 lost. FOLFOX Dual analog still pre-existing NOT_SATISFIED. |
+| **Artifacts** | `n2s-nn-layer-patch-l12l16l20-panel.json` · `:8259` Show last residual |
+| **Decision** | Adding L20 nudged the leak but did not clear it. Stop α-chase / U-C/U-D. Containment remains G5 REVIEW. |
+| **Commit** | (local) |
+
+### 2026-09-10 — n2n-lost→REVIEW + L12+L16 `d` patch (PARTIAL)
+
+| | |
+|--|--|
+| **Track** | A contain + B n2n correction |
+| **Activity** | (1) Optional G5: lost steps → Dual REVIEW when a trace exists (not G3). (2) GPU stack ±α·d @ L12+L16 α=1–2. |
+| **Result** | Gate: CONTRA REVIEW, FOLFOX pass. Stack **PARTIAL** @ α=2 — first lost L12→L16 rescued (L16 −1.06); still 1 lost (L16→L20). Dual contra AUTO CONTRADICTION held. α=1 still 2 lost. |
+| **Artifacts** | `TRACKB-NN-LOST-REVIEW.md` · `n2s-nn-lost-review-panel.json` · `n2s-nn-layer-patch-l12l16-panel.json` · `:8259` |
+| **Decision** | Containment works without the editor finishing. Do not α-chase / U-C/U-D. Remaining leak is L16→L20. |
+| **Commit** | (local) |
+
+### 2026-09-10 — First-lost-layer `d` patch (Dual-shaped; NULL)
+
+| | |
+|--|--|
+| **Track** | B / neural-to-neural correction pilot |
+| **Activity** | Detect CONTRA L12→L16; prefill ±α·d @ L12 α=1–2 on FOLFOX+CONTRA; re-read layers + 7B extract; Dual analog AUTO-wrong vs baseline → REVIEW. |
+| **Result** | **NULL** — CONTRA still 2 lost (L16 stays +; L12 more negative as aimed). Contra Dual analog stays AUTO CONTRADICTION. FOLFOX 7B Dual analog already NOT_SATISFIED at α=0 (not a patch fail). |
+| **Artifacts** | `docs/TRACKB-NN-LAYER-PATCH.md` · `n2s_nn_layer_patch.py` · `n2s-nn-layer-patch-panel.json` · `:8259` |
+| **Decision** | No inside-net editor. Do not α-chase / U-C/U-D. Optional next = n2n-lost → REVIEW (Track A), wait go. |
+| **Commit** | (local) |
+
 ### 2026-09-06 — Circuit C0–C2 freeze + leave Upstream alone
 
 | | |

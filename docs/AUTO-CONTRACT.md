@@ -37,6 +37,7 @@ Optional later (not required for v1 scoring):
 | # | Gate | Pass condition |
 |---|------|----------------|
 | G4 | **Commit margin** | If a commit logit margin is available, \|margin\| ≥ threshold or → REVIEW |
+| G5 | **n2n layer-loss** (when a trace exists) | If `n_lost_steps ≥ 1` → REVIEW. No trace → do not fire. **Not G3.** See [TRACKB-NN-LOST-REVIEW.md](./TRACKB-NN-LOST-REVIEW.md) |
 
 ---
 

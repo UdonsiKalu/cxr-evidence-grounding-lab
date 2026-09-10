@@ -1,0 +1,46 @@
+{
+  "ok": true,
+  "kind": "n2s_locator_fixes_v1",
+  "fixes": {
+    "EX_CONTRA": {
+      "case_id": "EX_CONTRA",
+      "gold": "CONTRADICTION",
+      "first_break": "compute",
+      "class": "contain",
+      "action": "REVIEW",
+      "disposition": "REVIEW",
+      "reason": "n2n_layer_loss",
+      "timestamp": "2026-09-10T11:12:17.530943+00:00",
+      "protocol": "docs/TRACKB-LOCATOR-V1.md",
+      "would_have_been": "correct_AUTO",
+      "not": "neural repair"
+    },
+    "EX_TEMPORAL_FOLFOX": {
+      "case_id": "EX_TEMPORAL_FOLFOX",
+      "gold": "SATISFIED",
+      "first_break": "translate",
+      "class": "contain",
+      "action": "REVIEW",
+      "disposition": "REVIEW",
+      "reason": "dual_wrong_AUTO",
+      "timestamp": "2026-09-10T11:26:00.218558+00:00",
+      "protocol": "docs/TRACKB-LOCATOR-V1.md",
+      "would_have_been": "wrong_AUTO",
+      "not": "neural repair"
+    },
+    "BC_E1": {
+      "case_id": "BC_E1",
+      "gold": "SATISFIED",
+      "first_break": "translate",
+      "class": "contain",
+      "action": "REVIEW",
+      "disposition": "REVIEW",
+      "reason": "dual_wrong_AUTO",
+      "timestamp": "2026-09-10T11:12:17.581309+00:00",
+      "protocol": "docs/TRACKB-LOCATOR-V1.md",
+      "would_have_been": "wrong_AUTO",
+      "not": "neural repair"
+    }
+  },
+  "timestamp": "2026-09-10T11:26:00.218558+00:00"
+}

@@ -1,0 +1,343 @@
+{
+  "ok": true,
+  "kind": "n2s_nn_layer_loss_v1",
+  "quest": "Where does class-correct mean_score_d drop or flip across U-A layers?",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "ua_map": "n2s-upstream-ua-map.json",
+  "pair": {
+    "temporal": "EX_TEMPORAL_FOLFOX",
+    "contra": "EX_CONTRA"
+  },
+  "ground_rules": {
+    "version": "nn_layer_loss_v1",
+    "information": "mean_score_d = mean note-body residual projected onto frozen U-A d = unit(\u03bc_T\u2212\u03bc_C). + temporal-change side; \u2212 contradiction side.",
+    "where": [
+      8,
+      12,
+      16,
+      20,
+      24
+    ],
+    "lost": "On step L\u2192L\u2032: drop if class-correct falls by \u03c4\u22655.0, or flip if sign(mean_score_d) changes. Temporal class-correct = mean_score_d; contradiction class-correct = \u2212mean_score_d.",
+    "tau": 5.0,
+    "control": "Contradiction note must stay below the temporal note\u2019s mean_score_d at every listed layer.",
+    "not": [
+      "Shannon bit-loss layer 1\u2192N",
+      "causal editor / \u03b1-chase / U-C SAE / U-D",
+      "production CXR"
+    ]
+  },
+  "n_cases": 7,
+  "n_with_trace": 2,
+  "cases": [
+    {
+      "id": "EX_TEMPORAL_FOLFOX",
+      "category": "ua_pair",
+      "gold": "SATISFIED",
+      "side": "temporal",
+      "why": "Frozen U-A map pair (has layer trace).",
+      "evidence": "Metastatic colorectal cancer. First-line FOLFOX produced a partial response. At follow-up four months later, imaging demonstrated new hepatic lesions consistent with progression. FOLFOX was discontinued for treatment failure; second-line therapy discussed.",
+      "source_set": "DEFAULT_NOTES / n2s-upstream-ua-map.json",
+      "has_trace": true,
+      "layers": [
+        8,
+        12,
+        16,
+        20,
+        24
+      ],
+      "mean_score_d": {
+        "L8": 8.944,
+        "L12": 13.972,
+        "L16": 20.378,
+        "L20": 40.554,
+        "L24": 71.443
+      },
+      "steps": [
+        {
+          "from_layer": 8,
+          "to_layer": 12,
+          "mean_score_d_from": 8.944,
+          "mean_score_d_to": 13.972,
+          "class_correct_from": 8.944,
+          "class_correct_to": 13.972,
+          "drop": -5.028,
+          "sign_flip": false,
+          "lost_drop": false,
+          "lost": false
+        },
+        {
+          "from_layer": 12,
+          "to_layer": 16,
+          "mean_score_d_from": 13.972,
+          "mean_score_d_to": 20.378,
+          "class_correct_from": 13.972,
+          "class_correct_to": 20.378,
+          "drop": -6.405,
+          "sign_flip": false,
+          "lost_drop": false,
+          "lost": false
+        },
+        {
+          "from_layer": 16,
+          "to_layer": 20,
+          "mean_score_d_from": 20.378,
+          "mean_score_d_to": 40.554,
+          "class_correct_from": 20.378,
+          "class_correct_to": 40.554,
+          "drop": -20.176,
+          "sign_flip": false,
+          "lost_drop": false,
+          "lost": false
+        },
+        {
+          "from_layer": 20,
+          "to_layer": 24,
+          "mean_score_d_from": 40.554,
+          "mean_score_d_to": 71.443,
+          "class_correct_from": 40.554,
+          "class_correct_to": 71.443,
+          "drop": -30.89,
+          "sign_flip": false,
+          "lost_drop": false,
+          "lost": false
+        }
+      ],
+      "n_lost_steps": 0,
+      "peak_layer": 24,
+      "control_ok": null,
+      "tau": 5.0,
+      "n2n_review": {
+        "triggered": false,
+        "disposition": null,
+        "reason": "no_lost_steps",
+        "n_lost_steps": 0
+      }
+    },
+    {
+      "id": "EX_CONTRA",
+      "category": "ua_pair",
+      "gold": "CONTRADICTION",
+      "side": "contra",
+      "why": "Frozen U-A map pair (has layer trace).",
+      "evidence": "Note A: Patient failed first-line FOLFOX after four cycles. Addendum same day: Disease remains responsive to FOLFOX; continue current regimen.",
+      "source_set": "DEFAULT_NOTES / n2s-upstream-ua-map.json",
+      "has_trace": true,
+      "layers": [
+        8,
+        12,
+        16,
+        20,
+        24
+      ],
+      "mean_score_d": {
+        "L8": -2.739,
+        "L12": -0.52,
+        "L16": 2.206,
+        "L20": 11.431,
+        "L24": 9.448
+      },
+      "steps": [
+        {
+          "from_layer": 8,
+          "to_layer": 12,
+          "mean_score_d_from": -2.739,
+          "mean_score_d_to": -0.52,
+          "class_correct_from": 2.739,
+          "class_correct_to": 0.52,
+          "drop": 2.219,
+          "sign_flip": false,
+          "lost_drop": false,
+          "lost": false
+        },
+        {
+          "from_layer": 12,
+          "to_layer": 16,
+          "mean_score_d_from": -0.52,
+          "mean_score_d_to": 2.206,
+          "class_correct_from": 0.52,
+          "class_correct_to": -2.206,
+          "drop": 2.726,
+          "sign_flip": true,
+          "lost_drop": false,
+          "lost": true
+        },
+        {
+          "from_layer": 16,
+          "to_layer": 20,
+          "mean_score_d_from": 2.206,
+          "mean_score_d_to": 11.431,
+          "class_correct_from": -2.206,
+          "class_correct_to": -11.431,
+          "drop": 9.225,
+          "sign_flip": false,
+          "lost_drop": true,
+          "lost": true
+        },
+        {
+          "from_layer": 20,
+          "to_layer": 24,
+          "mean_score_d_from": 11.431,
+          "mean_score_d_to": 9.448,
+          "class_correct_from": -11.431,
+          "class_correct_to": -9.448,
+          "drop": -1.982,
+          "sign_flip": false,
+          "lost_drop": false,
+          "lost": false
+        }
+      ],
+      "n_lost_steps": 2,
+      "peak_layer": 8,
+      "control_ok": true,
+      "tau": 5.0,
+      "n2n_review": {
+        "triggered": true,
+        "disposition": "REVIEW",
+        "reason": "n2n_layer_loss",
+        "n_lost_steps": 2
+      }
+    },
+    {
+      "id": "T1",
+      "category": "temporal",
+      "gold": "SATISFIED",
+      "side": "temporal",
+      "why": "Initial response then later progression on first-line is still first-line failure.",
+      "evidence": "Started first-line carboplatin/pemetrexed in January 2025 with initial radiographic response. CT in August 2025 showed progression in the mediastinum.",
+      "source_set": "data/cases.json",
+      "has_trace": false,
+      "layers": [
+        8,
+        12,
+        16,
+        20,
+        24
+      ],
+      "mean_score_d": null,
+      "steps": [],
+      "n_lost_steps": 0,
+      "peak_layer": null,
+      "control_ok": null,
+      "tau": 5.0,
+      "n2n_review": {
+        "triggered": null,
+        "disposition": null,
+        "reason": "no_layer_trace"
+      }
+    },
+    {
+      "id": "T3",
+      "category": "temporal",
+      "gold": "SATISFIED",
+      "side": "temporal",
+      "why": "Response then progression, now on second-line \u2014 first-line has failed.",
+      "evidence": "Responded to first-line carboplatin/etoposide for eight months, then progressed. Currently on second-line topotecan.",
+      "source_set": "data/cases.json",
+      "has_trace": false,
+      "layers": [
+        8,
+        12,
+        16,
+        20,
+        24
+      ],
+      "mean_score_d": null,
+      "steps": [],
+      "n_lost_steps": 0,
+      "peak_layer": null,
+      "control_ok": null,
+      "tau": 5.0,
+      "n2n_review": {
+        "triggered": null,
+        "disposition": null,
+        "reason": "no_layer_trace"
+      }
+    },
+    {
+      "id": "C1",
+      "category": "conflicting",
+      "gold": "CONTRADICTION",
+      "side": "contra",
+      "why": "Assessment says first-line failed; addendum says ongoing first-line with SD.",
+      "evidence": "Assessment: first-line therapy failed, proceed to second-line. Addendum later the same day: patient continues first-line carboplatin with stable disease; do not change therapy.",
+      "source_set": "data/cases.json",
+      "has_trace": false,
+      "layers": [
+        8,
+        12,
+        16,
+        20,
+        24
+      ],
+      "mean_score_d": null,
+      "steps": [],
+      "n_lost_steps": 0,
+      "peak_layer": null,
+      "control_ok": null,
+      "tau": 5.0,
+      "n2n_review": {
+        "triggered": null,
+        "disposition": null,
+        "reason": "no_layer_trace"
+      }
+    },
+    {
+      "id": "C4",
+      "category": "conflicting",
+      "gold": "CONTRADICTION",
+      "side": "contra",
+      "why": "Same first-line regimen described as progressed and as excellent ongoing response.",
+      "evidence": "Progressed on carboplatin/paclitaxel (first-line). Later note: excellent ongoing response to first-line carboplatin/paclitaxel; continue current treatment.",
+      "source_set": "data/cases.json",
+      "has_trace": false,
+      "layers": [
+        8,
+        12,
+        16,
+        20,
+        24
+      ],
+      "mean_score_d": null,
+      "steps": [],
+      "n_lost_steps": 0,
+      "peak_layer": null,
+      "control_ok": null,
+      "tau": 5.0,
+      "n2n_review": {
+        "triggered": null,
+        "disposition": null,
+        "reason": "no_layer_trace"
+      }
+    },
+    {
+      "id": "BC_E1",
+      "category": "explicit",
+      "gold": "SATISFIED",
+      "side": "temporal",
+      "why": "Clear first-line R-CHOP failure then switch to second line \u2014 not a contradiction.",
+      "evidence": "DLBCL: first-line R-CHOP for four cycles with initial response, then radiographic progression in cycle 5. Discontinued R-CHOP for progression; started R-ICE as second-line therapy.",
+      "source_set": "heldout-bmtcart-phase7",
+      "has_trace": false,
+      "layers": [
+        8,
+        12,
+        16,
+        20,
+        24
+      ],
+      "mean_score_d": null,
+      "steps": [],
+      "n_lost_steps": 0,
+      "peak_layer": null,
+      "control_ok": null,
+      "tau": 5.0,
+      "n2n_review": {
+        "triggered": null,
+        "disposition": null,
+        "reason": "no_layer_trace"
+      }
+    }
+  ],
+  "claim_hygiene": "Correlational replay of frozen U-A scores. Not a layer-1\u2026N loss curve. Not a causal neural-to-neural editor."
+}
