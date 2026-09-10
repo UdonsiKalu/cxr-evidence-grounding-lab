@@ -100,7 +100,7 @@
 | **Track** | B / infra |
 | **Activity** | Dedicated `:8258` live workbench; Score FOLFOX temporal + EX_CONTRA vs frozen U-A `d`; custom-pair map (short progression vs no-new-lesions). Claim lock in `N2S-SYSTEM-CLAIM.md` + PROGRAM. |
 | **Result** | FOLFOX temporal L24 `|μ·d|≈71`; EX_CONTRA L24 `|μ·d|≈18.5` (top Disease/remains); custom pair weaker sep (~25.6 vs lab ~62). Ablation family remains null/paused. |
-| **Artifacts** | `n2s-upstream-live-runs/` · `upstream_server.py` · `n2s_upstream_live.py` |
+| **Artifacts** | `n2s-upstream-live-runs/` (incl. remaining `:8258` LIVE paste scores `LIVE_e34d36ec`, `LIVE_3c8c30b5`) · `upstream_server.py` · `n2s_upstream_live.py` |
 | **Decision** | **Pause** Upstream science for portfolio/write-up. **Do not** open U-C SAE / U-D circuits / live ablate thrash. |
 | **Commit** | (local) |
 
