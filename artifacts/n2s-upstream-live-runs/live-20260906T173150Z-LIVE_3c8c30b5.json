@@ -1,0 +1,664 @@
+{
+  "ok": true,
+  "kind": "n2s_upstream_live_score_v1",
+  "timestamp": "2026-09-06T17:31:50.558986+00:00",
+  "quest": "Live: where do this note's prefill residuals project onto the frozen U-A formation direction d = unit(\u03bc_T\u2212\u03bc_C)?",
+  "case_id": "LIVE_3c8c30b5",
+  "gold": "SATISFIED",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "directions_path": "/home/udonsi-kalu/staging/cxr-evidence-grounding-lab/artifacts/n2s-upstream-ua-directions.pt",
+  "directions_cached": true,
+  "pair_frozen": {
+    "temporal": "EX_TEMPORAL_FOLFOX",
+    "contra": "EX_CONTRA"
+  },
+  "freeze_v_source": "directions",
+  "n_note_tokens": 737,
+  "best_layer": "L24",
+  "by_layer": {
+    "L8": {
+      "layer": 8,
+      "mean_score_d": 5.153365,
+      "mean_abs_score_d": 5.290719,
+      "cos_d_vs_freeze_v": 0.023636,
+      "top_sites": [
+        {
+          "local_pos": 36,
+          "global_pos": 450,
+          "token": "atic",
+          "score_d": 19.132143,
+          "abs_score_d": 19.132143,
+          "norm": 61.924309,
+          "cos_v": -0.010656,
+          "proj_v": -0.659864
+        },
+        {
+          "local_pos": 9,
+          "global_pos": 423,
+          "token": "ctal",
+          "score_d": 17.649788,
+          "abs_score_d": 17.649788,
+          "norm": 67.255707,
+          "cos_v": -0.012265,
+          "proj_v": -0.824893
+        },
+        {
+          "local_pos": 39,
+          "global_pos": 453,
+          "token": " metast",
+          "score_d": 17.301523,
+          "abs_score_d": 17.301523,
+          "norm": 59.475967,
+          "cos_v": 0.001717,
+          "proj_v": 0.102095
+        },
+        {
+          "local_pos": 6,
+          "global_pos": 420,
+          "token": " metast",
+          "score_d": 16.427923,
+          "abs_score_d": 16.427923,
+          "norm": 61.61924,
+          "cos_v": 0.000338,
+          "proj_v": 0.020798
+        },
+        {
+          "local_pos": 302,
+          "global_pos": 716,
+          "token": "atic",
+          "score_d": 15.610881,
+          "abs_score_d": 15.610881,
+          "norm": 56.841339,
+          "cos_v": -0.011371,
+          "proj_v": -0.646328
+        },
+        {
+          "local_pos": 327,
+          "global_pos": 741,
+          "token": " metast",
+          "score_d": 15.547265,
+          "abs_score_d": 15.547265,
+          "norm": 56.943306,
+          "cos_v": 0.013406,
+          "proj_v": 0.763383
+        },
+        {
+          "local_pos": 669,
+          "global_pos": 1083,
+          "token": "ast",
+          "score_d": 15.435725,
+          "abs_score_d": 15.435725,
+          "norm": 56.852745,
+          "cos_v": 0.005427,
+          "proj_v": 0.308534
+        },
+        {
+          "local_pos": 132,
+          "global_pos": 546,
+          "token": "atic",
+          "score_d": 15.231765,
+          "abs_score_d": 15.231765,
+          "norm": 56.024975,
+          "cos_v": -0.004902,
+          "proj_v": -0.274651
+        },
+        {
+          "local_pos": 409,
+          "global_pos": 823,
+          "token": "atic",
+          "score_d": 15.210571,
+          "abs_score_d": 15.210571,
+          "norm": 55.772552,
+          "cos_v": -0.007944,
+          "proj_v": -0.443031
+        },
+        {
+          "local_pos": 672,
+          "global_pos": 1086,
+          "token": "ctal",
+          "score_d": 15.185143,
+          "abs_score_d": 15.185143,
+          "norm": 63.964649,
+          "cos_v": -0.006112,
+          "proj_v": -0.390969
+        },
+        {
+          "local_pos": 35,
+          "global_pos": 449,
+          "token": " hep",
+          "score_d": 14.925624,
+          "abs_score_d": 14.925624,
+          "norm": 54.516396,
+          "cos_v": -0.003856,
+          "proj_v": -0.210225
+        },
+        {
+          "local_pos": 538,
+          "global_pos": 952,
+          "token": "atic",
+          "score_d": 14.799897,
+          "abs_score_d": 14.799897,
+          "norm": 56.171112,
+          "cos_v": -0.003804,
+          "proj_v": -0.213685
+        }
+      ]
+    },
+    "L12": {
+      "layer": 12,
+      "mean_score_d": 9.597466,
+      "mean_abs_score_d": 9.638843,
+      "cos_d_vs_freeze_v": 0.013457,
+      "top_sites": [
+        {
+          "local_pos": 39,
+          "global_pos": 453,
+          "token": " metast",
+          "score_d": 29.27128,
+          "abs_score_d": 29.27128,
+          "norm": 70.26104,
+          "cos_v": 0.019377,
+          "proj_v": 1.361451
+        },
+        {
+          "local_pos": 6,
+          "global_pos": 420,
+          "token": " metast",
+          "score_d": 29.013742,
+          "abs_score_d": 29.013742,
+          "norm": 75.841255,
+          "cos_v": 0.003889,
+          "proj_v": 0.294933
+        },
+        {
+          "local_pos": 36,
+          "global_pos": 450,
+          "token": "atic",
+          "score_d": 27.411127,
+          "abs_score_d": 27.411127,
+          "norm": 71.160233,
+          "cos_v": 0.004184,
+          "proj_v": 0.297758
+        },
+        {
+          "local_pos": 669,
+          "global_pos": 1083,
+          "token": "ast",
+          "score_d": 24.946293,
+          "abs_score_d": 24.946293,
+          "norm": 66.253815,
+          "cos_v": 0.007638,
+          "proj_v": 0.506074
+        },
+        {
+          "local_pos": 40,
+          "global_pos": 454,
+          "token": "atic",
+          "score_d": 24.914824,
+          "abs_score_d": 24.914824,
+          "norm": 65.039177,
+          "cos_v": 0.006494,
+          "proj_v": 0.422364
+        },
+        {
+          "local_pos": 327,
+          "global_pos": 741,
+          "token": " metast",
+          "score_d": 24.70039,
+          "abs_score_d": 24.70039,
+          "norm": 64.746643,
+          "cos_v": 0.019922,
+          "proj_v": 1.289859
+        },
+        {
+          "local_pos": 458,
+          "global_pos": 872,
+          "token": " metast",
+          "score_d": 24.580833,
+          "abs_score_d": 24.580833,
+          "norm": 64.534615,
+          "cos_v": 0.010764,
+          "proj_v": 0.69466
+        },
+        {
+          "local_pos": 7,
+          "global_pos": 421,
+          "token": "atic",
+          "score_d": 23.910803,
+          "abs_score_d": 23.910803,
+          "norm": 73.164131,
+          "cos_v": -0.000246,
+          "proj_v": -0.018011
+        },
+        {
+          "local_pos": 132,
+          "global_pos": 546,
+          "token": "atic",
+          "score_d": 23.357979,
+          "abs_score_d": 23.357979,
+          "norm": 66.138535,
+          "cos_v": 0.008274,
+          "proj_v": 0.547256
+        },
+        {
+          "local_pos": 332,
+          "global_pos": 746,
+          "token": " metast",
+          "score_d": 23.100964,
+          "abs_score_d": 23.100964,
+          "norm": 65.170967,
+          "cos_v": 0.019516,
+          "proj_v": 1.271873
+        },
+        {
+          "local_pos": 38,
+          "global_pos": 452,
+          "token": " pulmonary",
+          "score_d": 22.578993,
+          "abs_score_d": 22.578993,
+          "norm": 67.830353,
+          "cos_v": 0.012693,
+          "proj_v": 0.860937
+        },
+        {
+          "local_pos": 35,
+          "global_pos": 449,
+          "token": " hep",
+          "score_d": 22.110413,
+          "abs_score_d": 22.110413,
+          "norm": 65.542686,
+          "cos_v": 0.014217,
+          "proj_v": 0.931851
+        }
+      ]
+    },
+    "L16": {
+      "layer": 16,
+      "mean_score_d": 14.734243,
+      "mean_abs_score_d": 14.746799,
+      "cos_d_vs_freeze_v": 0.026632,
+      "top_sites": [
+        {
+          "local_pos": 6,
+          "global_pos": 420,
+          "token": " metast",
+          "score_d": 34.03783,
+          "abs_score_d": 34.03783,
+          "norm": 89.234528,
+          "cos_v": 0.009746,
+          "proj_v": 0.86967
+        },
+        {
+          "local_pos": 39,
+          "global_pos": 453,
+          "token": " metast",
+          "score_d": 33.707703,
+          "abs_score_d": 33.707703,
+          "norm": 85.743706,
+          "cos_v": 0.008283,
+          "proj_v": 0.710217
+        },
+        {
+          "local_pos": 36,
+          "global_pos": 450,
+          "token": "atic",
+          "score_d": 31.409933,
+          "abs_score_d": 31.409933,
+          "norm": 85.254143,
+          "cos_v": -0.00295,
+          "proj_v": -0.251541
+        },
+        {
+          "local_pos": 38,
+          "global_pos": 452,
+          "token": " pulmonary",
+          "score_d": 29.791544,
+          "abs_score_d": 29.791544,
+          "norm": 89.188644,
+          "cos_v": 0.009821,
+          "proj_v": 0.875893
+        },
+        {
+          "local_pos": 458,
+          "global_pos": 872,
+          "token": " metast",
+          "score_d": 29.614405,
+          "abs_score_d": 29.614405,
+          "norm": 82.113106,
+          "cos_v": 0.021271,
+          "proj_v": 1.7466
+        },
+        {
+          "local_pos": 669,
+          "global_pos": 1083,
+          "token": "ast",
+          "score_d": 29.593859,
+          "abs_score_d": 29.593859,
+          "norm": 83.206337,
+          "cos_v": 0.009932,
+          "proj_v": 0.826376
+        },
+        {
+          "local_pos": 327,
+          "global_pos": 741,
+          "token": " metast",
+          "score_d": 28.736006,
+          "abs_score_d": 28.736006,
+          "norm": 83.513535,
+          "cos_v": 0.025144,
+          "proj_v": 2.099864
+        },
+        {
+          "local_pos": 539,
+          "global_pos": 953,
+          "token": " lesions",
+          "score_d": 28.518991,
+          "abs_score_d": 28.518991,
+          "norm": 88.886818,
+          "cos_v": 0.037509,
+          "proj_v": 3.334064
+        },
+        {
+          "local_pos": 40,
+          "global_pos": 454,
+          "token": "atic",
+          "score_d": 28.386147,
+          "abs_score_d": 28.386147,
+          "norm": 81.551567,
+          "cos_v": -0.002351,
+          "proj_v": -0.191715
+        },
+        {
+          "local_pos": 7,
+          "global_pos": 421,
+          "token": "atic",
+          "score_d": 28.329601,
+          "abs_score_d": 28.329601,
+          "norm": 86.63858,
+          "cos_v": -0.010165,
+          "proj_v": -0.880676
+        },
+        {
+          "local_pos": 9,
+          "global_pos": 423,
+          "token": "ctal",
+          "score_d": 27.955498,
+          "abs_score_d": 27.955498,
+          "norm": 84.586334,
+          "cos_v": -7.2e-05,
+          "proj_v": -0.006089
+        },
+        {
+          "local_pos": 35,
+          "global_pos": 449,
+          "token": " hep",
+          "score_d": 27.838715,
+          "abs_score_d": 27.838715,
+          "norm": 81.858055,
+          "cos_v": 0.010987,
+          "proj_v": 0.899381
+        }
+      ]
+    },
+    "L20": {
+      "layer": 20,
+      "mean_score_d": 29.026453,
+      "mean_abs_score_d": 29.026453,
+      "cos_d_vs_freeze_v": 0.026993,
+      "top_sites": [
+        {
+          "local_pos": 9,
+          "global_pos": 423,
+          "token": "ctal",
+          "score_d": 50.507008,
+          "abs_score_d": 50.507008,
+          "norm": 124.04319,
+          "cos_v": -0.021979,
+          "proj_v": -2.72636
+        },
+        {
+          "local_pos": 36,
+          "global_pos": 450,
+          "token": "atic",
+          "score_d": 50.384789,
+          "abs_score_d": 50.384789,
+          "norm": 123.225662,
+          "cos_v": 0.006628,
+          "proj_v": 0.816686
+        },
+        {
+          "local_pos": 276,
+          "global_pos": 690,
+          "token": " enlargement",
+          "score_d": 49.239719,
+          "abs_score_d": 49.239719,
+          "norm": 130.089066,
+          "cos_v": 0.019091,
+          "proj_v": 2.48359
+        },
+        {
+          "local_pos": 38,
+          "global_pos": 452,
+          "token": " pulmonary",
+          "score_d": 47.672009,
+          "abs_score_d": 47.672009,
+          "norm": 121.457535,
+          "cos_v": -0.008507,
+          "proj_v": -1.033274
+        },
+        {
+          "local_pos": 6,
+          "global_pos": 420,
+          "token": " metast",
+          "score_d": 46.033653,
+          "abs_score_d": 46.033653,
+          "norm": 117.492424,
+          "cos_v": -0.003939,
+          "proj_v": -0.462812
+        },
+        {
+          "local_pos": 39,
+          "global_pos": 453,
+          "token": " metast",
+          "score_d": 45.810989,
+          "abs_score_d": 45.810989,
+          "norm": 114.588036,
+          "cos_v": -0.000429,
+          "proj_v": -0.049147
+        },
+        {
+          "local_pos": 137,
+          "global_pos": 551,
+          "token": " a",
+          "score_d": 45.562904,
+          "abs_score_d": 45.562904,
+          "norm": 115.189163,
+          "cos_v": 0.05193,
+          "proj_v": 5.981794
+        },
+        {
+          "local_pos": 7,
+          "global_pos": 421,
+          "token": "atic",
+          "score_d": 45.508278,
+          "abs_score_d": 45.508278,
+          "norm": 117.722977,
+          "cos_v": -0.011182,
+          "proj_v": -1.316384
+        },
+        {
+          "local_pos": 136,
+          "global_pos": 550,
+          "token": " was",
+          "score_d": 45.104084,
+          "abs_score_d": 45.104084,
+          "norm": 117.224922,
+          "cos_v": 0.065569,
+          "proj_v": 7.686294
+        },
+        {
+          "local_pos": 138,
+          "global_pos": 552,
+          "token": " new",
+          "score_d": 44.907116,
+          "abs_score_d": 44.907116,
+          "norm": 117.144516,
+          "cos_v": 0.034401,
+          "proj_v": 4.029842
+        },
+        {
+          "local_pos": 40,
+          "global_pos": 454,
+          "token": "atic",
+          "score_d": 44.676853,
+          "abs_score_d": 44.676853,
+          "norm": 117.937332,
+          "cos_v": 0.003595,
+          "proj_v": 0.424032
+        },
+        {
+          "local_pos": 147,
+          "global_pos": 561,
+          "token": " opacity",
+          "score_d": 44.628845,
+          "abs_score_d": 44.628845,
+          "norm": 124.192253,
+          "cos_v": 0.027347,
+          "proj_v": 3.396278
+        }
+      ]
+    },
+    "L24": {
+      "layer": 24,
+      "mean_score_d": 54.010172,
+      "mean_abs_score_d": 54.077912,
+      "cos_d_vs_freeze_v": 0.028097,
+      "top_sites": [
+        {
+          "local_pos": 302,
+          "global_pos": 716,
+          "token": "atic",
+          "score_d": 135.103073,
+          "abs_score_d": 135.103073,
+          "norm": 315.721893,
+          "cos_v": 0.026307,
+          "proj_v": 8.30584
+        },
+        {
+          "local_pos": 281,
+          "global_pos": 695,
+          "token": "atic",
+          "score_d": 134.907349,
+          "abs_score_d": 134.907349,
+          "norm": 317.065552,
+          "cos_v": -0.012371,
+          "proj_v": -3.922471
+        },
+        {
+          "local_pos": 538,
+          "global_pos": 952,
+          "token": "atic",
+          "score_d": 133.750061,
+          "abs_score_d": 133.750061,
+          "norm": 306.735168,
+          "cos_v": 0.023014,
+          "proj_v": 7.059067
+        },
+        {
+          "local_pos": 36,
+          "global_pos": 450,
+          "token": "atic",
+          "score_d": 130.382355,
+          "abs_score_d": 130.382355,
+          "norm": 303.433929,
+          "cos_v": 0.008877,
+          "proj_v": 2.693676
+        },
+        {
+          "local_pos": 409,
+          "global_pos": 823,
+          "token": "atic",
+          "score_d": 130.056274,
+          "abs_score_d": 130.056274,
+          "norm": 299.651581,
+          "cos_v": 0.012324,
+          "proj_v": 3.692896
+        },
+        {
+          "local_pos": 66,
+          "global_pos": 480,
+          "token": " demonstrated",
+          "score_d": 129.755447,
+          "abs_score_d": 129.755447,
+          "norm": 318.439606,
+          "cos_v": 0.049478,
+          "proj_v": 15.755857
+        },
+        {
+          "local_pos": 38,
+          "global_pos": 452,
+          "token": " pulmonary",
+          "score_d": 127.34507,
+          "abs_score_d": 127.34507,
+          "norm": 306.543793,
+          "cos_v": 0.006924,
+          "proj_v": 2.122422
+        },
+        {
+          "local_pos": 326,
+          "global_pos": 740,
+          "token": "atic",
+          "score_d": 127.266594,
+          "abs_score_d": 127.266594,
+          "norm": 299.135254,
+          "cos_v": -0.007885,
+          "proj_v": -2.35857
+        },
+        {
+          "local_pos": 456,
+          "global_pos": 870,
+          "token": " for",
+          "score_d": 125.677399,
+          "abs_score_d": 125.677399,
+          "norm": 290.782837,
+          "cos_v": 0.025426,
+          "proj_v": 7.393512
+        },
+        {
+          "local_pos": 531,
+          "global_pos": 945,
+          "token": "atic",
+          "score_d": 124.897942,
+          "abs_score_d": 124.897942,
+          "norm": 303.504456,
+          "cos_v": -0.013511,
+          "proj_v": -4.100792
+        },
+        {
+          "local_pos": 132,
+          "global_pos": 546,
+          "token": "atic",
+          "score_d": 123.873192,
+          "abs_score_d": 123.873192,
+          "norm": 295.089386,
+          "cos_v": 0.000444,
+          "proj_v": 0.131002
+        },
+        {
+          "local_pos": 397,
+          "global_pos": 811,
+          "token": "atic",
+          "score_d": 123.813805,
+          "abs_score_d": 123.813805,
+          "norm": 294.990265,
+          "cos_v": -0.007682,
+          "proj_v": -2.266097
+        }
+      ]
+    }
+  },
+  "claim_hygiene": {
+    "say": "live score vs frozen U-A d; correlational formation readout",
+    "do_not_say": "ablation; circuit found; upstream editor; freeze-v is temporality"
+  }
+}
