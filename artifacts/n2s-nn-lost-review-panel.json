@@ -1,0 +1,92 @@
+{
+  "ok": true,
+  "kind": "n2s_nn_lost_review_v1",
+  "quest": "If n2n layer-loss flags lost steps, Dual REVIEW (contain).",
+  "protocol": "docs/TRACKB-NN-LOST-REVIEW.md",
+  "n_cases": 7,
+  "n_with_trace": 2,
+  "n_review": 1,
+  "n_pass": 1,
+  "cases": [
+    {
+      "id": "EX_TEMPORAL_FOLFOX",
+      "gold": "SATISFIED",
+      "has_trace": true,
+      "n_lost_steps": 0,
+      "n2n_review": {
+        "triggered": false,
+        "disposition": null,
+        "reason": "no_lost_steps",
+        "n_lost_steps": 0
+      }
+    },
+    {
+      "id": "EX_CONTRA",
+      "gold": "CONTRADICTION",
+      "has_trace": true,
+      "n_lost_steps": 2,
+      "n2n_review": {
+        "triggered": true,
+        "disposition": "REVIEW",
+        "reason": "n2n_layer_loss",
+        "n_lost_steps": 2
+      }
+    },
+    {
+      "id": "T1",
+      "gold": "SATISFIED",
+      "has_trace": false,
+      "n_lost_steps": 0,
+      "n2n_review": {
+        "triggered": null,
+        "disposition": null,
+        "reason": "no_layer_trace"
+      }
+    },
+    {
+      "id": "T3",
+      "gold": "SATISFIED",
+      "has_trace": false,
+      "n_lost_steps": 0,
+      "n2n_review": {
+        "triggered": null,
+        "disposition": null,
+        "reason": "no_layer_trace"
+      }
+    },
+    {
+      "id": "C1",
+      "gold": "CONTRADICTION",
+      "has_trace": false,
+      "n_lost_steps": 0,
+      "n2n_review": {
+        "triggered": null,
+        "disposition": null,
+        "reason": "no_layer_trace"
+      }
+    },
+    {
+      "id": "C4",
+      "gold": "CONTRADICTION",
+      "has_trace": false,
+      "n_lost_steps": 0,
+      "n2n_review": {
+        "triggered": null,
+        "disposition": null,
+        "reason": "no_layer_trace"
+      }
+    },
+    {
+      "id": "BC_E1",
+      "gold": "SATISFIED",
+      "has_trace": false,
+      "n_lost_steps": 0,
+      "n2n_review": {
+        "triggered": null,
+        "disposition": null,
+        "reason": "no_layer_trace"
+      }
+    }
+  ],
+  "claim_hygiene": "Optional Track A gate when a layer trace exists. Does not change G1\u2013G3. Does not rescore Dual_full Phase-7."
+}

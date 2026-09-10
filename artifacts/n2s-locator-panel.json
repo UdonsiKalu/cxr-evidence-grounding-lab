@@ -1,0 +1,892 @@
+{
+  "ok": true,
+  "kind": "n2s_locator_v1",
+  "timestamp": "2026-09-10T11:42:30.786838+00:00",
+  "protocol": "docs/TRACKB-LOCATOR-V1.md",
+  "workbench": "diagnostic_routing",
+  "quest": "Route known CXR cases to an encode-, compute-, or translate-associated first-break using frozen probes. Containment only. Not causal origin.",
+  "n_cases": 7,
+  "n_located": 3,
+  "n_pass": 0,
+  "n_incomplete": 4,
+  "encode_layer": 8,
+  "cases": [
+    {
+      "ok": true,
+      "id": "EX_TEMPORAL_FOLFOX",
+      "gold": "SATISFIED",
+      "side": "temporal",
+      "category": "ua_pair",
+      "evidence": "Metastatic colorectal cancer. First-line FOLFOX produced a partial response. At follow-up four months later, imaging demonstrated new hepatic lesions consistent with progression. FOLFOX was discontinued for treatment failure; second-line therapy discussed.",
+      "why": "Frozen U-A map pair (has layer trace).",
+      "has_trace": true,
+      "layers": [
+        8,
+        12,
+        16,
+        20,
+        24
+      ],
+      "mean_score_d": {
+        "L8": 8.944,
+        "L12": 13.972,
+        "L16": 20.378,
+        "L20": 40.554,
+        "L24": 71.443
+      },
+      "encode": {
+        "surface": "encode",
+        "status": "pass",
+        "pass": true,
+        "layer": 8,
+        "mean_score_d": 8.944,
+        "class_correct": 8.944,
+        "side": "temporal",
+        "probe_type": "correlational_readout",
+        "claim": "encode probe/readout",
+        "evidence_strength": "moderate",
+        "evidence_why": "L8 class-correct on frozen d. Correlational. Not causal proof the failure emerged at encode.",
+        "note": "Formation @ L8: class-correct 8.94 (right side of frozen d). Not L24 after compute.",
+        "deep_dive": "http://127.0.0.1:8258/"
+      },
+      "compute": {
+        "surface": "compute",
+        "status": "pass",
+        "pass": true,
+        "n_lost_steps": 0,
+        "first_lost": null,
+        "control_ok": null,
+        "n2n_review": {
+          "triggered": false,
+          "disposition": null,
+          "reason": "no_lost_steps",
+          "n_lost_steps": 0
+        },
+        "probe_type": "correlational_trace",
+        "claim": "compute-associated routing signal",
+        "evidence_strength": "moderate",
+        "evidence_why": "Lost-step pattern on frozen d. Correlational. Not causal localization of a layer write.",
+        "note": "0 lost steps.",
+        "deep_dive": "http://127.0.0.1:8259/"
+      },
+      "translate": {
+        "surface": "translate",
+        "status": "fail",
+        "pass": false,
+        "ok": true,
+        "gold": "SATISFIED",
+        "verdict": "NOT_SATISFIED",
+        "disposition": "AUTO",
+        "bucket": "wrong_AUTO",
+        "wrong_AUTO": true,
+        "correct_AUTO": false,
+        "is_REVIEW": false,
+        "match_gold": false,
+        "source": "dual_analog_7b_patch_baseline",
+        "artifact": "n2s-nn-layer-patch-l12l16l20-panel.json",
+        "extract_x": false,
+        "not": "Dual_full 32B",
+        "probe_type": "dual_analog",
+        "claim": "translation-associated routing signal",
+        "evidence_strength": "moderate",
+        "evidence_why": "7B Dual analog snapshot vs gold. Not Dual_full 32B; not causal origin.",
+        "note": "Dual would AUTO a wrong answer (wrong_AUTO).",
+        "deep_dive": "http://127.0.0.1:8253/"
+      },
+      "first_break": {
+        "surface": "translate",
+        "status": "located",
+        "kind": "routing",
+        "claim": "translation-associated routing signal",
+        "probe_type": "dual_analog",
+        "evidence_strength": "moderate",
+        "evidence_why": "7B Dual analog snapshot vs gold. Not Dual_full 32B; not causal origin.",
+        "why": "Dual would AUTO a wrong answer (wrong_AUTO).",
+        "response": "REVIEW (containment, not repair)",
+        "not": "causal first emergence"
+      },
+      "offered_response": {
+        "allowed": true,
+        "class": "contain",
+        "action": "REVIEW",
+        "disposition": "REVIEW",
+        "reason": "dual_wrong_AUTO",
+        "surface": "translate",
+        "do_not": [
+          "call this a correction / neural repair",
+          "n2n frozen-d patch",
+          "\u03b1-chase",
+          "U-C SAE / U-D",
+          "silent Dual_full rewrite"
+        ]
+      },
+      "offered_fix": {
+        "allowed": true,
+        "class": "contain",
+        "action": "REVIEW",
+        "disposition": "REVIEW",
+        "reason": "dual_wrong_AUTO",
+        "surface": "translate",
+        "do_not": [
+          "call this a correction / neural repair",
+          "n2n frozen-d patch",
+          "\u03b1-chase",
+          "U-C SAE / U-D",
+          "silent Dual_full rewrite"
+        ]
+      },
+      "applied_response": {
+        "case_id": "EX_TEMPORAL_FOLFOX",
+        "gold": "SATISFIED",
+        "first_break": "translate",
+        "class": "contain",
+        "action": "REVIEW",
+        "disposition": "REVIEW",
+        "reason": "dual_wrong_AUTO",
+        "timestamp": "2026-09-10T11:26:00.218558+00:00",
+        "protocol": "docs/TRACKB-LOCATOR-V1.md",
+        "would_have_been": "wrong_AUTO",
+        "not": "neural repair"
+      },
+      "applied_fix": {
+        "case_id": "EX_TEMPORAL_FOLFOX",
+        "gold": "SATISFIED",
+        "first_break": "translate",
+        "class": "contain",
+        "action": "REVIEW",
+        "disposition": "REVIEW",
+        "reason": "dual_wrong_AUTO",
+        "timestamp": "2026-09-10T11:26:00.218558+00:00",
+        "protocol": "docs/TRACKB-LOCATOR-V1.md",
+        "would_have_been": "wrong_AUTO",
+        "not": "neural repair"
+      },
+      "invariants": {
+        "status": "held",
+        "hidden_state_patched": false,
+        "dual_full_rewritten": false,
+        "overlay_only": true,
+        "note": "Containment overlay only. No hidden-state patch, no Dual_full rewrite, no neural repair."
+      },
+      "protocol": "docs/TRACKB-LOCATOR-V1.md",
+      "workbench": "diagnostic_routing"
+    },
+    {
+      "ok": true,
+      "id": "EX_CONTRA",
+      "gold": "CONTRADICTION",
+      "side": "contra",
+      "category": "ua_pair",
+      "evidence": "Note A: Patient failed first-line FOLFOX after four cycles. Addendum same day: Disease remains responsive to FOLFOX; continue current regimen.",
+      "why": "Frozen U-A map pair (has layer trace).",
+      "has_trace": true,
+      "layers": [
+        8,
+        12,
+        16,
+        20,
+        24
+      ],
+      "mean_score_d": {
+        "L8": -2.739,
+        "L12": -0.52,
+        "L16": 2.206,
+        "L20": 11.431,
+        "L24": 9.448
+      },
+      "encode": {
+        "surface": "encode",
+        "status": "pass",
+        "pass": true,
+        "layer": 8,
+        "mean_score_d": -2.739,
+        "class_correct": 2.739,
+        "side": "contra",
+        "probe_type": "correlational_readout",
+        "claim": "encode probe/readout",
+        "evidence_strength": "moderate",
+        "evidence_why": "L8 class-correct on frozen d. Correlational. Not causal proof the failure emerged at encode.",
+        "note": "Formation @ L8: class-correct 2.74 (right side of frozen d). Not L24 after compute.",
+        "deep_dive": "http://127.0.0.1:8258/"
+      },
+      "compute": {
+        "surface": "compute",
+        "status": "fail",
+        "pass": false,
+        "n_lost_steps": 2,
+        "first_lost": {
+          "from_layer": 12,
+          "to_layer": 16,
+          "mean_score_d_from": -0.52,
+          "mean_score_d_to": 2.206,
+          "class_correct_from": 0.52,
+          "class_correct_to": -2.206,
+          "drop": 2.726,
+          "sign_flip": true,
+          "lost_drop": false,
+          "lost": true
+        },
+        "control_ok": true,
+        "n2n_review": {
+          "triggered": true,
+          "disposition": "REVIEW",
+          "reason": "n2n_layer_loss",
+          "n_lost_steps": 2
+        },
+        "probe_type": "correlational_trace",
+        "claim": "compute-associated routing signal",
+        "evidence_strength": "moderate",
+        "evidence_why": "Lost-step pattern on frozen d. Correlational. Not causal localization of a layer write.",
+        "note": "2 lost step(s); first L12\u2192L16",
+        "deep_dive": "http://127.0.0.1:8259/"
+      },
+      "translate": {
+        "surface": "translate",
+        "status": "pass",
+        "pass": true,
+        "ok": true,
+        "gold": "CONTRADICTION",
+        "verdict": "CONTRADICTION",
+        "disposition": "AUTO",
+        "bucket": "correct_AUTO",
+        "wrong_AUTO": false,
+        "correct_AUTO": true,
+        "is_REVIEW": false,
+        "match_gold": true,
+        "source": "dual_analog_7b_patch_baseline",
+        "artifact": "n2s-nn-layer-patch-l12l16l20-panel.json",
+        "extract_x": true,
+        "not": "Dual_full 32B",
+        "probe_type": "dual_analog",
+        "claim": "translation-associated routing signal",
+        "evidence_strength": "moderate",
+        "evidence_why": "7B Dual analog snapshot vs gold. Not Dual_full 32B; not causal origin.",
+        "note": "Dual AUTO matches gold (this snapshot).",
+        "deep_dive": "http://127.0.0.1:8253/"
+      },
+      "first_break": {
+        "surface": "compute",
+        "status": "located",
+        "kind": "routing",
+        "claim": "compute-associated routing signal",
+        "probe_type": "correlational_trace",
+        "evidence_strength": "moderate",
+        "evidence_why": "Lost-step pattern on frozen d. Correlational. Not causal localization of a layer write.",
+        "why": "2 lost step(s); first L12\u2192L16",
+        "response": "REVIEW (containment, not repair)",
+        "not": "causal first emergence"
+      },
+      "offered_response": {
+        "allowed": true,
+        "class": "contain",
+        "action": "REVIEW",
+        "disposition": "REVIEW",
+        "reason": "n2n_layer_loss",
+        "surface": "compute",
+        "do_not": [
+          "call this a correction / neural repair",
+          "n2n frozen-d patch",
+          "\u03b1-chase",
+          "U-C SAE / U-D",
+          "silent Dual_full rewrite"
+        ]
+      },
+      "offered_fix": {
+        "allowed": true,
+        "class": "contain",
+        "action": "REVIEW",
+        "disposition": "REVIEW",
+        "reason": "n2n_layer_loss",
+        "surface": "compute",
+        "do_not": [
+          "call this a correction / neural repair",
+          "n2n frozen-d patch",
+          "\u03b1-chase",
+          "U-C SAE / U-D",
+          "silent Dual_full rewrite"
+        ]
+      },
+      "applied_response": {
+        "case_id": "EX_CONTRA",
+        "gold": "CONTRADICTION",
+        "first_break": "compute",
+        "class": "contain",
+        "action": "REVIEW",
+        "disposition": "REVIEW",
+        "reason": "n2n_layer_loss",
+        "timestamp": "2026-09-10T11:12:17.530943+00:00",
+        "protocol": "docs/TRACKB-LOCATOR-V1.md",
+        "would_have_been": "correct_AUTO",
+        "not": "neural repair"
+      },
+      "applied_fix": {
+        "case_id": "EX_CONTRA",
+        "gold": "CONTRADICTION",
+        "first_break": "compute",
+        "class": "contain",
+        "action": "REVIEW",
+        "disposition": "REVIEW",
+        "reason": "n2n_layer_loss",
+        "timestamp": "2026-09-10T11:12:17.530943+00:00",
+        "protocol": "docs/TRACKB-LOCATOR-V1.md",
+        "would_have_been": "correct_AUTO",
+        "not": "neural repair"
+      },
+      "invariants": {
+        "status": "held",
+        "hidden_state_patched": false,
+        "dual_full_rewritten": false,
+        "overlay_only": true,
+        "note": "Containment overlay only. No hidden-state patch, no Dual_full rewrite, no neural repair."
+      },
+      "protocol": "docs/TRACKB-LOCATOR-V1.md",
+      "workbench": "diagnostic_routing"
+    },
+    {
+      "ok": true,
+      "id": "T1",
+      "gold": "SATISFIED",
+      "side": "temporal",
+      "category": "temporal",
+      "evidence": "Started first-line carboplatin/pemetrexed in January 2025 with initial radiographic response. CT in August 2025 showed progression in the mediastinum.",
+      "why": "Initial response then later progression on first-line is still first-line failure.",
+      "has_trace": false,
+      "layers": [
+        8,
+        12,
+        16,
+        20,
+        24
+      ],
+      "mean_score_d": null,
+      "encode": {
+        "surface": "encode",
+        "status": "unknown",
+        "layer": 8,
+        "note": "No layer trace \u2014 encode not scored (same stick as :8258).",
+        "pass": null,
+        "probe_type": "none",
+        "claim": "not measured",
+        "evidence_strength": "none",
+        "evidence_why": "No frozen U-A readout at L8."
+      },
+      "compute": {
+        "surface": "compute",
+        "status": "unknown",
+        "n_lost_steps": null,
+        "pass": null,
+        "note": "No layer trace \u2014 G5 does not fire.",
+        "n2n_review": {
+          "triggered": null,
+          "disposition": null,
+          "reason": "no_layer_trace"
+        },
+        "probe_type": "none",
+        "claim": "not measured",
+        "evidence_strength": "none",
+        "evidence_why": "No layer-loss trace.",
+        "deep_dive": "http://127.0.0.1:8259/"
+      },
+      "translate": {
+        "surface": "translate",
+        "status": "unknown",
+        "pass": null,
+        "ok": false,
+        "source": null,
+        "gold": "SATISFIED",
+        "verdict": null,
+        "disposition": null,
+        "bucket": "UNKNOWN",
+        "wrong_AUTO": false,
+        "note": "No frozen Dual analog / Dual_full snapshot for this note.",
+        "probe_type": "none",
+        "claim": "not measured",
+        "evidence_strength": "none",
+        "evidence_why": "No Dual analog / Dual_full snapshot.",
+        "deep_dive": "http://127.0.0.1:8253/"
+      },
+      "first_break": {
+        "surface": null,
+        "status": "incomplete",
+        "kind": "routing",
+        "why": "Need a trace and/or Dual snapshot: encode, compute, translate",
+        "response": null,
+        "evidence_strength": "none",
+        "probe_type": "none",
+        "missing": [
+          "encode",
+          "compute",
+          "translate"
+        ],
+        "measured_ok": [
+          false,
+          false,
+          false
+        ],
+        "not": "causal first emergence"
+      },
+      "offered_response": null,
+      "offered_fix": null,
+      "applied_response": null,
+      "applied_fix": null,
+      "invariants": {
+        "status": "held",
+        "hidden_state_patched": false,
+        "dual_full_rewritten": false,
+        "overlay_only": true,
+        "note": "Containment overlay only. No hidden-state patch, no Dual_full rewrite, no neural repair."
+      },
+      "protocol": "docs/TRACKB-LOCATOR-V1.md",
+      "workbench": "diagnostic_routing"
+    },
+    {
+      "ok": true,
+      "id": "T3",
+      "gold": "SATISFIED",
+      "side": "temporal",
+      "category": "temporal",
+      "evidence": "Responded to first-line carboplatin/etoposide for eight months, then progressed. Currently on second-line topotecan.",
+      "why": "Response then progression, now on second-line \u2014 first-line has failed.",
+      "has_trace": false,
+      "layers": [
+        8,
+        12,
+        16,
+        20,
+        24
+      ],
+      "mean_score_d": null,
+      "encode": {
+        "surface": "encode",
+        "status": "unknown",
+        "layer": 8,
+        "note": "No layer trace \u2014 encode not scored (same stick as :8258).",
+        "pass": null,
+        "probe_type": "none",
+        "claim": "not measured",
+        "evidence_strength": "none",
+        "evidence_why": "No frozen U-A readout at L8."
+      },
+      "compute": {
+        "surface": "compute",
+        "status": "unknown",
+        "n_lost_steps": null,
+        "pass": null,
+        "note": "No layer trace \u2014 G5 does not fire.",
+        "n2n_review": {
+          "triggered": null,
+          "disposition": null,
+          "reason": "no_layer_trace"
+        },
+        "probe_type": "none",
+        "claim": "not measured",
+        "evidence_strength": "none",
+        "evidence_why": "No layer-loss trace.",
+        "deep_dive": "http://127.0.0.1:8259/"
+      },
+      "translate": {
+        "surface": "translate",
+        "status": "unknown",
+        "pass": null,
+        "ok": false,
+        "source": null,
+        "gold": "SATISFIED",
+        "verdict": null,
+        "disposition": null,
+        "bucket": "UNKNOWN",
+        "wrong_AUTO": false,
+        "note": "No frozen Dual analog / Dual_full snapshot for this note.",
+        "probe_type": "none",
+        "claim": "not measured",
+        "evidence_strength": "none",
+        "evidence_why": "No Dual analog / Dual_full snapshot.",
+        "deep_dive": "http://127.0.0.1:8253/"
+      },
+      "first_break": {
+        "surface": null,
+        "status": "incomplete",
+        "kind": "routing",
+        "why": "Need a trace and/or Dual snapshot: encode, compute, translate",
+        "response": null,
+        "evidence_strength": "none",
+        "probe_type": "none",
+        "missing": [
+          "encode",
+          "compute",
+          "translate"
+        ],
+        "measured_ok": [
+          false,
+          false,
+          false
+        ],
+        "not": "causal first emergence"
+      },
+      "offered_response": null,
+      "offered_fix": null,
+      "applied_response": null,
+      "applied_fix": null,
+      "invariants": {
+        "status": "held",
+        "hidden_state_patched": false,
+        "dual_full_rewritten": false,
+        "overlay_only": true,
+        "note": "Containment overlay only. No hidden-state patch, no Dual_full rewrite, no neural repair."
+      },
+      "protocol": "docs/TRACKB-LOCATOR-V1.md",
+      "workbench": "diagnostic_routing"
+    },
+    {
+      "ok": true,
+      "id": "C1",
+      "gold": "CONTRADICTION",
+      "side": "contra",
+      "category": "conflicting",
+      "evidence": "Assessment: first-line therapy failed, proceed to second-line. Addendum later the same day: patient continues first-line carboplatin with stable disease; do not change therapy.",
+      "why": "Assessment says first-line failed; addendum says ongoing first-line with SD.",
+      "has_trace": false,
+      "layers": [
+        8,
+        12,
+        16,
+        20,
+        24
+      ],
+      "mean_score_d": null,
+      "encode": {
+        "surface": "encode",
+        "status": "unknown",
+        "layer": 8,
+        "note": "No layer trace \u2014 encode not scored (same stick as :8258).",
+        "pass": null,
+        "probe_type": "none",
+        "claim": "not measured",
+        "evidence_strength": "none",
+        "evidence_why": "No frozen U-A readout at L8."
+      },
+      "compute": {
+        "surface": "compute",
+        "status": "unknown",
+        "n_lost_steps": null,
+        "pass": null,
+        "note": "No layer trace \u2014 G5 does not fire.",
+        "n2n_review": {
+          "triggered": null,
+          "disposition": null,
+          "reason": "no_layer_trace"
+        },
+        "probe_type": "none",
+        "claim": "not measured",
+        "evidence_strength": "none",
+        "evidence_why": "No layer-loss trace.",
+        "deep_dive": "http://127.0.0.1:8259/"
+      },
+      "translate": {
+        "surface": "translate",
+        "status": "unknown",
+        "pass": null,
+        "ok": false,
+        "source": null,
+        "gold": "CONTRADICTION",
+        "verdict": null,
+        "disposition": null,
+        "bucket": "UNKNOWN",
+        "wrong_AUTO": false,
+        "note": "No frozen Dual analog / Dual_full snapshot for this note.",
+        "probe_type": "none",
+        "claim": "not measured",
+        "evidence_strength": "none",
+        "evidence_why": "No Dual analog / Dual_full snapshot.",
+        "deep_dive": "http://127.0.0.1:8253/"
+      },
+      "first_break": {
+        "surface": null,
+        "status": "incomplete",
+        "kind": "routing",
+        "why": "Need a trace and/or Dual snapshot: encode, compute, translate",
+        "response": null,
+        "evidence_strength": "none",
+        "probe_type": "none",
+        "missing": [
+          "encode",
+          "compute",
+          "translate"
+        ],
+        "measured_ok": [
+          false,
+          false,
+          false
+        ],
+        "not": "causal first emergence"
+      },
+      "offered_response": null,
+      "offered_fix": null,
+      "applied_response": null,
+      "applied_fix": null,
+      "invariants": {
+        "status": "held",
+        "hidden_state_patched": false,
+        "dual_full_rewritten": false,
+        "overlay_only": true,
+        "note": "Containment overlay only. No hidden-state patch, no Dual_full rewrite, no neural repair."
+      },
+      "protocol": "docs/TRACKB-LOCATOR-V1.md",
+      "workbench": "diagnostic_routing"
+    },
+    {
+      "ok": true,
+      "id": "C4",
+      "gold": "CONTRADICTION",
+      "side": "contra",
+      "category": "conflicting",
+      "evidence": "Progressed on carboplatin/paclitaxel (first-line). Later note: excellent ongoing response to first-line carboplatin/paclitaxel; continue current treatment.",
+      "why": "Same first-line regimen described as progressed and as excellent ongoing response.",
+      "has_trace": false,
+      "layers": [
+        8,
+        12,
+        16,
+        20,
+        24
+      ],
+      "mean_score_d": null,
+      "encode": {
+        "surface": "encode",
+        "status": "unknown",
+        "layer": 8,
+        "note": "No layer trace \u2014 encode not scored (same stick as :8258).",
+        "pass": null,
+        "probe_type": "none",
+        "claim": "not measured",
+        "evidence_strength": "none",
+        "evidence_why": "No frozen U-A readout at L8."
+      },
+      "compute": {
+        "surface": "compute",
+        "status": "unknown",
+        "n_lost_steps": null,
+        "pass": null,
+        "note": "No layer trace \u2014 G5 does not fire.",
+        "n2n_review": {
+          "triggered": null,
+          "disposition": null,
+          "reason": "no_layer_trace"
+        },
+        "probe_type": "none",
+        "claim": "not measured",
+        "evidence_strength": "none",
+        "evidence_why": "No layer-loss trace.",
+        "deep_dive": "http://127.0.0.1:8259/"
+      },
+      "translate": {
+        "surface": "translate",
+        "status": "unknown",
+        "pass": null,
+        "ok": false,
+        "source": null,
+        "gold": "CONTRADICTION",
+        "verdict": null,
+        "disposition": null,
+        "bucket": "UNKNOWN",
+        "wrong_AUTO": false,
+        "note": "No frozen Dual analog / Dual_full snapshot for this note.",
+        "probe_type": "none",
+        "claim": "not measured",
+        "evidence_strength": "none",
+        "evidence_why": "No Dual analog / Dual_full snapshot.",
+        "deep_dive": "http://127.0.0.1:8253/"
+      },
+      "first_break": {
+        "surface": null,
+        "status": "incomplete",
+        "kind": "routing",
+        "why": "Need a trace and/or Dual snapshot: encode, compute, translate",
+        "response": null,
+        "evidence_strength": "none",
+        "probe_type": "none",
+        "missing": [
+          "encode",
+          "compute",
+          "translate"
+        ],
+        "measured_ok": [
+          false,
+          false,
+          false
+        ],
+        "not": "causal first emergence"
+      },
+      "offered_response": null,
+      "offered_fix": null,
+      "applied_response": null,
+      "applied_fix": null,
+      "invariants": {
+        "status": "held",
+        "hidden_state_patched": false,
+        "dual_full_rewritten": false,
+        "overlay_only": true,
+        "note": "Containment overlay only. No hidden-state patch, no Dual_full rewrite, no neural repair."
+      },
+      "protocol": "docs/TRACKB-LOCATOR-V1.md",
+      "workbench": "diagnostic_routing"
+    },
+    {
+      "ok": true,
+      "id": "BC_E1",
+      "gold": "SATISFIED",
+      "side": "temporal",
+      "category": "explicit",
+      "evidence": "DLBCL: first-line R-CHOP for four cycles with initial response, then radiographic progression in cycle 5. Discontinued R-CHOP for progression; started R-ICE as second-line therapy.",
+      "why": "Clear first-line R-CHOP failure then switch to second line \u2014 not a contradiction.",
+      "has_trace": false,
+      "layers": [
+        8,
+        12,
+        16,
+        20,
+        24
+      ],
+      "mean_score_d": null,
+      "encode": {
+        "surface": "encode",
+        "status": "unknown",
+        "layer": 8,
+        "note": "No layer trace \u2014 encode not scored (same stick as :8258).",
+        "pass": null,
+        "probe_type": "none",
+        "claim": "not measured",
+        "evidence_strength": "none",
+        "evidence_why": "No frozen U-A readout at L8."
+      },
+      "compute": {
+        "surface": "compute",
+        "status": "unknown",
+        "n_lost_steps": null,
+        "pass": null,
+        "note": "No layer trace \u2014 G5 does not fire.",
+        "n2n_review": {
+          "triggered": null,
+          "disposition": null,
+          "reason": "no_layer_trace"
+        },
+        "probe_type": "none",
+        "claim": "not measured",
+        "evidence_strength": "none",
+        "evidence_why": "No layer-loss trace.",
+        "deep_dive": "http://127.0.0.1:8259/"
+      },
+      "translate": {
+        "surface": "translate",
+        "status": "fail",
+        "pass": false,
+        "ok": true,
+        "gold": "SATISFIED",
+        "verdict": "CONTRADICTION",
+        "disposition": "AUTO",
+        "bucket": "wrong_AUTO",
+        "wrong_AUTO": true,
+        "correct_AUTO": false,
+        "is_REVIEW": false,
+        "match_gold": false,
+        "id": "BC_E1",
+        "path": "Dual_full",
+        "model": "qwen2.5-coder:32b",
+        "source": "dual_full_phase7_frozen",
+        "artifact": "phase7-bmtcart-qwen2.5-coder_32b.json",
+        "not": "rescored Dual_full",
+        "probe_type": "dual_comparison",
+        "claim": "translation-associated routing signal",
+        "evidence_strength": "moderate",
+        "evidence_why": "Frozen Dual_full snapshot vs gold. Routing signal, not causal origin.",
+        "note": "Dual would AUTO a wrong answer (wrong_AUTO).",
+        "deep_dive": "http://127.0.0.1:8253/"
+      },
+      "first_break": {
+        "surface": "translate",
+        "status": "located",
+        "kind": "routing",
+        "claim": "translation-associated routing signal",
+        "probe_type": "dual_comparison",
+        "evidence_strength": "moderate",
+        "evidence_why": "Frozen Dual_full snapshot vs gold. Routing signal, not causal origin.",
+        "why": "Dual would AUTO a wrong answer (wrong_AUTO).",
+        "response": "REVIEW (containment, not repair)",
+        "not": "causal first emergence"
+      },
+      "offered_response": {
+        "allowed": true,
+        "class": "contain",
+        "action": "REVIEW",
+        "disposition": "REVIEW",
+        "reason": "dual_wrong_AUTO",
+        "surface": "translate",
+        "do_not": [
+          "call this a correction / neural repair",
+          "n2n frozen-d patch",
+          "\u03b1-chase",
+          "U-C SAE / U-D",
+          "silent Dual_full rewrite"
+        ]
+      },
+      "offered_fix": {
+        "allowed": true,
+        "class": "contain",
+        "action": "REVIEW",
+        "disposition": "REVIEW",
+        "reason": "dual_wrong_AUTO",
+        "surface": "translate",
+        "do_not": [
+          "call this a correction / neural repair",
+          "n2n frozen-d patch",
+          "\u03b1-chase",
+          "U-C SAE / U-D",
+          "silent Dual_full rewrite"
+        ]
+      },
+      "applied_response": {
+        "case_id": "BC_E1",
+        "gold": "SATISFIED",
+        "first_break": "translate",
+        "class": "contain",
+        "action": "REVIEW",
+        "disposition": "REVIEW",
+        "reason": "dual_wrong_AUTO",
+        "timestamp": "2026-09-10T11:12:17.581309+00:00",
+        "protocol": "docs/TRACKB-LOCATOR-V1.md",
+        "would_have_been": "wrong_AUTO",
+        "not": "neural repair"
+      },
+      "applied_fix": {
+        "case_id": "BC_E1",
+        "gold": "SATISFIED",
+        "first_break": "translate",
+        "class": "contain",
+        "action": "REVIEW",
+        "disposition": "REVIEW",
+        "reason": "dual_wrong_AUTO",
+        "timestamp": "2026-09-10T11:12:17.581309+00:00",
+        "protocol": "docs/TRACKB-LOCATOR-V1.md",
+        "would_have_been": "wrong_AUTO",
+        "not": "neural repair"
+      },
+      "invariants": {
+        "status": "held",
+        "hidden_state_patched": false,
+        "dual_full_rewritten": false,
+        "overlay_only": true,
+        "note": "Containment overlay only. No hidden-state patch, no Dual_full rewrite, no neural repair."
+      },
+      "protocol": "docs/TRACKB-LOCATOR-V1.md",
+      "workbench": "diagnostic_routing"
+    }
+  ],
+  "claim_hygiene": {
+    "say": "diagnostic routing on frozen probes; automated response = REVIEW or ABSTAIN (containment)",
+    "do_not_say": "causal first-break; auto-correction; neural repair; n2n d-patch; Dual_full rescore; production CXR"
+  },
+  "not": [
+    "n2n frozen-d editor (CLOSED)",
+    "\u03b1=4/8",
+    "U-C SAE / U-D"
+  ]
+}

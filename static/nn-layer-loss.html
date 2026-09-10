@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>N2S neural-to-neural layer-loss</title>
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --paper: #fffdf8;
+      --ink: #1c1917;
+      --muted: #57534e;
+      --line: #e7e5e4;
+      --accent: #1d4ed8;
+      --ok: #166534;
+      --ok-bg: #dcfce7;
+      --bad: #9f1239;
+      --bad-bg: #ffe4e6;
+      --warn: #92400e;
+      --warn-bg: #fef3c7;
+      --neutral: #44403c;
+      --neutral-bg: #e7e5e4;
+      --contra: #7c2d12;
+      --contra-bg: #ffedd5;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 ui-sans-serif, system-ui, sans-serif; }
+    header {
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid var(--line);
+      background: var(--paper);
+    }
+    header h1 { margin: 0 0 4px; font-size: 20px; font-weight: 650; }
+    header p { margin: 0; color: var(--muted); max-width: 80ch; }
+    header a { color: var(--accent); }
+    .flow {
+      display: grid;
+      grid-template-columns: 1fr 16px 1fr 16px 1fr 16px 1fr;
+      gap: 8px;
+      align-items: stretch;
+      margin: 16px 24px 0;
+    }
+    .flow .box {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      min-height: 72px;
+    }
+    .flow .box strong { display: block; font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .arrow { display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 18px; }
+    .patch-banner { margin: 16px 24px 0; background: var(--paper); border: 1px solid var(--line); padding: 12px 14px; }
+    .patch-banner h2 { margin: 0 0 6px; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+    .toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 16px 24px; }
+    button {
+      font: inherit; border: 1px solid var(--line); background: var(--paper);
+      padding: 6px 10px; cursor: pointer;
+    }
+    button.primary { background: var(--ink); color: #fff; border-color: var(--ink); }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .status { color: var(--muted); }
+    .layout { display: grid; grid-template-columns: 300px 1fr; gap: 16px; padding: 0 24px 32px; }
+    .list { background: var(--paper); border: 1px solid var(--line); max-height: 70vh; overflow: auto; }
+    .list button.case {
+      display: grid; grid-template-columns: 1fr auto; gap: 4px 8px;
+      width: 100%; text-align: left; border: 0; border-bottom: 1px solid var(--line);
+      padding: 8px 10px; background: transparent;
+    }
+    .list button.case strong { grid-column: 1; font-size: 12px; word-break: break-all; }
+    .list button.case .meta { grid-column: 1; font-size: 12px; color: var(--muted); }
+    .list button.case .flag { grid-column: 2; grid-row: 1 / span 2; align-self: center; font-size: 12px; white-space: nowrap; }
+    .list button.case.active { background: #eff6ff; }
+    .card { background: var(--paper); border: 1px solid var(--line); padding: 12px 14px; margin-bottom: 12px; }
+    .card h2 { margin: 0 0 8px; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); font-weight: 650; }
+    .evidence { font-size: 15px; }
+    .pill { display: inline-block; padding: 1px 8px; font-size: 12px; font-weight: 650; background: var(--neutral-bg); color: var(--neutral); margin-right: 6px; }
+    .v-SATISFIED { background: var(--ok-bg); color: var(--ok); }
+    .v-CONTRADICTION { background: var(--contra-bg); color: var(--contra); }
+    .ok { color: var(--ok); } .bad { color: var(--bad); } .muted { color: var(--muted); }
+    .bar-row { display: grid; grid-template-columns: 36px 1fr 64px; gap: 8px; align-items: center; margin: 4px 0; }
+    .bar-track { background: var(--line); height: 12px; position: relative; }
+    .bar-fill { height: 12px; background: var(--accent); }
+    .bar-fill.neg { background: var(--contra); }
+    table { width: 100%; border-collapse: collapse; font: 12px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    th, td { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; }
+    .err { color: var(--bad); white-space: pre-wrap; }
+    .rules li { margin: 0 0 6px; }
+    textarea, select, input[type="text"] {
+      width: 100%; font: inherit; border: 1px solid var(--line); background: #fff;
+      padding: 8px 10px;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    .paste-row { display: grid; grid-template-columns: 1fr 180px; gap: 10px; margin: 16px 24px 0; }
+    @media (max-width: 960px) { .paste-row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Neural-to-neural layer-loss</h1>
+    <p>
+      Sibling of the neural→symbolic lab on <a href="http://127.0.0.1:8253/">:8253</a>.
+      Same coding notes. This viewer asks: does the frozen U-A score hold or drop across layers 8→24?
+      Frozen replay — no GPU until you click Live GPU analyze.
+      Paste a note below, or pick a list case. Not a causal editor.
+      · <a href="http://127.0.0.1:8258/">:8258 encode Score</a>
+      · <a href="http://127.0.0.1:8257/">:8257 Dual / Intervene</a>
+    </p>
+  </header>
+
+  <div class="flow">
+    <div class="box"><strong>1. Information</strong><div>mean_score_d on frozen d</div></div>
+    <div class="arrow">→</div>
+    <div class="box"><strong>2. Where</strong><div>layers 8, 12, 16, 20, 24</div></div>
+    <div class="arrow">→</div>
+    <div class="box"><strong>3. Lost</strong><div>τ-drop ≥ 5 or sign flip</div></div>
+    <div class="arrow">→</div>
+    <div class="box"><strong>4. Control</strong><div>contra stays below temporal</div></div>
+  </div>
+
+  <div class="patch-banner" id="patch-box">
+    <h2>Inside-net correction (pilot, not proven)</h2>
+    <p class="muted" id="patch-detect">Detecting first lost step…</p>
+    <p class="muted">Detect → small frozen-d push at the earlier layer (α=1–2) → Dual AUTO-wrong fails the patch (fallback REVIEW). Not α=8 / U-C / U-D.</p>
+  </div>
+
+  <div class="paste-row">
+    <div>
+      <label class="muted" for="note">Paste a doctor’s note</label>
+      <textarea id="note" placeholder="Paste a clinical note here…"></textarea>
+    </div>
+    <div>
+      <label class="muted" for="gold">Expected class (for lost-steps)</label>
+      <select id="gold">
+        <option value="UNKNOWN">Unknown (treat as temporal)</option>
+        <option value="SATISFIED">SATISFIED / temporal-change</option>
+        <option value="CONTRADICTION">CONTRADICTION</option>
+        <option value="NOT_SATISFIED">NOT_SATISFIED</option>
+      </select>
+      <p class="muted" style="margin-top:10px">Preview is instant (no GPU). Live GPU uses the same frozen d as :8258 (~14 GiB).</p>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <button class="primary" id="btn-analyze">Analyze selected</button>
+    <button id="btn-preview">Show pasted note</button>
+    <button id="btn-live">Live GPU analyze</button>
+    <button id="btn-patch">Run first-lost patch (GPU)</button>
+    <button id="btn-patch-stack">Run L12+L16 patch (GPU)</button>
+    <button id="btn-show-stack">Show last L12+L16 result</button>
+    <button id="btn-patch-residual">Run L12+L16+L20 residual (GPU)</button>
+    <button id="btn-show-residual">Show last residual result</button>
+    <button id="btn-all">Load all traces</button>
+    <span class="status" id="status">Loading…</span>
+  </div>
+
+  <div class="layout">
+    <div class="list" id="list"></div>
+    <div id="detail">
+      <div class="card"><p class="muted">Pick a note, then Analyze. Notes with a frozen U-A trace (FOLFOX / CONTRA) fill the layer chart. Coding-set notes from :8253 show the text until a live layer pass exists.</p></div>
+    </div>
+  </div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    let meta = null;
+    let panel = null;
+    let selected = null;
+
+    function pill(gold) {
+      return `<span class="pill v-${gold}">${gold}</span>`;
+    }
+
+    function renderList() {
+      const cases = (meta && meta.cases) || [];
+      $("list").innerHTML = cases.map((c) => `
+        <button class="case ${selected === c.id ? "active" : ""}" data-id="${c.id}">
+          <strong>${c.id}</strong>
+          <span class="flag">${c.has_trace ? (c.n_lost_steps ? c.n_lost_steps + " lost" : "ok") : "—"}</span>
+          <span class="meta">${c.category || ""} · ${c.side}${c.has_trace ? "" : " · no trace"}</span>
+        </button>
+      `).join("");
+      $("list").querySelectorAll("button.case").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          selected = btn.dataset.id;
+          renderList();
+        });
+      });
+    }
+
+    function barWidth(v, maxAbs) {
+      const a = Math.abs(v);
+      return maxAbs > 0 ? Math.min(100, (a / maxAbs) * 100) : 0;
+    }
+
+    function renderCase(c) {
+      const scores = c.mean_score_d || {};
+      const vals = Object.values(scores);
+      const maxAbs = vals.length ? Math.max(...vals.map((x) => Math.abs(x))) : 1;
+      const bars = c.has_trace
+        ? (c.layers || []).map((L) => {
+            const v = scores["L" + L];
+            const w = barWidth(v, maxAbs);
+            const cls = v < 0 ? "neg" : "";
+            return `<div class="bar-row"><span>L${L}</span><div class="bar-track"><div class="bar-fill ${cls}" style="width:${w}%"></div></div><span>${v}</span></div>`;
+          }).join("")
+        : `<p class="muted">No frozen layer trace yet. This is a :8253 coding note (or BC_E1). Text is here so the list matches neural→symbolic analysis. Live HF fill-in is a later pass.</p>`;
+      const steps = (c.steps || []).length
+        ? `<table><thead><tr><th>step</th><th>score</th><th>drop</th><th>flip</th><th>lost</th></tr></thead><tbody>` +
+          c.steps.map((s) => `<tr>
+            <td>L${s.from_layer}→L${s.to_layer}</td>
+            <td>${s.mean_score_d_from} → ${s.mean_score_d_to}</td>
+            <td>${s.drop}</td>
+            <td>${s.sign_flip ? "yes" : "no"}</td>
+            <td class="${s.lost ? "bad" : "ok"}">${s.lost ? "YES" : "no"}</td>
+          </tr>`).join("") + `</tbody></table>`
+        : "";
+      const control = c.control_ok === true
+        ? `<p class="ok">Control OK — contradiction stays below temporal at every listed layer.</p>`
+        : c.control_ok === false
+          ? `<p class="bad">Control FAIL — contradiction is not below temporal at every layer.</p>`
+          : "";
+      $("detail").innerHTML = `
+        <div class="card">
+          <h2>${c.id} ${pill(c.gold)}</h2>
+          <p class="muted">${c.side} · ${c.category || ""} · ${c.trace_label || (c.has_trace ? "frozen trace" : "queued, no trace")} · peak ${c.peak_layer != null ? "L" + c.peak_layer : "—"} · lost steps ${c.n_lost_steps}</p>
+          <p class="evidence">${c.evidence}</p>
+          <p class="muted">${c.why || ""}</p>
+        </div>
+        <div class="card">
+          <h2>Layer chart (mean_score_d)</h2>
+          ${bars}
+        </div>
+        <div class="card">
+          <h2>Steps (τ = ${c.tau})</h2>
+          ${steps || "<p class='muted'>Analyze a note that has a trace.</p>"}
+          ${control}
+          ${c.n2n_review && c.n2n_review.triggered
+            ? `<p class="bad">Dual contain: REVIEW (n2n lost steps = ${c.n_lost_steps}). Not G3.</p>`
+            : c.n2n_review && c.n2n_review.triggered === false
+              ? `<p class="ok">n2n-lost gate pass — no lost steps; Dual unchanged.</p>`
+              : c.has_trace ? "" : `<p class="muted">n2n-lost gate does not fire (no layer trace).</p>`}
+        </div>
+      `;
+    }
+
+    function pickPatchedRow(patchPanel, caseId) {
+      const patches = (patchPanel.rows || []).filter(
+        (r) => r.case_id === caseId && r.label === "patch"
+      );
+      if (!patches.length) return null;
+      const cleared = patches.filter((r) => Number(r.n_lost_steps) === 0);
+      const rescued = patches.filter((r) => r.rescue && r.rescue.rescued);
+      const pool = cleared.length ? cleared : (rescued.length ? rescued : patches);
+      return pool.reduce((a, b) => (Number(a.alpha) >= Number(b.alpha) ? a : b));
+    }
+
+    async function renderPatchPanel(patchPanel, caseId) {
+      const want = caseId || selected || "EX_CONTRA";
+      const row =
+        pickPatchedRow(patchPanel, want) || pickPatchedRow(patchPanel, "EX_CONTRA");
+      if (!row) {
+        $("status").textContent = "No patched rows in panel";
+        return;
+      }
+      selected = row.case_id;
+      renderList();
+      let evidence = "";
+      try {
+        const r = await fetch("/api/analyze?case_id=" + encodeURIComponent(row.case_id));
+        const frozen = await r.json();
+        if (!frozen.error) evidence = frozen.evidence || "";
+      } catch (e) {}
+      const layers = (row.patch_layers && [8, 12, 16, 20, 24]) || [8, 12, 16, 20, 24];
+      const sites = (row.patch_layers || [row.patch_layer]).join("+");
+      renderCase({
+        id: row.case_id,
+        gold: row.gold,
+        side: row.side,
+        category: "patched",
+        has_trace: true,
+        trace_label: "patched L" + sites + " α=" + row.alpha,
+        evidence: evidence,
+        why:
+          "GPU stack/first-lost patch vs frozen d. Gate " +
+          ((patchPanel.gate && patchPanel.gate.overall) || "") +
+          ". Analyze selected still shows the frozen U-A map.",
+        mean_score_d: row.mean_score_d,
+        layers: layers,
+        steps: row.steps,
+        n_lost_steps: row.n_lost_steps,
+        peak_layer: null,
+        tau: 5,
+        control_ok: row.layer_control_ok,
+        n2n_review: row.n2n_review,
+      });
+    }
+
+    async function loadPatchDetect() {
+      try {
+        const r = await fetch("/api/patch/detect");
+        const p = await r.json();
+        const lost = p.first_lost;
+        const step = lost
+          ? `CONTRA L${lost.from_layer}→L${lost.to_layer} (flip=${lost.sign_flip}, drop=${lost.drop}) → residual L${(p.residual_layers || p.patch_layers || [p.patch_layer]).join("+")}`
+          : "no first lost step";
+        $("patch-detect").textContent = step + " · α∈{1,2} · Dual analog AUTO-wrong → REVIEW";
+        let saved = await fetch("/api/patch-residual");
+        if (!saved.ok) saved = await fetch("/api/patch-stack");
+        if (!saved.ok) saved = await fetch("/api/patch");
+        if (saved.ok) {
+          const last = await saved.json();
+          if (last.gate) {
+            $("patch-detect").textContent =
+              step + " · last run: " + (last.gate.overall || "") + " — " + (last.gate.note || "");
+          }
+        }
+      } catch (e) {
+        $("patch-detect").textContent = "Detect unavailable: " + e;
+      }
+    }
+
+    async function loadMeta() {
+      const r = await fetch("/api/meta");
+      meta = await r.json();
+      if (!selected && meta.cases && meta.cases.length) selected = meta.cases[0].id;
+      $("status").textContent = `${meta.n_with_trace} traces / ${meta.n_cases} notes · ${meta.model_id || ""}`;
+      renderList();
+    }
+
+    $("btn-analyze").addEventListener("click", async () => {
+      if (!selected) return;
+      $("status").textContent = "Analyzing…";
+      const r = await fetch("/api/analyze?case_id=" + encodeURIComponent(selected));
+      const c = await r.json();
+      if (c.error) { $("status").textContent = c.error; return; }
+      renderCase(c);
+      $("status").textContent = c.has_trace ? (c.id + " · " + c.n_lost_steps + " lost step(s)") : (c.id + " · no layer trace yet");
+    });
+
+    $("btn-all").addEventListener("click", async () => {
+      $("status").textContent = "Loading panel…";
+      const r = await fetch("/api/panel");
+      panel = await r.json();
+      const traced = (panel.cases || []).filter((c) => c.has_trace);
+      $("status").textContent = "Loaded " + traced.length + " traces";
+      if (traced[0]) {
+        selected = traced[0].id;
+        renderList();
+        renderCase(traced[0]);
+      }
+    });
+
+    function pasteBody() {
+      return {
+        evidence: $("note").value,
+        gold: $("gold").value,
+        case_id: "PASTE",
+      };
+    }
+
+    $("btn-preview").addEventListener("click", async () => {
+      $("status").textContent = "Showing paste (no GPU)…";
+      const r = await fetch("/api/preview", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(pasteBody()),
+      });
+      const c = await r.json();
+      if (c.error) { $("status").textContent = c.error; return; }
+      renderCase(c);
+      $("status").textContent = "Pasted — not GPU-scored yet";
+    });
+
+    async function pollJob() {
+      const r = await fetch("/api/job");
+      const j = await r.json();
+      if (j.state === "running" || j.state === "queued") {
+        $("status").textContent = "GPU: " + (j.step || j.state);
+        setTimeout(pollJob, 1500);
+        return;
+      }
+      if (j.state === "error") {
+        $("status").textContent = "GPU error: " + (j.error || "failed");
+        return;
+      }
+      if (j.state === "done" && j.result) {
+        if (j.result.kind && String(j.result.kind).indexOf("n2s_nn_layer_patch") === 0) {
+          const g = j.result.gate || {};
+          $("status").textContent = "Patch " + (g.overall || "done") + " — " + (g.note || "");
+          loadPatchDetect();
+          await renderPatchPanel(j.result, "EX_CONTRA");
+          return;
+        }
+        renderCase(j.result);
+        $("status").textContent = (j.result.id || "PASTE") + " · live · " + j.result.n_lost_steps + " lost step(s)";
+      }
+    }
+
+    $("btn-live").addEventListener("click", async () => {
+      if (!$("note").value.trim()) {
+        $("status").textContent = "Paste a note first";
+        return;
+      }
+      $("status").textContent = "Starting GPU job…";
+      const r = await fetch("/api/live", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(pasteBody()),
+      });
+      const j = await r.json();
+      if (j.error) { $("status").textContent = j.error; return; }
+      pollJob();
+    });
+
+    $("btn-show-residual").addEventListener("click", async () => {
+      $("status").textContent = "Loading last L12+L16+L20 residual panel…";
+      const r = await fetch("/api/patch-residual");
+      if (!r.ok) {
+        $("status").textContent = "No residual panel yet — run the GPU patch first";
+        return;
+      }
+      const last = await r.json();
+      const g = last.gate || {};
+      $("status").textContent = "Patch " + (g.overall || "saved") + " — " + (g.note || "");
+      await renderPatchPanel(last, selected || "EX_CONTRA");
+    });
+
+    $("btn-patch-residual").addEventListener("click", async () => {
+      $("status").textContent = "Starting L12+L16+L20 residual patch GPU job…";
+      const r = await fetch("/api/patch-residual", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: "{}",
+      });
+      const j = await r.json();
+      if (j.error) { $("status").textContent = j.error; return; }
+      pollJob();
+    });
+
+    $("btn-show-stack").addEventListener("click", async () => {
+      $("status").textContent = "Loading last L12+L16 panel…";
+      const r = await fetch("/api/patch-stack");
+      if (!r.ok) {
+        $("status").textContent = "No L12+L16 panel yet — run the GPU patch first";
+        return;
+      }
+      const last = await r.json();
+      const g = last.gate || {};
+      $("status").textContent = "Patch " + (g.overall || "saved") + " — " + (g.note || "");
+      await renderPatchPanel(last, selected || "EX_CONTRA");
+    });
+
+    $("btn-patch-stack").addEventListener("click", async () => {
+      $("status").textContent = "Starting L12+L16 patch GPU job…";
+      const r = await fetch("/api/patch-stack", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: "{}",
+      });
+      const j = await r.json();
+      if (j.error) { $("status").textContent = j.error; return; }
+      pollJob();
+    });
+
+    $("btn-patch").addEventListener("click", async () => {
+      $("status").textContent = "Starting first-lost patch GPU job…";
+      const r = await fetch("/api/patch", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: "{}",
+      });
+      const j = await r.json();
+      if (j.error) { $("status").textContent = j.error; return; }
+      pollJob();
+    });
+
+    loadMeta().catch((e) => { $("status").innerHTML = '<span class="err">' + e + "</span>"; });
+    loadPatchDetect();
+  </script>
+</body>
+</html>

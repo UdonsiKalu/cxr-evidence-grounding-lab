@@ -1,0 +1,54 @@
+{
+  "ok": true,
+  "kind": "n2s_nn_layer_patch_readout_v1",
+  "timestamp": "2026-09-10T10:11:47.284556+00:00",
+  "patch_layer": 12,
+  "patch_layers": [
+    12,
+    16
+  ],
+  "stack": true,
+  "first_lost": {
+    "from_layer": 12,
+    "to_layer": 16,
+    "mean_score_d_from": -0.52,
+    "mean_score_d_to": 2.206,
+    "class_correct_from": 0.52,
+    "class_correct_to": -2.206,
+    "drop": 2.726,
+    "sign_flip": true,
+    "lost_drop": false,
+    "lost": true
+  },
+  "overall": "RESCUE",
+  "note": "PASS/PARTIAL \u2014 first lost step rescued at some \u03b1; Dual control held.",
+  "by_alpha": [
+    {
+      "alpha": 1.0,
+      "patch_layer": 12,
+      "contra_rescued": false,
+      "contra_n_lost": 2,
+      "contra_extract_x": true,
+      "contra_verdict": "CONTRADICTION",
+      "temporal_extract_x": false,
+      "temporal_verdict": "NOT_SATISFIED",
+      "control_fail": false,
+      "fallback": null,
+      "status": "NULL"
+    },
+    {
+      "alpha": 2.0,
+      "patch_layer": 12,
+      "contra_rescued": true,
+      "contra_n_lost": 1,
+      "contra_extract_x": true,
+      "contra_verdict": "CONTRADICTION",
+      "temporal_extract_x": false,
+      "temporal_verdict": "NOT_SATISFIED",
+      "control_fail": false,
+      "fallback": null,
+      "status": "RESCUE"
+    }
+  ],
+  "artifact": "n2s-nn-layer-patch-l12l16-panel.json"
+}

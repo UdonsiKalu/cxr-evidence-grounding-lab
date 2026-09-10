@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>N2S diagnostic routing</title>
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --paper: #fffdf8;
+      --ink: #1c1917;
+      --muted: #57534e;
+      --line: #e7e5e4;
+      --accent: #1d4ed8;
+      --ok: #166534;
+      --ok-bg: #dcfce7;
+      --bad: #9f1239;
+      --bad-bg: #ffe4e6;
+      --warn: #92400e;
+      --warn-bg: #fef3c7;
+      --neutral: #44403c;
+      --neutral-bg: #e7e5e4;
+      --contra: #7c2d12;
+      --contra-bg: #ffedd5;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 ui-sans-serif, system-ui, sans-serif; }
+    header { padding: 20px 24px 16px; border-bottom: 1px solid var(--line); background: var(--paper); }
+    header h1 { margin: 0 0 4px; font-size: 20px; font-weight: 650; }
+    header p { margin: 0; color: var(--muted); max-width: 92ch; }
+    header a { color: var(--accent); }
+    .toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 16px 24px; }
+    button { font: inherit; border: 1px solid var(--line); background: var(--paper); padding: 6px 10px; cursor: pointer; }
+    button.primary { background: var(--ink); color: #fff; border-color: var(--ink); }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .status { color: var(--muted); }
+    .layout { display: grid; grid-template-columns: 280px 1fr; gap: 16px; padding: 0 24px 32px; }
+    .list { background: var(--paper); border: 1px solid var(--line); max-height: 72vh; overflow: auto; }
+    .list button.case {
+      display: grid; grid-template-columns: 1fr auto; gap: 4px 8px;
+      width: 100%; text-align: left; border: 0; border-bottom: 1px solid var(--line);
+      padding: 8px 10px; background: transparent;
+    }
+    .list button.case strong { font-size: 12px; word-break: break-all; }
+    .list button.case .meta { font-size: 12px; color: var(--muted); grid-column: 1; }
+    .list button.case .flag { grid-column: 2; grid-row: 1 / span 2; align-self: center; font-size: 12px; white-space: nowrap; }
+    .list button.case.active { background: #eff6ff; }
+    .banner { background: var(--paper); border: 1px solid var(--line); padding: 12px 14px; margin-bottom: 12px; }
+    .banner.fail { border-color: #fecdd3; background: var(--bad-bg); }
+    .banner.pass { border-color: #bbf7d0; background: var(--ok-bg); }
+    .banner.incomplete { border-color: #fde68a; background: var(--warn-bg); }
+    .banner h2 { margin: 0 0 6px; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+    .cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+    .card { background: var(--paper); border: 1px solid var(--line); padding: 12px 14px; margin-bottom: 12px; }
+    .card h2 { margin: 0 0 8px; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+    .pill { display: inline-block; padding: 1px 8px; font-size: 12px; font-weight: 650; background: var(--neutral-bg); color: var(--neutral); margin-right: 6px; }
+    .s-pass { background: var(--ok-bg); color: var(--ok); }
+    .s-fail { background: var(--bad-bg); color: var(--bad); }
+    .s-unknown, .s-incomplete, .s-none, .s-weak { background: var(--warn-bg); color: var(--warn); }
+    .s-review, .s-contain, .s-routing, .s-moderate { background: #e0e7ff; color: #3730a3; }
+    .s-ABSTAIN { background: var(--warn-bg); color: var(--warn); }
+    .s-REVIEW { background: #e0e7ff; color: #3730a3; }
+    .v-SATISFIED { background: var(--ok-bg); color: var(--ok); }
+    .v-CONTRADICTION { background: var(--contra-bg); color: var(--contra); }
+    .muted { color: var(--muted); }
+    .evidence { font-size: 15px; }
+    dl.meta { display: grid; grid-template-columns: 140px 1fr; gap: 4px 10px; margin: 8px 0 0; font-size: 13px; }
+    dl.meta dt { color: var(--muted); }
+    @media (max-width: 960px) {
+      .layout, .cols { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Diagnostic routing v1</h1>
+    <p>
+      <strong>FROZEN v1</strong> — walked CONTRA / FOLFOX / BC_E1 / T1. Do not expand this GUI.
+      Workbench: route known cases to an encode-, compute-, or translate-<strong>associated</strong> first-break.
+      Not causal fault localization. Not a neural repair.
+      Encode <a href="http://127.0.0.1:8258/">:8258</a>
+      · compute <a href="http://127.0.0.1:8259/">:8259</a>
+      · translate <a href="http://127.0.0.1:8253/">:8253</a>.
+      Automated response = Dual <strong>REVIEW</strong> or <strong>ABSTAIN</strong> (containment).
+      Probe type is shown so correlational evidence is not mistaken for a causal intervention.
+    </p>
+  </header>
+
+  <div class="toolbar">
+    <button class="primary" id="btn-locate">Route selected</button>
+    <button id="btn-fix">Apply automated response</button>
+    <button id="btn-all">Load all</button>
+    <span class="status" id="status">Loading…</span>
+  </div>
+
+  <div class="layout">
+    <div class="list" id="list"></div>
+    <div id="detail">
+      <div class="card"><p class="muted">Pick a note, then Route. CONTRA → compute-associated (correlational lost-steps). FOLFOX → translate-associated (7B Dual analog). BC_E1 → translate-associated (frozen Dual_full). T1 incomplete. Response is containment, not correction.</p></div>
+    </div>
+  </div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    let meta = null;
+    let selected = null;
+
+    function pill(status, label) {
+      const s = String(status || "unknown").replace(/\s+/g, "_");
+      return `<span class="pill s-${s}">${label || status || "unknown"}</span>`;
+    }
+    function goldPill(g) {
+      return `<span class="pill v-${g || ""}">${g || ""}</span>`;
+    }
+    function offeredOf(c) {
+      return c.offered_response || c.offered_fix;
+    }
+    function appliedOf(c) {
+      return c.applied_response || c.applied_fix;
+    }
+
+    function renderList() {
+      if (!meta) return;
+      $("list").innerHTML = (meta.cases || []).map((c) => {
+        const br = c.first_status === "located" ? (c.first_break || "located") : (c.first_status || "");
+        return `<button class="case ${c.id === selected ? "active" : ""}" data-id="${c.id}">
+          <strong>${c.id}</strong>
+          <span class="flag">${c.applied ? "contained" : br}</span>
+          <span class="meta">${c.gold}${c.has_trace ? " · trace" : ""}</span>
+        </button>`;
+      }).join("");
+      $("list").querySelectorAll("button.case").forEach((b) => {
+        b.addEventListener("click", () => { selected = b.dataset.id; renderList(); });
+      });
+    }
+
+    function surfaceCard(title, s, href) {
+      if (!s) return "";
+      return `<div class="card">
+        <h2>${title} ${pill(s.status)}</h2>
+        <p>${s.note || ""}</p>
+        <dl class="meta">
+          <dt>Probe type</dt><dd>${s.probe_type || "none"}</dd>
+          <dt>Claim</dt><dd>${s.claim || "—"}</dd>
+          <dt>Evidence strength</dt><dd>${pill(s.evidence_strength, s.evidence_strength || "none")}</dd>
+          <dt>Why</dt><dd class="muted">${s.evidence_why || ""}</dd>
+        </dl>
+        ${s.mean_score_d != null ? `<p class="muted">L${s.layer} mean_score_d = ${s.mean_score_d} · class-correct ${s.class_correct}</p>` : ""}
+        ${s.n_lost_steps != null ? `<p class="muted">lost steps = ${s.n_lost_steps}</p>` : ""}
+        ${s.verdict ? `<p>Dual snapshot: ${goldPill(s.verdict)} ${s.disposition || ""} · ${s.bucket || ""} <span class="muted">(${s.source || ""})</span></p>` : ""}
+        <p><a href="${href}">deep dive</a></p>
+      </div>`;
+    }
+
+    function renderCase(c) {
+      const fb = c.first_break || {};
+      const bannerClass = fb.status === "located" ? "fail" : fb.status === "pass" ? "pass" : "incomplete";
+      const offered = offeredOf(c);
+      const applied = appliedOf(c);
+      $("detail").innerHTML = `
+        <div class="banner ${bannerClass}">
+          <h2>First-break routing ${pill("routing", "routing — not causal")}</h2>
+          <p>${goldPill(c.gold)} <strong>${c.id}</strong> — ${fb.status === "located" ? ("routes to " + fb.surface) : fb.status}</p>
+          <p>${fb.why || ""}</p>
+          <dl class="meta">
+            <dt>Claim</dt><dd>${fb.claim || "—"}</dd>
+            <dt>Probe type</dt><dd>${fb.probe_type || "—"}</dd>
+            <dt>Evidence strength</dt><dd>${pill(fb.evidence_strength, fb.evidence_strength || "—")}</dd>
+            <dt>Why</dt><dd>${fb.evidence_why || ""}</dd>
+            <dt>Not claiming</dt><dd>${fb.not || "causal first emergence"}</dd>
+            <dt>Response class</dt><dd>${offered ? pill(offered.class, "contain") : "none"}</dd>
+            <dt>Offered action</dt><dd>${offered ? pill(offered.action, offered.action) : "none (incomplete / pass)"}</dd>
+            <dt>Applied</dt><dd>${applied ? (applied.action || applied.disposition) + " (" + applied.reason + ")" : "not yet"}</dd>
+            <dt>Invariants</dt><dd>${(c.invariants && c.invariants.status) ? (c.invariants.status + " — " + (c.invariants.note || "")) : "held — overlay only; net not rewritten"}</dd>
+          </dl>
+        </div>
+        <div class="card"><p class="evidence">${(c.evidence || "").replace(/</g, "&lt;")}</p></div>
+        <div class="cols">
+          ${surfaceCard("1. Encode", c.encode, "http://127.0.0.1:8258/")}
+          ${surfaceCard("2. Compute", c.compute, "http://127.0.0.1:8259/")}
+          ${surfaceCard("3. Translate", c.translate, "http://127.0.0.1:8253/")}
+        </div>
+      `;
+      $("btn-fix").disabled = !offered || !!applied;
+    }
+
+    async function loadMeta() {
+      const r = await fetch("/api/meta");
+      meta = await r.json();
+      if (!selected && meta.cases && meta.cases.length) selected = meta.cases[0].id;
+      $("status").textContent = `${meta.n_located} routed / ${meta.n_incomplete} incomplete / ${meta.n_cases} notes`;
+      renderList();
+    }
+
+    $("btn-locate").addEventListener("click", async () => {
+      if (!selected) return;
+      $("status").textContent = "Routing…";
+      const r = await fetch("/api/locate?case_id=" + encodeURIComponent(selected));
+      const c = await r.json();
+      if (c.error) { $("status").textContent = c.error; return; }
+      renderCase(c);
+      $("status").textContent = c.id + " · " + (c.first_break.status === "located" ? ("routes " + c.first_break.surface) : c.first_break.status);
+    });
+
+    $("btn-all").addEventListener("click", async () => {
+      $("status").textContent = "Loading panel…";
+      const r = await fetch("/api/panel");
+      const panel = await r.json();
+      meta.cases = (panel.cases || []).map((c) => ({
+        id: c.id, gold: c.gold, first_break: c.first_break.surface,
+        first_status: c.first_break.status, has_trace: c.has_trace,
+        applied: !!(c.applied_response || c.applied_fix)
+      }));
+      meta.n_located = panel.n_located;
+      meta.n_incomplete = panel.n_incomplete;
+      $("status").textContent = `${panel.n_located} routed / ${panel.n_incomplete} incomplete`;
+      renderList();
+      if (selected) {
+        const rec = (panel.cases || []).find((c) => c.id === selected);
+        if (rec) renderCase(rec);
+      }
+    });
+
+    $("btn-fix").addEventListener("click", async () => {
+      if (!selected) return;
+      $("status").textContent = "Applying containment…";
+      const r = await fetch("/api/fix", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ case_id: selected }),
+      });
+      const out = await r.json();
+      if (!out.ok) { $("status").textContent = out.error || "response refused"; return; }
+      renderCase(out.case);
+      const act = (out.response || out.fix || {}).action || (out.fix || {}).disposition;
+      $("status").textContent = "Contained: " + act + " (not a repair)";
+      await loadMeta();
+      renderList();
+    });
+
+    loadMeta().catch((e) => { $("status").innerHTML = '<span class="err">' + e + "</span>"; });
+  </script>
+</body>
+</html>
