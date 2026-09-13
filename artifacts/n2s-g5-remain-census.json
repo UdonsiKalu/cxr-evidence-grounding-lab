@@ -1,0 +1,1420 @@
+{
+  "ok": true,
+  "kind": "n2s_g5_remain_census_v1",
+  "timestamp": "2026-09-11T06:10:42.038941+00:00",
+  "protocol": "docs/TRACKB-FAILURE-INTERVENTION-MAP.md",
+  "intervention": "failure_evidence_from_extract_text_gated_mixed",
+  "extracts": "n2s-g2-analog-fill-extracts.json",
+  "n_library": 108,
+  "n_miss": 27,
+  "n_design_miss": 15,
+  "n_heldout_miss": 12,
+  "shape_order": [
+    "S-x-override",
+    "S-g4-stable-seq",
+    "S-g4-notes-promote",
+    "S-admin-blocked",
+    "S-may-have",
+    "S-never-quote",
+    "S-hedge",
+    "S-too-early",
+    "S-response-only",
+    "S-other"
+  ],
+  "counts": {
+    "by_shape_primary": {
+      "S-admin-blocked": 2,
+      "S-too-early": 1,
+      "S-may-have": 2,
+      "S-g4-notes-promote": 1,
+      "S-never-quote": 9,
+      "S-g4-stable-seq": 2,
+      "S-hedge": 6,
+      "S-response-only": 1,
+      "S-x-override": 2,
+      "S-other": 1
+    },
+    "by_gold": {
+      "SATISFIED": 9,
+      "NOT_SATISFIED": 1,
+      "UNCERTAIN": 3,
+      "CONTRADICTION": 14
+    },
+    "design_by_shape": {
+      "S-admin-blocked": 1,
+      "S-too-early": 1,
+      "S-may-have": 1,
+      "S-g4-notes-promote": 1,
+      "S-never-quote": 3,
+      "S-g4-stable-seq": 2,
+      "S-hedge": 6
+    },
+    "heldout_by_shape": {
+      "S-never-quote": 6,
+      "S-may-have": 1,
+      "S-admin-blocked": 1,
+      "S-response-only": 1,
+      "S-x-override": 2,
+      "S-other": 1
+    },
+    "g4_flipped_away": [
+      "U4",
+      "TF_E2",
+      "TX_E02"
+    ]
+  },
+  "finding": {
+    "largest_shape": "S-never-quote",
+    "g4_not_fully_specific_on_n64": true,
+    "never_quote_mechanism": "ground()._clinical_blob_for_conflict omits quotes/notes, so never\u2194given in quotes is invisible to Goal 4's hard-simultaneous flag",
+    "do_not_retune_g3_g4": true,
+    "locator_chose_repair_class": false,
+    "started_next_repair": false
+  },
+  "rows": [
+    {
+      "id": "I2",
+      "phenotype_design": true,
+      "role": "P-bind",
+      "gold": "SATISFIED",
+      "verdict_before": "NOT_SATISFIED",
+      "verdict_after": "NOT_SATISFIED",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "unspecified",
+      "administration_status": "planned",
+      "contradiction_present_before": false,
+      "contradiction_present_after": false,
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "false",
+        "C_failure_event": "true",
+        "D_failure_of_first_line": "true",
+        "X_contradiction": false
+      },
+      "asserted_failure": true,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": "quotes",
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-admin-blocked"
+      ],
+      "shape_primary": "S-admin-blocked",
+      "quotes": [
+        "Platinum-refractory high-grade serous ovarian cancer. Now considering pegylated liposomal doxorubicin."
+      ],
+      "outcome_statements": [
+        {
+          "text": "Platinum-refractory high-grade serous ovarian cancer. Now considering pegylated liposomal doxorubicin.",
+          "polarity": "failure"
+        }
+      ]
+    },
+    {
+      "id": "T2",
+      "phenotype_design": true,
+      "role": "P-neg",
+      "gold": "NOT_SATISFIED",
+      "verdict_before": "UNCERTAIN",
+      "verdict_after": "UNCERTAIN",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "first",
+      "administration_status": "given",
+      "contradiction_present_before": false,
+      "contradiction_present_after": false,
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "unknown",
+        "X_contradiction": false
+      },
+      "asserted_failure": false,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-too-early"
+      ],
+      "shape_primary": "S-too-early",
+      "quotes": [
+        "First-line FOLFOX was initiated yesterday. No restaging yet. Patient tolerating cycle 1 day 2."
+      ],
+      "outcome_statements": []
+    },
+    {
+      "id": "U2",
+      "phenotype_design": true,
+      "role": "gold_UNCERTAIN",
+      "gold": "UNCERTAIN",
+      "verdict_before": "NOT_SATISFIED",
+      "verdict_after": "NOT_SATISFIED",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "unknown",
+      "administration_status": "may_have",
+      "contradiction_present_before": false,
+      "contradiction_present_after": false,
+      "atoms_after": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "unknown",
+        "X_contradiction": false
+      },
+      "asserted_failure": false,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-may-have",
+        "S-hedge"
+      ],
+      "shape_primary": "S-may-have",
+      "quotes": [
+        "may have received platinum-based therapy at another facility",
+        "Outcome of that treatment is unknown"
+      ],
+      "outcome_statements": [
+        {
+          "text": "Outcome of that treatment is unknown",
+          "polarity": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "U4",
+      "phenotype_design": true,
+      "role": "gold_UNCERTAIN",
+      "gold": "UNCERTAIN",
+      "verdict_before": "UNCERTAIN",
+      "verdict_after": "CONTRADICTION",
+      "match_gold_before": true,
+      "match_gold_after": false,
+      "flipped_away": true,
+      "stated_line": "unknown",
+      "administration_status": "unknown",
+      "contradiction_present_before": false,
+      "contradiction_present_after": true,
+      "atoms_after": {
+        "A_first_line_identified": "unknown",
+        "B_first_line_administered": "unknown",
+        "C_failure_event": "true",
+        "D_failure_of_first_line": "unknown",
+        "X_contradiction": true
+      },
+      "asserted_failure": true,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": "notes",
+        "added_response_then_progression": false,
+        "touched_contradiction_present": true,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": true
+      },
+      "shape_tags": [
+        "S-g4-notes-promote",
+        "S-hedge"
+      ],
+      "shape_primary": "S-g4-notes-promote",
+      "quotes": [
+        "questionable whether carboplatin was given as first-line metastatic therapy or in the adjuvant setting",
+        "no clear progression documented in the available notes"
+      ],
+      "outcome_statements": [
+        {
+          "text": "no clear progression documented",
+          "polarity": "ongoing"
+        },
+        {
+          "text": "The note expresses uncertainty about the line of therapy for carboplatin and the presence of progression.",
+          "polarity": "failure"
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "phenotype_design": true,
+      "role": "P-xspan",
+      "gold": "CONTRADICTION",
+      "verdict_before": "SATISFIED",
+      "verdict_after": "SATISFIED",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "first",
+      "administration_status": "given",
+      "contradiction_present_before": false,
+      "contradiction_present_after": false,
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "true",
+        "D_failure_of_first_line": "true",
+        "X_contradiction": false
+      },
+      "asserted_failure": true,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-never-quote"
+      ],
+      "shape_primary": "S-never-quote",
+      "quotes": [
+        "never received systemic therapy",
+        "progressed after six cycles of first-line carboplatin/paclitaxel"
+      ],
+      "outcome_statements": [
+        {
+          "text": "progressed",
+          "polarity": "failure"
+        }
+      ]
+    },
+    {
+      "id": "TF_E2",
+      "phenotype_design": true,
+      "role": "gold_SATISFIED",
+      "gold": "SATISFIED",
+      "verdict_before": "SATISFIED",
+      "verdict_after": "CONTRADICTION",
+      "match_gold_before": true,
+      "match_gold_after": false,
+      "flipped_away": true,
+      "stated_line": "first",
+      "administration_status": "given",
+      "contradiction_present_before": false,
+      "contradiction_present_after": true,
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "true",
+        "D_failure_of_first_line": "true",
+        "X_contradiction": true
+      },
+      "asserted_failure": true,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": true,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": true
+      },
+      "shape_tags": [
+        "S-g4-stable-seq"
+      ],
+      "shape_primary": "S-g4-stable-seq",
+      "quotes": [
+        "imaging after two cycles showed stable disease",
+        "restaging at cycle 5 demonstrated progressive osseous metastases"
+      ],
+      "outcome_statements": [
+        {
+          "text": "stable disease",
+          "polarity": "response"
+        },
+        {
+          "text": "progressive osseous metastases",
+          "polarity": "failure"
+        }
+      ]
+    },
+    {
+      "id": "TF_E4",
+      "phenotype_design": true,
+      "role": "P-bind",
+      "gold": "SATISFIED",
+      "verdict_before": "UNCERTAIN",
+      "verdict_after": "UNCERTAIN",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "first",
+      "administration_status": "given",
+      "contradiction_present_before": false,
+      "contradiction_present_after": false,
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "unknown",
+        "X_contradiction": false
+      },
+      "asserted_failure": true,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-hedge"
+      ],
+      "shape_primary": "S-hedge",
+      "quotes": [
+        "possible progression",
+        "clear progressive disease"
+      ],
+      "outcome_statements": [
+        {
+          "text": "possible progression",
+          "polarity": "failure"
+        }
+      ]
+    },
+    {
+      "id": "TX_E02",
+      "phenotype_design": true,
+      "role": "gold_SATISFIED",
+      "gold": "SATISFIED",
+      "verdict_before": "SATISFIED",
+      "verdict_after": "CONTRADICTION",
+      "match_gold_before": true,
+      "match_gold_after": false,
+      "flipped_away": true,
+      "stated_line": "first",
+      "administration_status": "given|planned",
+      "contradiction_present_before": false,
+      "contradiction_present_after": true,
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "true",
+        "D_failure_of_first_line": "true",
+        "X_contradiction": true
+      },
+      "asserted_failure": true,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": true,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": true
+      },
+      "shape_tags": [
+        "S-g4-stable-seq"
+      ],
+      "shape_primary": "S-g4-stable-seq",
+      "quotes": [
+        "CT at month 3 showed stable disease.",
+        "CT at month 11 documented new peritoneal nodules meeting progression."
+      ],
+      "outcome_statements": [
+        {
+          "text": "stable disease",
+          "polarity": "response"
+        },
+        {
+          "text": "new peritoneal nodules meeting progression",
+          "polarity": "failure"
+        }
+      ]
+    },
+    {
+      "id": "TX_E03",
+      "phenotype_design": true,
+      "role": "gold_SATISFIED",
+      "gold": "SATISFIED",
+      "verdict_before": "UNCERTAIN",
+      "verdict_after": "UNCERTAIN",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "first",
+      "administration_status": "given",
+      "contradiction_present_before": false,
+      "contradiction_present_after": false,
+      "atoms_after": {
+        "A_first_line_identified": "unknown",
+        "B_first_line_administered": "unknown",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "unknown",
+        "X_contradiction": false
+      },
+      "asserted_failure": true,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": "quotes",
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-hedge"
+      ],
+      "shape_primary": "S-hedge",
+      "quotes": [
+        "marked shrinkage of mediastinal nodes after cycle 2",
+        "platinum doublet held for progression"
+      ],
+      "outcome_statements": [
+        {
+          "text": "marked shrinkage of mediastinal nodes after cycle 2",
+          "polarity": "response"
+        },
+        {
+          "text": "platinum doublet held for progression",
+          "polarity": "failure"
+        }
+      ]
+    },
+    {
+      "id": "TX_E05",
+      "phenotype_design": true,
+      "role": "gold_SATISFIED",
+      "gold": "SATISFIED",
+      "verdict_before": "UNCERTAIN",
+      "verdict_after": "UNCERTAIN",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "first",
+      "administration_status": "given",
+      "contradiction_present_before": false,
+      "contradiction_present_after": false,
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "unknown",
+        "X_contradiction": false
+      },
+      "asserted_failure": true,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-hedge"
+      ],
+      "shape_primary": "S-hedge",
+      "quotes": [
+        "possible new satellite lesion",
+        "unequivocal intrahepatic progression"
+      ],
+      "outcome_statements": [
+        {
+          "text": "possible new satellite lesion",
+          "polarity": "unknown"
+        },
+        {
+          "text": "unequivocal intrahepatic progression",
+          "polarity": "failure"
+        }
+      ]
+    },
+    {
+      "id": "TX_E12",
+      "phenotype_design": true,
+      "role": "gold_SATISFIED",
+      "gold": "SATISFIED",
+      "verdict_before": "UNCERTAIN",
+      "verdict_after": "UNCERTAIN",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "first",
+      "administration_status": "given",
+      "contradiction_present_before": false,
+      "contradiction_present_after": false,
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "unknown",
+        "X_contradiction": false
+      },
+      "asserted_failure": true,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-hedge"
+      ],
+      "shape_primary": "S-hedge",
+      "quotes": [
+        "month-2 MRI raised possible pseudoprogression versus true growth",
+        "Month-3 MRI confirmed increasing enhancing volume outside the RT field"
+      ],
+      "outcome_statements": [
+        {
+          "text": "TMZ stopped for confirmed progression",
+          "polarity": "failure"
+        },
+        {
+          "text": "confirmed increasing enhancing volume outside the RT field",
+          "polarity": "response"
+        }
+      ]
+    },
+    {
+      "id": "TX_E17",
+      "phenotype_design": true,
+      "role": "gold_SATISFIED",
+      "gold": "SATISFIED",
+      "verdict_before": "UNCERTAIN",
+      "verdict_after": "UNCERTAIN",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "first",
+      "administration_status": "given",
+      "contradiction_present_before": false,
+      "contradiction_present_after": false,
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "unknown",
+        "X_contradiction": false
+      },
+      "asserted_failure": true,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-hedge"
+      ],
+      "shape_primary": "S-hedge",
+      "quotes": [
+        "possible new pelvic thickening",
+        "clear progressive disease"
+      ],
+      "outcome_statements": [
+        {
+          "text": "possible new pelvic thickening",
+          "polarity": "unknown"
+        },
+        {
+          "text": "clear progressive disease",
+          "polarity": "failure"
+        }
+      ]
+    },
+    {
+      "id": "TX_E23",
+      "phenotype_design": true,
+      "role": "gold_SATISFIED",
+      "gold": "SATISFIED",
+      "verdict_before": "UNCERTAIN",
+      "verdict_after": "UNCERTAIN",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "first",
+      "administration_status": "given",
+      "contradiction_present_before": false,
+      "contradiction_present_after": false,
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "unknown",
+        "X_contradiction": false
+      },
+      "asserted_failure": true,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-hedge"
+      ],
+      "shape_primary": "S-hedge",
+      "quotes": [
+        "possible new satellite plaque",
+        "confirmed progressive cutaneous disease"
+      ],
+      "outcome_statements": [
+        {
+          "text": "possible new satellite plaque",
+          "polarity": "unknown"
+        },
+        {
+          "text": "confirmed progressive cutaneous disease",
+          "polarity": "failure"
+        }
+      ]
+    },
+    {
+      "id": "TX_C02",
+      "phenotype_design": true,
+      "role": "P-xspan",
+      "gold": "CONTRADICTION",
+      "verdict_before": "SATISFIED",
+      "verdict_after": "SATISFIED",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "first",
+      "administration_status": "given",
+      "contradiction_present_before": false,
+      "contradiction_present_after": false,
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "true",
+        "D_failure_of_first_line": "true",
+        "X_contradiction": false
+      },
+      "asserted_failure": true,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-never-quote"
+      ],
+      "shape_primary": "S-never-quote",
+      "quotes": [
+        "patient states no prior systemic therapy",
+        "completed four cycles of first-line carboplatin/etoposide with subsequent progression on CT"
+      ],
+      "outcome_statements": [
+        {
+          "text": "subsequent progression on CT",
+          "polarity": "failure"
+        }
+      ]
+    },
+    {
+      "id": "TX_C04",
+      "phenotype_design": true,
+      "role": "P-xspan",
+      "gold": "CONTRADICTION",
+      "verdict_before": "UNCERTAIN",
+      "verdict_after": "UNCERTAIN",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "first",
+      "administration_status": "given",
+      "contradiction_present_before": false,
+      "contradiction_present_after": false,
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "unknown",
+        "X_contradiction": false
+      },
+      "asserted_failure": false,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-never-quote",
+        "S-response-only"
+      ],
+      "shape_primary": "S-never-quote",
+      "quotes": [
+        "never receiving induction chemotherapy",
+        "completed first-line hyper-CVAD"
+      ],
+      "outcome_statements": [
+        {
+          "text": "completed first-line hyper-CVAD",
+          "polarity": "response"
+        }
+      ]
+    },
+    {
+      "id": "C6",
+      "phenotype_design": false,
+      "role": "gold_CONTRADICTION",
+      "gold": "CONTRADICTION",
+      "verdict_before": "SATISFIED",
+      "verdict_after": "SATISFIED",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "first",
+      "administration_status": "given",
+      "contradiction_present_before": false,
+      "contradiction_present_after": false,
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "true",
+        "D_failure_of_first_line": "true",
+        "X_contradiction": false
+      },
+      "asserted_failure": true,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-never-quote"
+      ],
+      "shape_primary": "S-never-quote",
+      "quotes": [
+        "patient reports never having chemotherapy"
+      ],
+      "outcome_statements": [
+        {
+          "text": "radiographic progression in the liver",
+          "polarity": "failure"
+        }
+      ]
+    },
+    {
+      "id": "U6",
+      "phenotype_design": false,
+      "role": "gold_UNCERTAIN",
+      "gold": "UNCERTAIN",
+      "verdict_before": "NOT_SATISFIED",
+      "verdict_after": "NOT_SATISFIED",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "unspecified",
+      "administration_status": "may_have",
+      "contradiction_present_before": false,
+      "contradiction_present_after": false,
+      "atoms_after": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "unknown",
+        "X_contradiction": false
+      },
+      "asserted_failure": false,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-may-have",
+        "S-hedge"
+      ],
+      "shape_primary": "S-may-have",
+      "quotes": [
+        "may have received immunotherapy at an outside clinic last year"
+      ],
+      "outcome_statements": []
+    },
+    {
+      "id": "C10",
+      "phenotype_design": false,
+      "role": "gold_CONTRADICTION",
+      "gold": "CONTRADICTION",
+      "verdict_before": "SATISFIED",
+      "verdict_after": "SATISFIED",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "first",
+      "administration_status": "given",
+      "contradiction_present_before": false,
+      "contradiction_present_after": false,
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "true",
+        "D_failure_of_first_line": "true",
+        "X_contradiction": false
+      },
+      "asserted_failure": true,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-never-quote"
+      ],
+      "shape_primary": "S-never-quote",
+      "quotes": [
+        "no prior cytotoxic chemotherapy",
+        "finished four cycles of first-line ABVD",
+        "PET showed progressive nodal disease"
+      ],
+      "outcome_statements": [
+        {
+          "text": "PET showed progressive nodal disease",
+          "polarity": "failure"
+        }
+      ]
+    },
+    {
+      "id": "C11",
+      "phenotype_design": false,
+      "role": "gold_CONTRADICTION",
+      "gold": "CONTRADICTION",
+      "verdict_before": "UNCERTAIN",
+      "verdict_after": "UNCERTAIN",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "unknown",
+      "administration_status": "not_given",
+      "contradiction_present_before": false,
+      "contradiction_present_after": false,
+      "atoms_after": {
+        "A_first_line_identified": "unknown",
+        "B_first_line_administered": "unknown",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "unknown",
+        "X_contradiction": false
+      },
+      "asserted_failure": true,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-admin-blocked"
+      ],
+      "shape_primary": "S-admin-blocked",
+      "quotes": [
+        "failed first-line systemic therapy",
+        "no first-line systemic anticancer drug was ever dispensed"
+      ],
+      "outcome_statements": [
+        {
+          "text": "failed first-line systemic therapy",
+          "polarity": "failure"
+        }
+      ]
+    },
+    {
+      "id": "BC_C2",
+      "phenotype_design": false,
+      "role": "gold_CONTRADICTION",
+      "gold": "CONTRADICTION",
+      "verdict_before": "SATISFIED",
+      "verdict_after": "SATISFIED",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "first",
+      "administration_status": "given",
+      "contradiction_present_before": false,
+      "contradiction_present_after": false,
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "true",
+        "D_failure_of_first_line": "true",
+        "X_contradiction": false
+      },
+      "asserted_failure": false,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-never-quote"
+      ],
+      "shape_primary": "S-never-quote",
+      "quotes": [
+        "no induction chemotherapy was administered for AML",
+        "completed 7+3 cytarabine/daunorubicin induction with initial CR, then marrow relapse four months later"
+      ],
+      "outcome_statements": [
+        {
+          "text": "initial CR",
+          "polarity": "response"
+        },
+        {
+          "text": "marrow relapse four months later",
+          "polarity": "failure"
+        }
+      ]
+    },
+    {
+      "id": "BC11_C1",
+      "phenotype_design": false,
+      "role": "gold_CONTRADICTION",
+      "gold": "CONTRADICTION",
+      "verdict_before": "NOT_SATISFIED",
+      "verdict_after": "NOT_SATISFIED",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "first",
+      "administration_status": "given",
+      "contradiction_present_before": false,
+      "contradiction_present_after": false,
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "false",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": false
+      },
+      "asserted_failure": false,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-never-quote",
+        "S-response-only"
+      ],
+      "shape_primary": "S-never-quote",
+      "quotes": [
+        "no prior systemic therapy for DLBCL",
+        "patient completed six cycles first-line R-CHOP with complete response"
+      ],
+      "outcome_statements": [
+        {
+          "text": "complete response",
+          "polarity": "response"
+        }
+      ]
+    },
+    {
+      "id": "BC11_C2",
+      "phenotype_design": false,
+      "role": "gold_CONTRADICTION",
+      "gold": "CONTRADICTION",
+      "verdict_before": "NOT_SATISFIED",
+      "verdict_after": "NOT_SATISFIED",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "first",
+      "administration_status": "given",
+      "contradiction_present_before": false,
+      "contradiction_present_after": false,
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "false",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": false
+      },
+      "asserted_failure": false,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-never-quote",
+        "S-response-only"
+      ],
+      "shape_primary": "S-never-quote",
+      "quotes": [
+        "never received 7+3 induction for AML",
+        "completed two cycles 7+3 with CR, then relapsed with 40% blasts"
+      ],
+      "outcome_statements": [
+        {
+          "text": "completed two cycles 7+3 with CR, then relapsed with 40% blasts",
+          "polarity": "response"
+        }
+      ]
+    },
+    {
+      "id": "BC12_C1",
+      "phenotype_design": false,
+      "role": "gold_CONTRADICTION",
+      "gold": "CONTRADICTION",
+      "verdict_before": "NOT_SATISFIED",
+      "verdict_after": "NOT_SATISFIED",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "first",
+      "administration_status": "given",
+      "contradiction_present_before": false,
+      "contradiction_present_after": false,
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "false",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": false
+      },
+      "asserted_failure": false,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-response-only"
+      ],
+      "shape_primary": "S-response-only",
+      "quotes": [
+        "completed six cycles first-line R-CHOP with CR documented on PET"
+      ],
+      "outcome_statements": [
+        {
+          "text": "CR documented on PET",
+          "polarity": "response"
+        }
+      ]
+    },
+    {
+      "id": "BC14_C1",
+      "phenotype_design": false,
+      "role": "gold_CONTRADICTION",
+      "gold": "CONTRADICTION",
+      "verdict_before": "NOT_SATISFIED",
+      "verdict_after": "NOT_SATISFIED",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "first",
+      "administration_status": "given",
+      "contradiction_present_before": false,
+      "contradiction_present_after": false,
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "false",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": false
+      },
+      "asserted_failure": false,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-never-quote",
+        "S-response-only"
+      ],
+      "shape_primary": "S-never-quote",
+      "quotes": [
+        "systemic-therapy naive",
+        "completed four cycles first-line azacitidine with documented responses"
+      ],
+      "outcome_statements": [
+        {
+          "text": "documented responses",
+          "polarity": "response"
+        }
+      ]
+    },
+    {
+      "id": "UA_GEN_C1_NEAR",
+      "phenotype_design": false,
+      "role": "gold_CONTRADICTION",
+      "gold": "CONTRADICTION",
+      "verdict_before": "SATISFIED",
+      "verdict_after": "SATISFIED",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "first",
+      "administration_status": "given",
+      "contradiction_present_before": true,
+      "contradiction_present_after": true,
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "true",
+        "D_failure_of_first_line": "true",
+        "X_contradiction": false
+      },
+      "asserted_failure": true,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-x-override"
+      ],
+      "shape_primary": "S-x-override",
+      "quotes": [
+        "failed after four cycles",
+        "still responding to FOLFOX"
+      ],
+      "outcome_statements": [
+        {
+          "text": "failed after four cycles",
+          "polarity": "failure"
+        },
+        {
+          "text": "still responding to FOLFOX",
+          "polarity": "response"
+        }
+      ]
+    },
+    {
+      "id": "UA_GEN_C2_FAR",
+      "phenotype_design": false,
+      "role": "gold_CONTRADICTION",
+      "gold": "CONTRADICTION",
+      "verdict_before": "SATISFIED",
+      "verdict_after": "SATISFIED",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "first",
+      "administration_status": "given",
+      "contradiction_present_before": true,
+      "contradiction_present_after": true,
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "true",
+        "D_failure_of_first_line": "true",
+        "X_contradiction": false
+      },
+      "asserted_failure": true,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-x-override"
+      ],
+      "shape_primary": "S-x-override",
+      "quotes": [
+        "first-line pembrolizumab failed; switch therapy",
+        "disease remains responsive to pembrolizumab; do not change therapy"
+      ],
+      "outcome_statements": [
+        {
+          "text": "first-line pembrolizumab failed",
+          "polarity": "failure"
+        },
+        {
+          "text": "disease remains responsive to pembrolizumab",
+          "polarity": "response"
+        }
+      ]
+    },
+    {
+      "id": "UA_GEN_C4_FAR",
+      "phenotype_design": false,
+      "role": "gold_CONTRADICTION",
+      "gold": "CONTRADICTION",
+      "verdict_before": "SATISFIED",
+      "verdict_after": "SATISFIED",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "flipped_away": false,
+      "stated_line": "first",
+      "administration_status": "given",
+      "contradiction_present_before": false,
+      "contradiction_present_after": false,
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "true",
+        "D_failure_of_first_line": "true",
+        "X_contradiction": false
+      },
+      "asserted_failure": true,
+      "intervention_meta": {
+        "kind": "failure_evidence_from_extract_text_gated_mixed",
+        "gate": "asserted_failure_marker+simultaneous_1L",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false,
+        "flagged_simultaneous_1L": false
+      },
+      "shape_tags": [
+        "S-other"
+      ],
+      "shape_primary": "S-other",
+      "quotes": [
+        "failed first-line FOLFIRINOX",
+        "disease remains sensitive to FOLFIRINOX; continue present therapy"
+      ],
+      "outcome_statements": [
+        {
+          "text": "failed first-line FOLFIRINOX",
+          "polarity": "failure"
+        }
+      ]
+    }
+  ],
+  "not": [
+    "Goal 3/4 retune",
+    "new repair",
+    "ground() rewrite",
+    "CAA",
+    "frozen-d",
+    "Dual_full rescore",
+    ":8260 GUI",
+    "G4 panel overwrite"
+  ],
+  "note": "Read-only remaining-miss census after frozen Goal 4. Next repair, if any, must be predeclared from a shape tag, not from IDs."
+}

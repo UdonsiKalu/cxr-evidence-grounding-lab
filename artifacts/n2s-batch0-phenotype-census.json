@@ -1,0 +1,701 @@
+{
+  "ok": true,
+  "kind": "n2s_batch0_phenotype_census_v1",
+  "timestamp": "2026-09-11T00:44:13.681421+00:00",
+  "protocol": "docs/TRACKB-FAILURE-INTERVENTION-MAP.md",
+  "set": "data/cases.json",
+  "n": 20,
+  "prompt": "analog user=evidence",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "intervention": "none",
+  "not": [
+    "hidden-state patch",
+    "frozen-d",
+    "ground() rewrite",
+    "Dual_full rescore",
+    "quote-promote",
+    "auto-correct",
+    ":8260 GUI"
+  ],
+  "rows": [
+    {
+      "id": "E1",
+      "gold": "SATISFIED",
+      "category": "explicit",
+      "why": "Explicit first-line regimen plus explicit progression.",
+      "parse_ok": true,
+      "thin_extract": true,
+      "verdict": "NOT_SATISFIED",
+      "disposition": "AUTO",
+      "bucket": "wrong_AUTO",
+      "wrong_AUTO": true,
+      "match_gold": false,
+      "atoms": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": false
+      },
+      "phenotypes": [
+        "P-expl",
+        "P-unk"
+      ],
+      "probes": {
+        "enc_L8": "unknown",
+        "cmp_lost": "unknown",
+        "trn_bucket": "wrong_AUTO",
+        "route_8260": "none"
+      },
+      "hidden_state_patched": false,
+      "intervention": "none",
+      "prompt": "analog"
+    },
+    {
+      "id": "E2",
+      "gold": "SATISFIED",
+      "category": "explicit",
+      "why": "First-line stopped for intolerance; that counts as failure of the line.",
+      "parse_ok": true,
+      "thin_extract": true,
+      "verdict": "NOT_SATISFIED",
+      "disposition": "AUTO",
+      "bucket": "wrong_AUTO",
+      "wrong_AUTO": true,
+      "match_gold": false,
+      "atoms": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": false
+      },
+      "phenotypes": [
+        "P-expl",
+        "P-unk"
+      ],
+      "probes": {
+        "enc_L8": "unknown",
+        "cmp_lost": "unknown",
+        "trn_bucket": "wrong_AUTO",
+        "route_8260": "none"
+      },
+      "hidden_state_patched": false,
+      "intervention": "none",
+      "prompt": "analog"
+    },
+    {
+      "id": "E3",
+      "gold": "NOT_SATISFIED",
+      "category": "explicit",
+      "why": "First-line is ongoing with response; no failure event.",
+      "parse_ok": true,
+      "thin_extract": true,
+      "verdict": "NOT_SATISFIED",
+      "disposition": "AUTO",
+      "bucket": "correct_AUTO",
+      "wrong_AUTO": false,
+      "match_gold": true,
+      "atoms": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": false
+      },
+      "phenotypes": [
+        "P-neg",
+        "P-unk"
+      ],
+      "probes": {
+        "enc_L8": "unknown",
+        "cmp_lost": "unknown",
+        "trn_bucket": "correct_AUTO",
+        "route_8260": "none"
+      },
+      "hidden_state_patched": false,
+      "intervention": "none",
+      "prompt": "analog"
+    },
+    {
+      "id": "E4",
+      "gold": "NOT_SATISFIED",
+      "category": "explicit",
+      "why": "No prior systemic therapy; first-line only planned.",
+      "parse_ok": true,
+      "thin_extract": true,
+      "verdict": "NOT_SATISFIED",
+      "disposition": "AUTO",
+      "bucket": "correct_AUTO",
+      "wrong_AUTO": false,
+      "match_gold": true,
+      "atoms": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": false
+      },
+      "phenotypes": [
+        "P-neg",
+        "P-unk"
+      ],
+      "probes": {
+        "enc_L8": "unknown",
+        "cmp_lost": "unknown",
+        "trn_bucket": "correct_AUTO",
+        "route_8260": "none"
+      },
+      "hidden_state_patched": false,
+      "intervention": "none",
+      "prompt": "analog"
+    },
+    {
+      "id": "I1",
+      "gold": "SATISFIED",
+      "category": "implicit",
+      "why": "Switch to second-line after new lesions implies first-line failure without saying 'failed'.",
+      "parse_ok": true,
+      "thin_extract": true,
+      "verdict": "NOT_SATISFIED",
+      "disposition": "AUTO",
+      "bucket": "wrong_AUTO",
+      "wrong_AUTO": true,
+      "match_gold": false,
+      "atoms": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": false
+      },
+      "phenotypes": [
+        "P-impl",
+        "P-unk"
+      ],
+      "probes": {
+        "enc_L8": "unknown",
+        "cmp_lost": "unknown",
+        "trn_bucket": "wrong_AUTO",
+        "route_8260": "none"
+      },
+      "hidden_state_patched": false,
+      "intervention": "none",
+      "prompt": "analog"
+    },
+    {
+      "id": "I2",
+      "gold": "SATISFIED",
+      "category": "implicit",
+      "why": "Platinum-refractory is conventional language for failure of platinum (typically first-line).",
+      "parse_ok": true,
+      "thin_extract": true,
+      "verdict": "NOT_SATISFIED",
+      "disposition": "AUTO",
+      "bucket": "wrong_AUTO",
+      "wrong_AUTO": true,
+      "match_gold": false,
+      "atoms": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": false
+      },
+      "phenotypes": [
+        "P-impl",
+        "P-unk"
+      ],
+      "probes": {
+        "enc_L8": "unknown",
+        "cmp_lost": "unknown",
+        "trn_bucket": "wrong_AUTO",
+        "route_8260": "none"
+      },
+      "hidden_state_patched": false,
+      "intervention": "none",
+      "prompt": "analog"
+    },
+    {
+      "id": "I3",
+      "gold": "NOT_SATISFIED",
+      "category": "implicit",
+      "why": "Regimen mentioned only as a future plan.",
+      "parse_ok": true,
+      "thin_extract": true,
+      "verdict": "NOT_SATISFIED",
+      "disposition": "AUTO",
+      "bucket": "correct_AUTO",
+      "wrong_AUTO": false,
+      "match_gold": true,
+      "atoms": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": false
+      },
+      "phenotypes": [
+        "P-neg",
+        "P-unk"
+      ],
+      "probes": {
+        "enc_L8": "unknown",
+        "cmp_lost": "unknown",
+        "trn_bucket": "correct_AUTO",
+        "route_8260": "none"
+      },
+      "hidden_state_patched": false,
+      "intervention": "none",
+      "prompt": "analog"
+    },
+    {
+      "id": "I4",
+      "gold": "NOT_SATISFIED",
+      "category": "implicit",
+      "why": "Completed adjuvant therapy with NED is not failure of first-line therapy for metastatic disease.",
+      "parse_ok": true,
+      "thin_extract": true,
+      "verdict": "NOT_SATISFIED",
+      "disposition": "AUTO",
+      "bucket": "correct_AUTO",
+      "wrong_AUTO": false,
+      "match_gold": true,
+      "atoms": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": false
+      },
+      "phenotypes": [
+        "P-adj",
+        "P-unk"
+      ],
+      "probes": {
+        "enc_L8": "unknown",
+        "cmp_lost": "unknown",
+        "trn_bucket": "correct_AUTO",
+        "route_8260": "none"
+      },
+      "hidden_state_patched": false,
+      "intervention": "none",
+      "prompt": "analog"
+    },
+    {
+      "id": "T1",
+      "gold": "SATISFIED",
+      "category": "temporal",
+      "why": "Initial response then later progression on first-line is still first-line failure.",
+      "parse_ok": true,
+      "thin_extract": true,
+      "verdict": "NOT_SATISFIED",
+      "disposition": "AUTO",
+      "bucket": "wrong_AUTO",
+      "wrong_AUTO": true,
+      "match_gold": false,
+      "atoms": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": false
+      },
+      "phenotypes": [
+        "P-seq",
+        "P-unk"
+      ],
+      "probes": {
+        "enc_L8": "unknown",
+        "cmp_lost": "unknown",
+        "trn_bucket": "wrong_AUTO",
+        "route_8260": "incomplete"
+      },
+      "hidden_state_patched": false,
+      "intervention": "none",
+      "prompt": "analog"
+    },
+    {
+      "id": "T2",
+      "gold": "NOT_SATISFIED",
+      "category": "temporal",
+      "why": "First-line just started; no failure event yet.",
+      "parse_ok": true,
+      "thin_extract": true,
+      "verdict": "NOT_SATISFIED",
+      "disposition": "AUTO",
+      "bucket": "correct_AUTO",
+      "wrong_AUTO": false,
+      "match_gold": true,
+      "atoms": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": false
+      },
+      "phenotypes": [
+        "P-neg",
+        "P-unk"
+      ],
+      "probes": {
+        "enc_L8": "unknown",
+        "cmp_lost": "unknown",
+        "trn_bucket": "correct_AUTO",
+        "route_8260": "none"
+      },
+      "hidden_state_patched": false,
+      "intervention": "none",
+      "prompt": "analog"
+    },
+    {
+      "id": "T3",
+      "gold": "SATISFIED",
+      "category": "temporal",
+      "why": "Response then progression, now on second-line \u2014 first-line has failed.",
+      "parse_ok": true,
+      "thin_extract": true,
+      "verdict": "NOT_SATISFIED",
+      "disposition": "AUTO",
+      "bucket": "wrong_AUTO",
+      "wrong_AUTO": true,
+      "match_gold": false,
+      "atoms": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": false
+      },
+      "phenotypes": [
+        "P-seq",
+        "P-unk"
+      ],
+      "probes": {
+        "enc_L8": "unknown",
+        "cmp_lost": "unknown",
+        "trn_bucket": "wrong_AUTO",
+        "route_8260": "incomplete"
+      },
+      "hidden_state_patched": false,
+      "intervention": "none",
+      "prompt": "analog"
+    },
+    {
+      "id": "T4",
+      "gold": "NOT_SATISFIED",
+      "category": "temporal",
+      "why": "Temporary hold with plan to resume is not discontinuation-for-failure.",
+      "parse_ok": true,
+      "thin_extract": true,
+      "verdict": "NOT_SATISFIED",
+      "disposition": "AUTO",
+      "bucket": "correct_AUTO",
+      "wrong_AUTO": false,
+      "match_gold": true,
+      "atoms": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": false
+      },
+      "phenotypes": [
+        "P-neg",
+        "P-unk"
+      ],
+      "probes": {
+        "enc_L8": "unknown",
+        "cmp_lost": "unknown",
+        "trn_bucket": "correct_AUTO",
+        "route_8260": "none"
+      },
+      "hidden_state_patched": false,
+      "intervention": "none",
+      "prompt": "analog"
+    },
+    {
+      "id": "U1",
+      "gold": "UNCERTAIN",
+      "category": "uncertain",
+      "why": "Possible progression pending confirmatory imaging.",
+      "parse_ok": true,
+      "thin_extract": true,
+      "verdict": "NOT_SATISFIED",
+      "disposition": "AUTO",
+      "bucket": "wrong_AUTO",
+      "wrong_AUTO": true,
+      "match_gold": false,
+      "atoms": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "unknown",
+        "X_contradiction": false
+      },
+      "phenotypes": [
+        "P-unc",
+        "P-unk"
+      ],
+      "probes": {
+        "enc_L8": "unknown",
+        "cmp_lost": "unknown",
+        "trn_bucket": "wrong_AUTO",
+        "route_8260": "none"
+      },
+      "hidden_state_patched": false,
+      "intervention": "none",
+      "prompt": "analog"
+    },
+    {
+      "id": "U2",
+      "gold": "UNCERTAIN",
+      "category": "uncertain",
+      "why": "Unclear whether platinum was given and what the outcome was.",
+      "parse_ok": true,
+      "thin_extract": true,
+      "verdict": "NOT_SATISFIED",
+      "disposition": "AUTO",
+      "bucket": "wrong_AUTO",
+      "wrong_AUTO": true,
+      "match_gold": false,
+      "atoms": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "unknown",
+        "X_contradiction": false
+      },
+      "phenotypes": [
+        "P-unc",
+        "P-unk"
+      ],
+      "probes": {
+        "enc_L8": "unknown",
+        "cmp_lost": "unknown",
+        "trn_bucket": "wrong_AUTO",
+        "route_8260": "none"
+      },
+      "hidden_state_patched": false,
+      "intervention": "none",
+      "prompt": "analog"
+    },
+    {
+      "id": "U3",
+      "gold": "UNCERTAIN",
+      "category": "uncertain",
+      "why": "Mixed response is not a clear failure or non-failure.",
+      "parse_ok": true,
+      "thin_extract": true,
+      "verdict": "UNCERTAIN",
+      "disposition": "AUTO",
+      "bucket": "correct_AUTO",
+      "wrong_AUTO": false,
+      "match_gold": true,
+      "atoms": {
+        "A_first_line_identified": "unknown",
+        "B_first_line_administered": "unknown",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "unknown",
+        "X_contradiction": false
+      },
+      "phenotypes": [
+        "P-unc",
+        "P-unk"
+      ],
+      "probes": {
+        "enc_L8": "unknown",
+        "cmp_lost": "unknown",
+        "trn_bucket": "correct_AUTO",
+        "route_8260": "none"
+      },
+      "hidden_state_patched": false,
+      "intervention": "none",
+      "prompt": "analog"
+    },
+    {
+      "id": "U4",
+      "gold": "UNCERTAIN",
+      "category": "uncertain",
+      "why": "Line of therapy itself is unclear; no clear progression.",
+      "parse_ok": true,
+      "thin_extract": true,
+      "verdict": "UNCERTAIN",
+      "disposition": "AUTO",
+      "bucket": "correct_AUTO",
+      "wrong_AUTO": false,
+      "match_gold": true,
+      "atoms": {
+        "A_first_line_identified": "unknown",
+        "B_first_line_administered": "unknown",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "unknown",
+        "X_contradiction": false
+      },
+      "phenotypes": [
+        "P-unc",
+        "P-unk"
+      ],
+      "probes": {
+        "enc_L8": "unknown",
+        "cmp_lost": "unknown",
+        "trn_bucket": "correct_AUTO",
+        "route_8260": "none"
+      },
+      "hidden_state_patched": false,
+      "intervention": "none",
+      "prompt": "analog"
+    },
+    {
+      "id": "C1",
+      "gold": "CONTRADICTION",
+      "category": "conflicting",
+      "why": "Assessment says first-line failed; addendum says ongoing first-line with SD.",
+      "parse_ok": true,
+      "thin_extract": false,
+      "verdict": "NOT_SATISFIED",
+      "disposition": "AUTO",
+      "bucket": "wrong_AUTO",
+      "wrong_AUTO": true,
+      "match_gold": false,
+      "atoms": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": false
+      },
+      "phenotypes": [
+        "P-xspan"
+      ],
+      "probes": {
+        "enc_L8": "unknown",
+        "cmp_lost": "unknown",
+        "trn_bucket": "wrong_AUTO",
+        "route_8260": "incomplete"
+      },
+      "hidden_state_patched": false,
+      "intervention": "none",
+      "prompt": "analog"
+    },
+    {
+      "id": "C2",
+      "gold": "CONTRADICTION",
+      "category": "conflicting",
+      "why": "One span denies systemic therapy; another describes six cycles of first-line then progression.",
+      "parse_ok": true,
+      "thin_extract": true,
+      "verdict": "NOT_SATISFIED",
+      "disposition": "AUTO",
+      "bucket": "wrong_AUTO",
+      "wrong_AUTO": true,
+      "match_gold": false,
+      "atoms": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": false
+      },
+      "phenotypes": [
+        "P-xspan",
+        "P-unk"
+      ],
+      "probes": {
+        "enc_L8": "unknown",
+        "cmp_lost": "unknown",
+        "trn_bucket": "wrong_AUTO",
+        "route_8260": "none"
+      },
+      "hidden_state_patched": false,
+      "intervention": "none",
+      "prompt": "analog"
+    },
+    {
+      "id": "C3",
+      "gold": "CONTRADICTION",
+      "category": "conflicting",
+      "why": "Referring statement of failure vs local review that first-line never started.",
+      "parse_ok": true,
+      "thin_extract": false,
+      "verdict": "NOT_SATISFIED",
+      "disposition": "AUTO",
+      "bucket": "wrong_AUTO",
+      "wrong_AUTO": true,
+      "match_gold": false,
+      "atoms": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": false
+      },
+      "phenotypes": [
+        "P-xspan"
+      ],
+      "probes": {
+        "enc_L8": "unknown",
+        "cmp_lost": "unknown",
+        "trn_bucket": "wrong_AUTO",
+        "route_8260": "none"
+      },
+      "hidden_state_patched": false,
+      "intervention": "none",
+      "prompt": "analog"
+    },
+    {
+      "id": "C4",
+      "gold": "CONTRADICTION",
+      "category": "conflicting",
+      "why": "Same first-line regimen described as progressed and as excellent ongoing response.",
+      "parse_ok": true,
+      "thin_extract": true,
+      "verdict": "NOT_SATISFIED",
+      "disposition": "AUTO",
+      "bucket": "wrong_AUTO",
+      "wrong_AUTO": true,
+      "match_gold": false,
+      "atoms": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": false
+      },
+      "phenotypes": [
+        "P-xspan",
+        "P-unk"
+      ],
+      "probes": {
+        "enc_L8": "unknown",
+        "cmp_lost": "unknown",
+        "trn_bucket": "wrong_AUTO",
+        "route_8260": "incomplete"
+      },
+      "hidden_state_patched": false,
+      "intervention": "none",
+      "prompt": "analog"
+    }
+  ],
+  "counts": {
+    "phenotypes": {
+      "P-expl": 2,
+      "P-unk": 18,
+      "P-neg": 5,
+      "P-impl": 2,
+      "P-adj": 1,
+      "P-seq": 2,
+      "P-unc": 4,
+      "P-xspan": 4
+    },
+    "buckets": {
+      "wrong_AUTO": 12,
+      "correct_AUTO": 8
+    },
+    "parse_ok": 20,
+    "thin_extract": 18,
+    "wrong_AUTO": 12,
+    "match_gold": 8
+  },
+  "note": "P-* are proposed tags (gold/category + extract overlays). Analog prompt is Dual-matched (user=evidence); thin extracts are P-unk."
+}

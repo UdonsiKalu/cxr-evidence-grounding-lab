@@ -1,0 +1,399 @@
+{
+  "ok": true,
+  "kind": "n2s_phase2_contra_dual_reconcile_v1",
+  "timestamp": "2026-09-10T17:03:37.716136+00:00",
+  "protocol": "docs/TRACKB-PHASE2-TRANSLATE-CONTRAST.md",
+  "frozen_analog": {
+    "source": "n2s-nn-layer-patch-panel.json",
+    "extract_x": true,
+    "grounded_X": true,
+    "verdict": "CONTRADICTION",
+    "prompt": "analog (user=evidence)",
+    "extract_json_saved": false
+  },
+  "schema_recover": {
+    "prompt": "Schema+note",
+    "parse_ok": true,
+    "verdict": "SATISFIED",
+    "grounded": {
+      "extract": {
+        "stated_line": "first",
+        "regimen_names": [
+          "FOLFOX"
+        ],
+        "administration_status": "given",
+        "outcome_statements": [
+          {
+            "text": "failed first-line FOLFOX",
+            "polarity": "failure"
+          },
+          {
+            "text": "Disease remains responsive to FOLFOX",
+            "polarity": "response"
+          }
+        ],
+        "implicit_cues": [
+          "response_then_progression"
+        ],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [
+          {
+            "a": "failed first-line FOLFOX",
+            "b": "Disease remains responsive to FOLFOX"
+          }
+        ],
+        "contradiction_present": true,
+        "quotes": [
+          "failed first-line FOLFOX after four cycles",
+          "Disease remains responsive to FOLFOX; continue current regimen"
+        ],
+        "notes": "The note asserts both failure and ongoing response to the same regimen, which is contradictory.",
+        "backend": "unknown",
+        "contradiction": {
+          "present": true,
+          "span_a": "failed first-line FOLFOX",
+          "span_b": "Disease remains responsive to FOLFOX"
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "atoms": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "true",
+        "D_failure_of_first_line": "true",
+        "X_contradiction": false
+      },
+      "ground_trace": [
+        "X=true (extractor contradiction.present=true with spans)",
+        "X=false (sequenced temporal-change; extractor contradiction overridden)",
+        "A=true (stated first-line or implicit 1L cue)",
+        "B=true (administered/given)",
+        "C=true (failure polarity)",
+        "D=true (failure attributed to identified first-line)",
+        "U=false (extractor uncertainty.present=false / none)"
+      ],
+      "verdict": "SATISFIED",
+      "fired_rule": "A \u2227 B \u2227 C \u2227 D \u2192 SATISFIED",
+      "rule_trace": [
+        "A \u2227 B \u2227 C \u2227 D all true"
+      ]
+    },
+    "cues": [
+      "response_then_progression"
+    ],
+    "polarities": [
+      "failure",
+      "response"
+    ]
+  },
+  "analog_recover": {
+    "prompt": "user=evidence",
+    "parse_ok": true,
+    "verdict": "CONTRADICTION",
+    "grounded": {
+      "atoms": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": true
+      },
+      "verdict": "CONTRADICTION",
+      "ground_trace": [
+        "X=true (extractor contradiction.present=true with spans)",
+        "A=false (no first-line identified)",
+        "B=false (no first-line to administer)",
+        "C=unknown (no outcome statements)",
+        "D=false (identified line is not first-line)",
+        "U=false (extractor uncertainty.present=false / none)"
+      ]
+    },
+    "cues": [],
+    "polarities": []
+  },
+  "analog_intervene": {
+    "EX_TEMPORAL_FOLFOX": {
+      "intervened": true,
+      "before": {
+        "extract": {
+          "stated_line": "unknown",
+          "regimen_names": [],
+          "administration_status": "unknown",
+          "outcome_statements": [],
+          "implicit_cues": [],
+          "uncertainty_cues": [],
+          "uncertainty_present": false,
+          "uncertainty_cue": "",
+          "uncertainty_why": "",
+          "contradiction_cues": [],
+          "contradiction_present": false,
+          "quotes": [],
+          "notes": "",
+          "backend": "unknown",
+          "contradiction": {
+            "present": false,
+            "span_a": null,
+            "span_b": null
+          },
+          "uncertainty": {
+            "present": false,
+            "cue": null,
+            "why": null
+          }
+        },
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ],
+        "verdict": "NOT_SATISFIED",
+        "fired_rule": "any(A,B,C,D)=false \u2192 NOT_SATISFIED",
+        "rule_trace": [
+          "False atoms: A first_line_identified, B first_line_administered, D failure_of_first_line"
+        ]
+      },
+      "after": {
+        "extract": {
+          "stated_line": "unknown",
+          "regimen_names": [],
+          "administration_status": "unknown",
+          "outcome_statements": [],
+          "implicit_cues": [],
+          "uncertainty_cues": [],
+          "uncertainty_present": false,
+          "uncertainty_cue": "",
+          "uncertainty_why": "",
+          "contradiction_cues": [],
+          "contradiction_present": false,
+          "quotes": [],
+          "notes": "",
+          "backend": "unknown",
+          "contradiction": {
+            "present": false,
+            "span_a": null,
+            "span_b": null
+          },
+          "uncertainty": {
+            "present": false,
+            "cue": null,
+            "why": null
+          }
+        },
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ],
+        "verdict": "NOT_SATISFIED",
+        "fired_rule": "any(A,B,C,D)=false \u2192 NOT_SATISFIED",
+        "rule_trace": [
+          "False atoms: A first_line_identified, B first_line_administered, D failure_of_first_line"
+        ]
+      },
+      "intervention": {
+        "kind": "failure_evidence_from_extract_text",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false
+      },
+      "verdict_before": "NOT_SATISFIED",
+      "verdict_after": "NOT_SATISFIED",
+      "atoms_before": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": false
+      },
+      "atoms_after": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": false
+      }
+    },
+    "EX_CONTRA": {
+      "intervened": true,
+      "before": {
+        "extract": {
+          "stated_line": "unknown",
+          "regimen_names": [],
+          "administration_status": "unknown",
+          "outcome_statements": [],
+          "implicit_cues": [],
+          "uncertainty_cues": [],
+          "uncertainty_present": false,
+          "uncertainty_cue": "",
+          "uncertainty_why": "",
+          "contradiction_cues": [
+            {
+              "a": "Patient failed first-line FOLFOX after four cycles.",
+              "b": "Disease remains responsive to FOLFOX; continue current regimen."
+            }
+          ],
+          "contradiction_present": true,
+          "quotes": [],
+          "notes": "",
+          "backend": "unknown",
+          "contradiction": {
+            "present": true,
+            "span_a": "Patient failed first-line FOLFOX after four cycles.",
+            "span_b": "Disease remains responsive to FOLFOX; continue current regimen."
+          },
+          "uncertainty": {
+            "present": false,
+            "cue": null,
+            "why": null
+          }
+        },
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "ground_trace": [
+          "X=true (extractor contradiction.present=true with spans)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ],
+        "verdict": "CONTRADICTION",
+        "fired_rule": "X \u2192 CONTRADICTION",
+        "rule_trace": [
+          "X is true \u2192 CONTRADICTION (short-circuit)"
+        ]
+      },
+      "after": {
+        "extract": {
+          "stated_line": "unknown",
+          "regimen_names": [],
+          "administration_status": "unknown",
+          "outcome_statements": [],
+          "implicit_cues": [],
+          "uncertainty_cues": [],
+          "uncertainty_present": false,
+          "uncertainty_cue": "",
+          "uncertainty_why": "",
+          "contradiction_cues": [
+            {
+              "a": "Patient failed first-line FOLFOX after four cycles.",
+              "b": "Disease remains responsive to FOLFOX; continue current regimen."
+            }
+          ],
+          "contradiction_present": true,
+          "quotes": [],
+          "notes": "",
+          "backend": "unknown",
+          "contradiction": {
+            "present": true,
+            "span_a": "Patient failed first-line FOLFOX after four cycles.",
+            "span_b": "Disease remains responsive to FOLFOX; continue current regimen."
+          },
+          "uncertainty": {
+            "present": false,
+            "cue": null,
+            "why": null
+          }
+        },
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "ground_trace": [
+          "X=true (extractor contradiction.present=true with spans)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ],
+        "verdict": "CONTRADICTION",
+        "fired_rule": "X \u2192 CONTRADICTION",
+        "rule_trace": [
+          "X is true \u2192 CONTRADICTION (short-circuit)"
+        ]
+      },
+      "intervention": {
+        "kind": "failure_evidence_from_extract_text",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false
+      },
+      "verdict_before": "CONTRADICTION",
+      "verdict_after": "CONTRADICTION",
+      "atoms_before": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": true
+      },
+      "atoms_after": {
+        "A_first_line_identified": "false",
+        "B_first_line_administered": "false",
+        "C_failure_event": "unknown",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": true
+      }
+    }
+  },
+  "analog_folfox": {
+    "parse_ok": true,
+    "verdict": "NOT_SATISFIED",
+    "empty_extract": true,
+    "note": "Analog (user=evidence) FOLFOX extract is too thin for quote-promote. FOLFOX repair stays on Schema+note extract; Dual CONTRA control stays on analog extract."
+  },
+  "diagnosis": {
+    "analog_matches_frozen": true,
+    "prompt_explains_split": true,
+    "ground_changed": false,
+    "do_not_change_ground": true,
+    "note": "If analog_matches_frozen: Schema+note recover was the mismatch; do not change ground(). If analog still SATISFIED: reconnect/same-day vs sequenced, still no Compute editor."
+  },
+  "not": [
+    "n2n frozen-d",
+    "Compute editor",
+    "Dual_full rescore"
+  ]
+}

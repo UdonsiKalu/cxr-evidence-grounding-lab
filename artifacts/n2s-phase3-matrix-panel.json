@@ -1,0 +1,321 @@
+{
+  "ok": true,
+  "kind": "n2s_phase3_matrix_v1",
+  "timestamp": "2026-09-10T17:21:49.807203+00:00",
+  "protocol": "docs/TRACKB-PHASE3-MATRIX.md",
+  "pairing": "read-only locator + Phase 2 artifacts; no GPU",
+  "not": [
+    "Encode editor",
+    "Compute editor",
+    "frozen-d reopen",
+    "Dual_full Phase-7 rescore",
+    "auto-correct pipeline",
+    "REVIEW-as-correction",
+    "locator-chose-repair-class",
+    ":8260 GUI expansion",
+    "ground() rewrite"
+  ],
+  "sources": {
+    "locator": "n2s-locator-panel.json",
+    "translate_clean": "n2s-phase2-translate-panel-clean.json",
+    "compute_reverse": "n2s-phase2-compute-reverse-panel.json"
+  },
+  "rows": [
+    {
+      "id": "EX_TEMPORAL_FOLFOX",
+      "gold": "SATISFIED",
+      "encode": {
+        "status": "pass",
+        "class_correct_L8": 8.944,
+        "editor": "none"
+      },
+      "compute": {
+        "status": "pass",
+        "n_lost_steps": 0,
+        "editor": "CLOSED"
+      },
+      "translate": {
+        "status": "fail",
+        "verdict": "NOT_SATISFIED",
+        "bucket": "wrong_AUTO",
+        "probe_type": "dual_analog"
+      },
+      "route": {
+        "surface": "translate",
+        "status": "located",
+        "kind": "routing",
+        "causal": false
+      },
+      "contain": {
+        "action": "REVIEW",
+        "reason": "dual_wrong_AUTO",
+        "is_correction": false
+      },
+      "repair": {
+        "encode_editor": "none",
+        "compute_editor": "none",
+        "translate_intervention": "failure_evidence_from_extract_text",
+        "translate_applied": true,
+        "translate_after": "SATISFIED",
+        "translate_repaired": true,
+        "compute_repairs_this_miss": false,
+        "note": "Boundary Translate repair on Schema extract. Frozen-d / G5 do not repair this Dual miss."
+      }
+    },
+    {
+      "id": "EX_CONTRA",
+      "gold": "CONTRADICTION",
+      "encode": {
+        "status": "pass",
+        "class_correct_L8": 2.739,
+        "editor": "none"
+      },
+      "compute": {
+        "status": "fail",
+        "n_lost_steps": 2,
+        "editor": "CLOSED"
+      },
+      "translate": {
+        "status": "pass",
+        "verdict": "CONTRADICTION",
+        "bucket": "correct_AUTO",
+        "probe_type": "dual_analog"
+      },
+      "route": {
+        "surface": "compute",
+        "status": "located",
+        "kind": "routing",
+        "causal": false
+      },
+      "contain": {
+        "action": "REVIEW",
+        "reason": "n2n_layer_loss",
+        "is_correction": false
+      },
+      "repair": {
+        "encode_editor": "none",
+        "compute_editor": "CLOSED (frozen-d PARTIAL historical)",
+        "translate_intervention": "failure_evidence_from_extract_text",
+        "translate_applied": true,
+        "translate_after": "CONTRADICTION",
+        "translate_repaired": false,
+        "translate_noop": true,
+        "n_lost_after_d_patch": 1,
+        "compute_clears_all_lost": false,
+        "note": "Dual analog already gold. Translate no-op. G5 contains. frozen-d PARTIAL, editor CLOSED."
+      }
+    },
+    {
+      "id": "T1",
+      "gold": "SATISFIED",
+      "encode": {
+        "status": "unknown",
+        "class_correct_L8": null,
+        "editor": "none"
+      },
+      "compute": {
+        "status": "unknown",
+        "n_lost_steps": null,
+        "editor": "CLOSED"
+      },
+      "translate": {
+        "status": "unknown",
+        "verdict": null,
+        "bucket": "UNKNOWN",
+        "probe_type": "none"
+      },
+      "route": {
+        "surface": null,
+        "status": "incomplete",
+        "kind": "routing",
+        "causal": false
+      },
+      "contain": {
+        "action": null,
+        "reason": null,
+        "is_correction": false
+      },
+      "repair": {
+        "encode_editor": "none",
+        "compute_editor": "none",
+        "translate_intervention": "not_measured",
+        "translate_applied": false,
+        "why": "Locator incomplete \u2014 no encode/compute/translate snapshot.",
+        "note": "Do not manufacture probes or editors to fill the row."
+      }
+    },
+    {
+      "id": "T3",
+      "gold": "SATISFIED",
+      "encode": {
+        "status": "unknown",
+        "class_correct_L8": null,
+        "editor": "none"
+      },
+      "compute": {
+        "status": "unknown",
+        "n_lost_steps": null,
+        "editor": "CLOSED"
+      },
+      "translate": {
+        "status": "unknown",
+        "verdict": null,
+        "bucket": "UNKNOWN",
+        "probe_type": "none"
+      },
+      "route": {
+        "surface": null,
+        "status": "incomplete",
+        "kind": "routing",
+        "causal": false
+      },
+      "contain": {
+        "action": null,
+        "reason": null,
+        "is_correction": false
+      },
+      "repair": {
+        "encode_editor": "none",
+        "compute_editor": "none",
+        "translate_intervention": "not_measured",
+        "translate_applied": false,
+        "why": "Locator incomplete \u2014 no encode/compute/translate snapshot.",
+        "note": "Do not manufacture probes or editors to fill the row."
+      }
+    },
+    {
+      "id": "C1",
+      "gold": "CONTRADICTION",
+      "encode": {
+        "status": "unknown",
+        "class_correct_L8": null,
+        "editor": "none"
+      },
+      "compute": {
+        "status": "unknown",
+        "n_lost_steps": null,
+        "editor": "CLOSED"
+      },
+      "translate": {
+        "status": "unknown",
+        "verdict": null,
+        "bucket": "UNKNOWN",
+        "probe_type": "none"
+      },
+      "route": {
+        "surface": null,
+        "status": "incomplete",
+        "kind": "routing",
+        "causal": false
+      },
+      "contain": {
+        "action": null,
+        "reason": null,
+        "is_correction": false
+      },
+      "repair": {
+        "encode_editor": "none",
+        "compute_editor": "none",
+        "translate_intervention": "not_measured",
+        "translate_applied": false,
+        "why": "Locator incomplete \u2014 no encode/compute/translate snapshot.",
+        "note": "Do not manufacture probes or editors to fill the row."
+      }
+    },
+    {
+      "id": "C4",
+      "gold": "CONTRADICTION",
+      "encode": {
+        "status": "unknown",
+        "class_correct_L8": null,
+        "editor": "none"
+      },
+      "compute": {
+        "status": "unknown",
+        "n_lost_steps": null,
+        "editor": "CLOSED"
+      },
+      "translate": {
+        "status": "unknown",
+        "verdict": null,
+        "bucket": "UNKNOWN",
+        "probe_type": "none"
+      },
+      "route": {
+        "surface": null,
+        "status": "incomplete",
+        "kind": "routing",
+        "causal": false
+      },
+      "contain": {
+        "action": null,
+        "reason": null,
+        "is_correction": false
+      },
+      "repair": {
+        "encode_editor": "none",
+        "compute_editor": "none",
+        "translate_intervention": "not_measured",
+        "translate_applied": false,
+        "why": "Locator incomplete \u2014 no encode/compute/translate snapshot.",
+        "note": "Do not manufacture probes or editors to fill the row."
+      }
+    },
+    {
+      "id": "BC_E1",
+      "gold": "SATISFIED",
+      "encode": {
+        "status": "unknown",
+        "class_correct_L8": null,
+        "editor": "none"
+      },
+      "compute": {
+        "status": "unknown",
+        "n_lost_steps": null,
+        "editor": "CLOSED"
+      },
+      "translate": {
+        "status": "fail",
+        "verdict": "CONTRADICTION",
+        "bucket": "wrong_AUTO",
+        "probe_type": "dual_comparison"
+      },
+      "route": {
+        "surface": "translate",
+        "status": "located",
+        "kind": "routing",
+        "causal": false
+      },
+      "contain": {
+        "action": "REVIEW",
+        "reason": "dual_wrong_AUTO",
+        "is_correction": false
+      },
+      "repair": {
+        "encode_editor": "none",
+        "compute_editor": "none",
+        "translate_intervention": "not_applied",
+        "translate_applied": false,
+        "why": "Frozen Dual_full 32B snapshot; do not rescore Phase-7. Quote-promote not transferred.",
+        "note": "Translate-routed wrong_AUTO; containment REVIEW only."
+      }
+    }
+  ],
+  "thesis": {
+    "matrix_assembled": true,
+    "n_cases": 7,
+    "n_located": 3,
+    "n_incomplete": 4,
+    "n_boundary_translate_repair": 1,
+    "encode_editor_invented": false,
+    "compute_editor_invented": false,
+    "d_patch_reopened": false,
+    "dual_full_rescored": false,
+    "locator_chose_repair_class": false,
+    "ground_changed": false,
+    "gui_expanded": false,
+    "phase2_forward_holds": true,
+    "phase2_reverse_holds": true,
+    "note": "Matrix is diagnostic routing + which interventions exist. Encode = detect only. Compute editor CLOSED. Translate boundary repair shown on FOLFOX Schema extract only. Not locator-causal."
+  }
+}

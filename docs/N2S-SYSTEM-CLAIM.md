@@ -2,7 +2,7 @@
 
 **Lab-scale only.** Not clinical validation. Not production CXR.  
 **Audience:** visitor / faculty / portfolio one-pager.  
-**Detail:** [RESEARCH-APPROACH.md](./RESEARCH-APPROACH.md) §0 · [TRACKB-DOWNSTREAM-CLOSEOUT.md](./TRACKB-DOWNSTREAM-CLOSEOUT.md) · [TRACKB-UPSTREAM-PREFILL.md](./TRACKB-UPSTREAM-PREFILL.md) · [TRACKB-UPSTREAM-PORTFOLIO.md](./TRACKB-UPSTREAM-PORTFOLIO.md) · [TRACKB-UPSTREAM-UA-GENERALIZE.md](./TRACKB-UPSTREAM-UA-GENERALIZE.md) · [TRACKB-UPSTREAM-UA-GEN-FREEZE.md](./TRACKB-UPSTREAM-UA-GEN-FREEZE.md) · [TRACKA-TEMPORAL-FAMILY-FREEZE.md](./TRACKA-TEMPORAL-FAMILY-FREEZE.md) · [TRACKB-ALPHA8-FREEZE.md](./TRACKB-ALPHA8-FREEZE.md)
+**Detail:** [RESEARCH-APPROACH.md](./RESEARCH-APPROACH.md) §0 · [TRACKB-DOWNSTREAM-CLOSEOUT.md](./TRACKB-DOWNSTREAM-CLOSEOUT.md) · [TRACKB-UPSTREAM-PREFILL.md](./TRACKB-UPSTREAM-PREFILL.md) · [TRACKB-UPSTREAM-PORTFOLIO.md](./TRACKB-UPSTREAM-PORTFOLIO.md) · [TRACKB-PHASE1-3-PORTFOLIO.md](./TRACKB-PHASE1-3-PORTFOLIO.md) · [TRACKB-UPSTREAM-UA-GENERALIZE.md](./TRACKB-UPSTREAM-UA-GENERALIZE.md) · [TRACKB-UPSTREAM-UA-GEN-FREEZE.md](./TRACKB-UPSTREAM-UA-GEN-FREEZE.md) · [TRACKA-TEMPORAL-FAMILY-FREEZE.md](./TRACKA-TEMPORAL-FAMILY-FREEZE.md) · [TRACKB-ALPHA8-FREEZE.md](./TRACKB-ALPHA8-FREEZE.md)
 
 ---
 
@@ -81,6 +81,7 @@ On the temporal-family lab predicate (`FIRST_LINE_THERAPY_FAILED`), after ground
 | Track A temporal family | **Frozen** wrong_AUTO=0 DEV+test |
 | Residual Track A | Live Dual confirm **done** (wrong_AUTO=0, correct_AUTO=7); TF_T1·N1 still REVIEW live |
 | Sealed test | Re-scored under current ground (`--tracka-resim-test`); unchanged 0/5/7; do not redesign |
-| **Next** | Circuit ladder frozen; **leave Upstream U-C/U-D alone**; no α-chase / sealed redesign |
+| Locate / correct Phase 1–3 | **FROZEN** routing + FOLFOX Translate repair + Compute reverse — [TRACKB-PHASE1-3-PORTFOLIO.md](./TRACKB-PHASE1-3-PORTFOLIO.md) |
+| **Next** | Circuit ladder frozen; **leave Upstream U-C/U-D alone**; no α-chase / sealed redesign; Locate/correct **parked** |
 
 **Portfolio line:** Track A contains uncertain neural→symbolic transforms via REVIEW; Track B shows a limited commit-time editor **and** a frozen L20 MLP causal site (not a full circuit); Upstream shows a correlational late-layer formation map that generalizes to held-out paraphrases but does **not** yield a causal editor via top-site ablation **or** α·d steer at L24 (see [TRACKB-UPSTREAM-PORTFOLIO.md](./TRACKB-UPSTREAM-PORTFOLIO.md) · [TRACKB-CIRCUIT-C01-FREEZE.md](./TRACKB-CIRCUIT-C01-FREEZE.md)).

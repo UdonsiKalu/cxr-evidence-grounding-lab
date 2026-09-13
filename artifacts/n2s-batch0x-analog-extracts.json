@@ -1,0 +1,6007 @@
+{
+  "ok": true,
+  "kind": "n2s_batch0x_analog_extracts_v1",
+  "timestamp": "2026-09-11T00:53:13.229275+00:00",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "prompt": "analog",
+  "extracts": {
+    "E1": {
+      "id": "E1",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "cases"
+    },
+    "E2": {
+      "id": "E2",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "cases"
+    },
+    "E3": {
+      "id": "E3",
+      "gold": "NOT_SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "cases"
+    },
+    "E4": {
+      "id": "E4",
+      "gold": "NOT_SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "cases"
+    },
+    "I1": {
+      "id": "I1",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "cases"
+    },
+    "I2": {
+      "id": "I2",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "cases"
+    },
+    "I3": {
+      "id": "I3",
+      "gold": "NOT_SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "cases"
+    },
+    "I4": {
+      "id": "I4",
+      "gold": "NOT_SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "cases"
+    },
+    "T1": {
+      "id": "T1",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "cases"
+    },
+    "T2": {
+      "id": "T2",
+      "gold": "NOT_SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "cases"
+    },
+    "T3": {
+      "id": "T3",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "cases"
+    },
+    "T4": {
+      "id": "T4",
+      "gold": "NOT_SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "cases"
+    },
+    "U1": {
+      "id": "U1",
+      "gold": "UNCERTAIN",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [
+          "awaiting confirmatory scan next week",
+          "Possible progression on first-line osimertinib"
+        ],
+        "uncertainty_present": true,
+        "uncertainty_cue": "Possible progression on first-line osimertinib",
+        "uncertainty_why": "awaiting confirmatory scan next week",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": true,
+          "cue": "Possible progression on first-line osimertinib",
+          "why": "awaiting confirmatory scan next week"
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (mixed response or uncertainty cues)",
+          "D=false (identified line is not first-line)",
+          "U=true (extractor uncertainty.present, why='awaiting confirmatory scan next week'; keep CD unknown)",
+          "D=unknown (uncertainty.present; was false)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "cases"
+    },
+    "U2": {
+      "id": "U2",
+      "gold": "UNCERTAIN",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [
+          "Outcome unknown",
+          "Outcome of that treatment is unknown"
+        ],
+        "uncertainty_present": true,
+        "uncertainty_cue": "Outcome of that treatment is unknown",
+        "uncertainty_why": "Outcome unknown",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": true,
+          "cue": "Outcome of that treatment is unknown",
+          "why": "Outcome unknown"
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (mixed response or uncertainty cues)",
+          "D=false (identified line is not first-line)",
+          "U=true (extractor uncertainty.present, why='Outcome unknown'; keep CD unknown)",
+          "D=unknown (uncertainty.present; was false)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "cases"
+    },
+    "U3": {
+      "id": "U3",
+      "gold": "UNCERTAIN",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [
+          "new questionable peritoneal nodularity",
+          "questionable whether mixed response"
+        ],
+        "uncertainty_present": true,
+        "uncertainty_cue": "questionable whether mixed response",
+        "uncertainty_why": "new questionable peritoneal nodularity",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": true,
+          "cue": "questionable whether mixed response",
+          "why": "new questionable peritoneal nodularity"
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "verdict": "UNCERTAIN",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (mixed response or uncertainty cues)",
+          "D=false (identified line is not first-line)",
+          "U=true (extractor uncertainty.present, why='new questionable peritoneal nodularity'; keep ABCD unknown)",
+          "A=unknown (uncertainty.present; was false)",
+          "B=unknown (uncertainty.present; was false)",
+          "D=unknown (uncertainty.present; was false)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "cases"
+    },
+    "U4": {
+      "id": "U4",
+      "gold": "UNCERTAIN",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [
+          "mixed response",
+          "questionable whether carboplatin was given as first-line metastatic therapy or in the adjuvant setting"
+        ],
+        "uncertainty_present": true,
+        "uncertainty_cue": "questionable whether carboplatin was given as first-line metastatic therapy or in the adjuvant setting",
+        "uncertainty_why": "mixed response",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": true,
+          "cue": "questionable whether carboplatin was given as first-line metastatic therapy or in the adjuvant setting",
+          "why": "mixed response"
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "verdict": "UNCERTAIN",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (mixed response or uncertainty cues)",
+          "D=false (identified line is not first-line)",
+          "U=true (extractor uncertainty.present, why='mixed response'; keep ABCD unknown)",
+          "A=unknown (uncertainty.present; was false)",
+          "B=unknown (uncertainty.present; was false)",
+          "D=unknown (uncertainty.present; was false)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "cases"
+    },
+    "C1": {
+      "id": "C1",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [
+          {
+            "a": "first-line therapy failed",
+            "b": "patient continues first-line carboplatin with stable disease"
+          }
+        ],
+        "contradiction_present": true,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": true,
+          "span_a": "first-line therapy failed",
+          "span_b": "patient continues first-line carboplatin with stable disease"
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=true (extractor contradiction.present=true with spans)",
+          "X=false (no failure polarity / no hard conflict; extractor X overridden)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "cases"
+    },
+    "C2": {
+      "id": "C2",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "cases"
+    },
+    "C3": {
+      "id": "C3",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [
+          {
+            "a": "Failed first-line per referring oncologist.",
+            "b": "first-line systemic therapy was never started"
+          }
+        ],
+        "contradiction_present": true,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": true,
+          "span_a": "Failed first-line per referring oncologist.",
+          "span_b": "first-line systemic therapy was never started"
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=true (extractor contradiction.present=true with spans)",
+          "X=false (no failure polarity / no hard conflict; extractor X overridden)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "cases"
+    },
+    "C4": {
+      "id": "C4",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "cases"
+    },
+    "BC_E1": {
+      "id": "BC_E1",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev"
+    },
+    "TF_E1": {
+      "id": "TF_E1",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev"
+    },
+    "TF_E2": {
+      "id": "TF_E2",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev"
+    },
+    "TF_E3": {
+      "id": "TF_E3",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev"
+    },
+    "BC11_E3": {
+      "id": "BC11_E3",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev"
+    },
+    "TF_E4": {
+      "id": "TF_E4",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev"
+    },
+    "TF_E5": {
+      "id": "TF_E5",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev"
+    },
+    "TF_U1": {
+      "id": "TF_U1",
+      "gold": "UNCERTAIN",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [
+          "awaiting confirmatory scan",
+          "possible new adenopathy on exam"
+        ],
+        "uncertainty_present": true,
+        "uncertainty_cue": "possible new adenopathy on exam",
+        "uncertainty_why": "awaiting confirmatory scan",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": true,
+          "cue": "possible new adenopathy on exam",
+          "why": "awaiting confirmatory scan"
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (mixed response or uncertainty cues)",
+          "D=false (identified line is not first-line)",
+          "U=true (extractor uncertainty.present, why='awaiting confirmatory scan'; keep CD unknown)",
+          "D=unknown (uncertainty.present; was false)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev"
+    },
+    "TF_T1": {
+      "id": "TF_T1",
+      "gold": "NOT_SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev"
+    },
+    "TF_T2": {
+      "id": "TF_T2",
+      "gold": "NOT_SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev"
+    },
+    "TF_C1": {
+      "id": "TF_C1",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [
+          {
+            "a": "never receiving systemic chemotherapy",
+            "b": "completed six cycles of first-line R-CHOP"
+          }
+        ],
+        "contradiction_present": true,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": true,
+          "span_a": "never receiving systemic chemotherapy",
+          "span_b": "completed six cycles of first-line R-CHOP"
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "verdict": "CONTRADICTION",
+        "ground_trace": [
+          "X=true (extractor contradiction.present=true with spans)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev"
+    },
+    "BC_C1": {
+      "id": "BC_C1",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [
+          {
+            "a": "never receiving systemic chemotherapy for DLBCL",
+            "b": "completed six cycles of first-line R-CHOP"
+          }
+        ],
+        "contradiction_present": true,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": true,
+          "span_a": "never receiving systemic chemotherapy for DLBCL",
+          "span_b": "completed six cycles of first-line R-CHOP"
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "verdict": "CONTRADICTION",
+        "ground_trace": [
+          "X=true (extractor contradiction.present=true with spans)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev"
+    },
+    "TF_N1": {
+      "id": "TF_N1",
+      "gold": "NOT_SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev"
+    },
+    "BC_E2": {
+      "id": "BC_E2",
+      "gold": "NOT_SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev"
+    },
+    "TX_E01": {
+      "id": "TX_E01",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_E02": {
+      "id": "TX_E02",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_E03": {
+      "id": "TX_E03",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_E04": {
+      "id": "TX_E04",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_E05": {
+      "id": "TX_E05",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_E06": {
+      "id": "TX_E06",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_E07": {
+      "id": "TX_E07",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_E08": {
+      "id": "TX_E08",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_E09": {
+      "id": "TX_E09",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_E10": {
+      "id": "TX_E10",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_E11": {
+      "id": "TX_E11",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_E12": {
+      "id": "TX_E12",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_E13": {
+      "id": "TX_E13",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_E14": {
+      "id": "TX_E14",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_E15": {
+      "id": "TX_E15",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_E16": {
+      "id": "TX_E16",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_E17": {
+      "id": "TX_E17",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_E18": {
+      "id": "TX_E18",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_E19": {
+      "id": "TX_E19",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_E20": {
+      "id": "TX_E20",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_E21": {
+      "id": "TX_E21",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_E22": {
+      "id": "TX_E22",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_E23": {
+      "id": "TX_E23",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_E24": {
+      "id": "TX_E24",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_C01": {
+      "id": "TX_C01",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [
+          {
+            "a": "never receiving systemic chemotherapy",
+            "b": "completed six cycles of first-line gemcitabine/nab-paclitaxel"
+          }
+        ],
+        "contradiction_present": true,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": true,
+          "span_a": "never receiving systemic chemotherapy",
+          "span_b": "completed six cycles of first-line gemcitabine/nab-paclitaxel"
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "verdict": "CONTRADICTION",
+        "ground_trace": [
+          "X=true (extractor contradiction.present=true with spans)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_C02": {
+      "id": "TX_C02",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [
+          {
+            "a": "patient states no prior systemic therapy",
+            "b": "completed four cycles of first-line carboplatin/etoposide"
+          }
+        ],
+        "contradiction_present": true,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": true,
+          "span_a": "patient states no prior systemic therapy",
+          "span_b": "completed four cycles of first-line carboplatin/etoposide"
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "verdict": "CONTRADICTION",
+        "ground_trace": [
+          "X=true (extractor contradiction.present=true with spans)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_C03": {
+      "id": "TX_C03",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [
+          {
+            "a": "never treated with a TKI",
+            "b": "completed 12 months of first-line imatinib"
+          }
+        ],
+        "contradiction_present": true,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": true,
+          "span_a": "never treated with a TKI",
+          "span_b": "completed 12 months of first-line imatinib"
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=true (extractor contradiction.present=true with spans)",
+          "X=false (no failure polarity / no hard conflict; extractor X overridden)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_C04": {
+      "id": "TX_C04",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [
+          {
+            "a": "patient reports never receiving induction chemotherapy",
+            "b": "completed first-line hyper-CVAD"
+          }
+        ],
+        "contradiction_present": true,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": true,
+          "span_a": "patient reports never receiving induction chemotherapy",
+          "span_b": "completed first-line hyper-CVAD"
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=true (extractor contradiction.present=true with spans)",
+          "X=false (no failure polarity / no hard conflict; extractor X overridden)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_N01": {
+      "id": "TX_N01",
+      "gold": "NOT_SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "TX_N02": {
+      "id": "TX_N02",
+      "gold": "NOT_SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "design",
+      "source": "temporal-family-dev-expand"
+    },
+    "C5": {
+      "id": "C5",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [
+          {
+            "a": "first-line FOLFOX has failed",
+            "b": "CT today shows stable disease on first-line FOLFOX"
+          }
+        ],
+        "contradiction_present": true,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": true,
+          "span_a": "first-line FOLFOX has failed",
+          "span_b": "CT today shows stable disease on first-line FOLFOX"
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "verdict": "CONTRADICTION",
+        "ground_trace": [
+          "X=true (extractor contradiction.present=true with spans)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase3"
+    },
+    "C6": {
+      "id": "C6",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [
+          {
+            "a": "patient reports never having chemotherapy",
+            "b": "completed six cycles of first-line gemcitabine/nab-paclitaxel"
+          }
+        ],
+        "contradiction_present": true,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": true,
+          "span_a": "patient reports never having chemotherapy",
+          "span_b": "completed six cycles of first-line gemcitabine/nab-paclitaxel"
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "verdict": "CONTRADICTION",
+        "ground_trace": [
+          "X=true (extractor contradiction.present=true with spans)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase3"
+    },
+    "C7": {
+      "id": "C7",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [
+          {
+            "a": "failed first-line systemic therapy",
+            "b": "no first-line systemic therapy was administered here or elsewhere"
+          }
+        ],
+        "contradiction_present": true,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": true,
+          "span_a": "failed first-line systemic therapy",
+          "span_b": "no first-line systemic therapy was administered here or elsewhere"
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=true (extractor contradiction.present=true with spans)",
+          "X=false (no failure polarity / no hard conflict; extractor X overridden)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase3"
+    },
+    "C8": {
+      "id": "C8",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase3"
+    },
+    "U5": {
+      "id": "U5",
+      "gold": "UNCERTAIN",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [
+          "awaiting confirmatory scan",
+          "possible progression"
+        ],
+        "uncertainty_present": true,
+        "uncertainty_cue": "possible progression",
+        "uncertainty_why": "awaiting confirmatory scan",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": true,
+          "cue": "possible progression",
+          "why": "awaiting confirmatory scan"
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (mixed response or uncertainty cues)",
+          "D=false (identified line is not first-line)",
+          "U=true (extractor uncertainty.present, why='awaiting confirmatory scan'; keep CD unknown)",
+          "D=unknown (uncertainty.present; was false)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase3"
+    },
+    "U6": {
+      "id": "U6",
+      "gold": "UNCERTAIN",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [
+          "unknown outcome",
+          "may have received immunotherapy"
+        ],
+        "uncertainty_present": true,
+        "uncertainty_cue": "may have received immunotherapy",
+        "uncertainty_why": "unknown outcome",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": true,
+          "cue": "may have received immunotherapy",
+          "why": "unknown outcome"
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (mixed response or uncertainty cues)",
+          "D=false (identified line is not first-line)",
+          "U=true (extractor uncertainty.present, why='unknown outcome'; keep BCD unknown)",
+          "B=unknown (uncertainty.present; was false)",
+          "D=unknown (uncertainty.present; was false)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase3"
+    },
+    "U7": {
+      "id": "U7",
+      "gold": "UNCERTAIN",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [
+          "mixed response with new lesions, outcome uncertain pending lymphoma conference",
+          "questionable splenic lesions"
+        ],
+        "uncertainty_present": true,
+        "uncertainty_cue": "questionable splenic lesions",
+        "uncertainty_why": "mixed response with new lesions, outcome uncertain pending lymphoma conference",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": true,
+          "cue": "questionable splenic lesions",
+          "why": "mixed response with new lesions, outcome uncertain pending lymphoma conference"
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "verdict": "UNCERTAIN",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (mixed response or uncertainty cues)",
+          "D=false (identified line is not first-line)",
+          "U=true (extractor uncertainty.present, why='mixed response with new lesions, outcome uncertain pending lymphoma conference'; keep ABCD unknown)",
+          "A=unknown (uncertainty.present; was false)",
+          "B=unknown (uncertainty.present; was false)",
+          "D=unknown (uncertainty.present; was false)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase3"
+    },
+    "U8": {
+      "id": "U8",
+      "gold": "UNCERTAIN",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [
+          "possible, unknown outcome",
+          "unclear from the scanned notes whether oxaliplatin was given as first-line therapy for metastatic disease or as adjuvant treatment after resection"
+        ],
+        "uncertainty_present": true,
+        "uncertainty_cue": "unclear from the scanned notes whether oxaliplatin was given as first-line therapy for metastatic disease or as adjuvant treatment after resection",
+        "uncertainty_why": "possible, unknown outcome",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": true,
+          "cue": "unclear from the scanned notes whether oxaliplatin was given as first-line therapy for metastatic disease or as adjuvant treatment after resection",
+          "why": "possible, unknown outcome"
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "verdict": "UNCERTAIN",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (mixed response or uncertainty cues)",
+          "D=false (identified line is not first-line)",
+          "U=true (extractor uncertainty.present, why='possible, unknown outcome'; keep ABCD unknown)",
+          "A=unknown (uncertainty.present; was false)",
+          "B=unknown (uncertainty.present; was false)",
+          "D=unknown (uncertainty.present; was false)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase3"
+    },
+    "C9": {
+      "id": "C9",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [
+          {
+            "a": "first-line ipilimumab/nivolumab has failed",
+            "b": "restaging today is stable disease on first-line ipilimumab/nivolumab"
+          }
+        ],
+        "contradiction_present": true,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": true,
+          "span_a": "first-line ipilimumab/nivolumab has failed",
+          "span_b": "restaging today is stable disease on first-line ipilimumab/nivolumab"
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "verdict": "CONTRADICTION",
+        "ground_trace": [
+          "X=true (extractor contradiction.present=true with spans)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase4"
+    },
+    "C10": {
+      "id": "C10",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase4"
+    },
+    "C11": {
+      "id": "C11",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [
+          {
+            "a": "no first-line systemic anticancer drug was ever dispensed",
+            "b": "failed first-line systemic therapy"
+          }
+        ],
+        "contradiction_present": true,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": true,
+          "span_a": "no first-line systemic anticancer drug was ever dispensed",
+          "span_b": "failed first-line systemic therapy"
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=true (extractor contradiction.present=true with spans)",
+          "X=false (no failure polarity / no hard conflict; extractor X overridden)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase4"
+    },
+    "U9": {
+      "id": "U9",
+      "gold": "UNCERTAIN",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [
+          "awaiting confirmatory scan",
+          "possible radiographic progression"
+        ],
+        "uncertainty_present": true,
+        "uncertainty_cue": "possible radiographic progression",
+        "uncertainty_why": "awaiting confirmatory scan",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": true,
+          "cue": "possible radiographic progression",
+          "why": "awaiting confirmatory scan"
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (mixed response or uncertainty cues)",
+          "D=false (identified line is not first-line)",
+          "U=true (extractor uncertainty.present, why='awaiting confirmatory scan'; keep CD unknown)",
+          "D=unknown (uncertainty.present; was false)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase4"
+    },
+    "U10": {
+      "id": "U10",
+      "gold": "UNCERTAIN",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [
+          "outcome unknown",
+          "maybe receiving docetaxel"
+        ],
+        "uncertainty_present": true,
+        "uncertainty_cue": "maybe receiving docetaxel",
+        "uncertainty_why": "outcome unknown",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": true,
+          "cue": "maybe receiving docetaxel",
+          "why": "outcome unknown"
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (mixed response or uncertainty cues)",
+          "D=false (identified line is not first-line)",
+          "U=true (extractor uncertainty.present, why='outcome unknown'; keep CD unknown)",
+          "D=unknown (uncertainty.present; was false)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase4"
+    },
+    "U11": {
+      "id": "U11",
+      "gold": "UNCERTAIN",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [
+          "mixed picture, new questionable peritoneal nodules",
+          "questionable peritoneal nodules"
+        ],
+        "uncertainty_present": true,
+        "uncertainty_cue": "questionable peritoneal nodules",
+        "uncertainty_why": "mixed picture, new questionable peritoneal nodules",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": true,
+          "cue": "questionable peritoneal nodules",
+          "why": "mixed picture, new questionable peritoneal nodules"
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "verdict": "UNCERTAIN",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (mixed response or uncertainty cues)",
+          "D=false (identified line is not first-line)",
+          "U=true (extractor uncertainty.present, why='mixed picture, new questionable peritoneal nodules'; keep ABCD unknown)",
+          "A=unknown (uncertainty.present; was false)",
+          "B=unknown (uncertainty.present; was false)",
+          "D=unknown (uncertainty.present; was false)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase4"
+    },
+    "U12": {
+      "id": "U12",
+      "gold": "UNCERTAIN",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [
+          "Cannot tell from the scanned summaries whether doxorubicin was given as first-line therapy for metastatic breast cancer or as adjuvant treatment after mastectomy.",
+          "possible progression awaiting confirmatory scan"
+        ],
+        "uncertainty_present": true,
+        "uncertainty_cue": "possible progression awaiting confirmatory scan",
+        "uncertainty_why": "Cannot tell from the scanned summaries whether doxorubicin was given as first-line therapy for metastatic breast cancer or as adjuvant treatment after mastectomy.",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": true,
+          "cue": "possible progression awaiting confirmatory scan",
+          "why": "Cannot tell from the scanned summaries whether doxorubicin was given as first-line therapy for metastatic breast cancer or as adjuvant treatment after mastectomy."
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "verdict": "UNCERTAIN",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (mixed response or uncertainty cues)",
+          "D=false (identified line is not first-line)",
+          "U=true (extractor uncertainty.present, why='Cannot tell from the scanned summaries whether doxorubicin was given as first-line therapy for metastatic breast cancer or as adjuvant treatment after mastectomy.'; keep ABCD unknown)",
+          "A=unknown (uncertainty.present; was false)",
+          "B=unknown (uncertainty.present; was false)",
+          "D=unknown (uncertainty.present; was false)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase4"
+    },
+    "BC_C2": {
+      "id": "BC_C2",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-bmtcart-phase7"
+    },
+    "BC_U1": {
+      "id": "BC_U1",
+      "gold": "UNCERTAIN",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [
+          "awaiting confirmatory scan",
+          "possible progression"
+        ],
+        "uncertainty_present": true,
+        "uncertainty_cue": "possible progression",
+        "uncertainty_why": "awaiting confirmatory scan",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": true,
+          "cue": "possible progression",
+          "why": "awaiting confirmatory scan"
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (mixed response or uncertainty cues)",
+          "D=false (identified line is not first-line)",
+          "U=true (extractor uncertainty.present, why='awaiting confirmatory scan'; keep CD unknown)",
+          "D=unknown (uncertainty.present; was false)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-bmtcart-phase7"
+    },
+    "BC_U2": {
+      "id": "BC_U2",
+      "gold": "UNCERTAIN",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [
+          "outcome unknown",
+          "may have received azacitidine/venetoclax at an outside hospital last year"
+        ],
+        "uncertainty_present": true,
+        "uncertainty_cue": "may have received azacitidine/venetoclax at an outside hospital last year",
+        "uncertainty_why": "outcome unknown",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": true,
+          "cue": "may have received azacitidine/venetoclax at an outside hospital last year",
+          "why": "outcome unknown"
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (mixed response or uncertainty cues)",
+          "D=false (identified line is not first-line)",
+          "U=true (extractor uncertainty.present, why='outcome unknown'; keep BCD unknown)",
+          "B=unknown (uncertainty.present; was false)",
+          "D=unknown (uncertainty.present; was false)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-bmtcart-phase7"
+    },
+    "BC11_E1": {
+      "id": "BC11_E1",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase11"
+    },
+    "BC11_E2": {
+      "id": "BC11_E2",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase11"
+    },
+    "BC11_C1": {
+      "id": "BC11_C1",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase11"
+    },
+    "BC11_C2": {
+      "id": "BC11_C2",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase11"
+    },
+    "BC11_N1": {
+      "id": "BC11_N1",
+      "gold": "NOT_SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase11"
+    },
+    "BC12_E1": {
+      "id": "BC12_E1",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase12b"
+    },
+    "BC12_E2": {
+      "id": "BC12_E2",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase12b"
+    },
+    "BC12_E3": {
+      "id": "BC12_E3",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase12b"
+    },
+    "BC12_C1": {
+      "id": "BC12_C1",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase12b"
+    },
+    "BC12_N1": {
+      "id": "BC12_N1",
+      "gold": "NOT_SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase12b"
+    },
+    "BC14_E1": {
+      "id": "BC14_E1",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase14"
+    },
+    "BC14_E2": {
+      "id": "BC14_E2",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase14"
+    },
+    "BC14_E3": {
+      "id": "BC14_E3",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase14"
+    },
+    "BC14_C1": {
+      "id": "BC14_C1",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase14"
+    },
+    "BC14_C2": {
+      "id": "BC14_C2",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase14"
+    },
+    "BC14_N1": {
+      "id": "BC14_N1",
+      "gold": "NOT_SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-phase14"
+    },
+    "EX_TEMPORAL_FOLFOX": {
+      "id": "EX_TEMPORAL_FOLFOX",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-ua-paraphrase"
+    },
+    "EX_CONTRA": {
+      "id": "EX_CONTRA",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [
+          {
+            "a": "Patient failed first-line FOLFOX after four cycles.",
+            "b": "Disease remains responsive to FOLFOX; continue current regimen."
+          }
+        ],
+        "contradiction_present": true,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": true,
+          "span_a": "Patient failed first-line FOLFOX after four cycles.",
+          "span_b": "Disease remains responsive to FOLFOX; continue current regimen."
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "verdict": "CONTRADICTION",
+        "ground_trace": [
+          "X=true (extractor contradiction.present=true with spans)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-ua-paraphrase"
+    },
+    "UA_GEN_P1_NEAR": {
+      "id": "UA_GEN_P1_NEAR",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-ua-paraphrase"
+    },
+    "UA_GEN_C1_NEAR": {
+      "id": "UA_GEN_C1_NEAR",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [
+          {
+            "a": "first-line FOLFOX is documented as having failed after four cycles.",
+            "b": "the disease is still responding to FOLFOX and the current regimen should continue without change."
+          }
+        ],
+        "contradiction_present": true,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": true,
+          "span_a": "first-line FOLFOX is documented as having failed after four cycles.",
+          "span_b": "the disease is still responding to FOLFOX and the current regimen should continue without change."
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "verdict": "CONTRADICTION",
+        "ground_trace": [
+          "X=true (extractor contradiction.present=true with spans)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-ua-paraphrase"
+    },
+    "UA_GEN_P2_FAR": {
+      "id": "UA_GEN_P2_FAR",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-ua-paraphrase"
+    },
+    "UA_GEN_C2_FAR": {
+      "id": "UA_GEN_C2_FAR",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [
+          {
+            "a": "first-line pembrolizumab failed",
+            "b": "disease remains responsive to pembrolizumab"
+          }
+        ],
+        "contradiction_present": true,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": true,
+          "span_a": "first-line pembrolizumab failed",
+          "span_b": "disease remains responsive to pembrolizumab"
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=true (extractor contradiction.present=true with spans)",
+          "X=false (no failure polarity / no hard conflict; extractor X overridden)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-ua-paraphrase"
+    },
+    "UA_GEN_P3_FAR": {
+      "id": "UA_GEN_P3_FAR",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-ua-paraphrase"
+    },
+    "UA_GEN_C3_FAR": {
+      "id": "UA_GEN_C3_FAR",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [
+          {
+            "a": "progressed through first-line R-CHOP and should move to salvage",
+            "b": "excellent ongoing response to R-CHOP with plan to continue the identical regimen"
+          }
+        ],
+        "contradiction_present": true,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": true,
+          "span_a": "progressed through first-line R-CHOP and should move to salvage",
+          "span_b": "excellent ongoing response to R-CHOP with plan to continue the identical regimen"
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "verdict": "CONTRADICTION",
+        "ground_trace": [
+          "X=true (extractor contradiction.present=true with spans)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-ua-paraphrase"
+    },
+    "UA_GEN_P4_FAR": {
+      "id": "UA_GEN_P4_FAR",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-ua-paraphrase"
+    },
+    "UA_GEN_C4_FAR": {
+      "id": "UA_GEN_C4_FAR",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "slice": "heldout_score_only",
+      "source": "heldout-ua-paraphrase"
+    }
+  }
+}

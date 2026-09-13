@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>N2S Dual Translate map viewer</title>
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --paper: #fffdf8;
+      --ink: #1c1917;
+      --muted: #57534e;
+      --line: #e7e5e4;
+      --accent: #1d4ed8;
+      --ok: #166534;
+      --ok-bg: #dcfce7;
+      --bad: #9f1239;
+      --bad-bg: #ffe4e6;
+      --warn: #92400e;
+      --warn-bg: #fef3c7;
+      --pick: #1e3a8a;
+      --pick-bg: #dbeafe;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 ui-sans-serif, system-ui, sans-serif; }
+    header { padding: 20px 24px 16px; border-bottom: 1px solid var(--line); background: var(--paper); }
+    header h1 { margin: 0 0 4px; font-size: 20px; font-weight: 650; }
+    header p { margin: 0 0 8px; color: var(--muted); max-width: 95ch; }
+    .claim { background: var(--warn-bg); border: 1px solid #fde68a; padding: 8px 12px; max-width: 95ch; }
+    .toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 16px 24px; }
+    button, select { font: inherit; border: 1px solid var(--line); background: var(--paper); padding: 6px 10px; cursor: pointer; }
+    button.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .status { color: var(--muted); }
+    .layout { display: grid; grid-template-columns: 300px 1fr; gap: 16px; padding: 0 24px 32px; }
+    .list { background: var(--paper); border: 1px solid var(--line); max-height: 74vh; overflow: auto; }
+    .list button.case {
+      display: grid; grid-template-columns: 1fr auto; gap: 2px 8px;
+      width: 100%; text-align: left; border: 0; border-bottom: 1px solid var(--line);
+      padding: 8px 10px; background: transparent;
+    }
+    .list button.case.active { background: #eff6ff; }
+    .list button.case strong { font-size: 12px; }
+    .list button.case .meta { font-size: 12px; color: var(--muted); grid-column: 1; }
+    .pill { display: inline-block; padding: 1px 8px; font-size: 12px; font-weight: 650; background: #e7e5e4; margin-right: 4px; }
+    .v-SATISFIED { background: var(--ok-bg); color: var(--ok); }
+    .v-NOT_SATISFIED { background: var(--bad-bg); color: var(--bad); }
+    .v-CONTRADICTION { background: #ffedd5; color: #7c2d12; }
+    .v-UNCERTAIN { background: var(--warn-bg); color: var(--warn); }
+    .match { background: var(--ok-bg); color: var(--ok); }
+    .miss { background: var(--bad-bg); color: var(--bad); }
+    .card { background: var(--paper); border: 1px solid var(--line); padding: 12px 14px; margin-bottom: 12px; }
+    .card h2 { margin: 0 0 8px; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+    table.ladder { width: 100%; border-collapse: collapse; font-size: 13px; }
+    table.ladder th, table.ladder td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    table.ladder tr.sel td { background: var(--pick-bg); }
+    table.ladder tr.ora td { outline: 1px dashed var(--accent); }
+    table.ladder tr.changed td:first-child { box-shadow: inset 3px 0 0 var(--accent); }
+    pre.note { white-space: pre-wrap; font: 13px/1.4 ui-monospace, monospace; margin: 0; max-height: 28vh; overflow: auto; }
+    .muted { color: var(--muted); }
+    .atoms { font: 12px/1.3 ui-monospace, monospace; white-space: nowrap; }
+    .delta { font-size: 12px; color: var(--muted); }
+    .legend { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 13px; }
+    @media (max-width: 960px) { .layout { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dual Translate map viewer</h1>
+    <p>
+      Canonizes V1: each clinical note (not a video) against the nested Translate stack.
+      Deeper cells include earlier ones — this is <strong>mapping</strong>, not independent A vs B vs C selection.
+      Frozen locator <a href="http://127.0.0.1:8260/">:8260</a> is untouched.
+    </p>
+    <div class="claim" id="claim">Loading…</div>
+  </header>
+  <div class="toolbar">
+    <button class="active" data-filter="all">All</button>
+    <button data-filter="raw-miss">Raw Dual-wrong</button>
+    <button data-filter="leftover">Still miss after G9</button>
+    <button data-filter="bind">Design P-bind</button>
+    <button data-filter="patched">Selector ≠ none</button>
+    <span class="status" id="status"></span>
+  </div>
+  <div class="layout">
+    <div class="list" id="list"></div>
+    <div id="detail">
+      <div class="card"><p class="muted">Pick a note. Each row is a nested approach (deeper includes earlier). Blue highlight = extract-signature depth. Dashed outline = shallowest depth that already matches gold. Blue bar = this cell actually changed the extract.</p></div>
+    </div>
+  </div>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    let meta = null;
+    let selected = null;
+    let filter = "all";
+
+    function esc(s) {
+      return String(s ?? "").replace(/[<>&]/g, (ch) => ({"<":"&lt;",">":"&gt;","&":"&amp;"}[ch]));
+    }
+    function pill(cls, text) {
+      return `<span class="pill ${cls}">${esc(text)}</span>`;
+    }
+    function pass(ok) {
+      return ok ? pill("match", "match gold") : pill("miss", "miss");
+    }
+    function visible(c) {
+      if (filter === "raw-miss") return !c.match_none;
+      if (filter === "leftover") return !c.match_apply_all;
+      if (filter === "bind") return c.role === "P-bind";
+      if (filter === "patched") return c.selector !== "none";
+      return true;
+    }
+    function renderList() {
+      const rows = (meta.cases || []).filter(visible);
+      $("list").innerHTML = rows.map((c) => `
+        <button class="case ${c.id === selected ? "active" : ""}" data-id="${c.id}">
+          <strong>${c.id}</strong>
+          ${pass(c.match_apply_all)}
+          <span class="meta">${c.gold} · ${c.selector}${c.leftover_tags && c.leftover_tags.length ? " · " + c.leftover_tags.join(",") : ""}</span>
+        </button>`).join("");
+      $("status").textContent = `${rows.length} / ${meta.n_cases} notes · raw Dual-wrong ${meta.n_miss_none} · leftover ${meta.n_miss_apply_all}`;
+      $("list").querySelectorAll("button.case").forEach((b) => {
+        b.onclick = () => { selected = b.dataset.id; renderList(); loadCase(selected); };
+      });
+    }
+    async function loadCase(id) {
+      const rec = await fetch("/api/case?id=" + encodeURIComponent(id)).then((r) => r.json());
+      if (rec.error) { $("detail").innerHTML = `<div class="card">${rec.error}</div>`; return; }
+      const quotes = (rec.quotes || []).map((q) => `<li>${esc(q)}</li>`).join("");
+      const tags = (rec.leftover_tags || []).map((t) => pill("", t)).join(" ") || "<span class='muted'>none</span>";
+      const ladder = (rec.ladder || []).map((r) => {
+        const cls = [
+          r.cell === rec.selector ? "sel" : "",
+          r.cell === rec.oracle ? "ora" : "",
+          r.changed ? "changed" : "",
+        ].filter(Boolean).join(" ");
+        const s = r.snapshot || {};
+        const atoms = `A=${s.A} B=${s.B} C=${s.C} D=${s.D} X=${s.X}`;
+        const delta = (r.delta || []).map((d) => `<div>${esc(d)}</div>`).join("") || "<span class='muted'>no change</span>";
+        return `<tr class="${cls}">
+          <td><strong>${r.cell}</strong>${r.cell === rec.selector ? " · signature depth" : ""}${r.cell === rec.oracle ? " · oracle" : ""}</td>
+          <td>${r.label}</td>
+          <td>${pill("v-" + r.verdict, r.verdict)}</td>
+          <td>${pass(r.match)}</td>
+          <td class="atoms">${atoms}<div class="muted">admin=${s.admin}</div></td>
+          <td class="delta">${delta}</td>
+        </tr>`;
+      }).join("");
+      const legend = Object.entries(meta.cell_help || {}).map(([k, v]) => `<strong>${k}</strong><span>${v}</span>`).join("");
+      $("detail").innerHTML = `
+        <div class="card">
+          <h2>${rec.id}</h2>
+          ${pill("v-" + rec.gold, "gold " + rec.gold)}
+          ${pill("", rec.role)}
+          ${pill("", rec.slice)}
+          <p class="muted" style="margin:8px 0 0">Extract-signature depth: <strong>${rec.selector}</strong> · shallowest match: <strong>${rec.oracle}</strong>. Nested: G9 includes G8…G3. Not independent A vs B vs C.</p>
+          <p style="margin:8px 0 0">Leftover tags after G9: ${tags}</p>
+        </div>
+        <div class="card">
+          <h2>Approaches (nested Translate stack)</h2>
+          <table class="ladder">
+            <thead><tr><th>Cell</th><th>What it does</th><th>Verdict</th><th>vs gold</th><th>Atoms</th><th>What this cell changed</th></tr></thead>
+            <tbody>${ladder}</tbody>
+          </table>
+        </div>
+        <div class="card">
+          <h2>Cell meanings (canon)</h2>
+          <div class="legend">${legend}</div>
+        </div>
+        <div class="card">
+          <h2>Note</h2>
+          <pre class="note">${esc(rec.evidence || "")}</pre>
+        </div>
+        <div class="card">
+          <h2>Extract quotes</h2>
+          <ul>${quotes || "<li class='muted'>none</li>"}</ul>
+          <p class="muted">${esc(rec.why || "")}</p>
+        </div>`;
+    }
+    async function boot() {
+      meta = await fetch("/api/meta").then((r) => r.json());
+      $("claim").textContent = meta.claim;
+      document.querySelectorAll("[data-filter]").forEach((b) => {
+        b.onclick = () => {
+          filter = b.dataset.filter;
+          document.querySelectorAll("[data-filter]").forEach((x) => x.classList.toggle("active", x === b));
+          renderList();
+        };
+      });
+      renderList();
+      const first = (meta.cases || []).find((c) => c.id === "I2") || (meta.cases || [])[0];
+      if (first) { selected = first.id; renderList(); loadCase(selected); }
+    }
+    boot().catch((e) => { $("status").textContent = String(e); });
+  </script>
+</body>
+</html>

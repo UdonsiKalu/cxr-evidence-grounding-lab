@@ -1,0 +1,399 @@
+{
+  "ok": true,
+  "kind": "n2s_phase2_translate_contrast_v1",
+  "timestamp": "2026-09-10T16:46:50.283354+00:00",
+  "protocol": "docs/TRACKB-PHASE2-TRANSLATE-CONTRAST.md",
+  "intervention": "failure_evidence_from_extract_text",
+  "not": [
+    "n2n frozen-d editor",
+    "Dual_full Phase-7 rescore",
+    "Encode/Compute editors",
+    "auto-correct pipeline",
+    "REVIEW-as-correction"
+  ],
+  "cases": {
+    "EX_TEMPORAL_FOLFOX": {
+      "ok": true,
+      "id": "EX_TEMPORAL_FOLFOX",
+      "gold": "SATISFIED",
+      "match_gold_before": false,
+      "match_gold_after": true,
+      "repaired": true,
+      "broke_control": false,
+      "frozen_trace": {
+        "encode_status": "pass",
+        "compute_status": "pass",
+        "n_lost_steps": 0,
+        "mean_score_d": {
+          "L8": 8.944,
+          "L12": 13.972,
+          "L16": 20.378,
+          "L20": 40.554,
+          "L24": 71.443
+        },
+        "translate_verdict": "NOT_SATISFIED"
+      },
+      "invariants": {
+        "hidden_state_patched": false,
+        "dual_full_rewritten": false,
+        "compute_lost_steps_unchanged": true,
+        "encode_unchanged": true,
+        "note": "Boundary relabel only. Frozen encode/compute traces not rewritten."
+      },
+      "intervened": true,
+      "before": {
+        "extract": {
+          "stated_line": "first",
+          "regimen_names": [
+            "FOLFOX"
+          ],
+          "administration_status": "given",
+          "outcome_statements": [
+            {
+              "text": "produced a partial response",
+              "polarity": "response"
+            }
+          ],
+          "implicit_cues": [
+            "response_then_progression"
+          ],
+          "uncertainty_cues": [],
+          "uncertainty_present": false,
+          "uncertainty_cue": "",
+          "uncertainty_why": "",
+          "contradiction_cues": [],
+          "contradiction_present": false,
+          "quotes": [
+            "First-line FOLFOX produced a partial response.",
+            "FOLFOX was discontinued for treatment failure"
+          ],
+          "notes": "The note describes a partial response followed by treatment failure, setting up a potential second-line therapy.",
+          "backend": "unknown",
+          "contradiction": {
+            "present": false,
+            "span_a": null,
+            "span_b": null
+          },
+          "uncertainty": {
+            "present": false,
+            "cue": null,
+            "why": null
+          }
+        },
+        "atoms": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "false",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=true (stated first-line or implicit 1L cue)",
+          "B=true (administered/given)",
+          "C=false (response/ongoing/planned, no failure)",
+          "D=false (no failure event)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ],
+        "verdict": "NOT_SATISFIED",
+        "fired_rule": "any(A,B,C,D)=false \u2192 NOT_SATISFIED",
+        "rule_trace": [
+          "False atoms: C failure_event, D failure_of_first_line"
+        ]
+      },
+      "after": {
+        "extract": {
+          "stated_line": "first",
+          "regimen_names": [
+            "FOLFOX"
+          ],
+          "administration_status": "given",
+          "outcome_statements": [
+            {
+              "text": "produced a partial response",
+              "polarity": "response"
+            },
+            {
+              "text": "FOLFOX was discontinued for treatment failure",
+              "polarity": "failure"
+            }
+          ],
+          "implicit_cues": [
+            "response_then_progression"
+          ],
+          "uncertainty_cues": [],
+          "uncertainty_present": false,
+          "uncertainty_cue": "",
+          "uncertainty_why": "",
+          "contradiction_cues": [],
+          "contradiction_present": false,
+          "quotes": [
+            "First-line FOLFOX produced a partial response.",
+            "FOLFOX was discontinued for treatment failure"
+          ],
+          "notes": "The note describes a partial response followed by treatment failure, setting up a potential second-line therapy.",
+          "backend": "unknown",
+          "contradiction": {
+            "present": false,
+            "span_a": null,
+            "span_b": null
+          },
+          "uncertainty": {
+            "present": false,
+            "cue": null,
+            "why": null
+          }
+        },
+        "atoms": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=true (stated first-line or implicit 1L cue)",
+          "B=true (administered/given)",
+          "C=true (failure polarity)",
+          "D=true (failure attributed to identified first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ],
+        "verdict": "SATISFIED",
+        "fired_rule": "A \u2227 B \u2227 C \u2227 D \u2192 SATISFIED",
+        "rule_trace": [
+          "A \u2227 B \u2227 C \u2227 D all true"
+        ]
+      },
+      "intervention": {
+        "kind": "failure_evidence_from_extract_text",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": "quotes",
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false
+      },
+      "verdict_before": "NOT_SATISFIED",
+      "verdict_after": "SATISFIED",
+      "atoms_before": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "false",
+        "D_failure_of_first_line": "false",
+        "X_contradiction": false
+      },
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "true",
+        "D_failure_of_first_line": "true",
+        "X_contradiction": false
+      }
+    },
+    "EX_CONTRA": {
+      "ok": true,
+      "id": "EX_CONTRA",
+      "gold": "CONTRADICTION",
+      "match_gold_before": false,
+      "match_gold_after": false,
+      "repaired": false,
+      "broke_control": false,
+      "frozen_trace": {
+        "encode_status": "pass",
+        "compute_status": "fail",
+        "n_lost_steps": 2,
+        "mean_score_d": {
+          "L8": -2.739,
+          "L12": -0.52,
+          "L16": 2.206,
+          "L20": 11.431,
+          "L24": 9.448
+        },
+        "translate_verdict": "CONTRADICTION"
+      },
+      "invariants": {
+        "hidden_state_patched": false,
+        "dual_full_rewritten": false,
+        "compute_lost_steps_unchanged": true,
+        "encode_unchanged": true,
+        "note": "Boundary relabel only. Frozen encode/compute traces not rewritten."
+      },
+      "intervened": true,
+      "before": {
+        "extract": {
+          "stated_line": "first",
+          "regimen_names": [
+            "FOLFOX"
+          ],
+          "administration_status": "given",
+          "outcome_statements": [
+            {
+              "text": "failed first-line FOLFOX",
+              "polarity": "failure"
+            },
+            {
+              "text": "Disease remains responsive to FOLFOX",
+              "polarity": "response"
+            }
+          ],
+          "implicit_cues": [
+            "response_then_progression"
+          ],
+          "uncertainty_cues": [],
+          "uncertainty_present": false,
+          "uncertainty_cue": "",
+          "uncertainty_why": "",
+          "contradiction_cues": [
+            {
+              "a": "failed first-line FOLFOX",
+              "b": "Disease remains responsive to FOLFOX"
+            }
+          ],
+          "contradiction_present": true,
+          "quotes": [
+            "failed first-line FOLFOX after four cycles",
+            "Disease remains responsive to FOLFOX; continue current regimen"
+          ],
+          "notes": "The note asserts both failure and ongoing response to the same regimen, which is contradictory.",
+          "backend": "unknown",
+          "contradiction": {
+            "present": true,
+            "span_a": "failed first-line FOLFOX",
+            "span_b": "Disease remains responsive to FOLFOX"
+          },
+          "uncertainty": {
+            "present": false,
+            "cue": null,
+            "why": null
+          }
+        },
+        "atoms": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "ground_trace": [
+          "X=true (extractor contradiction.present=true with spans)",
+          "X=false (sequenced temporal-change; extractor contradiction overridden)",
+          "A=true (stated first-line or implicit 1L cue)",
+          "B=true (administered/given)",
+          "C=true (failure polarity)",
+          "D=true (failure attributed to identified first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ],
+        "verdict": "SATISFIED",
+        "fired_rule": "A \u2227 B \u2227 C \u2227 D \u2192 SATISFIED",
+        "rule_trace": [
+          "A \u2227 B \u2227 C \u2227 D all true"
+        ]
+      },
+      "after": {
+        "extract": {
+          "stated_line": "first",
+          "regimen_names": [
+            "FOLFOX"
+          ],
+          "administration_status": "given",
+          "outcome_statements": [
+            {
+              "text": "failed first-line FOLFOX",
+              "polarity": "failure"
+            },
+            {
+              "text": "Disease remains responsive to FOLFOX",
+              "polarity": "response"
+            }
+          ],
+          "implicit_cues": [
+            "response_then_progression"
+          ],
+          "uncertainty_cues": [],
+          "uncertainty_present": false,
+          "uncertainty_cue": "",
+          "uncertainty_why": "",
+          "contradiction_cues": [
+            {
+              "a": "failed first-line FOLFOX",
+              "b": "Disease remains responsive to FOLFOX"
+            }
+          ],
+          "contradiction_present": true,
+          "quotes": [
+            "failed first-line FOLFOX after four cycles",
+            "Disease remains responsive to FOLFOX; continue current regimen"
+          ],
+          "notes": "The note asserts both failure and ongoing response to the same regimen, which is contradictory.",
+          "backend": "unknown",
+          "contradiction": {
+            "present": true,
+            "span_a": "failed first-line FOLFOX",
+            "span_b": "Disease remains responsive to FOLFOX"
+          },
+          "uncertainty": {
+            "present": false,
+            "cue": null,
+            "why": null
+          }
+        },
+        "atoms": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "ground_trace": [
+          "X=true (extractor contradiction.present=true with spans)",
+          "X=false (sequenced temporal-change; extractor contradiction overridden)",
+          "A=true (stated first-line or implicit 1L cue)",
+          "B=true (administered/given)",
+          "C=true (failure polarity)",
+          "D=true (failure attributed to identified first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ],
+        "verdict": "SATISFIED",
+        "fired_rule": "A \u2227 B \u2227 C \u2227 D \u2192 SATISFIED",
+        "rule_trace": [
+          "A \u2227 B \u2227 C \u2227 D all true"
+        ]
+      },
+      "intervention": {
+        "kind": "failure_evidence_from_extract_text",
+        "n_polarities_relabeled": 0,
+        "relabeled_outcome_idx": [],
+        "promoted_failure_from": null,
+        "added_response_then_progression": false,
+        "touched_contradiction_present": false,
+        "hidden_state_patched": false
+      },
+      "verdict_before": "SATISFIED",
+      "verdict_after": "SATISFIED",
+      "atoms_before": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "true",
+        "D_failure_of_first_line": "true",
+        "X_contradiction": false
+      },
+      "atoms_after": {
+        "A_first_line_identified": "true",
+        "B_first_line_administered": "true",
+        "C_failure_event": "true",
+        "D_failure_of_first_line": "true",
+        "X_contradiction": false
+      }
+    }
+  },
+  "thesis": {
+    "folfox_repaired": true,
+    "contra_dual_held": false,
+    "contra_compute_untouched": true,
+    "routing_selection_value": true,
+    "contra_verdict_unchanged": true,
+    "note": "CONTRA recover+ground may already differ from frozen Dual analog (temporal-change override). Selection value here = FOLFOX repaired and CONTRA verdict/lost-steps unchanged by this intervention."
+  },
+  "frozen_traces_source": "n2s-locator-panel.json"
+}

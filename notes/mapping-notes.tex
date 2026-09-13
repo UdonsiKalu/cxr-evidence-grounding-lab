@@ -1,0 +1,184 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{microtype}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  urlcolor=blue!50!black,
+  pdftitle={Dual Translate Mapping --- Progress Notes},
+  pdfauthor={CXR evidence-grounding lab}
+}
+
+\definecolor{muted}{HTML}{57534E}
+\definecolor{paper}{HTML}{FFFDF8}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small N2S Evidence Grounding Lab}
+\fancyhead[R]{\small Mapping notes --- 11 Sep 2026}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.6em}{}
+\setlist[itemize]{leftmargin=1.4em,itemsep=0.25em,topsep=0.4em}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Dual Translate mapping freeze}\\[0.35em]
+{\large Progress notes (this pass only)}\\[0.8em]
+{\color{muted} Working lab notebook, not a paper and not a claim of clinical validity.}\\[0.6em]
+11~September~2026 \quad$\cdot$\quad nested G3--G9 frozen; leftover census; viewer \texttt{:8263}\\[0.3em]
+{\small Lab: \texttt{staging/cxr-evidence-grounding-lab/}
+\quad Viewer: \url{http://127.0.0.1:8263/}
+\quad Curriculum: \url{http://127.0.0.1:8264/}}
+\end{center}
+
+\vspace{0.5em}
+\begin{tcolorbox}[colback=paper,colframe=black!20,boxrule=0.4pt,arc=1pt,left=8pt,right=8pt,top=6pt,bottom=6pt]
+\textbf{Status of this document.}
+This is the full freeze record for the Dual failure$\rightarrow$intervention mapping pass.
+It is the sibling of \texttt{notes/progress-notes.pdf} (M1--Ph14), not a rewrite of that notebook.
+Companions: \texttt{mapping-notes-simple.pdf} (walkthrough),
+\texttt{mapping-code-walkthrough.pdf} (runnable snippets),
+\texttt{CXR-Mapping-Curriculum.pdf} (MAP-00\ldots09).
+\texttt{ground()} was not rewritten. Locator \texttt{:8260} was not expanded.
+Rebuild: \texttt{./build-mapping-pdfs.sh} from \texttt{notes/}.
+\end{tcolorbox}
+
+\tableofcontents
+
+\section{What we set out to achieve}
+
+\textbf{Later thesis (not closeable as v1):} automatically change and correct every failure mode in a large language model.
+
+\textbf{This-pass question} (design: \texttt{docs/TRACKB-FAILURE-INTERVENTION-MAP.md}):
+
+\begin{quote}
+Can recurring Dual-shaped clinical-note failure signatures be mapped to correction methods that repair those failures while preserving unaffected notes, and could that mapping later support intervention selection?
+\end{quote}
+
+Predicate: \texttt{FIRST\_LINE\_THERAPY\_FAILED} on synthetic notes. Neural side fills an extract. Symbolic side: \texttt{ground()} then \texttt{evaluate\_rule()}.
+
+\section{Method}
+
+\begin{itemize}
+  \item Dual analog extracts, Goal~2 fill ($n=108$): schema in system, user$=$evidence. Frozen JSON reused; do not overwrite.
+  \item Interventions are nested extract relabels in \texttt{n2s\_lab/n2s\_phase2\_translate.py}. Deeper includes earlier.
+  \item Score with unchanged \texttt{ground()} and \texttt{evaluate\_rule()}.
+  \item Controls: P-neg, P-xspan, P-bind; held-out Dual-wrong scored, not used to invent leftover IDs.
+  \item Encode editor: none. Compute editor: CLOSED. No CAA, no frozen-\texttt{d} $\alpha$-chase.
+\end{itemize}
+
+\section{Cells}
+
+{\small
+\begin{tabular}{@{}p{2.2cm}p{5.2cm}p{3.4cm}p{2.6cm}@{}}
+\toprule
+Cell & Job & Design bind & $n{=}108$ miss after \\
+\midrule
+none & Raw Dual-fill & --- & 30 \\
+G3 & Gated failure promote & 2/7 & --- \\
+G4 & Mixed-span $\rightarrow$ X & 2/7 & 27 \\
+G6 & Never-quote $\rightarrow$ cues & 2/7 & 19 \\
+G7 & Restage (hedge / stable-seq) & 3/7 & 12 \\
+G8 & Same-time mix & 3/7 & 8 \\
+G9 & Admin-blocked & 4/7 repaired; 7/7 match & \textbf{6} \\
+\bottomrule
+\end{tabular}
+}
+
+P-neg leak 0 after G3. Design P-xspan 10/10 after G6. No new flips on G6--G9 versus the previous cell.
+
+There is no G5 repair cell (Goal~5 was a remaining-miss census).
+
+\section{Leftover Dual-wrong after G9}
+
+Six notes: T2 (too-early), U2/U6 (may-have), TX\_E03 (held-for-progression), BC12\_C1, BC14\_C1 (heterogeneous).
+Goal~10: no leftover shape justifies a new Translate cell. \texttt{v1\_freeze\_recommended=true}.
+Do not write G11. Do not stretch \texttt{ground()} to fit \texttt{naive}.
+
+Artifact: \texttt{artifacts/n2s-g10-leftover-census.json}.
+
+\section{Selection contrast (and walk-back)}
+
+Frozen stack, no new repair. Dual-fill $n=108$:
+
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Arm & Miss \\
+\midrule
+none & 30/108 \\
+extract-signature selector & 6/108 \\
+always G9 (apply-all) & 6/108 \\
+oracle agreement with selector & 79.6\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Selector chose G9 on 2/108 (not apply-all in disguise). Nested wrappers mean this is \textbf{stack-depth routing}, not independent A vs B vs C vs abstain.
+\texttt{locator\_chose\_repair\_class=false}. Not auto-correct.
+
+Artifact: \texttt{artifacts/n2s-v1-selection-contrast.json}.
+
+\section{Canonization surfaces}
+
+\begin{itemize}
+  \item Viewer \texttt{:8263} --- per-note ladder. Script: \texttt{./scripts/run\_map\_viewer.sh}.
+  \item Curriculum \texttt{:8264} --- MAP-00\ldots09. Script: \texttt{./scripts/run\_mapping\_curriculum.sh}.
+  \item Replay CLI: \texttt{curriculum-mapping/snippets/replay\_ladder.py}.
+\end{itemize}
+
+\section{Claim ceiling}
+
+\begin{itemize}
+  \item Mapping: partial yes (Translate nested, measured collateral).
+  \item One-size-fits-all: empirically the wrong default (T1 needs nothing; T2 should not be forced).
+  \item Selection among independent classes: not shown.
+  \item Encode/Compute editors: none in this pass.
+  \item Generic LLM auto-correct: no.
+\end{itemize}
+
+\section{Artifact index}
+
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Path & Role \\
+\midrule
+\texttt{docs/TRACKB-FAILURE-INTERVENTION-MAP.md} & Design + cell results \\
+\texttt{artifacts/n2s-g2-analog-fill-extracts.json} & Frozen Dual-fill extracts \\
+\texttt{n2s\_lab/ground.py}, \texttt{predicate.py} & Unchanged boundary \\
+\texttt{n2s\_lab/n2s\_phase2\_translate.py} & Nested relabels \\
+\texttt{artifacts/n2s-g3-*\ldots n2s-g9-*} & Per-cell panels \\
+\texttt{artifacts/n2s-g10-leftover-census.json} & Why no G11 \\
+\texttt{artifacts/n2s-v1-selection-contrast.json} & Mapping vs apply-all \\
+\texttt{static/map-viewer.html} & \texttt{:8263} \\
+\texttt{curriculum-mapping/} & Track UI + modules \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{1em}
+\begin{center}
+\color{muted}\small
+Rebuild: \texttt{./build-mapping-pdfs.sh} from the \texttt{notes/} directory.
+\end{center}
+
+\end{document}

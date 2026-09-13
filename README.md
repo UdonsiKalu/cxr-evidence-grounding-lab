@@ -153,7 +153,7 @@ The demo only **replays frozen results**. It does not run models on anyone’s c
 - On held-out notes, **representation loss (D)** still showed up across local models — including a larger one that looked clean on the discovery set.  
 - This is a **small synthetic lab**, not a clinical product and not a claim of production accuracy.
 
-**Guides:** [simple illustrated PDF](./notes/progress-notes-simple.pdf) · [full progress notes](./notes/progress-notes.pdf) · [EVALUATION-JOURNEY.md](./EVALUATION-JOURNEY.md)  
+**Guides:** [simple illustrated PDF](./notes/progress-notes-simple.pdf) · [full progress notes](./notes/progress-notes.pdf) · **Dual mapping (2026-09-11):** [walkthrough](./notes/mapping-notes-simple.pdf) · [code](./notes/mapping-code-walkthrough.pdf) · [curriculum](./notes/CXR-Mapping-Curriculum.pdf) · [full mapping notes](./notes/mapping-notes.pdf) · [EVALUATION-JOURNEY.md](./EVALUATION-JOURNEY.md)  
 **Direction (safe protocol / verify → REVIEW):** [docs/ARCHITECTURE-DIRECTION.md](./docs/ARCHITECTURE-DIRECTION.md) · [docs/PHASE5-PROTOCOL.md](./docs/PHASE5-PROTOCOL.md) · [docs/PHASE6-PROTOCOL.md](./docs/PHASE6-PROTOCOL.md)
 
 ---

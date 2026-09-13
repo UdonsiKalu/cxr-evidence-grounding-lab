@@ -1,0 +1,109 @@
+{
+  "ok": true,
+  "kind": "n2s_phase2_translate_extracts_v1",
+  "timestamp": "2026-09-10T16:45:44.810941+00:00",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "extracts": {
+    "EX_TEMPORAL_FOLFOX": {
+      "id": "EX_TEMPORAL_FOLFOX",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "extract": {
+        "stated_line": "first",
+        "regimen_names": [
+          "FOLFOX"
+        ],
+        "administration_status": "given",
+        "outcome_statements": [
+          {
+            "text": "produced a partial response",
+            "polarity": "response"
+          }
+        ],
+        "implicit_cues": [
+          "response_then_progression"
+        ],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [
+          "First-line FOLFOX produced a partial response.",
+          "FOLFOX was discontinued for treatment failure"
+        ],
+        "notes": "The note describes a partial response followed by treatment failure, setting up a potential second-line therapy.",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "not": "n2n frozen-d patch"
+    },
+    "EX_CONTRA": {
+      "id": "EX_CONTRA",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "extract": {
+        "stated_line": "first",
+        "regimen_names": [
+          "FOLFOX"
+        ],
+        "administration_status": "given",
+        "outcome_statements": [
+          {
+            "text": "failed first-line FOLFOX",
+            "polarity": "failure"
+          },
+          {
+            "text": "Disease remains responsive to FOLFOX",
+            "polarity": "response"
+          }
+        ],
+        "implicit_cues": [
+          "response_then_progression"
+        ],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [
+          {
+            "a": "failed first-line FOLFOX",
+            "b": "Disease remains responsive to FOLFOX"
+          }
+        ],
+        "contradiction_present": true,
+        "quotes": [
+          "failed first-line FOLFOX after four cycles",
+          "Disease remains responsive to FOLFOX; continue current regimen"
+        ],
+        "notes": "The note asserts both failure and ongoing response to the same regimen, which is contradictory.",
+        "backend": "unknown",
+        "contradiction": {
+          "present": true,
+          "span_a": "failed first-line FOLFOX",
+          "span_b": "Disease remains responsive to FOLFOX"
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "not": "n2n frozen-d patch"
+    }
+  }
+}

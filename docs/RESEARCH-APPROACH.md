@@ -9,7 +9,10 @@
 **Related:** [ARCHITECTURE-DIRECTION.md](./ARCHITECTURE-DIRECTION.md) · [EVALUATION-JOURNEY.md](../EVALUATION-JOURNEY.md) · phase protocols `PHASE5`…`PHASE14`  
 **Downstream closeout:** [TRACKB-DOWNSTREAM-CLOSEOUT.md](./TRACKB-DOWNSTREAM-CLOSEOUT.md) · α=8 [TRACKB-ALPHA8-FREEZE.md](./TRACKB-ALPHA8-FREEZE.md)  
 **System claim (one-pager):** [N2S-SYSTEM-CLAIM.md](./N2S-SYSTEM-CLAIM.md)  
-**Living record of advances:** [ADVANCE-LOG.md](./ADVANCE-LOG.md) — append one entry per advance (activity + result + artifacts).
+**Living record of advances:** [ADVANCE-LOG.md](./ADVANCE-LOG.md) — append one entry per advance (activity + result + artifacts).  
+**Locate/correct 2026-09-10:** [TRACKB-PHASE1-3-PORTFOLIO.md](./TRACKB-PHASE1-3-PORTFOLIO.md)  
+**Failure→intervention design 2026-09-11:** [TRACKB-FAILURE-INTERVENTION-MAP.md](./TRACKB-FAILURE-INTERVENTION-MAP.md)  
+**Mapping curriculum (frozen):** [notes/CXR-Mapping-Curriculum.pdf](../notes/CXR-Mapping-Curriculum.pdf) · UI `:8264` · viewer `:8263`
 
 ---
 

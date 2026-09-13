@@ -27,6 +27,259 @@
 
 ## Log (newest first)
 
+### 2026-09-11 — Dual mapping curriculum + PDF freeze
+
+| | |
+|--|--|
+| **Track** | mapping (canonize) |
+| **Activity** | MAP-00…09 beginner curriculum + 18pp PDF. Track UI `:8264`. Replay snippet I2/C4/T1/T2. Viewer `:8263` unchanged. No new Translate cell. `ground()` unchanged. |
+| **Result** | Mapping yes / selection no / auto-correct no written as a teachable path. This pass's freeze write-up. |
+| **Artifacts** | `notes/CXR-Mapping-Curriculum.pdf` · `curriculum-mapping/` · http://127.0.0.1:8264/ |
+| **Decision** | Investigation parked. No class B / G11 until a later new question. |
+| **Commit** | (local) |
+
+### 2026-09-11 — Dual Translate map viewer :8263
+
+| | |
+|--|--|
+| **Track** | mapping (canonize / viewer) |
+| **Activity** | Read-only GUI for nested G3–G9 approaches per Dual note. New port **8263**. Locator `:8260` untouched. No new Translate cell. `ground()` unchanged. |
+| **Result** | 108 notes; raw Dual-wrong 30; leftover 6. Ladder shows verdict + atom snapshot + what each cell changed. Honest banner: mapping, not selection. |
+| **Artifacts** | `http://127.0.0.1:8263/` · `static/map-viewer.html` · `map_viewer_server.py` · `n2s_lab/n2s_map_viewer.py` · `n2s-map-viewer-panel.json` |
+| **Decision** | Canonize here; do not treat as selected editor / auto-correct. Optional freeze page still wait-go. Do not expand `:8260`. |
+| **Commit** | (local) |
+
+### 2026-09-11 — original mapping Q closed (selection contrast)
+
+| | |
+|--|--|
+| **Track** | mapping (full goal) |
+| **Activity** | Frozen G3–G9: none vs extract-signature selector vs apply-all vs oracle on Dual-fill n=108. No new repair. `ground()` unchanged. |
+| **Result** | Miss 30 → 6 selector = 6 apply-all. Selector G9 on 2/108. Oracle agree 79.6%. Mapping supports extract-depth selection. Locator still false. Original Q closed for this pass. |
+| **Artifacts** | `n2s-v1-selection-contrast.json` |
+| **Decision** | Stop leftover treadmill. Not a selected editor. Do not G11 / CAA / rewrite `ground()`. |
+| **Commit** | (local) |
+
+### 2026-09-11 — Goal 10 leftover census + v1 freeze
+
+| | |
+|--|--|
+| **Track** | mapping (full goal) |
+| **Activity** | Read-only leftover-shape prevalence on n=108 with frozen G9. No new repair. G3–G9 not mutated. `ground()` unchanged. |
+| **Result** | too-early / held-for-progression / naive = one-offs. may-have 2 miss + 1 match. response-only 6 library / 4 already match. No new Translate cell. P-bind 7/7 match. **v1 map frozen.** |
+| **Artifacts** | `n2s-g10-leftover-census.json` |
+| **Decision** | Freeze v1 Translate intervention map (six cells, controlled collateral). Not a selected editor. Do not ID-fit G11 / rewrite `ground()` / CAA. |
+| **Commit** | (local) |
+
+### 2026-09-11 — Goal 9 Dual S-admin-blocked
+
+| | |
+|--|--|
+| **Track** | mapping (full goal) |
+| **Activity** | After frozen G8: planned next-line after refractory → given; fail vs never-dispensed quotes → X cues + clear U parked on that span. `ground()` not rewritten. G3–G8 not mutated. |
+| **Result** | Bind 3/7→4/7 (I2). n=108 miss 8→6. C11 CONTRADICTION. Design P-xspan 10/10. No new flips vs G8. Not a selected editor. |
+| **Artifacts** | `n2s-g9-admin-blocked-panel.json` |
+| **Decision** | Six Dual Translate cells. Do not retune prior gates / rewrite `ground()` / CAA. Leftover 6: T2, U2/U6, TX_E03, BC12_C1, BC14_C1. |
+| **Commit** | (local) |
+
+### 2026-09-11 — Goal 8 Dual same-time mix
+
+| | |
+|--|--|
+| **Track** | mapping (full goal) |
+| **Activity** | After frozen G7: undo notes-promote on uncertain extracts; relabel continue-now response→ongoing; copy continue quotes into cues. `ground()` not rewritten. G3–G7 not mutated. |
+| **Result** | Bind 3/7 kept. n=108 miss 12→8. U4 restored; UA_GEN_C1/C2/C4 → CONTRADICTION. Design P-xspan 10/10. No new flips vs G7. Not a selected editor. |
+| **Artifacts** | `n2s-g8-simult-mix-panel.json` |
+| **Decision** | Five Dual Translate cells. Do not retune prior gates / rewrite `ground()` / CAA. Leftover 8: I2, T2, U2/U6, TX_E03, C11, BC12_C1, BC14_C1. |
+| **Commit** | (local) |
+
+### 2026-09-11 — Goal 7 Dual restaging confirmation
+
+| | |
+|--|--|
+| **Track** | mapping (full goal) |
+| **Activity** | After frozen G6: clear uncertainty when a later span confirms failure; undo G4 X on stable-then-progress without continue-current. `ground()` not rewritten. G3/G4/G6 not mutated. |
+| **Result** | Bind 2/7→3/7 (TF_E4). n=108 miss 19→12. Hedge 5 repaired; TF_E2/TX_E02 restored. Design P-xspan 10/10. No new flips vs G6. Not a selected editor. |
+| **Artifacts** | `n2s-g7-restage-panel.json` |
+| **Decision** | Four Dual Translate cells. Do not retune prior gates / rewrite `ground()` / CAA. Leftover: I2, hedge-less TX_E03, UA_GEN X-override, U4 notes-promote. |
+| **Commit** | (local) |
+
+### 2026-09-11 — Goal 6 Dual never-quote repair
+
+| | |
+|--|--|
+| **Track** | mapping (full goal) |
+| **Activity** | Copy never/no-prior quotes into contradiction cues after frozen Goal 4. CPU Dual-fill. `ground()` not rewritten. G3/G4 not mutated. |
+| **Result** | Design P-xspan 10/10 match. Bind 2/7 kept. n=108 miss 27→19. 8 new repairs (C2/TX_C02/TX_C04 + held-out never-quote). No new flips vs G4. Not a selected editor. |
+| **Artifacts** | `n2s-g6-never-quote-panel.json` |
+| **Decision** | Three Dual Translate cells. Do not retune G3/G4 / rewrite `ground()` / CAA. Leftover: bind 2/7, G4 stable-seq collateral, naive≠never (BC14_C1), hedge. |
+| **Commit** | (local) |
+
+### 2026-09-11 — Goal 5 remaining Dual-miss census
+
+| | |
+|--|--|
+| **Track** | mapping (full goal) |
+| **Activity** | Read-only shape census of Dual-fill misses after frozen Goal 4. No new repair. No G3/G4 retune. |
+| **Result** | 27/108 miss. Largest = S-never-quote (9). G4 flipped_away U4/TF_E2/TX_E02 (stable-then-progress / notes promote). Never↔given in quotes is invisible because `ground()` conflict blob omits quotes. |
+| **Artifacts** | `n2s-g5-remain-census.json` |
+| **Decision** | Next repair, if named, from a shape tag (S-never-quote). Do not retune G3/G4 / rewrite `ground()` / CAA. |
+| **Commit** | (local) |
+
+### 2026-09-11 — Goal 4 Dual mixed-span flag
+
+| | |
+|--|--|
+| **Track** | mapping (full goal) |
+| **Activity** | Gated promote + set contradiction.present when frozen ground() hard-simultaneous is true. Dual-fill CPU. Not a G3 retune. `ground()` not rewritten. |
+| **Result** | Bind 2/7 kept; P-neg 0 leak; C4 → CONTRADICTION; held-out C8 + BC14_C2 repaired; `heldout_leak=false`. Not a selected editor (bind 2/7; other CONTRADICTION subtypes remain). |
+| **Artifacts** | `n2s-g4-mixed-span-panel.json` |
+| **Decision** | Dual now has P-bind/P-neg + simultaneous-mix P-xspan cells. Do not retune from C2/I2 / CAA / change `ground()`. Next = new question. |
+| **Commit** | (local) |
+
+### 2026-09-11 — Goal 3 Dual gated quote-promote
+
+| | |
+|--|--|
+| **Track** | mapping (full goal) |
+| **Activity** | Predeclared negation-aware quote-promote on Dual-fill extracts. CPU. Design 28 then held-out 44, gate frozen. Not ID-fitted. Ungated function not mutated. |
+| **Result** | Design: bind 2/7 kept (E2 T3); P-neg leak 5/11 → 0; xspan 0; `specificity_holds=true`. Held-out: FOLFOX kept; NOT_SATISFIED 3/3 leak cleared; C8 CONTRADICTION still SATISFIED. Not a selected editor. |
+| **Artifacts** | `n2s-g3-gated-promote-panel.json` |
+| **Decision** | Dual map cell for P-bind vs P-neg exists. Do not retune from C8 / jump to CAA / change `ground()`. Next = new question (C8 mixed-span is a different leak). |
+| **Commit** | (local) |
+
+### 2026-09-11 — Goal 2 Dual analog extract fill
+
+| | |
+|--|--|
+| **Track** | mapping (full goal) |
+| **Activity** | Schema in system, user=evidence. 7B on n=108. Then frozen quote-promote on design 28 Dual-fill extracts. |
+| **Result** | thin 91→0. Dual P-bind 5. Promote Dual: 2/7 bind repaired; P-neg leak 5/11 remains. Specificity still false. |
+| **Artifacts** | `n2s-g2-analog-fill-census.json` · extracts · `n2s-g2-analog-fill-promote-panel.json` |
+| **Decision** | Dual analog substrate exists. Quote-promote still not the accurate fix. Next = new predeclared repair, not CAA / retune-from-leak. |
+| **Commit** | (local) |
+
+### 2026-09-11 — Held-out frozen quote-promote, then STOP
+
+| | |
+|--|--|
+| **Track** | new Q (mapping) |
+| **Activity** | Same Batch 1 promote, no retune, on 44 held-out Dual notes (CPU). Gold roles only. TFT excluded. |
+| **Result** | Analog 0/44 fired. Schema SATISFIED 1/13 (FOLFOX). NOT_SATISFIED 3/3 → SATISFIED. `leak_repeats=true`. |
+| **Artifacts** | `n2s-batch1h-heldout-promote-panel.json` |
+| **Decision** | **STOP.** Quote-promote not a selected editor. Do not retune / CAA / GUI. |
+| **Commit** | (local) |
+
+### 2026-09-11 — Batch 1 quote-promote map cell
+
+| | |
+|--|--|
+| **Track** | new Q (mapping) |
+| **Activity** | CPU `failure_evidence_from_extract_text` on saved Batch 0x extracts. Design 7 P-bind + 10 P-xspan + 11 P-neg; analog + Schema. No GPU / `ground()` change. |
+| **Result** | Analog 0/28 fired, 0 repaired. Schema P-bind 5/7 repaired. Specificity **fails**: P-neg 5/11 and C4 → SATISFIED. FOLFOX Schema anchor replicates. |
+| **Artifacts** | `n2s-batch1-quote-promote-panel.json` |
+| **Decision** | Map cell only. Not a selected editor. Do not retune promote from these collaterals. Next = park or new predeclared Q. |
+| **Commit** | (local) |
+
+### 2026-09-11 — Batch 0x expand analog+Schema census
+
+| | |
+|--|--|
+| **Track** | new Q (mapping) |
+| **Activity** | Union existing Dual notes (no synthesis). Analog + Schema 7B extract, no d-patch, on n=108 (64 design + 44 held-out score-only). TFT excluded. |
+| **Result** | Analog thin 91/108, P-bind 0. Schema thin 0, P-bind 8 (7 design: E2 I2 T3 TF_E3 TF_E4 TX_E06 TX_E19). Library is not 100–300. |
+| **Artifacts** | `n2s-batch0x-census.json` · analog/schema extracts · `n2s-batch0x-library.json` |
+| **Decision** | Schema is substrate/confound, not Dual editor. Next wait-go = Batch 1 quote-promote. Do not change `ground()` / invent notes. |
+| **Commit** | (local) |
+
+### 2026-09-11 — Batch 0 analog phenotype census
+
+| | |
+|--|--|
+| **Track** | new Q (mapping) |
+| **Activity** | Dual analog 7B extract (`user=evidence`, no d-patch) on `cases.json` n=20. Phenotype tags from gold/category + extract overlays. |
+| **Result** | parse_ok 20/20; thin 18/20; P-unk 18; **P-bind 0**; wrong_AUTO 12 / correct_AUTO 8 (empty-default). C1/C3 contradiction spans then `ground()` X override. Did not switch to Schema. |
+| **Artifacts** | `n2s-batch0-phenotype-census.json` · `n2s-batch0-analog-extracts.json` · `n2s_lab/n2s_batch0_phenotype.py` |
+| **Decision** | Quote-promote has no analog substrate. Next wait-go = Batch 1 analog no-op **or** Batch 2 Schema census. Do not change `ground()`. |
+| **Commit** | (local) |
+
+### 2026-09-11 — Failure→Intervention Mapping design (A–E)
+
+| | |
+|--|--|
+| **Track** | new Q (design only) |
+| **Activity** | Audit measurements; literature table with real papers; Dual-shaped P-* taxonomy; schema + Batch 0–1 recs. No code. |
+| **Result** | Only demonstrated repair remains FOLFOX quote-promote. Published steering/editing poor first-batch fit; our nulls/partials recorded. Auto-correct later. |
+| **Artifacts** | `TRACKB-FAILURE-INTERVENTION-MAP.md` |
+| **Decision** | Phase 1–3 read-only. Next wait-go = Batch 0 phenotype census (Dual analog, no d-patch). |
+| **Commit** | (local) |
+
+### 2026-09-10 — Locate/correct Phase 1–3 portfolio write-up
+
+| | |
+|--|--|
+| **Track** | A/B portfolio (park) |
+| **Activity** | One-pager: routing vs repair, FOLFOX Translate contrast, Compute reverse, 7-case matrix. No new experiment. |
+| **Result** | Frozen write-up. Encode editor none. Frozen-d CLOSED. `locator_chose_repair_class=false`. |
+| **Artifacts** | `TRACKB-PHASE1-3-PORTFOLIO.md` |
+| **Decision** | Phase 1–3 parked. Do not invent editors / reopen d-patch / expand GUI. |
+| **Commit** | (local) |
+
+### 2026-09-10 — Phase 3 Encode × Compute × Translate matrix (read-only)
+
+| | |
+|--|--|
+| **Track** | A/B thesis table (not auto-correct) |
+| **Activity** | CPU assemble locator 7 cases + Phase 2 forward/reverse. No GPU / GUI / Dual_full rescore. |
+| **Result** | 3 located, 4 incomplete, 1 boundary Translate repair (FOLFOX). Encode editor none. Compute CLOSED. `locator_chose_repair_class=false`. |
+| **Artifacts** | `TRACKB-PHASE3-MATRIX.md` · `n2s-phase3-matrix-panel.json` |
+| **Decision** | Phase 1–3 lab loop parked. Do not invent Encode editor. Do not reopen frozen-d. Optional later = portfolio write-up. |
+| **Commit** | (local) |
+
+### 2026-09-10 — Phase 2 Compute reverse contrast (read-only)
+
+| | |
+|--|--|
+| **Track** | A/B surface contrast (not a new editor) |
+| **Activity** | CPU assemble G5 + closed frozen-d + clean Translate panel. No GPU. No `ground()` change. |
+| **Result** | G5 does not fire on FOLFOX; frozen-d FOLFOX Dual still NOT_SATISFIED. Translate does not clear CONTRA 2 lost. `reverse_contrast_holds=true`. `compute_editor_invented=false`. |
+| **Artifacts** | `TRACKB-PHASE2-COMPUTE-REVERSE.md` · `n2s-phase2-compute-reverse-panel.json` |
+| **Decision** | Frozen-`d` stays CLOSED. Do not invent Encode/Compute editors. Phase 3 matrix later. |
+| **Commit** | (local) |
+
+### 2026-09-10 — Phase 2 clean Translate contrast pairing
+
+| | |
+|--|--|
+| **Track** | A boundary contrast (not locator-causal) |
+| **Activity** | CPU mixed panel: Schema FOLFOX + analog CONTRA; same quote-promote; no `ground()` change; no GPU. |
+| **Result** | FOLFOX NOT_SATISFIED→SATISFIED. Analog CONTRA CONTRADICTION no-op; 2 lost unchanged. `contrast_holds=true`. `locator_chose_repair_class=false`. |
+| **Artifacts** | `n2s-phase2-translate-panel-clean.json` · `TRACKB-PHASE2-TRANSLATE-CONTRAST.md` |
+| **Decision** | Dual-matched Translate contrast holds. Do not automate. Do not invent Compute editor. Next wait-go = Compute reverse contrast (later). |
+| **Commit** | (local) |
+
+### 2026-09-10 — CONTRA Dual reconcile (analog prompt)
+
+| | |
+|--|--|
+| **Track** | A Dual snapshot (not a Compute editor) |
+| **Activity** | Re-extract FOLFOX/CONTRA with analog prompt (`user=evidence`). Did not change `ground()`. |
+| **Result** | Analog CONTRA = CONTRADICTION, matches frozen Dual (`grounded_X=true`). Schema+note recover was the SATISFIED mismatch (`prompt_explains_split=true`). Analog FOLFOX extract empty — quote-promote no-op. |
+| **Artifacts** | `n2s-phase2-contra-dual-reconcile.json` · `n2s-phase2-translate-extracts-analog.json` · `TRACKB-PHASE2-TRANSLATE-CONTRAST.md` |
+| **Decision** | **Do not change `ground()`.** Dual CONTRA control = analog extract. FOLFOX repair stays on Schema extract. No Compute editor. |
+| **Commit** | (local) |
+
+### 2026-09-10 — Phase 2 Exp1 Translate FOLFOX (quote-failure promote)
+
+| | |
+|--|--|
+| **Track** | A boundary correction (not auto-fix) |
+| **Activity** | Recover 7B extract (no d-patch); dump A–D; promote failure from quotes into outcome polarity. Same intervention on CONTRA. |
+| **Result** | FOLFOX C/D false → **SATISFIED**. CONTRA intervention no-op; frozen compute 2 lost unchanged. Recover+ground CONTRA is SATISFIED (temporal override) ≠ frozen Dual analog CONTRADICTION. Selection thesis **not** established. |
+| **Artifacts** | `TRACKB-PHASE2-TRANSLATE-CONTRAST.md` · `n2s-phase2-translate-panel.json` · `n2s-phase2-translate-extracts.json` |
+| **Decision** | Boundary Translate *can* repair FOLFOX analog. Do not automate. Do not reopen d-patch. CONTRA Dual snapshot mismatch is the next Q. |
+| **Commit** | (local) |
+
 ### 2026-09-10 — :8260 v1 FROZEN (walk + stop GUI)
 
 | | |

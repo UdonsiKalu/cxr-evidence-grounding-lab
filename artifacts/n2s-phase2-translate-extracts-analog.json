@@ -1,0 +1,120 @@
+{
+  "ok": true,
+  "kind": "n2s_phase2_translate_extracts_v1",
+  "timestamp": "2026-09-10T17:02:05.752840+00:00",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "prompt": "analog",
+  "extracts": {
+    "EX_TEMPORAL_FOLFOX": {
+      "id": "EX_TEMPORAL_FOLFOX",
+      "gold": "SATISFIED",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [],
+        "contradiction_present": false,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": false,
+          "span_a": null,
+          "span_b": null
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "verdict": "NOT_SATISFIED",
+        "ground_trace": [
+          "X=false (extractor contradiction.present=false / none)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "not": "n2n frozen-d patch"
+    },
+    "EX_CONTRA": {
+      "id": "EX_CONTRA",
+      "gold": "CONTRADICTION",
+      "parse_ok": true,
+      "prompt": "analog",
+      "extract": {
+        "stated_line": "unknown",
+        "regimen_names": [],
+        "administration_status": "unknown",
+        "outcome_statements": [],
+        "implicit_cues": [],
+        "uncertainty_cues": [],
+        "uncertainty_present": false,
+        "uncertainty_cue": "",
+        "uncertainty_why": "",
+        "contradiction_cues": [
+          {
+            "a": "Patient failed first-line FOLFOX after four cycles.",
+            "b": "Disease remains responsive to FOLFOX; continue current regimen."
+          }
+        ],
+        "contradiction_present": true,
+        "quotes": [],
+        "notes": "",
+        "backend": "unknown",
+        "contradiction": {
+          "present": true,
+          "span_a": "Patient failed first-line FOLFOX after four cycles.",
+          "span_b": "Disease remains responsive to FOLFOX; continue current regimen."
+        },
+        "uncertainty": {
+          "present": false,
+          "cue": null,
+          "why": null
+        }
+      },
+      "grounded": {
+        "atoms": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "verdict": "CONTRADICTION",
+        "ground_trace": [
+          "X=true (extractor contradiction.present=true with spans)",
+          "A=false (no first-line identified)",
+          "B=false (no first-line to administer)",
+          "C=unknown (no outcome statements)",
+          "D=false (identified line is not first-line)",
+          "U=false (extractor uncertainty.present=false / none)"
+        ]
+      },
+      "backend": "hf:Qwen/Qwen2.5-7B-Instruct",
+      "intervention": "none",
+      "not": "n2n frozen-d patch"
+    }
+  }
+}

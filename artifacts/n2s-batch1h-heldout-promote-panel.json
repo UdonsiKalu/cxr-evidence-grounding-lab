@@ -1,0 +1,4651 @@
+{
+  "ok": true,
+  "kind": "n2s_batch1h_heldout_promote_v1",
+  "timestamp": "2026-09-11T01:35:57.301076+00:00",
+  "protocol": "docs/TRACKB-FAILURE-INTERVENTION-MAP.md",
+  "intervention": "failure_evidence_from_extract_text",
+  "rule_changed": false,
+  "n": 44,
+  "ids": [
+    "C5",
+    "C6",
+    "C7",
+    "C8",
+    "U5",
+    "U6",
+    "U7",
+    "U8",
+    "C9",
+    "C10",
+    "C11",
+    "U9",
+    "U10",
+    "U11",
+    "U12",
+    "BC_C2",
+    "BC_U1",
+    "BC_U2",
+    "BC11_E1",
+    "BC11_E2",
+    "BC11_C1",
+    "BC11_C2",
+    "BC11_N1",
+    "BC12_E1",
+    "BC12_E2",
+    "BC12_E3",
+    "BC12_C1",
+    "BC12_N1",
+    "BC14_E1",
+    "BC14_E2",
+    "BC14_E3",
+    "BC14_C1",
+    "BC14_C2",
+    "BC14_N1",
+    "EX_TEMPORAL_FOLFOX",
+    "EX_CONTRA",
+    "UA_GEN_P1_NEAR",
+    "UA_GEN_C1_NEAR",
+    "UA_GEN_P2_FAR",
+    "UA_GEN_C2_FAR",
+    "UA_GEN_P3_FAR",
+    "UA_GEN_C3_FAR",
+    "UA_GEN_P4_FAR",
+    "UA_GEN_C4_FAR"
+  ],
+  "not": [
+    "promote retune",
+    "new P-* from held-out",
+    "temporal-family-test",
+    "hidden-state patch",
+    "ground() rewrite",
+    "CAA",
+    "Dual_full rescore",
+    "Batch 1 panel overwrite",
+    ":8260 GUI"
+  ],
+  "counts": {
+    "schema": {
+      "n": 44,
+      "gold_CONTRADICTION": {
+        "n": 18,
+        "fired": 1,
+        "repaired": 0,
+        "collateral_to_SATISFIED": 0,
+        "flipped_away": 0,
+        "correct_stay": 8,
+        "no_op": 18,
+        "ids_repaired": [],
+        "ids_collateral": [],
+        "ids_flipped_away": []
+      },
+      "gold_NOT_SATISFIED": {
+        "n": 3,
+        "fired": 3,
+        "repaired": 0,
+        "collateral_to_SATISFIED": 3,
+        "flipped_away": 3,
+        "correct_stay": 0,
+        "no_op": 0,
+        "ids_repaired": [],
+        "ids_collateral": [
+          "BC11_N1",
+          "BC12_N1",
+          "BC14_N1"
+        ],
+        "ids_flipped_away": [
+          "BC11_N1",
+          "BC12_N1",
+          "BC14_N1"
+        ]
+      },
+      "gold_SATISFIED": {
+        "n": 13,
+        "fired": 1,
+        "repaired": 1,
+        "collateral_to_SATISFIED": 0,
+        "flipped_away": 0,
+        "correct_stay": 10,
+        "no_op": 12,
+        "ids_repaired": [
+          "EX_TEMPORAL_FOLFOX"
+        ],
+        "ids_collateral": [],
+        "ids_flipped_away": []
+      },
+      "gold_UNCERTAIN": {
+        "n": 10,
+        "fired": 5,
+        "repaired": 0,
+        "collateral_to_SATISFIED": 0,
+        "flipped_away": 0,
+        "correct_stay": 9,
+        "no_op": 10,
+        "ids_repaired": [],
+        "ids_collateral": [],
+        "ids_flipped_away": []
+      }
+    },
+    "analog": {
+      "n": 44,
+      "gold_CONTRADICTION": {
+        "n": 18,
+        "fired": 0,
+        "repaired": 0,
+        "collateral_to_SATISFIED": 0,
+        "flipped_away": 0,
+        "correct_stay": 6,
+        "no_op": 18,
+        "ids_repaired": [],
+        "ids_collateral": [],
+        "ids_flipped_away": []
+      },
+      "gold_NOT_SATISFIED": {
+        "n": 3,
+        "fired": 0,
+        "repaired": 0,
+        "collateral_to_SATISFIED": 0,
+        "flipped_away": 0,
+        "correct_stay": 3,
+        "no_op": 3,
+        "ids_repaired": [],
+        "ids_collateral": [],
+        "ids_flipped_away": []
+      },
+      "gold_SATISFIED": {
+        "n": 13,
+        "fired": 0,
+        "repaired": 0,
+        "collateral_to_SATISFIED": 0,
+        "flipped_away": 0,
+        "correct_stay": 0,
+        "no_op": 13,
+        "ids_repaired": [],
+        "ids_collateral": [],
+        "ids_flipped_away": []
+      },
+      "gold_UNCERTAIN": {
+        "n": 10,
+        "fired": 0,
+        "repaired": 0,
+        "collateral_to_SATISFIED": 0,
+        "flipped_away": 0,
+        "correct_stay": 4,
+        "no_op": 10,
+        "ids_repaired": [],
+        "ids_collateral": [],
+        "ids_flipped_away": []
+      }
+    }
+  },
+  "finding": {
+    "analog_repaired": 0,
+    "analog_fired": 0,
+    "schema_fired": 10,
+    "schema_sat_repaired": 1,
+    "schema_sat_n": 13,
+    "schema_neg_collateral": 3,
+    "schema_xspan_collateral": 0,
+    "leak_repeats": true,
+    "do_not_retune": true,
+    "stop": true
+  },
+  "rows": {
+    "schema": [
+      {
+        "id": "C5",
+        "role": "gold_CONTRADICTION",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "CONTRADICTION",
+        "verdict_after": "CONTRADICTION",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": true
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": true
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "C6",
+        "role": "gold_CONTRADICTION",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "SATISFIED",
+        "verdict_after": "SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "C7",
+        "role": "gold_CONTRADICTION",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "CONTRADICTION",
+        "verdict_after": "CONTRADICTION",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "C8",
+        "role": "gold_CONTRADICTION",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": true,
+        "verdict_before": "CONTRADICTION",
+        "verdict_after": "CONTRADICTION",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "false",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": true
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": "quotes",
+          "added_response_then_progression": true,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "U5",
+        "role": "gold_UNCERTAIN",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "UNCERTAIN",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-unc"
+        ],
+        "fired": true,
+        "verdict_before": "UNCERTAIN",
+        "verdict_after": "UNCERTAIN",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 1,
+          "relabeled_outcome_idx": [
+            0
+          ],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "U6",
+        "role": "gold_UNCERTAIN",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "UNCERTAIN",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-unc"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "U7",
+        "role": "gold_UNCERTAIN",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "UNCERTAIN",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-unc"
+        ],
+        "fired": false,
+        "verdict_before": "UNCERTAIN",
+        "verdict_after": "UNCERTAIN",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "U8",
+        "role": "gold_UNCERTAIN",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "UNCERTAIN",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-unc",
+          "P-adj"
+        ],
+        "fired": true,
+        "verdict_before": "UNCERTAIN",
+        "verdict_after": "UNCERTAIN",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 1,
+          "relabeled_outcome_idx": [
+            0
+          ],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "C9",
+        "role": "gold_CONTRADICTION",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "CONTRADICTION",
+        "verdict_after": "CONTRADICTION",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": true
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": true
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "C10",
+        "role": "gold_CONTRADICTION",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "SATISFIED",
+        "verdict_after": "SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "C11",
+        "role": "gold_CONTRADICTION",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "CONTRADICTION",
+        "verdict_after": "CONTRADICTION",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "false",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": true
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "false",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": true
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "U9",
+        "role": "gold_UNCERTAIN",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "UNCERTAIN",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-unc"
+        ],
+        "fired": true,
+        "verdict_before": "UNCERTAIN",
+        "verdict_after": "UNCERTAIN",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 1,
+          "relabeled_outcome_idx": [
+            0
+          ],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "U10",
+        "role": "gold_UNCERTAIN",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "UNCERTAIN",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-unc"
+        ],
+        "fired": false,
+        "verdict_before": "UNCERTAIN",
+        "verdict_after": "UNCERTAIN",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "U11",
+        "role": "gold_UNCERTAIN",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "UNCERTAIN",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-unc"
+        ],
+        "fired": false,
+        "verdict_before": "UNCERTAIN",
+        "verdict_after": "UNCERTAIN",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "U12",
+        "role": "gold_UNCERTAIN",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "UNCERTAIN",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-unc",
+          "P-adj"
+        ],
+        "fired": true,
+        "verdict_before": "UNCERTAIN",
+        "verdict_after": "UNCERTAIN",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 1,
+          "relabeled_outcome_idx": [
+            0
+          ],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC_C2",
+        "role": "gold_CONTRADICTION",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "SATISFIED",
+        "verdict_after": "SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC_U1",
+        "role": "gold_UNCERTAIN",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "UNCERTAIN",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-unc"
+        ],
+        "fired": true,
+        "verdict_before": "UNCERTAIN",
+        "verdict_after": "UNCERTAIN",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 1,
+          "relabeled_outcome_idx": [
+            0
+          ],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC_U2",
+        "role": "gold_UNCERTAIN",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "UNCERTAIN",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-unc"
+        ],
+        "fired": false,
+        "verdict_before": "UNCERTAIN",
+        "verdict_after": "UNCERTAIN",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC11_E1",
+        "role": "gold_SATISFIED",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-expl"
+        ],
+        "fired": false,
+        "verdict_before": "SATISFIED",
+        "verdict_after": "SATISFIED",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC11_E2",
+        "role": "gold_SATISFIED",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-expl"
+        ],
+        "fired": false,
+        "verdict_before": "SATISFIED",
+        "verdict_after": "SATISFIED",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC11_C1",
+        "role": "gold_CONTRADICTION",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "false",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "false",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC11_C2",
+        "role": "gold_CONTRADICTION",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "CONTRADICTION",
+        "verdict_after": "CONTRADICTION",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "true",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "true",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC11_N1",
+        "role": "gold_NOT_SATISFIED",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "NOT_SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-neg"
+        ],
+        "fired": true,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "SATISFIED",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": true,
+        "match_gold_before": true,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": true,
+        "flipped_away": true,
+        "correct_stay": false,
+        "no_op": false,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "false",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": "quotes",
+          "added_response_then_progression": true,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC12_E1",
+        "role": "gold_SATISFIED",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-expl"
+        ],
+        "fired": false,
+        "verdict_before": "SATISFIED",
+        "verdict_after": "SATISFIED",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC12_E2",
+        "role": "gold_SATISFIED",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-expl"
+        ],
+        "fired": false,
+        "verdict_before": "SATISFIED",
+        "verdict_after": "SATISFIED",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC12_E3",
+        "role": "gold_SATISFIED",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-expl"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "false",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "false",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC12_C1",
+        "role": "gold_CONTRADICTION",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "false",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "false",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC12_N1",
+        "role": "gold_NOT_SATISFIED",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "NOT_SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-neg"
+        ],
+        "fired": true,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "SATISFIED",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": true,
+        "match_gold_before": true,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": true,
+        "flipped_away": true,
+        "correct_stay": false,
+        "no_op": false,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "false",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": "quotes",
+          "added_response_then_progression": true,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC14_E1",
+        "role": "gold_SATISFIED",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-expl"
+        ],
+        "fired": false,
+        "verdict_before": "SATISFIED",
+        "verdict_after": "SATISFIED",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC14_E2",
+        "role": "gold_SATISFIED",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-expl",
+          "P-recon"
+        ],
+        "fired": false,
+        "verdict_before": "SATISFIED",
+        "verdict_after": "SATISFIED",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC14_E3",
+        "role": "gold_SATISFIED",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-expl",
+          "P-recon"
+        ],
+        "fired": false,
+        "verdict_before": "SATISFIED",
+        "verdict_after": "SATISFIED",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC14_C1",
+        "role": "gold_CONTRADICTION",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "false",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "false",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC14_C2",
+        "role": "gold_CONTRADICTION",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "SATISFIED",
+        "verdict_after": "SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC14_N1",
+        "role": "gold_NOT_SATISFIED",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "NOT_SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-neg"
+        ],
+        "fired": true,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "SATISFIED",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": true,
+        "match_gold_before": true,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": true,
+        "flipped_away": true,
+        "correct_stay": false,
+        "no_op": false,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "false",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": "quotes",
+          "added_response_then_progression": true,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "EX_TEMPORAL_FOLFOX",
+        "role": "gold_SATISFIED",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-seq",
+          "P-bind"
+        ],
+        "fired": true,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": false,
+        "match_gold_before": false,
+        "match_gold_after": true,
+        "repaired": true,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": false,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "false",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": "quotes",
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "EX_CONTRA",
+        "role": "gold_CONTRADICTION",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "SATISFIED",
+        "verdict_after": "SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "UA_GEN_P1_NEAR",
+        "role": "gold_SATISFIED",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-seq"
+        ],
+        "fired": false,
+        "verdict_before": "SATISFIED",
+        "verdict_after": "SATISFIED",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "UA_GEN_C1_NEAR",
+        "role": "gold_CONTRADICTION",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "SATISFIED",
+        "verdict_after": "SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "UA_GEN_P2_FAR",
+        "role": "gold_SATISFIED",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-seq"
+        ],
+        "fired": false,
+        "verdict_before": "UNCERTAIN",
+        "verdict_after": "UNCERTAIN",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "UA_GEN_C2_FAR",
+        "role": "gold_CONTRADICTION",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "UNCERTAIN",
+        "verdict_after": "UNCERTAIN",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "UA_GEN_P3_FAR",
+        "role": "gold_SATISFIED",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-seq"
+        ],
+        "fired": false,
+        "verdict_before": "SATISFIED",
+        "verdict_after": "SATISFIED",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "UA_GEN_C3_FAR",
+        "role": "gold_CONTRADICTION",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "CONTRADICTION",
+        "verdict_after": "CONTRADICTION",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": true
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": true
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "UA_GEN_P4_FAR",
+        "role": "gold_SATISFIED",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-seq"
+        ],
+        "fired": false,
+        "verdict_before": "SATISFIED",
+        "verdict_after": "SATISFIED",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "UA_GEN_C4_FAR",
+        "role": "gold_CONTRADICTION",
+        "prompt": "schema",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "CONTRADICTION",
+        "verdict_after": "CONTRADICTION",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": true
+        },
+        "atoms_after": {
+          "A_first_line_identified": "true",
+          "B_first_line_administered": "true",
+          "C_failure_event": "true",
+          "D_failure_of_first_line": "true",
+          "X_contradiction": true
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      }
+    ],
+    "analog": [
+      {
+        "id": "C5",
+        "role": "gold_CONTRADICTION",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "CONTRADICTION",
+        "verdict_after": "CONTRADICTION",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "C6",
+        "role": "gold_CONTRADICTION",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "CONTRADICTION",
+        "verdict_after": "CONTRADICTION",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "C7",
+        "role": "gold_CONTRADICTION",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "C8",
+        "role": "gold_CONTRADICTION",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "U5",
+        "role": "gold_UNCERTAIN",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "UNCERTAIN",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-unc",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "U6",
+        "role": "gold_UNCERTAIN",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "UNCERTAIN",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-unc",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "U7",
+        "role": "gold_UNCERTAIN",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "UNCERTAIN",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-unc",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "UNCERTAIN",
+        "verdict_after": "UNCERTAIN",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "U8",
+        "role": "gold_UNCERTAIN",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "UNCERTAIN",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-unc",
+          "P-adj",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "UNCERTAIN",
+        "verdict_after": "UNCERTAIN",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "C9",
+        "role": "gold_CONTRADICTION",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "CONTRADICTION",
+        "verdict_after": "CONTRADICTION",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "C10",
+        "role": "gold_CONTRADICTION",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "C11",
+        "role": "gold_CONTRADICTION",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "U9",
+        "role": "gold_UNCERTAIN",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "UNCERTAIN",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-unc",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "U10",
+        "role": "gold_UNCERTAIN",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "UNCERTAIN",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-unc",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "U11",
+        "role": "gold_UNCERTAIN",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "UNCERTAIN",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-unc",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "UNCERTAIN",
+        "verdict_after": "UNCERTAIN",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "U12",
+        "role": "gold_UNCERTAIN",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "UNCERTAIN",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-unc",
+          "P-adj",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "UNCERTAIN",
+        "verdict_after": "UNCERTAIN",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "unknown",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC_C2",
+        "role": "gold_CONTRADICTION",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC_U1",
+        "role": "gold_UNCERTAIN",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "UNCERTAIN",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-unc",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC_U2",
+        "role": "gold_UNCERTAIN",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "UNCERTAIN",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-unc",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "unknown",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "unknown",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC11_E1",
+        "role": "gold_SATISFIED",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-expl",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC11_E2",
+        "role": "gold_SATISFIED",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-expl",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC11_C1",
+        "role": "gold_CONTRADICTION",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC11_C2",
+        "role": "gold_CONTRADICTION",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC11_N1",
+        "role": "gold_NOT_SATISFIED",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "NOT_SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-neg",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC12_E1",
+        "role": "gold_SATISFIED",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-expl",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC12_E2",
+        "role": "gold_SATISFIED",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-expl",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC12_E3",
+        "role": "gold_SATISFIED",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-expl",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC12_C1",
+        "role": "gold_CONTRADICTION",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC12_N1",
+        "role": "gold_NOT_SATISFIED",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "NOT_SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-neg",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC14_E1",
+        "role": "gold_SATISFIED",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-expl",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC14_E2",
+        "role": "gold_SATISFIED",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-expl",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC14_E3",
+        "role": "gold_SATISFIED",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-expl",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC14_C1",
+        "role": "gold_CONTRADICTION",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC14_C2",
+        "role": "gold_CONTRADICTION",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "BC14_N1",
+        "role": "gold_NOT_SATISFIED",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "NOT_SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-neg",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "EX_TEMPORAL_FOLFOX",
+        "role": "gold_SATISFIED",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-seq",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "EX_CONTRA",
+        "role": "gold_CONTRADICTION",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "CONTRADICTION",
+        "verdict_after": "CONTRADICTION",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "UA_GEN_P1_NEAR",
+        "role": "gold_SATISFIED",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-seq",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "UA_GEN_C1_NEAR",
+        "role": "gold_CONTRADICTION",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "CONTRADICTION",
+        "verdict_after": "CONTRADICTION",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "UA_GEN_P2_FAR",
+        "role": "gold_SATISFIED",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-seq",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "UA_GEN_C2_FAR",
+        "role": "gold_CONTRADICTION",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "UA_GEN_P3_FAR",
+        "role": "gold_SATISFIED",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-seq",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "UA_GEN_C3_FAR",
+        "role": "gold_CONTRADICTION",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan"
+        ],
+        "fired": false,
+        "verdict_before": "CONTRADICTION",
+        "verdict_after": "CONTRADICTION",
+        "wrong_AUTO_before": false,
+        "wrong_AUTO_after": false,
+        "match_gold_before": true,
+        "match_gold_after": true,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": true,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": true
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "UA_GEN_P4_FAR",
+        "role": "gold_SATISFIED",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "SATISFIED",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-seq",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      },
+      {
+        "id": "UA_GEN_C4_FAR",
+        "role": "gold_CONTRADICTION",
+        "prompt": "analog",
+        "slice": "heldout_score_only",
+        "phenotype_design": false,
+        "gold": "CONTRADICTION",
+        "parse_ok": true,
+        "phenotypes_before": [
+          "P-xspan",
+          "P-unk"
+        ],
+        "fired": false,
+        "verdict_before": "NOT_SATISFIED",
+        "verdict_after": "NOT_SATISFIED",
+        "wrong_AUTO_before": true,
+        "wrong_AUTO_after": true,
+        "match_gold_before": false,
+        "match_gold_after": false,
+        "repaired": false,
+        "collateral_to_SATISFIED": false,
+        "flipped_away": false,
+        "correct_stay": false,
+        "no_op": true,
+        "atoms_before": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "atoms_after": {
+          "A_first_line_identified": "false",
+          "B_first_line_administered": "false",
+          "C_failure_event": "unknown",
+          "D_failure_of_first_line": "false",
+          "X_contradiction": false
+        },
+        "intervention_meta": {
+          "kind": "failure_evidence_from_extract_text",
+          "n_polarities_relabeled": 0,
+          "relabeled_outcome_idx": [],
+          "promoted_failure_from": null,
+          "added_response_then_progression": false,
+          "touched_contradiction_present": false,
+          "hidden_state_patched": false
+        },
+        "hidden_state_patched": false,
+        "intervention": "failure_evidence_from_extract_text",
+        "ground_changed": false
+      }
+    ]
+  },
+  "note": "Frozen Batch 1 promote on held-out Dual notes. Gold roles only. Leak repeating means the design-set P-neg/C4 flips were not a 28-note accident."
+}

@@ -1,0 +1,73 @@
+{
+  "ok": true,
+  "kind": "n2s_phase2_compute_reverse_v1",
+  "timestamp": "2026-09-10T17:17:45.057129+00:00",
+  "protocol": "docs/TRACKB-PHASE2-COMPUTE-REVERSE.md",
+  "pairing": "read-only frozen artifacts; no GPU",
+  "not": [
+    "new Compute editor",
+    "frozen-d GPU rerun",
+    "\u03b1-chase",
+    "ground() rewrite",
+    "Encode editor",
+    "auto-correct pipeline",
+    "REVIEW-as-correction",
+    "locator-chose-repair-class",
+    ":8260 GUI expansion"
+  ],
+  "sources": {
+    "translate_clean": "n2s-phase2-translate-panel-clean.json",
+    "g5_review": "n2s-nn-lost-review-panel.json",
+    "frozen_d_furthest": "n2s-nn-layer-patch-l12l16l20-panel.json"
+  },
+  "forward_translate": {
+    "folfox_repaired": true,
+    "contra_dual_held": true,
+    "contrast_holds": true,
+    "folfox_before": "NOT_SATISFIED",
+    "folfox_after": "SATISFIED",
+    "contra_after": "CONTRADICTION",
+    "contra_n_lost": 2
+  },
+  "g5_n2n_lost_review": {
+    "EX_TEMPORAL_FOLFOX": {
+      "n_lost_steps": 0,
+      "triggered": false,
+      "reason": "no_lost_steps",
+      "repairs_dual_miss": false
+    },
+    "EX_CONTRA": {
+      "n_lost_steps": 2,
+      "triggered": true,
+      "disposition": "REVIEW",
+      "reason": "n2n_layer_loss",
+      "clears_lost_steps": false
+    }
+  },
+  "frozen_d_l12l16l20_alpha2": {
+    "EX_TEMPORAL_FOLFOX": {
+      "n_lost_after": 0,
+      "verdict": "NOT_SATISFIED",
+      "repairs_translate_miss": false
+    },
+    "EX_CONTRA": {
+      "n_lost_before": 2,
+      "n_lost_after": 1,
+      "verdict": "CONTRADICTION",
+      "status": "PARTIAL",
+      "clears_all_lost": false
+    }
+  },
+  "thesis": {
+    "reverse_contrast_holds": true,
+    "compute_does_not_repair_folfox_translate_miss": true,
+    "translate_does_not_clear_contra_compute_loss": true,
+    "g5_contains_contra_does_not_repair": true,
+    "d_patch_partial_not_editor": true,
+    "compute_editor_invented": false,
+    "d_patch_rerun": false,
+    "locator_chose_repair_class": false,
+    "ground_changed": false,
+    "note": "Reverse = existing Compute tools (G5 REVIEW, closed frozen-d) do not repair FOLFOX Dual miss; Translate quote-promote does not clear CONTRA lost-steps. Not a new Compute editor. Not locator-causal."
+  }
+}
